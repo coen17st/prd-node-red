@@ -1,13 +1,18 @@
-pipeline {  environment {
-    registry = "https://docker-registry.theautomation.nl/"
-    registryCredential = 'private-docker-registry'
-  }  agent any  stages {
-    stage('Building image') {
-      steps{
+    stage('Publish') {
+      steps {
+        echo 'Publishing container image to the registry...'
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          docker.withRegistry('', registryCredentialSet) {
+            dockerInstance.push("${env.BUILD_NUMBER}")
+            dockerInstance.push("latest")
+          }
         }
+
       }
     }
-  }
+
+environment {
+  imageName = 'node-red'
+  registryCredentialSet = 'private-docker-registry'
+  registryUri = 'https://docker-registry.theautomation.nl'
 }
