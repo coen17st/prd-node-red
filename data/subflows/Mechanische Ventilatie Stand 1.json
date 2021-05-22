@@ -1,0 +1,274 @@
+[
+  {
+    "id": "e2c1d748.78cd18",
+    "type": "subflow",
+    "name": "Mechanische Ventilatie Stand 1",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 80,
+        "y": 40,
+        "wires": [
+          {
+            "id": "f6e3eb02.bfee48"
+          },
+          {
+            "id": "40ba4a3d.4855e4"
+          },
+          {
+            "id": "aa2d919c.edec1"
+          },
+          {
+            "id": "dd95286e.277828"
+          },
+          {
+            "id": "7a250806.3da0a8"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "color": "#DDAA99"
+  },
+  {
+    "id": "5556437a.6877ac",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "switch.mv_schakelaar_1 -> on",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_on",
+    "entityId": "switch.mv_schakelaar_1",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 330,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f56ff5b3.b8cfe8",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "switch.mv_schakelaar_2 -> off",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_off",
+    "entityId": "switch.mv_schakelaar_2",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 330,
+    "y": 240,
+    "wires": [
+      [
+        "78447ea6.ed0c1"
+      ]
+    ]
+  },
+  {
+    "id": "7a250806.3da0a8",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "switch.mv_schakelaar_3 -> off",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_off",
+    "entityId": "switch.mv_schakelaar_3",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 330,
+    "y": 200,
+    "wires": [
+      [
+        "9eac2620.793d68"
+      ]
+    ]
+  },
+  {
+    "id": "24dbe557.fde2ca",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "input_boolean.mechanische_ventilatie_stand_1 -> on",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_on",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_1",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 820,
+    "y": 40,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "40ba4a3d.4855e4",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_off",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_2",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 400,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "aa2d919c.edec1",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_off",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_3",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 400,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dd95286e.277828",
+    "type": "api-call-service",
+    "z": "e2c1d748.78cd18",
+    "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_off",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 400,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f6e3eb02.bfee48",
+    "type": "api-current-state",
+    "z": "e2c1d748.78cd18",
+    "name": "input_boolean.mechanische_ventilatie_stand_1 -> off?",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "override_topic": false,
+    "entity_id": "input_boolean.mechanische_ventilatie_stand_1",
+    "state_type": "str",
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": false,
+    "x": 400,
+    "y": 40,
+    "wires": [
+      [
+        "24dbe557.fde2ca"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "78447ea6.ed0c1",
+    "type": "delay",
+    "z": "e2c1d748.78cd18",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 100,
+    "y": 280,
+    "wires": [
+      [
+        "5556437a.6877ac"
+      ]
+    ]
+  },
+  {
+    "id": "9eac2620.793d68",
+    "type": "delay",
+    "z": "e2c1d748.78cd18",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 100,
+    "y": 240,
+    "wires": [
+      [
+        "f56ff5b3.b8cfe8"
+      ]
+    ]
+  }
+]
