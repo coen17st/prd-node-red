@@ -1,4 +1,18 @@
-    stage('Publish') {
+pipeline {
+  agent any
+  stages {
+
+    stage('Build') {
+      steps {
+        echo 'Building container image...'
+        script {
+          dockerInstance = docker.build(imageName)
+        }
+
+      }
+    }    
+
+stage('Publish') {
       steps {
         echo 'Publishing container image to the registry...'
         script {
