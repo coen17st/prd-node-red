@@ -5,15 +5,16 @@ pipeline {
     registrycredentials = "private-docker-registry"
     dockerImage = ''
   }
+  
   agent any
   stages {
+    
     stage('Cloning Git') {
       steps {
         echo 'Cloning GitHub repository...'
         checkout scm
       }
     }
-  }
     stage('Building image') {
       steps{
         echo 'Building container image...'
@@ -22,6 +23,6 @@ pipeline {
         }
       }
     }
-  
-  
+    
+  } // end stages  
 } // end pipeline
