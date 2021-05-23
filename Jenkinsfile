@@ -1,32 +1,55 @@
 pipeline {
+  environment {
+    imagename = "mytest"
+    registryurl = "https://docker-registry.theautomation.nl"
+    registrycredentials = "private-docker-registry"
+    dockerImage = ''
+  } 
   agent any
   stages {
-
-    stage('Build') {
+    stage('Cloning Git') {
       steps {
-        echo 'Building container image...'
-        script {
-          dockerInstance = docker.build(imageName)
-        }
-
-      }
-    }    
-
-stage('Publish') {
-      steps {
-        echo 'Publishing container image to the registry...'
-        script {
-          docker.withRegistry('', registryCredentialSet) {
-            dockerInstance.push("${env.BUILD_NUMBER}")
-            dockerInstance.push("latest")
-          }
-        }
+                checkout scm
 
       }
     }
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build imagename
+        }
+      }
+    }
+   
+stage('Deploy Main Image') {
+   when {
+      anyOf {
+            branch 'main'
+      }
+     }
+      steps{
+        script {
+          docker.withRegistry(registryurl, registrycredentials) {     
+            dockerImage.push("$BUILD_NUMBER")
+             dockerImage.push('latest')
 
-environment {
-  imageName = 'node-red'
-  registryCredentialSet = 'private-docker-registry'
-  registryUri = 'https://docker-registry.theautomation.nl'
-}
+          }
+        }
+      }
+    }
+
+ 
+    stage('Remove Unused docker image - Main') {
+      when {
+      anyOf {
+            branch 'main'
+      }
+     }
+      steps{
+        sh "docker rmi $imagename:$BUILD_NUMBER"
+         sh "docker rmi $imagename:latest"
+
+      }
+    } // End of remove unused docker image for master
+  }  
+} //end of pipeline
