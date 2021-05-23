@@ -8,8 +8,8 @@ pipeline {
   agent any
   stages {
     stage('Cloning Git') {
-      echo 'Cloning GitHub repository...'
       steps {
+        echo 'Cloning GitHub repository...'
         checkout scm
       }
     }
