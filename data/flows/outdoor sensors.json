@@ -1,0 +1,402 @@
+[
+  {
+    "id": "4dd07a1d.6e53e4",
+    "type": "tab",
+    "label": "outdoor sensors",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "393c05d.70c05fa",
+    "type": "range",
+    "z": "4dd07a1d.6e53e4",
+    "minin": "0",
+    "maxin": "100",
+    "minout": "0",
+    "maxout": "100",
+    "action": "roll",
+    "round": false,
+    "property": "payload",
+    "name": "",
+    "x": 470,
+    "y": 120,
+    "wires": [
+      [
+        "53f6ec34.5fec34"
+      ]
+    ]
+  },
+  {
+    "id": "49bcf8fe.de1de8",
+    "type": "server-state-changed",
+    "z": "4dd07a1d.6e53e4",
+    "name": "illuminance weather station",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.weather_station_illuminance",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "num",
+    "haltifstate": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "x": 130,
+    "y": 100,
+    "wires": [
+      [
+        "98d4039.5ff7f",
+        "b77336d5.a64478"
+      ]
+    ]
+  },
+  {
+    "id": "53f6ec34.5fec34",
+    "type": "ha-entity",
+    "z": "4dd07a1d.6e53e4",
+    "name": "brightness sun",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "outputs": 1,
+    "entityType": "sensor",
+    "config": [
+      {
+        "property": "name",
+        "value": "sun_brightness"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:weather-sunny"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": "%"
+      }
+    ],
+    "state": "payload",
+    "stateType": "msg",
+    "attributes": [],
+    "resend": true,
+    "outputLocation": "",
+    "outputLocationType": "none",
+    "inputOverride": "allow",
+    "outputOnStateChange": false,
+    "outputPayload": "",
+    "outputPayloadType": "str",
+    "x": 660,
+    "y": 140,
+    "wires": [
+      [
+        "75c39ffc.b45f8"
+      ]
+    ]
+  },
+  {
+    "id": "d8202784.fc5cc8",
+    "type": "ha-entity",
+    "z": "4dd07a1d.6e53e4",
+    "name": "opacity sun",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "outputs": 1,
+    "entityType": "sensor",
+    "config": [
+      {
+        "property": "name",
+        "value": "sun_opacity"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:weather-sunny"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      }
+    ],
+    "state": "payload",
+    "stateType": "msg",
+    "attributes": [],
+    "resend": true,
+    "outputLocation": "",
+    "outputLocationType": "none",
+    "inputOverride": "allow",
+    "outputOnStateChange": false,
+    "outputPayload": "",
+    "outputPayloadType": "str",
+    "x": 1030,
+    "y": 140,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "75c39ffc.b45f8",
+    "type": "function",
+    "z": "4dd07a1d.6e53e4",
+    "name": "",
+    "func": "msg.payload = (msg.payload)/(100);\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 820,
+    "y": 140,
+    "wires": [
+      [
+        "d8202784.fc5cc8"
+      ]
+    ]
+  },
+  {
+    "id": "98d4039.5ff7f",
+    "type": "switch",
+    "z": "4dd07a1d.6e53e4",
+    "name": "",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "lte",
+        "v": "15",
+        "vt": "str"
+      },
+      {
+        "t": "gt",
+        "v": "15",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 330,
+    "y": 60,
+    "wires": [
+      [
+        "5c56266b.e63438"
+      ],
+      [
+        "818ba5a9.204658"
+      ]
+    ]
+  },
+  {
+    "id": "5c56266b.e63438",
+    "type": "change",
+    "z": "4dd07a1d.6e53e4",
+    "name": "dark",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "dark",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 470,
+    "y": 40,
+    "wires": [
+      [
+        "714f8f70.75ec6"
+      ]
+    ]
+  },
+  {
+    "id": "818ba5a9.204658",
+    "type": "change",
+    "z": "4dd07a1d.6e53e4",
+    "name": "light",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "light",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 470,
+    "y": 80,
+    "wires": [
+      [
+        "714f8f70.75ec6"
+      ]
+    ]
+  },
+  {
+    "id": "b77336d5.a64478",
+    "type": "switch",
+    "z": "4dd07a1d.6e53e4",
+    "name": "",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "lte",
+        "v": "300",
+        "vt": "num"
+      },
+      {
+        "t": "gt",
+        "v": "300",
+        "vt": "num"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 330,
+    "y": 140,
+    "wires": [
+      [
+        "393c05d.70c05fa"
+      ],
+      [
+        "ad811737.45bd18"
+      ]
+    ]
+  },
+  {
+    "id": "ad811737.45bd18",
+    "type": "range",
+    "z": "4dd07a1d.6e53e4",
+    "minin": "100",
+    "maxin": "550",
+    "minout": "50",
+    "maxout": "100",
+    "action": "clamp",
+    "round": false,
+    "property": "payload",
+    "name": "",
+    "x": 480,
+    "y": 160,
+    "wires": [
+      [
+        "53f6ec34.5fec34"
+      ]
+    ]
+  },
+  {
+    "id": "714f8f70.75ec6",
+    "type": "rbe",
+    "z": "4dd07a1d.6e53e4",
+    "name": "",
+    "func": "rbe",
+    "gap": "",
+    "start": "",
+    "inout": "out",
+    "septopics": true,
+    "property": "payload",
+    "x": 630,
+    "y": 60,
+    "wires": [
+      [
+        "607a179b.d377f8"
+      ]
+    ]
+  },
+  {
+    "id": "607a179b.d377f8",
+    "type": "stoptimer",
+    "z": "4dd07a1d.6e53e4",
+    "duration": "40",
+    "units": "Second",
+    "payloadtype": "str",
+    "payloadval": "reset",
+    "name": "",
+    "x": 850,
+    "y": 60,
+    "wires": [
+      [
+        "5051592a.7844e8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "5051592a.7844e8",
+    "type": "ha-entity",
+    "z": "4dd07a1d.6e53e4",
+    "name": "state outdoor light dark",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "outputs": 1,
+    "entityType": "sensor",
+    "config": [
+      {
+        "property": "name",
+        "value": "outdoor_light_dark"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      }
+    ],
+    "state": "payload",
+    "stateType": "msg",
+    "attributes": [],
+    "resend": true,
+    "outputLocation": "",
+    "outputLocationType": "none",
+    "inputOverride": "allow",
+    "outputOnStateChange": false,
+    "outputPayload": "",
+    "outputPayloadType": "str",
+    "x": 1060,
+    "y": 60,
+    "wires": [
+      []
+    ]
+  }
+]

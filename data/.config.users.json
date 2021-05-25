@@ -1,0 +1,31 @@
+{
+    "_": {
+        "editor": {
+            "view": {
+                "view-show-grid": true,
+                "view-snap-grid": true,
+                "view-grid-size": 20,
+                "view-node-status": true,
+                "view-node-show-label": true,
+                "view-show-tips": true
+            }
+        },
+        "menu-menu-item-sidebar": false
+    },
+    "admin": {
+        "editor": {
+            "view": {
+                "view-show-grid": true,
+                "view-snap-grid": true,
+                "view-grid-size": "20",
+                "view-node-status": true,
+                "view-node-show-label": true,
+                "view-show-tips": true
+            }
+        },
+        "menu-menu-item-sidebar": false,
+        "menu-menu-item-palette": true,
+        "menu-deploymenu-item-flow": true,
+        "menu-deploymenu-item-full": false
+    }
+}
