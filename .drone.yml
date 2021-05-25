@@ -3,8 +3,11 @@ type: docker
 name: default
 
 steps:
-- name: build
-  image: node
-  commands:
-  - npm install
-  - npm test
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: foo/bar
+    username:
+      from_secret: docker-registry-username
+    password:
+      from_secret: docker-registry-password
