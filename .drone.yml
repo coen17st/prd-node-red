@@ -1,13 +1,9 @@
 kind: pipeline
-name: prd-node-red
+name: default
 
 steps:
-- name: docker  
-  image: plugins/docker
-  settings:
-    repo: foo/bar
-    username:
-      from_secret: docker-registry-username
-    password:
-      from_secret: docker-registry-password
-    registry: docker-registry.theautomation.nl
+- name: frontend
+  image: node
+  commands:
+  - npm ci
+  - npm run test:unit
