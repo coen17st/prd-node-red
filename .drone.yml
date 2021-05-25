@@ -1,0 +1,13 @@
+kind: pipeline
+name: prd-node-red
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: foo/bar
+    username:
+      from_secret: docker-registry-username
+    password:
+      from_secret: docker-registry-password
+    registry: docker-registry.theautomation.nl
