@@ -1,13 +1,15 @@
 kind: pipeline
-type: docker
 name: default
 
 steps:
-- name: docker  
+- name: publish
   image: plugins/docker
   settings:
-    repo: foo/bar
+    registry: docker-registry.theautomation.nl
+    repo: docker-registry.theautomation.nl/test/lap
     username:
       from_secret: docker-registry-username
     password:
       from_secret: docker-registry-password
+    tags:
+      - latest
