@@ -3,7 +3,7 @@ services:
 
   prd-node-red-app:
     build: .
-    image: nodered/prd-node-red:latest
+    image: docker-registry.theautomation.nl/coen/prd-node-red
     container_name: prd-node-red-app
     restart: unless-stopped
     env_file: prd-node-red-app.env
