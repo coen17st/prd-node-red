@@ -22,6 +22,6 @@ steps:
   - up -f ./docker-compose.yaml
 
 volumes:
-- name: docker
+- name: docker_sock
   host:
     path: /var/run/docker.sock
