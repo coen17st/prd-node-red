@@ -12,5 +12,3 @@ steps:
       from_secret: docker-registry-username
     password:
       from_secret: docker-registry-password
-    tags:
-      - latest
