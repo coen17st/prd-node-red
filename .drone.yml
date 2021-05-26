@@ -12,3 +12,16 @@ steps:
       from_secret: docker-registry-username
     password:
       from_secret: docker-registry-password
+
+- name: deploy
+  image: docker
+  commands:
+  - sh ./docker-compose up -d
+  volumes:
+  - name: docker
+    path: /var/run/docker.sock
+
+volumes:
+- name: docker
+  host:
+    path: /var/run/docker.sock
