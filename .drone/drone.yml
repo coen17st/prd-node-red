@@ -15,12 +15,12 @@ steps:
       from_secret: docker-registry-password
 
 - name: test
-  image: compose:1.23.2
+  image: docker
+  commands:
+  - sh ./.drone/deploy.sh
   volumes:
   - name: docker_sock
     path: /var/run/docker.sock
-  commands:
-  - up -f ./docker-compose.yaml
 
 volumes:
 - name: docker_sock
