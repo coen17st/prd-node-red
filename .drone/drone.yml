@@ -14,16 +14,14 @@ steps:
     password:
       from_secret: docker-registry-password
 
-- name: test
-  image: docker
+- name: build
   environment:
-    docker_registry_username:
+    USERNAME:
       from_secret: docker-registry-username
-    docker_registry_password:
+    PASSWORD:
       from_secret: docker-registry-password
   commands:
-  - echo $$docker_registry_password | docker login --username $$docker_registry_username --password-stdin https://docker-registry.theautomation.nl
-  - sh ./.drone/deploy.sh
+  - docker login -u $USERNAME -p $PASSWORD https://docker-registry.theautomation.nl
   volumes:
   - name: docker_sock
     path: /var/run/docker.sock
