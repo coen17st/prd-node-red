@@ -24,6 +24,7 @@ steps:
       from_secret: docker-registry-password
   commands:
   - docker login -u $docker_registry_username -p $docker_registry_password https://docker-registry.theautomation.nl
+  - sh ./.drone/deploy.sh
   volumes:
   - name: docker_sock
     path: /var/run/docker.sock
