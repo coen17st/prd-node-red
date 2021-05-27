@@ -15,6 +15,7 @@ steps:
       from_secret: docker-registry-password
 
 - name: build
+  image: docker
   environment:
     USERNAME:
       from_secret: docker-registry-username
