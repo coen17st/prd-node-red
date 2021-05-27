@@ -15,7 +15,7 @@ steps:
     repo: docker-registry.theautomation.nl/coen/prd-node-red
     auto_tag: true
 
-- name: build
+- name: deploy
   image: docker
   environment:
     docker_registry_username:
