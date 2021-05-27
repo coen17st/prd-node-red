@@ -3,16 +3,17 @@ type: docker
 name: default
 
 steps:
+
 - name: publish
   image: plugins/docker
   settings:
-    registry: docker-registry.theautomation.nl
-    repo: docker-registry.theautomation.nl/coen/prd-node-red
-    auto_tag: true
     username:
       from_secret: docker-registry-username
     password:
       from_secret: docker-registry-password
+    registry: docker-registry.theautomation.nl
+    repo: docker-registry.theautomation.nl/coen/prd-node-red
+    auto_tag: true
 
 - name: build
   image: docker
