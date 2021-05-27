@@ -22,7 +22,7 @@ steps:
     docker-registry-password:
       from_secret: docker-registry-password
   commands:
-  - echo $docker-registry-password | docker login --username docker-registry-username --password-stdin https://docker-registry.theautomation.nl
+  - echo $docker-registry-password | docker login --username $docker-registry-username --password-stdin https://docker-registry.theautomation.nl
   - sh ./.drone/deploy.sh
   volumes:
   - name: docker_sock
