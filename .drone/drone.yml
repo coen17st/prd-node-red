@@ -22,8 +22,11 @@ steps:
       from_secret: docker-registry-username
     docker_registry_password:
       from_secret: docker-registry-password
+    repo: ${DRONE_REPO_NAME}
   commands:
   - docker login -u $docker_registry_username -p $docker_registry_password https://docker-registry.theautomation.nl
+  - echo ${DRONE_REPO_NAME}
+  - echo ${repo}
   - sh ./.drone/deploy.sh
   volumes:
   - name: docker_sock
