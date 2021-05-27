@@ -18,12 +18,12 @@ steps:
 - name: build
   image: docker
   environment:
-    USERNAME:
+    docker-registry-username:
       from_secret: docker-registry-username
-    PASSWORD:
+    docker-registry-password:
       from_secret: docker-registry-password
   commands:
-  - docker login -u $USERNAME -p $PASSWORD https://docker-registry.theautomation.nl
+  - docker login -u $docker-registry-username -p $docker-registry-password https://docker-registry.theautomation.nl
   volumes:
   - name: docker_sock
     path: /var/run/docker.sock
