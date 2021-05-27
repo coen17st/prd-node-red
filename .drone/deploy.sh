@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-docker pull docker-registry.theautomation.nl/coen/prd-node-red
-docker run --rm -d \
+docker pull docker-registry.theautomation.nl/coen/prd-node-red \
+&& docker run --rm -d \
 -p 1880:1880 \
 -v $(pwd)/data:/data \
 --network=home-services \
