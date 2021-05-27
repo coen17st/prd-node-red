@@ -17,12 +17,12 @@ steps:
 - name: test
   image: docker
   environment:
-    docker-registry-username:
+    docker_registry_username:
       from_secret: docker-registry-username
-    docker-registry-password:
+    docker_registry_password:
       from_secret: docker-registry-password
   commands:
-  - echo $$docker-registry-password | docker login --username $$docker-registry-username --password-stdin https://docker-registry.theautomation.nl
+  - echo $$docker_registry_password | docker login --username $$docker_registry_username --password-stdin https://docker-registry.theautomation.nl
   - sh ./.drone/deploy.sh
   volumes:
   - name: docker_sock
