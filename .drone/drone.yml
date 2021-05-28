@@ -29,6 +29,25 @@ steps:
   - name: docker_sock
     path: /var/run/docker.sock
 
+- name: notify
+  image: drillster/drone-email
+  settings:
+    from:
+      from_secret: email-address
+    host: smtp.gmail.com
+    username:
+      from_secret: email-address
+    password:
+      from_secret: email-password
+    recipients:
+      - c.stam.mail@gmail.com
+    subject: >
+        [{{ build.status }}]
+        {{ repo.owner }}/{{ repo.name }}
+        ({{ build.branch }} - {{ truncate build.commit 8 }})
+    body:
+      https://git.io/vgvPz
+
 volumes:
 - name: docker_sock
   host:
