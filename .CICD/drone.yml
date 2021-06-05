@@ -1,3 +1,20 @@
+---
+kind: pipeline
+name: validate
+
+steps:
+  - name: lint
+    image: sdesbure/yamllint:latest
+    commands:
+      - yamllint -c ./.yamllint .
+
+  - name: docker-compose
+    image: tmaier/docker-compose:latest
+    commands:
+      - mv prd-node-red-app.env.example prd-node-red-app.env
+      - docker-compose config -q
+
+---
 kind: pipeline
 type: docker
 name: build
