@@ -1,9 +1,8 @@
 kind: pipeline
 type: docker
-name: 
+name: build
 
 steps:
-
 - name: publish
   image: plugins/docker
   settings:
@@ -15,26 +14,60 @@ steps:
     repo: docker-registry.theautomation.nl/coen/prd-node-red
     auto_tag: true
 
-- name: notify
-  image: drillster/drone-email
-  settings:
-    from:
-      from_secret: email-address
-    host: smtp.gmail.com
-    username:
-      from_secret: email-address
-    password:
-      from_secret: email-password
-    recipients:
-      - c.stam.mail@gmail.com
-    subject: >
-        [{{ build.status }}]
-        {{ repo.owner }}/{{ repo.name }}
-        ({{ build.branch }} - {{ truncate build.commit 8 }})
-    body:
-      https://git.io/vgvPz
+---
+kind: pipeline
+type: docker
+name: upgrade
 
-volumes:
-- name: docker_sock
-  host:
-    path: /var/run/docker.sock
+depends_on:
+  - build
+
+steps:
+  - name: git pull
+    image: appleboy/drone-ssh
+    settings:
+      host: docker.stam.lan
+      username: coen
+      password:
+        from_secret: ssh_password
+      port: 22
+      script:
+        - cd /home/coen/docker-home-services/node-red
+        - git pull
+
+  - name: docker compose up
+    image: appleboy/drone-ssh
+    settings:
+      host: docker.stam.lan
+      username: coen
+      password:
+        from_secret: ssh_password
+      port: 22
+      script:
+        - cd /home/coen/docker-home-services/node-red
+        - docker-compose up -d
+
+---
+kind: pipeline
+name: notify
+
+steps:
+  - name: notify
+    image: drillster/drone-email
+    settings:
+      from:
+        from_secret: email-address
+      host: smtp.gmail.com
+      username:
+        from_secret: email-address
+      password:
+        from_secret: email-password
+      recipients:
+        - c.stam.mail@gmail.com
+      subject: >
+          [{{ build.status }}]
+          {{ repo.owner }}/{{ repo.name }}
+          ({{ build.branch }} - {{ truncate build.commit 8 }})
+      body:
+        https://git.io/vgvPz
+
