@@ -51,6 +51,10 @@ steps:
 kind: pipeline
 name: notify
 
+depends_on:
+  - build
+  - upgrade
+
 steps:
   - name: notify
     image: drillster/drone-email
