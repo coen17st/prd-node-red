@@ -1,6 +1,6 @@
 # Node-RED
 
-[![Build Status](https://drone.theautomation.nl/api/badges/theautomation/prd-node-red/status.svg)](https://drone.theautomation.nl/theautomation/prd-node-red)
+[![Build Status](https://drone.theautomation.nl/api/badges/theautomation/node-red/status.svg)](https://drone.theautomation.nl/theautomation/node-red)
 ![GitHub repo size](https://img.shields.io/github/repo-size/coen17st/prd-node-red?logo=Github)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/coen17st/prd-node-red?logo=github)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/coen17st/prd-node-red/main?logo=github)
