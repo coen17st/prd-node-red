@@ -173,7 +173,7 @@
     "config": [
       {
         "property": "name",
-        "value": "aangebeld"
+        "value": "rang_at"
       },
       {
         "property": "device_class",
@@ -188,7 +188,7 @@
         "value": ""
       }
     ],
-    "state": "tijd",
+    "state": "time",
     "stateType": "msg",
     "attributes": [],
     "resend": true,
@@ -198,7 +198,7 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1290,
+    "x": 1310,
     "y": 100,
     "wires": [
       []
@@ -209,7 +209,7 @@
     "type": "template",
     "z": "3637eeb0.d96232",
     "name": "time and message",
-    "field": "tijd",
+    "field": "time",
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
