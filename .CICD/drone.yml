@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: default
+name: 
 
 steps:
 
@@ -14,20 +14,6 @@ steps:
     registry: docker-registry.theautomation.nl
     repo: docker-registry.theautomation.nl/coen/prd-node-red
     auto_tag: true
-
-- name: deploy
-  image: docker
-  environment:
-    docker_registry_username:
-      from_secret: docker-registry-username
-    docker_registry_password:
-      from_secret: docker-registry-password
-  commands:
-  - docker login -u $docker_registry_username -p $docker_registry_password https://docker-registry.theautomation.nl
-  - sh ./.CICD/deploy.sh
-  volumes:
-  - name: docker_sock
-    path: /var/run/docker.sock
 
 - name: notify
   image: drillster/drone-email

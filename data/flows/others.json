@@ -64,7 +64,7 @@
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "num",
-    "x": 155,
+    "x": 160,
     "y": 80,
     "wires": [
       [

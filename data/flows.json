@@ -28024,7 +28024,7 @@
         "outputOnStateChange": false,
         "outputPayload": "",
         "outputPayloadType": "str",
-        "x": 1060,
+        "x": 1080,
         "y": 60,
         "wires": [
             []
@@ -28088,7 +28088,7 @@
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "num",
-        "x": 155,
+        "x": 160,
         "y": 80,
         "wires": [
             [
