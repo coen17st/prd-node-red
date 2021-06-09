@@ -313,7 +313,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
-    "entityId": "light.shellydimmer_keuken",
+    "entityId": "light.shelly_shellydimmer_kitchen",
     "data": "{\"brightness_pct\":45}",
     "dataType": "json",
     "mergecontext": "",
@@ -821,7 +821,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
-    "entityId": "light.shellydimmer_keuken",
+    "entityId": "light.shelly_shellydimmer_kitchen",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
@@ -925,7 +925,7 @@
     "rules": [
       {
         "t": "neq",
-        "v": "light.shellydimmer_keuken",
+        "v": "light.shelly_shellydimmer_kitchen",
         "vt": "str"
       }
     ],

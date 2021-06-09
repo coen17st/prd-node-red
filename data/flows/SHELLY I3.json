@@ -105,7 +105,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "toggle",
-    "entityId": "light.shellydimmer_achtertuin",
+    "entityId": "shellydimmer-backyard-string-lights",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
