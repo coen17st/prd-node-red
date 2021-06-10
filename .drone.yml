@@ -31,7 +31,7 @@ steps:
       password:
         from_secret: docker-registry-password
       registry: docker-registry.theautomation.nl
-      repo: docker-registry.theautomation.nl/coen/prd-node-red
+      repo: docker-registry.theautomation.nl/coen/prd-node-red-app
       auto_tag: true
 
 ---
