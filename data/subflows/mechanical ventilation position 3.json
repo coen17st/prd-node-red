@@ -1,29 +1,29 @@
 [
   {
-    "id": "5e0e3f39.03605",
+    "id": "7d5d30e3.483af",
     "type": "subflow",
-    "name": "Mechanische Ventilatie Stand 3",
+    "name": "mechanical ventilation position 3",
     "info": "",
     "category": "",
     "in": [
       {
-        "x": 80,
+        "x": 120,
         "y": 40,
         "wires": [
           {
-            "id": "e60a9e44.4c8d4"
+            "id": "5d0bbf05.d7d46"
           },
           {
-            "id": "80d3775b.9cb3b8"
+            "id": "5e6d56da.ba8168"
           },
           {
-            "id": "f33707.f17a58f8"
+            "id": "3fbbc9e6.e34176"
           },
           {
-            "id": "c4e08089.bc21"
+            "id": "e02a6904.196348"
           },
           {
-            "id": "36bdaf06.6499"
+            "id": "852a3ce6.60671"
           }
         ]
       }
@@ -33,34 +33,34 @@
     "color": "#DDAA99"
   },
   {
-    "id": "36bdaf06.6499",
+    "id": "852a3ce6.60671",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "switch.mv_schakelaar_1 -> on",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_on",
-    "entityId": "switch.mv_schakelaar_1",
+    "entityId": "switch.ventilatie_sw_01",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 330,
+    "x": 310,
     "y": 200,
     "wires": [
       [
-        "967a57fd.fd6cc8"
+        "df53f44e.69b4a8"
       ]
     ]
   },
   {
-    "id": "967a57fd.fd6cc8",
+    "id": "df53f44e.69b4a8",
     "type": "delay",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "",
     "pauseType": "delay",
     "timeout": "1",
@@ -76,14 +76,14 @@
     "y": 240,
     "wires": [
       [
-        "bb0cf734.12e468"
+        "411369f9.24af88"
       ]
     ]
   },
   {
-    "id": "2e04951e.5876aa",
+    "id": "a1a6bff8.1d0de",
     "type": "delay",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "",
     "pauseType": "delay",
     "timeout": "1",
@@ -99,14 +99,14 @@
     "y": 280,
     "wires": [
       [
-        "20779cfb.c33ea4"
+        "68851ce9.d302f4"
       ]
     ]
   },
   {
-    "id": "3593777.4bfa088",
+    "id": "92c787d8.d31ed8",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "input_boolean.mechanische_ventilatie_stand_3 -> on",
     "server": "4ba92433.2478cc",
     "version": 1,
@@ -120,16 +120,16 @@
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 840,
+    "x": 820,
     "y": 40,
     "wires": [
       []
     ]
   },
   {
-    "id": "80d3775b.9cb3b8",
+    "id": "5e6d56da.ba8168",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "input_boolean.mechanische_ventilatie_stand_1 -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
@@ -143,16 +143,16 @@
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 400,
+    "x": 380,
     "y": 80,
     "wires": [
       []
     ]
   },
   {
-    "id": "f33707.f17a58f8",
+    "id": "3fbbc9e6.e34176",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
@@ -166,16 +166,16 @@
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 400,
+    "x": 380,
     "y": 120,
     "wires": [
       []
     ]
   },
   {
-    "id": "c4e08089.bc21",
+    "id": "e02a6904.196348",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
@@ -189,16 +189,16 @@
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 400,
+    "x": 380,
     "y": 160,
     "wires": [
       []
     ]
   },
   {
-    "id": "e60a9e44.4c8d4",
+    "id": "5d0bbf05.d7d46",
     "type": "api-current-state",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "input_boolean.mechanische_ventilatie_stand_3 -> off?",
     "server": "4ba92433.2478cc",
     "version": 1,
@@ -214,58 +214,58 @@
     "entity_location": "data",
     "override_data": "msg",
     "blockInputOverrides": false,
-    "x": 400,
+    "x": 380,
     "y": 40,
     "wires": [
       [
-        "3593777.4bfa088"
+        "92c787d8.d31ed8"
       ],
       []
     ]
   },
   {
-    "id": "bb0cf734.12e468",
+    "id": "411369f9.24af88",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "switch.mv_schakelaar_2 -> on",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_on",
-    "entityId": "switch.mv_schakelaar_2",
+    "entityId": "switch.ventilatie_sw_02",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 330,
+    "x": 310,
     "y": 240,
     "wires": [
       [
-        "2e04951e.5876aa"
+        "a1a6bff8.1d0de"
       ]
     ]
   },
   {
-    "id": "20779cfb.c33ea4",
+    "id": "68851ce9.d302f4",
     "type": "api-call-service",
-    "z": "5e0e3f39.03605",
+    "z": "7d5d30e3.483af",
     "name": "switch.mv_schakelaar_3 -> on",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_on",
-    "entityId": "switch.mv_schakelaar_3",
+    "entityId": "switch.ventilatie_sw_03",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 330,
+    "x": 310,
     "y": 280,
     "wires": [
       []

@@ -1,29 +1,29 @@
 [
   {
-    "id": "35e4a30.4c5185e",
+    "id": "db575387.da1ff",
     "type": "subflow",
-    "name": "Mechanische Ventilatie Stand Uit",
+    "name": "mechanical ventilation position 1",
     "info": "",
     "category": "",
     "in": [
       {
-        "x": 80,
+        "x": 120,
         "y": 40,
         "wires": [
           {
-            "id": "1cc48dd6.c899c2"
+            "id": "ceffa1ee.2d09d"
           },
           {
-            "id": "799dc191.423d6"
+            "id": "1053361f.843cba"
           },
           {
-            "id": "a96b3998.bb2398"
+            "id": "1f71bb10.76c195"
           },
           {
-            "id": "12d7d48e.7ae3cb"
+            "id": "27700251.7da19e"
           },
           {
-            "id": "65418e3a.bbc4e"
+            "id": "97f0a6a8.e137c8"
           }
         ]
       }
@@ -33,174 +33,105 @@
     "color": "#DDAA99"
   },
   {
-    "id": "ed5a76ab.3f9b08",
+    "id": "ac320016.9efde",
     "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
-    "name": "switch.mv_schakelaar_1 -> off",
+    "z": "db575387.da1ff",
+    "name": "switch.mv_schakelaar_1 -> on",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
-    "service": "turn_off",
-    "entityId": "switch.mv_schakelaar_1",
+    "service": "turn_on",
+    "entityId": "switch.ventilatie_sw_01",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 330,
+    "x": 310,
     "y": 280,
     "wires": [
       []
     ]
   },
   {
-    "id": "b94b55d7.486ac8",
+    "id": "6ffe537f.a95abc",
     "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
+    "z": "db575387.da1ff",
     "name": "switch.mv_schakelaar_2 -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_off",
-    "entityId": "switch.mv_schakelaar_2",
+    "entityId": "switch.ventilatie_sw_02",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 330,
+    "x": 310,
     "y": 240,
     "wires": [
       [
-        "d04a84e8.d28138"
+        "4403bd5b.d4d064"
       ]
     ]
   },
   {
-    "id": "12d7d48e.7ae3cb",
+    "id": "97f0a6a8.e137c8",
     "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
+    "z": "db575387.da1ff",
     "name": "switch.mv_schakelaar_3 -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_off",
-    "entityId": "switch.mv_schakelaar_3",
+    "entityId": "switch.ventilatie_sw_03",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 330,
+    "x": 310,
     "y": 200,
     "wires": [
       [
-        "e423686e.578fc8"
+        "de5876a9.6a0668"
       ]
     ]
   },
   {
-    "id": "e423686e.578fc8",
-    "type": "delay",
-    "z": "35e4a30.4c5185e",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "1",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "1",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": false,
-    "x": 100,
-    "y": 240,
-    "wires": [
-      [
-        "b94b55d7.486ac8"
-      ]
-    ]
-  },
-  {
-    "id": "d04a84e8.d28138",
-    "type": "delay",
-    "z": "35e4a30.4c5185e",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "1",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "1",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": false,
-    "x": 100,
-    "y": 280,
-    "wires": [
-      [
-        "ed5a76ab.3f9b08"
-      ]
-    ]
-  },
-  {
-    "id": "5adada17.055c14",
+    "id": "88e9d8e2.45b848",
     "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
-    "name": "input_boolean.mechanische_ventilatie_stand_uit -> on",
+    "z": "db575387.da1ff",
+    "name": "input_boolean.mechanische_ventilatie_stand_1 -> on",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_1",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 840,
+    "x": 800,
     "y": 40,
     "wires": [
       []
     ]
   },
   {
-    "id": "1cc48dd6.c899c2",
+    "id": "1053361f.843cba",
     "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
-    "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
-    "server": "4ba92433.2478cc",
-    "version": 1,
-    "debugenabled": false,
-    "service_domain": "input_boolean",
-    "service": "turn_off",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_3",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
-    "mustacheAltTags": false,
-    "x": 400,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "799dc191.423d6",
-    "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
+    "z": "db575387.da1ff",
     "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
@@ -214,40 +145,63 @@
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 400,
-    "y": 120,
+    "x": 380,
+    "y": 80,
     "wires": [
       []
     ]
   },
   {
-    "id": "a96b3998.bb2398",
+    "id": "1f71bb10.76c195",
     "type": "api-call-service",
-    "z": "35e4a30.4c5185e",
-    "name": "input_boolean.mechanische_ventilatie_stand_1 -> off",
+    "z": "db575387.da1ff",
+    "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_1",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_3",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 400,
+    "x": 380,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "27700251.7da19e",
+    "type": "api-call-service",
+    "z": "db575387.da1ff",
+    "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_off",
+    "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 380,
     "y": 160,
     "wires": [
       []
     ]
   },
   {
-    "id": "65418e3a.bbc4e",
+    "id": "ceffa1ee.2d09d",
     "type": "api-current-state",
-    "z": "35e4a30.4c5185e",
-    "name": "input_boolean.mechanische_ventilatie_stand_uit -> off?",
+    "z": "db575387.da1ff",
+    "name": "input_boolean.mechanische_ventilatie_stand_1 -> off?",
     "server": "4ba92433.2478cc",
     "version": 1,
     "outputs": 2,
@@ -255,20 +209,66 @@
     "halt_if_type": "str",
     "halt_if_compare": "is",
     "override_topic": false,
-    "entity_id": "input_boolean.mechanische_ventilatie_stand_uit",
+    "entity_id": "input_boolean.mechanische_ventilatie_stand_1",
     "state_type": "str",
     "state_location": "payload",
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
     "blockInputOverrides": false,
-    "x": 410,
+    "x": 380,
     "y": 40,
     "wires": [
       [
-        "5adada17.055c14"
+        "88e9d8e2.45b848"
       ],
       []
+    ]
+  },
+  {
+    "id": "4403bd5b.d4d064",
+    "type": "delay",
+    "z": "db575387.da1ff",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 100,
+    "y": 280,
+    "wires": [
+      [
+        "ac320016.9efde"
+      ]
+    ]
+  },
+  {
+    "id": "de5876a9.6a0668",
+    "type": "delay",
+    "z": "db575387.da1ff",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 100,
+    "y": 240,
+    "wires": [
+      [
+        "6ffe537f.a95abc"
+      ]
     ]
   }
 ]
