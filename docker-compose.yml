@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   prd-node-red-app:
-    image: docker-registry.theautomation.nl/coen/prd-node-red-app
+    image: docker-registry.theautomation.nl/coen/prd-node-red-app:latest
     container_name: prd-node-red-app
     restart: unless-stopped
     env_file: prd-node-red-app.env

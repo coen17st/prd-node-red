@@ -279,9 +279,9 @@
     "id": "71ae7bb3.7f9984",
     "type": "comment",
     "z": "4e909abe.0b62e4",
-    "name": "VENTILATIE UIT",
+    "name": "MECHANICAL VENTILATION POSITION 0",
     "info": "",
-    "x": 360,
+    "x": 440,
     "y": 40,
     "wires": []
   },
@@ -3378,6 +3378,7 @@
     "type": "subflow:ae97b8c4.cadf68",
     "z": "4e909abe.0b62e4",
     "name": "",
+    "env": [],
     "x": 910,
     "y": 2560,
     "wires": []
