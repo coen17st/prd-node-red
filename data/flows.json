@@ -7,6 +7,20 @@
         "info": ""
     },
     {
+        "id": "7564ec02.f4fd84",
+        "type": "tab",
+        "label": "messages",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f180ab88.925788",
+        "type": "tab",
+        "label": "shelly i3",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "3637eeb0.d96232",
         "type": "tab",
         "label": "doorbell",
@@ -45,20 +59,6 @@
         "id": "cc5e35c.fdf3fc8",
         "type": "tab",
         "label": "LISE",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "7564ec02.f4fd84",
-        "type": "tab",
-        "label": "MESSAGES SENSORS",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "f180ab88.925788",
-        "type": "tab",
-        "label": "SHELLY I3",
         "disabled": false,
         "info": ""
     },
@@ -144,23 +144,23 @@
         "category": "",
         "in": [
             {
-                "x": 120,
-                "y": 40,
+                "x": 60,
+                "y": 80,
                 "wires": [
                     {
-                        "id": "ceffa1ee.2d09d"
+                        "id": "7d39d435.8e108c"
                     },
                     {
-                        "id": "1053361f.843cba"
+                        "id": "22d68758.286778"
                     },
                     {
-                        "id": "1f71bb10.76c195"
+                        "id": "f9710a73.bad7a8"
                     },
                     {
-                        "id": "27700251.7da19e"
+                        "id": "9ecd488b.368338"
                     },
                     {
-                        "id": "97f0a6a8.e137c8"
+                        "id": "8b040be5.93ed48"
                     }
                 ]
             }
@@ -177,23 +177,23 @@
         "category": "",
         "in": [
             {
-                "x": 120,
-                "y": 40,
+                "x": 60,
+                "y": 80,
                 "wires": [
                     {
-                        "id": "241932bf.d7a32e"
+                        "id": "8a9d5b61.87e578"
                     },
                     {
-                        "id": "97c00f7.c2a6cf"
+                        "id": "87d1779f.504ce8"
                     },
                     {
-                        "id": "deab0ff1.e8cdc"
+                        "id": "f2672c4e.79f33"
                     },
                     {
-                        "id": "a5cfdee4.8ba49"
+                        "id": "c8732b7b.c22168"
                     },
                     {
-                        "id": "62621d93.e7ad14"
+                        "id": "208c6617.a5188a"
                     }
                 ]
             }
@@ -210,23 +210,23 @@
         "category": "",
         "in": [
             {
-                "x": 120,
-                "y": 40,
+                "x": 60,
+                "y": 80,
                 "wires": [
                     {
-                        "id": "5d0bbf05.d7d46"
+                        "id": "54b5ba76.827954"
                     },
                     {
-                        "id": "5e6d56da.ba8168"
+                        "id": "ff1ccbdb.9906b8"
                     },
                     {
-                        "id": "3fbbc9e6.e34176"
+                        "id": "76af25f8.0585fc"
                     },
                     {
-                        "id": "e02a6904.196348"
+                        "id": "18f13f23.6c3a51"
                     },
                     {
-                        "id": "852a3ce6.60671"
+                        "id": "30d47f9.e06228"
                     }
                 ]
             }
@@ -243,8 +243,8 @@
         "category": "",
         "in": [
             {
-                "x": 120,
-                "y": 40,
+                "x": 60,
+                "y": 80,
                 "wires": [
                     {
                         "id": "6ee42911.2e8038"
@@ -16098,190 +16098,6 @@
         ]
     },
     {
-        "id": "f4cd0a06.8ab548",
-        "type": "api-call-service",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "naar oude staat",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "climate",
-        "service": "set_hvac_mode",
-        "entityId": "climate.woonkamer",
-        "data": "{\"hvac_mode\":\"{{data.event.old_state.state}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 960,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "607f1f9.7d1c2e",
-        "type": "trigger-state",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "state climate woonkamer",
-        "server": "4ba92433.2478cc",
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityid": "climate.woonkamer",
-        "entityidfiltertype": "exact",
-        "debugenabled": false,
-        "constraints": [
-            {
-                "targetType": "this_entity",
-                "targetValue": "",
-                "propertyType": "current_state",
-                "comparatorType": "is_not",
-                "comparatorValueDatatype": "str",
-                "comparatorValue": "",
-                "propertyValue": "new_state.state"
-            }
-        ],
-        "outputs": 2,
-        "customoutputs": [],
-        "outputinitially": false,
-        "state_type": "str",
-        "x": 150,
-        "y": 260,
-        "wires": [
-            [
-                "ce3be7da.9aba38"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "78b98915.6d5d88",
-        "type": "switch",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "",
-        "property": "data.event.old_state.state",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "heat",
-                "vt": "str"
-            },
-            {
-                "t": "neq",
-                "v": "heat",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 810,
-        "y": 260,
-        "wires": [
-            [
-                "5bb6044a.b4d1bc"
-            ],
-            [
-                "f4cd0a06.8ab548"
-            ]
-        ]
-    },
-    {
-        "id": "5bb6044a.b4d1bc",
-        "type": "api-call-service",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "naar oude staat heat",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "climate",
-        "service": "set_temperature",
-        "entityId": "climate.woonkamer",
-        "data": "{\"hvac_mode\":\"{{data.event.old_state.state}}\",\"temperature\":\"{{data.event.old_state.attributes.temperature}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 980,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ce3be7da.9aba38",
-        "type": "api-current-state",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "kinderbeveiliging verwarming is aan",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.kinderbeveiliging_verwarming",
-        "state_type": "str",
-        "state_location": "kinderbeveiliging_verwarming_payload",
-        "override_payload": "msg",
-        "entity_location": "kinderbeveiliging_verwarming_data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 420,
-        "y": 260,
-        "wires": [
-            [
-                "879fb424.9c9ac8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "879fb424.9c9ac8",
-        "type": "delay",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "2",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "x": 660,
-        "y": 260,
-        "wires": [
-            [
-                "78b98915.6d5d88"
-            ]
-        ]
-    },
-    {
-        "id": "156764ba.70bffb",
-        "type": "comment",
-        "z": "cc5e35c.fdf3fc8",
-        "name": "VERWARMING KINDERBEVEILIGING",
-        "info": "",
-        "x": 190,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "c755c2ab.9360d",
         "type": "comment",
         "z": "cc5e35c.fdf3fc8",
@@ -16696,7 +16512,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 520,
+        "y": 540,
         "wires": [
             [
                 "bd9414b6.e33db8"
@@ -16713,8 +16529,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
-        "x": 580,
-        "y": 60,
+        "x": 440,
+        "y": 40,
         "wires": [
             [
                 "de8e98e8.de6cb8"
@@ -16728,15 +16544,15 @@
         "name": "http response",
         "statusCode": "",
         "headers": {},
-        "x": 760,
-        "y": 60,
+        "x": 600,
+        "y": 40,
         "wires": []
     },
     {
         "id": "23adc282.4b50fe",
         "type": "api-call-service",
         "z": "f180ab88.925788",
-        "name": "keuken_kinderbeveiliging toggle",
+        "name": "toggle childlock kitchen switch",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
@@ -16749,12 +16565,10 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 650,
-        "y": 640,
+        "x": 810,
+        "y": 660,
         "wires": [
-            [
-                "17bf99f9.487976"
-            ]
+            []
         ]
     },
     {
@@ -16785,14 +16599,14 @@
         "debugenabled": false,
         "service_domain": "light",
         "service": "toggle",
-        "entityId": "shellydimmer-backyard-string-lights",
+        "entityId": "light.shelly_shellydimmer_backyard_string_lights",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 620,
+        "x": 780,
         "y": 120,
         "wires": [
             []
@@ -16878,7 +16692,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 180,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "a682fb38.5bddb8",
@@ -16896,7 +16710,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 640,
+        "y": 660,
         "wires": [
             [
                 "bd9414b6.e33db8",
@@ -16914,7 +16728,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 700,
+        "y": 720,
         "wires": [
             [
                 "bd9414b6.e33db8"
@@ -16931,11 +16745,10 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 190,
-        "y": 580,
+        "y": 600,
         "wires": [
             [
-                "bd9414b6.e33db8",
-                "e340f3cf.9a876"
+                "bd9414b6.e33db8"
             ]
         ]
     },
@@ -16949,7 +16762,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 180,
-        "y": 760,
+        "y": 780,
         "wires": [
             [
                 "bd9414b6.e33db8"
@@ -16966,7 +16779,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 180,
-        "y": 820,
+        "y": 840,
         "wires": [
             [
                 "bd9414b6.e33db8"
@@ -16990,7 +16803,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 630,
+        "x": 790,
         "y": 300,
         "wires": [
             []
@@ -17015,8 +16828,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 610,
-        "y": 420,
+        "x": 550,
+        "y": 440,
         "wires": [
             [
                 "c3116dd.2ddc69"
@@ -17030,7 +16843,7 @@
         "id": "c3116dd.2ddc69",
         "type": "api-call-service",
         "z": "f180ab88.925788",
-        "name": "",
+        "name": "select radio station",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
@@ -17043,8 +16856,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 990,
-        "y": 420,
+        "x": 770,
+        "y": 440,
         "wires": [
             []
         ]
@@ -17053,7 +16866,7 @@
         "id": "8cf0345.f0a8ec8",
         "type": "api-call-service",
         "z": "f180ab88.925788",
-        "name": "",
+        "name": "select radio station",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
@@ -17066,165 +16879,11 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 990,
+        "x": 770,
         "y": 480,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "e340f3cf.9a876",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "kinderbeveiliging_verwarming toggle",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "toggle",
-        "entityId": "input_boolean.kinderbeveiliging_verwarming",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 670,
-        "y": 580,
-        "wires": [
-            [
-                "ab04dcaa.5482b"
-            ]
-        ]
-    },
-    {
-        "id": "17bf99f9.487976",
-        "type": "api-current-state",
-        "z": "f180ab88.925788",
-        "name": "keuken_kinderbeveiliging aan",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "switch.relay_keuken_kinderbeveiliging",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 970,
-        "y": 640,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "adaa5817.b20a38",
-        "type": "change",
-        "z": "f180ab88.925788",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "http://192.168.1.20:8123/local/audio/kinderbeveiliging_verwarming_aan.mp3",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1210,
-        "y": 560,
-        "wires": [
-            [
-                "b1ba488a.d8f738"
-            ]
-        ]
-    },
-    {
-        "id": "5251389d.2ffb08",
-        "type": "change",
-        "z": "f180ab88.925788",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "http://192.168.1.20:8123/local/audio/kinderbeveiliging_verwarming_uit.mp3",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1210,
-        "y": 600,
-        "wires": [
-            [
-                "b1ba488a.d8f738"
-            ]
-        ]
-    },
-    {
-        "id": "ab04dcaa.5482b",
-        "type": "api-current-state",
-        "z": "f180ab88.925788",
-        "name": "kinderbeveiliging_verwarming aan",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.kinderbeveiliging_verwarming",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 980,
-        "y": 580,
-        "wires": [
-            [
-                "adaa5817.b20a38"
-            ],
-            [
-                "5251389d.2ffb08"
-            ]
-        ]
-    },
-    {
-        "id": "b1ba488a.d8f738",
-        "type": "cast-to-client",
-        "z": "f180ab88.925788",
-        "name": "",
-        "url": "",
-        "contentType": "",
-        "message": "",
-        "language": "en-us",
-        "ip": "192.168.1.22",
-        "port": "",
-        "volume": "50",
-        "x": 1590,
-        "y": 400,
-        "wires": [
-            []
-        ],
-        "icon": "node-red-contrib-cast/google-home1.svg"
     },
     {
         "id": "a8a674f.b7a5f88",
@@ -17245,7 +16904,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 610,
+        "x": 550,
         "y": 360,
         "wires": [
             [
@@ -17273,8 +16932,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 960,
-        "y": 300,
+        "x": 780,
+        "y": 360,
         "wires": [
             []
         ]
@@ -17296,8 +16955,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 960,
-        "y": 360,
+        "x": 780,
+        "y": 400,
         "wires": [
             []
         ]
@@ -21523,261 +21182,6 @@
         ]
     },
     {
-        "id": "b86cd7ba.5609d8",
-        "type": "ha-get-entities",
-        "z": "5ffb014.822e1",
-        "server": "4ba92433.2478cc",
-        "name": "",
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "climate.",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "array",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 390,
-        "y": 2660,
-        "wires": [
-            [
-                "f25717fe.361df8"
-            ]
-        ]
-    },
-    {
-        "id": "f25717fe.361df8",
-        "type": "split",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 530,
-        "y": 2660,
-        "wires": [
-            [
-                "c6509f19.10a45"
-            ]
-        ]
-    },
-    {
-        "id": "c6509f19.10a45",
-        "type": "switch",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "property": "payload.entity_id",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "kelder",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 650,
-        "y": 2660,
-        "wires": [
-            [],
-            [
-                "9174d56e.b34158"
-            ]
-        ]
-    },
-    {
-        "id": "9174d56e.b34158",
-        "type": "change",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.attributes.current_temperature",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 800,
-        "y": 2660,
-        "wires": [
-            [
-                "9a07273b.07aa28"
-            ]
-        ]
-    },
-    {
-        "id": "9a07273b.07aa28",
-        "type": "join",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 950,
-        "y": 2660,
-        "wires": [
-            [
-                "43fd74f0.b1cefc"
-            ]
-        ]
-    },
-    {
-        "id": "3600227b.b1ab3e",
-        "type": "api-current-state",
-        "z": "5ffb014.822e1",
-        "name": "temperatuur buiten",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "payload",
-        "halt_if_type": "msg",
-        "halt_if_compare": "lt",
-        "override_topic": false,
-        "entity_id": "sensor.bme280_temperature_weerstation",
-        "state_type": "num",
-        "state_location": "buiten_temp",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": true,
-        "x": 1370,
-        "y": 2660,
-        "wires": [
-            [
-                "e1ada572.a21818"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "6eec4986.674948",
-        "type": "inject",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "props": [],
-        "repeat": "7200",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 90,
-        "y": 2660,
-        "wires": [
-            [
-                "80c1ad85.6305c"
-            ]
-        ]
-    },
-    {
-        "id": "e1ada572.a21818",
-        "type": "template",
-        "z": "5ffb014.822e1",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Open ramen en deuren om het in huis af te laten koelen, binnen is de gemiddelde temperatuur {{payload}} Buiten is de temperatuur {{buiten_temp}}.",
-        "output": "str",
-        "x": 1870,
-        "y": 2660,
-        "wires": [
-            [
-                "87307c11.5c7e7",
-                "f13b7547.ff3ce8"
-            ]
-        ]
-    },
-    {
-        "id": "87307c11.5c7e7",
-        "type": "api-call-service",
-        "z": "5ffb014.822e1",
-        "name": "In APP Notify",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "persistent_notification",
-        "service": "create",
-        "entityId": "",
-        "data": "{\"message\":\"{{message}}\",\"title\":\"Ventilatie\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 2010,
-        "y": 2660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c5801346.76728",
-        "type": "switch",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "23",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1210,
-        "y": 2660,
-        "wires": [
-            [
-                "3600227b.b1ab3e"
-            ]
-        ]
-    },
-    {
-        "id": "80dc638b.bb233",
-        "type": "comment",
-        "z": "5ffb014.822e1",
-        "name": "VENTILEREN BUITEN MINDER WARM DAN BINNEN",
-        "info": "",
-        "x": 220,
-        "y": 2600,
-        "wires": []
-    },
-    {
         "id": "301cd660.d213aa",
         "type": "comment",
         "z": "5ffb014.822e1",
@@ -21936,45 +21340,6 @@
         ]
     },
     {
-        "id": "43fd74f0.b1cefc",
-        "type": "calculator",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "inputMsgField": "payload",
-        "outputMsgField": "payload",
-        "operation": "avg",
-        "constant": "",
-        "round": true,
-        "decimals": "1",
-        "x": 1080,
-        "y": 2660,
-        "wires": [
-            [
-                "c5801346.76728"
-            ]
-        ]
-    },
-    {
-        "id": "80c1ad85.6305c",
-        "type": "time-range-switch",
-        "z": "5ffb014.822e1",
-        "name": "",
-        "lat": "52.0245",
-        "lon": "5.66701",
-        "startTime": "06:00",
-        "endTime": "00:00",
-        "startOffset": 0,
-        "endOffset": "0",
-        "x": 230,
-        "y": 2660,
-        "wires": [
-            [
-                "b86cd7ba.5609d8"
-            ],
-            []
-        ]
-    },
-    {
         "id": "8ecc61ea.7dbcc",
         "type": "stoptimer",
         "z": "5ffb014.822e1",
@@ -22029,38 +21394,10 @@
         ]
     },
     {
-        "id": "975e17d2.ec2a18",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Mechanische Ventilatie Aan?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_uit",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_stand_uit",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1180,
-        "y": 120,
-        "wires": [
-            [
-                "b4545ced.b03a1"
-            ],
-            []
-        ]
-    },
-    {
         "id": "a0fea0e8.d9a66",
         "type": "server-state-changed",
         "z": "4e909abe.0b62e4",
-        "name": "Basement Heating Power > 5%",
+        "name": "state basement heating > 5",
         "server": "4ba92433.2478cc",
         "version": 1,
         "exposeToHomeAssistant": false,
@@ -22091,11 +21428,11 @@
         "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
-        "x": 415,
+        "x": 395,
         "y": 300,
         "wires": [
             [
-                "fbaddc0f.b0ebf"
+                "3c8358ad.4658e8"
             ],
             []
         ]
@@ -22119,11 +21456,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 755,
+        "x": 760,
         "y": 120,
         "wires": [
             [
-                "975e17d2.ec2a18"
+                "14608198.f98b5e"
             ],
             []
         ]
@@ -22147,39 +21484,11 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 745,
+        "x": 750,
         "y": 180,
         "wires": [
             [
-                "28272bb7.ff3724"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "28272bb7.ff3724",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Mechanische Ventilatie Aan?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_uit",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_stand_uit",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1180,
-        "y": 180,
-        "wires": [
-            [
-                "16093b48.6b9365"
+                "d2804939.6f48f8"
             ],
             []
         ]
@@ -22207,63 +21516,7 @@
         "y": 240,
         "wires": [
             [
-                "49267e1a.e50b1"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "49267e1a.e50b1",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Mechanische Ventilatie Aan?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_uit",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_stand_uit",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1180,
-        "y": 240,
-        "wires": [
-            [
-                "ddfcb8ff.652038"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "fbaddc0f.b0ebf",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Mechanische Ventilatie Aan?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_uit",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_stand_uit",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1180,
-        "y": 300,
-        "wires": [
-            [
-                "c014ac18.02801"
+                "b8424afd.8d7fe8"
             ],
             []
         ]
@@ -22325,10 +21578,6 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "900",
@@ -22411,7 +21660,7 @@
         "id": "eaba4c18.04007",
         "type": "api-current-state",
         "z": "4e909abe.0b62e4",
-        "name": "dewpoint living room ",
+        "name": "state dewpoint living room ",
         "server": "4ba92433.2478cc",
         "version": 1,
         "outputs": 1,
@@ -22421,12 +21670,12 @@
         "override_topic": false,
         "entity_id": "sensor.living_room_dewpoint",
         "state_type": "num",
-        "state_location": "sensor.living_room_dewpoint",
+        "state_location": "living_room_dewpoint",
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 385,
+        "x": 395,
         "y": 120,
         "wires": [
             [
@@ -22438,7 +21687,7 @@
         "id": "476a9b5a.95d894",
         "type": "api-current-state",
         "z": "4e909abe.0b62e4",
-        "name": "dewpoint master bedroom ",
+        "name": "state dewpoint master bedroom ",
         "server": "4ba92433.2478cc",
         "version": 1,
         "outputs": 1,
@@ -22453,7 +21702,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 395,
+        "x": 415,
         "y": 180,
         "wires": [
             [
@@ -22465,7 +21714,7 @@
         "id": "4abb03cf.8c49ec",
         "type": "api-current-state",
         "z": "4e909abe.0b62e4",
-        "name": "absolute humidity living room",
+        "name": "state absolute humidity living room",
         "server": "4ba92433.2478cc",
         "version": 1,
         "outputs": 1,
@@ -22475,12 +21724,12 @@
         "override_topic": false,
         "entity_id": "sensor.living_room_absolutehumidity",
         "state_type": "str",
-        "state_location": "sensor.living_room_absolutehumidity",
+        "state_location": "living_room_absolutehumidity",
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 405,
+        "x": 425,
         "y": 240,
         "wires": [
             [
@@ -22955,7 +22204,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 490,
+        "x": 500,
         "y": 2100,
         "wires": [
             [
@@ -23010,7 +22259,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 410,
+        "x": 430,
         "y": 2360,
         "wires": [
             [
@@ -23340,122 +22589,6 @@
         ]
     },
     {
-        "id": "b4545ced.b03a1",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom On?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1400,
-        "y": 120,
-        "wires": [
-            [
-                "758d600b.6ef7e",
-                "f420d671.9f8c38"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "16093b48.6b9365",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom On?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1400,
-        "y": 180,
-        "wires": [
-            [
-                "8dbca4c5.2ac818",
-                "f420d671.9f8c38"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "ddfcb8ff.652038",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom On?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1400,
-        "y": 240,
-        "wires": [
-            [
-                "11ad51d4.2824ee",
-                "f420d671.9f8c38"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "c014ac18.02801",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom On?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1400,
-        "y": 300,
-        "wires": [
-            [
-                "ca6f3cad.32a02",
-                "f420d671.9f8c38"
-            ],
-            []
-        ]
-    },
-    {
         "id": "55ffc090.d9b5b",
         "type": "comment",
         "z": "4e909abe.0b62e4",
@@ -23466,122 +22599,10 @@
         "wires": []
     },
     {
-        "id": "2040576c.36a1b8",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom Off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 1380,
-        "wires": [
-            [
-                "6cafbdf0.79e334"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "dad7075e.f67dd8",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom Off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 1440,
-        "wires": [
-            [
-                "bcfd6b19.bb0078"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "80aec4f4.f324a8",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom Off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 1500,
-        "wires": [
-            [
-                "c221d825.24abc8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "6690987a.6c5cf8",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "Autonoom Off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 1560,
-        "wires": [
-            [
-                "b4b83795.14bfa8"
-            ],
-            []
-        ]
-    },
-    {
         "id": "7fcc0134.64917",
         "type": "server-state-changed",
         "z": "4e909abe.0b62e4",
-        "name": "Stand 1",
+        "name": "state mechanical ventilation position 1 on",
         "server": "4ba92433.2478cc",
         "version": 1,
         "exposeToHomeAssistant": false,
@@ -23595,7 +22616,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_1",
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_1",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
@@ -23612,143 +22633,11 @@
         "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
-        "x": 210,
+        "x": 320,
         "y": 1380,
         "wires": [
             [
-                "2040576c.36a1b8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "bde1f349.bceb7",
-        "type": "server-state-changed",
-        "z": "4e909abe.0b62e4",
-        "name": "Stand 2",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "x": 210,
-        "y": 1440,
-        "wires": [
-            [
-                "dad7075e.f67dd8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "37c5b5ec.98879a",
-        "type": "server-state-changed",
-        "z": "4e909abe.0b62e4",
-        "name": "Stand 3",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_3",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "x": 210,
-        "y": 1500,
-        "wires": [
-            [
-                "80aec4f4.f324a8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "ac771a4c.f9bcc8",
-        "type": "server-state-changed",
-        "z": "4e909abe.0b62e4",
-        "name": "Stand Uit",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_uit",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "x": 220,
-        "y": 1560,
-        "wires": [
-            [
-                "6690987a.6c5cf8"
+                "9e8a7cf7.88d51"
             ],
             []
         ]
@@ -23975,82 +22864,6 @@
         ]
     },
     {
-        "id": "758d600b.6ef7e",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de basement. \\n \\nTemperatuur koudste oppervlakte in de basement is {{sensor.basementmuur_temperature_offset}} ℃ \\nDauwpunt van de lucht in de living_room is {{sensor.living_room_dewpoint}} ℃ ",
-        "output": "str",
-        "x": 1620,
-        "y": 120,
-        "wires": [
-            [
-                "8373567d.35b008"
-            ]
-        ]
-    },
-    {
-        "id": "8dbca4c5.2ac818",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de master_bedrooms condenseert tegen de koudste oppervlakte in de basement. \\n \\nTemperatuur koudste oppervlakte in de basement is {{sensor.basementmuur_temperature_offset}} ℃ \\nDauwpunt van de lucht in de master_bedrooms is {{sensor.master_bedroom_dewpoint}} ℃   ",
-        "output": "str",
-        "x": 1620,
-        "y": 180,
-        "wires": [
-            [
-                "8373567d.35b008"
-            ]
-        ]
-    },
-    {
-        "id": "11ad51d4.2824ee",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de living_room is hoger dan in de basement. \\n \\nAbsolute vochtinhoud in de living_room is {{sensor.living_room_absolutehumidity}} g/m³ \\nAbsolute vochtinhoud in de basement is {{sensor.basement_absolutehumidity}} g/m³",
-        "output": "str",
-        "x": 1620,
-        "y": 240,
-        "wires": [
-            [
-                "8373567d.35b008"
-            ]
-        ]
-    },
-    {
-        "id": "ca6f3cad.32a02",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de basement staat aan. \\n \\nbasement Heating Power is {{payload}}%",
-        "output": "str",
-        "x": 1620,
-        "y": 300,
-        "wires": [
-            [
-                "8373567d.35b008"
-            ]
-        ]
-    },
-    {
         "id": "8444e2bf.897f4",
         "type": "template",
         "z": "4e909abe.0b62e4",
@@ -24104,82 +22917,6 @@
         "wires": [
             [
                 "945f1eb0.4641d"
-            ]
-        ]
-    },
-    {
-        "id": "6cafbdf0.79e334",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische Ventilatie stand 1 is handmatig ingeschakeld.",
-        "output": "str",
-        "x": 1420,
-        "y": 1360,
-        "wires": [
-            [
-                "17c6b345.bfd52d"
-            ]
-        ]
-    },
-    {
-        "id": "bcfd6b19.bb0078",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische Ventilatie stand 2 is handmatig ingeschakeld.",
-        "output": "str",
-        "x": 1420,
-        "y": 1420,
-        "wires": [
-            [
-                "17c6b345.bfd52d"
-            ]
-        ]
-    },
-    {
-        "id": "c221d825.24abc8",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische Ventilatie stand 3 is handmatig ingeschakeld.",
-        "output": "str",
-        "x": 1420,
-        "y": 1480,
-        "wires": [
-            [
-                "17c6b345.bfd52d"
-            ]
-        ]
-    },
-    {
-        "id": "b4b83795.14bfa8",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische Ventilatie is handmatig uitgeschakeld.",
-        "output": "str",
-        "x": 1420,
-        "y": 1540,
-        "wires": [
-            [
-                "17c6b345.bfd52d"
             ]
         ]
     },
@@ -24306,8 +23043,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1880,
-        "y": 220,
+        "x": 1920,
+        "y": 200,
         "wires": [
             [
                 "9a6df146.3a1aa"
@@ -24451,9 +23188,9 @@
         "id": "fa3a7ffd.4d80a",
         "type": "comment",
         "z": "4e909abe.0b62e4",
-        "name": "INPUT BOOLEAN MECHANISCHE VENTILATIE STANDEN",
+        "name": "INPUT BOOLEAN MECHANICAL VENTILATION",
         "info": "",
-        "x": 500,
+        "x": 460,
         "y": 2500,
         "wires": []
     },
@@ -24461,7 +23198,7 @@
         "id": "79e24215.9d1cbc",
         "type": "server-state-changed",
         "z": "4e909abe.0b62e4",
-        "name": "",
+        "name": "state mechanical ventilation position 0 on",
         "server": "4ba92433.2478cc",
         "version": 1,
         "exposeToHomeAssistant": false,
@@ -24475,7 +23212,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_uit",
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_0",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -24492,7 +23229,7 @@
         "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
-        "x": 510,
+        "x": 440,
         "y": 2560,
         "wires": [
             [
@@ -24505,7 +23242,7 @@
         "id": "76aad1a.95ef53",
         "type": "server-state-changed",
         "z": "4e909abe.0b62e4",
-        "name": "",
+        "name": "state mechanical ventilation position 1 on",
         "server": "4ba92433.2478cc",
         "version": 1,
         "exposeToHomeAssistant": false,
@@ -24519,7 +23256,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_1",
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_1",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -24536,7 +23273,7 @@
         "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
-        "x": 510,
+        "x": 440,
         "y": 2620,
         "wires": [
             [
@@ -24549,7 +23286,7 @@
         "id": "90e32616.01dd28",
         "type": "server-state-changed",
         "z": "4e909abe.0b62e4",
-        "name": "",
+        "name": "state mechanical ventilation position 2 on",
         "server": "4ba92433.2478cc",
         "version": 1,
         "exposeToHomeAssistant": false,
@@ -24563,7 +23300,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_2",
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -24580,7 +23317,7 @@
         "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
-        "x": 510,
+        "x": 440,
         "y": 2680,
         "wires": [
             [
@@ -24593,7 +23330,7 @@
         "id": "166bd7c8.e87078",
         "type": "server-state-changed",
         "z": "4e909abe.0b62e4",
-        "name": "",
+        "name": "state mechanical ventilation position 3 on",
         "server": "4ba92433.2478cc",
         "version": 1,
         "exposeToHomeAssistant": false,
@@ -24607,7 +23344,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_boolean.mechanische_ventilatie_stand_3",
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_3",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -24624,7 +23361,7 @@
         "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
-        "x": 510,
+        "x": 440,
         "y": 2740,
         "wires": [
             [
@@ -24812,10 +23549,10 @@
         "id": "2a6296db.41969a",
         "type": "comment",
         "z": "4e909abe.0b62e4",
-        "name": "LUCHTVOCHTIGHEID STIJGT OF DAALT",
+        "name": "HUMIDITY UP/DOWN",
         "info": "",
-        "x": 440,
-        "y": 2820,
+        "x": 380,
+        "y": 2800,
         "wires": []
     },
     {
@@ -24838,7 +23575,7 @@
         ],
         "entityidfilter": "sensor.basement_absolutehumidity",
         "entityidfiltertype": "exact",
-        "outputinitially": false,
+        "outputinitially": true,
         "state_type": "str",
         "haltifstate": "",
         "halt_if_type": "num",
@@ -24849,12 +23586,12 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "x": 460,
-        "y": 2900,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "x": 470,
+        "y": 2860,
         "wires": [
             [
                 "7169fa71.d07e94",
@@ -24880,7 +23617,7 @@
         "repair": false,
         "outputs": 1,
         "x": 730,
-        "y": 2940,
+        "y": 2880,
         "wires": [
             [
                 "64d2724c.3e477c"
@@ -24905,7 +23642,7 @@
         "repair": false,
         "outputs": 1,
         "x": 730,
-        "y": 2900,
+        "y": 2840,
         "wires": [
             [
                 "e05424a.7afb7d8"
@@ -24925,7 +23662,7 @@
         "config": [
             {
                 "property": "name",
-                "value": "ab_luchtvochtigheid_basement_up_down"
+                "value": "state_basement_humidity"
             },
             {
                 "property": "device_class",
@@ -24940,15 +23677,18 @@
                 "value": ""
             }
         ],
-        "state": "status",
+        "state": "state",
         "stateType": "msg",
         "attributes": [],
         "resend": true,
         "outputLocation": "",
         "outputLocationType": "none",
         "inputOverride": "allow",
-        "x": 1210,
-        "y": 2900,
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 1190,
+        "y": 2860,
         "wires": [
             []
         ]
@@ -24957,15 +23697,15 @@
         "id": "64d2724c.3e477c",
         "type": "template",
         "z": "4e909abe.0b62e4",
-        "name": "stijgt",
-        "field": "status",
+        "name": "up",
+        "field": "state",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "Stijgt",
         "output": "str",
         "x": 870,
-        "y": 2940,
+        "y": 2880,
         "wires": [
             [
                 "a39dc974.7277a8"
@@ -24976,15 +23716,15 @@
         "id": "e05424a.7afb7d8",
         "type": "template",
         "z": "4e909abe.0b62e4",
-        "name": "daalt",
-        "field": "status",
+        "name": "down",
+        "field": "state",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "Daalt",
         "output": "str",
         "x": 870,
-        "y": 2900,
+        "y": 2840,
         "wires": [
             [
                 "7031ea94.f5d1c4"
@@ -25034,7 +23774,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 390,
-        "y": 2440,
+        "y": 2420,
         "wires": [
             [
                 "4d5c19d3.f62168"
@@ -25086,7 +23826,7 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "sensor.ab_luchtvochtigheid_basement_up_down",
+        "entity_id": "sensor.state_basement_humidity",
         "state_type": "str",
         "state_location": "payload",
         "override_payload": "msg",
@@ -25094,7 +23834,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 1020,
-        "y": 2940,
+        "y": 2880,
         "wires": [
             [
                 "b282c559.2ac688"
@@ -25106,7 +23846,7 @@
         "id": "7031ea94.f5d1c4",
         "type": "api-current-state",
         "z": "4e909abe.0b62e4",
-        "name": "is stijgt",
+        "name": "state is up",
         "server": "4ba92433.2478cc",
         "version": 1,
         "outputs": 2,
@@ -25114,15 +23854,15 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "sensor.ab_luchtvochtigheid_basement_up_down",
+        "entity_id": "sensor.state_basement_humidity",
         "state_type": "str",
         "state_location": "payload",
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1010,
-        "y": 2880,
+        "x": 1020,
+        "y": 2840,
         "wires": [
             [
                 "b282c559.2ac688"
@@ -25261,7 +24001,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 680,
+        "x": 700,
         "y": 2020,
         "wires": [
             [
@@ -25288,7 +24028,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 890,
+        "x": 930,
         "y": 2020,
         "wires": [
             [
@@ -25353,8 +24093,9 @@
         "type": "subflow:ae97b8c4.cadf68",
         "z": "4e909abe.0b62e4",
         "name": "",
-        "x": 1710,
-        "y": 60,
+        "env": [],
+        "x": 1970,
+        "y": 160,
         "wires": []
     },
     {
@@ -25391,7 +24132,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 910,
+        "x": 770,
         "y": 2620,
         "wires": []
     },
@@ -25401,7 +24142,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 910,
+        "x": 770,
         "y": 2560,
         "wires": []
     },
@@ -25410,7 +24151,8 @@
         "type": "subflow:7d5d30e3.483af",
         "z": "4e909abe.0b62e4",
         "name": "",
-        "x": 910,
+        "env": [],
+        "x": 770,
         "y": 2740,
         "wires": []
     },
@@ -25419,7 +24161,7 @@
         "type": "subflow:279f5735.2f95d8",
         "z": "4e909abe.0b62e4",
         "name": "",
-        "x": 910,
+        "x": 770,
         "y": 2680,
         "wires": []
     },
@@ -25816,741 +24558,24 @@
         ]
     },
     {
-        "id": "ac320016.9efde",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "switch.mv_schakelaar_1 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.ventilatie_sw_01",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6ffe537f.a95abc",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "switch.mv_schakelaar_2 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_off",
-        "entityId": "switch.ventilatie_sw_02",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 240,
-        "wires": [
-            [
-                "4403bd5b.d4d064"
-            ]
-        ]
-    },
-    {
-        "id": "97f0a6a8.e137c8",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "switch.mv_schakelaar_3 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_off",
-        "entityId": "switch.ventilatie_sw_03",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 200,
-        "wires": [
-            [
-                "de5876a9.6a0668"
-            ]
-        ]
-    },
-    {
-        "id": "88e9d8e2.45b848",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "input_boolean.mechanische_ventilatie_stand_1 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_on",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_1",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 800,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1053361f.843cba",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_2",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1f71bb10.76c195",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_3",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "27700251.7da19e",
-        "type": "api-call-service",
-        "z": "db575387.da1ff",
-        "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ceffa1ee.2d09d",
-        "type": "api-current-state",
-        "z": "db575387.da1ff",
-        "name": "input_boolean.mechanische_ventilatie_stand_1 -> off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_1",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 40,
-        "wires": [
-            [
-                "88e9d8e2.45b848"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "4403bd5b.d4d064",
-        "type": "delay",
-        "z": "db575387.da1ff",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 100,
-        "y": 280,
-        "wires": [
-            [
-                "ac320016.9efde"
-            ]
-        ]
-    },
-    {
-        "id": "de5876a9.6a0668",
-        "type": "delay",
-        "z": "db575387.da1ff",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 100,
-        "y": 240,
-        "wires": [
-            [
-                "6ffe537f.a95abc"
-            ]
-        ]
-    },
-    {
-        "id": "62621d93.e7ad14",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "switch.mv_schakelaar_3 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_off",
-        "entityId": "switch.ventilatie_sw_03",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 200,
-        "wires": [
-            [
-                "553d263e.dddfb8"
-            ]
-        ]
-    },
-    {
-        "id": "553d263e.dddfb8",
-        "type": "delay",
-        "z": "279f5735.2f95d8",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 100,
-        "y": 240,
-        "wires": [
-            [
-                "e2ba00c6.f69ef"
-            ]
-        ]
-    },
-    {
-        "id": "5d2e88d5.8622f8",
-        "type": "delay",
-        "z": "279f5735.2f95d8",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 100,
-        "y": 280,
-        "wires": [
-            [
-                "41e4e70f.4d8748"
-            ]
-        ]
-    },
-    {
-        "id": "2f34a04f.1ee0d",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "input_boolean.mechanische_ventilatie_stand_2 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_on",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_2",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 820,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "97c00f7.c2a6cf",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "input_boolean.mechanische_ventilatie_stand_1 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_1",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "deab0ff1.e8cdc",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_3",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a5cfdee4.8ba49",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "241932bf.d7a32e",
-        "type": "api-current-state",
-        "z": "279f5735.2f95d8",
-        "name": "input_boolean.mechanische_ventilatie_stand_2 -> off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_2",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 40,
-        "wires": [
-            [
-                "2f34a04f.1ee0d"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e2ba00c6.f69ef",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "switch.mv_schakelaar_1 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.ventilatie_sw_01",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 240,
-        "wires": [
-            [
-                "5d2e88d5.8622f8"
-            ]
-        ]
-    },
-    {
-        "id": "41e4e70f.4d8748",
-        "type": "api-call-service",
-        "z": "279f5735.2f95d8",
-        "name": "switch.mv_schakelaar_2 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.ventilatie_sw_02",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "852a3ce6.60671",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "switch.mv_schakelaar_1 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.ventilatie_sw_01",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 200,
-        "wires": [
-            [
-                "df53f44e.69b4a8"
-            ]
-        ]
-    },
-    {
-        "id": "df53f44e.69b4a8",
-        "type": "delay",
-        "z": "7d5d30e3.483af",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 100,
-        "y": 240,
-        "wires": [
-            [
-                "411369f9.24af88"
-            ]
-        ]
-    },
-    {
-        "id": "a1a6bff8.1d0de",
-        "type": "delay",
-        "z": "7d5d30e3.483af",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 100,
-        "y": 280,
-        "wires": [
-            [
-                "68851ce9.d302f4"
-            ]
-        ]
-    },
-    {
-        "id": "92c787d8.d31ed8",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "input_boolean.mechanische_ventilatie_stand_3 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_on",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_3",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 820,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5e6d56da.ba8168",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "input_boolean.mechanische_ventilatie_stand_1 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_1",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3fbbc9e6.e34176",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_2",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e02a6904.196348",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5d0bbf05.d7d46",
-        "type": "api-current-state",
-        "z": "7d5d30e3.483af",
-        "name": "input_boolean.mechanische_ventilatie_stand_3 -> off?",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_3",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 380,
-        "y": 40,
-        "wires": [
-            [
-                "92c787d8.d31ed8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "411369f9.24af88",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "switch.mv_schakelaar_2 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.ventilatie_sw_02",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 240,
-        "wires": [
-            [
-                "a1a6bff8.1d0de"
-            ]
-        ]
-    },
-    {
-        "id": "68851ce9.d302f4",
-        "type": "api-call-service",
-        "z": "7d5d30e3.483af",
-        "name": "switch.mv_schakelaar_3 -> on",
-        "server": "4ba92433.2478cc",
-        "version": 1,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.ventilatie_sw_03",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 310,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "a25d7a80.b14218",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "switch.mv_schakelaar_1 -> off",
+        "name": "turn off basement ventilation sw 02",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
-        "entityId": "switch.ventilatie_sw_01",
+        "entityId": "switch.basement_ventilation_sw_02",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 310,
-        "y": 280,
+        "x": 320,
+        "y": 320,
         "wires": [
             []
         ]
@@ -26559,21 +24584,21 @@
         "id": "b45f9d71.76535",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "switch.mv_schakelaar_2 -> off",
+        "name": "turn off basement ventilation sw 03",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
-        "entityId": "switch.ventilatie_sw_02",
+        "entityId": "switch.basement_ventilation_sw_03",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 310,
-        "y": 240,
+        "x": 320,
+        "y": 280,
         "wires": [
             [
                 "173bc2da.660c4d"
@@ -26584,21 +24609,21 @@
         "id": "548afe85.bb99b",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "switch.mv_schakelaar_3 -> off",
+        "name": "turn off basement ventilation sw 04",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "switch",
         "service": "turn_off",
-        "entityId": "switch.ventilatie_sw_03",
+        "entityId": "switch.basement_ventilation_sw_04",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 310,
-        "y": 200,
+        "x": 320,
+        "y": 240,
         "wires": [
             [
                 "2f0fa5a0.865c7a"
@@ -26621,7 +24646,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 100,
-        "y": 240,
+        "y": 280,
         "wires": [
             [
                 "b45f9d71.76535"
@@ -26644,7 +24669,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 100,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "a25d7a80.b14218"
@@ -26655,21 +24680,21 @@
         "id": "91170752.b5e108",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "input_boolean.mechanische_ventilatie_stand_uit -> on",
+        "name": "turn on mechanical ventilation position 0",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_on",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
+        "entityId": "input_boolean.mechanical_ventilation_position_0",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 820,
-        "y": 40,
+        "x": 680,
+        "y": 80,
         "wires": [
             []
         ]
@@ -26678,21 +24703,21 @@
         "id": "88d9501e.62d3f",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
+        "name": "turn off mechanical ventilation position 3",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_3",
+        "entityId": "input_boolean.mechanical_ventilation_position_3",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 380,
-        "y": 80,
+        "x": 340,
+        "y": 120,
         "wires": [
             []
         ]
@@ -26701,21 +24726,21 @@
         "id": "dc46b98b.357d48",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
+        "name": "turn off mechanical ventilation position 2",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_2",
+        "entityId": "input_boolean.mechanical_ventilation_position_2",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 380,
-        "y": 120,
+        "x": 340,
+        "y": 160,
         "wires": [
             []
         ]
@@ -26724,21 +24749,21 @@
         "id": "503f2e1f.52099",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "input_boolean.mechanische_ventilatie_stand_1 -> off",
+        "name": "turn off mechanical ventilation position 1",
         "server": "4ba92433.2478cc",
         "version": 1,
         "debugenabled": false,
         "service_domain": "input_boolean",
         "service": "turn_off",
-        "entityId": "input_boolean.mechanische_ventilatie_stand_1",
+        "entityId": "input_boolean.mechanical_ventilation_position_1",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 380,
-        "y": 160,
+        "x": 340,
+        "y": 200,
         "wires": [
             []
         ]
@@ -26747,7 +24772,7 @@
         "id": "6ee42911.2e8038",
         "type": "api-current-state",
         "z": "ae97b8c4.cadf68",
-        "name": "input_boolean.mechanische_ventilatie_stand_uit -> off?",
+        "name": "state mechanical ventilation position 0 off",
         "server": "4ba92433.2478cc",
         "version": 1,
         "outputs": 2,
@@ -26755,15 +24780,15 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "input_boolean.mechanische_ventilatie_stand_uit",
+        "entity_id": "input_boolean.mechanical_ventilation_position_0",
         "state_type": "str",
         "state_location": "payload",
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 390,
-        "y": 40,
+        "x": 340,
+        "y": 80,
         "wires": [
             [
                 "91170752.b5e108"
@@ -27980,13 +26005,1423 @@
         "wires": []
     },
     {
-        "id": "9a848b90.8f2d68",
+        "id": "14608198.f98b5e",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de basement. \\n \\nTemperatuur koudste oppervlakte in de basement is {{sensor.basementmuur_temperature_offset}} ℃ \\nDauwpunt van de lucht in de living_room is {{sensor.living_room_dewpoint}} ℃ ",
+        "output": "str",
+        "x": 1120,
+        "y": 120,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "d2804939.6f48f8",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de master_bedrooms condenseert tegen de koudste oppervlakte in de basement. \\n \\nTemperatuur koudste oppervlakte in de basement is {{sensor.basementmuur_temperature_offset}} ℃ \\nDauwpunt van de lucht in de master_bedrooms is {{sensor.master_bedroom_dewpoint}} ℃   ",
+        "output": "str",
+        "x": 1120,
+        "y": 180,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "b8424afd.8d7fe8",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de living_room is hoger dan in de basement. \\n \\nAbsolute vochtinhoud in de living_room is {{sensor.living_room_absolutehumidity}} g/m³ \\nAbsolute vochtinhoud in de basement is {{sensor.basement_absolutehumidity}} g/m³",
+        "output": "str",
+        "x": 1120,
+        "y": 240,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "3c8358ad.4658e8",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de basement staat aan. \\n \\nbasement Heating Power is {{payload}}%",
+        "output": "str",
+        "x": 1120,
+        "y": 300,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "476cfb88.13ea74",
+        "type": "api-current-state",
+        "z": "4e909abe.0b62e4",
+        "name": "state ventilation position 0 off",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.mechanical_ventilation_position_0",
+        "state_type": "str",
+        "state_location": "input_boolean.mechanische_ventilatie_stand_uit",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1340,
+        "y": 200,
+        "wires": [
+            [
+                "d38a7750.f848b8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d38a7750.f848b8",
+        "type": "api-current-state",
+        "z": "4e909abe.0b62e4",
+        "name": "state mechanical ventilation autonomous on",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.mechanical_ventilation_autonomous",
+        "state_type": "str",
+        "state_location": "input_boolean.mechanische_ventilatie_autonoom",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1650,
+        "y": 200,
+        "wires": [
+            [
+                "8373567d.35b008",
+                "f420d671.9f8c38"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8668dce7.57953",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn on basement ventilation sw 02",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.basement_ventilation_sw_02",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ffe39356.ffeb1",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn off basement ventilation sw 03",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.basement_ventilation_sw_03",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "6b0e95f7.36172c"
+            ]
+        ]
+    },
+    {
+        "id": "8b040be5.93ed48",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn off basement ventilation sw 04",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.basement_ventilation_sw_04",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "1b5a44e0.60722b"
+            ]
+        ]
+    },
+    {
+        "id": "1b5a44e0.60722b",
+        "type": "delay",
+        "z": "db575387.da1ff",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "ffe39356.ffeb1"
+            ]
+        ]
+    },
+    {
+        "id": "6b0e95f7.36172c",
+        "type": "delay",
+        "z": "db575387.da1ff",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "8668dce7.57953"
+            ]
+        ]
+    },
+    {
+        "id": "e27dc924.6fc2a8",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn on mechanical ventilation position 1",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.mechanical_ventilation_position_1",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 680,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22d68758.286778",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn off mechanical ventilation position 2",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_2",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9710a73.bad7a8",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn off mechanical ventilation position 3",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_3",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ecd488b.368338",
+        "type": "api-call-service",
+        "z": "db575387.da1ff",
+        "name": "turn off mechanical ventilation position 0",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_0",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d39d435.8e108c",
+        "type": "api-current-state",
+        "z": "db575387.da1ff",
+        "name": "state mechanical ventilation position 1 off",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.mechanical_ventilation_position_1",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "e27dc924.6fc2a8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "181e942.589516c",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn on basement ventilation sw 03",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.basement_ventilation_sw_03",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "208c6617.a5188a",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn off basement ventilation sw 04",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.basement_ventilation_sw_04",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "ad750753.bff338"
+            ]
+        ]
+    },
+    {
+        "id": "7d3cfcb8.e589c4",
+        "type": "delay",
+        "z": "279f5735.2f95d8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "181e942.589516c"
+            ]
+        ]
+    },
+    {
+        "id": "52801c6b.b0a794",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn on mechanical ventilation position 2",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.mechanical_ventilation_position_2",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 680,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87d1779f.504ce8",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn off mechanical ventilation position 1",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_1",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2672c4e.79f33",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn off mechanical ventilation position 3",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_3",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8732b7b.c22168",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn off mechanical ventilation position 0",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_0",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a9d5b61.87e578",
+        "type": "api-current-state",
+        "z": "279f5735.2f95d8",
+        "name": "state mechanical ventilation position 2 off",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.mechanical_ventilation_position_2",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "52801c6b.b0a794"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "22428d95.0b7e92",
+        "type": "api-call-service",
+        "z": "279f5735.2f95d8",
+        "name": "turn on basement ventilation sw 02",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.basement_ventilation_sw_02",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "7d3cfcb8.e589c4"
+            ]
+        ]
+    },
+    {
+        "id": "ad750753.bff338",
+        "type": "delay",
+        "z": "279f5735.2f95d8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "22428d95.0b7e92"
+            ]
+        ]
+    },
+    {
+        "id": "f4b09ae3.f31bb8",
+        "type": "comment",
+        "z": "279f5735.2f95d8",
+        "name": "TURN ON MECHANICAL VENTILATION POSITION 2",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "a1e3c2c3.89f1",
+        "type": "comment",
+        "z": "db575387.da1ff",
+        "name": "TURN ON MECHANICAL VENTILATION POSITION 1",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "79cbb9f5.420d88",
+        "type": "comment",
+        "z": "ae97b8c4.cadf68",
+        "name": "TURN ON MECHANICAL VENTILATION POSITION 0 (OFF)",
+        "info": "",
+        "x": 260,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "c54b81c6.cf925",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off basement ventilation sw 03",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.basement_ventilation_sw_03",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "60dd6167.2f76a"
+            ]
+        ]
+    },
+    {
+        "id": "16dea36a.4cb2cd",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn on basement ventilation sw 04",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.basement_ventilation_sw_04",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60dd6167.2f76a",
+        "type": "delay",
+        "z": "7d5d30e3.483af",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "16dea36a.4cb2cd"
+            ]
+        ]
+    },
+    {
+        "id": "720db208.aa887c",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn on mechanical ventilation position 3",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.mechanical_ventilation_position_3",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 680,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff1ccbdb.9906b8",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off mechanical ventilation position 1",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_1",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76af25f8.0585fc",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off mechanical ventilation position 2",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_2",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18f13f23.6c3a51",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off mechanical ventilation position 0",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.mechanical_ventilation_position_0",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54b5ba76.827954",
+        "type": "api-current-state",
+        "z": "7d5d30e3.483af",
+        "name": "state mechanical ventilation position 3 off",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.mechanical_ventilation_position_3",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "720db208.aa887c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2e60ec0b.ebbaf4",
+        "type": "delay",
+        "z": "7d5d30e3.483af",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "c54b81c6.cf925"
+            ]
+        ]
+    },
+    {
+        "id": "c8c40934.304388",
+        "type": "comment",
+        "z": "7d5d30e3.483af",
+        "name": "TURN ON MECHANICAL VENTILATION POSITION 3",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "30d47f9.e06228",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn on basement ventilation sw 02",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.basement_ventilation_sw_02",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "2e60ec0b.ebbaf4"
+            ]
+        ]
+    },
+    {
+        "id": "f5c03471.585f88",
+        "type": "server-state-changed",
+        "z": "4e909abe.0b62e4",
+        "name": "state mechanical ventilation position 2 on",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 320,
+        "y": 1440,
+        "wires": [
+            [
+                "5fba04f5.3847ac"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fce79366.4dc17",
+        "type": "server-state-changed",
+        "z": "4e909abe.0b62e4",
+        "name": "state mechanical ventilation position 3 on",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_3",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 320,
+        "y": 1500,
+        "wires": [
+            [
+                "cbdc5416.0cbcd8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9c749cb3.fd1b8",
+        "type": "server-state-changed",
+        "z": "4e909abe.0b62e4",
+        "name": "state mechanical ventilation position 0 on",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_0",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "x": 320,
+        "y": 1560,
+        "wires": [
+            [
+                "91b0640c.1b4d68"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9e8a7cf7.88d51",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische Ventilatie stand 1 is handmatig ingeschakeld.",
+        "output": "str",
+        "x": 580,
+        "y": 1380,
+        "wires": [
+            [
+                "46d491e1.18c83"
+            ]
+        ]
+    },
+    {
+        "id": "5fba04f5.3847ac",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische Ventilatie stand 2 is handmatig ingeschakeld.",
+        "output": "str",
+        "x": 580,
+        "y": 1440,
+        "wires": [
+            [
+                "46d491e1.18c83"
+            ]
+        ]
+    },
+    {
+        "id": "cbdc5416.0cbcd8",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische Ventilatie stand 3 is handmatig ingeschakeld.",
+        "output": "str",
+        "x": 580,
+        "y": 1500,
+        "wires": [
+            [
+                "46d491e1.18c83"
+            ]
+        ]
+    },
+    {
+        "id": "91b0640c.1b4d68",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische Ventilatie is handmatig uitgeschakeld.",
+        "output": "str",
+        "x": 580,
+        "y": 1560,
+        "wires": [
+            [
+                "46d491e1.18c83"
+            ]
+        ]
+    },
+    {
+        "id": "46d491e1.18c83",
+        "type": "api-current-state",
+        "z": "4e909abe.0b62e4",
+        "name": "state mechanical ventilation autonomous off",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.mechanical_ventilation_autonomous",
+        "state_type": "str",
+        "state_location": "input_boolean.mechanische_ventilatie_autonoom",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 890,
+        "y": 1480,
+        "wires": [
+            [
+                "17c6b345.bfd52d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a7e6e23b.4987a",
+        "type": "ha-get-entities",
+        "z": "155ca471.b81eac",
+        "server": "4ba92433.2478cc",
+        "name": "",
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "climate.",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "array",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [
+                "292a586.54d02a8"
+            ]
+        ]
+    },
+    {
+        "id": "292a586.54d02a8",
+        "type": "split",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 550,
+        "y": 500,
+        "wires": [
+            [
+                "c88586dc.1aa228"
+            ]
+        ]
+    },
+    {
+        "id": "c88586dc.1aa228",
+        "type": "switch",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "property": "payload.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "basement",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 670,
+        "y": 500,
+        "wires": [
+            [],
+            [
+                "2be30dc4.bcb432"
+            ]
+        ]
+    },
+    {
+        "id": "2be30dc4.bcb432",
+        "type": "change",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.attributes.current_temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 500,
+        "wires": [
+            [
+                "6341eb00.eae154"
+            ]
+        ]
+    },
+    {
+        "id": "6341eb00.eae154",
+        "type": "join",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 970,
+        "y": 500,
+        "wires": [
+            [
+                "92cb704.f7d679"
+            ]
+        ]
+    },
+    {
+        "id": "fdd3c76a.e437f8",
+        "type": "api-current-state",
+        "z": "155ca471.b81eac",
+        "name": "temperatuur buiten",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "payload",
+        "halt_if_type": "msg",
+        "halt_if_compare": "lt",
+        "override_topic": false,
+        "entity_id": "sensor.buienradar_temperature",
+        "state_type": "num",
+        "state_location": "buiten_temp",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": true,
+        "x": 1390,
+        "y": 500,
+        "wires": [
+            [
+                "9ca0db75.7aee88"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dbf8c88a.f95e58",
+        "type": "inject",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 500,
+        "wires": [
+            [
+                "73e946c1.8e5688"
+            ]
+        ]
+    },
+    {
+        "id": "9ca0db75.7aee88",
+        "type": "template",
+        "z": "155ca471.b81eac",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Open ramen en deuren om het in huis af te laten koelen, binnen is de gemiddelde temperatuur {{payload}} Buiten is de temperatuur {{buiten_temp}}.",
+        "output": "str",
+        "x": 1820,
+        "y": 500,
+        "wires": [
+            [
+                "441cda07.45b804",
+                "39631971.689156"
+            ]
+        ]
+    },
+    {
+        "id": "441cda07.45b804",
+        "type": "api-call-service",
+        "z": "155ca471.b81eac",
+        "name": "app notification",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "persistent_notification",
+        "service": "create",
+        "entityId": "",
+        "data": "{\"message\":\"{{message}}\",\"title\":\"Ventilatie\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 2000,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "91689494.188ab8",
+        "type": "switch",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "23",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1230,
+        "y": 500,
+        "wires": [
+            [
+                "fdd3c76a.e437f8"
+            ]
+        ]
+    },
+    {
+        "id": "1a44e79f.474238",
         "type": "comment",
         "z": "155ca471.b81eac",
-        "name": "PLANTS",
+        "name": "VENTILATION OUTSIDE LESS WARM THAN INSIDE",
         "info": "",
-        "x": 100,
-        "y": 420,
+        "x": 240,
+        "y": 460,
         "wires": []
+    },
+    {
+        "id": "92cb704.f7d679",
+        "type": "calculator",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "inputMsgField": "payload",
+        "outputMsgField": "payload",
+        "operation": "avg",
+        "constant": "",
+        "round": true,
+        "decimals": "1",
+        "x": 1100,
+        "y": 500,
+        "wires": [
+            [
+                "91689494.188ab8"
+            ]
+        ]
+    },
+    {
+        "id": "73e946c1.8e5688",
+        "type": "time-range-switch",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "lat": "52.0245",
+        "lon": "5.66701",
+        "startTime": "06:00",
+        "endTime": "00:00",
+        "startOffset": 0,
+        "endOffset": "0",
+        "x": 250,
+        "y": 500,
+        "wires": [
+            [
+                "a7e6e23b.4987a"
+            ],
+            []
+        ]
     }
 ]

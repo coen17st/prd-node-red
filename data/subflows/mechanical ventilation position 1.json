@@ -7,23 +7,23 @@
     "category": "",
     "in": [
       {
-        "x": 120,
-        "y": 40,
+        "x": 60,
+        "y": 80,
         "wires": [
           {
-            "id": "ceffa1ee.2d09d"
+            "id": "7d39d435.8e108c"
           },
           {
-            "id": "1053361f.843cba"
+            "id": "22d68758.286778"
           },
           {
-            "id": "1f71bb10.76c195"
+            "id": "f9710a73.bad7a8"
           },
           {
-            "id": "27700251.7da19e"
+            "id": "9ecd488b.368338"
           },
           {
-            "id": "97f0a6a8.e137c8"
+            "id": "8b040be5.93ed48"
           }
         ]
       }
@@ -33,175 +33,221 @@
     "color": "#DDAA99"
   },
   {
-    "id": "ac320016.9efde",
+    "id": "8668dce7.57953",
     "type": "api-call-service",
     "z": "db575387.da1ff",
-    "name": "switch.mv_schakelaar_1 -> on",
+    "name": "turn on basement ventilation sw 02",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_on",
-    "entityId": "switch.ventilatie_sw_01",
+    "entityId": "switch.basement_ventilation_sw_02",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 310,
-    "y": 280,
+    "x": 320,
+    "y": 320,
     "wires": [
       []
     ]
   },
   {
-    "id": "6ffe537f.a95abc",
+    "id": "ffe39356.ffeb1",
     "type": "api-call-service",
     "z": "db575387.da1ff",
-    "name": "switch.mv_schakelaar_2 -> off",
+    "name": "turn off basement ventilation sw 03",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_off",
-    "entityId": "switch.ventilatie_sw_02",
+    "entityId": "switch.basement_ventilation_sw_03",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 310,
+    "x": 320,
+    "y": 280,
+    "wires": [
+      [
+        "6b0e95f7.36172c"
+      ]
+    ]
+  },
+  {
+    "id": "8b040be5.93ed48",
+    "type": "api-call-service",
+    "z": "db575387.da1ff",
+    "name": "turn off basement ventilation sw 04",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_off",
+    "entityId": "switch.basement_ventilation_sw_04",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 320,
     "y": 240,
     "wires": [
       [
-        "4403bd5b.d4d064"
+        "1b5a44e0.60722b"
       ]
     ]
   },
   {
-    "id": "97f0a6a8.e137c8",
-    "type": "api-call-service",
+    "id": "1b5a44e0.60722b",
+    "type": "delay",
     "z": "db575387.da1ff",
-    "name": "switch.mv_schakelaar_3 -> off",
-    "server": "4ba92433.2478cc",
-    "version": 1,
-    "debugenabled": false,
-    "service_domain": "switch",
-    "service": "turn_off",
-    "entityId": "switch.ventilatie_sw_03",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
-    "mustacheAltTags": false,
-    "x": 310,
-    "y": 200,
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 100,
+    "y": 280,
     "wires": [
       [
-        "de5876a9.6a0668"
+        "ffe39356.ffeb1"
       ]
     ]
   },
   {
-    "id": "88e9d8e2.45b848",
+    "id": "6b0e95f7.36172c",
+    "type": "delay",
+    "z": "db575387.da1ff",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "x": 100,
+    "y": 320,
+    "wires": [
+      [
+        "8668dce7.57953"
+      ]
+    ]
+  },
+  {
+    "id": "e27dc924.6fc2a8",
     "type": "api-call-service",
     "z": "db575387.da1ff",
-    "name": "input_boolean.mechanische_ventilatie_stand_1 -> on",
+    "name": "turn on mechanical ventilation position 1",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_1",
+    "entityId": "input_boolean.mechanical_ventilation_position_1",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 800,
-    "y": 40,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "1053361f.843cba",
-    "type": "api-call-service",
-    "z": "db575387.da1ff",
-    "name": "input_boolean.mechanische_ventilatie_stand_2 -> off",
-    "server": "4ba92433.2478cc",
-    "version": 1,
-    "debugenabled": false,
-    "service_domain": "input_boolean",
-    "service": "turn_off",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_2",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
-    "mustacheAltTags": false,
-    "x": 380,
+    "x": 680,
     "y": 80,
     "wires": [
       []
     ]
   },
   {
-    "id": "1f71bb10.76c195",
+    "id": "22d68758.286778",
     "type": "api-call-service",
     "z": "db575387.da1ff",
-    "name": "input_boolean.mechanische_ventilatie_stand_3 -> off",
+    "name": "turn off mechanical ventilation position 2",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_3",
+    "entityId": "input_boolean.mechanical_ventilation_position_2",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 380,
+    "x": 340,
     "y": 120,
     "wires": [
       []
     ]
   },
   {
-    "id": "27700251.7da19e",
+    "id": "f9710a73.bad7a8",
     "type": "api-call-service",
     "z": "db575387.da1ff",
-    "name": "input_boolean.mechanische_ventilatie_stand_uit -> off",
+    "name": "turn off mechanical ventilation position 3",
     "server": "4ba92433.2478cc",
     "version": 1,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
-    "entityId": "input_boolean.mechanische_ventilatie_stand_uit",
+    "entityId": "input_boolean.mechanical_ventilation_position_3",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "output_location": "",
     "output_location_type": "none",
     "mustacheAltTags": false,
-    "x": 380,
+    "x": 340,
     "y": 160,
     "wires": [
       []
     ]
   },
   {
-    "id": "ceffa1ee.2d09d",
+    "id": "9ecd488b.368338",
+    "type": "api-call-service",
+    "z": "db575387.da1ff",
+    "name": "turn off mechanical ventilation position 0",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_off",
+    "entityId": "input_boolean.mechanical_ventilation_position_0",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 340,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "7d39d435.8e108c",
     "type": "api-current-state",
     "z": "db575387.da1ff",
-    "name": "input_boolean.mechanische_ventilatie_stand_1 -> off?",
+    "name": "state mechanical ventilation position 1 off",
     "server": "4ba92433.2478cc",
     "version": 1,
     "outputs": 2,
@@ -209,66 +255,30 @@
     "halt_if_type": "str",
     "halt_if_compare": "is",
     "override_topic": false,
-    "entity_id": "input_boolean.mechanische_ventilatie_stand_1",
+    "entity_id": "input_boolean.mechanical_ventilation_position_1",
     "state_type": "str",
     "state_location": "payload",
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
     "blockInputOverrides": false,
-    "x": 380,
-    "y": 40,
+    "x": 340,
+    "y": 80,
     "wires": [
       [
-        "88e9d8e2.45b848"
+        "e27dc924.6fc2a8"
       ],
       []
     ]
   },
   {
-    "id": "4403bd5b.d4d064",
-    "type": "delay",
+    "id": "a1e3c2c3.89f1",
+    "type": "comment",
     "z": "db575387.da1ff",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "1",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "1",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": false,
-    "x": 100,
-    "y": 280,
-    "wires": [
-      [
-        "ac320016.9efde"
-      ]
-    ]
-  },
-  {
-    "id": "de5876a9.6a0668",
-    "type": "delay",
-    "z": "db575387.da1ff",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "1",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "1",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": false,
-    "x": 100,
-    "y": 240,
-    "wires": [
-      [
-        "6ffe537f.a95abc"
-      ]
-    ]
+    "name": "TURN ON MECHANICAL VENTILATION POSITION 1",
+    "info": "",
+    "x": 240,
+    "y": 20,
+    "wires": []
   }
 ]

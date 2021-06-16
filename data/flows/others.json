@@ -1111,13 +1111,297 @@
     "wires": []
   },
   {
-    "id": "9a848b90.8f2d68",
+    "id": "a7e6e23b.4987a",
+    "type": "ha-get-entities",
+    "z": "155ca471.b81eac",
+    "server": "4ba92433.2478cc",
+    "name": "",
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "starts_with",
+        "value": "climate.",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "array",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "payload",
+    "output_results_count": 1,
+    "x": 410,
+    "y": 500,
+    "wires": [
+      [
+        "292a586.54d02a8"
+      ]
+    ]
+  },
+  {
+    "id": "292a586.54d02a8",
+    "type": "split",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "splt": "\\n",
+    "spltType": "str",
+    "arraySplt": 1,
+    "arraySpltType": "len",
+    "stream": false,
+    "addname": "",
+    "x": 550,
+    "y": 500,
+    "wires": [
+      [
+        "c88586dc.1aa228"
+      ]
+    ]
+  },
+  {
+    "id": "c88586dc.1aa228",
+    "type": "switch",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "property": "payload.entity_id",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "cont",
+        "v": "basement",
+        "vt": "str"
+      },
+      {
+        "t": "else"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 670,
+    "y": 500,
+    "wires": [
+      [],
+      [
+        "2be30dc4.bcb432"
+      ]
+    ]
+  },
+  {
+    "id": "2be30dc4.bcb432",
+    "type": "change",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "payload.attributes.current_temperature",
+        "tot": "msg"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 820,
+    "y": 500,
+    "wires": [
+      [
+        "6341eb00.eae154"
+      ]
+    ]
+  },
+  {
+    "id": "6341eb00.eae154",
+    "type": "join",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "mode": "custom",
+    "build": "array",
+    "property": "payload",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "4",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 970,
+    "y": 500,
+    "wires": [
+      [
+        "92cb704.f7d679"
+      ]
+    ]
+  },
+  {
+    "id": "fdd3c76a.e437f8",
+    "type": "api-current-state",
+    "z": "155ca471.b81eac",
+    "name": "temperatuur buiten",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "outputs": 2,
+    "halt_if": "payload",
+    "halt_if_type": "msg",
+    "halt_if_compare": "lt",
+    "override_topic": false,
+    "entity_id": "sensor.buienradar_temperature",
+    "state_type": "num",
+    "state_location": "buiten_temp",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "blockInputOverrides": true,
+    "x": 1390,
+    "y": 500,
+    "wires": [
+      [
+        "9ca0db75.7aee88"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "dbf8c88a.f95e58",
+    "type": "inject",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "props": [],
+    "repeat": "3600",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 110,
+    "y": 500,
+    "wires": [
+      [
+        "73e946c1.8e5688"
+      ]
+    ]
+  },
+  {
+    "id": "9ca0db75.7aee88",
+    "type": "template",
+    "z": "155ca471.b81eac",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Open ramen en deuren om het in huis af te laten koelen, binnen is de gemiddelde temperatuur {{payload}} Buiten is de temperatuur {{buiten_temp}}.",
+    "output": "str",
+    "x": 1820,
+    "y": 500,
+    "wires": [
+      [
+        "441cda07.45b804",
+        "39631971.689156"
+      ]
+    ]
+  },
+  {
+    "id": "441cda07.45b804",
+    "type": "api-call-service",
+    "z": "155ca471.b81eac",
+    "name": "app notification",
+    "server": "4ba92433.2478cc",
+    "version": 1,
+    "debugenabled": false,
+    "service_domain": "persistent_notification",
+    "service": "create",
+    "entityId": "",
+    "data": "{\"message\":\"{{message}}\",\"title\":\"Ventilatie\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "output_location": "",
+    "output_location_type": "none",
+    "mustacheAltTags": false,
+    "x": 2000,
+    "y": 460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "91689494.188ab8",
+    "type": "switch",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "gt",
+        "v": "23",
+        "vt": "num"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 1230,
+    "y": 500,
+    "wires": [
+      [
+        "fdd3c76a.e437f8"
+      ]
+    ]
+  },
+  {
+    "id": "1a44e79f.474238",
     "type": "comment",
     "z": "155ca471.b81eac",
-    "name": "PLANTS",
+    "name": "VENTILATION OUTSIDE LESS WARM THAN INSIDE",
     "info": "",
-    "x": 100,
-    "y": 420,
+    "x": 240,
+    "y": 460,
     "wires": []
+  },
+  {
+    "id": "92cb704.f7d679",
+    "type": "calculator",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "inputMsgField": "payload",
+    "outputMsgField": "payload",
+    "operation": "avg",
+    "constant": "",
+    "round": true,
+    "decimals": "1",
+    "x": 1100,
+    "y": 500,
+    "wires": [
+      [
+        "91689494.188ab8"
+      ]
+    ]
+  },
+  {
+    "id": "73e946c1.8e5688",
+    "type": "time-range-switch",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "lat": "52.0245",
+    "lon": "5.66701",
+    "startTime": "06:00",
+    "endTime": "00:00",
+    "startOffset": 0,
+    "endOffset": "0",
+    "x": 250,
+    "y": 500,
+    "wires": [
+      [
+        "a7e6e23b.4987a"
+      ],
+      []
+    ]
   }
 ]
