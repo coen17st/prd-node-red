@@ -12,7 +12,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "",
     "service": "turn_on",
@@ -20,9 +20,9 @@
     "data": "{\"brightness\":\"{{payload.attributes.brightness}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1080,
     "y": 480,
     "wires": [
@@ -33,8 +33,9 @@
     "id": "3f239b5e.f504e4",
     "type": "ha-get-entities",
     "z": "b13ca13c.9328e",
-    "server": "4ba92433.2478cc",
     "name": "All Lights",
+    "server": "4ba92433.2478cc",
+    "version": 0,
     "rules": [
       {
         "property": "entity_id",
@@ -96,7 +97,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "{{payload.domain}}",
     "service": "turn_off",
@@ -104,9 +105,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1080,
     "y": 540,
     "wires": [
@@ -223,7 +224,7 @@
     "z": "b13ca13c.9328e",
     "name": "Alarm",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -252,6 +253,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 75,
     "y": 515,
     "wires": [
@@ -309,7 +330,7 @@
     "z": "b13ca13c.9328e",
     "name": "state backdoor",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -338,6 +359,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 100,
     "y": 160,
     "wires": [
@@ -352,7 +393,7 @@
     "z": "b13ca13c.9328e",
     "name": "state frondoor",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -381,6 +422,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 90,
     "y": 100,
     "wires": [
@@ -426,19 +487,28 @@
     "z": "b13ca13c.9328e",
     "name": "Home security On?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "input_boolean.home_security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.home_security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 730,
     "y": 100,
     "wires": [
@@ -481,19 +551,28 @@
     "z": "b13ca13c.9328e",
     "name": "Home security still on?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "input_boolean.home_security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.home_security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1220,
     "y": 220,
     "wires": [
@@ -513,7 +592,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn On Alarm",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
@@ -521,9 +600,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2680,
     "y": 360,
     "wires": [
@@ -536,19 +615,28 @@
     "z": "b13ca13c.9328e",
     "name": "Timer Security Active?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "active",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "timer.security",
     "state_type": "str",
-    "state_location": "timer.security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "timer.security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 440,
     "y": 220,
     "wires": [
@@ -564,7 +652,7 @@
     "z": "b13ca13c.9328e",
     "name": "cancel security timer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "timer",
     "service": "cancel",
@@ -572,9 +660,16 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "payload",
-    "output_location_type": "msg",
     "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
     "x": 660,
     "y": 220,
     "wires": [
@@ -589,19 +684,28 @@
     "z": "b13ca13c.9328e",
     "name": "het is dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.outdoor_light_dark",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1050,
     "y": 80,
     "wires": [
@@ -617,7 +721,7 @@
     "z": "b13ca13c.9328e",
     "name": "Voordeur & Achtertuin Light On",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -625,9 +729,9 @@
     "data": "{\"brightness\":50}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1390,
     "y": 80,
     "wires": [
@@ -640,7 +744,7 @@
     "z": "b13ca13c.9328e",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -648,9 +752,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1830,
     "y": 380,
     "wires": [
@@ -663,7 +767,7 @@
     "z": "b13ca13c.9328e",
     "name": "Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "notify",
@@ -671,9 +775,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1810,
     "y": 440,
     "wires": [
@@ -688,7 +792,7 @@
     "z": "b13ca13c.9328e",
     "name": "Stop Media",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -696,9 +800,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2670,
     "y": 300,
     "wires": [
@@ -735,7 +839,7 @@
     "z": "b13ca13c.9328e",
     "name": "Volume 50%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "volume_set",
@@ -743,9 +847,9 @@
     "data": "{\"volume_level\":0.5}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2670,
     "y": 240,
     "wires": [
@@ -854,19 +958,28 @@
     "z": "b13ca13c.9328e",
     "name": "Home security On?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "input_boolean.home_security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.home_security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 2390,
     "y": 160,
     "wires": [
@@ -970,7 +1083,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn off Alarm",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -978,9 +1091,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2680,
     "y": 180,
     "wires": [
@@ -1013,7 +1126,7 @@
     "z": "b13ca13c.9328e",
     "name": "state home securty",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1042,6 +1155,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 110,
     "y": 220,
     "wires": [
@@ -1090,7 +1223,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn off Alarm",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -1098,9 +1231,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 400,
     "y": 280,
     "wires": [
@@ -1115,7 +1248,7 @@
     "z": "b13ca13c.9328e",
     "name": "All Light 100%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -1123,9 +1256,9 @@
     "data": "{\"brightness\":255}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 740,
     "y": 460,
     "wires": [
@@ -1195,7 +1328,7 @@
     "z": "b13ca13c.9328e",
     "name": "Stop Media",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -1203,9 +1336,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1450,
     "y": 140,
     "wires": [
@@ -1218,19 +1351,28 @@
     "z": "b13ca13c.9328e",
     "name": "het is dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.outdoor_light_dark",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 530,
     "y": 440,
     "wires": [
@@ -1308,7 +1450,7 @@
     "z": "b13ca13c.9328e",
     "name": "Stop Media",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -1316,9 +1458,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2070,
     "y": 200,
     "wires": [
@@ -1379,7 +1521,7 @@
     "z": "b13ca13c.9328e",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1408,6 +1550,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 200,
     "y": 820,
     "wires": [
@@ -1456,19 +1618,28 @@
     "z": "b13ca13c.9328e",
     "name": "achtertuin verlichting",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "shellydimmer-backyard-string-lights",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1080,
     "y": 860,
     "wires": [
@@ -1484,19 +1655,28 @@
     "z": "b13ca13c.9328e",
     "name": "schuurdeurlamp",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "shelly1-barn-door",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1060,
     "y": 920,
     "wires": [
@@ -1512,7 +1692,7 @@
     "z": "b13ca13c.9328e",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -1520,9 +1700,9 @@
     "data": "{\"brightness\":70}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1630,
     "y": 860,
     "wires": [
@@ -1535,7 +1715,7 @@
     "z": "b13ca13c.9328e",
     "name": "schuurdeur lamp aan",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -1543,9 +1723,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1640,
     "y": 920,
     "wires": [
@@ -1641,7 +1821,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -1649,9 +1829,9 @@
     "data": "{\"brightness\":\"{{data.attributes.brightness}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1600,
     "y": 980,
     "wires": [
@@ -1664,7 +1844,7 @@
     "z": "b13ca13c.9328e",
     "name": "Turn off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
@@ -1672,9 +1852,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1600,
     "y": 1040,
     "wires": [
@@ -1697,19 +1877,28 @@
     "z": "b13ca13c.9328e",
     "name": "het is dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.outdoor_light_dark",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 650,
     "y": 820,
     "wires": [
@@ -1744,19 +1933,28 @@
     "z": "b13ca13c.9328e",
     "name": "iemand is thuis",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "group.persons",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 660,
     "y": 740,
     "wires": [
@@ -1793,19 +1991,28 @@
     "z": "b13ca13c.9328e",
     "name": "beveiliging aan",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "input_boolean.home_security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "input_boolean.home_security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 820,
     "y": 840,
     "wires": [
@@ -1822,19 +2029,28 @@
     "z": "b13ca13c.9328e",
     "name": "beveiliging aan",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "input_boolean.home_security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.home_security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 900,
     "y": 720,
     "wires": [
@@ -1878,7 +2094,7 @@
     "z": "b13ca13c.9328e",
     "name": "start alarm_countdown timer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "timer",
     "service": "start",
@@ -1886,9 +2102,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1100,
     "y": 340,
     "wires": [
@@ -1901,7 +2117,7 @@
     "z": "b13ca13c.9328e",
     "name": "cancel alarm countdown timer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "timer",
     "service": "cancel",
@@ -1909,9 +2125,16 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "payload",
-    "output_location_type": "msg",
     "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
     "x": 670,
     "y": 280,
     "wires": [
@@ -1924,19 +2147,28 @@
     "z": "b13ca13c.9328e",
     "name": "gast is aan",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.guest",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 890,
     "y": 780,
     "wires": [

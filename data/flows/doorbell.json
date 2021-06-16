@@ -12,7 +12,7 @@
     "z": "3637eeb0.d96232",
     "name": "state doorbell button on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -41,6 +41,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 120,
     "y": 100,
     "wires": [
@@ -71,6 +91,7 @@
     "z": "3637eeb0.d96232",
     "name": "wait until front door on",
     "server": "4ba92433.2478cc",
+    "version": 0,
     "outputs": 2,
     "entityId": "binary_sensor.recessed_frontdoor_sensor",
     "entityIdFilterType": "exact",
@@ -140,7 +161,7 @@
     "z": "3637eeb0.d96232",
     "name": "notify phone coen",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "mobile_app_phone_coen",
@@ -148,9 +169,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1310,
     "y": 200,
     "wires": [
@@ -229,19 +250,28 @@
     "z": "3637eeb0.d96232",
     "name": "state doorbell chime",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "switch.doorbell_chime_active",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 900,
     "y": 260,
     "wires": [
@@ -287,19 +317,28 @@
     "z": "3637eeb0.d96232",
     "name": "state persons not home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "not_home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "group.persons",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1550,
     "y": 200,
     "wires": [
@@ -315,7 +354,7 @@
     "z": "3637eeb0.d96232",
     "name": "notify phone anne",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "mobile_app_",
@@ -323,9 +362,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1770,
     "y": 200,
     "wires": [
@@ -338,7 +377,7 @@
     "z": "3637eeb0.d96232",
     "name": "state persons not home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -367,6 +406,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 120,
     "y": 40,
     "wires": [
@@ -382,19 +441,28 @@
     "z": "3637eeb0.d96232",
     "name": "state doorbell off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "switch.doorbell_chime_active",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 360,
     "y": 40,
     "wires": [
@@ -410,7 +478,7 @@
     "z": "3637eeb0.d96232",
     "name": "turn on doorbell chime",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_on",
@@ -418,9 +486,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 640,
     "y": 40,
     "wires": [
@@ -433,19 +501,28 @@
     "z": "3637eeb0.d96232",
     "name": "state chromecast playing",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "playing",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "media_player.chromecast_woonkamer",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 390,
     "y": 320,
     "wires": [
@@ -461,7 +538,7 @@
     "z": "3637eeb0.d96232",
     "name": "pause chromecast",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "media_pause",
@@ -469,9 +546,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 890,
     "y": 320,
     "wires": [
@@ -514,7 +591,7 @@
     "z": "3637eeb0.d96232",
     "name": "turn off mediaplayer google home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -522,9 +599,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1820,
     "y": 260,
     "wires": [
@@ -537,7 +614,7 @@
     "z": "3637eeb0.d96232",
     "name": "notify tv",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "tv_woonkamer",
@@ -545,9 +622,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1280,
     "y": 320,
     "wires": [
@@ -579,19 +656,28 @@
     "z": "3637eeb0.d96232",
     "name": "state outdoor dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.outdoor_light_dark",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 370,
     "y": 380,
     "wires": [
@@ -607,7 +693,7 @@
     "z": "3637eeb0.d96232",
     "name": "turn on light front door",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -615,9 +701,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 900,
     "y": 380,
     "wires": [
@@ -632,19 +718,28 @@
     "z": "3637eeb0.d96232",
     "name": "state harmony screen off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Scherm Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 650,
     "y": 320,
     "wires": [
@@ -737,19 +832,28 @@
     "z": "3637eeb0.d96232",
     "name": "state light front door off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "light.shelly_shelly1_front_door",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 640,
     "y": 380,
     "wires": [
@@ -765,7 +869,7 @@
     "z": "3637eeb0.d96232",
     "name": "turn off light front door",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
@@ -773,9 +877,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1320,
     "y": 380,
     "wires": [

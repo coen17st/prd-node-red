@@ -32,7 +32,7 @@
     "z": "4dd07a1d.6e53e4",
     "name": "illuminance weather station",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -61,6 +61,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 130,
     "y": 100,
     "wires": [

@@ -12,7 +12,7 @@
     "z": "8aa6edec.5a013",
     "name": "state group persons not_home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -41,6 +41,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 180,
     "y": 40,
     "wires": [
@@ -56,7 +76,7 @@
     "z": "8aa6edec.5a013",
     "name": "state guest off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -85,6 +105,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 130,
     "y": 120,
     "wires": [
@@ -102,19 +142,28 @@
     "z": "8aa6edec.5a013",
     "name": "state guest off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.guest",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 400,
     "y": 40,
     "wires": [
@@ -137,19 +186,28 @@
     "z": "8aa6edec.5a013",
     "name": "state group persons home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "group.persons",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 430,
     "y": 120,
     "wires": [
@@ -173,19 +231,28 @@
     "z": "8aa6edec.5a013",
     "name": "state harmony hub on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "remote.harmony_hub_01",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 820,
     "y": 180,
     "wires": [
@@ -201,7 +268,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn on script tvoff",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "script",
     "service": "turn_on",
@@ -209,9 +276,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1050,
     "y": 160,
     "wires": [
@@ -224,7 +291,7 @@
     "z": "8aa6edec.5a013",
     "name": "state sleepmode",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -253,6 +320,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 140,
     "y": 480,
     "wires": [
@@ -309,7 +396,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn on light kitchen",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -317,9 +404,9 @@
     "data": "{\"brightness_pct\":45}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1050,
     "y": 620,
     "wires": [
@@ -334,19 +421,28 @@
     "z": "8aa6edec.5a013",
     "name": "state outdoor dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.outdoor_light_dark",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 810,
     "y": 620,
     "wires": [
@@ -387,19 +483,28 @@
     "z": "8aa6edec.5a013",
     "name": "state home security off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1800,
     "y": 560,
     "wires": [
@@ -415,7 +520,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn on home security",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
@@ -423,9 +528,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1340,
     "y": 120,
     "wires": [
@@ -440,19 +545,28 @@
     "z": "8aa6edec.5a013",
     "name": "state home security off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 820,
     "y": 120,
     "wires": [
@@ -491,7 +605,7 @@
     "z": "8aa6edec.5a013",
     "name": "start timer security",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "timer",
     "service": "start",
@@ -499,9 +613,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1050,
     "y": 560,
     "wires": [
@@ -516,7 +630,7 @@
     "z": "8aa6edec.5a013",
     "name": "stop timer security",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "timer",
     "service": "cancel",
@@ -524,9 +638,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1050,
     "y": 740,
     "wires": [
@@ -541,19 +655,28 @@
     "z": "8aa6edec.5a013",
     "name": "state timer security active",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "active",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "timer.security",
     "state_type": "str",
-    "state_location": "timer.security",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "timer.security",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 830,
     "y": 740,
     "wires": [
@@ -569,19 +692,28 @@
     "z": "8aa6edec.5a013",
     "name": "state home security off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.home_security",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 820,
     "y": 560,
     "wires": [
@@ -597,7 +729,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn off media players",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -605,9 +737,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 820,
     "y": 240,
     "wires": [
@@ -620,7 +752,7 @@
     "z": "8aa6edec.5a013",
     "name": "select spotify uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -628,9 +760,9 @@
     "data": "{\"option\":\"Spotify Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 800,
     "y": 300,
     "wires": [
@@ -643,7 +775,7 @@
     "z": "8aa6edec.5a013",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -651,9 +783,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Beveiliging\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1770,
     "y": 120,
     "wires": [
@@ -687,7 +819,7 @@
     "z": "8aa6edec.5a013",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -695,9 +827,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Verwarming\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1770,
     "y": 440,
     "wires": [
@@ -710,8 +842,9 @@
     "id": "7901490f.306a88",
     "type": "ha-get-entities",
     "z": "8aa6edec.5a013",
-    "server": "4ba92433.2478cc",
     "name": "lookup lights on",
+    "server": "4ba92433.2478cc",
+    "version": 0,
     "rules": [
       {
         "property": "entity_id",
@@ -792,7 +925,7 @@
     "z": "8aa6edec.5a013",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -800,9 +933,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Verlichting\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1770,
     "y": 40,
     "wires": [
@@ -817,7 +950,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn off light kitchen",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
@@ -825,9 +958,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1790,
     "y": 640,
     "wires": [
@@ -840,7 +973,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn off lights",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
@@ -848,9 +981,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1030,
     "y": 40,
     "wires": [
@@ -863,8 +996,9 @@
     "id": "b7875214.76414",
     "type": "ha-get-entities",
     "z": "8aa6edec.5a013",
-    "server": "4ba92433.2478cc",
     "name": "lookup light on",
+    "server": "4ba92433.2478cc",
+    "version": 0,
     "rules": [
       {
         "property": "entity_id",
@@ -898,7 +1032,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn off lights",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
@@ -906,9 +1040,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1270,
     "y": 500,
     "wires": [
@@ -944,8 +1078,9 @@
     "id": "60e6e55e.cdc54c",
     "type": "ha-get-entities",
     "z": "8aa6edec.5a013",
-    "server": "4ba92433.2478cc",
     "name": "lookup climate auto",
+    "server": "4ba92433.2478cc",
+    "version": 0,
     "rules": [
       {
         "property": "entity_id",
@@ -1058,7 +1193,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn on climate auto mode",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "climate",
     "service": "set_hvac_mode",
@@ -1066,9 +1201,9 @@
     "data": "{\"hvac_mode\":\"auto\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1310,
     "y": 440,
     "wires": [
@@ -1100,8 +1235,9 @@
     "id": "ce720787.d6dd18",
     "type": "ha-get-entities",
     "z": "8aa6edec.5a013",
-    "server": "4ba92433.2478cc",
     "name": "lookup person home",
+    "server": "4ba92433.2478cc",
+    "version": 0,
     "rules": [
       {
         "property": "entity_id",
@@ -1252,19 +1388,28 @@
     "z": "8aa6edec.5a013",
     "name": "state doorbell chime off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "switch.doorbell_chime_active",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 830,
     "y": 680,
     "wires": [
@@ -1280,7 +1425,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn on switch chime active",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "switch",
     "service": "turn_on",
@@ -1288,9 +1433,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1080,
     "y": 680,
     "wires": [
@@ -1324,7 +1469,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn off warmwater",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -1332,9 +1477,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 810,
     "y": 360,
     "wires": [
@@ -1347,7 +1492,7 @@
     "z": "8aa6edec.5a013",
     "name": "turn off switch childlock kitchen",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -1355,9 +1500,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 850,
     "y": 440,
     "wires": [

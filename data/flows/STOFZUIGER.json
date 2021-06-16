@@ -12,7 +12,7 @@
     "z": "55da1471.fda0fc",
     "name": "Persons State",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -41,6 +41,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 130,
     "y": 240,
     "wires": [
@@ -55,7 +75,7 @@
     "z": "55da1471.fda0fc",
     "name": "Gast State",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -84,6 +104,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 120,
     "y": 300,
     "wires": [
@@ -164,19 +204,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not cleaned today?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.cleaned_today",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1530,
     "y": 320,
     "wires": [
@@ -212,7 +261,7 @@
     "z": "55da1471.fda0fc",
     "name": "Set cleaned today off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -220,9 +269,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 360,
     "y": 100,
     "wires": [
@@ -235,7 +284,7 @@
     "z": "55da1471.fda0fc",
     "name": "Start Cleaning",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "vacuum",
     "service": "start",
@@ -243,9 +292,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1700,
     "y": 440,
     "wires": [
@@ -260,7 +309,7 @@
     "z": "55da1471.fda0fc",
     "name": "Back to the Dock",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "vacuum",
     "service": "return_to_base",
@@ -268,9 +317,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1530,
     "y": 240,
     "wires": [
@@ -283,19 +332,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not Docked?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "docked",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "vacuum.xiaomi_vacuum_cleaner",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 950,
     "y": 240,
     "wires": [
@@ -311,19 +369,28 @@
     "z": "55da1471.fda0fc",
     "name": "Person(s) Home?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "group.persons",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 970,
     "y": 320,
     "wires": [
@@ -339,7 +406,7 @@
     "z": "55da1471.fda0fc",
     "name": "Set cleaned today on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
@@ -347,9 +414,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 360,
     "y": 760,
     "wires": [
@@ -364,7 +431,7 @@
     "z": "55da1471.fda0fc",
     "name": "Manual On/Off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -393,6 +460,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 140,
     "y": 360,
     "wires": [
@@ -440,19 +527,28 @@
     "z": "55da1471.fda0fc",
     "name": "Gast off?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.guest",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1180,
     "y": 320,
     "wires": [
@@ -468,19 +564,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not Cleaning?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "cleaning",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "vacuum.xiaomi_vacuum_cleaner",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 960,
     "y": 380,
     "wires": [
@@ -496,19 +601,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not Returning?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "returning",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "vacuum.xiaomi_vacuum_cleaner",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1340,
     "y": 240,
     "wires": [
@@ -534,7 +648,7 @@
     "z": "55da1471.fda0fc",
     "name": "Vacuum State is error",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -563,6 +677,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 160,
     "y": 420,
     "wires": [
@@ -578,7 +712,7 @@
     "z": "55da1471.fda0fc",
     "name": "HTML5 Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "mobile_app_telefoon_coen",
@@ -586,9 +720,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Stofzuiger\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 960,
     "y": 440,
     "wires": [
@@ -603,7 +737,7 @@
     "z": "55da1471.fda0fc",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -611,9 +745,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Stofzuiger\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1170,
     "y": 440,
     "wires": [
@@ -628,7 +762,7 @@
     "z": "55da1471.fda0fc",
     "name": "Slaapstand Aan?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -657,6 +791,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 140,
     "y": 480,
     "wires": [
@@ -699,19 +853,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not cleaned today?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.cleaned_today",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 970,
     "y": 500,
     "wires": [
@@ -766,6 +929,7 @@
     "z": "55da1471.fda0fc",
     "name": "Returning",
     "server": "4ba92433.2478cc",
+    "version": 0,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -842,19 +1006,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not cleaned today?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.cleaned_today",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1360,
     "y": 500,
     "wires": [
@@ -870,19 +1043,28 @@
     "z": "55da1471.fda0fc",
     "name": "Not Cleaning?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "cleaning",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "vacuum.xiaomi_vacuum_cleaner",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 780,
     "y": 500,
     "wires": [
@@ -898,7 +1080,7 @@
     "z": "55da1471.fda0fc",
     "name": "naar afvalbak keuken",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "xiaomi_miio",
     "service": "vacuum_goto",
@@ -906,9 +1088,9 @@
     "data": "{\"x_coord\":19000,\"y_coord\":24000}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1680,
     "y": 740,
     "wires": [
@@ -966,19 +1148,28 @@
     "z": "55da1471.fda0fc",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.stozuiger_afvalbak_teller",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 660,
     "y": 740,
     "wires": [
@@ -1045,19 +1236,28 @@
     "z": "55da1471.fda0fc",
     "name": "afvalbak teller niet 6",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "6",
     "halt_if_type": "num",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "sensor.stozuiger_afvalbak_teller",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1140,
     "y": 240,
     "wires": [
@@ -1073,6 +1273,7 @@
     "z": "55da1471.fda0fc",
     "name": "",
     "server": "4ba92433.2478cc",
+    "version": 0,
     "outputs": 1,
     "entityId": "vacuum.xiaomi_vacuum_cleaner",
     "entityIdFilterType": "exact",

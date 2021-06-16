@@ -12,7 +12,7 @@
     "z": "2910f43f.ab852c",
     "name": "input_select harmony hub",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -41,6 +41,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 150,
     "y": 160,
     "wires": [
@@ -126,7 +146,7 @@
     "z": "2910f43f.ab852c",
     "name": "select Smart TV",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -134,9 +154,9 @@
     "data": "{\"option\":\"Smart TV\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1600,
     "y": 820,
     "wires": [
@@ -149,7 +169,7 @@
     "z": "2910f43f.ab852c",
     "name": "select PC",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -157,9 +177,9 @@
     "data": "{\"option\":\"PC\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1580,
     "y": 880,
     "wires": [
@@ -249,19 +269,28 @@
     "z": "2910f43f.ab852c",
     "name": "Chromecast State On",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "media_player.chromecast_woonkamer",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 340,
     "y": 1160,
     "wires": [
@@ -353,7 +382,7 @@
     "z": "2910f43f.ab852c",
     "name": "speel spotify mijn muziek",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -361,9 +390,9 @@
     "data": "{\"option\":\"Mijn Muziek\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1630,
     "y": 580,
     "wires": [
@@ -376,7 +405,7 @@
     "z": "2910f43f.ab852c",
     "name": "chromecast state",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -405,6 +434,26 @@
     "ignorePrevStateUnavailable": true,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 120,
     "y": 1120,
     "wires": [
@@ -421,7 +470,7 @@
     "z": "2910f43f.ab852c",
     "name": "Muziek boolean",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -450,6 +499,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 120,
     "y": 560,
     "wires": [
@@ -464,7 +533,7 @@
     "z": "2910f43f.ab852c",
     "name": "TV boolean",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -493,6 +562,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 110,
     "y": 440,
     "wires": [
@@ -507,7 +596,7 @@
     "z": "2910f43f.ab852c",
     "name": "select TV",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -515,9 +604,9 @@
     "data": "{\"option\":\"TV\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1580,
     "y": 640,
     "wires": [
@@ -530,7 +619,7 @@
     "z": "2910f43f.ab852c",
     "name": "select Netflix",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -538,9 +627,9 @@
     "data": "{\"option\":\"Netflix\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1590,
     "y": 700,
     "wires": [
@@ -553,7 +642,7 @@
     "z": "2910f43f.ab852c",
     "name": "select Scherm Uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -561,9 +650,9 @@
     "data": "{\"option\":\"Scherm Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1610,
     "y": 760,
     "wires": [
@@ -641,7 +730,7 @@
     "z": "2910f43f.ab852c",
     "name": "select Alles Uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -649,9 +738,9 @@
     "data": "{\"option\":\"Alles Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1600,
     "y": 940,
     "wires": [
@@ -668,19 +757,28 @@
     "z": "2910f43f.ab852c",
     "name": "tv not selected",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "TV",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1140,
     "y": 640,
     "wires": [
@@ -696,19 +794,28 @@
     "z": "2910f43f.ab852c",
     "name": "netflix not selected",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Netflix",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1150,
     "y": 700,
     "wires": [
@@ -724,19 +831,28 @@
     "z": "2910f43f.ab852c",
     "name": "scherm uit not selected",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Scherm Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1170,
     "y": 760,
     "wires": [
@@ -752,19 +868,28 @@
     "z": "2910f43f.ab852c",
     "name": "smart tv not selected",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Smart TV",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1160,
     "y": 820,
     "wires": [
@@ -780,19 +905,28 @@
     "z": "2910f43f.ab852c",
     "name": "pc not selected",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "PC",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1140,
     "y": 880,
     "wires": [
@@ -808,19 +942,28 @@
     "z": "2910f43f.ab852c",
     "name": "alles uit not selected",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Alles Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1160,
     "y": 940,
     "wires": [
@@ -876,7 +1019,7 @@
     "z": "2910f43f.ab852c",
     "name": "radio station input select",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -905,6 +1048,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 150,
     "y": 1340,
     "wires": [
@@ -1074,7 +1237,7 @@
     "z": "2910f43f.ab852c",
     "name": "select speakers",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1103,6 +1266,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 120,
     "y": 1400,
     "wires": [
@@ -1650,19 +1833,15 @@
     "z": "2910f43f.ab852c",
     "name": "Woonkamer Chromecast",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Woonkamer Chromecast",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "",
-    "override_payload": "none",
-    "entity_location": "",
-    "override_data": "none",
     "blockInputOverrides": false,
+    "outputProperties": [],
     "x": 1170,
     "y": 1840,
     "wires": [
@@ -1678,19 +1857,15 @@
     "z": "2910f43f.ab852c",
     "name": "Woonkamer Google Home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Woonkamer Google Home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "",
-    "override_payload": "none",
-    "entity_location": "",
-    "override_data": "none",
     "blockInputOverrides": false,
+    "outputProperties": [],
     "x": 1180,
     "y": 1780,
     "wires": [
@@ -1706,19 +1881,15 @@
     "z": "2910f43f.ab852c",
     "name": "Lise's Google Home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Lise's Google Home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "",
-    "override_payload": "none",
-    "entity_location": "",
-    "override_data": "none",
     "blockInputOverrides": false,
+    "outputProperties": [],
     "x": 1160,
     "y": 1900,
     "wires": [
@@ -1802,19 +1973,28 @@
     "z": "2910f43f.ab852c",
     "name": "radio station input select",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.radio_station",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 350,
     "y": 1400,
     "wires": [
@@ -1829,19 +2009,28 @@
     "z": "2910f43f.ab852c",
     "name": "chromecast woonkamer geselecteerd",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Woonkamer Chromecast",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "input_select.mediaplayer_source",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_select.mediaplayer_source",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1210,
     "y": 1100,
     "wires": [
@@ -1898,7 +2087,7 @@
     "z": "2910f43f.ab852c",
     "name": "zet uit google home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -1906,9 +2095,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1610,
     "y": 1160,
     "wires": [
@@ -1921,7 +2110,7 @@
     "z": "2910f43f.ab852c",
     "name": "zet uit google home lise",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -1929,9 +2118,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1630,
     "y": 1200,
     "wires": [
@@ -1944,19 +2133,28 @@
     "z": "2910f43f.ab852c",
     "name": "welke speaker geselecteerd",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "input_select.mediaplayer_source",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_select.mediaplayer_source",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1180,
     "y": 1280,
     "wires": [
@@ -1971,19 +2169,28 @@
     "z": "2910f43f.ab852c",
     "name": "chromecast woonkamer geselecteerd",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Woonkamer Chromecast",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "input_select.mediaplayer_source",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_select.mediaplayer_source",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1210,
     "y": 1160,
     "wires": [
@@ -2000,7 +2207,7 @@
     "z": "2910f43f.ab852c",
     "name": "Google Home Woonkamer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
@@ -2008,9 +2215,9 @@
     "data": "{\"uri\":\"{{playlist}}\",\"entity_id\":\"media_player.google_home\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1180,
     "y": 2960,
     "wires": [
@@ -2180,19 +2387,28 @@
     "z": "2910f43f.ab852c",
     "name": "Speaker Select",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "input_select.mediaplayer_source",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_select.mediaplayer_source",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1140,
     "y": 2480,
     "wires": [
@@ -2248,7 +2464,7 @@
     "z": "2910f43f.ab852c",
     "name": "Chromecast Woonkamer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
@@ -2256,9 +2472,9 @@
     "data": "{\"uri\":\"{{playlist}}\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1170,
     "y": 2900,
     "wires": [
@@ -2274,7 +2490,7 @@
     "z": "2910f43f.ab852c",
     "name": "Google Home Babykamer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
@@ -2282,9 +2498,9 @@
     "data": "{\"uri\":\"{{playlist}}\",\"entity_id\":\"media_player.lise_s_kamer\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1170,
     "y": 3020,
     "wires": [
@@ -2299,6 +2515,7 @@
     "z": "2910f43f.ab852c",
     "name": "playlist",
     "server": "4ba92433.2478cc",
+    "version": 0,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2468,6 +2685,7 @@
     "z": "2910f43f.ab852c",
     "name": "playlist lise",
     "server": "4ba92433.2478cc",
+    "version": 0,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2612,7 +2830,7 @@
     "z": "2910f43f.ab852c",
     "name": "start lise's google home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
@@ -2620,9 +2838,9 @@
     "data": "{\"uri\":\"{{playlist}}\",\"entity_id\":\"media_player.lise_s_kamer\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1170,
     "y": 3240,
     "wires": [
@@ -2637,7 +2855,7 @@
     "z": "2910f43f.ab852c",
     "name": "stop lise's google home",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -2645,9 +2863,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1170,
     "y": 3140,
     "wires": [
@@ -2660,19 +2878,28 @@
     "z": "2910f43f.ab852c",
     "name": "niet scherm uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Scherm Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1600,
     "y": 2900,
     "wires": [
@@ -2688,7 +2915,7 @@
     "z": "2910f43f.ab852c",
     "name": "select scherm uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2696,9 +2923,9 @@
     "data": "{\"option\":\"Scherm Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1850,
     "y": 2900,
     "wires": [
@@ -2711,19 +2938,28 @@
     "z": "2910f43f.ab852c",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.spotify_playlist",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1680,
     "y": 2500,
     "wires": [
@@ -2779,7 +3015,7 @@
     "z": "2910f43f.ab852c",
     "name": "Baby Music",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2787,9 +3023,9 @@
     "data": "{\"option\":\"Baby Music\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 2740,
     "wires": [
@@ -2802,7 +3038,7 @@
     "z": "2910f43f.ab852c",
     "name": "Baby Sleep",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2810,9 +3046,9 @@
     "data": "{\"option\":\"Baby Sleep\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 2800,
     "wires": [
@@ -2825,7 +3061,7 @@
     "z": "2910f43f.ab852c",
     "name": "Spotify UIt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2833,9 +3069,9 @@
     "data": "{\"option\":\"Spotify Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 2680,
     "wires": [
@@ -2848,19 +3084,28 @@
     "z": "2910f43f.ab852c",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.spotify_playlist_babykamer",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1720,
     "y": 3240,
     "wires": [
@@ -2916,7 +3161,7 @@
     "z": "2910f43f.ab852c",
     "name": "Baby Music",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2924,9 +3169,9 @@
     "data": "{\"option\":\"Baby Music\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 3420,
     "wires": [
@@ -2939,7 +3184,7 @@
     "z": "2910f43f.ab852c",
     "name": "Baby Sleep",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2947,9 +3192,9 @@
     "data": "{\"option\":\"Baby Sleep\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 3465,
     "wires": [
@@ -2962,7 +3207,7 @@
     "z": "2910f43f.ab852c",
     "name": "Spotify UIt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2970,9 +3215,9 @@
     "data": "{\"option\":\"Spotify Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 3375,
     "wires": [
@@ -2985,7 +3230,7 @@
     "z": "2910f43f.ab852c",
     "name": "input is lise's speaker ",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -2993,9 +3238,9 @@
     "data": "{\"option\":\"Lise's Google Home\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1160,
     "y": 3080,
     "wires": [
@@ -3008,19 +3253,28 @@
     "z": "2910f43f.ab852c",
     "name": "Speaker Select",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
-    "state_location": "input_select.mediaplayer_source",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_select.mediaplayer_source",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1140,
     "y": 2200,
     "wires": [
@@ -3076,7 +3330,7 @@
     "z": "2910f43f.ab852c",
     "name": "Google Home Babykamer Stop",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -3084,9 +3338,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1650,
     "y": 2140,
     "wires": [
@@ -3101,7 +3355,7 @@
     "z": "2910f43f.ab852c",
     "name": "Google Home Woonkamer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -3109,9 +3363,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1640,
     "y": 2080,
     "wires": [
@@ -3124,7 +3378,7 @@
     "z": "2910f43f.ab852c",
     "name": "Google Home Chromecast Stop",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -3132,9 +3386,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1650,
     "y": 2020,
     "wires": [
@@ -3147,7 +3401,7 @@
     "z": "2910f43f.ab852c",
     "name": "mediaplayer lise's kamer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -3176,6 +3430,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 150,
     "y": 3620,
     "wires": [
@@ -3191,7 +3465,7 @@
     "z": "2910f43f.ab852c",
     "name": "Spotify UIt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -3199,9 +3473,9 @@
     "data": "{\"option\":\"Spotify Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 3620,
     "wires": [
@@ -3214,19 +3488,28 @@
     "z": "2910f43f.ab852c",
     "name": "Radio is uit?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Radio Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.radio_station",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1130,
     "y": 2040,
     "wires": [
@@ -3333,7 +3616,7 @@
     "z": "2910f43f.ab852c",
     "name": "Chromecast Mediaplayer Off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -3341,9 +3624,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1180,
     "y": 3680,
     "wires": [
@@ -3356,7 +3639,7 @@
     "z": "2910f43f.ab852c",
     "name": "harmony is uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -3385,6 +3668,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 110,
     "y": 3680,
     "wires": [
@@ -3400,19 +3703,28 @@
     "z": "2910f43f.ab852c",
     "name": "Input boolean tv is off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.tv",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1620,
     "y": 120,
     "wires": [
@@ -3428,7 +3740,7 @@
     "z": "2910f43f.ab852c",
     "name": "TV Input Boolean ON",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
@@ -3436,9 +3748,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2060,
     "y": 260,
     "wires": [
@@ -3451,7 +3763,7 @@
     "z": "2910f43f.ab852c",
     "name": "TV Input Boolean  off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -3459,9 +3771,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2060,
     "y": 460,
     "wires": [
@@ -3474,19 +3786,28 @@
     "z": "2910f43f.ab852c",
     "name": "Input boolean tv is on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.tv",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1620,
     "y": 460,
     "wires": [
@@ -3502,7 +3823,7 @@
     "z": "2910f43f.ab852c",
     "name": "muziek Input boolean on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
@@ -3510,9 +3831,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2070,
     "y": 340,
     "wires": [
@@ -3525,19 +3846,28 @@
     "z": "2910f43f.ab852c",
     "name": "Input boolean muziek is off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.tv",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1640,
     "y": 340,
     "wires": [
@@ -3553,7 +3883,7 @@
     "z": "2910f43f.ab852c",
     "name": "muziek Input boolean off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -3561,9 +3891,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2070,
     "y": 520,
     "wires": [
@@ -3576,19 +3906,28 @@
     "z": "2910f43f.ab852c",
     "name": "Input boolean muziek is on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.tv",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1640,
     "y": 520,
     "wires": [
@@ -3729,19 +4068,28 @@
     "z": "2910f43f.ab852c",
     "name": "radio station select",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Radio Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "input_select.radio_station",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1610,
     "y": 2960,
     "wires": [
@@ -3757,7 +4105,7 @@
     "z": "2910f43f.ab852c",
     "name": "select radio uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -3765,9 +4113,9 @@
     "data": "{\"option\":\"Radio Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1840,
     "y": 2960,
     "wires": [
@@ -3780,19 +4128,28 @@
     "z": "2910f43f.ab852c",
     "name": "spotify is uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Spotify Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.spotify_playlist",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1130,
     "y": 1000,
     "wires": [
@@ -3808,19 +4165,28 @@
     "z": "2910f43f.ab852c",
     "name": "spotify is uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Spotify Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.spotify_playlist",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1130,
     "y": 580,
     "wires": [
@@ -3836,19 +4202,28 @@
     "z": "2910f43f.ab852c",
     "name": "radio is uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Radio Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.radio_station",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1300,
     "y": 580,
     "wires": [
@@ -3864,7 +4239,7 @@
     "z": "2910f43f.ab852c",
     "name": "select radio uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -3872,9 +4247,9 @@
     "data": "{\"option\":\"Radio Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1920,
     "y": 940,
     "wires": [
@@ -3887,7 +4262,7 @@
     "z": "2910f43f.ab852c",
     "name": "select spotify uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_select",
     "service": "select_option",
@@ -3895,9 +4270,9 @@
     "data": "{\"option\":\"Spotify Uit\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1920,
     "y": 1000,
     "wires": [
@@ -3910,7 +4285,7 @@
     "z": "2910f43f.ab852c",
     "name": "zet uit chromecast woonkamer",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
@@ -3918,9 +4293,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1970,
     "y": 880,
     "wires": [
@@ -3956,19 +4331,28 @@
     "z": "2910f43f.ab852c",
     "name": "het is dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.outdoor_light_dark",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1130,
     "y": 1060,
     "wires": [
@@ -3984,7 +4368,7 @@
     "z": "2910f43f.ab852c",
     "name": "Woonkamer Light On",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
@@ -3992,9 +4376,9 @@
     "data": "{\"brightness_pct\":\"20\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1620,
     "y": 1060,
     "wires": [
@@ -4007,19 +4391,28 @@
     "z": "2910f43f.ab852c",
     "name": "stroom versterker > 10",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "10",
     "halt_if_type": "num",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.shelly_shellyplug_receiver_current_consumption",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1820,
     "y": 400,
     "wires": [
@@ -4058,7 +4451,7 @@
     "z": "2910f43f.ab852c",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "remote",
     "service": "send_command",
@@ -4066,9 +4459,9 @@
     "data": "{\"entity_id\":\"remote.harmony_hub_01\",\"command\":\"PowerOff\",\"device\":\"53126254\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2080,
     "y": 400,
     "wires": [
@@ -4263,6 +4656,7 @@
     "z": "2910f43f.ab852c",
     "name": "state tv power watt",
     "server": "4ba92433.2478cc",
+    "version": 0,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -4297,19 +4691,28 @@
     "z": "2910f43f.ab852c",
     "name": "input select is scherm uit",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Scherm Uit",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_select.harmonyhub",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 910,
     "y": 60,
     "wires": [
@@ -4336,19 +4739,28 @@
     "z": "2910f43f.ab852c",
     "name": "> 59",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "59",
     "halt_if_type": "num",
     "halt_if_compare": "gte",
-    "override_topic": false,
     "entity_id": "sensor.shelly_shellyplug_tv_current_consumption",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 730,
     "y": 60,
     "wires": [

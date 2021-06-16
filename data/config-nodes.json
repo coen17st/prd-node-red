@@ -9,6 +9,7 @@
     "id": "4ba92433.2478cc",
     "type": "server",
     "name": "Home Assistant",
+    "version": 1,
     "legacy": false,
     "addon": false,
     "rejectUnauthorizedCerts": false,

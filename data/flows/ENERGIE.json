@@ -12,7 +12,7 @@
     "z": "e8d423c4.78d91",
     "name": "laagtarief_stroom",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -20,9 +20,9 @@
     "data": "{\"value\":\"{{laagtarief}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1030,
     "y": 180,
     "wires": [
@@ -35,7 +35,7 @@
     "z": "e8d423c4.78d91",
     "name": "hoogtarief_stroom",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -43,9 +43,9 @@
     "data": "{\"value\":\"{{hoogtarief}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1030,
     "y": 240,
     "wires": [
@@ -58,7 +58,7 @@
     "z": "e8d423c4.78d91",
     "name": "vaste_leveringskosten_stroom_per_dag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -66,9 +66,9 @@
     "data": "{\"value\":\"0.196\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1100,
     "y": 300,
     "wires": [
@@ -81,7 +81,7 @@
     "z": "e8d423c4.78d91",
     "name": "vaste_leveringskosten_stroom_per_jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -89,9 +89,9 @@
     "data": "{\"value\":\"71.39\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1100,
     "y": 360,
     "wires": [
@@ -104,7 +104,7 @@
     "z": "e8d423c4.78d91",
     "name": "reset_stroomtarieven -> on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -133,6 +133,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 150,
     "y": 160,
     "wires": [
@@ -156,7 +176,7 @@
     "z": "e8d423c4.78d91",
     "name": "- vermindering_energiebelasting_stroom_per_dag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -164,9 +184,9 @@
     "data": "{\"value\":\"-0.854\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 560,
     "wires": [
@@ -179,7 +199,7 @@
     "z": "e8d423c4.78d91",
     "name": "- vermindering_energiebelasting_stroom_per_jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -187,9 +207,9 @@
     "data": "{\"value\":\"-311.62\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1130,
     "y": 620,
     "wires": [
@@ -202,7 +222,7 @@
     "z": "e8d423c4.78d91",
     "name": "netbeheerkosten_stroom_per_dag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -210,9 +230,9 @@
     "data": "{\"value\":\"0.691\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1080,
     "y": 420,
     "wires": [
@@ -225,7 +245,7 @@
     "z": "e8d423c4.78d91",
     "name": "netbeheerkosten_stroom_per_jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -233,9 +253,9 @@
     "data": "{\"value\":\"252.40\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1080,
     "y": 480,
     "wires": [
@@ -271,7 +291,7 @@
     "z": "e8d423c4.78d91",
     "name": "reset_stroomtarieven -> off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -279,9 +299,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1060,
     "y": 120,
     "wires": [
@@ -294,7 +314,7 @@
     "z": "e8d423c4.78d91",
     "name": "tarif",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -323,6 +343,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 90,
     "y": 60,
     "wires": [
@@ -416,19 +456,28 @@
     "z": "e8d423c4.78d91",
     "name": "prijs laagtarief",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1",
     "state_type": "str",
-    "state_location": "laagtarief",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "laagtarief",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 660,
     "y": 180,
     "wires": [
@@ -443,19 +492,28 @@
     "z": "e8d423c4.78d91",
     "name": "prijs hoogtarief",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2",
     "state_type": "str",
-    "state_location": "hoogtarief",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "hoogtarief",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 660,
     "y": 240,
     "wires": [
@@ -502,7 +560,7 @@
     "z": "e8d423c4.78d91",
     "name": "reset_gastarieven -> on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -531,6 +589,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 140,
     "y": 960,
     "wires": [
@@ -572,7 +650,7 @@
     "z": "e8d423c4.78d91",
     "name": "reset_stroomtarieven -> off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -580,9 +658,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1060,
     "y": 940,
     "wires": [
@@ -595,7 +673,7 @@
     "z": "e8d423c4.78d91",
     "name": "vaste_leveringskosten_gas_per_dag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -603,9 +681,9 @@
     "data": "{\"value\":\"0.196\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1090,
     "y": 1060,
     "wires": [
@@ -618,7 +696,7 @@
     "z": "e8d423c4.78d91",
     "name": "netbeheerkosten_gas_per_dag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -626,9 +704,9 @@
     "data": "{\"value\":\"0.524\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1070,
     "y": 1120,
     "wires": [
@@ -641,7 +719,7 @@
     "z": "e8d423c4.78d91",
     "name": "tarief_gas",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -649,9 +727,9 @@
     "data": "{\"value\":\"{{gastarief}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1000,
     "y": 1000,
     "wires": [
@@ -664,19 +742,28 @@
     "z": "e8d423c4.78d91",
     "name": "prijs laagtarief",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_gas_cost",
     "state_type": "str",
-    "state_location": "gastarief",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "gastarief",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 700,
     "y": 1000,
     "wires": [
@@ -709,7 +796,7 @@
     "z": "e8d423c4.78d91",
     "name": "solaredge omvormer status",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -738,6 +825,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 130,
     "y": 1200,
     "wires": [
@@ -820,7 +927,7 @@
     "z": "e8d423c4.78d91",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -849,6 +956,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 220,
     "y": 1280,
     "wires": [
@@ -888,7 +1015,7 @@
     "z": "e8d423c4.78d91",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "mobile_app_telefoon_coen",
@@ -896,9 +1023,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Energie\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1250,
     "y": 1280,
     "wires": [
@@ -943,19 +1070,28 @@
     "z": "e8d423c4.78d91",
     "name": "solaredge omvormer status",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.solaredge_modbus_status",
     "state_type": "str",
-    "state_location": "status",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "status",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 860,
     "y": 1280,
     "wires": [
@@ -992,19 +1128,28 @@
     "z": "e8d423c4.78d91",
     "name": "sensor.solaredge_modbus_ac_power",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.solaredge_modbus_ac_power",
     "state_type": "str",
-    "state_location": "sensor.solaredge_modbus_ac_power",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.solaredge_modbus_ac_power",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 370,
     "y": 1340,
     "wires": [
@@ -1019,19 +1164,28 @@
     "z": "e8d423c4.78d91",
     "name": "sensor.power_kwh_to_w_delivered",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.power_kwh_to_w_delivered",
     "state_type": "str",
-    "state_location": "sensor.power_kwh_to_w_delivered",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.power_kwh_to_w_delivered",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 360,
     "y": 1400,
     "wires": [
@@ -1046,19 +1200,28 @@
     "z": "e8d423c4.78d91",
     "name": "sensor.power_kwh_to_w_returned",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.power_kwh_to_w_returned",
     "state_type": "str",
-    "state_location": "sensor.power_kwh_to_w_returned",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.power_kwh_to_w_returned",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 360,
     "y": 1460,
     "wires": [
@@ -1245,19 +1408,28 @@
     "z": "e8d423c4.78d91",
     "name": "stroom vandaag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "payload",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
-    "override_topic": false,
     "entity_id": "sensor.stroom_dag_record",
     "state_type": "str",
-    "state_location": "stroom_dag_record",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "stroom_dag_record",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 560,
     "y": 1560,
     "wires": [
@@ -1292,7 +1464,7 @@
     "z": "e8d423c4.78d91",
     "name": "stroom vandaag",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1321,6 +1493,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 100,
     "y": 1560,
     "wires": [
@@ -1355,7 +1547,7 @@
     "z": "e8d423c4.78d91",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -1363,9 +1555,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Energie\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1330,
     "y": 1580,
     "wires": [
@@ -1388,19 +1580,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie opgewekt deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_opgewekt_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 2280,
     "wires": [
@@ -1415,19 +1616,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie verbruikt deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_verbruikt_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 2320,
     "wires": [
@@ -1442,19 +1652,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie geleverd deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_merged_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 2360,
     "wires": [
@@ -1469,19 +1688,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie teruggeleverd deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_returned_merged_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 520,
     "y": 2400,
     "wires": [
@@ -1496,19 +1724,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie netto deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_netto_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2440,
     "wires": [
@@ -1523,19 +1760,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie kosten deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_kosten_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2480,
     "wires": [
@@ -1550,19 +1796,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas verbruikt deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_gas_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2520,
     "wires": [
@@ -1577,19 +1832,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas kosten deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.gas_kosten_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 2560,
     "wires": [
@@ -1604,19 +1868,28 @@
     "z": "e8d423c4.78d91",
     "name": "totaal kosten deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.totaal_kosten_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2600,
     "wires": [
@@ -2000,19 +2273,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie kosten",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_kosten",
     "state_type": "num",
-    "state_location": "energie_kosten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "energie_kosten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 460,
     "y": 2020,
     "wires": [
@@ -2027,19 +2309,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas verbruikt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_gas",
     "state_type": "num",
-    "state_location": "gas_verbruikt",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "gas_verbruikt",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 450,
     "y": 2060,
     "wires": [
@@ -2054,19 +2345,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas kosten",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.gas_kosten",
     "state_type": "num",
-    "state_location": "gas_kosten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "gas_kosten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 450,
     "y": 2100,
     "wires": [
@@ -2081,19 +2381,28 @@
     "z": "e8d423c4.78d91",
     "name": "totaal kosten",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.totaal_kosten",
     "state_type": "num",
-    "state_location": "totaal_kosten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "totaal_kosten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 450,
     "y": 2140,
     "wires": [
@@ -2383,19 +2692,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie opgewekt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_opgewekt",
     "state_type": "num",
-    "state_location": "energie_opgewekt",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "energie_opgewekt",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 470,
     "y": 1820,
     "wires": [
@@ -2410,19 +2728,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie verbruikt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_verbruikt",
     "state_type": "num",
-    "state_location": "energie_verbruikt",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "energie_verbruikt",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 470,
     "y": 1860,
     "wires": [
@@ -2437,19 +2764,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie geleverd",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_merged",
     "state_type": "num",
-    "state_location": "energie_geleverd",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "energie_geleverd",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 470,
     "y": 1900,
     "wires": [
@@ -2464,19 +2800,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie teruggeleverd",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_returned_merged",
     "state_type": "num",
-    "state_location": "energie_teruggeleverd",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "energie_teruggeleverd",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 1940,
     "wires": [
@@ -2491,19 +2836,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie netto",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_netto",
     "state_type": "num",
-    "state_location": "energie_netto",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "energie_netto",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 450,
     "y": 1980,
     "wires": [
@@ -2848,19 +3202,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie opgewekt deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_opgewekt_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 510,
     "y": 2740,
     "wires": [
@@ -2875,19 +3238,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie verbruikt deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_verbruikt_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 510,
     "y": 2780,
     "wires": [
@@ -2902,19 +3274,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie geleverd deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_merged_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 510,
     "y": 2820,
     "wires": [
@@ -2929,19 +3310,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie teruggeleverd deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_returned_merged_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 520,
     "y": 2860,
     "wires": [
@@ -2956,19 +3346,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie netto deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_netto_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2900,
     "wires": [
@@ -2983,19 +3382,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie kosten deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_kosten_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 2940,
     "wires": [
@@ -3010,19 +3418,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas verbruikt deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_gas_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2980,
     "wires": [
@@ -3037,19 +3454,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas kosten deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.gas_kosten_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 3020,
     "wires": [
@@ -3064,19 +3490,28 @@
     "z": "e8d423c4.78d91",
     "name": "totaal kosten deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.totaal_kosten_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 3060,
     "wires": [
@@ -3460,19 +3895,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie opgewekt dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_opgewekt_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 3200,
     "wires": [
@@ -3487,19 +3931,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie verbruikt dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_verbruikt_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 3240,
     "wires": [
@@ -3514,19 +3967,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie geleverd dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_merged_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 3280,
     "wires": [
@@ -3541,19 +4003,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie teruggeleverd dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_electricity_returned_merged_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 3320,
     "wires": [
@@ -3568,19 +4039,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie netto dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_netto_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 3360,
     "wires": [
@@ -3595,19 +4075,28 @@
     "z": "e8d423c4.78d91",
     "name": "energie kosten deze dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_kosten_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 3400,
     "wires": [
@@ -3622,19 +4111,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas verbruikt dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.dsmr_day_consumption_gas_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 3440,
     "wires": [
@@ -3649,19 +4147,28 @@
     "z": "e8d423c4.78d91",
     "name": "gas kosten dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.gas_kosten_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 470,
     "y": 3480,
     "wires": [
@@ -3676,19 +4183,28 @@
     "z": "e8d423c4.78d91",
     "name": "totaal kosten dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.totaal_kosten_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 3520,
     "wires": [
@@ -4072,7 +4588,7 @@
     "z": "e8d423c4.78d91",
     "name": "prijs_water_per_m3",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -4080,9 +4596,9 @@
     "data": "{\"value\":\"0.676\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1030,
     "y": 720,
     "wires": [
@@ -4095,7 +4611,7 @@
     "z": "e8d423c4.78d91",
     "name": "belasting_op_leidingwater_prijs_per_m3",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -4103,9 +4619,9 @@
     "data": "{\"value\":\"0.379\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1100,
     "y": 780,
     "wires": [
@@ -4118,7 +4634,7 @@
     "z": "e8d423c4.78d91",
     "name": "belasting_op_leidingwater_prijs_per_m3",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_number",
     "service": "set_value",
@@ -4126,9 +4642,9 @@
     "data": "{\"value\":\"0.125\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1100,
     "y": 840,
     "wires": [
@@ -4141,7 +4657,7 @@
     "z": "e8d423c4.78d91",
     "name": "reset_watertarieven -> on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -4170,6 +4686,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 150,
     "y": 560,
     "wires": [
@@ -4188,7 +4724,7 @@
     "z": "e8d423c4.78d91",
     "name": "reset_watertarieven -> off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -4196,9 +4732,9 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 1050,
     "y": 680,
     "wires": [
@@ -4234,19 +4770,28 @@
     "z": "e8d423c4.78d91",
     "name": "water verbruik",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_verbruikt_vandaag",
     "state_type": "num",
-    "state_location": "water_verbruikt_vandaag",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "water_verbruikt_vandaag",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 460,
     "y": 2180,
     "wires": [
@@ -4302,19 +4847,28 @@
     "z": "e8d423c4.78d91",
     "name": "water verbruikt deze week",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_verbruikt_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 2640,
     "wires": [
@@ -4370,19 +4924,28 @@
     "z": "e8d423c4.78d91",
     "name": "water verbruikt deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_verbruikt_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 3100,
     "wires": [
@@ -4438,19 +5001,28 @@
     "z": "e8d423c4.78d91",
     "name": "water verbruikt dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_verbruikt_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 3560,
     "wires": [
@@ -4506,19 +5078,28 @@
     "z": "e8d423c4.78d91",
     "name": "water kosten",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_kosten",
     "state_type": "num",
-    "state_location": "water_kosten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "water_kosten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 450,
     "y": 2220,
     "wires": [
@@ -4592,19 +5173,28 @@
     "z": "e8d423c4.78d91",
     "name": "water kosten",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_kosten_deze_week",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 450,
     "y": 2680,
     "wires": [
@@ -4660,19 +5250,28 @@
     "z": "e8d423c4.78d91",
     "name": "water kosten deze maand",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_kosten_deze_maand",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 490,
     "y": 3140,
     "wires": [
@@ -4728,19 +5327,28 @@
     "z": "e8d423c4.78d91",
     "name": "water kosten dit jaar",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_kosten_dit_jaar",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 480,
     "y": 3600,
     "wires": [
@@ -4796,7 +5404,7 @@
     "z": "e8d423c4.78d91",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -4825,6 +5433,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 200,
     "y": 3760,
     "wires": [
@@ -4906,19 +5534,28 @@
     "z": "e8d423c4.78d91",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.water_m3_lifetime",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 640,
     "y": 3760,
     "wires": [
@@ -5037,19 +5674,28 @@
     "z": "e8d423c4.78d91",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_opwekking_dagen",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 380,
     "y": 3960,
     "wires": [
@@ -5143,19 +5789,28 @@
     "z": "e8d423c4.78d91",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.energie_opwekking_dagen",
     "state_type": "num",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 660,
     "y": 4100,
     "wires": [
@@ -5170,7 +5825,7 @@
     "z": "e8d423c4.78d91",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -5199,6 +5854,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 260,
     "y": 4140,
     "wires": [

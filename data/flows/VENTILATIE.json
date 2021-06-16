@@ -12,7 +12,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state basement heating > 5",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -41,6 +41,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 395,
     "y": 300,
     "wires": [
@@ -56,19 +76,28 @@
     "z": "4e909abe.0b62e4",
     "name": "basementmuur Temp < Dewpoint Living Room",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.living_room_dewpoint",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
-    "override_topic": false,
     "entity_id": "sensor.basementmuur_temperature_offset",
     "state_type": "num",
-    "state_location": "sensor.basementmuur_temperature_offset",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basementmuur_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 760,
     "y": 120,
     "wires": [
@@ -84,19 +113,28 @@
     "z": "4e909abe.0b62e4",
     "name": "basementmuur Temp < Dewpoint Bedroom",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.master_bedroom_dewpoint",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
-    "override_topic": false,
     "entity_id": "sensor.basementmuur_temperature_offset",
     "state_type": "num",
-    "state_location": "sensor.basementmuur_temperature_offset",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basementmuur_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 750,
     "y": 180,
     "wires": [
@@ -112,19 +150,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Absolute Humidity Basement < Absolute Humidity Living Room",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.living_room_absolutehumidity",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
-    "override_topic": false,
     "entity_id": "sensor.basement_absolutehumidity",
     "state_type": "num",
-    "state_location": "sensor.basement_absolutehumidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 810,
     "y": 240,
     "wires": [
@@ -140,19 +187,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Mechanische Ventilatie Stand 1 Uit?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanische_ventilatie_stand_1",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_stand_1",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_stand_1",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1070,
     "y": 780,
     "wires": [
@@ -217,19 +273,28 @@
     "z": "4e909abe.0b62e4",
     "name": "buiten temp <= 5",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "5",
     "halt_if_type": "num",
     "halt_if_compare": "lte",
-    "override_topic": false,
     "entity_id": "sensor.bme280_temperature_weerstation",
     "state_type": "num",
-    "state_location": "temperatuur_buiten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "temperatuur_buiten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 390,
     "y": 780,
     "wires": [
@@ -247,19 +312,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Heating Power <= 0%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "0",
     "halt_if_type": "num",
     "halt_if_compare": "lte",
-    "override_topic": false,
     "entity_id": "sensor.basement_heating",
     "state_type": "num",
-    "state_location": "sensor.basement_heating",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_heating",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1170,
     "y": 580,
     "wires": [
@@ -275,19 +349,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state dewpoint living room ",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.living_room_dewpoint",
     "state_type": "num",
-    "state_location": "living_room_dewpoint",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "living_room_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 395,
     "y": 120,
     "wires": [
@@ -302,19 +385,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state dewpoint master bedroom ",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.master_bedroom_dewpoint",
     "state_type": "num",
-    "state_location": "sensor.master_bedroom_dewpoint",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.master_bedroom_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 415,
     "y": 180,
     "wires": [
@@ -329,19 +421,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity living room",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.living_room_absolutehumidity",
     "state_type": "str",
-    "state_location": "living_room_absolutehumidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "living_room_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 425,
     "y": 240,
     "wires": [
@@ -356,19 +457,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Livingroom Dewpoint",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.living_room_dewpoint",
     "state_type": "num",
-    "state_location": "sensor.living_room_dewpoint",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 380,
     "y": 420,
     "wires": [
@@ -383,19 +493,28 @@
     "z": "4e909abe.0b62e4",
     "name": "basementmuur Temp < Dewpoint Living Room",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.living_room_dewpoint",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.basementmuur_temperature_offset",
     "state_type": "num",
-    "state_location": "sensor.basementmuur_temperature_offset",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basementmuur_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 670,
     "y": 420,
     "wires": [
@@ -411,19 +530,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Bedroom Dewpoint",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.master_bedroom_dewpoint",
     "state_type": "num",
-    "state_location": "sensor.master_bedroom_dewpoint",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.master_bedroom_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 370,
     "y": 500,
     "wires": [
@@ -438,19 +566,28 @@
     "z": "4e909abe.0b62e4",
     "name": "basementmuur Temp < Dewpoint Bedroom",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.master_bedroom_dewpoint",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.basementmuur_temperature_offset",
     "state_type": "num",
-    "state_location": "sensor.basementmuur_temperature_offset",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basementmuur_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 640,
     "y": 500,
     "wires": [
@@ -466,19 +603,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Absolute Humidity Livingroom",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.living_room_absolutehumidity",
     "state_type": "num",
-    "state_location": "sensor.living_room_absolutehumidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 410,
     "y": 580,
     "wires": [
@@ -493,19 +639,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Absolute Humidity Basement > Absolute Humidity Living Room",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.living_room_absolutehumidity",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.basement_absolutehumidity",
     "state_type": "num",
-    "state_location": "sensor.basement_absolutehumidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 790,
     "y": 580,
     "wires": [
@@ -531,19 +686,28 @@
     "z": "4e909abe.0b62e4",
     "name": "iemand thuis",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "group.persons",
     "state_type": "str",
-    "state_location": "group.persons",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "group.persons",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 370,
     "y": 960,
     "wires": [
@@ -561,19 +725,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Mechanische Ventilatie Stand 2 Uit?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanische_ventilatie_stand_2",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_stand_2",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_stand_2",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1070,
     "y": 940,
     "wires": [
@@ -600,19 +773,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Mechanische Ventilatie Stand 3 Uit?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanische_ventilatie_stand_3",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_stand_3",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_stand_3",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1070,
     "y": 1220,
     "wires": [
@@ -629,7 +811,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state group person",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -658,6 +840,26 @@
     "ignorePrevStateUnavailable": true,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 130,
     "y": 100,
     "wires": [
@@ -675,7 +877,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state guest",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -704,6 +906,26 @@
     "ignorePrevStateUnavailable": true,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 100,
     "y": 160,
     "wires": [
@@ -731,7 +953,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Buienradar Rain?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -760,6 +982,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 380,
     "y": 1940,
     "wires": [
@@ -777,19 +1019,28 @@
     "z": "4e909abe.0b62e4",
     "name": "get absolute humidity basement",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.basement_absolutehumidity",
     "state_type": "str",
-    "state_location": "sensor.basement_absolutehumidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 430,
     "y": 2020,
     "wires": [
@@ -804,19 +1055,28 @@
     "z": "4e909abe.0b62e4",
     "name": "absolute humidity buiten > absolute humidity basement",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.basement_absolutehumidity",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.buiten_absolutehumidity",
     "state_type": "num",
-    "state_location": "sensor.buiten_absolutehumidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.buiten_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 500,
     "y": 2100,
     "wires": [
@@ -859,19 +1119,28 @@
     "z": "4e909abe.0b62e4",
     "name": "buiten temp > basement temp",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "sensor.basement_temperature",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.bme280_temperature_weerstation",
     "state_type": "num",
-    "state_location": "temperatuur_buiten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "temperatuur_buiten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 430,
     "y": 2360,
     "wires": [
@@ -889,19 +1158,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Heating Power <= 0%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "0",
     "halt_if_type": "num",
     "halt_if_compare": "lte",
-    "override_topic": false,
     "entity_id": "sensor.basement_heating",
     "state_type": "num",
-    "state_location": "sensor.basement_heating",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_heating",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 435,
     "y": 2290,
     "wires": [
@@ -917,7 +1195,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Heating Power > 1%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -946,6 +1224,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 430,
     "y": 1820,
     "wires": [
@@ -963,19 +1261,28 @@
     "z": "4e909abe.0b62e4",
     "name": "precipitation <= 0",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "0",
     "halt_if_type": "num",
     "halt_if_compare": "lte",
-    "override_topic": false,
     "entity_id": "sensor.ede_precipitation",
     "state_type": "num",
-    "state_location": "sensor.ede_precipitation",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.ede_precipitation",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 390,
     "y": 2160,
     "wires": [
@@ -991,19 +1298,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Windows Closed?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.basement_ramen",
     "state_type": "str",
-    "state_location": "input_boolean.basement_ramen",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.basement_ramen",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1375,
     "y": 2190,
     "wires": [
@@ -1019,7 +1335,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Open Basement Windows",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_on",
@@ -1027,9 +1343,16 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "basementraam",
-    "output_location_type": "msg",
     "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "basementraam",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
     "x": 1620,
     "y": 2190,
     "wires": [
@@ -1045,19 +1368,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Windows Open?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.basement_ramen",
     "state_type": "str",
-    "state_location": "input_boolean.basement_ramen",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.basement_ramen",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1375,
     "y": 2090,
     "wires": [
@@ -1073,7 +1405,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Close Basement Windows",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -1081,9 +1413,16 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "basementraam",
-    "output_location_type": "msg",
     "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "basementraam",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
     "x": 1625,
     "y": 2090,
     "wires": [
@@ -1099,19 +1438,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Windows Open?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.basement_ramen",
     "state_type": "str",
-    "state_location": "input_boolean.basement_ramen",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.basement_ramen",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1380,
     "y": 1940,
     "wires": [
@@ -1127,7 +1475,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Close Basement Windows",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -1135,9 +1483,16 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "basementraam",
-    "output_location_type": "msg",
     "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "basementraam",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
     "x": 1630,
     "y": 1940,
     "wires": [
@@ -1153,19 +1508,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Windows Open?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.basement_ramen",
     "state_type": "str",
-    "state_location": "input_boolean.basement_ramen",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.basement_ramen",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1380,
     "y": 1880,
     "wires": [
@@ -1181,7 +1545,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Close Basement Windows",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "input_boolean",
     "service": "turn_off",
@@ -1189,9 +1553,16 @@
     "data": "",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "basementraam",
-    "output_location_type": "msg",
     "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "basementraam",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
     "x": 1630,
     "y": 1880,
     "wires": [
@@ -1217,7 +1588,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 1 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1246,6 +1617,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 320,
     "y": 1380,
     "wires": [
@@ -1261,7 +1652,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state autonomous",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1290,6 +1681,26 @@
     "ignorePrevStateUnavailable": true,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 130,
     "y": 220,
     "wires": [
@@ -1317,19 +1728,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Autonoom On?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanische_ventilatie_autonoom",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_autonoom",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1400,
     "y": 580,
     "wires": [
@@ -1345,19 +1765,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Humidity >= 60%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "60",
     "halt_if_type": "num",
     "halt_if_compare": "gte",
-    "override_topic": false,
     "entity_id": "sensor.basement_humidity",
     "state_type": "num",
-    "state_location": "sensor.basement_humidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_humidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 400,
     "y": 680,
     "wires": [
@@ -1375,19 +1804,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Temp",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.basement_temperature",
     "state_type": "num",
-    "state_location": "sensor.basement_temperature",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 620,
     "y": 660,
     "wires": [
@@ -1402,19 +1840,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Living Room Temp",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.living_room_temperature",
     "state_type": "num",
-    "state_location": "sensor.living_room_temperature",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 810,
     "y": 660,
     "wires": [
@@ -1429,19 +1876,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Living Room Humidity",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.living_room_humidity",
     "state_type": "num",
-    "state_location": "sensor.living_room_humidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_humidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1020,
     "y": 660,
     "wires": [
@@ -1456,7 +1912,7 @@
     "z": "4e909abe.0b62e4",
     "name": "In APP Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "persistent_notification",
     "service": "create",
@@ -1464,9 +1920,9 @@
     "data": "{\"notification_id\":\"{{notification_id}}\",\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2155,
     "y": 960,
     "wires": [
@@ -1813,7 +2269,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 0 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1842,6 +2298,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 440,
     "y": 2560,
     "wires": [
@@ -1857,7 +2333,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 1 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1886,6 +2362,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 440,
     "y": 2620,
     "wires": [
@@ -1901,7 +2397,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 2 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1930,6 +2426,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 440,
     "y": 2680,
     "wires": [
@@ -1945,7 +2461,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 3 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -1974,6 +2490,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 440,
     "y": 2740,
     "wires": [
@@ -2174,7 +2710,7 @@
     "z": "4e909abe.0b62e4",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2203,6 +2739,26 @@
     "ignorePrevStateUnavailable": true,
     "ignoreCurrentStateUnknown": true,
     "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 470,
     "y": 2860,
     "wires": [
@@ -2350,7 +2906,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Notify",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "debugenabled": false,
     "service_domain": "notify",
     "service": "notify",
@@ -2358,9 +2914,9 @@
     "data": "{\"message\":\"{{message}}\",\"title\":\"Ventilatie\"}",
     "dataType": "json",
     "mergecontext": "",
-    "output_location": "",
-    "output_location_type": "none",
     "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
     "x": 2230,
     "y": 1800,
     "wires": [
@@ -2373,19 +2929,28 @@
     "z": "4e909abe.0b62e4",
     "name": "buiten temp > 18",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "18",
     "halt_if_type": "num",
     "halt_if_compare": "gt",
-    "override_topic": false,
     "entity_id": "sensor.bme280_temperature_weerstation",
     "state_type": "num",
-    "state_location": "temperatuur_buiten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "temperatuur_buiten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 390,
     "y": 2420,
     "wires": [
@@ -2403,19 +2968,28 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Humidity < 69%",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "69",
     "halt_if_type": "num",
     "halt_if_compare": "lt",
-    "override_topic": false,
     "entity_id": "sensor.basement_humidity",
     "state_type": "num",
-    "state_location": "sensor.basement_humidity",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_humidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 600,
     "y": 960,
     "wires": [
@@ -2433,19 +3007,28 @@
     "z": "4e909abe.0b62e4",
     "name": "is daalt",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Daalt",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.state_basement_humidity",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1020,
     "y": 2880,
     "wires": [
@@ -2461,19 +3044,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state is up",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "Stijgt",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.state_basement_humidity",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1020,
     "y": 2840,
     "wires": [
@@ -2489,7 +3081,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Buienradar Rain?",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2518,6 +3110,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 380,
     "y": 1880,
     "wires": [
@@ -2535,19 +3147,28 @@
     "z": "4e909abe.0b62e4",
     "name": "condition niet rainy",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "rainy",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "sensor.ede_condition",
     "state_type": "str",
-    "state_location": "sensor.ede_precipitation",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.ede_precipitation",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 395,
     "y": 2230,
     "wires": [
@@ -2601,19 +3222,28 @@
     "z": "4e909abe.0b62e4",
     "name": "get basement temepratuur",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.basement_temperature",
     "state_type": "str",
-    "state_location": "sensor.basement_temperature",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 700,
     "y": 2020,
     "wires": [
@@ -2628,19 +3258,28 @@
     "z": "4e909abe.0b62e4",
     "name": "temperatuur buiten",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "sensor.bme280_temperature_weerstation",
     "state_type": "num",
-    "state_location": "temperatuur_buiten",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "temperatuur_buiten",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 930,
     "y": 2020,
     "wires": [
@@ -2655,19 +3294,28 @@
     "z": "4e909abe.0b62e4",
     "name": "living_room verwarming niet aan",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "heat",
     "halt_if_type": "str",
     "halt_if_compare": "is_not",
-    "override_topic": false,
     "entity_id": "climate.living_room",
     "state_type": "str",
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 870,
     "y": 1000,
     "wires": [
@@ -2860,19 +3508,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state ventilation position 0 off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanical_ventilation_position_0",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_stand_uit",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_stand_uit",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1340,
     "y": 200,
     "wires": [
@@ -2888,19 +3545,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation autonomous on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanical_ventilation_autonomous",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_autonoom",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 1650,
     "y": 200,
     "wires": [
@@ -2917,7 +3583,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 2 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2946,6 +3612,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 320,
     "y": 1440,
     "wires": [
@@ -2961,7 +3647,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 3 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2990,6 +3676,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 320,
     "y": 1500,
     "wires": [
@@ -3005,7 +3711,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation position 0 on",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 3,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -3034,6 +3740,26 @@
     "ignorePrevStateUnavailable": false,
     "ignoreCurrentStateUnknown": false,
     "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
     "x": 320,
     "y": 1560,
     "wires": [
@@ -3125,19 +3851,28 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation autonomous off",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "override_topic": false,
     "entity_id": "input_boolean.mechanical_ventilation_autonomous",
     "state_type": "str",
-    "state_location": "input_boolean.mechanische_ventilatie_autonoom",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
     "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_autonoom",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
     "x": 890,
     "y": 1480,
     "wires": [

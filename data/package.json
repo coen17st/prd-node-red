@@ -21,7 +21,7 @@
         "node-red-contrib-cron-plus": "~1.4.2",
         "node-red-contrib-flow-manager": "0.7.2",
         "node-red-contrib-harmony": "~1.2.6",
-        "node-red-contrib-home-assistant-websocket": "~0.30.1",
+        "node-red-contrib-home-assistant-websocket": "~0.33.1",
         "node-red-contrib-simpletime": "~2.10.0",
         "node-red-contrib-stoptimer": "0.0.7",
         "node-red-contrib-time-range-switch": "~1.0.0",
