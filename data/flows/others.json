@@ -1341,7 +1341,7 @@
     "z": "155ca471.b81eac",
     "name": "",
     "props": [],
-    "repeat": "3600",
+    "repeat": "7200",
     "crontab": "",
     "once": true,
     "onceDelay": 0.1,
