@@ -6,3 +6,4 @@
 /data/.npm
 /data/*.backup
 /data/node-red-contrib-home-assistant-websocket.json
+/prd-node-red-app.env

@@ -11,7 +11,7 @@ steps:
   - name: docker-compose
     image: tmaier/docker-compose:latest
     commands:
-      - mv prd-node-red-app.env.example prd-node-red-app.env
+      - mv prd-${DRONE_REPO_NAME}-app.env.example prd-${DRONE_REPO_NAME}-app.env
       - docker-compose config -q
 
 ---
@@ -31,7 +31,7 @@ steps:
       password:
         from_secret: docker-registry-password
       registry: docker-registry.theautomation.nl
-      repo: docker-registry.theautomation.nl/coen/prd-node-red-app
+      repo: docker-registry.theautomation.nl/coen/prd-${DRONE_REPO_NAME}-app
       auto_tag: true
 
 ---
@@ -52,7 +52,7 @@ steps:
         from_secret: ssh_password
       port: 22
       script:
-        - cd /home/coen/docker-home-services/node-red
+        - cd /home/coen/docker-home-services/${DRONE_REPO_NAME}/
         - git pull
         - docker-compose pull
 
@@ -65,7 +65,7 @@ steps:
         from_secret: ssh_password
       port: 22
       script:
-        - cd /home/coen/docker-home-services/node-red
+        - cd /home/coen/docker-home-services/${DRONE_REPO_NAME}/
         - docker-compose up -d
 
   - name: clean
@@ -77,7 +77,7 @@ steps:
         from_secret: ssh_password
       port: 22
       script:
-        - cd /home/coen/docker-home-services/node-red
+        - cd /home/coen/docker-home-services/${DRONE_REPO_NAME}/
         - docker image prune -f
 
 ---
