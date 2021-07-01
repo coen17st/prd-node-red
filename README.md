@@ -5,4 +5,4 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/theautomation/node-red?logo=github)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/theautomation/node-red/main?logo=github)
 
-[Node-RED](https://nodered.org/): A programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.
+[Node-RED](https://nodered.org/): A programming tool for wiring together my hardware devices, APIs and online services.
