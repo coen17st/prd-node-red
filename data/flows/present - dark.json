@@ -976,7 +976,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Het is dark en er is iemand aanwezig. {{data.attributes.friendly_name}} verlichting is ingeschakeld.",
+    "template": "Het is donker en iemand is aanwezig. {{data.attributes.friendly_name}} verlichting is ingeschakeld.",
     "output": "str",
     "x": 2060,
     "y": 600,

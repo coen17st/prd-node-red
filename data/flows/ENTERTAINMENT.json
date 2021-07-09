@@ -10,7 +10,7 @@
     "id": "e0222031.c804e",
     "type": "server-state-changed",
     "z": "2910f43f.ab852c",
-    "name": "input_select harmony hub",
+    "name": "state input select harmony hub",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -61,7 +61,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 150,
+    "x": 170,
     "y": 160,
     "wires": [
       [
@@ -89,101 +89,41 @@
       },
       {
         "t": "eq",
-        "v": "Scherm Uit",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
         "v": "Smart TV",
         "vt": "str"
       },
       {
         "t": "eq",
-        "v": "PC",
+        "v": "Scherm Uit",
         "vt": "str"
       },
       {
         "t": "eq",
-        "v": "Alles Uit",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
         "v": "Alles Uit",
         "vt": "str"
       }
     ],
     "checkall": "true",
     "repair": false,
-    "outputs": 7,
+    "outputs": 5,
     "x": 630,
     "y": 160,
     "wires": [
       [
-        "b9246d99.9890a"
+        "9781b7f5.1f10a8"
       ],
       [
-        "a0de1f36.a9842"
+        "106323c6.82befc"
       ],
       [
-        "d55292d3.70a65"
+        "174d4ece.332d31"
       ],
       [
-        "8377b5de.7f8148"
+        "82bc95cc.bfebe8"
       ],
       [
-        "a300661.bd56498"
-      ],
-      [
-        "149337f0.569cd8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "caf85071.0aa52",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "select Smart TV",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.harmonyhub",
-    "data": "{\"option\":\"Smart TV\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1600,
-    "y": 820,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "c4c47c39.544b5",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "select PC",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.harmonyhub",
-    "data": "{\"option\":\"PC\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1580,
-    "y": 880,
-    "wires": [
-      []
+        "6da8cb20.30d0f4"
+      ]
     ]
   },
   {
@@ -216,6 +156,11 @@
       },
       {
         "t": "cont",
+        "v": "Netflix",
+        "vt": "str"
+      },
+      {
+        "t": "cont",
         "v": "Spotify",
         "vt": "str"
       },
@@ -223,90 +168,44 @@
         "t": "cont",
         "v": "TuneIn Free",
         "vt": "str"
-      },
-      {
-        "t": "cont",
-        "v": "Netflix",
-        "vt": "str"
       }
     ],
     "checkall": "true",
     "repair": false,
     "outputs": 7,
     "x": 630,
-    "y": 1120,
+    "y": 820,
     "wires": [
       [
-        "67fdfc2a.1d4364",
         "33fc2a94.4cdaa6"
       ],
       [
-        "67fdfc2a.1d4364",
         "33fc2a94.4cdaa6"
       ],
       [
-        "67fdfc2a.1d4364",
         "33fc2a94.4cdaa6"
       ],
       [
-        "67fdfc2a.1d4364",
         "33fc2a94.4cdaa6"
-      ],
-      [
-        "d4b91f6a.e773d"
-      ],
-      [
-        "d4b91f6a.e773d"
       ],
       [
         "e730c015.cbf7b"
-      ]
-    ]
-  },
-  {
-    "id": "3385b7fb.7aab88",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "Chromecast State On",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "media_player.chromecast_woonkamer",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 340,
-    "y": 1160,
-    "wires": [
-      [
-        "a16b409.4b281c"
       ],
-      []
+      [
+        "1fe48769.70fa89"
+      ],
+      [
+        "1fe48769.70fa89"
+      ]
     ]
   },
   {
     "id": "c80aa3e3.6b6f",
     "type": "comment",
     "z": "2910f43f.ab852c",
-    "name": "WELKE INPUT GESELECTEERD",
+    "name": "HARMONY INPUT SELECT",
     "info": "",
-    "x": 180,
+    "x": 160,
     "y": 120,
     "wires": []
   },
@@ -333,13 +232,13 @@
     "repair": false,
     "outputs": 2,
     "x": 650,
-    "y": 440,
+    "y": 540,
     "wires": [
       [
-        "67fdfc2a.1d4364"
+        "740d851f.8d8e4c"
       ],
       [
-        "d6c716ea.d1e208"
+        "5ca3464f.c607d8"
       ]
     ]
   },
@@ -353,12 +252,12 @@
     "rules": [
       {
         "t": "eq",
-        "v": "on",
+        "v": "off",
         "vt": "str"
       },
       {
         "t": "eq",
-        "v": "off",
+        "v": "on",
         "vt": "str"
       }
     ],
@@ -366,13 +265,13 @@
     "repair": false,
     "outputs": 2,
     "x": 650,
-    "y": 560,
+    "y": 640,
     "wires": [
       [
-        "b83ae1b2.65965"
+        "5ca3464f.c607d8"
       ],
       [
-        "d6c716ea.d1e208"
+        "b83ae1b2.65965"
       ]
     ]
   },
@@ -380,7 +279,7 @@
     "id": "e950787d.c01678",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "speel spotify mijn muziek",
+    "name": "input select my music",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -393,8 +292,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1630,
-    "y": 580,
+    "x": 1380,
+    "y": 660,
     "wires": [
       []
     ]
@@ -403,7 +302,7 @@
     "id": "d8e3ead5.952f18",
     "type": "server-state-changed",
     "z": "2910f43f.ab852c",
-    "name": "chromecast state",
+    "name": "state media player shield",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -417,7 +316,7 @@
         "value": ""
       }
     ],
-    "entityidfilter": "media_player.chromecast_woonkamer",
+    "entityidfilter": "media_player.shield",
     "entityidfiltertype": "exact",
     "outputinitially": true,
     "state_type": "str",
@@ -454,13 +353,11 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 120,
-    "y": 1120,
+    "x": 150,
+    "y": 780,
     "wires": [
       [
-        "3385b7fb.7aab88",
-        "a16b409.4b281c",
-        "7ab2f10f.a5dad"
+        "a16b409.4b281c"
       ]
     ]
   },
@@ -468,7 +365,7 @@
     "id": "27d51c2d.a557b4",
     "type": "server-state-changed",
     "z": "2910f43f.ab852c",
-    "name": "Muziek boolean",
+    "name": "state input boolean music",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -519,8 +416,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 120,
-    "y": 560,
+    "x": 150,
+    "y": 640,
     "wires": [
       [
         "5b04c23f.c13ddc"
@@ -531,7 +428,7 @@
     "id": "1c2e2fc7.151f2",
     "type": "server-state-changed",
     "z": "2910f43f.ab852c",
-    "name": "TV boolean",
+    "name": "state input boolean tv",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -582,8 +479,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 110,
-    "y": 440,
+    "x": 140,
+    "y": 540,
     "wires": [
       [
         "8c8062ee.9195a"
@@ -594,7 +491,7 @@
     "id": "41048f91.45ec8",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "select TV",
+    "name": "input select tv",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -607,31 +504,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1580,
-    "y": 640,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "151518bd.2e5467",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "select Netflix",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.harmonyhub",
-    "data": "{\"option\":\"Netflix\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1590,
-    "y": 700,
+    "x": 1200,
+    "y": 780,
     "wires": [
       []
     ]
@@ -640,7 +514,7 @@
     "id": "4023da29.24aa34",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "select Scherm Uit",
+    "name": "input select screen off",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -653,82 +527,17 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1610,
-    "y": 760,
+    "x": 1220,
+    "y": 900,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "f4e10743.bafda8",
-    "type": "switch",
-    "z": "2910f43f.ab852c",
-    "name": "Welke input?",
-    "property": "payload.activityId",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "TV",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Netflix",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Scherm Uit",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Smart TV",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "PC",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Alles Uit",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 6,
-    "x": 630,
-    "y": 760,
-    "wires": [
-      [
-        "67fdfc2a.1d4364"
-      ],
-      [
-        "61ac5cd.6c3c4a4"
-      ],
-      [
-        "d4b91f6a.e773d"
-      ],
-      [
-        "7968dd58.1d7444"
-      ],
-      [
-        "1e52c567.e8508b"
-      ],
-      [
-        "d6c716ea.d1e208"
-      ]
     ]
   },
   {
     "id": "87de6266.b1ec4",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "select Alles Uit",
+    "name": "select all off",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -741,235 +550,9 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1600,
-    "y": 940,
+    "x": 1590,
+    "y": 1000,
     "wires": [
-      [
-        "40342b7b.ed14d4",
-        "d5b2fd9a.1a6da",
-        "28100cba.7d86f4"
-      ]
-    ]
-  },
-  {
-    "id": "67fdfc2a.1d4364",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "tv not selected",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "TV",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1140,
-    "y": 640,
-    "wires": [
-      [
-        "41048f91.45ec8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "61ac5cd.6c3c4a4",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "netflix not selected",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "Netflix",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1150,
-    "y": 700,
-    "wires": [
-      [
-        "151518bd.2e5467"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "d4b91f6a.e773d",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "scherm uit not selected",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "Scherm Uit",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1170,
-    "y": 760,
-    "wires": [
-      [
-        "4023da29.24aa34"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "7968dd58.1d7444",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "smart tv not selected",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "Smart TV",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1160,
-    "y": 820,
-    "wires": [
-      [
-        "caf85071.0aa52"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "1e52c567.e8508b",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "pc not selected",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "PC",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1140,
-    "y": 880,
-    "wires": [
-      [
-        "c4c47c39.544b5"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "d6c716ea.d1e208",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "alles uit not selected",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "Alles Uit",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1160,
-    "y": 940,
-    "wires": [
-      [
-        "87de6266.b1ec4"
-      ],
       []
     ]
   },
@@ -977,10 +560,10 @@
     "id": "f92929d3.a2a858",
     "type": "comment",
     "z": "2910f43f.ab852c",
-    "name": "WAT SPEELT ER OP CHROMECAST",
+    "name": "APP ON MEDIA PLAYER SHIELD",
     "info": "",
-    "x": 190,
-    "y": 1060,
+    "x": 180,
+    "y": 720,
     "wires": []
   },
   {
@@ -990,34 +573,24 @@
     "name": "TV SWITCH",
     "info": "",
     "x": 110,
-    "y": 400,
+    "y": 500,
     "wires": []
   },
   {
     "id": "ed755ff2.18ede",
     "type": "comment",
     "z": "2910f43f.ab852c",
-    "name": "MUZIEK SWITCH",
+    "name": "MUSIC SWITCH",
     "info": "",
-    "x": 130,
-    "y": 520,
-    "wires": []
-  },
-  {
-    "id": "9d407b3b.379248",
-    "type": "comment",
-    "z": "2910f43f.ab852c",
-    "name": "HARMONY HUB ACTIVITEIT",
-    "info": "",
-    "x": 160,
-    "y": 640,
+    "x": 120,
+    "y": 600,
     "wires": []
   },
   {
     "id": "7b397616.9d9c48",
     "type": "server-state-changed",
     "z": "2910f43f.ab852c",
-    "name": "radio station input select",
+    "name": "state input select radio station",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -1068,8 +641,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 150,
-    "y": 1340,
+    "x": 160,
+    "y": 1100,
     "wires": [
       [
         "9795d0e4.41c8"
@@ -1169,7 +742,7 @@
     "repair": false,
     "outputs": 16,
     "x": 650,
-    "y": 1400,
+    "y": 1140,
     "wires": [
       [
         "8cdcae0.3b2d45"
@@ -1228,14 +801,14 @@
     "name": "RADIO",
     "info": "",
     "x": 90,
-    "y": 1280,
+    "y": 1000,
     "wires": []
   },
   {
     "id": "5ae96545.6d248c",
     "type": "server-state-changed",
     "z": "2910f43f.ab852c",
-    "name": "select speakers",
+    "name": "state media player source",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -1286,8 +859,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 120,
-    "y": 1400,
+    "x": 150,
+    "y": 1040,
     "wires": [
       [
         "d0daf4ea.1a4388"
@@ -1327,8 +900,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1340,
+    "x": 880,
+    "y": 1180,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1368,8 +941,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1370,
+    "x": 880,
+    "y": 1210,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1409,8 +982,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1400,
+    "x": 880,
+    "y": 1240,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1450,8 +1023,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1430,
+    "x": 880,
+    "y": 1270,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1491,8 +1064,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1460,
+    "x": 880,
+    "y": 1300,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1532,8 +1105,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1490,
+    "x": 880,
+    "y": 1330,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1573,8 +1146,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1520,
+    "x": 880,
+    "y": 1360,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1614,8 +1187,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1550,
+    "x": 880,
+    "y": 1390,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1655,8 +1228,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1580,
+    "x": 880,
+    "y": 1420,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1696,8 +1269,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1610,
+    "x": 880,
+    "y": 1450,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1737,8 +1310,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1640,
+    "x": 880,
+    "y": 1480,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1778,8 +1351,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1670,
+    "x": 880,
+    "y": 1510,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1819,8 +1392,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1700,
+    "x": 880,
+    "y": 1540,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1831,19 +1404,19 @@
     "id": "1c949923.b776b7",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Woonkamer Chromecast",
+    "name": "input select media player source living room tv",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
-    "halt_if": "Woonkamer Chromecast",
+    "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
     "halt_if_compare": "is",
     "entity_id": "input_select.mediaplayer_source",
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [],
-    "x": 1170,
-    "y": 1840,
+    "x": 1400,
+    "y": 1400,
     "wires": [
       [
         "affc5f88.87461"
@@ -1855,7 +1428,7 @@
     "id": "6d04ce8a.218d1",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Woonkamer Google Home",
+    "name": "input select media player source living room google home",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -1866,8 +1439,8 @@
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [],
-    "x": 1180,
-    "y": 1780,
+    "x": 1430,
+    "y": 1340,
     "wires": [
       [
         "8c1725fb.827dd8"
@@ -1879,7 +1452,7 @@
     "id": "633f4b04.f66264",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Lise's Google Home",
+    "name": "input select media player source lise's google home",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -1890,8 +1463,8 @@
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [],
-    "x": 1160,
-    "y": 1900,
+    "x": 1410,
+    "y": 1460,
     "wires": [
       [
         "bbb5f6a9.8029b8"
@@ -1916,8 +1489,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 650,
-    "y": 1760,
+    "x": 1110,
+    "y": 1400,
     "wires": [
       [
         "6d04ce8a.218d1",
@@ -1959,8 +1532,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 1140,
-    "y": 1730,
+    "x": 880,
+    "y": 1570,
     "wires": [
       [
         "ec9a1ad.78172e8"
@@ -1971,7 +1544,7 @@
     "id": "d0daf4ea.1a4388",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "radio station input select",
+    "name": "state input select radio station",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 1,
@@ -1995,8 +1568,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 350,
-    "y": 1400,
+    "x": 410,
+    "y": 1040,
     "wires": [
       [
         "9795d0e4.41c8"
@@ -2007,11 +1580,11 @@
     "id": "33fc2a94.4cdaa6",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "chromecast woonkamer geselecteerd",
+    "name": "input select media source livingroom tv",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
-    "halt_if": "Woonkamer Chromecast",
+    "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
     "halt_if_compare": "is",
     "entity_id": "input_select.mediaplayer_source",
@@ -2031,11 +1604,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 1210,
-    "y": 1100,
+    "x": 950,
+    "y": 780,
     "wires": [
       [
-        "67fdfc2a.1d4364"
+        "41048f91.45ec8"
       ],
       []
     ]
@@ -2050,7 +1623,7 @@
     "rules": [
       {
         "t": "eq",
-        "v": "Woonkamer Chromecast",
+        "v": "Woonkamer TV",
         "vt": "str"
       },
       {
@@ -2067,8 +1640,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 3,
-    "x": 650,
-    "y": 1240,
+    "x": 1170,
+    "y": 1040,
     "wires": [
       [
         "60f106c9.a6f5a8"
@@ -2085,7 +1658,7 @@
     "id": "fc330bd.18cb9f8",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "zet uit google home",
+    "name": "turn off media player google home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -2098,8 +1671,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1610,
-    "y": 1160,
+    "x": 1400,
+    "y": 1040,
     "wires": [
       []
     ]
@@ -2108,21 +1681,21 @@
     "id": "68af3444.e7e3bc",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "zet uit google home lise",
+    "name": "turn off lise's google home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.google_home",
+    "entityId": "media_player.lise_s_kamer",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1630,
-    "y": 1200,
+    "x": 1370,
+    "y": 1080,
     "wires": [
       []
     ]
@@ -2131,7 +1704,7 @@
     "id": "8cdcae0.3b2d45",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "welke speaker geselecteerd",
+    "name": "state media player source",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 1,
@@ -2155,8 +1728,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1180,
-    "y": 1280,
+    "x": 910,
+    "y": 1040,
     "wires": [
       [
         "454468c5.1187a8"
@@ -2167,11 +1740,11 @@
     "id": "eae92915.2ce648",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "chromecast woonkamer geselecteerd",
+    "name": "input select media player source living room tv",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
-    "halt_if": "Woonkamer Chromecast",
+    "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
     "halt_if_compare": "is",
     "entity_id": "input_select.mediaplayer_source",
@@ -2191,12 +1764,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 1210,
-    "y": 1160,
+    "x": 980,
+    "y": 1120,
     "wires": [
       [
-        "d4b91f6a.e773d",
-        "28100cba.7d86f4"
+        "89521d42.98429"
       ],
       []
     ]
@@ -2205,23 +1777,25 @@
     "id": "4dea1560.4f255c",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Google Home Woonkamer",
+    "name": "start spotcast google home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
     "entityId": "media_player.google_home",
-    "data": "{\"uri\":\"{{playlist}}\",\"entity_id\":\"media_player.google_home\",\"random_song\":\"true\"}",
+    "data": "{\"uri\":\"{{playlist}}\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1180,
-    "y": 2960,
+    "x": 1860,
+    "y": 1860,
     "wires": [
-      []
+      [
+        "f5b84940.289f38"
+      ]
     ]
   },
   {
@@ -2243,8 +1817,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 680,
-    "y": 2420,
+    "x": 900,
+    "y": 1760,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2318,8 +1892,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 11,
-    "x": 650,
-    "y": 2260,
+    "x": 670,
+    "y": 1740,
     "wires": [
       [
         "e047cfa7.44efc"
@@ -2373,8 +1947,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 690,
-    "y": 2450,
+    "x": 910,
+    "y": 1790,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2385,7 +1959,7 @@
     "id": "bedf8b26.3109b8",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Speaker Select",
+    "name": "state input select mediaplayer source",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 1,
@@ -2409,8 +1983,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1140,
-    "y": 2480,
+    "x": 1270,
+    "y": 1860,
     "wires": [
       [
         "a75c5d1d.eb7cf"
@@ -2421,13 +1995,13 @@
     "id": "a75c5d1d.eb7cf",
     "type": "switch",
     "z": "2910f43f.ab852c",
-    "name": "Speaker/Device",
+    "name": "input select mediaplayer source",
     "property": "input_select.mediaplayer_source",
     "propertyType": "msg",
     "rules": [
       {
         "t": "eq",
-        "v": "Woonkamer Chromecast",
+        "v": "Woonkamer TV",
         "vt": "str"
       },
       {
@@ -2444,8 +2018,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 3,
-    "x": 680,
-    "y": 2980,
+    "x": 1570,
+    "y": 1860,
     "wires": [
       [
         "aca93d6a.a9263"
@@ -2462,25 +2036,24 @@
     "id": "aca93d6a.a9263",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Chromecast Woonkamer",
+    "name": "start spotcast shield",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
-    "entityId": "media_player.chromecast_woonkamer",
+    "entityId": "media_player.shield",
     "data": "{\"uri\":\"{{playlist}}\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1170,
-    "y": 2900,
+    "x": 1830,
+    "y": 1820,
     "wires": [
       [
-        "5c0c59f.8b2f5a8",
-        "5b7c8c9.88ca374"
+        "d64c25df.f16088"
       ]
     ]
   },
@@ -2488,32 +2061,30 @@
     "id": "4c1fe090.88ea7",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Google Home Babykamer",
+    "name": "start spotcast lise's google home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
     "service_domain": "spotcast",
     "service": "start",
     "entityId": "media_player.lise_s_kamer",
-    "data": "{\"uri\":\"{{playlist}}\",\"entity_id\":\"media_player.lise_s_kamer\",\"random_song\":\"true\"}",
+    "data": "{\"uri\":\"{{playlist}}\",\"random_song\":\"true\"}",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1170,
-    "y": 3020,
+    "x": 1870,
+    "y": 1900,
     "wires": [
-      [
-        "5dfe6f7e.c9197"
-      ]
+      []
     ]
   },
   {
     "id": "cd52585b.fc9988",
     "type": "trigger-state",
     "z": "2910f43f.ab852c",
-    "name": "playlist",
+    "name": "state input select spotify playlist",
     "server": "4ba92433.2478cc",
     "version": 0,
     "exposeToHomeAssistant": false,
@@ -2535,8 +2106,8 @@
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
-    "x": 90,
-    "y": 2240,
+    "x": 190,
+    "y": 1660,
     "wires": [
       [
         "bb62c7c1.682538"
@@ -2563,8 +2134,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 710,
-    "y": 2480,
+    "x": 930,
+    "y": 1820,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2590,8 +2161,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 700,
-    "y": 2510,
+    "x": 920,
+    "y": 1850,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2617,8 +2188,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 710,
-    "y": 2540,
+    "x": 930,
+    "y": 1880,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2644,8 +2215,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 690,
-    "y": 2570,
+    "x": 910,
+    "y": 1910,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2671,8 +2242,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 690,
-    "y": 2600,
+    "x": 910,
+    "y": 1940,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -2680,578 +2251,10 @@
     ]
   },
   {
-    "id": "612451a5.01ec",
-    "type": "trigger-state",
-    "z": "2910f43f.ab852c",
-    "name": "playlist lise",
-    "server": "4ba92433.2478cc",
-    "version": 0,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityid": "input_select.spotify_playlist_babykamer",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "constraints": [],
-    "outputs": 2,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "str",
-    "x": 110,
-    "y": 3080,
-    "wires": [
-      [
-        "cbc595db.1bf7c8",
-        "7847b9a8.231788"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "cbc595db.1bf7c8",
-    "type": "switch",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "Spotify Uit",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
-        "v": "Spotify Uit",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Baby Music",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Baby Sleep",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Nature Noise",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 5,
-    "x": 650,
-    "y": 3140,
-    "wires": [
-      [
-        "cd6f8bd1.29c9f8"
-      ],
-      [],
-      [
-        "b271ba31.6de458"
-      ],
-      [
-        "22f356b7.6b97fa"
-      ],
-      [
-        "f40e2aee.db69b8"
-      ]
-    ]
-  },
-  {
-    "id": "b271ba31.6de458",
-    "type": "change",
-    "z": "2910f43f.ab852c",
-    "name": "Baby Music Playlist ",
-    "rules": [
-      {
-        "t": "set",
-        "p": "playlist",
-        "pt": "msg",
-        "to": "spotify:playlist:56v9ybHClsUxKrdxjdBxm2",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 690,
-    "y": 3240,
-    "wires": [
-      [
-        "7e7532f.c4086cc"
-      ]
-    ]
-  },
-  {
-    "id": "22f356b7.6b97fa",
-    "type": "change",
-    "z": "2910f43f.ab852c",
-    "name": "Baby Sleep Playlist ",
-    "rules": [
-      {
-        "t": "set",
-        "p": "playlist",
-        "pt": "msg",
-        "to": "spotify:playlist:37i9dQZF1DX0DxcHtn4Hwo",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 690,
-    "y": 3270,
-    "wires": [
-      [
-        "7e7532f.c4086cc"
-      ]
-    ]
-  },
-  {
-    "id": "7e7532f.c4086cc",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "start lise's google home",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "spotcast",
-    "service": "start",
-    "entityId": "media_player.lise_s_kamer",
-    "data": "{\"uri\":\"{{playlist}}\",\"entity_id\":\"media_player.lise_s_kamer\",\"random_song\":\"true\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1170,
-    "y": 3240,
-    "wires": [
-      [
-        "cea4251e.228a88"
-      ]
-    ]
-  },
-  {
-    "id": "cd6f8bd1.29c9f8",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "stop lise's google home",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "media_player",
-    "service": "turn_off",
-    "entityId": "media_player.speaker_lise",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1170,
-    "y": 3140,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "5c0c59f.8b2f5a8",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "niet scherm uit",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "Scherm Uit",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.harmonyhub",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1600,
-    "y": 2900,
-    "wires": [
-      [
-        "e72d505f.1dc73"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "e72d505f.1dc73",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "select scherm uit",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.harmonyhub",
-    "data": "{\"option\":\"Scherm Uit\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1850,
-    "y": 2900,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "5dfe6f7e.c9197",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 1,
-    "halt_if": "",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_select.spotify_playlist",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1680,
-    "y": 2500,
-    "wires": [
-      [
-        "44eb49fd.2b6bf8"
-      ]
-    ]
-  },
-  {
-    "id": "44eb49fd.2b6bf8",
-    "type": "switch",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "Spotify Uit",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Baby Music",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Baby Sleep",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 3,
-    "x": 650,
-    "y": 2740,
-    "wires": [
-      [
-        "f749dcda.14dce"
-      ],
-      [
-        "9cb6250b.a967f8"
-      ],
-      [
-        "7c429f48.c2fcc"
-      ]
-    ]
-  },
-  {
-    "id": "9cb6250b.a967f8",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Baby Music",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist_babykamer",
-    "data": "{\"option\":\"Baby Music\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 2740,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "7c429f48.c2fcc",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Baby Sleep",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist_babykamer",
-    "data": "{\"option\":\"Baby Sleep\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 2800,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "f749dcda.14dce",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Spotify UIt",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist_babykamer",
-    "data": "{\"option\":\"Spotify Uit\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 2680,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "cea4251e.228a88",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 1,
-    "halt_if": "",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_select.spotify_playlist_babykamer",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1720,
-    "y": 3240,
-    "wires": [
-      [
-        "a1c1e530.b63e78"
-      ]
-    ]
-  },
-  {
-    "id": "a1c1e530.b63e78",
-    "type": "switch",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "Spotify Uit",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Baby Music",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Baby Sleep",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 3,
-    "x": 650,
-    "y": 3400,
-    "wires": [
-      [
-        "4b92f439.55207c"
-      ],
-      [
-        "b7da31b1.c7b1d"
-      ],
-      [
-        "e018b7ec.26b7d8"
-      ]
-    ]
-  },
-  {
-    "id": "b7da31b1.c7b1d",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Baby Music",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist",
-    "data": "{\"option\":\"Baby Music\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 3420,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "e018b7ec.26b7d8",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Baby Sleep",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist",
-    "data": "{\"option\":\"Baby Sleep\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 3465,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "4b92f439.55207c",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Spotify UIt",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist",
-    "data": "{\"option\":\"Spotify Uit\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 3375,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "7847b9a8.231788",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "input is lise's speaker ",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.mediaplayer_source",
-    "data": "{\"option\":\"Lise's Google Home\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1160,
-    "y": 3080,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "e047cfa7.44efc",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Speaker Select",
+    "name": "state media player source",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 1,
@@ -3275,8 +2278,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1140,
-    "y": 2200,
+    "x": 930,
+    "y": 1680,
     "wires": [
       [
         "5c403989.23c728"
@@ -3287,13 +2290,13 @@
     "id": "5c403989.23c728",
     "type": "switch",
     "z": "2910f43f.ab852c",
-    "name": "Speaker/Device",
+    "name": "input select mediaplayer source",
     "property": "input_select.mediaplayer_source",
     "propertyType": "msg",
     "rules": [
       {
         "t": "eq",
-        "v": "Woonkamer Chromecast",
+        "v": "Woonkamer TV",
         "vt": "str"
       },
       {
@@ -3310,8 +2313,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 3,
-    "x": 680,
-    "y": 2100,
+    "x": 1190,
+    "y": 1680,
     "wires": [
       [
         "53c295cc.abd69c"
@@ -3328,32 +2331,30 @@
     "id": "6b50b9af.42d268",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Google Home Babykamer Stop",
+    "name": "turn off media lise's google home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.speaker_lise",
+    "entityId": "media_player.lise_s_kamer",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1650,
-    "y": 2140,
+    "x": 1800,
+    "y": 1720,
     "wires": [
-      [
-        "5dfe6f7e.c9197"
-      ]
+      []
     ]
   },
   {
     "id": "f3a57389.782b",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Google Home Woonkamer",
+    "name": "turn off media player google home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -3366,8 +2367,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1640,
-    "y": 2080,
+    "x": 1800,
+    "y": 1680,
     "wires": [
       []
     ]
@@ -3376,108 +2377,21 @@
     "id": "796e89c3.bcb0b8",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Google Home Chromecast Stop",
+    "name": "turn off media player shield",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.chromecast_woonkamer",
+    "entityId": "media_player.shield",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1650,
-    "y": 2020,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "7aa845e1.4d4d5c",
-    "type": "server-state-changed",
-    "z": "2910f43f.ab852c",
-    "name": "mediaplayer lise's kamer",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "media_player.lise_s_kamer",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 150,
-    "y": 3620,
-    "wires": [
-      [
-        "cc95479e.da7f38"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "cc95479e.da7f38",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Spotify UIt",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.spotify_playlist_babykamer",
-    "data": "{\"option\":\"Spotify Uit\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1130,
-    "y": 3620,
+    "x": 1780,
+    "y": 1640,
     "wires": [
       []
     ]
@@ -3486,7 +2400,7 @@
     "id": "53c295cc.abd69c",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Radio is uit?",
+    "name": "input select radio station radio off",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -3510,8 +2424,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1130,
-    "y": 2040,
+    "x": 1500,
+    "y": 1640,
     "wires": [
       [
         "796e89c3.bcb0b8"
@@ -3538,8 +2452,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 690,
-    "y": 2390,
+    "x": 910,
+    "y": 1730,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -3552,8 +2466,8 @@
     "z": "2910f43f.ab852c",
     "name": "SPOTIFY",
     "info": "",
-    "x": 100,
-    "y": 2020,
+    "x": 120,
+    "y": 1620,
     "wires": []
   },
   {
@@ -3575,8 +2489,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 670,
-    "y": 2630,
+    "x": 890,
+    "y": 1970,
     "wires": [
       [
         "bedf8b26.3109b8"
@@ -3584,124 +2498,10 @@
     ]
   },
   {
-    "id": "f40e2aee.db69b8",
-    "type": "change",
-    "z": "2910f43f.ab852c",
-    "name": "Nature Noise",
-    "rules": [
-      {
-        "t": "set",
-        "p": "playlist",
-        "pt": "msg",
-        "to": "spotify:playlist:37i9dQZF1DWUKPeBypcpcP",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 670,
-    "y": 3300,
-    "wires": [
-      [
-        "7e7532f.c4086cc"
-      ]
-    ]
-  },
-  {
-    "id": "fe87f61f.0f0ec8",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "Chromecast Mediaplayer Off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "media_player",
-    "service": "turn_off",
-    "entityId": "media_player.chromecast_woonkamer",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1180,
-    "y": 3680,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "b7aaf57a.8eaee8",
-    "type": "server-state-changed",
-    "z": "2910f43f.ab852c",
-    "name": "harmony is uit",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_select.harmonyhub",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "Alles Uit",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 110,
-    "y": 3680,
-    "wires": [
-      [
-        "fe87f61f.0f0ec8"
-      ],
-      []
-    ]
-  },
-  {
     "id": "fca7e96b.18f578",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Input boolean tv is off",
+    "name": "state input boolean tv off",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -3725,7 +2525,7 @@
         "valueType": "entity"
       }
     ],
-    "x": 1620,
+    "x": 1230,
     "y": 120,
     "wires": [
       [
@@ -3738,7 +2538,7 @@
     "id": "37e50cfa.988594",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "TV Input Boolean ON",
+    "name": "turn on input boolean tv",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -3751,8 +2551,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 2060,
-    "y": 260,
+    "x": 1510,
+    "y": 120,
     "wires": [
       []
     ]
@@ -3761,7 +2561,7 @@
     "id": "267c55db.572f6a",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "TV Input Boolean  off",
+    "name": "turn off input boolean tv",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -3774,8 +2574,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 2060,
-    "y": 460,
+    "x": 1510,
+    "y": 280,
     "wires": [
       []
     ]
@@ -3784,7 +2584,7 @@
     "id": "36ac824f.34face",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Input boolean tv is on",
+    "name": "state input boolean tv on",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -3808,8 +2608,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1620,
-    "y": 460,
+    "x": 1230,
+    "y": 280,
     "wires": [
       [
         "267c55db.572f6a"
@@ -3821,7 +2621,7 @@
     "id": "d0fdf580.8956e8",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "muziek Input boolean on",
+    "name": "turn on input boolean music",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -3834,8 +2634,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 2070,
-    "y": 340,
+    "x": 1520,
+    "y": 220,
     "wires": [
       []
     ]
@@ -3844,14 +2644,14 @@
     "id": "6a32b719.5d34d8",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Input boolean muziek is off",
+    "name": "state input boolean tv off",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv",
+    "entity_id": "input_boolean.music",
     "state_type": "str",
     "blockInputOverrides": true,
     "outputProperties": [
@@ -3868,8 +2668,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1640,
-    "y": 340,
+    "x": 1230,
+    "y": 220,
     "wires": [
       [
         "d0fdf580.8956e8"
@@ -3881,7 +2681,7 @@
     "id": "57a069db.874c08",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "muziek Input boolean off",
+    "name": "turn off input boolean music",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -3894,8 +2694,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 2070,
-    "y": 520,
+    "x": 1520,
+    "y": 340,
     "wires": [
       []
     ]
@@ -3904,14 +2704,14 @@
     "id": "87c18f75.1edd4",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "Input boolean muziek is on",
+    "name": "state input boolean music on",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "input_boolean.tv",
+    "entity_id": "input_boolean.music",
     "state_type": "str",
     "blockInputOverrides": true,
     "outputProperties": [
@@ -3928,8 +2728,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1640,
-    "y": 520,
+    "x": 1240,
+    "y": 340,
     "wires": [
       [
         "57a069db.874c08"
@@ -3938,195 +2738,10 @@
     ]
   },
   {
-    "id": "2f41b527.8cd94a",
-    "type": "rbe",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "func": "rbe",
-    "gap": "",
-    "start": "",
-    "inout": "out",
-    "property": "payload",
-    "x": 370,
-    "y": 700,
-    "wires": [
-      [
-        "d52b2783.94b738"
-      ]
-    ]
-  },
-  {
-    "id": "d52b2783.94b738",
-    "type": "change",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "rules": [
-      {
-        "t": "change",
-        "p": "payload.activityId",
-        "pt": "msg",
-        "from": "-1",
-        "fromt": "str",
-        "to": "Alles Uit",
-        "tot": "str"
-      },
-      {
-        "t": "change",
-        "p": "payload.activityId",
-        "pt": "msg",
-        "from": "32498292",
-        "fromt": "str",
-        "to": "TV",
-        "tot": "str"
-      },
-      {
-        "t": "change",
-        "p": "payload.activityId",
-        "pt": "msg",
-        "from": "32498293",
-        "fromt": "str",
-        "to": "Netflix",
-        "tot": "str"
-      },
-      {
-        "t": "change",
-        "p": "payload.activityId",
-        "pt": "msg",
-        "from": "32498294",
-        "fromt": "str",
-        "to": "Scherm Uit",
-        "tot": "str"
-      },
-      {
-        "t": "change",
-        "p": "payload.activityId",
-        "pt": "msg",
-        "from": "32499120",
-        "fromt": "str",
-        "to": "Smart TV",
-        "tot": "str"
-      },
-      {
-        "t": "change",
-        "p": "payload.activityId",
-        "pt": "msg",
-        "from": "40474515",
-        "fromt": "str",
-        "to": "PC",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 280,
-    "y": 760,
-    "wires": [
-      [
-        "addd098c.445788"
-      ]
-    ]
-  },
-  {
-    "id": "b4db9e9d.ae06d",
-    "type": "switch",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "property": "payload.activityStatus",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "1",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "0",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 250,
-    "y": 700,
-    "wires": [
-      [
-        "2f41b527.8cd94a"
-      ],
-      [
-        "2f41b527.8cd94a"
-      ]
-    ]
-  },
-  {
-    "id": "5b7c8c9.88ca374",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "radio station select",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "Radio Uit",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "input_select.radio_station",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1610,
-    "y": 2960,
-    "wires": [
-      [
-        "1c53f62.509dc0a"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "1c53f62.509dc0a",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "select radio uit",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_select",
-    "service": "select_option",
-    "entityId": "input_select.radio_station",
-    "data": "{\"option\":\"Radio Uit\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1840,
-    "y": 2960,
-    "wires": [
-      []
-    ]
-  },
-  {
     "id": "60f106c9.a6f5a8",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "spotify is uit",
+    "name": "input select spotify spotify off",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -4150,11 +2765,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 1130,
+    "x": 1380,
     "y": 1000,
     "wires": [
       [
-        "d6c716ea.d1e208"
+        "87de6266.b1ec4"
       ],
       []
     ]
@@ -4163,7 +2778,7 @@
     "id": "b83ae1b2.65965",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "spotify is uit",
+    "name": "input select spotify off",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -4187,8 +2802,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1130,
-    "y": 580,
+    "x": 900,
+    "y": 660,
     "wires": [
       [
         "a17000f3.d5a78"
@@ -4200,7 +2815,7 @@
     "id": "a17000f3.d5a78",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "radio is uit",
+    "name": "input select radio off",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -4224,8 +2839,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1300,
-    "y": 580,
+    "x": 1140,
+    "y": 660,
     "wires": [
       [
         "e950787d.c01678"
@@ -4250,8 +2865,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1920,
-    "y": 940,
+    "x": 1200,
+    "y": 400,
     "wires": [
       []
     ]
@@ -4273,63 +2888,17 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1920,
-    "y": 1000,
+    "x": 1200,
+    "y": 460,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "40342b7b.ed14d4",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "zet uit chromecast woonkamer",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "media_player",
-    "service": "turn_off",
-    "entityId": "media_player.chromecast_woonkamer",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1970,
-    "y": 880,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "addd098c.445788",
-    "type": "delay",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "pauseType": "rate",
-    "timeout": "5",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "2",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": true,
-    "x": 460,
-    "y": 760,
-    "wires": [
-      [
-        "f4e10743.bafda8"
-      ]
     ]
   },
   {
     "id": "e730c015.cbf7b",
     "type": "api-current-state",
     "z": "2910f43f.ab852c",
-    "name": "het is dark",
+    "name": "state outdoor dark",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -4353,8 +2922,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 1130,
-    "y": 1060,
+    "x": 890,
+    "y": 840,
     "wires": [
       [
         "34844efd.9ec002"
@@ -4366,7 +2935,7 @@
     "id": "34844efd.9ec002",
     "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "Woonkamer Light On",
+    "name": "turn on light livingroom",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -4379,208 +2948,10 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1620,
-    "y": 1060,
+    "x": 1220,
+    "y": 840,
     "wires": [
       []
-    ]
-  },
-  {
-    "id": "6eb0177a.9b3068",
-    "type": "api-current-state",
-    "z": "2910f43f.ab852c",
-    "name": "stroom versterker > 10",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "10",
-    "halt_if_type": "num",
-    "halt_if_compare": "gt",
-    "entity_id": "sensor.shelly_shellyplug_receiver_current_consumption",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 1820,
-    "y": 400,
-    "wires": [
-      [
-        "c2ed0e3e.b1779"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "b36745d2.f2fb58",
-    "type": "delay",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "pauseType": "delay",
-    "timeout": "5",
-    "timeoutUnits": "seconds",
-    "rate": "1",
-    "nbRateUnits": "1",
-    "rateUnits": "second",
-    "randomFirst": "1",
-    "randomLast": "5",
-    "randomUnits": "seconds",
-    "drop": false,
-    "x": 1580,
-    "y": 400,
-    "wires": [
-      [
-        "6eb0177a.9b3068"
-      ]
-    ]
-  },
-  {
-    "id": "c2ed0e3e.b1779",
-    "type": "api-call-service",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "remote",
-    "service": "send_command",
-    "entityId": "",
-    "data": "{\"entity_id\":\"remote.harmony_hub_01\",\"command\":\"PowerOff\",\"device\":\"53126254\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 2080,
-    "y": 400,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "a0de1f36.a9842",
-    "type": "H activity",
-    "z": "2910f43f.ab852c",
-    "name": "Netflix",
-    "server": "6efb7a7f.4e9a64",
-    "activity": "32498293",
-    "label": "Netflix",
-    "x": 1130,
-    "y": 160,
-    "wires": [
-      [
-        "fca7e96b.18f578"
-      ]
-    ]
-  },
-  {
-    "id": "d55292d3.70a65",
-    "type": "H activity",
-    "z": "2910f43f.ab852c",
-    "name": "Scherm Uit",
-    "server": "6efb7a7f.4e9a64",
-    "activity": "32498294",
-    "label": "Scherm Uit",
-    "x": 1150,
-    "y": 200,
-    "wires": [
-      [
-        "6a32b719.5d34d8"
-      ]
-    ]
-  },
-  {
-    "id": "b9246d99.9890a",
-    "type": "H activity",
-    "z": "2910f43f.ab852c",
-    "name": "TV",
-    "server": "6efb7a7f.4e9a64",
-    "activity": "32498292",
-    "label": "TV",
-    "x": 1130,
-    "y": 120,
-    "wires": [
-      [
-        "fca7e96b.18f578"
-      ]
-    ]
-  },
-  {
-    "id": "8377b5de.7f8148",
-    "type": "H activity",
-    "z": "2910f43f.ab852c",
-    "name": "Smart TV",
-    "server": "6efb7a7f.4e9a64",
-    "activity": "32499120",
-    "label": "Smart TV",
-    "x": 1140,
-    "y": 240,
-    "wires": [
-      [
-        "fca7e96b.18f578"
-      ]
-    ]
-  },
-  {
-    "id": "a300661.bd56498",
-    "type": "H activity",
-    "z": "2910f43f.ab852c",
-    "name": "PC",
-    "server": "6efb7a7f.4e9a64",
-    "activity": "40474515",
-    "label": "PC",
-    "x": 1130,
-    "y": 280,
-    "wires": [
-      [
-        "fca7e96b.18f578"
-      ]
-    ]
-  },
-  {
-    "id": "149337f0.569cd8",
-    "type": "H activity",
-    "z": "2910f43f.ab852c",
-    "name": "Uit",
-    "server": "6efb7a7f.4e9a64",
-    "activity": "-1",
-    "label": "PowerOff",
-    "x": 1130,
-    "y": 320,
-    "wires": [
-      [
-        "36ac824f.34face",
-        "87c18f75.1edd4",
-        "40342b7b.ed14d4",
-        "d5b2fd9a.1a6da",
-        "28100cba.7d86f4",
-        "b36745d2.f2fb58"
-      ]
-    ]
-  },
-  {
-    "id": "3bde69d8.43f066",
-    "type": "H observe",
-    "z": "2910f43f.ab852c",
-    "name": "",
-    "server": "6efb7a7f.4e9a64",
-    "x": 100,
-    "y": 700,
-    "wires": [
-      [
-        "b4db9e9d.ae06d"
-      ]
     ]
   },
   {
@@ -4592,11 +2963,11 @@
     "contentType": "audio/mp3",
     "message": "",
     "language": "en",
-    "ip": "192.168.1.11",
+    "ip": "192.168.1.216",
     "port": "",
     "volume": "",
-    "x": 1610,
-    "y": 1840,
+    "x": 1750,
+    "y": 1400,
     "wires": [
       []
     ],
@@ -4614,8 +2985,8 @@
     "ip": "192.168.1.22",
     "port": "",
     "volume": "50",
-    "x": 1610,
-    "y": 1780,
+    "x": 1750,
+    "y": 1340,
     "wires": [
       []
     ],
@@ -4633,8 +3004,8 @@
     "ip": "192.168.1.17",
     "port": "",
     "volume": "50",
-    "x": 1610,
-    "y": 1900,
+    "x": 1750,
+    "y": 1460,
     "wires": [
       []
     ],
@@ -4842,30 +3213,307 @@
     ]
   },
   {
-    "id": "7ab2f10f.a5dad",
-    "type": "debug",
+    "id": "106323c6.82befc",
+    "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 460,
-    "y": 1000,
-    "wires": []
+    "name": "turn on harmony netflix",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_on",
+    "entityId": "switch.harmony_hub_01_netflix",
+    "data": "",
+    "dataType": "jsonata",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 900,
+    "y": 160,
+    "wires": [
+      [
+        "fca7e96b.18f578"
+      ]
+    ]
   },
   {
-    "id": "e518d9a0.983218",
-    "type": "comment",
+    "id": "9781b7f5.1f10a8",
+    "type": "api-call-service",
     "z": "2910f43f.ab852c",
-    "name": "what/action where category state",
-    "info": "",
-    "x": 430,
+    "name": "turn on harmony tv",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_on",
+    "entityId": "switch.harmony_hub_01_tv",
+    "data": "",
+    "dataType": "jsonata",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 890,
+    "y": 120,
+    "wires": [
+      [
+        "fca7e96b.18f578"
+      ]
+    ]
+  },
+  {
+    "id": "82bc95cc.bfebe8",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "turn on harmony screen off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_on",
+    "entityId": "switch.harmony_hub_01_scherm_uit",
+    "data": "",
+    "dataType": "jsonata",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 920,
     "y": 240,
-    "wires": []
+    "wires": [
+      [
+        "6a32b719.5d34d8"
+      ]
+    ]
+  },
+  {
+    "id": "174d4ece.332d31",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "turn on harmony smart tv",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_on",
+    "entityId": "switch.harmony_hub_01_smart_tv",
+    "data": "",
+    "dataType": "jsonata",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 910,
+    "y": 200,
+    "wires": [
+      [
+        "fca7e96b.18f578"
+      ]
+    ]
+  },
+  {
+    "id": "6da8cb20.30d0f4",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "turn off remote harmony",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "remote",
+    "service": "turn_off",
+    "entityId": "remote.harmony_hub_01",
+    "data": "",
+    "dataType": "jsonata",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 910,
+    "y": 280,
+    "wires": [
+      [
+        "36ac824f.34face",
+        "87c18f75.1edd4",
+        "d5b2fd9a.1a6da",
+        "28100cba.7d86f4",
+        "e9614696.4a8738"
+      ]
+    ]
+  },
+  {
+    "id": "740d851f.8d8e4c",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "input select tv",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.harmonyhub",
+    "data": "{\"option\":\"TV\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 880,
+    "y": 540,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5ca3464f.c607d8",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "input select all off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.harmonyhub",
+    "data": "{\"option\":\"Alles Uit\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 890,
+    "y": 600,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1fe48769.70fa89",
+    "type": "api-current-state",
+    "z": "2910f43f.ab852c",
+    "name": "input select media source livingroom tv",
+    "server": "4ba92433.2478cc",
+    "version": 2,
+    "outputs": 2,
+    "halt_if": "Woonkamer TV",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_select.mediaplayer_source",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_select.mediaplayer_source",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "x": 950,
+    "y": 900,
+    "wires": [
+      [
+        "4023da29.24aa34"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e9614696.4a8738",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "turn off media player shield",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "media_player",
+    "service": "turn_off",
+    "entityId": "media_player.shield",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1240,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "89521d42.98429",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "input select screen off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.harmonyhub",
+    "data": "{\"option\":\"Scherm Uit\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1360,
+    "y": 1120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d64c25df.f16088",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "input select screen off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "input_select",
+    "service": "select_option",
+    "entityId": "input_select.harmonyhub",
+    "data": "{\"option\":\"Scherm Uit\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 2100,
+    "y": 1820,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f5b84940.289f38",
+    "type": "api-call-service",
+    "z": "2910f43f.ab852c",
+    "name": "turn off media player shield",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "media_player",
+    "service": "turn_off",
+    "entityId": "media_player.shield",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 2120,
+    "y": 1860,
+    "wires": [
+      []
+    ]
   }
 ]

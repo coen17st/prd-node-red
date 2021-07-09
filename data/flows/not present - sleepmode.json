@@ -175,7 +175,8 @@
         "8f9f8583.d61818",
         "7901490f.306a88",
         "e7ebf.0f95d142",
-        "53c02a6d.aa7ac4"
+        "e39e36ab.72ef08",
+        "60e6e55e.cdc54c"
       ],
       []
     ]
@@ -383,7 +384,8 @@
         "b7875214.76414",
         "74cd05dc.33925c",
         "e7ebf.0f95d142",
-        "53c02a6d.aa7ac4"
+        "e39e36ab.72ef08",
+        "60e6e55e.cdc54c"
       ],
       [
         "543ebe7.ceeb34"
@@ -591,8 +593,8 @@
     "randomLast": "5",
     "randomUnits": "seconds",
     "drop": false,
-    "x": 380,
-    "y": 220,
+    "x": 480,
+    "y": 300,
     "wires": [
       [
         "a12dbf7c.83df7"
@@ -733,7 +735,7 @@
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.chromecast_woonkamer, media_player.google_home, media_player.lise_s_kamer",
+    "entityId": "media_player.shield, media_player.google_home, media_player.lise_s_kamer",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
@@ -831,7 +833,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1770,
-    "y": 440,
+    "y": 460,
     "wires": [
       [
         "de807278.70c2"
@@ -1100,8 +1102,8 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 1090,
-    "y": 440,
+    "x": 810,
+    "y": 460,
     "wires": [
       [
         "809c363.20594c8"
@@ -1128,8 +1130,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 1490,
-    "y": 440,
+    "x": 1410,
+    "y": 460,
     "wires": [
       [
         "853a7e26.67257"
@@ -1148,7 +1150,7 @@
     "template": "De verwarming in {{payload.attributes.friendly_name}} is van handmatige naar automatische stand geschakeld.",
     "output": "str",
     "x": 1610,
-    "y": 440,
+    "y": 460,
     "wires": [
       [
         "659cd8c0.3f62c8"
@@ -1204,8 +1206,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1310,
-    "y": 440,
+    "x": 1070,
+    "y": 460,
     "wires": [
       [
         "f72aff5f.4f765"
@@ -1285,7 +1287,7 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 1330,
+    "x": 1410,
     "y": 200,
     "wires": [
       [
@@ -1487,7 +1489,17 @@
     ]
   },
   {
-    "id": "53c02a6d.aa7ac4",
+    "id": "38c036c8.7acc2a",
+    "type": "comment",
+    "z": "8aa6edec.5a013",
+    "name": "what/action where category state",
+    "info": "",
+    "x": 170,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "e39e36ab.72ef08",
     "type": "api-call-service",
     "z": "8aa6edec.5a013",
     "name": "turn off switch childlock kitchen",
@@ -1504,21 +1516,9 @@
     "outputProperties": [],
     "queue": "none",
     "x": 850,
-    "y": 440,
+    "y": 400,
     "wires": [
-      [
-        "60e6e55e.cdc54c"
-      ]
+      []
     ]
-  },
-  {
-    "id": "38c036c8.7acc2a",
-    "type": "comment",
-    "z": "8aa6edec.5a013",
-    "name": "what/action where category state",
-    "info": "",
-    "x": 170,
-    "y": 320,
-    "wires": []
   }
 ]

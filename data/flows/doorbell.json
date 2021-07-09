@@ -506,7 +506,7 @@
     "halt_if": "playing",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "media_player.chromecast_woonkamer",
+    "entity_id": "media_player.shield",
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
@@ -542,7 +542,7 @@
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "media_pause",
-    "entityId": "media_player.chromecast_woonkamer",
+    "entityId": "media_player.shield",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
