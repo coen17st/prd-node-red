@@ -68,7 +68,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "{{mytime}}, {{message}}",
+    "template": "{{mytime}}, {{{message}}}",
     "output": "str",
     "x": 930,
     "y": 60,
