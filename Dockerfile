@@ -1,4 +1,4 @@
-FROM nodered/node-red:latest
+FROM nodered/node-red:2.0.3
 
 WORKDIR /usr/src/node-red
 
