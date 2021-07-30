@@ -1470,5 +1470,69 @@
       ],
       []
     ]
+  },
+  {
+    "id": "cde5cdec.d3996",
+    "type": "http in",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "url": "/drone/notify",
+    "method": "post",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 680,
+    "wires": [
+      [
+        "ce91ef4e.a3a81",
+        "8d80cc03.ebf67"
+      ]
+    ]
+  },
+  {
+    "id": "ce91ef4e.a3a81",
+    "type": "template",
+    "z": "155ca471.b81eac",
+    "name": "html page",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
+    "x": 420,
+    "y": 680,
+    "wires": [
+      [
+        "4062b686.ecc898"
+      ]
+    ]
+  },
+  {
+    "id": "4062b686.ecc898",
+    "type": "http response",
+    "z": "155ca471.b81eac",
+    "name": "http response",
+    "statusCode": "",
+    "headers": {},
+    "x": 580,
+    "y": 680,
+    "wires": []
+  },
+  {
+    "id": "8d80cc03.ebf67",
+    "type": "debug",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 360,
+    "y": 780,
+    "wires": []
   }
 ]
