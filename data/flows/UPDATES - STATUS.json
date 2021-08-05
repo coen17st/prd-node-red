@@ -17,72 +17,6 @@
     "wires": []
   },
   {
-    "id": "24ca33c4.e3009c",
-    "type": "server-state-changed",
-    "z": "5ffb014.822e1",
-    "name": "state updater on",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "binary_sensor.updater",
-    "entityidfiltertype": "exact",
-    "outputinitially": true,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 100,
-    "y": 120,
-    "wires": [
-      [
-        "b2d984d3.116d88"
-      ],
-      [
-        "c0c2d8d7.e9a9f8"
-      ]
-    ]
-  },
-  {
     "id": "8fdd88d0.b3bc88",
     "type": "server-state-changed",
     "z": "5ffb014.822e1",
@@ -143,29 +77,6 @@
       [
         "a1f939de.2aa388"
       ],
-      []
-    ]
-  },
-  {
-    "id": "c0c2d8d7.e9a9f8",
-    "type": "api-call-service",
-    "z": "5ffb014.822e1",
-    "name": "In APP Notify Dismiss",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "persistent_notification",
-    "service": "dismiss",
-    "entityId": "",
-    "data": "{\"notification_id\":\"updateHA\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1240,
-    "y": 120,
-    "wires": [
       []
     ]
   },
@@ -406,77 +317,6 @@
         "a06b0c37.344a7"
       ],
       []
-    ]
-  },
-  {
-    "id": "b2d984d3.116d88",
-    "type": "template",
-    "z": "5ffb014.822e1",
-    "name": "message",
-    "field": "message",
-    "fieldType": "msg",
-    "format": "handlebars",
-    "syntax": "mustache",
-    "template": "Versie {{data.new_state.attributes.newest_version}} van Home Assistant is beschikbaar \\n \\n[Release Notes]({{data.attributes.release_notes}})",
-    "output": "str",
-    "x": 860,
-    "y": 80,
-    "wires": [
-      [
-        "66cb79f.c4b5d88"
-      ]
-    ]
-  },
-  {
-    "id": "66cb79f.c4b5d88",
-    "type": "change",
-    "z": "5ffb014.822e1",
-    "name": "",
-    "rules": [
-      {
-        "t": "set",
-        "p": "topic",
-        "pt": "msg",
-        "to": "Update",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1005,
-    "y": 80,
-    "wires": [
-      [
-        "c35f48f0.10e4a8"
-      ]
-    ]
-  },
-  {
-    "id": "c35f48f0.10e4a8",
-    "type": "api-call-service",
-    "z": "5ffb014.822e1",
-    "name": "In APP Notify",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "notify",
-    "service": "notify",
-    "entityId": "",
-    "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1850,
-    "y": 80,
-    "wires": [
-      [
-        "f13b7547.ff3ce8"
-      ]
     ]
   },
   {
