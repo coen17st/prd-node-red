@@ -28779,7 +28779,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "drone.io build [{{payload.repo}}]({{{payload.buildlink}}}/) status: **{{payload.status}}**",
+        "template": "drone.io build [{{payload.repo}}]({{{payload.buildlink}}}/) status: *{{payload.status}}*",
         "output": "str",
         "x": 480,
         "y": 660,
@@ -28829,8 +28829,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 950,
-        "y": 700,
+        "x": 850,
+        "y": 740,
         "wires": [
             [
                 "50cba5a8.933adc"
@@ -29038,8 +29038,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 460,
-        "y": 720,
+        "x": 660,
+        "y": 660,
         "wires": [
             [
                 "ad0f6a06.e91298",
@@ -29068,8 +29068,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 470,
-        "y": 760,
+        "x": 490,
+        "y": 700,
         "wires": [
             [
                 "21190e9c.684312"

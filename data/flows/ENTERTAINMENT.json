@@ -2941,7 +2941,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
-    "entityId": "shellydimmer-living-room",
+    "entityId": "shellydimmer_living_room",
     "data": "{\"brightness_pct\":\"20\"}",
     "dataType": "json",
     "mergecontext": "",
