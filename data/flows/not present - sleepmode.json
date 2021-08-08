@@ -402,7 +402,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_on",
-    "entityId": "light.shelly_shellydimmer_kitchen",
+    "entityId": "light.shellydimmer_kitchen",
     "data": "{\"brightness_pct\":45}",
     "dataType": "json",
     "mergecontext": "",
@@ -956,7 +956,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "turn_off",
-    "entityId": "light.shelly_shellydimmer_kitchen",
+    "entityId": "light.shellydimmer_kitchen",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
@@ -1061,7 +1061,7 @@
     "rules": [
       {
         "t": "neq",
-        "v": "light.shelly_shellydimmer_kitchen",
+        "v": "light.shellydimmer_kitchen",
         "vt": "str"
       }
     ],

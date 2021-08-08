@@ -3039,7 +3039,7 @@
         "value": ""
       }
     ],
-    "entityid": "sensor.shelly_shellyplug_tv_current_consumption",
+    "entityid": "sensor.shellyplug_tv_current_consumption",
     "entityidfiltertype": "exact",
     "debugenabled": false,
     "constraints": [],
@@ -3115,7 +3115,7 @@
     "halt_if": "59",
     "halt_if_type": "num",
     "halt_if_compare": "gte",
-    "entity_id": "sensor.shelly_shellyplug_tv_current_consumption",
+    "entity_id": "sensor.shellyplug_tv_current_consumption",
     "state_type": "num",
     "blockInputOverrides": false,
     "outputProperties": [

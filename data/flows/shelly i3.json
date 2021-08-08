@@ -19,7 +19,8 @@
     "y": 540,
     "wires": [
       [
-        "bd9414b6.e33db8"
+        "bd9414b6.e33db8",
+        "bfb3705a.97302"
       ]
     ]
   },
@@ -103,7 +104,7 @@
     "debugenabled": false,
     "service_domain": "light",
     "service": "toggle",
-    "entityId": "light.shelly_shellydimmer_backyard_string_lights",
+    "entityId": "light.shellydimmer_backyard_string_l",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
@@ -479,6 +480,29 @@
     "queue": "none",
     "x": 780,
     "y": 400,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bfb3705a.97302",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "toggle light barn hanging lamp",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "light",
+    "service": "toggle",
+    "entityId": "light.shellydimmer_barn_hanging_lamp",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 810,
+    "y": 540,
     "wires": [
       []
     ]
