@@ -316,7 +316,7 @@
         "id": "6efb7a7f.4e9a64",
         "type": "harmony-server",
         "name": "",
-        "ip": "192.168.1.212"
+        "ip": "192.168.1.131"
     },
     {
         "id": "4ba92433.2478cc",
@@ -18127,7 +18127,7 @@
         "debugenabled": false,
         "service_domain": "light",
         "service": "turn_off",
-        "entityId": "light.shelly_shellydimmer_kitchen",
+        "entityId": "light.shellydimmer_kitchen",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
@@ -18232,7 +18232,7 @@
         "rules": [
             {
                 "t": "neq",
-                "v": "light.shelly_shellydimmer_kitchen",
+                "v": "light.shellydimmer_kitchen",
                 "vt": "str"
             }
         ],
@@ -25228,7 +25228,7 @@
                 "value": ""
             }
         ],
-        "entityid": "sensor.metered_wall_plug_switch_power_washing_machine",
+        "entityid": "sensor.washing_machine_power",
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
@@ -25774,7 +25774,7 @@
                 "value": ""
             }
         ],
-        "entityid": "sensor.wall_plug_switch_electric_consumed_w_dishwasher",
+        "entityid": "sensor.dishwasher_electric_consumed_w",
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
@@ -25970,7 +25970,7 @@
                 "value": ""
             }
         ],
-        "entityid": "sensor.wall_plug_switch_electric_consumed_w_tumble_dryer",
+        "entityid": "sensor.tumble_dryer_electric_consumed_w",
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
@@ -28879,10 +28879,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -28923,7 +28923,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Versie {{data.new_state.attributes.newest_version}} van Home Assistant is beschikbaar \\n\\n[Release Notes]({{{data.attributes.release_notes}}})",
+        "template": "Versie {{data.new_state.attributes.newest_version}} van Home Assistant is beschikbaar \\n\\n[Release Notes]({{{data.new_state.attributes.release_notes}}})",
         "output": "str",
         "x": 300,
         "y": 840,
@@ -28951,8 +28951,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 340,
-        "y": 880,
+        "x": 320,
+        "y": 900,
         "wires": [
             []
         ]
@@ -28965,8 +28965,8 @@
         "server": "4ba92433.2478cc",
         "version": 3,
         "debugenabled": false,
-        "service_domain": "notify",
-        "service": "notify",
+        "service_domain": "persistent_notification",
+        "service": "create",
         "entityId": "",
         "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\",\"notification_id\":\"{{notification_id}}\"}",
         "dataType": "json",
@@ -28974,8 +28974,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 630,
-        "y": 840,
+        "x": 690,
+        "y": 860,
         "wires": [
             []
         ]
@@ -29016,8 +29016,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
-        "y": 840,
+        "x": 520,
+        "y": 860,
         "wires": [
             [
                 "7a928edb.bb419"
