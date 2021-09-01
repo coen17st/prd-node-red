@@ -93,7 +93,7 @@
     "server": "4ba92433.2478cc",
     "version": 0,
     "outputs": 2,
-    "entityId": "binary_sensor.recessed_frontdoor_sensor",
+    "entityId": "binary_sensor.frontdoor_access_control_window_door_is_open",
     "entityIdFilterType": "exact",
     "property": "state",
     "comparator": "is",
