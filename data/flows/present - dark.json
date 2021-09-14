@@ -24,7 +24,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1720,
-    "y": 560,
+    "y": 740,
     "wires": [
       [
         "13ca8b62.27a4a5"
@@ -35,7 +35,7 @@
     "id": "e137297f.088698",
     "type": "api-call-service",
     "z": "c0da8379.b0dd3",
-    "name": "turn off light front door",
+    "name": "turn on light front door",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -49,7 +49,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1720,
-    "y": 620,
+    "y": 800,
     "wires": [
       [
         "13ca8b62.27a4a5"
@@ -79,12 +79,14 @@
     "repair": false,
     "outputs": 2,
     "x": 370,
-    "y": 280,
+    "y": 460,
     "wires": [
       [
         "9c489e3f.49b89",
         "298ec9d5.35e576",
-        "5907771e.9d09a8"
+        "5907771e.9d09a8",
+        "5d939da2.20d8c4",
+        "cc64f27a.c792c"
       ],
       [
         "c3dc83f5.77118",
@@ -116,7 +118,7 @@
     "repair": false,
     "outputs": 2,
     "x": 380,
-    "y": 420,
+    "y": 600,
     "wires": [
       [
         "ed71f712.b69338",
@@ -233,7 +235,7 @@
       }
     ],
     "x": 110,
-    "y": 420,
+    "y": 600,
     "wires": [
       [
         "f916039a.ab914"
@@ -269,7 +271,7 @@
       }
     ],
     "x": 1420,
-    "y": 560,
+    "y": 740,
     "wires": [
       [
         "9e995be6.7976b8"
@@ -306,7 +308,7 @@
       }
     ],
     "x": 1420,
-    "y": 620,
+    "y": 800,
     "wires": [
       [
         "e137297f.088698"
@@ -345,10 +347,10 @@
     "forType": "num",
     "forUnits": "minutes",
     "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
     "outputProperties": [
       {
         "property": "payload",
@@ -370,7 +372,7 @@
       }
     ],
     "x": 140,
-    "y": 280,
+    "y": 460,
     "wires": [
       [
         "d5736355.e4e8e"
@@ -433,7 +435,7 @@
       }
     ],
     "x": 100,
-    "y": 480,
+    "y": 660,
     "wires": [
       [
         "9b83ef6.7af1c1"
@@ -463,7 +465,7 @@
     "repair": false,
     "outputs": 2,
     "x": 370,
-    "y": 480,
+    "y": 660,
     "wires": [
       [
         "ed71f712.b69338",
@@ -604,7 +606,7 @@
       }
     ],
     "x": 140,
-    "y": 560,
+    "y": 740,
     "wires": [
       [
         "c0a73100.b726e"
@@ -668,7 +670,7 @@
       }
     ],
     "x": 150,
-    "y": 620,
+    "y": 800,
     "wires": [
       [
         "b53f891b.1feb08"
@@ -705,7 +707,7 @@
       }
     ],
     "x": 690,
-    "y": 560,
+    "y": 740,
     "wires": [
       [
         "5f497d57.150f44",
@@ -744,7 +746,7 @@
       }
     ],
     "x": 690,
-    "y": 600,
+    "y": 800,
     "wires": [
       [
         "aab516c6.d5acf8",
@@ -783,7 +785,7 @@
       }
     ],
     "x": 1190,
-    "y": 360,
+    "y": 540,
     "wires": [
       [
         "f7dd5719.04dbc8"
@@ -845,7 +847,7 @@
       }
     ],
     "x": 670,
-    "y": 360,
+    "y": 540,
     "wires": [
       [
         "171a4247.1ffeee"
@@ -876,7 +878,7 @@
     "repair": false,
     "outputs": 2,
     "x": 950,
-    "y": 360,
+    "y": 540,
     "wires": [
       [
         "ce9cbf76.39de5"
@@ -913,7 +915,7 @@
     "output_location": "payload",
     "output_results_count": 1,
     "x": 660,
-    "y": 880,
+    "y": 1060,
     "wires": [
       [
         "3b133cff.48b2f4"
@@ -941,7 +943,7 @@
     "reduceInitType": "",
     "reduceFixup": "",
     "x": 1130,
-    "y": 880,
+    "y": 1060,
     "wires": [
       [
         "3b035682.ea7bea"
@@ -960,7 +962,7 @@
     "template": "{{payload.attributes.friendly_name}}",
     "output": "str",
     "x": 940,
-    "y": 880,
+    "y": 1060,
     "wires": [
       [
         "2378d0a7.6d963"
@@ -979,7 +981,7 @@
     "template": "Het is donker en iemand is aanwezig. {{data.attributes.friendly_name}} verlichting is ingeschakeld.",
     "output": "str",
     "x": 2060,
-    "y": 600,
+    "y": 780,
     "wires": [
       [
         "9bfeecdc.f723d"
@@ -1025,7 +1027,7 @@
     "output_location": "payload",
     "output_results_count": 1,
     "x": 680,
-    "y": 740,
+    "y": 920,
     "wires": [
       [
         "6ca20d6c.62d004"
@@ -1053,7 +1055,7 @@
     "reduceInitType": "",
     "reduceFixup": "",
     "x": 1130,
-    "y": 740,
+    "y": 920,
     "wires": [
       [
         "a5f68bf8.968328"
@@ -1072,7 +1074,7 @@
     "template": "{{payload.attributes.friendly_name}}",
     "output": "str",
     "x": 940,
-    "y": 740,
+    "y": 920,
     "wires": [
       [
         "b9ba0c85.bcd94"
@@ -1106,7 +1108,7 @@
     "output_location": "payload",
     "output_results_count": 1,
     "x": 660,
-    "y": 800,
+    "y": 980,
     "wires": [
       [
         "fd3c7297.9684e"
@@ -1125,7 +1127,7 @@
     "template": "{{payload.attributes.friendly_name}}",
     "output": "str",
     "x": 940,
-    "y": 800,
+    "y": 980,
     "wires": [
       [
         "1928247d.6ddacc"
@@ -1153,7 +1155,7 @@
     "reduceInitType": "",
     "reduceFixup": "",
     "x": 1130,
-    "y": 800,
+    "y": 980,
     "wires": [
       [
         "d129b86a.aa0f58"
@@ -1172,7 +1174,7 @@
     "template": "{{friendly_name_person}} is thuis gekomen en het is dark. {{friendly_name_lampen}} verlichting is ingeschakeld",
     "output": "str",
     "x": 2060,
-    "y": 800,
+    "y": 980,
     "wires": [
       [
         "9bfeecdc.f723d"
@@ -1210,7 +1212,7 @@
     "template": "{{data.attributes.friendly_name}} verlichting is ingeschakeld omdat Harmony activiteit {{data_remote.harmony_hub_01.attributes.current_activity}} actief is. ",
     "output": "str",
     "x": 2060,
-    "y": 360,
+    "y": 540,
     "wires": [
       [
         "9bfeecdc.f723d"
@@ -1415,7 +1417,7 @@
     "y": 40,
     "wires": [
       [
-        "1ae2e15a.a292cf"
+        "f9016d05.455ab"
       ]
     ]
   },
@@ -1509,8 +1511,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 930,
-    "y": 580,
+    "x": 970,
+    "y": 760,
     "wires": [
       [
         "bfdc7b40.f9a528"
@@ -1572,7 +1574,7 @@
     "randomUnits": "seconds",
     "drop": false,
     "x": 1380,
-    "y": 740,
+    "y": 920,
     "wires": [
       [
         "da57c41e.c506f8"
@@ -1600,7 +1602,7 @@
     "reduceInitType": "num",
     "reduceFixup": "",
     "x": 1910,
-    "y": 600,
+    "y": 780,
     "wires": [
       [
         "cea43bad.d11358"
@@ -1664,7 +1666,7 @@
       }
     ],
     "x": 1430,
-    "y": 680,
+    "y": 860,
     "wires": [
       [
         "fd5eca9e.417048"
@@ -1676,7 +1678,7 @@
     "id": "fd5eca9e.417048",
     "type": "api-call-service",
     "z": "c0da8379.b0dd3",
-    "name": "turn off light livingroom",
+    "name": "turn on light livingroom",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -1690,7 +1692,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1720,
-    "y": 680,
+    "y": 860,
     "wires": [
       [
         "13ca8b62.27a4a5"
@@ -1726,7 +1728,7 @@
       }
     ],
     "x": 1160,
-    "y": 500,
+    "y": 680,
     "wires": [
       [
         "d08ebe33.48973",
@@ -1764,7 +1766,7 @@
       }
     ],
     "x": 1190,
-    "y": 440,
+    "y": 620,
     "wires": [
       [
         "d08ebe33.48973",
@@ -1791,7 +1793,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1700,
-    "y": 880,
+    "y": 1060,
     "wires": [
       [
         "afd68a7f.551918"
@@ -1810,7 +1812,7 @@
     "template": "Niemand is aanwezig. {{payload.attributes.friendly_name}} verlichting stond nog aan en is automatisch uitgeschakeld.",
     "output": "str",
     "x": 2060,
-    "y": 880,
+    "y": 1060,
     "wires": [
       [
         "9bfeecdc.f723d"
@@ -1846,7 +1848,7 @@
       }
     ],
     "x": 360,
-    "y": 840,
+    "y": 1020,
     "wires": [
       [
         "672a2d68.71e334"
@@ -1883,7 +1885,7 @@
       }
     ],
     "x": 390,
-    "y": 880,
+    "y": 1060,
     "wires": [
       [
         "672a2d68.71e334"
@@ -1946,7 +1948,7 @@
     ],
     "queue": "none",
     "x": 660,
-    "y": 260,
+    "y": 440,
     "wires": [
       []
     ]
@@ -1980,7 +1982,7 @@
       }
     ],
     "x": 680,
-    "y": 460,
+    "y": 640,
     "wires": [
       [
         "ab57e30e.f2b96",
@@ -2005,7 +2007,7 @@
     "randomUnits": "seconds",
     "drop": false,
     "x": 1140,
-    "y": 580,
+    "y": 760,
     "wires": [
       [
         "d08ebe33.48973",
@@ -2042,8 +2044,8 @@
         "valueType": "entity"
       }
     ],
-    "x": 380,
-    "y": 140,
+    "x": 260,
+    "y": 280,
     "wires": [
       [
         "d5736355.e4e8e"
@@ -2066,7 +2068,7 @@
     "randomUnits": "seconds",
     "drop": false,
     "x": 340,
-    "y": 340,
+    "y": 520,
     "wires": [
       [
         "255f30c3.c9935"
@@ -2092,6 +2094,69 @@
     "queue": "none",
     "x": 1720,
     "y": 340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cc64f27a.c792c",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off light front door",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "light",
+    "service": "turn_off",
+    "entityId": "light.shelly1_front_door",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 680,
+    "y": 340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5d939da2.20d8c4",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off light backyard",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "light",
+    "service": "turn_off",
+    "entityId": "light.shellydimmer_backyard_string_l",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 680,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f9016d05.455ab",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Slaapstand is automatisch uitgeschakeld",
+    "output": "str",
+    "x": 2060,
+    "y": 40,
     "wires": [
       []
     ]
