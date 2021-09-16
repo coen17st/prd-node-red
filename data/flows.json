@@ -316,7 +316,7 @@
         "id": "6efb7a7f.4e9a64",
         "type": "harmony-server",
         "name": "",
-        "ip": "192.168.1.131"
+        "ip": "192.168.30.55"
     },
     {
         "id": "4ba92433.2478cc",
@@ -15902,10 +15902,10 @@
         "contentType": "audio/mp3",
         "message": "",
         "language": "en",
-        "ip": "192.168.1.216",
+        "ip": "shield.lan",
         "port": "",
         "volume": "",
-        "x": 1750,
+        "x": 1740,
         "y": 1400,
         "wires": [
             []
@@ -15921,10 +15921,10 @@
         "contentType": "audio/mp3",
         "message": "",
         "language": "en",
-        "ip": "192.168.1.22",
+        "ip": "Google-Home.lan",
         "port": "",
         "volume": "50",
-        "x": 1750,
+        "x": 1760,
         "y": 1340,
         "wires": [
             []
@@ -15940,10 +15940,10 @@
         "contentType": "audio/mp3",
         "message": "",
         "language": "en",
-        "ip": "192.168.1.17",
+        "ip": "Google-Home-Mini.lan",
         "port": "",
         "volume": "50",
-        "x": 1750,
+        "x": 1780,
         "y": 1460,
         "wires": [
             []
