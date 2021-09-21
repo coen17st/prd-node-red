@@ -2688,10 +2688,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -3796,10 +3796,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -4161,10 +4161,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -4964,10 +4964,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -5164,10 +5164,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -12976,10 +12976,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -13001,7 +13001,7 @@
             }
         ],
         "x": 170,
-        "y": 160,
+        "y": 240,
         "wires": [
             [
                 "12b0c7b7.f23d68"
@@ -13046,7 +13046,7 @@
         "repair": false,
         "outputs": 5,
         "x": 630,
-        "y": 160,
+        "y": 240,
         "wires": [
             [
                 "9781b7f5.1f10a8"
@@ -13113,7 +13113,7 @@
         "repair": false,
         "outputs": 7,
         "x": 630,
-        "y": 820,
+        "y": 900,
         "wires": [
             [
                 "33fc2a94.4cdaa6"
@@ -13145,7 +13145,7 @@
         "name": "HARMONY INPUT SELECT",
         "info": "",
         "x": 160,
-        "y": 120,
+        "y": 200,
         "wires": []
     },
     {
@@ -13171,7 +13171,7 @@
         "repair": false,
         "outputs": 2,
         "x": 650,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "740d851f.8d8e4c"
@@ -13204,7 +13204,7 @@
         "repair": false,
         "outputs": 2,
         "x": 650,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "5ca3464f.c607d8"
@@ -13232,7 +13232,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1380,
-        "y": 660,
+        "y": 740,
         "wires": [
             []
         ]
@@ -13293,7 +13293,7 @@
             }
         ],
         "x": 150,
-        "y": 780,
+        "y": 860,
         "wires": [
             [
                 "a16b409.4b281c"
@@ -13356,7 +13356,7 @@
             }
         ],
         "x": 150,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "5b04c23f.c13ddc"
@@ -13419,7 +13419,7 @@
             }
         ],
         "x": 140,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "8c8062ee.9195a"
@@ -13444,7 +13444,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 780,
+        "y": 860,
         "wires": [
             []
         ]
@@ -13467,7 +13467,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1220,
-        "y": 900,
+        "y": 980,
         "wires": [
             []
         ]
@@ -13490,7 +13490,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1590,
-        "y": 1000,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -13502,7 +13502,7 @@
         "name": "APP ON MEDIA PLAYER SHIELD",
         "info": "",
         "x": 180,
-        "y": 720,
+        "y": 800,
         "wires": []
     },
     {
@@ -13512,7 +13512,7 @@
         "name": "TV SWITCH",
         "info": "",
         "x": 110,
-        "y": 500,
+        "y": 580,
         "wires": []
     },
     {
@@ -13522,7 +13522,7 @@
         "name": "MUSIC SWITCH",
         "info": "",
         "x": 120,
-        "y": 600,
+        "y": 680,
         "wires": []
     },
     {
@@ -13556,10 +13556,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -13581,7 +13581,7 @@
             }
         ],
         "x": 160,
-        "y": 1100,
+        "y": 1180,
         "wires": [
             [
                 "9795d0e4.41c8"
@@ -13675,13 +13675,18 @@
                 "t": "eq",
                 "v": "SubLime FM",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "KINK",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 16,
+        "outputs": 17,
         "x": 650,
-        "y": 1140,
+        "y": 1220,
         "wires": [
             [
                 "8cdcae0.3b2d45"
@@ -13730,6 +13735,9 @@
             ],
             [
                 "aae6883f.8a2478"
+            ],
+            [
+                "e0d9da73.ea88d8"
             ]
         ]
     },
@@ -13740,7 +13748,7 @@
         "name": "RADIO",
         "info": "",
         "x": 90,
-        "y": 1000,
+        "y": 1080,
         "wires": []
     },
     {
@@ -13799,7 +13807,7 @@
             }
         ],
         "x": 150,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             [
                 "d0daf4ea.1a4388"
@@ -13840,7 +13848,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1180,
+        "y": 1260,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -13881,7 +13889,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1210,
+        "y": 1290,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -13922,7 +13930,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1240,
+        "y": 1320,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -13963,7 +13971,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1270,
+        "y": 1350,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14004,7 +14012,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1300,
+        "y": 1380,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14045,7 +14053,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1330,
+        "y": 1410,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14086,7 +14094,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1360,
+        "y": 1440,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14127,7 +14135,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1390,
+        "y": 1470,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14168,7 +14176,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1420,
+        "y": 1500,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14209,7 +14217,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1450,
+        "y": 1530,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14250,7 +14258,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1480,
+        "y": 1560,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14291,7 +14299,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1510,
+        "y": 1590,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14332,7 +14340,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1540,
+        "y": 1620,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14355,7 +14363,7 @@
         "blockInputOverrides": false,
         "outputProperties": [],
         "x": 1400,
-        "y": 1400,
+        "y": 1480,
         "wires": [
             [
                 "affc5f88.87461"
@@ -14379,7 +14387,7 @@
         "blockInputOverrides": false,
         "outputProperties": [],
         "x": 1430,
-        "y": 1340,
+        "y": 1420,
         "wires": [
             [
                 "8c1725fb.827dd8"
@@ -14403,7 +14411,7 @@
         "blockInputOverrides": false,
         "outputProperties": [],
         "x": 1410,
-        "y": 1460,
+        "y": 1540,
         "wires": [
             [
                 "bbb5f6a9.8029b8"
@@ -14429,7 +14437,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1110,
-        "y": 1400,
+        "y": 1480,
         "wires": [
             [
                 "6d04ce8a.218d1",
@@ -14472,7 +14480,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1570,
+        "y": 1650,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -14508,7 +14516,7 @@
             }
         ],
         "x": 410,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             [
                 "9795d0e4.41c8"
@@ -14544,7 +14552,7 @@
             }
         ],
         "x": 950,
-        "y": 780,
+        "y": 860,
         "wires": [
             [
                 "41048f91.45ec8"
@@ -14580,7 +14588,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1170,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             [
                 "60f106c9.a6f5a8"
@@ -14611,7 +14619,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1400,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             []
         ]
@@ -14634,7 +14642,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1370,
-        "y": 1080,
+        "y": 1160,
         "wires": [
             []
         ]
@@ -14668,7 +14676,7 @@
             }
         ],
         "x": 910,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             [
                 "454468c5.1187a8"
@@ -14704,7 +14712,7 @@
             }
         ],
         "x": 980,
-        "y": 1120,
+        "y": 1200,
         "wires": [
             [
                 "89521d42.98429"
@@ -14730,7 +14738,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1860,
-        "y": 1860,
+        "y": 1940,
         "wires": [
             [
                 "f5b84940.289f38"
@@ -14757,7 +14765,7 @@
         "to": "",
         "reg": false,
         "x": 900,
-        "y": 1760,
+        "y": 1840,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -14832,7 +14840,7 @@
         "repair": false,
         "outputs": 11,
         "x": 670,
-        "y": 1740,
+        "y": 1820,
         "wires": [
             [
                 "e047cfa7.44efc"
@@ -14887,7 +14895,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1790,
+        "y": 1870,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -14923,7 +14931,7 @@
             }
         ],
         "x": 1270,
-        "y": 1860,
+        "y": 1940,
         "wires": [
             [
                 "a75c5d1d.eb7cf"
@@ -14958,7 +14966,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1570,
-        "y": 1860,
+        "y": 1940,
         "wires": [
             [
                 "aca93d6a.a9263"
@@ -14989,7 +14997,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1830,
-        "y": 1820,
+        "y": 1900,
         "wires": [
             [
                 "d64c25df.f16088"
@@ -15014,7 +15022,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1870,
-        "y": 1900,
+        "y": 1980,
         "wires": [
             []
         ]
@@ -15046,7 +15054,7 @@
         "outputinitially": false,
         "state_type": "str",
         "x": 190,
-        "y": 1660,
+        "y": 1740,
         "wires": [
             [
                 "bb62c7c1.682538"
@@ -15074,7 +15082,7 @@
         "to": "",
         "reg": false,
         "x": 930,
-        "y": 1820,
+        "y": 1900,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15101,7 +15109,7 @@
         "to": "",
         "reg": false,
         "x": 920,
-        "y": 1850,
+        "y": 1930,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15128,7 +15136,7 @@
         "to": "",
         "reg": false,
         "x": 930,
-        "y": 1880,
+        "y": 1960,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15155,7 +15163,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1910,
+        "y": 1990,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15182,7 +15190,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1940,
+        "y": 2020,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15218,7 +15226,7 @@
             }
         ],
         "x": 930,
-        "y": 1680,
+        "y": 1760,
         "wires": [
             [
                 "5c403989.23c728"
@@ -15253,7 +15261,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1190,
-        "y": 1680,
+        "y": 1760,
         "wires": [
             [
                 "53c295cc.abd69c"
@@ -15284,7 +15292,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1800,
-        "y": 1720,
+        "y": 1800,
         "wires": [
             []
         ]
@@ -15307,7 +15315,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1800,
-        "y": 1680,
+        "y": 1760,
         "wires": [
             []
         ]
@@ -15330,7 +15338,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1780,
-        "y": 1640,
+        "y": 1720,
         "wires": [
             []
         ]
@@ -15364,7 +15372,7 @@
             }
         ],
         "x": 1500,
-        "y": 1640,
+        "y": 1720,
         "wires": [
             [
                 "796e89c3.bcb0b8"
@@ -15392,7 +15400,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1730,
+        "y": 1810,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15406,7 +15414,7 @@
         "name": "SPOTIFY",
         "info": "",
         "x": 120,
-        "y": 1620,
+        "y": 1700,
         "wires": []
     },
     {
@@ -15429,7 +15437,7 @@
         "to": "",
         "reg": false,
         "x": 890,
-        "y": 1970,
+        "y": 2050,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -15465,7 +15473,7 @@
             }
         ],
         "x": 1230,
-        "y": 120,
+        "y": 180,
         "wires": [
             [
                 "37e50cfa.988594"
@@ -15491,7 +15499,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1510,
-        "y": 120,
+        "y": 180,
         "wires": [
             []
         ]
@@ -15514,7 +15522,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1510,
-        "y": 280,
+        "y": 360,
         "wires": [
             []
         ]
@@ -15548,7 +15556,7 @@
             }
         ],
         "x": 1230,
-        "y": 280,
+        "y": 360,
         "wires": [
             [
                 "267c55db.572f6a"
@@ -15574,7 +15582,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1520,
-        "y": 220,
+        "y": 300,
         "wires": [
             []
         ]
@@ -15608,7 +15616,7 @@
             }
         ],
         "x": 1230,
-        "y": 220,
+        "y": 300,
         "wires": [
             [
                 "d0fdf580.8956e8"
@@ -15634,7 +15642,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1520,
-        "y": 340,
+        "y": 420,
         "wires": [
             []
         ]
@@ -15668,7 +15676,7 @@
             }
         ],
         "x": 1240,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "57a069db.874c08"
@@ -15705,7 +15713,7 @@
             }
         ],
         "x": 1380,
-        "y": 1000,
+        "y": 1080,
         "wires": [
             [
                 "87de6266.b1ec4"
@@ -15742,7 +15750,7 @@
             }
         ],
         "x": 900,
-        "y": 660,
+        "y": 740,
         "wires": [
             [
                 "a17000f3.d5a78"
@@ -15779,7 +15787,7 @@
             }
         ],
         "x": 1140,
-        "y": 660,
+        "y": 740,
         "wires": [
             [
                 "e950787d.c01678"
@@ -15805,7 +15813,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 400,
+        "y": 480,
         "wires": [
             []
         ]
@@ -15828,7 +15836,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 460,
+        "y": 540,
         "wires": [
             []
         ]
@@ -15862,7 +15870,7 @@
             }
         ],
         "x": 890,
-        "y": 840,
+        "y": 920,
         "wires": [
             [
                 "34844efd.9ec002"
@@ -15888,7 +15896,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1220,
-        "y": 840,
+        "y": 920,
         "wires": [
             []
         ]
@@ -15906,7 +15914,7 @@
         "port": "",
         "volume": "",
         "x": 1740,
-        "y": 1400,
+        "y": 1480,
         "wires": [
             []
         ],
@@ -15925,7 +15933,7 @@
         "port": "",
         "volume": "50",
         "x": 1760,
-        "y": 1340,
+        "y": 1420,
         "wires": [
             []
         ],
@@ -15944,7 +15952,7 @@
         "port": "",
         "volume": "50",
         "x": 1780,
-        "y": 1460,
+        "y": 1540,
         "wires": [
             []
         ],
@@ -15954,10 +15962,10 @@
         "id": "d33c6739.661138",
         "type": "comment",
         "z": "2910f43f.ab852c",
-        "name": "TV SCHERM CORRECTIE",
+        "name": "tv input select correction",
         "info": "",
         "x": 150,
-        "y": 20,
+        "y": 40,
         "wires": []
     },
     {
@@ -15978,16 +15986,26 @@
                 "value": ""
             }
         ],
-        "entityid": "sensor.shellyplug_tv_current_consumption",
+        "entityid": "sensor.shellyplug_tv_power",
         "entityidfiltertype": "exact",
         "debugenabled": false,
-        "constraints": [],
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": ">",
+                "comparatorValueDatatype": "num",
+                "comparatorValue": "58",
+                "propertyValue": "new_state.state"
+            }
+        ],
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": true,
         "state_type": "num",
         "x": 130,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "986709c4.4f3978"
@@ -16023,7 +16041,7 @@
                 "valueType": "entity"
             }
         ],
-        "x": 910,
+        "x": 930,
         "y": 60,
         "wires": [
             [
@@ -16037,7 +16055,7 @@
         "type": "subflow:ae0491bb.4f1eb",
         "z": "2910f43f.ab852c",
         "name": "",
-        "x": 1130,
+        "x": 1140,
         "y": 60,
         "wires": [
             []
@@ -16054,7 +16072,7 @@
         "halt_if": "59",
         "halt_if_type": "num",
         "halt_if_compare": "gte",
-        "entity_id": "sensor.shellyplug_tv_current_consumption",
+        "entity_id": "sensor.shellyplug_tv_power",
         "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -16071,7 +16089,7 @@
                 "valueType": "entity"
             }
         ],
-        "x": 730,
+        "x": 750,
         "y": 60,
         "wires": [
             [
@@ -16095,7 +16113,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 600,
+        "x": 620,
         "y": 60,
         "wires": [
             [
@@ -16118,7 +16136,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 440,
+        "x": 460,
         "y": 60,
         "wires": [
             [
@@ -16130,7 +16148,7 @@
         "id": "986709c4.4f3978",
         "type": "switch",
         "z": "2910f43f.ab852c",
-        "name": "> 59",
+        "name": "> 59 / < 1",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -16138,16 +16156,24 @@
                 "t": "gte",
                 "v": "55",
                 "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "1",
+                "vt": "num"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 290,
-        "y": 60,
+        "outputs": 2,
+        "x": 300,
+        "y": 80,
         "wires": [
             [
                 "361d11e2.0d731e"
+            ],
+            [
+                "60f1b418.5f2bec"
             ]
         ]
     },
@@ -17210,10 +17236,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -17274,10 +17300,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -17431,10 +17457,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -21864,10 +21890,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -23295,10 +23321,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -26275,8 +26301,8 @@
             "78b06027.265d5",
             "7b0f1685.0279d8"
         ],
-        "x": 1455,
-        "y": 740,
+        "x": 1375,
+        "y": 860,
         "wires": []
     },
     {
@@ -27235,10 +27261,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -27299,10 +27325,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -27363,10 +27389,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -27894,10 +27920,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -27958,10 +27984,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -28022,10 +28048,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -28086,10 +28112,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -28333,7 +28359,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 900,
-        "y": 160,
+        "y": 240,
         "wires": [
             [
                 "fca7e96b.18f578"
@@ -28358,10 +28384,11 @@
         "outputProperties": [],
         "queue": "none",
         "x": 890,
-        "y": 120,
+        "y": 200,
         "wires": [
             [
-                "fca7e96b.18f578"
+                "fca7e96b.18f578",
+                "b10f379e.583878"
             ]
         ]
     },
@@ -28383,7 +28410,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 920,
-        "y": 240,
+        "y": 320,
         "wires": [
             [
                 "6a32b719.5d34d8"
@@ -28408,7 +28435,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "fca7e96b.18f578"
@@ -28433,7 +28460,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 280,
+        "y": 360,
         "wires": [
             [
                 "36ac824f.34face",
@@ -28462,7 +28489,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 880,
-        "y": 540,
+        "y": 620,
         "wires": [
             []
         ]
@@ -28485,7 +28512,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 890,
-        "y": 600,
+        "y": 680,
         "wires": [
             []
         ]
@@ -28519,7 +28546,7 @@
             }
         ],
         "x": 950,
-        "y": 900,
+        "y": 980,
         "wires": [
             [
                 "4023da29.24aa34"
@@ -28545,7 +28572,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1240,
-        "y": 520,
+        "y": 600,
         "wires": [
             []
         ]
@@ -28591,7 +28618,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1360,
-        "y": 1120,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -28614,7 +28641,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 2100,
-        "y": 1820,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -28637,7 +28664,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 2120,
-        "y": 1860,
+        "y": 1940,
         "wires": [
             []
         ]
@@ -28771,8 +28798,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 850,
-        "y": 740,
+        "x": 810,
+        "y": 700,
         "wires": [
             [
                 "50cba5a8.933adc"
@@ -28893,7 +28920,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 320,
-        "y": 900,
+        "y": 880,
         "wires": [
             []
         ]
@@ -29155,6 +29182,400 @@
         "y": 40,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "60f1b418.5f2bec",
+        "type": "delay",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "70",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "237b46fd.73d02a"
+            ]
+        ]
+    },
+    {
+        "id": "237b46fd.73d02a",
+        "type": "delay",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [
+                "6cbb3370.94847c"
+            ]
+        ]
+    },
+    {
+        "id": "6cbb3370.94847c",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "< 1",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "1",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.shellyplug_tv_power",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 750,
+        "y": 100,
+        "wires": [
+            [
+                "5055b721.f70cd8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5055b721.f70cd8",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "input select is not alles uit",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "Alles Uit",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "input_select.harmonyhub",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 930,
+        "y": 100,
+        "wires": [
+            [
+                "a7bf73cc.61a0a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b10f379e.583878",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "turn on media player shield",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "media_player",
+        "service": "turn_on",
+        "entityId": "media_player.shield",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1240,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7bf73cc.61a0a",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "select alles uit",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_select",
+        "service": "select_option",
+        "entityId": "input_select.harmonyhub",
+        "data": "{\"option\":\"Alles Uit\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1140,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0d9da73.ea88d8",
+        "type": "change",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "http://playerservices.streamtheworld.com/api/livestream-redirect/KINK.mp3",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "imageUrl",
+                "pt": "msg",
+                "to": "https://upload.wikimedia.org/wikipedia/commons/d/df/Kink_FM_logo.svg",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "msg.contentTitle",
+                "pt": "msg",
+                "to": "msg.payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 1680,
+        "wires": [
+            [
+                "ec9a1ad.78172e8"
+            ]
+        ]
+    },
+    {
+        "id": "1c97d65b.2e92da",
+        "type": "http in",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "url": "/radarr",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 1000,
+        "wires": [
+            [
+                "77ec7c95.9f6574",
+                "90393ea5.588c",
+                "7da213e7.181bbc"
+            ]
+        ]
+    },
+    {
+        "id": "77ec7c95.9f6574",
+        "type": "template",
+        "z": "155ca471.b81eac",
+        "name": "html page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
+        "x": 260,
+        "y": 1000,
+        "wires": [
+            [
+                "2b16b681.af3d1a"
+            ]
+        ]
+    },
+    {
+        "id": "2b16b681.af3d1a",
+        "type": "http response",
+        "z": "155ca471.b81eac",
+        "name": "http response",
+        "statusCode": "",
+        "headers": {},
+        "x": 420,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "90393ea5.588c",
+        "type": "debug",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "2b83af70.c929b",
+        "type": "http in",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "url": "/sonarr",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 1140,
+        "wires": [
+            [
+                "b7d14f30.91cd1",
+                "51353010.10044",
+                "66863268.0b78dc"
+            ]
+        ]
+    },
+    {
+        "id": "b7d14f30.91cd1",
+        "type": "template",
+        "z": "155ca471.b81eac",
+        "name": "html page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
+        "x": 260,
+        "y": 1140,
+        "wires": [
+            [
+                "e154c8fa.2b7878"
+            ]
+        ]
+    },
+    {
+        "id": "e154c8fa.2b7878",
+        "type": "http response",
+        "z": "155ca471.b81eac",
+        "name": "http response",
+        "statusCode": "",
+        "headers": {},
+        "x": 420,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "51353010.10044",
+        "type": "debug",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "66863268.0b78dc",
+        "type": "template",
+        "z": "155ca471.b81eac",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Sonarr Event:{{{payload.eventType}}} Title:{{{payload.series.title}}} Episode: {{{payload.episodes[0].title}}} Name:{{{payload.episodeFile.sceneName}}}",
+        "output": "str",
+        "x": 260,
+        "y": 1180,
+        "wires": [
+            [
+                "39631971.689156"
+            ]
+        ]
+    },
+    {
+        "id": "d31eb146.814b8",
+        "type": "comment",
+        "z": "155ca471.b81eac",
+        "name": "RADARR MESSAGE",
+        "info": "",
+        "x": 140,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "ac579eaa.c344",
+        "type": "comment",
+        "z": "155ca471.b81eac",
+        "name": "SONARR MESSAGE",
+        "info": "",
+        "x": 140,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "7da213e7.181bbc",
+        "type": "template",
+        "z": "155ca471.b81eac",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Radarr, Film:{{{payload.movie.title}}} Year:{{{payload.movie.year}}}  Kwaliteit:{{{payload.release.quality}}} Indexer: {{{payload.release.indexer}}} Grote: {{{payload.release.size}}}",
+        "output": "str",
+        "x": 260,
+        "y": 1040,
+        "wires": [
+            [
+                "39631971.689156"
+            ]
         ]
     }
 ]
