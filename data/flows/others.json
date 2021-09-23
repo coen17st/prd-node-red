@@ -1708,7 +1708,7 @@
     "id": "4b27c72a.34bd58",
     "type": "api-call-service",
     "z": "155ca471.b81eac",
-    "name": "In APP Notify Dismiss",
+    "name": "app notification dismiss",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -1721,7 +1721,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 320,
+    "x": 330,
     "y": 880,
     "wires": [
       []
@@ -1731,7 +1731,7 @@
     "id": "7a928edb.bb419",
     "type": "api-call-service",
     "z": "155ca471.b81eac",
-    "name": "In APP Notify",
+    "name": "app notification",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -1744,7 +1744,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 690,
+    "x": 720,
     "y": 860,
     "wires": [
       []
@@ -1786,7 +1786,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 520,
+    "x": 540,
     "y": 860,
     "wires": [
       [
