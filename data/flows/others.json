@@ -107,7 +107,6 @@
     "y": 80,
     "wires": [
       [
-        "7520cdcb.2a7f04",
         "cdffe03b.850da"
       ]
     ]
@@ -374,7 +373,8 @@
     "wires": [
       [
         "135d2bc6.413f64",
-        "39631971.689156"
+        "39631971.689156",
+        "bf784dff.af0ef"
       ]
     ]
   },
@@ -799,7 +799,7 @@
         "value": ""
       }
     ],
-    "entityid": "sensor.tumble_dryer_electric_consumed_w",
+    "entityid": "sensor.shellyplug_tumble_dryer_power",
     "entityidfiltertype": "exact",
     "debugenabled": false,
     "constraints": [],
@@ -839,7 +839,6 @@
     "y": 220,
     "wires": [
       [
-        "a59c7a9.981f388",
         "4a389e68.3b7ad"
       ]
     ]
@@ -932,7 +931,8 @@
     "wires": [
       [
         "8f091326.cea2a",
-        "39631971.689156"
+        "39631971.689156",
+        "bf784dff.af0ef"
       ]
     ]
   },
@@ -979,44 +979,6 @@
         "3b4713c4.0f13bc"
       ]
     ]
-  },
-  {
-    "id": "7520cdcb.2a7f04",
-    "type": "cast-to-client",
-    "z": "155ca471.b81eac",
-    "name": "",
-    "url": "",
-    "contentType": "",
-    "message": "",
-    "language": "en-us",
-    "ip": "192.168.1.22",
-    "port": "",
-    "volume": "50",
-    "x": 1630,
-    "y": 40,
-    "wires": [
-      []
-    ],
-    "icon": "node-red-contrib-cast/google-home1.svg"
-  },
-  {
-    "id": "a59c7a9.981f388",
-    "type": "cast-to-client",
-    "z": "155ca471.b81eac",
-    "name": "",
-    "url": "",
-    "contentType": "",
-    "message": "",
-    "language": "en-us",
-    "ip": "192.168.1.22",
-    "port": "",
-    "volume": "50",
-    "x": 1630,
-    "y": 180,
-    "wires": [
-      []
-    ],
-    "icon": "node-red-contrib-cast/google-home1.svg"
   },
   {
     "id": "da0fc94b.13e958",
@@ -2037,6 +1999,29 @@
       [
         "39631971.689156"
       ]
+    ]
+  },
+  {
+    "id": "bf784dff.af0ef",
+    "type": "api-call-service",
+    "z": "155ca471.b81eac",
+    "name": "google say",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "tts",
+    "service": "google_say",
+    "entityId": "media_player.google_home",
+    "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1810,
+    "y": 340,
+    "wires": [
+      []
     ]
   }
 ]

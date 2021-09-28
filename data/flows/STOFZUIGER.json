@@ -240,6 +240,15 @@
     "type": "inject",
     "z": "55da1471.fda0fc",
     "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
     "repeat": "",
     "crontab": "00 02 * * *",
     "once": false,

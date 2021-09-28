@@ -558,8 +558,8 @@
     },
     "node-red-contrib-time-range-switch": {
         "name": "node-red-contrib-time-range-switch",
-        "version": "1.0.1",
-        "local": false,
+        "version": "1.1.2",
+        "local": true,
         "nodes": {
             "time-range-switch": {
                 "name": "time-range-switch",
@@ -567,9 +567,9 @@
                     "time-range-switch"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-time-range-switch",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-time-range-switch/index.js"
+                "file": "/data/node_modules/node-red-contrib-time-range-switch/index.js"
             }
         }
     },
