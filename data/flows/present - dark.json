@@ -1193,7 +1193,7 @@
     "template": "{{data.attributes.friendly_name}} verlichting is automatisch uitgeschakeld",
     "output": "str",
     "x": 2060,
-    "y": 80,
+    "y": 180,
     "wires": [
       [
         "9bfeecdc.f723d"
@@ -1479,7 +1479,7 @@
     "y": 100,
     "wires": [
       [
-        "1ae2e15a.a292cf"
+        "2746e153.92344e"
       ]
     ]
   },
@@ -1629,8 +1629,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 1910,
-    "y": 80,
+    "x": 1930,
+    "y": 180,
     "wires": [
       [
         "efdb1a4f.c5e9b8"
@@ -2159,6 +2159,25 @@
     "y": 40,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "2746e153.92344e",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Beveiliging is automatisch uitgeschakeld",
+    "output": "str",
+    "x": 2060,
+    "y": 100,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
     ]
   }
 ]
