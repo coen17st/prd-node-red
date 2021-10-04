@@ -307,7 +307,7 @@
     "wires": [
       [],
       [
-        "5d2138c5.cbc6e8"
+        "50618f0.36d7e7"
       ]
     ]
   },
@@ -499,7 +499,7 @@
     "id": "f98986e3.e78848",
     "type": "api-current-state",
     "z": "3637eeb0.d96232",
-    "name": "state chromecast playing",
+    "name": "state shield playing",
     "server": "4ba92433.2478cc",
     "version": 2,
     "outputs": 2,
@@ -523,7 +523,7 @@
         "valueType": "entity"
       }
     ],
-    "x": 390,
+    "x": 370,
     "y": 320,
     "wires": [
       [
@@ -536,7 +536,7 @@
     "id": "c63cd5dd.2969b8",
     "type": "api-call-service",
     "z": "3637eeb0.d96232",
-    "name": "pause chromecast",
+    "name": "pause shield",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -549,63 +549,12 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 890,
+    "x": 870,
     "y": 320,
     "wires": [
       [
         "74b0f721.d079c8"
       ]
-    ]
-  },
-  {
-    "id": "5d2138c5.cbc6e8",
-    "type": "change",
-    "z": "3637eeb0.d96232",
-    "name": "soundfile doorbell",
-    "rules": [
-      {
-        "t": "set",
-        "p": "url",
-        "pt": "msg",
-        "to": "http://192.168.1.20:8123/local/audio/aangebeld.mp3",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1310,
-    "y": 260,
-    "wires": [
-      [
-        "ad0b34c.fb695c8",
-        "f1f2c0d5.eccde"
-      ]
-    ]
-  },
-  {
-    "id": "29c0e7a6.9c1268",
-    "type": "api-call-service",
-    "z": "3637eeb0.d96232",
-    "name": "turn off mediaplayer google home",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "media_player",
-    "service": "turn_off",
-    "entityId": "media_player.google_home",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1820,
-    "y": 260,
-    "wires": [
-      []
     ]
   },
   {
@@ -887,25 +836,6 @@
     ]
   },
   {
-    "id": "ad0b34c.fb695c8",
-    "type": "cast-to-client",
-    "z": "3637eeb0.d96232",
-    "name": "",
-    "url": "",
-    "contentType": "",
-    "message": "",
-    "language": "en-us",
-    "ip": "Google-Home.lan",
-    "port": "",
-    "volume": "50",
-    "x": 1540,
-    "y": 320,
-    "wires": [
-      []
-    ],
-    "icon": "node-red-contrib-cast/google-home1.svg"
-  },
-  {
     "id": "9a850a23.0f7348",
     "type": "simpletime",
     "z": "3637eeb0.d96232",
@@ -966,24 +896,6 @@
     ]
   },
   {
-    "id": "f1f2c0d5.eccde",
-    "type": "stoptimer",
-    "z": "3637eeb0.d96232",
-    "duration": "10",
-    "units": "Second",
-    "payloadtype": "num",
-    "payloadval": "0",
-    "name": "",
-    "x": 1530,
-    "y": 260,
-    "wires": [
-      [
-        "29c0e7a6.9c1268"
-      ],
-      []
-    ]
-  },
-  {
     "id": "f39e3558.7e0a48",
     "type": "stoptimer",
     "z": "3637eeb0.d96232",
@@ -999,6 +911,48 @@
         "4566a0c1.1b69e"
       ],
       []
+    ]
+  },
+  {
+    "id": "211ffb19.e76354",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "google say",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "tts",
+    "service": "google_say",
+    "entityId": "media_player.google_home",
+    "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1430,
+    "y": 260,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "50618f0.36d7e7",
+    "type": "template",
+    "z": "3637eeb0.d96232",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Er is aangebeld.",
+    "output": "str",
+    "x": 1280,
+    "y": 260,
+    "wires": [
+      [
+        "211ffb19.e76354"
+      ]
     ]
   }
 ]

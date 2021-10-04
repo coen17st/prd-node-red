@@ -179,10 +179,10 @@
     "name": "get message_home_page_1",
     "server": "4ba92433.2478cc",
     "version": 2,
-    "outputs": 1,
-    "halt_if": "",
+    "outputs": 2,
+    "halt_if": "unknown",
     "halt_if_type": "str",
-    "halt_if_compare": "is",
+    "halt_if_compare": "is_not",
     "entity_id": "sensor.message_home_page_1",
     "state_type": "str",
     "blockInputOverrides": true,
@@ -199,7 +199,8 @@
     "wires": [
       [
         "43e5dace.e04654"
-      ]
+      ],
+      []
     ]
   },
   {
@@ -237,6 +238,9 @@
     "outputLocation": "",
     "outputLocationType": "none",
     "inputOverride": "block",
+    "outputOnStateChange": false,
+    "outputPayload": "",
+    "outputPayloadType": "str",
     "x": 1200,
     "y": 240,
     "wires": [
@@ -280,6 +284,9 @@
     "outputLocation": "",
     "outputLocationType": "none",
     "inputOverride": "block",
+    "outputOnStateChange": false,
+    "outputPayload": "",
+    "outputPayloadType": "str",
     "x": 1200,
     "y": 300,
     "wires": [
@@ -295,10 +302,10 @@
     "name": "get message_home_page_2",
     "server": "4ba92433.2478cc",
     "version": 2,
-    "outputs": 1,
-    "halt_if": "",
+    "outputs": 2,
+    "halt_if": "unknown",
     "halt_if_type": "str",
-    "halt_if_compare": "is",
+    "halt_if_compare": "is_not",
     "entity_id": "sensor.message_home_page_2",
     "state_type": "str",
     "blockInputOverrides": true,
@@ -315,7 +322,8 @@
     "wires": [
       [
         "11d10b51.12cf65"
-      ]
+      ],
+      []
     ]
   },
   {
@@ -353,6 +361,9 @@
     "outputLocation": "",
     "outputLocationType": "none",
     "inputOverride": "block",
+    "outputOnStateChange": false,
+    "outputPayload": "",
+    "outputPayloadType": "str",
     "x": 1200,
     "y": 360,
     "wires": [
@@ -368,10 +379,10 @@
     "name": "get message_home_page_3",
     "server": "4ba92433.2478cc",
     "version": 2,
-    "outputs": 1,
-    "halt_if": "",
+    "outputs": 2,
+    "halt_if": "unknown",
     "halt_if_type": "str",
-    "halt_if_compare": "is",
+    "halt_if_compare": "is_not",
     "entity_id": "sensor.message_home_page_3",
     "state_type": "str",
     "blockInputOverrides": true,
@@ -388,7 +399,8 @@
     "wires": [
       [
         "a393de42.16e7c"
-      ]
+      ],
+      []
     ]
   },
   {

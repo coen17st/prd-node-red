@@ -3483,7 +3483,7 @@
         "wires": [
             [],
             [
-                "5d2138c5.cbc6e8"
+                "50618f0.36d7e7"
             ]
         ]
     },
@@ -3675,7 +3675,7 @@
         "id": "f98986e3.e78848",
         "type": "api-current-state",
         "z": "3637eeb0.d96232",
-        "name": "state chromecast playing",
+        "name": "state shield playing",
         "server": "4ba92433.2478cc",
         "version": 2,
         "outputs": 2,
@@ -3699,7 +3699,7 @@
                 "valueType": "entity"
             }
         ],
-        "x": 390,
+        "x": 370,
         "y": 320,
         "wires": [
             [
@@ -3712,7 +3712,7 @@
         "id": "c63cd5dd.2969b8",
         "type": "api-call-service",
         "z": "3637eeb0.d96232",
-        "name": "pause chromecast",
+        "name": "pause shield",
         "server": "4ba92433.2478cc",
         "version": 3,
         "debugenabled": false,
@@ -3725,63 +3725,12 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 890,
+        "x": 870,
         "y": 320,
         "wires": [
             [
                 "74b0f721.d079c8"
             ]
-        ]
-    },
-    {
-        "id": "5d2138c5.cbc6e8",
-        "type": "change",
-        "z": "3637eeb0.d96232",
-        "name": "soundfile doorbell",
-        "rules": [
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "http://192.168.1.20:8123/local/audio/aangebeld.mp3",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1310,
-        "y": 260,
-        "wires": [
-            [
-                "ad0b34c.fb695c8",
-                "f1f2c0d5.eccde"
-            ]
-        ]
-    },
-    {
-        "id": "29c0e7a6.9c1268",
-        "type": "api-call-service",
-        "z": "3637eeb0.d96232",
-        "name": "turn off mediaplayer google home",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "media_player",
-        "service": "turn_off",
-        "entityId": "media_player.google_home",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1820,
-        "y": 260,
-        "wires": [
-            []
         ]
     },
     {
@@ -4063,25 +4012,6 @@
         ]
     },
     {
-        "id": "ad0b34c.fb695c8",
-        "type": "cast-to-client",
-        "z": "3637eeb0.d96232",
-        "name": "",
-        "url": "",
-        "contentType": "",
-        "message": "",
-        "language": "en-us",
-        "ip": "Google-Home.lan",
-        "port": "",
-        "volume": "50",
-        "x": 1540,
-        "y": 320,
-        "wires": [
-            []
-        ],
-        "icon": "node-red-contrib-cast/google-home1.svg"
-    },
-    {
         "id": "9a850a23.0f7348",
         "type": "simpletime",
         "z": "3637eeb0.d96232",
@@ -4139,24 +4069,6 @@
                 "bc0b175d.2363b8",
                 "9f65aaf4.43f4c8"
             ]
-        ]
-    },
-    {
-        "id": "f1f2c0d5.eccde",
-        "type": "stoptimer",
-        "z": "3637eeb0.d96232",
-        "duration": "10",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 1530,
-        "y": 260,
-        "wires": [
-            [
-                "29c0e7a6.9c1268"
-            ],
-            []
         ]
     },
     {
@@ -4255,7 +4167,6 @@
             [
                 "9c489e3f.49b89",
                 "298ec9d5.35e576",
-                "5907771e.9d09a8",
                 "5d939da2.20d8c4",
                 "cc64f27a.c792c"
             ],
@@ -6061,36 +5972,6 @@
             [
                 "672a2d68.71e334"
             ],
-            []
-        ]
-    },
-    {
-        "id": "5907771e.9d09a8",
-        "type": "api-call-service",
-        "z": "c0da8379.b0dd3",
-        "name": "set theme light",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "frontend",
-        "service": "set_theme",
-        "entityId": "",
-        "data": "{ \"name\": \"light_theme\" }",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "data"
-            }
-        ],
-        "queue": "none",
-        "x": 660,
-        "y": 200,
-        "wires": [
             []
         ]
     },
@@ -9651,10 +9532,10 @@
         "name": "get message_home_page_1",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 1,
-        "halt_if": "",
+        "outputs": 2,
+        "halt_if": "unknown",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "sensor.message_home_page_1",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -9671,7 +9552,8 @@
         "wires": [
             [
                 "43e5dace.e04654"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -9709,6 +9591,9 @@
         "outputLocation": "",
         "outputLocationType": "none",
         "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
         "x": 1200,
         "y": 240,
         "wires": [
@@ -9752,6 +9637,9 @@
         "outputLocation": "",
         "outputLocationType": "none",
         "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
         "x": 1200,
         "y": 300,
         "wires": [
@@ -9767,10 +9655,10 @@
         "name": "get message_home_page_2",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 1,
-        "halt_if": "",
+        "outputs": 2,
+        "halt_if": "unknown",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "sensor.message_home_page_2",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -9787,7 +9675,8 @@
         "wires": [
             [
                 "11d10b51.12cf65"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -9825,6 +9714,9 @@
         "outputLocation": "",
         "outputLocationType": "none",
         "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
         "x": 1200,
         "y": 360,
         "wires": [
@@ -9840,10 +9732,10 @@
         "name": "get message_home_page_3",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 1,
-        "halt_if": "",
+        "outputs": 2,
+        "halt_if": "unknown",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "sensor.message_home_page_3",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -9860,7 +9752,8 @@
         "wires": [
             [
                 "a393de42.16e7c"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -10822,7 +10715,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1340,
+        "x": 1360,
         "y": 120,
         "wires": [
             [
@@ -11453,7 +11346,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Niemand is aanwezig. {{friendly_name}} stond nog aan en is nu automatisch uitgeschakeld.",
+        "template": "Niemand is aanwezig. {{{friendly_name}}} stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
         "x": 1620,
         "y": 40,
@@ -11546,8 +11439,8 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 1060,
-        "y": 200,
+        "x": 820,
+        "y": 180,
         "wires": [
             [
                 "872aa09a.5c242"
@@ -19431,7 +19324,7 @@
         "z": "8aa6edec.5a013",
         "name": "what/action where category state",
         "info": "",
-        "x": 170,
+        "x": 190,
         "y": 320,
         "wires": []
     },
@@ -22210,7 +22103,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 860,
+        "x": 850,
         "y": 360,
         "wires": [
             []
@@ -22952,6 +22845,378 @@
         "wires": [
             [
                 "c210dccb.8c81"
+            ]
+        ]
+    },
+    {
+        "id": "d78107e6.77b8e8",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "state person coen home",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.coen",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 370,
+        "y": 2200,
+        "wires": [
+            [
+                "8b724c44.383e9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8b724c44.383e9",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "state media player shield playing",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.shield",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 650,
+        "y": 2220,
+        "wires": [
+            [
+                "79531b0f.773f14",
+                "80f03a3d.3f4108"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a7ce2d4e.b4576",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "state person anne home",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.anne",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 370,
+        "y": 2240,
+        "wires": [
+            [
+                "8b724c44.383e9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6d70ecba.7472f4",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "notify tv",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "tv_woonkamer",
+        "entityId": "",
+        "data": "{\"message\":\"{{{message}}}\",\"title\":\"Pauze\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1000,
+        "y": 2220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "80f03a3d.3f4108",
+        "type": "template",
+        "z": "2910f43f.ab852c",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "TV gepauseerd i.v.m. telefoon gesprek.",
+        "output": "str",
+        "x": 860,
+        "y": 2220,
+        "wires": [
+            [
+                "6d70ecba.7472f4"
+            ]
+        ]
+    },
+    {
+        "id": "79531b0f.773f14",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "pause shield",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "media_player",
+        "service": "media_pause",
+        "entityId": "media_player.shield",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 870,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa88814a.ea101",
+        "type": "server-state-changed",
+        "z": "2910f43f.ab852c",
+        "name": "state phone coen offhook",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.phone_coen_phone_state",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "offhook",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 2200,
+        "wires": [
+            [
+                "d78107e6.77b8e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7f00c3c9.12bd0c",
+        "type": "server-state-changed",
+        "z": "2910f43f.ab852c",
+        "name": "state phone anne offhook",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.phone_anne_phone_state",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "offhook",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 2240,
+        "wires": [
+            [
+                "a7ce2d4e.b4576"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "91fb6fe8.3da4d",
+        "type": "comment",
+        "z": "2910f43f.ab852c",
+        "name": "PAUSE WHEN PHONE IS OFFHOOK",
+        "info": "",
+        "x": 170,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "211ffb19.e76354",
+        "type": "api-call-service",
+        "z": "3637eeb0.d96232",
+        "name": "google say",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "tts",
+        "service": "google_say",
+        "entityId": "media_player.google_home",
+        "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1430,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50618f0.36d7e7",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is aangebeld.",
+        "output": "str",
+        "x": 1280,
+        "y": 260,
+        "wires": [
+            [
+                "211ffb19.e76354"
             ]
         ]
     }

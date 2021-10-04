@@ -474,7 +474,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1340,
+    "x": 1360,
     "y": 120,
     "wires": [
       [
@@ -1105,7 +1105,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Niemand is aanwezig. {{friendly_name}} stond nog aan en is nu automatisch uitgeschakeld.",
+    "template": "Niemand is aanwezig. {{{friendly_name}}} stond nog aan en is nu automatisch uitgeschakeld.",
     "output": "str",
     "x": 1620,
     "y": 40,
@@ -1198,8 +1198,8 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 1060,
-    "y": 200,
+    "x": 820,
+    "y": 180,
     "wires": [
       [
         "872aa09a.5c242"
@@ -1433,7 +1433,7 @@
     "z": "8aa6edec.5a013",
     "name": "what/action where category state",
     "info": "",
-    "x": 170,
+    "x": 190,
     "y": 320,
     "wires": []
   },
@@ -1477,7 +1477,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 860,
+    "x": 850,
     "y": 360,
     "wires": [
       []

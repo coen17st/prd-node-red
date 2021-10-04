@@ -84,7 +84,6 @@
       [
         "9c489e3f.49b89",
         "298ec9d5.35e576",
-        "5907771e.9d09a8",
         "5d939da2.20d8c4",
         "cc64f27a.c792c"
       ],
@@ -1890,36 +1889,6 @@
       [
         "672a2d68.71e334"
       ],
-      []
-    ]
-  },
-  {
-    "id": "5907771e.9d09a8",
-    "type": "api-call-service",
-    "z": "c0da8379.b0dd3",
-    "name": "set theme light",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "frontend",
-    "service": "set_theme",
-    "entityId": "",
-    "data": "{ \"name\": \"light_theme\" }",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "data"
-      }
-    ],
-    "queue": "none",
-    "x": 660,
-    "y": 200,
-    "wires": [
       []
     ]
   },
