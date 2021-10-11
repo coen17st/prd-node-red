@@ -9380,11 +9380,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
+        "x": 300,
         "y": 60,
         "wires": [
             [
-                "c8ffad8f.d4d2e"
+                "7836a457.915fdc"
             ]
         ]
     },
@@ -9404,7 +9404,7 @@
             "ebd071a5.c6567",
             "f13b7547.ff3ce8"
         ],
-        "x": 195,
+        "x": 165,
         "y": 60,
         "wires": [
             [
@@ -9423,61 +9423,11 @@
         "syntax": "mustache",
         "template": "{{mytime}}, {{{message}}}",
         "output": "str",
-        "x": 930,
+        "x": 680,
         "y": 60,
         "wires": [
             [
-                "133fb6cb.864ba9"
-            ]
-        ]
-    },
-    {
-        "id": "c8ffad8f.d4d2e",
-        "type": "switch",
-        "z": "7564ec02.f4fd84",
-        "name": "",
-        "property": "message",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "unknown",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 490,
-        "y": 60,
-        "wires": [
-            [
-                "b696e0b7.ea1aa"
-            ]
-        ]
-    },
-    {
-        "id": "b696e0b7.ea1aa",
-        "type": "switch",
-        "z": "7564ec02.f4fd84",
-        "name": "",
-        "property": "message",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "unavailable",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 610,
-        "y": 60,
-        "wires": [
-            [
-                "7836a457.915fdc"
+                "75fc13e6.7a268c"
             ]
         ]
     },
@@ -9532,10 +9482,10 @@
         "name": "get message_home_page_1",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 2,
-        "halt_if": "unknown",
+        "outputs": 1,
+        "halt_if": "",
         "halt_if_type": "str",
-        "halt_if_compare": "is_not",
+        "halt_if_compare": "is",
         "entity_id": "sensor.message_home_page_1",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -9552,8 +9502,7 @@
         "wires": [
             [
                 "43e5dace.e04654"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -9655,10 +9604,10 @@
         "name": "get message_home_page_2",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 2,
-        "halt_if": "unknown",
+        "outputs": 1,
+        "halt_if": "",
         "halt_if_type": "str",
-        "halt_if_compare": "is_not",
+        "halt_if_compare": "is",
         "entity_id": "sensor.message_home_page_2",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -9675,8 +9624,7 @@
         "wires": [
             [
                 "11d10b51.12cf65"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -9732,10 +9680,10 @@
         "name": "get message_home_page_3",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 2,
-        "halt_if": "unknown",
+        "outputs": 1,
+        "halt_if": "",
         "halt_if_type": "str",
-        "halt_if_compare": "is_not",
+        "halt_if_compare": "is",
         "entity_id": "sensor.message_home_page_3",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -9752,8 +9700,7 @@
         "wires": [
             [
                 "a393de42.16e7c"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -9761,7 +9708,7 @@
         "type": "simpletime",
         "z": "7564ec02.f4fd84",
         "name": "",
-        "x": 750,
+        "x": 500,
         "y": 60,
         "wires": [
             [
@@ -19314,8 +19261,8 @@
             "78b06027.265d5",
             "7b0f1685.0279d8"
         ],
-        "x": 1375,
-        "y": 860,
+        "x": 1495,
+        "y": 840,
         "wires": []
     },
     {
@@ -23217,6 +23164,56 @@
         "wires": [
             [
                 "211ffb19.e76354"
+            ]
+        ]
+    },
+    {
+        "id": "75fc13e6.7a268c",
+        "type": "switch",
+        "z": "7564ec02.f4fd84",
+        "name": "",
+        "property": "message",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "unknown",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 60,
+        "wires": [
+            [
+                "b649fc2b.fab89"
+            ]
+        ]
+    },
+    {
+        "id": "b649fc2b.fab89",
+        "type": "switch",
+        "z": "7564ec02.f4fd84",
+        "name": "",
+        "property": "message",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "unavailable",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 970,
+        "y": 60,
+        "wires": [
+            [
+                "133fb6cb.864ba9"
             ]
         ]
     }
