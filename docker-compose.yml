@@ -13,7 +13,7 @@ services:
       home-services:
     volumes:
       - ./data:/data
-
+      - ./.ssh/:/usr/src/node-red/.ssh/
 # NETWORKS
 networks:
 

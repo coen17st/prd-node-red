@@ -2088,5 +2088,157 @@
         "c210dccb.8c81"
       ]
     ]
+  },
+  {
+    "id": "eac91b9a.b21308",
+    "type": "exec",
+    "z": "155ca471.b81eac",
+    "command": "",
+    "addpay": true,
+    "append": "",
+    "useSpawn": "false",
+    "timer": "",
+    "oldrc": false,
+    "name": "",
+    "x": 730,
+    "y": 1520,
+    "wires": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "id": "a17fcf56.699f3",
+    "type": "inject",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 120,
+    "y": 1520,
+    "wires": [
+      [
+        "9a18e5b.364b018"
+      ]
+    ]
+  },
+  {
+    "id": "ea56a451.c98018",
+    "type": "template",
+    "z": "155ca471.b81eac",
+    "name": "ssh",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "ssh coen@192.168.1.3 \"{{{command}}}\"",
+    "output": "str",
+    "x": 570,
+    "y": 1540,
+    "wires": [
+      [
+        "40cea740.739228",
+        "eac91b9a.b21308"
+      ]
+    ]
+  },
+  {
+    "id": "9a18e5b.364b018",
+    "type": "template",
+    "z": "155ca471.b81eac",
+    "name": "add alias",
+    "field": "command",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "docker exec prd-mailserver-app setup alias add testnodered@hidemyid.nl coen@dhidemyid.nl",
+    "output": "str",
+    "x": 440,
+    "y": 1520,
+    "wires": [
+      [
+        "ea56a451.c98018"
+      ]
+    ]
+  },
+  {
+    "id": "40cea740.739228",
+    "type": "debug",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 710,
+    "y": 1440,
+    "wires": []
+  },
+  {
+    "id": "c2b9abc8.3a0048",
+    "type": "template",
+    "z": "155ca471.b81eac",
+    "name": "del alias",
+    "field": "command",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "docker exec prd-mailserver-app setup alias del testnodered@hidemyid.nl coen@dhidemyid.nl",
+    "output": "str",
+    "x": 440,
+    "y": 1560,
+    "wires": [
+      [
+        "ea56a451.c98018"
+      ]
+    ]
+  },
+  {
+    "id": "ce812264.c34a8",
+    "type": "inject",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 120,
+    "y": 1560,
+    "wires": [
+      [
+        "c2b9abc8.3a0048"
+      ]
+    ]
   }
 ]
