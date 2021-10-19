@@ -361,7 +361,7 @@
     "node-red-node-rbe": {
         "name": "node-red-node-rbe",
         "version": "0.5.0",
-        "local": false,
+        "local": true,
         "nodes": {
             "rbe": {
                 "name": "rbe",
@@ -369,16 +369,16 @@
                     "rbe"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-node-rbe",
-                "file": "/usr/src/node-red/node_modules/node-red-node-rbe/rbe.js"
+                "file": "/data/node_modules/node-red-node-rbe/rbe.js"
             }
         }
     },
     "node-red-node-tail": {
         "name": "node-red-node-tail",
         "version": "0.3.1",
-        "local": false,
+        "local": true,
         "nodes": {
             "tail": {
                 "name": "tail",
@@ -386,16 +386,16 @@
                     "tail"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-node-tail",
-                "file": "/usr/src/node-red/node_modules/node-red-node-tail/28-tail.js"
+                "file": "/data/node_modules/node-red-node-tail/28-tail.js"
             }
         }
     },
     "node-red-contrib-simpletime": {
         "name": "node-red-contrib-simpletime",
         "version": "2.10.0",
-        "local": false,
+        "local": true,
         "nodes": {
             "simpletime": {
                 "name": "simpletime",
@@ -403,16 +403,16 @@
                     "simpletime"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-simpletime",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-simpletime/simpletime.js"
+                "file": "/data/node_modules/node-red-contrib-simpletime/simpletime.js"
             }
         }
     },
     "node-red-contrib-calc": {
         "name": "node-red-contrib-calc",
         "version": "1.0.5",
-        "local": false,
+        "local": true,
         "nodes": {
             "math": {
                 "name": "math",
@@ -420,16 +420,16 @@
                     "calculator"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-calc",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-calc/math.js"
+                "file": "/data/node_modules/node-red-contrib-calc/math.js"
             }
         }
     },
     "node-red-contrib-cron-plus": {
         "name": "node-red-contrib-cron-plus",
         "version": "1.4.3",
-        "local": false,
+        "local": true,
         "nodes": {
             "cronplus": {
                 "name": "cronplus",
@@ -437,31 +437,31 @@
                     "cronplus"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-cron-plus",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-cron-plus/cronplus.js"
+                "file": "/data/node_modules/node-red-contrib-cron-plus/cronplus.js"
             }
         }
     },
     "node-red-contrib-flow-manager": {
         "name": "node-red-contrib-flow-manager",
         "version": "0.7.2",
-        "local": false,
+        "local": true,
         "nodes": {
             "flow-manager": {
                 "name": "flow-manager",
                 "types": [],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-flow-manager",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-flow-manager/flow-manager.js"
+                "file": "/data/node_modules/node-red-contrib-flow-manager/flow-manager.js"
             }
         }
     },
     "node-red-contrib-harmony": {
         "name": "node-red-contrib-harmony",
         "version": "1.2.6",
-        "local": false,
+        "local": true,
         "nodes": {
             "harmony": {
                 "name": "harmony",
@@ -471,9 +471,9 @@
                     "H observe"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-harmony",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-harmony/harmony/harmony.js"
+                "file": "/data/node_modules/node-red-contrib-harmony/harmony/harmony.js"
             },
             "harmony-server": {
                 "name": "harmony-server",
@@ -481,9 +481,9 @@
                     "harmony-server"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-harmony",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-harmony/harmony/harmony-server.js"
+                "file": "/data/node_modules/node-red-contrib-harmony/harmony/harmony-server.js"
             }
         }
     },
@@ -525,7 +525,7 @@
     "node-red-contrib-cast": {
         "name": "node-red-contrib-cast",
         "version": "0.2.17",
-        "local": false,
+        "local": true,
         "nodes": {
             "cast-to-client": {
                 "name": "cast-to-client",
@@ -533,16 +533,16 @@
                     "cast-to-client"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-cast",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-cast/cast-to-client.js"
+                "file": "/data/node_modules/node-red-contrib-cast/cast-to-client.js"
             }
         }
     },
     "node-red-contrib-stoptimer": {
         "name": "node-red-contrib-stoptimer",
         "version": "0.0.7",
-        "local": false,
+        "local": true,
         "nodes": {
             "stoptimer": {
                 "name": "stoptimer",
@@ -550,9 +550,9 @@
                     "stoptimer"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-stoptimer",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-stoptimer/stoptimer.js"
+                "file": "/data/node_modules/node-red-contrib-stoptimer/stoptimer.js"
             }
         }
     },
@@ -576,7 +576,7 @@
     "node-red-contrib-traffic": {
         "name": "node-red-contrib-traffic",
         "version": "0.2.1",
-        "local": false,
+        "local": true,
         "nodes": {
             "traffic": {
                 "name": "traffic",
@@ -584,9 +584,9 @@
                     "traffic"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-traffic",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-traffic/traffic/traffic.js"
+                "file": "/data/node_modules/node-red-contrib-traffic/traffic/traffic.js"
             }
         }
     }
