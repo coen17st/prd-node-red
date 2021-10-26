@@ -532,8 +532,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 370,
-    "y": 740,
+    "x": 390,
+    "y": 780,
     "wires": [
       []
     ]
@@ -555,8 +555,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 370,
-    "y": 780,
+    "x": 390,
+    "y": 820,
     "wires": [
       []
     ]
@@ -816,14 +816,14 @@
     "service_domain": "notify",
     "service": "mobile_app_phone_coen",
     "entityId": "",
-    "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
+    "data": "{\"message\":\"{{message_text}}\",\"title\":\"{{topic}}\"}",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 570,
-    "y": 820,
+    "x": 590,
+    "y": 860,
     "wires": [
       []
     ]
@@ -871,14 +871,14 @@
     "type": "template",
     "z": "21c15316.41cc2c",
     "name": "message",
-    "field": "message",
+    "field": "message_text",
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Error: E-mail alias \"{{{email_address}}}\" {{{message_action}}} is niet gelukt.",
+    "template": "Error: E-mail alias \"{{{email_address}}}\" {{{message_action}}} is niet gelukt. ",
     "output": "str",
-    "x": 320,
-    "y": 820,
+    "x": 340,
+    "y": 860,
     "wires": [
       [
         "bc6eec3f.aa403"
@@ -896,8 +896,8 @@
     "syntax": "mustache",
     "template": "E-mail alias {{{message_action}}}",
     "output": "str",
-    "x": 450,
-    "y": 820,
+    "x": 470,
+    "y": 860,
     "wires": [
       [
         "a36e1c59.e6111"
