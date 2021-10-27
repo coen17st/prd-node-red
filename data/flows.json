@@ -23592,7 +23592,8 @@
             [],
             [],
             [
-                "1c38f472.8d6edc"
+                "1c38f472.8d6edc",
+                "32b0767a.0bcd2a"
             ]
         ]
     },
@@ -24056,5 +24057,22 @@
                 "a36e1c59.e6111"
             ]
         ]
+    },
+    {
+        "id": "32b0767a.0bcd2a",
+        "type": "debug",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 800,
+        "wires": []
     }
 ]

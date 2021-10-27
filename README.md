@@ -6,3 +6,10 @@
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/theautomation/node-red/main?logo=github)
 
 [Node-RED](https://nodered.org/): A programming tool for wiring together my hardware devices, API's, online services, automations and flows. Im doing this in Node-RED instead of using automations directly in [Home Assistant.](https://github.com/theautomation/home-assistant)
+
+
+## ssh directory permissions
+```bash
+#!/bin/bash
+sudo chmod -R 700 ./.ssh/
+```
