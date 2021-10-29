@@ -1758,7 +1758,7 @@
     "debugenabled": false,
     "service_domain": "tts",
     "service": "google_say",
-    "entityId": "media_player.google_home",
+    "entityId": "media_player.living_room_google_speaker",
     "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
     "dataType": "json",
     "mergecontext": "",

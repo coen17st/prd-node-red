@@ -674,7 +674,7 @@
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.shield, media_player.google_home, media_player.lise_s_kamer",
+    "entityId": "media_player.shield, media_player.living_room_google_speaker, media_player.lise_s_kamer",
     "data": "",
     "dataType": "json",
     "mergecontext": "",

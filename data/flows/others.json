@@ -144,7 +144,7 @@
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.google_home",
+    "entityId": "media_player.living_room_google_speaker",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
@@ -876,7 +876,7 @@
     "debugenabled": false,
     "service_domain": "media_player",
     "service": "turn_off",
-    "entityId": "media_player.google_home",
+    "entityId": "media_player.living_room_google_speaker",
     "data": "",
     "dataType": "json",
     "mergecontext": "",
@@ -2011,7 +2011,7 @@
     "debugenabled": false,
     "service_domain": "tts",
     "service": "google_say",
-    "entityId": "media_player.google_home",
+    "entityId": "media_player.living_room_google_speaker",
     "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
     "dataType": "json",
     "mergecontext": "",
@@ -2022,6 +2022,35 @@
     "y": 340,
     "wires": [
       []
+    ]
+  },
+  {
+    "id": "e532d7fc.5e5278",
+    "type": "inject",
+    "z": "155ca471.b81eac",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 1260,
+    "y": 260,
+    "wires": [
+      [
+        "6f9c419a.ab247"
+      ]
     ]
   }
 ]
