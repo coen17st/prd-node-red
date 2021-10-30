@@ -22373,7 +22373,7 @@
             [
                 "77ec7c95.9f6574",
                 "90393ea5.588c",
-                "7da213e7.181bbc"
+                "c1f88ac2.7e0438"
             ]
         ]
     },
@@ -22387,7 +22387,7 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
-        "x": 260,
+        "x": 300,
         "y": 1000,
         "wires": [
             [
@@ -22402,7 +22402,7 @@
         "name": "http response",
         "statusCode": "",
         "headers": {},
-        "x": 420,
+        "x": 460,
         "y": 1000,
         "wires": []
     },
@@ -22437,7 +22437,7 @@
             [
                 "b7d14f30.91cd1",
                 "51353010.10044",
-                "66863268.0b78dc"
+                "11634053.7d1e7"
             ]
         ]
     },
@@ -22451,7 +22451,7 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
-        "x": 260,
+        "x": 300,
         "y": 1140,
         "wires": [
             [
@@ -22466,7 +22466,7 @@
         "name": "http response",
         "statusCode": "",
         "headers": {},
-        "x": 420,
+        "x": 460,
         "y": 1140,
         "wires": []
     },
@@ -22498,7 +22498,7 @@
         "syntax": "mustache",
         "template": "Sonarr Event:{{{payload.eventType}}} Title:{{{payload.series.title}}} Episode: {{{payload.episodes[0].title}}} Name:{{{payload.episodeFile.sceneName}}}",
         "output": "str",
-        "x": 260,
+        "x": 380,
         "y": 1180,
         "wires": [
             [
@@ -22537,7 +22537,7 @@
         "syntax": "mustache",
         "template": "Radarr, Film:{{{payload.movie.title}}} Year:{{{payload.movie.year}}}  Kwaliteit:{{{payload.release.quality}}} Indexer: {{{payload.release.indexer}}} Grote: {{{payload.release.size}}}",
         "output": "str",
-        "x": 260,
+        "x": 380,
         "y": 1040,
         "wires": [
             [
@@ -23926,8 +23926,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 870,
-        "y": 480,
+        "x": 750,
+        "y": 700,
         "wires": [
             []
         ]
@@ -24106,48 +24106,31 @@
         "z": "21c15316.41cc2c",
         "name": "backup from host to remote machine",
         "info": "",
-        "x": 180,
-        "y": 960,
+        "x": 200,
+        "y": 920,
         "wires": []
-    },
-    {
-        "id": "83c1aa97.a32fe8",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "command",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{ssh_command}}} 'bash -s' < /home/coen/hosts-config/proxmox-ve/docker-host/backup.sh",
-        "output": "str",
-        "x": 540,
-        "y": 1040,
-        "wires": [
-            [
-                "d8804666.d57cf8"
-            ]
-        ]
     },
     {
         "id": "d8804666.d57cf8",
         "type": "exec",
         "z": "21c15316.41cc2c",
-        "command": "",
-        "addpay": true,
+        "command": "ssh coen@192.168.1.3 'bash /home/coen/hosts-config/proxmox-ve/docker-host/backup_purge.sh'",
+        "addpay": false,
         "append": "",
         "useSpawn": "false",
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 670,
-        "y": 1040,
+        "x": 520,
+        "y": 980,
         "wires": [
             [
-                "d4da27d5.1c9288"
+                "1cd851a9.9a893e"
             ],
             [],
-            []
+            [
+                "8bb352f8.425d7"
+            ]
         ]
     },
     {
@@ -24163,8 +24146,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 1000,
+        "x": 1510,
+        "y": 900,
         "wires": []
     },
     {
@@ -24174,7 +24157,9 @@
         "name": "",
         "props": [
             {
-                "p": "payload"
+                "p": "start",
+                "v": "start",
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -24182,28 +24167,228 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 1040,
+        "x": 110,
+        "y": 980,
         "wires": [
             [
-                "a550392a.ecac48"
+                "d8804666.d57cf8"
             ]
         ]
     },
     {
-        "id": "a550392a.ecac48",
+        "id": "8bb352f8.425d7",
+        "type": "switch",
+        "z": "21c15316.41cc2c",
+        "name": "exit code 0",
+        "property": "payload.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 970,
+        "y": 1000,
+        "wires": [
+            [],
+            [
+                "183c15c.501efea"
+            ]
+        ]
+    },
+    {
+        "id": "183c15c.501efea",
+        "type": "template",
+        "z": "21c15316.41cc2c",
+        "name": "message",
+        "field": "message_text",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Error: backup naar backup-host is niet gelukt. ",
+        "output": "str",
+        "x": 1120,
+        "y": 1000,
+        "wires": [
+            [
+                "a49ae0e7.5e869"
+            ]
+        ]
+    },
+    {
+        "id": "d698dab9.797f38",
+        "type": "api-call-service",
+        "z": "21c15316.41cc2c",
+        "name": "notify",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_phone_coen",
+        "entityId": "",
+        "data": "{\"message\":\"{{message_text}}\",\"title\":\"{{topic}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1370,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a49ae0e7.5e869",
+        "type": "template",
+        "z": "21c15316.41cc2c",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Backup",
+        "output": "str",
+        "x": 1250,
+        "y": 1000,
+        "wires": [
+            [
+                "d698dab9.797f38"
+            ]
+        ]
+    },
+    {
+        "id": "11634053.7d1e7",
+        "type": "switch",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "IndexerStatusCheck",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 1180,
+        "wires": [
+            [
+                "66863268.0b78dc"
+            ]
+        ]
+    },
+    {
+        "id": "c1f88ac2.7e0438",
+        "type": "switch",
+        "z": "155ca471.b81eac",
+        "name": "",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "IndexerStatusCheck",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 1040,
+        "wires": [
+            [
+                "7da213e7.181bbc"
+            ]
+        ]
+    },
+    {
+        "id": "1cd851a9.9a893e",
+        "type": "split",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 950,
+        "y": 960,
+        "wires": [
+            [
+                "26030013.e0f55"
+            ]
+        ]
+    },
+    {
+        "id": "26030013.e0f55",
+        "type": "switch",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "11",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "16",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "17",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1090,
+        "y": 900,
+        "wires": [
+            [
+                "e8e8e684.a53298"
+            ],
+            [
+                "5a7df9b1.dbda58"
+            ],
+            [
+                "2ce7c097.fc021"
+            ]
+        ]
+    },
+    {
+        "id": "e8e8e684.a53298",
         "type": "change",
         "z": "21c15316.41cc2c",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "ssh_command",
+                "p": "transferred_file_size",
                 "pt": "msg",
-                "to": "ssh coen@192.168.1.3",
-                "tot": "str"
+                "to": "payload",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -24211,11 +24396,65 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
-        "y": 1040,
+        "x": 1300,
+        "y": 860,
         "wires": [
             [
-                "83c1aa97.a32fe8"
+                "d4da27d5.1c9288"
+            ]
+        ]
+    },
+    {
+        "id": "5a7df9b1.dbda58",
+        "type": "change",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "list_generation_time",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 900,
+        "wires": [
+            [
+                "d4da27d5.1c9288"
+            ]
+        ]
+    },
+    {
+        "id": "2ce7c097.fc021",
+        "type": "change",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "transfer_time",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 940,
+        "wires": [
+            [
+                "d4da27d5.1c9288"
             ]
         ]
     }
