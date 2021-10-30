@@ -1252,7 +1252,7 @@
     "type": "function",
     "z": "21c15316.41cc2c",
     "name": "",
-    "func": "var values = msg.payload.trim().split('Total file size: ');    // trim off the crlf first then split into parts   \nmsg.payload = values[0];  // replace payload with the reading we want\nreturn msg;",
+    "func": "var values = msg.payload.trim().split('Total file size: ');    // trim off the crlf first then split into parts   \nmsg.payload = values[1];  // replace payload with the reading we want\nreturn msg;",
     "outputs": 1,
     "noerr": 0,
     "initialize": "",
