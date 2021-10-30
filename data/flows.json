@@ -24134,23 +24134,6 @@
         ]
     },
     {
-        "id": "d4da27d5.1c9288",
-        "type": "debug",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1510,
-        "y": 900,
-        "wires": []
-    },
-    {
         "id": "eb888523.d6b3a8",
         "type": "inject",
         "z": "21c15316.41cc2c",
@@ -24367,7 +24350,7 @@
         "y": 900,
         "wires": [
             [
-                "e8e8e684.a53298"
+                "223f919d.851ffe"
             ],
             [
                 "5a7df9b1.dbda58"
@@ -24396,11 +24379,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1300,
-        "y": 860,
+        "x": 1560,
+        "y": 660,
         "wires": [
             [
-                "d4da27d5.1c9288"
+                "306d1f6.23dc1e"
             ]
         ]
     },
@@ -24427,7 +24410,7 @@
         "y": 900,
         "wires": [
             [
-                "d4da27d5.1c9288"
+                "79978a0a.3132c4"
             ]
         ]
     },
@@ -24454,8 +24437,77 @@
         "y": 940,
         "wires": [
             [
-                "d4da27d5.1c9288"
+                "79978a0a.3132c4"
             ]
+        ]
+    },
+    {
+        "id": "79978a0a.3132c4",
+        "type": "template",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Backup success. ",
+        "output": "str",
+        "x": 1660,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "306d1f6.23dc1e",
+        "type": "debug",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1530,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "223f919d.851ffe",
+        "type": "function",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "func": "var values = msg.payload.trim().split('Total file size: ');    // trim off the crlf first then split into parts   \nmsg.payload = values[0];  // replace payload with the reading we want\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1240,
+        "y": 840,
+        "wires": [
+            [
+                "306d1f6.23dc1e"
+            ]
+        ]
+    },
+    {
+        "id": "8d032626.a46198",
+        "type": "split",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "splt": "Total file size: ",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1370,
+        "y": 620,
+        "wires": [
+            []
         ]
     }
 ]
