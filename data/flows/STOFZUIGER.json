@@ -938,7 +938,7 @@
     "z": "55da1471.fda0fc",
     "name": "Returning",
     "server": "4ba92433.2478cc",
-    "version": 0,
+    "version": 1,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -964,10 +964,12 @@
         "propertyValue": "new_state.state"
       }
     ],
+    "inputs": 1,
     "outputs": 2,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
+    "enableInput": true,
     "x": 120,
     "y": 680,
     "wires": [

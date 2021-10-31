@@ -1,21 +1,16 @@
 [
   {
-    "id": "6efb7a7f.4e9a64",
-    "type": "harmony-server",
-    "name": "",
-    "ip": "192.168.30.55"
-  },
-  {
     "id": "4ba92433.2478cc",
     "type": "server",
     "name": "Home Assistant",
-    "version": 1,
-    "legacy": false,
+    "version": 2,
     "addon": false,
     "rejectUnauthorizedCerts": false,
     "ha_boolean": "y|yes|true|on|home|open",
     "connectionDelay": true,
-    "cacheJson": true
+    "cacheJson": true,
+    "heartbeat": false,
+    "heartbeatInterval": 30
   },
   {
     "id": "fc10aafd.22f7b8",

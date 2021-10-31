@@ -306,22 +306,17 @@
         "color": "#DDAA99"
     },
     {
-        "id": "6efb7a7f.4e9a64",
-        "type": "harmony-server",
-        "name": "",
-        "ip": "192.168.30.55"
-    },
-    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
-        "version": 1,
-        "legacy": false,
+        "version": 2,
         "addon": false,
         "rejectUnauthorizedCerts": false,
         "ha_boolean": "y|yes|true|on|home|open",
         "connectionDelay": true,
-        "cacheJson": true
+        "cacheJson": true,
+        "heartbeat": false,
+        "heartbeatInterval": 30
     },
     {
         "id": "fc10aafd.22f7b8",
@@ -8222,7 +8217,7 @@
         "z": "2910f43f.ab852c",
         "name": "state input select spotify playlist",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -8238,10 +8233,12 @@
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
+        "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "str",
+        "enableInput": true,
         "x": 190,
         "y": 1740,
         "wires": [
@@ -9163,7 +9160,7 @@
         "z": "2910f43f.ab852c",
         "name": "state tv power watt",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -9189,10 +9186,12 @@
                 "propertyValue": "new_state.state"
             }
         ],
+        "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": true,
         "state_type": "num",
+        "enableInput": true,
         "x": 130,
         "y": 80,
         "wires": [
@@ -12554,7 +12553,7 @@
         "z": "55da1471.fda0fc",
         "name": "Returning",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -12580,10 +12579,12 @@
                 "propertyValue": "new_state.state"
             }
         ],
+        "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "str",
+        "enableInput": true,
         "x": 120,
         "y": 680,
         "wires": [
@@ -18188,7 +18189,7 @@
         "z": "155ca471.b81eac",
         "name": "state washing machine watt",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -18204,10 +18205,12 @@
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
+        "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "num",
+        "enableInput": true,
         "x": 160,
         "y": 80,
         "wires": [
@@ -18734,7 +18737,7 @@
         "z": "155ca471.b81eac",
         "name": "state dishwasher watt",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -18750,10 +18753,12 @@
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
+        "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": false,
         "state_type": "num",
+        "enableInput": true,
         "x": 140,
         "y": 340,
         "wires": [
@@ -18930,7 +18935,7 @@
         "z": "155ca471.b81eac",
         "name": "state tumble dryer watt",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -18946,10 +18951,12 @@
         "entityidfiltertype": "exact",
         "debugenabled": false,
         "constraints": [],
+        "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
         "outputinitially": true,
         "state_type": "num",
+        "enableInput": true,
         "x": 140,
         "y": 220,
         "wires": [
@@ -23592,8 +23599,7 @@
             [],
             [],
             [
-                "1c38f472.8d6edc",
-                "32b0767a.0bcd2a"
+                "1c38f472.8d6edc"
             ]
         ]
     },
@@ -24059,23 +24065,6 @@
         ]
     },
     {
-        "id": "32b0767a.0bcd2a",
-        "type": "debug",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 680,
-        "y": 800,
-        "wires": []
-    },
-    {
         "id": "e532d7fc.5e5278",
         "type": "inject",
         "z": "155ca471.b81eac",
@@ -24106,8 +24095,8 @@
         "z": "21c15316.41cc2c",
         "name": "backup from host to remote machine",
         "info": "",
-        "x": 200,
-        "y": 920,
+        "x": 180,
+        "y": 960,
         "wires": []
     },
     {
@@ -24121,40 +24110,16 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 520,
-        "y": 980,
+        "x": 680,
+        "y": 1000,
         "wires": [
             [
                 "1cd851a9.9a893e"
             ],
             [],
             [
-                "8bb352f8.425d7"
-            ]
-        ]
-    },
-    {
-        "id": "eb888523.d6b3a8",
-        "type": "inject",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "props": [
-            {
-                "p": "start",
-                "v": "start",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 980,
-        "wires": [
-            [
-                "d8804666.d57cf8"
+                "8bb352f8.425d7",
+                "350fe71f.8c0d88"
             ]
         ]
     },
@@ -24180,8 +24145,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 970,
-        "y": 1000,
+        "x": 1110,
+        "y": 1020,
         "wires": [
             [],
             [
@@ -24200,8 +24165,8 @@
         "syntax": "mustache",
         "template": "Error: backup naar backup-host is niet gelukt. ",
         "output": "str",
-        "x": 1120,
-        "y": 1000,
+        "x": 1280,
+        "y": 1020,
         "wires": [
             [
                 "a49ae0e7.5e869"
@@ -24225,8 +24190,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1370,
-        "y": 1000,
+        "x": 1870,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -24242,8 +24207,8 @@
         "syntax": "mustache",
         "template": "Backup",
         "output": "str",
-        "x": 1250,
-        "y": 1000,
+        "x": 1410,
+        "y": 1020,
         "wires": [
             [
                 "d698dab9.797f38"
@@ -24307,12 +24272,12 @@
         "name": "",
         "splt": "\\n",
         "spltType": "str",
-        "arraySplt": "10",
+        "arraySplt": "1",
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 950,
-        "y": 960,
+        "x": 1090,
+        "y": 980,
         "wires": [
             [
                 "26030013.e0f55"
@@ -24329,12 +24294,12 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "11",
+                "v": "0",
                 "vt": "num"
             },
             {
                 "t": "eq",
-                "v": "16",
+                "v": "11",
                 "vt": "num"
             },
             {
@@ -24346,98 +24311,17 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1090,
-        "y": 900,
+        "x": 1210,
+        "y": 960,
         "wires": [
             [
-                "223f919d.851ffe"
+                "5099f986.39cc18"
             ],
             [
-                "5a7df9b1.dbda58"
+                "79cb6095.ffcaa"
             ],
             [
-                "2ce7c097.fc021"
-            ]
-        ]
-    },
-    {
-        "id": "e8e8e684.a53298",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "transferred_file_size",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1560,
-        "y": 660,
-        "wires": [
-            [
-                "306d1f6.23dc1e"
-            ]
-        ]
-    },
-    {
-        "id": "5a7df9b1.dbda58",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "list_generation_time",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1300,
-        "y": 900,
-        "wires": [
-            [
-                "79978a0a.3132c4"
-            ]
-        ]
-    },
-    {
-        "id": "2ce7c097.fc021",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "transfer_time",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1280,
-        "y": 940,
-        "wires": [
-            [
-                "79978a0a.3132c4"
+                "554e684a.67c2c8"
             ]
         ]
     },
@@ -24450,16 +24334,306 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Backup success. ",
+        "template": "Purge backup van \"{{{payload.location}}} is gelukt, {{{payload.bytes}}} verzonden in {{payload.seconds}} seconden.",
         "output": "str",
-        "x": 1660,
-        "y": 860,
+        "x": 1700,
+        "y": 940,
         "wires": [
+            [
+                "d698dab9.797f38"
+            ]
+        ]
+    },
+    {
+        "id": "554e684a.67c2c8",
+        "type": "string",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "methods": [
+            {
+                "name": "between",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": ": "
+                    },
+                    {
+                        "type": "str",
+                        "value": " "
+                    }
+                ]
+            }
+        ],
+        "prop": "payload",
+        "propout": "payload",
+        "object": "msg",
+        "objectout": "msg",
+        "x": 1370,
+        "y": 980,
+        "wires": [
+            [
+                "42816bd.2c3fa94"
+            ]
+        ]
+    },
+    {
+        "id": "5099f986.39cc18",
+        "type": "string",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "methods": [
+            {
+                "name": "between",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": "of "
+                    },
+                    {
+                        "type": "str",
+                        "value": "."
+                    }
+                ]
+            }
+        ],
+        "prop": "payload",
+        "propout": "payload",
+        "object": "msg",
+        "objectout": "msg",
+        "x": 1370,
+        "y": 900,
+        "wires": [
+            [
+                "e564adac.03f29"
+            ]
+        ]
+    },
+    {
+        "id": "79cb6095.ffcaa",
+        "type": "string",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "methods": [
+            {
+                "name": "between",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": ": "
+                    },
+                    {
+                        "type": "str",
+                        "value": " "
+                    }
+                ]
+            }
+        ],
+        "prop": "payload",
+        "propout": "payload",
+        "object": "msg",
+        "objectout": "msg",
+        "x": 1370,
+        "y": 940,
+        "wires": [
+            [
+                "ea3123a8.06cac"
+            ]
+        ]
+    },
+    {
+        "id": "e564adac.03f29",
+        "type": "change",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "location",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1510,
+        "y": 900,
+        "wires": [
+            [
+                "4afc6fa4.e01d9"
+            ]
+        ]
+    },
+    {
+        "id": "ea3123a8.06cac",
+        "type": "change",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "bytes",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1510,
+        "y": 940,
+        "wires": [
+            [
+                "4afc6fa4.e01d9"
+            ]
+        ]
+    },
+    {
+        "id": "42816bd.2c3fa94",
+        "type": "change",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "seconds",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1510,
+        "y": 980,
+        "wires": [
+            [
+                "4afc6fa4.e01d9"
+            ]
+        ]
+    },
+    {
+        "id": "4afc6fa4.e01d9",
+        "type": "join",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1670,
+        "y": 880,
+        "wires": [
+            [
+                "79978a0a.3132c4"
+            ]
+        ]
+    },
+    {
+        "id": "4e2b355d.088c2c",
+        "type": "cronplus",
+        "z": "21c15316.41cc2c",
+        "name": "every day @ 03:00",
+        "outputField": "payload",
+        "timeZone": "",
+        "persistDynamic": false,
+        "commandResponseMsgOutput": "output1",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "schedule1",
+                "topic": "schedule1",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "0 0 3 ? * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 150,
+        "y": 1000,
+        "wires": [
+            [
+                "d8804666.d57cf8"
+            ]
+        ]
+    },
+    {
+        "id": "a4bdb7f3.c632b8",
+        "type": "cronplus",
+        "z": "21c15316.41cc2c",
+        "name": "every 1ste of the month @ 03:00",
+        "outputField": "payload",
+        "timeZone": "",
+        "persistDynamic": false,
+        "commandResponseMsgOutput": "output1",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "schedule1",
+                "topic": "schedule1",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "0 0 3 1 * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 190,
+        "y": 1080,
+        "wires": [
+            [
+                "4b25aa61.d6ded4"
+            ]
+        ]
+    },
+    {
+        "id": "4b25aa61.d6ded4",
+        "type": "exec",
+        "z": "21c15316.41cc2c",
+        "command": "ssh coen@192.168.1.3 'bash /home/coen/hosts-config/proxmox-ve/docker-host/backup_.sh'",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 660,
+        "y": 1080,
+        "wires": [
+            [],
+            [],
             []
         ]
     },
     {
-        "id": "306d1f6.23dc1e",
+        "id": "350fe71f.8c0d88",
         "type": "debug",
         "z": "21c15316.41cc2c",
         "name": "",
@@ -24471,43 +24645,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1530,
-        "y": 760,
+        "x": 1060,
+        "y": 800,
         "wires": []
-    },
-    {
-        "id": "223f919d.851ffe",
-        "type": "function",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "func": "var values = msg.payload.trim().split('Total file size: ');    // trim off the crlf first then split into parts   \nmsg.payload = values[1];  // replace payload with the reading we want\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1240,
-        "y": 840,
-        "wires": [
-            [
-                "306d1f6.23dc1e"
-            ]
-        ]
-    },
-    {
-        "id": "8d032626.a46198",
-        "type": "split",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "splt": "Total file size: ",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1370,
-        "y": 620,
-        "wires": [
-            []
-        ]
     }
 ]

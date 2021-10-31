@@ -45,7 +45,7 @@
     "z": "155ca471.b81eac",
     "name": "state washing machine watt",
     "server": "4ba92433.2478cc",
-    "version": 0,
+    "version": 1,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -61,10 +61,12 @@
     "entityidfiltertype": "exact",
     "debugenabled": false,
     "constraints": [],
+    "inputs": 1,
     "outputs": 2,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "num",
+    "enableInput": true,
     "x": 160,
     "y": 80,
     "wires": [
@@ -591,7 +593,7 @@
     "z": "155ca471.b81eac",
     "name": "state dishwasher watt",
     "server": "4ba92433.2478cc",
-    "version": 0,
+    "version": 1,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -607,10 +609,12 @@
     "entityidfiltertype": "exact",
     "debugenabled": false,
     "constraints": [],
+    "inputs": 1,
     "outputs": 2,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "num",
+    "enableInput": true,
     "x": 140,
     "y": 340,
     "wires": [
@@ -787,7 +791,7 @@
     "z": "155ca471.b81eac",
     "name": "state tumble dryer watt",
     "server": "4ba92433.2478cc",
-    "version": 0,
+    "version": 1,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -803,10 +807,12 @@
     "entityidfiltertype": "exact",
     "debugenabled": false,
     "constraints": [],
+    "inputs": 1,
     "outputs": 2,
     "customoutputs": [],
     "outputinitially": true,
     "state_type": "num",
+    "enableInput": true,
     "x": 140,
     "y": 220,
     "wires": [

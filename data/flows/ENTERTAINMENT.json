@@ -2094,7 +2094,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input select spotify playlist",
     "server": "4ba92433.2478cc",
-    "version": 0,
+    "version": 1,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -2110,10 +2110,12 @@
     "entityidfiltertype": "exact",
     "debugenabled": false,
     "constraints": [],
+    "inputs": 1,
     "outputs": 2,
     "customoutputs": [],
     "outputinitially": false,
     "state_type": "str",
+    "enableInput": true,
     "x": 190,
     "y": 1740,
     "wires": [
@@ -3035,7 +3037,7 @@
     "z": "2910f43f.ab852c",
     "name": "state tv power watt",
     "server": "4ba92433.2478cc",
-    "version": 0,
+    "version": 1,
     "exposeToHomeAssistant": false,
     "haConfig": [
       {
@@ -3061,10 +3063,12 @@
         "propertyValue": "new_state.state"
       }
     ],
+    "inputs": 1,
     "outputs": 2,
     "customoutputs": [],
     "outputinitially": true,
     "state_type": "num",
+    "enableInput": true,
     "x": 130,
     "y": 80,
     "wires": [

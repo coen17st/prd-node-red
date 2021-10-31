@@ -428,7 +428,7 @@
     },
     "node-red-contrib-cron-plus": {
         "name": "node-red-contrib-cron-plus",
-        "version": "1.4.3",
+        "version": "1.5.4",
         "local": true,
         "nodes": {
             "cronplus": {
@@ -489,7 +489,7 @@
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",
-        "version": "0.33.1",
+        "version": "0.37.0",
         "local": true,
         "nodes": {
             "all": {
@@ -604,6 +604,23 @@
                 "local": false,
                 "module": "node-red-contrib-google-tts",
                 "file": "/usr/src/node-red/node_modules/node-red-contrib-google-tts/google-tts.js"
+            }
+        }
+    },
+    "node-red-contrib-string": {
+        "name": "node-red-contrib-string",
+        "version": "1.0.0",
+        "local": false,
+        "nodes": {
+            "string": {
+                "name": "string",
+                "types": [
+                    "string"
+                ],
+                "enabled": true,
+                "local": false,
+                "module": "node-red-contrib-string",
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-string/string/string.js"
             }
         }
     }
