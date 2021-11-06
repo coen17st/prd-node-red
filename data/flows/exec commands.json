@@ -772,8 +772,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 750,
-    "y": 700,
+    "x": 870,
+    "y": 480,
     "wires": [
       []
     ]
@@ -933,8 +933,7 @@
       ],
       [],
       [
-        "8bb352f8.425d7",
-        "350fe71f.8c0d88"
+        "8bb352f8.425d7"
       ]
     ]
   },
@@ -999,7 +998,7 @@
     "service_domain": "notify",
     "service": "mobile_app_phone_coen",
     "entityId": "",
-    "data": "{\"message\":\"{{message_text}}\",\"title\":\"{{topic}}\"}",
+    "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
     "dataType": "json",
     "mergecontext": "",
     "mustacheAltTags": false,
@@ -1069,7 +1068,7 @@
       },
       {
         "t": "eq",
-        "v": "17",
+        "v": "14",
         "vt": "num"
       }
     ],
@@ -1101,7 +1100,7 @@
     "syntax": "mustache",
     "template": "Purge backup van \"{{{payload.location}}} is gelukt, {{{payload.bytes}}} verzonden in {{payload.seconds}} seconden.",
     "output": "str",
-    "x": 1700,
+    "x": 1900,
     "y": 940,
     "wires": [
       [
@@ -1120,7 +1119,7 @@
         "params": [
           {
             "type": "str",
-            "value": ": "
+            "value": "File list transfer time: "
           },
           {
             "type": "str",
@@ -1201,7 +1200,8 @@
     "y": 940,
     "wires": [
       [
-        "ea3123a8.06cac"
+        "ea3123a8.06cac",
+        "cd2bc3aa.d1443"
       ]
     ]
   },
@@ -1306,8 +1306,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 1670,
-    "y": 880,
+    "x": 1750,
+    "y": 940,
     "wires": [
       [
         "79978a0a.3132c4"
@@ -1398,7 +1398,7 @@
     ]
   },
   {
-    "id": "350fe71f.8c0d88",
+    "id": "cd2bc3aa.d1443",
     "type": "debug",
     "z": "21c15316.41cc2c",
     "name": "",
@@ -1410,8 +1410,8 @@
     "targetType": "full",
     "statusVal": "",
     "statusType": "auto",
-    "x": 1060,
-    "y": 800,
+    "x": 1490,
+    "y": 760,
     "wires": []
   }
 ]

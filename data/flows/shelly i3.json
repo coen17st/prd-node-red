@@ -33,7 +33,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
+    "template": "<html>\n    <head></head>\n    <body>\n        <h1>url: {{req.url}}</h1>\n        <h1>method: {{req.method}}</h1>\n    </body>\n</html>",
     "x": 440,
     "y": 40,
     "wires": [
@@ -90,7 +90,8 @@
     "wires": [
       [
         "7dc39f07.0f3dc",
-        "bd9414b6.e33db8"
+        "bd9414b6.e33db8",
+        "af55989d.cc8ae8"
       ]
     ]
   },
@@ -143,7 +144,7 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
+    "x": 170,
     "y": 300,
     "wires": [
       [
@@ -506,5 +507,22 @@
     "wires": [
       []
     ]
+  },
+  {
+    "id": "af55989d.cc8ae8",
+    "type": "debug",
+    "z": "f180ab88.925788",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 520,
+    "y": 200,
+    "wires": []
   }
 ]
