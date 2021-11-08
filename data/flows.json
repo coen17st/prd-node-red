@@ -23566,7 +23566,7 @@
         "type": "template",
         "z": "21c15316.41cc2c",
         "name": "message",
-        "field": "message_text",
+        "field": "message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
