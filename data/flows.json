@@ -6185,7 +6185,7 @@
             }
         ],
         "x": 170,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
                 "12b0c7b7.f23d68"
@@ -6230,7 +6230,7 @@
         "repair": false,
         "outputs": 5,
         "x": 630,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
                 "9781b7f5.1f10a8"
@@ -6297,7 +6297,7 @@
         "repair": false,
         "outputs": 7,
         "x": 630,
-        "y": 900,
+        "y": 960,
         "wires": [
             [
                 "33fc2a94.4cdaa6"
@@ -6329,7 +6329,7 @@
         "name": "HARMONY INPUT SELECT",
         "info": "",
         "x": 160,
-        "y": 200,
+        "y": 260,
         "wires": []
     },
     {
@@ -6355,7 +6355,7 @@
         "repair": false,
         "outputs": 2,
         "x": 650,
-        "y": 620,
+        "y": 680,
         "wires": [
             [
                 "740d851f.8d8e4c"
@@ -6388,7 +6388,7 @@
         "repair": false,
         "outputs": 2,
         "x": 650,
-        "y": 720,
+        "y": 780,
         "wires": [
             [
                 "5ca3464f.c607d8"
@@ -6416,7 +6416,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1380,
-        "y": 740,
+        "y": 800,
         "wires": [
             []
         ]
@@ -6477,7 +6477,7 @@
             }
         ],
         "x": 150,
-        "y": 860,
+        "y": 920,
         "wires": [
             [
                 "a16b409.4b281c"
@@ -6540,7 +6540,7 @@
             }
         ],
         "x": 150,
-        "y": 720,
+        "y": 780,
         "wires": [
             [
                 "5b04c23f.c13ddc"
@@ -6603,7 +6603,7 @@
             }
         ],
         "x": 140,
-        "y": 620,
+        "y": 680,
         "wires": [
             [
                 "8c8062ee.9195a"
@@ -6628,7 +6628,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 860,
+        "y": 920,
         "wires": [
             []
         ]
@@ -6651,7 +6651,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1220,
-        "y": 980,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -6674,7 +6674,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1590,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -6686,7 +6686,7 @@
         "name": "APP ON MEDIA PLAYER SHIELD",
         "info": "",
         "x": 180,
-        "y": 800,
+        "y": 860,
         "wires": []
     },
     {
@@ -6696,7 +6696,7 @@
         "name": "TV SWITCH",
         "info": "",
         "x": 110,
-        "y": 580,
+        "y": 640,
         "wires": []
     },
     {
@@ -6706,7 +6706,7 @@
         "name": "MUSIC SWITCH",
         "info": "",
         "x": 120,
-        "y": 680,
+        "y": 740,
         "wires": []
     },
     {
@@ -6765,7 +6765,7 @@
             }
         ],
         "x": 160,
-        "y": 1180,
+        "y": 1240,
         "wires": [
             [
                 "9795d0e4.41c8"
@@ -6870,7 +6870,7 @@
         "repair": false,
         "outputs": 17,
         "x": 650,
-        "y": 1220,
+        "y": 1280,
         "wires": [
             [
                 "8cdcae0.3b2d45"
@@ -6932,7 +6932,7 @@
         "name": "RADIO",
         "info": "",
         "x": 90,
-        "y": 1080,
+        "y": 1140,
         "wires": []
     },
     {
@@ -6991,7 +6991,7 @@
             }
         ],
         "x": 150,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "d0daf4ea.1a4388"
@@ -7032,7 +7032,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1260,
+        "y": 1320,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7073,7 +7073,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1290,
+        "y": 1350,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7114,7 +7114,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1320,
+        "y": 1380,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7155,7 +7155,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1350,
+        "y": 1410,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7196,7 +7196,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1380,
+        "y": 1440,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7237,7 +7237,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1410,
+        "y": 1470,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7278,7 +7278,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1440,
+        "y": 1500,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7319,7 +7319,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1470,
+        "y": 1530,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7360,7 +7360,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1500,
+        "y": 1560,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7401,7 +7401,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1530,
+        "y": 1590,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7442,7 +7442,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1560,
+        "y": 1620,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7483,7 +7483,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1590,
+        "y": 1650,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7524,7 +7524,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1620,
+        "y": 1680,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7547,7 +7547,7 @@
         "blockInputOverrides": false,
         "outputProperties": [],
         "x": 1400,
-        "y": 1480,
+        "y": 1540,
         "wires": [
             [
                 "affc5f88.87461"
@@ -7571,7 +7571,7 @@
         "blockInputOverrides": false,
         "outputProperties": [],
         "x": 1430,
-        "y": 1420,
+        "y": 1480,
         "wires": [
             [
                 "8c1725fb.827dd8"
@@ -7595,7 +7595,7 @@
         "blockInputOverrides": false,
         "outputProperties": [],
         "x": 1410,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             [
                 "bbb5f6a9.8029b8"
@@ -7621,7 +7621,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1110,
-        "y": 1480,
+        "y": 1540,
         "wires": [
             [
                 "6d04ce8a.218d1",
@@ -7664,7 +7664,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1650,
+        "y": 1710,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -7700,7 +7700,7 @@
             }
         ],
         "x": 410,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "9795d0e4.41c8"
@@ -7736,7 +7736,7 @@
             }
         ],
         "x": 950,
-        "y": 860,
+        "y": 920,
         "wires": [
             [
                 "41048f91.45ec8"
@@ -7772,7 +7772,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1170,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "60f106c9.a6f5a8"
@@ -7803,7 +7803,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1400,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -7826,7 +7826,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1370,
-        "y": 1160,
+        "y": 1220,
         "wires": [
             []
         ]
@@ -7860,7 +7860,7 @@
             }
         ],
         "x": 910,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "454468c5.1187a8"
@@ -7896,7 +7896,7 @@
             }
         ],
         "x": 980,
-        "y": 1200,
+        "y": 1260,
         "wires": [
             [
                 "89521d42.98429"
@@ -7922,7 +7922,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1860,
-        "y": 1940,
+        "y": 2000,
         "wires": [
             [
                 "f5b84940.289f38"
@@ -7949,7 +7949,7 @@
         "to": "",
         "reg": false,
         "x": 900,
-        "y": 1840,
+        "y": 1900,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8024,7 +8024,7 @@
         "repair": false,
         "outputs": 11,
         "x": 670,
-        "y": 1820,
+        "y": 1880,
         "wires": [
             [
                 "e047cfa7.44efc"
@@ -8079,7 +8079,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1870,
+        "y": 1930,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8115,7 +8115,7 @@
             }
         ],
         "x": 1270,
-        "y": 1940,
+        "y": 2000,
         "wires": [
             [
                 "a75c5d1d.eb7cf"
@@ -8150,7 +8150,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1570,
-        "y": 1940,
+        "y": 2000,
         "wires": [
             [
                 "aca93d6a.a9263"
@@ -8181,7 +8181,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1830,
-        "y": 1900,
+        "y": 1960,
         "wires": [
             [
                 "d64c25df.f16088"
@@ -8206,7 +8206,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1870,
-        "y": 1980,
+        "y": 2040,
         "wires": [
             []
         ]
@@ -8240,7 +8240,7 @@
         "state_type": "str",
         "enableInput": true,
         "x": 190,
-        "y": 1740,
+        "y": 1800,
         "wires": [
             [
                 "bb62c7c1.682538"
@@ -8268,7 +8268,7 @@
         "to": "",
         "reg": false,
         "x": 930,
-        "y": 1900,
+        "y": 1960,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8295,7 +8295,7 @@
         "to": "",
         "reg": false,
         "x": 920,
-        "y": 1930,
+        "y": 1990,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8322,7 +8322,7 @@
         "to": "",
         "reg": false,
         "x": 930,
-        "y": 1960,
+        "y": 2020,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8349,7 +8349,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1990,
+        "y": 2050,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8376,7 +8376,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 2020,
+        "y": 2080,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8412,7 +8412,7 @@
             }
         ],
         "x": 930,
-        "y": 1760,
+        "y": 1820,
         "wires": [
             [
                 "5c403989.23c728"
@@ -8447,7 +8447,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1190,
-        "y": 1760,
+        "y": 1820,
         "wires": [
             [
                 "53c295cc.abd69c"
@@ -8478,7 +8478,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1800,
-        "y": 1800,
+        "y": 1860,
         "wires": [
             []
         ]
@@ -8501,7 +8501,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1800,
-        "y": 1760,
+        "y": 1820,
         "wires": [
             []
         ]
@@ -8524,7 +8524,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1780,
-        "y": 1720,
+        "y": 1780,
         "wires": [
             []
         ]
@@ -8558,7 +8558,7 @@
             }
         ],
         "x": 1500,
-        "y": 1720,
+        "y": 1780,
         "wires": [
             [
                 "796e89c3.bcb0b8"
@@ -8586,7 +8586,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1810,
+        "y": 1870,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8600,7 +8600,7 @@
         "name": "SPOTIFY",
         "info": "",
         "x": 120,
-        "y": 1700,
+        "y": 1760,
         "wires": []
     },
     {
@@ -8623,7 +8623,7 @@
         "to": "",
         "reg": false,
         "x": 890,
-        "y": 2050,
+        "y": 2110,
         "wires": [
             [
                 "bedf8b26.3109b8"
@@ -8659,7 +8659,7 @@
             }
         ],
         "x": 1230,
-        "y": 180,
+        "y": 240,
         "wires": [
             [
                 "37e50cfa.988594"
@@ -8685,7 +8685,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1510,
-        "y": 180,
+        "y": 240,
         "wires": [
             []
         ]
@@ -8708,7 +8708,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1510,
-        "y": 360,
+        "y": 420,
         "wires": [
             []
         ]
@@ -8742,7 +8742,7 @@
             }
         ],
         "x": 1230,
-        "y": 360,
+        "y": 420,
         "wires": [
             [
                 "267c55db.572f6a"
@@ -8768,7 +8768,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1520,
-        "y": 300,
+        "y": 360,
         "wires": [
             []
         ]
@@ -8802,7 +8802,7 @@
             }
         ],
         "x": 1230,
-        "y": 300,
+        "y": 360,
         "wires": [
             [
                 "d0fdf580.8956e8"
@@ -8828,7 +8828,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1520,
-        "y": 420,
+        "y": 480,
         "wires": [
             []
         ]
@@ -8862,7 +8862,7 @@
             }
         ],
         "x": 1240,
-        "y": 420,
+        "y": 480,
         "wires": [
             [
                 "57a069db.874c08"
@@ -8899,7 +8899,7 @@
             }
         ],
         "x": 1380,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "87de6266.b1ec4"
@@ -8936,7 +8936,7 @@
             }
         ],
         "x": 900,
-        "y": 740,
+        "y": 800,
         "wires": [
             [
                 "a17000f3.d5a78"
@@ -8973,7 +8973,7 @@
             }
         ],
         "x": 1140,
-        "y": 740,
+        "y": 800,
         "wires": [
             [
                 "e950787d.c01678"
@@ -8999,7 +8999,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 480,
+        "y": 540,
         "wires": [
             []
         ]
@@ -9022,7 +9022,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 540,
+        "y": 600,
         "wires": [
             []
         ]
@@ -9056,7 +9056,7 @@
             }
         ],
         "x": 890,
-        "y": 920,
+        "y": 980,
         "wires": [
             [
                 "34844efd.9ec002"
@@ -9082,7 +9082,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1220,
-        "y": 920,
+        "y": 980,
         "wires": [
             []
         ]
@@ -9100,7 +9100,7 @@
         "port": "",
         "volume": "",
         "x": 1740,
-        "y": 1480,
+        "y": 1540,
         "wires": [
             []
         ],
@@ -9119,7 +9119,7 @@
         "port": "",
         "volume": "50",
         "x": 1760,
-        "y": 1420,
+        "y": 1480,
         "wires": [
             []
         ],
@@ -9138,7 +9138,7 @@
         "port": "",
         "volume": "50",
         "x": 1780,
-        "y": 1540,
+        "y": 1600,
         "wires": [
             []
         ],
@@ -9151,7 +9151,7 @@
         "name": "tv input select correction",
         "info": "",
         "x": 150,
-        "y": 40,
+        "y": 20,
         "wires": []
     },
     {
@@ -9175,17 +9175,7 @@
         "entityid": "sensor.shellyplug_tv_power",
         "entityidfiltertype": "exact",
         "debugenabled": false,
-        "constraints": [
-            {
-                "targetType": "this_entity",
-                "targetValue": "",
-                "propertyType": "current_state",
-                "comparatorType": ">",
-                "comparatorValueDatatype": "num",
-                "comparatorValue": "58",
-                "propertyValue": "new_state.state"
-            }
-        ],
+        "constraints": [],
         "inputs": 1,
         "outputs": 2,
         "customoutputs": [],
@@ -9193,12 +9183,14 @@
         "state_type": "num",
         "enableInput": true,
         "x": 130,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "986709c4.4f3978"
             ],
-            []
+            [
+                "986709c4.4f3978"
+            ]
         ]
     },
     {
@@ -9230,7 +9222,7 @@
             }
         ],
         "x": 930,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "e438727.3f69b9"
@@ -9244,7 +9236,7 @@
         "z": "2910f43f.ab852c",
         "name": "",
         "x": 1140,
-        "y": 60,
+        "y": 80,
         "wires": [
             []
         ]
@@ -9278,7 +9270,7 @@
             }
         ],
         "x": 750,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "2f85ef3f.9f543"
@@ -9302,7 +9294,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 620,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "a5bee45a.e7f7f8"
@@ -9325,7 +9317,7 @@
         "randomUnits": "seconds",
         "drop": true,
         "x": 460,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "aa9b9669.3111a8"
@@ -9355,7 +9347,7 @@
         "repair": false,
         "outputs": 2,
         "x": 300,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "361d11e2.0d731e"
@@ -12395,7 +12387,7 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 780,
+        "x": 760,
         "y": 300,
         "wires": [
             [
@@ -12413,7 +12405,7 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 780,
+        "x": 760,
         "y": 340,
         "wires": [
             [
@@ -20741,7 +20733,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 900,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
                 "fca7e96b.18f578"
@@ -20766,7 +20758,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 890,
-        "y": 200,
+        "y": 260,
         "wires": [
             [
                 "fca7e96b.18f578",
@@ -20792,7 +20784,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 920,
-        "y": 320,
+        "y": 380,
         "wires": [
             [
                 "6a32b719.5d34d8"
@@ -20817,7 +20809,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 280,
+        "y": 340,
         "wires": [
             [
                 "fca7e96b.18f578"
@@ -20842,7 +20834,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 360,
+        "y": 420,
         "wires": [
             [
                 "36ac824f.34face",
@@ -20871,7 +20863,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 880,
-        "y": 620,
+        "y": 680,
         "wires": [
             []
         ]
@@ -20894,7 +20886,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 890,
-        "y": 680,
+        "y": 740,
         "wires": [
             []
         ]
@@ -20928,7 +20920,7 @@
             }
         ],
         "x": 950,
-        "y": 980,
+        "y": 1040,
         "wires": [
             [
                 "4023da29.24aa34"
@@ -20954,7 +20946,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1240,
-        "y": 600,
+        "y": 660,
         "wires": [
             []
         ]
@@ -21000,7 +20992,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1360,
-        "y": 1200,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -21023,7 +21015,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 2100,
-        "y": 1900,
+        "y": 1960,
         "wires": [
             []
         ]
@@ -21046,7 +21038,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 2120,
-        "y": 1940,
+        "y": 2000,
         "wires": [
             []
         ]
@@ -21582,7 +21574,7 @@
         "randomUnits": "seconds",
         "drop": true,
         "x": 460,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "237b46fd.73d02a"
@@ -21605,7 +21597,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 620,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "6cbb3370.94847c"
@@ -21641,7 +21633,7 @@
             }
         ],
         "x": 750,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "5055b721.f70cd8"
@@ -21678,7 +21670,7 @@
             }
         ],
         "x": 930,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "a7bf73cc.61a0a"
@@ -21704,7 +21696,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1240,
-        "y": 240,
+        "y": 300,
         "wires": [
             []
         ]
@@ -21727,7 +21719,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1140,
-        "y": 100,
+        "y": 120,
         "wires": [
             []
         ]
@@ -21766,7 +21758,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 1680,
+        "y": 1740,
         "wires": [
             [
                 "ec9a1ad.78172e8"
@@ -22186,7 +22178,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 370,
-        "y": 2200,
+        "y": 2260,
         "wires": [
             [
                 "8b724c44.383e9"
@@ -22228,7 +22220,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 650,
-        "y": 2220,
+        "y": 2280,
         "wires": [
             [
                 "79531b0f.773f14",
@@ -22271,7 +22263,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 370,
-        "y": 2240,
+        "y": 2300,
         "wires": [
             [
                 "8b724c44.383e9"
@@ -22297,7 +22289,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1000,
-        "y": 2220,
+        "y": 2280,
         "wires": [
             []
         ]
@@ -22314,7 +22306,7 @@
         "template": "TV gepauseerd i.v.m. telefoon gesprek.",
         "output": "str",
         "x": 860,
-        "y": 2220,
+        "y": 2280,
         "wires": [
             [
                 "6d70ecba.7472f4"
@@ -22339,7 +22331,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 870,
-        "y": 2180,
+        "y": 2240,
         "wires": [
             []
         ]
@@ -22400,7 +22392,7 @@
             }
         ],
         "x": 130,
-        "y": 2200,
+        "y": 2260,
         "wires": [
             [
                 "d78107e6.77b8e8"
@@ -22464,7 +22456,7 @@
             }
         ],
         "x": 130,
-        "y": 2240,
+        "y": 2300,
         "wires": [
             [
                 "a7ce2d4e.b4576"
@@ -22479,7 +22471,7 @@
         "name": "PAUSE WHEN PHONE IS OFFHOOK",
         "info": "",
         "x": 170,
-        "y": 2160,
+        "y": 2220,
         "wires": []
     },
     {
@@ -24068,7 +24060,7 @@
         "halt_if": "cleaning",
         "halt_if_type": "str",
         "halt_if_compare": "is_not",
-        "entity_id": "vacuum.roborock_vacuum_s5",
+        "entity_id": "vacuum.robot_vacuum",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -24085,7 +24077,7 @@
                 "valueType": "entity"
             }
         ],
-        "x": 560,
+        "x": 540,
         "y": 300,
         "wires": [
             [
@@ -24112,7 +24104,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 970,
+        "x": 950,
         "y": 340,
         "wires": [
             []
@@ -24134,5 +24126,254 @@
         "x": 1490,
         "y": 760,
         "wires": []
+    },
+    {
+        "id": "57e2a3e0.30d67c",
+        "type": "trigger-state",
+        "z": "2910f43f.ab852c",
+        "name": "state tv power watt",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "sensor.shellyplug_reciever_power",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "<",
+                "comparatorValueDatatype": "num",
+                "comparatorValue": "1",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "inputs": 1,
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": true,
+        "state_type": "num",
+        "enableInput": true,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "7de81d96.7c2974"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7de81d96.7c2974",
+        "type": "delay",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "70",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "ada11bd.83caae8"
+            ]
+        ]
+    },
+    {
+        "id": "ada11bd.83caae8",
+        "type": "delay",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 620,
+        "y": 160,
+        "wires": [
+            [
+                "42953716.454f98"
+            ]
+        ]
+    },
+    {
+        "id": "ba5f839b.2108d",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "input select is not alles uit",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "Alles Uit",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "input_select.harmonyhub",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "42953716.454f98",
+        "type": "api-current-state",
+        "z": "2910f43f.ab852c",
+        "name": "< 1",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "1",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.shellyplug_reciever_power",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 750,
+        "y": 160,
+        "wires": [
+            [
+                "5055b721.f70cd8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d91a63a.662e0a",
+        "type": "debug",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "34998384.5e516c",
+        "type": "inject",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "b2ab2f17.93811"
+            ]
+        ]
+    },
+    {
+        "id": "b2ab2f17.93811",
+        "type": "api-current-state",
+        "z": "55da1471.fda0fc",
+        "name": "cleaned today is off",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.vacuum_cleaned",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 250,
+        "y": 400,
+        "wires": [
+            [
+                "d91a63a.662e0a"
+            ],
+            [
+                "d91a63a.662e0a"
+            ]
+        ]
     }
 ]
