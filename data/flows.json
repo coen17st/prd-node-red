@@ -15876,7 +15876,7 @@
                 "valueType": "entity"
             }
         ],
-        "x": 420,
+        "x": 410,
         "y": 600,
         "wires": [
             [
@@ -16467,7 +16467,7 @@
         "halt_if": "Daalt",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "sensor.state_basement_humidit",
+        "entity_id": "sensor.state_basement_humidity",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
