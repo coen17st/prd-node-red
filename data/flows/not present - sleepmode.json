@@ -351,7 +351,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1050,
-    "y": 660,
+    "y": 640,
     "wires": [
       [
         "69a0749d.4f467c"
@@ -711,31 +711,6 @@
     ]
   },
   {
-    "id": "a187e101.6dc58",
-    "type": "api-call-service",
-    "z": "8aa6edec.5a013",
-    "name": "In APP Notify",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "persistent_notification",
-    "service": "create",
-    "entityId": "",
-    "data": "{\"message\":\"{{message}}\",\"title\":\"Beveiliging\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1770,
-    "y": 120,
-    "wires": [
-      [
-        "de807278.70c2"
-      ]
-    ]
-  },
-  {
     "id": "9bc95b6c.068838",
     "type": "template",
     "z": "8aa6edec.5a013",
@@ -750,7 +725,7 @@
     "y": 120,
     "wires": [
       [
-        "a187e101.6dc58"
+        "de807278.70c2"
       ]
     ]
   },
@@ -1105,7 +1080,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Niemand is aanwezig. {{{friendly_name}}} stond nog aan en is nu automatisch uitgeschakeld.",
+    "template": "Niemand is aanwezig. {{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
     "output": "str",
     "x": 1620,
     "y": 40,
@@ -1394,7 +1369,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Deurbel geluid stond uit en is nu aangezet.",
+    "template": "Deurbel geluid stond uitschakeld deze is nu weer ingeschakeld.",
     "output": "str",
     "x": 1620,
     "y": 780,
@@ -1477,7 +1452,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 850,
+    "x": 860,
     "y": 360,
     "wires": [
       []

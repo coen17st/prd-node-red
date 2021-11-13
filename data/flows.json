@@ -3918,7 +3918,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 340,
+        "x": 460,
         "y": 100,
         "wires": [
             [
@@ -4895,7 +4895,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1720,
-        "y": 280,
+        "y": 340,
         "wires": [
             [
                 "b50fb918.44f928"
@@ -5062,7 +5062,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Het is donker en iemand is aanwezig. {{data.attributes.friendly_name}} verlichting is ingeschakeld.",
+        "template": "Het is donker en er is iemand aanwezig. {{{data.attributes.friendly_name}}} verlichting is ingeschakeld.",
         "output": "str",
         "x": 2060,
         "y": 780,
@@ -5255,7 +5255,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{friendly_name_person}} is thuis gekomen en het is dark. {{friendly_name_lampen}} verlichting is ingeschakeld",
+        "template": "{{friendly_name_person}} is thuis gekomen en het is donker. {{friendly_name_lampen}} verlichting is ingeschakeld",
         "output": "str",
         "x": 2060,
         "y": 980,
@@ -5296,7 +5296,7 @@
         "template": "{{data.attributes.friendly_name}} verlichting is ingeschakeld omdat Harmony activiteit {{data_remote.harmony_hub_01.attributes.current_activity}} actief is. ",
         "output": "str",
         "x": 2060,
-        "y": 540,
+        "y": 340,
         "wires": [
             [
                 "9bfeecdc.f723d"
@@ -5893,7 +5893,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Niemand is aanwezig. {{payload.attributes.friendly_name}} verlichting stond nog aan en is automatisch uitgeschakeld.",
+        "template": "Niemand is aanwezig. {{{payload.attributes.friendly_name}}} verlichting stond nog aan en is automatisch uitgeschakeld.",
         "output": "str",
         "x": 2060,
         "y": 1060,
@@ -5969,7 +5969,7 @@
             }
         ],
         "x": 390,
-        "y": 1060,
+        "y": 1080,
         "wires": [
             [
                 "672a2d68.71e334"
@@ -10538,7 +10538,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1050,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "69a0749d.4f467c"
@@ -10898,31 +10898,6 @@
         ]
     },
     {
-        "id": "a187e101.6dc58",
-        "type": "api-call-service",
-        "z": "8aa6edec.5a013",
-        "name": "In APP Notify",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "persistent_notification",
-        "service": "create",
-        "entityId": "",
-        "data": "{\"message\":\"{{message}}\",\"title\":\"Beveiliging\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1770,
-        "y": 120,
-        "wires": [
-            [
-                "de807278.70c2"
-            ]
-        ]
-    },
-    {
         "id": "9bc95b6c.068838",
         "type": "template",
         "z": "8aa6edec.5a013",
@@ -10937,7 +10912,7 @@
         "y": 120,
         "wires": [
             [
-                "a187e101.6dc58"
+                "de807278.70c2"
             ]
         ]
     },
@@ -11292,7 +11267,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Niemand is aanwezig. {{{friendly_name}}} stond nog aan en is nu automatisch uitgeschakeld.",
+        "template": "Niemand is aanwezig. {{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
         "x": 1620,
         "y": 40,
@@ -11581,7 +11556,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Deurbel geluid stond uit en is nu aangezet.",
+        "template": "Deurbel geluid stond uitschakeld deze is nu weer ingeschakeld.",
         "output": "str",
         "x": 1620,
         "y": 780,
@@ -11905,7 +11880,7 @@
         "debugenabled": false,
         "service_domain": "vacuum",
         "service": "start",
-        "entityId": "vacuum.roborock_vacuum_s5",
+        "entityId": "vacuum.robot_vacuum",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
@@ -11930,7 +11905,7 @@
         "debugenabled": false,
         "service_domain": "vacuum",
         "service": "return_to_base",
-        "entityId": "vacuum.roborock_vacuum_s5",
+        "entityId": "vacuum.robot_vacuum",
         "data": "",
         "dataType": "json",
         "mergecontext": "",
@@ -11954,7 +11929,7 @@
         "halt_if": "docked",
         "halt_if_type": "str",
         "halt_if_compare": "is_not",
-        "entity_id": "vacuum.roborock_vacuum_s5",
+        "entity_id": "vacuum.robot_vacuum",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -12065,7 +12040,7 @@
         "halt_if": "cleaning",
         "halt_if_type": "str",
         "halt_if_compare": "is_not",
-        "entity_id": "vacuum.roborock_vacuum_s5",
+        "entity_id": "vacuum.robot_vacuum",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -12102,7 +12077,7 @@
         "halt_if": "returning",
         "halt_if_type": "str",
         "halt_if_compare": "is_not",
-        "entity_id": "vacuum.roborock_vacuum_s5",
+        "entity_id": "vacuum.robot_vacuum",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -12156,7 +12131,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "vacuum.roborock_vacuum_s5",
+        "entityidfilter": "vacuum.robot_vacuum",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
@@ -17501,7 +17476,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1720,
-        "y": 340,
+        "y": 280,
         "wires": [
             []
         ]
@@ -21464,7 +21439,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 850,
+        "x": 860,
         "y": 360,
         "wires": [
             []
@@ -23465,31 +23440,6 @@
         ]
     },
     {
-        "id": "e532d7fc.5e5278",
-        "type": "inject",
-        "z": "155ca471.b81eac",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1260,
-        "y": 260,
-        "wires": [
-            [
-                "6f9c419a.ab247"
-            ]
-        ]
-    },
-    {
         "id": "7d226530.41a43c",
         "type": "comment",
         "z": "21c15316.41cc2c",
@@ -23516,7 +23466,9 @@
             [
                 "1cd851a9.9a893e"
             ],
-            [],
+            [
+                "eabeea6.06b9d18"
+            ],
             [
                 "8bb352f8.425d7"
             ]
@@ -24375,5 +24327,22 @@
                 "d91a63a.662e0a"
             ]
         ]
+    },
+    {
+        "id": "eabeea6.06b9d18",
+        "type": "debug",
+        "z": "21c15316.41cc2c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 1200,
+        "wires": []
     }
 ]

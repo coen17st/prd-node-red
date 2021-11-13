@@ -2031,31 +2031,6 @@
     ]
   },
   {
-    "id": "e532d7fc.5e5278",
-    "type": "inject",
-    "z": "155ca471.b81eac",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      }
-    ],
-    "repeat": "",
-    "crontab": "",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "",
-    "payloadType": "date",
-    "x": 1260,
-    "y": 260,
-    "wires": [
-      [
-        "6f9c419a.ab247"
-      ]
-    ]
-  },
-  {
     "id": "11634053.7d1e7",
     "type": "switch",
     "z": "155ca471.b81eac",

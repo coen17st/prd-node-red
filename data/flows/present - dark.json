@@ -810,7 +810,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1720,
-    "y": 280,
+    "y": 340,
     "wires": [
       [
         "b50fb918.44f928"
@@ -977,7 +977,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Het is donker en iemand is aanwezig. {{data.attributes.friendly_name}} verlichting is ingeschakeld.",
+    "template": "Het is donker en er is iemand aanwezig. {{{data.attributes.friendly_name}}} verlichting is ingeschakeld.",
     "output": "str",
     "x": 2060,
     "y": 780,
@@ -1170,7 +1170,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "{{friendly_name_person}} is thuis gekomen en het is dark. {{friendly_name_lampen}} verlichting is ingeschakeld",
+    "template": "{{friendly_name_person}} is thuis gekomen en het is donker. {{friendly_name_lampen}} verlichting is ingeschakeld",
     "output": "str",
     "x": 2060,
     "y": 980,
@@ -1211,7 +1211,7 @@
     "template": "{{data.attributes.friendly_name}} verlichting is ingeschakeld omdat Harmony activiteit {{data_remote.harmony_hub_01.attributes.current_activity}} actief is. ",
     "output": "str",
     "x": 2060,
-    "y": 540,
+    "y": 340,
     "wires": [
       [
         "9bfeecdc.f723d"
@@ -1808,7 +1808,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Niemand is aanwezig. {{payload.attributes.friendly_name}} verlichting stond nog aan en is automatisch uitgeschakeld.",
+    "template": "Niemand is aanwezig. {{{payload.attributes.friendly_name}}} verlichting stond nog aan en is automatisch uitgeschakeld.",
     "output": "str",
     "x": 2060,
     "y": 1060,
@@ -1884,7 +1884,7 @@
       }
     ],
     "x": 390,
-    "y": 1060,
+    "y": 1080,
     "wires": [
       [
         "672a2d68.71e334"
@@ -2062,7 +2062,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1720,
-    "y": 340,
+    "y": 280,
     "wires": [
       []
     ]
