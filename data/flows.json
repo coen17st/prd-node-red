@@ -14,16 +14,16 @@
         "info": ""
     },
     {
-        "id": "4e909abe.0b62e4",
+        "id": "55da1471.fda0fc",
         "type": "tab",
-        "label": "basement ventilation",
+        "label": "vacuum cleaner",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "55da1471.fda0fc",
+        "id": "4e909abe.0b62e4",
         "type": "tab",
-        "label": "vacuum cleaner",
+        "label": "basement ventilation",
         "disabled": false,
         "info": ""
     },
@@ -2131,7 +2131,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
+        "x": 120,
         "y": 100,
         "wires": [
             [
@@ -6953,7 +6953,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "input_select.mediaplayer_source",
+        "entityidfilter": "input_select.mediaplayer_destination",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -7542,7 +7542,7 @@
         "halt_if": "Woonkamer TV",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [],
@@ -7566,7 +7566,7 @@
         "halt_if": "Woonkamer Google Home",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [],
@@ -7590,7 +7590,7 @@
         "halt_if": "Lise's Google Home",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [],
@@ -7718,12 +7718,12 @@
         "halt_if": "Woonkamer TV",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
             {
-                "property": "input_select.mediaplayer_source",
+                "property": "input_select.mediaplayer_destination",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
@@ -7749,7 +7749,7 @@
         "type": "switch",
         "z": "2910f43f.ab852c",
         "name": "",
-        "property": "input_select.mediaplayer_source",
+        "property": "input_select.mediaplayer_destination",
         "propertyType": "msg",
         "rules": [
             {
@@ -7842,12 +7842,12 @@
         "halt_if": "",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
             {
-                "property": "input_select.mediaplayer_source",
+                "property": "input_select.mediaplayer_destination",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
@@ -7878,12 +7878,12 @@
         "halt_if": "Woonkamer TV",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
             {
-                "property": "input_select.mediaplayer_source",
+                "property": "input_select.mediaplayer_destination",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
@@ -8097,12 +8097,12 @@
         "halt_if": "",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
             {
-                "property": "input_select.mediaplayer_source",
+                "property": "input_select.mediaplayer_destination",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
@@ -8127,7 +8127,7 @@
         "type": "switch",
         "z": "2910f43f.ab852c",
         "name": "input select mediaplayer source",
-        "property": "input_select.mediaplayer_source",
+        "property": "input_select.mediaplayer_destination",
         "propertyType": "msg",
         "rules": [
             {
@@ -8394,12 +8394,12 @@
         "halt_if": "",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
             {
-                "property": "input_select.mediaplayer_source",
+                "property": "input_select.mediaplayer_destination",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
@@ -8424,7 +8424,7 @@
         "type": "switch",
         "z": "2910f43f.ab852c",
         "name": "input select mediaplayer source",
-        "property": "input_select.mediaplayer_source",
+        "property": "input_select.mediaplayer_destination",
         "propertyType": "msg",
         "rules": [
             {
@@ -12194,8 +12194,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1690,
-        "y": 260,
+        "x": 1710,
+        "y": 300,
         "wires": [
             [
                 "db9e2b19.e376b8"
@@ -12314,8 +12314,8 @@
         "syntax": "mustache",
         "template": "De stofzuiger is gestart.",
         "output": "str",
-        "x": 1540,
-        "y": 200,
+        "x": 1560,
+        "y": 260,
         "wires": [
             [
                 "db9e2b19.e376b8"
@@ -12333,8 +12333,8 @@
         "syntax": "mustache",
         "template": "De stofzuiger zit vast en heeft hulp nodig.",
         "output": "str",
-        "x": 1540,
-        "y": 260,
+        "x": 1560,
+        "y": 300,
         "wires": [
             [
                 "e4d25a8e.b5b258"
@@ -12349,8 +12349,8 @@
         "links": [
             "7b0f1685.0279d8"
         ],
-        "x": 1795,
-        "y": 220,
+        "x": 1835,
+        "y": 260,
         "wires": []
     },
     {
@@ -12363,7 +12363,7 @@
         "payloadval": "0",
         "name": "",
         "x": 760,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "60f6cd3f.56a0f4"
@@ -12381,7 +12381,7 @@
         "payloadval": "0",
         "name": "",
         "x": 760,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "6bd54ad5.5aea04"
@@ -20877,12 +20877,12 @@
         "halt_if": "Woonkamer TV",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.mediaplayer_source",
+        "entity_id": "input_select.mediaplayer_destination",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
             {
-                "property": "input_select.mediaplayer_source",
+                "property": "input_select.mediaplayer_destination",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
@@ -21530,7 +21530,9 @@
         "x": 2060,
         "y": 40,
         "wires": [
-            []
+            [
+                "9bfeecdc.f723d"
+            ]
         ]
     },
     {
@@ -24057,7 +24059,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 950,
-        "y": 340,
+        "y": 320,
         "wires": [
             []
         ]
@@ -24245,52 +24247,118 @@
         ]
     },
     {
-        "id": "d91a63a.662e0a",
+        "id": "eabeea6.06b9d18",
         "type": "debug",
-        "z": "55da1471.fda0fc",
+        "z": "21c15316.41cc2c",
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
-        "y": 400,
+        "x": 1140,
+        "y": 1200,
         "wires": []
     },
     {
-        "id": "34998384.5e516c",
-        "type": "inject",
+        "id": "1494387d.fca0a8",
+        "type": "server-state-changed",
         "z": "55da1471.fda0fc",
-        "name": "",
-        "props": [
+        "name": "vacuum state is cleaning",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
             {
-                "p": "payload"
+                "property": "name",
+                "value": ""
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "property": "icon",
+                "value": ""
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 90,
-        "y": 400,
+        "entityidfilter": "vacuum.robot_vacuum",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "cleaning",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 360,
         "wires": [
             [
-                "b2ab2f17.93811"
-            ]
+                "272212f1.26bb6e"
+            ],
+            []
         ]
     },
     {
-        "id": "b2ab2f17.93811",
+        "id": "272212f1.26bb6e",
+        "type": "ha-wait-until",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "outputs": 2,
+        "entityId": "vacuum.robot_vacuum",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "returning",
+        "valueType": "str",
+        "timeout": "90",
+        "timeoutType": "num",
+        "timeoutUnits": "minutes",
+        "entityLocation": "",
+        "entityLocationType": "none",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "155ef739.0e1de9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "155ef739.0e1de9",
         "type": "api-current-state",
         "z": "55da1471.fda0fc",
         "name": "cleaned today is off",
@@ -24317,32 +24385,36 @@
                 "valueType": "entity"
             }
         ],
-        "x": 250,
-        "y": 400,
+        "x": 530,
+        "y": 360,
         "wires": [
             [
-                "d91a63a.662e0a"
+                "a098e71.e0db718"
             ],
-            [
-                "d91a63a.662e0a"
-            ]
+            []
         ]
     },
     {
-        "id": "eabeea6.06b9d18",
-        "type": "debug",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 1200,
-        "wires": []
+        "id": "a098e71.e0db718",
+        "type": "api-call-service",
+        "z": "55da1471.fda0fc",
+        "name": "turn off vacuum cleaned ",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.vacuum_cleaned",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 750,
+        "y": 360,
+        "wires": [
+            []
+        ]
     }
 ]

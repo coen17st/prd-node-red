@@ -81,7 +81,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
+    "x": 120,
     "y": 100,
     "wires": [
       [
