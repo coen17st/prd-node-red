@@ -306,6 +306,57 @@
         "color": "#DDAA99"
     },
     {
+        "id": "79544bf2.1ff3a4",
+        "type": "subflow",
+        "name": "away",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "f401f4f7.3ab058"
+                    },
+                    {
+                        "id": "3b9a1fc1.aafd9"
+                    },
+                    {
+                        "id": "f9028094.57a62"
+                    },
+                    {
+                        "id": "e0b2428a.a371b"
+                    },
+                    {
+                        "id": "1cacf9f.2645206"
+                    },
+                    {
+                        "id": "83808dcd.70439"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 880,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "b85d118c.fbdc4",
+                        "port": 0
+                    },
+                    {
+                        "id": "f6de2518.2672a8",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -9852,7 +9903,7 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 170,
+        "x": 190,
         "y": 300,
         "wires": [
             [
@@ -9945,7 +9996,8 @@
         "y": 720,
         "wires": [
             [
-                "bd9414b6.e33db8"
+                "bd9414b6.e33db8",
+                "4bf2349a.895f9c"
             ]
         ]
     },
@@ -14532,7 +14584,7 @@
         "y": 700,
         "wires": [
             [
-                "bfdcba16.625018"
+                "f58250ec.e0fa1"
             ],
             [
                 "240fac46.902e04"
@@ -15883,7 +15935,7 @@
                 "e21c63fd.6345e"
             ],
             [
-                "bfdcba16.625018"
+                "4b24c6f.ecf9538"
             ]
         ]
     },
@@ -16017,25 +16069,6 @@
         "wires": [
             [
                 "27cc17cd.025b08"
-            ]
-        ]
-    },
-    {
-        "id": "8444e2bf.897f4",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{topic}} stand 1 is automatisch ingeschakeld. Het is buiten {{sensor.buienradar_temperature}} {{data.attributes.unit_of_measurement}}",
-        "output": "str",
-        "x": 1720,
-        "y": 700,
-        "wires": [
-            [
-                "8373567d.35b008"
             ]
         ]
     },
@@ -16421,11 +16454,11 @@
         "id": "610ee8e1.0e94b8",
         "type": "api-current-state",
         "z": "4e909abe.0b62e4",
-        "name": "state humidity basement < 69%",
+        "name": "state humidity basement < 65%",
         "server": "4ba92433.2478cc",
         "version": 2,
         "outputs": 2,
-        "halt_if": "69",
+        "halt_if": "65",
         "halt_if_type": "num",
         "halt_if_compare": "lt",
         "entity_id": "sensor.basement_humidity",
@@ -18692,7 +18725,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer is hoger dan in de kelder. \\n \\nAbsolute vochtinhoud in de woonkamer is {{sensor.living_room_absolutehumidity}} g/m³ \\nAbsolute vochtinhoud in de kelder is {{sensor.basement_absolutehumidity}} g/m³",
+        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_absolutehumidity}} g/m³ is hoger dan in de kelder {{sensor.basement_absolutehumidity}} g/m³",
         "output": "str",
         "x": 1140,
         "y": 240,
@@ -20197,7 +20230,7 @@
         "y": 700,
         "wires": [
             [
-                "8444e2bf.897f4"
+                "8373567d.35b008"
             ]
         ]
     },
@@ -21439,7 +21472,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 860,
+        "x": 850,
         "y": 360,
         "wires": [
             []
@@ -24413,6 +24446,449 @@
         "queue": "none",
         "x": 750,
         "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f58250ec.e0fa1",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{topic}} stand 1 is automatisch ingeschakeld. Het is buiten {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
+        "output": "str",
+        "x": 1040,
+        "y": 720,
+        "wires": [
+            [
+                "bfdcba16.625018"
+            ]
+        ]
+    },
+    {
+        "id": "4b24c6f.ecf9538",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De luchtvochtigheid in de kelder is {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
+        "output": "str",
+        "x": 1040,
+        "y": 680,
+        "wires": [
+            [
+                "bfdcba16.625018"
+            ]
+        ]
+    },
+    {
+        "id": "a80e0c22.f712",
+        "type": "api-current-state",
+        "z": "f180ab88.925788",
+        "name": "state doorbell chime off",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.doorbell_chime_active",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 790,
+        "y": 1200,
+        "wires": [
+            [
+                "73e735d5.208ebc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "73e735d5.208ebc",
+        "type": "api-call-service",
+        "z": "f180ab88.925788",
+        "name": "turn on switch chime active",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_on",
+        "entityId": "switch.doorbell_chime_active",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1040,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b9a1fc1.aafd9",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "input select harmonyhub alles uit",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_select",
+        "service": "select_option",
+        "entityId": "input_select.harmonyhub",
+        "data": "{\"option\":\"Alles Uit\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 250,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f401f4f7.3ab058",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn off media players",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "media_player",
+        "service": "turn_off",
+        "entityId": "media_player.shield, media_player.living_room_google_speaker, media_player.lise_s_kamer",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 220,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9028094.57a62",
+        "type": "ha-get-entities",
+        "z": "79544bf2.1ff3a4",
+        "name": "lookup climate auto",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "climate.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is_not",
+                "value": "auto",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "397bbd3d.0bb3f2"
+            ]
+        ]
+    },
+    {
+        "id": "397bbd3d.0bb3f2",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn on climate auto mode",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "climate",
+        "service": "set_hvac_mode",
+        "entityId": "{{payload.entity_id}}",
+        "data": "{\"hvac_mode\":\"auto\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "477c8f0e.c4289"
+            ]
+        ]
+    },
+    {
+        "id": "477c8f0e.c4289",
+        "type": "join",
+        "z": "79544bf2.1ff3a4",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload.attributes.friendly_name",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "b85d118c.fbdc4"
+            ]
+        ]
+    },
+    {
+        "id": "b85d118c.fbdc4",
+        "type": "template",
+        "z": "79544bf2.1ff3a4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De verwarming in {{payload.attributes.friendly_name}} is van handmatige naar automatische stand geschakeld.",
+        "output": "str",
+        "x": 760,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0b2428a.a371b",
+        "type": "ha-get-entities",
+        "z": "79544bf2.1ff3a4",
+        "name": "lookup lights on",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "light.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "on",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "9eb23897.6d9b38"
+            ]
+        ]
+    },
+    {
+        "id": "9eb23897.6d9b38",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn off lights",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "{{payload.entity_id}}",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "f2f64bc8.d21168"
+            ]
+        ]
+    },
+    {
+        "id": "f2f64bc8.d21168",
+        "type": "join",
+        "z": "79544bf2.1ff3a4",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "friendly_name",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [
+                "f6de2518.2672a8"
+            ]
+        ]
+    },
+    {
+        "id": "f6de2518.2672a8",
+        "type": "template",
+        "z": "79544bf2.1ff3a4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Niemand is aanwezig. {{{payload.attributes.friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
+        "output": "str",
+        "x": 760,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cacf9f.2645206",
+        "type": "ha-get-entities",
+        "z": "79544bf2.1ff3a4",
+        "name": "lookup media players",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "media_player",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is_not",
+                "value": "off",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "73dcb69e.8515b8"
+            ]
+        ]
+    },
+    {
+        "id": "73dcb69e.8515b8",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn off media players",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "media_player",
+        "service": "turn_off",
+        "entityId": "{{payload.entity_id}}",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "83808dcd.70439",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn off warmwater",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "water_heater",
+        "service": "set_operation_mode",
+        "entityId": "water_heater.warm_water",
+        "data": "{\"operation_mode\":\"off\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 210,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4bf2349a.895f9c",
+        "type": "subflow:79544bf2.1ff3a4",
+        "z": "f180ab88.925788",
+        "name": "",
+        "x": 730,
+        "y": 720,
         "wires": [
             []
         ]
