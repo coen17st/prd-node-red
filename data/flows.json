@@ -4225,7 +4225,6 @@
             ],
             [
                 "c3dc83f5.77118",
-                "1d2f1c8b.ae3783",
                 "b7ae8452.581398"
             ]
         ]
@@ -5867,7 +5866,8 @@
         "wires": [
             [
                 "d08ebe33.48973",
-                "cc18abb3.ae2a18"
+                "cc18abb3.ae2a18",
+                "c22f267e.8d6d68"
             ],
             []
         ]
@@ -5905,7 +5905,8 @@
         "wires": [
             [
                 "d08ebe33.48973",
-                "cc18abb3.ae2a18"
+                "cc18abb3.ae2a18",
+                "c22f267e.8d6d68"
             ],
             []
         ]
@@ -6029,36 +6030,6 @@
         ]
     },
     {
-        "id": "1d2f1c8b.ae3783",
-        "type": "api-call-service",
-        "z": "c0da8379.b0dd3",
-        "name": "set theme dark",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "frontend",
-        "service": "set_theme",
-        "entityId": "",
-        "data": "{\"name\":\"dark_theme\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "data"
-            }
-        ],
-        "queue": "none",
-        "x": 660,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "255f30c3.c9935",
         "type": "api-current-state",
         "z": "c0da8379.b0dd3",
@@ -6117,7 +6088,8 @@
             [
                 "d08ebe33.48973",
                 "cc18abb3.ae2a18",
-                "a8a31543.6e54b8"
+                "a8a31543.6e54b8",
+                "c22f267e.8d6d68"
             ]
         ]
     },
@@ -9849,8 +9821,7 @@
         "wires": [
             [
                 "7dc39f07.0f3dc",
-                "bd9414b6.e33db8",
-                "af55989d.cc8ae8"
+                "bd9414b6.e33db8"
             ]
         ]
     },
@@ -9890,7 +9861,8 @@
         "y": 240,
         "wires": [
             [
-                "bd9414b6.e33db8"
+                "bd9414b6.e33db8",
+                "93c5a708.6034b8"
             ]
         ]
     },
@@ -24016,23 +23988,6 @@
         ]
     },
     {
-        "id": "af55989d.cc8ae8",
-        "type": "debug",
-        "z": "f180ab88.925788",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "c5ad7ab8.30fda8",
         "type": "api-current-state",
         "z": "55da1471.fda0fc",
@@ -24885,6 +24840,91 @@
         "name": "",
         "x": 730,
         "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b39170c.a4ee09",
+        "type": "api-call-service",
+        "z": "c0da8379.b0dd3",
+        "name": "turn on light christmas tree",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.christmas_tree",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1740,
+        "y": 680,
+        "wires": [
+            [
+                "13ca8b62.27a4a5"
+            ]
+        ]
+    },
+    {
+        "id": "c22f267e.8d6d68",
+        "type": "api-current-state",
+        "z": "c0da8379.b0dd3",
+        "name": "state christmas tree light off",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.christmas_tree",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 1440,
+        "y": 680,
+        "wires": [
+            [
+                "1b39170c.a4ee09"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "93c5a708.6034b8",
+        "type": "api-call-service",
+        "z": "f180ab88.925788",
+        "name": "toggle light christmas tree",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "toggle",
+        "entityId": "light.christmas_tree",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 790,
+        "y": 240,
         "wires": [
             []
         ]

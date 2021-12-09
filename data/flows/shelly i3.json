@@ -90,8 +90,7 @@
     "wires": [
       [
         "7dc39f07.0f3dc",
-        "bd9414b6.e33db8",
-        "af55989d.cc8ae8"
+        "bd9414b6.e33db8"
       ]
     ]
   },
@@ -131,7 +130,8 @@
     "y": 240,
     "wires": [
       [
-        "bd9414b6.e33db8"
+        "bd9414b6.e33db8",
+        "93c5a708.6034b8"
       ]
     ]
   },
@@ -510,23 +510,6 @@
     ]
   },
   {
-    "id": "af55989d.cc8ae8",
-    "type": "debug",
-    "z": "f180ab88.925788",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "true",
-    "targetType": "full",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 520,
-    "y": 200,
-    "wires": []
-  },
-  {
     "id": "a80e0c22.f712",
     "type": "api-current-state",
     "z": "f180ab88.925788",
@@ -593,6 +576,29 @@
     "name": "",
     "x": 730,
     "y": 720,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "93c5a708.6034b8",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "toggle light christmas tree",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "light",
+    "service": "toggle",
+    "entityId": "light.christmas_tree",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 790,
+    "y": 240,
     "wires": [
       []
     ]
