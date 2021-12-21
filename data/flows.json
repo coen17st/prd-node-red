@@ -9248,19 +9248,8 @@
         "y": 80,
         "wires": [
             [
-                "e438727.3f69b9"
+                "2999e37e.59e00c"
             ],
-            []
-        ]
-    },
-    {
-        "id": "e438727.3f69b9",
-        "type": "subflow:ae0491bb.4f1eb",
-        "z": "2910f43f.ab852c",
-        "name": "",
-        "x": 1140,
-        "y": 80,
-        "wires": [
             []
         ]
     },
@@ -21684,29 +21673,6 @@
         ]
     },
     {
-        "id": "a7bf73cc.61a0a",
-        "type": "api-call-service",
-        "z": "2910f43f.ab852c",
-        "name": "select alles uit",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "input_select",
-        "service": "select_option",
-        "entityId": "input_select.harmonyhub",
-        "data": "{\"option\":\"Alles Uit\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1140,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "e0d9da73.ea88d8",
         "type": "change",
         "z": "2910f43f.ab852c",
@@ -24159,41 +24125,6 @@
         ]
     },
     {
-        "id": "ba5f839b.2108d",
-        "type": "api-current-state",
-        "z": "2910f43f.ab852c",
-        "name": "input select is not alles uit",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 2,
-        "halt_if": "Alles Uit",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "input_select.harmonyhub",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "x": 410,
-        "y": 240,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
         "id": "42953716.454f98",
         "type": "api-current-state",
         "z": "2910f43f.ab852c",
@@ -24927,6 +24858,100 @@
         "y": 240,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "2999e37e.59e00c",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "select tv",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_select",
+        "service": "select_option",
+        "entityId": "input_select.harmonyhub",
+        "data": "{\"option\":\"TV\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1120,
+        "y": 80,
+        "wires": [
+            [
+                "284dd9e0.78c446"
+            ]
+        ]
+    },
+    {
+        "id": "a7bf73cc.61a0a",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "select alles uit",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_select",
+        "service": "select_option",
+        "entityId": "input_select.harmonyhub",
+        "data": "{\"option\":\"Alles Uit\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1140,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19b5a0a6.07793f",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "select scherm uit",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_select",
+        "service": "select_option",
+        "entityId": "input_select.harmonyhub",
+        "data": "{\"option\":\"Scherm Uit\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1430,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "284dd9e0.78c446",
+        "type": "delay",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1260,
+        "y": 80,
+        "wires": [
+            [
+                "19b5a0a6.07793f"
+            ]
         ]
     }
 ]
