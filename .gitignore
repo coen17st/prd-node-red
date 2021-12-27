@@ -8,3 +8,4 @@
 /data/node-red-contrib-home-assistant-websocket.json
 /prd-node-red-app.env
 /.ssh/
+data/.config.users.json
