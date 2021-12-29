@@ -25102,7 +25102,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Een nieuw IP-adres is gereleased door de pfSense DHCP-server. /DHCP releases: {{{payload_new}}}",
+        "template": "Een nieuw IP-adres is gereleased door de pfSense DHCP-server. /nDHCP releases: {{{payload_new}}}",
         "output": "str",
         "x": 780,
         "y": 1280,
