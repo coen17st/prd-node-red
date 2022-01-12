@@ -6,6 +6,8 @@ services:
     container_name: prd-node-red-app
     restart: unless-stopped
     env_file: prd-node-red-app.env
+    ports:
+      - 1880:1880
     networks:
       - reverse-proxy
       - mosquitto
