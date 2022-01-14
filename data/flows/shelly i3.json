@@ -584,6 +584,7 @@
     "id": "93c5a708.6034b8",
     "type": "api-call-service",
     "z": "f180ab88.925788",
+    "d": true,
     "name": "toggle light christmas tree",
     "server": "4ba92433.2478cc",
     "version": 3,
