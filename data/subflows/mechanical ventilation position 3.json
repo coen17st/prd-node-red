@@ -212,7 +212,7 @@
     "z": "7d5d30e3.483af",
     "name": "state mechanical ventilation position 3 off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -234,6 +234,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 340,
     "y": 80,
     "wires": [

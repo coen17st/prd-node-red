@@ -7,8 +7,8 @@
     "category": "",
     "in": [
       {
-        "x": 40,
-        "y": 120,
+        "x": 60,
+        "y": 180,
         "wires": [
           {
             "id": "f401f4f7.3ab058"
@@ -31,22 +31,7 @@
         ]
       }
     ],
-    "out": [
-      {
-        "x": 880,
-        "y": 160,
-        "wires": [
-          {
-            "id": "b85d118c.fbdc4",
-            "port": 0
-          },
-          {
-            "id": "f6de2518.2672a8",
-            "port": 0
-          }
-        ]
-      }
-    ],
+    "out": [],
     "env": [],
     "color": "#DDAA99"
   },
@@ -67,8 +52,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 250,
-    "y": 60,
+    "x": 280,
+    "y": 120,
     "wires": [
       []
     ]
@@ -90,8 +75,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 220,
-    "y": 20,
+    "x": 240,
+    "y": 80,
     "wires": [
       []
     ]
@@ -122,8 +107,8 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 210,
-    "y": 140,
+    "x": 230,
+    "y": 200,
     "wires": [
       [
         "397bbd3d.0bb3f2"
@@ -147,8 +132,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 450,
-    "y": 140,
+    "x": 470,
+    "y": 200,
     "wires": [
       [
         "477c8f0e.c4289"
@@ -175,8 +160,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 630,
-    "y": 140,
+    "x": 650,
+    "y": 200,
     "wires": [
       [
         "b85d118c.fbdc4"
@@ -194,10 +179,12 @@
     "syntax": "mustache",
     "template": "De verwarming in {{payload.attributes.friendly_name}} is van handmatige naar automatische stand geschakeld.",
     "output": "str",
-    "x": 760,
-    "y": 140,
+    "x": 780,
+    "y": 200,
     "wires": [
-      []
+      [
+        "7147e323.11d98c"
+      ]
     ]
   },
   {
@@ -226,8 +213,8 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 200,
-    "y": 180,
+    "x": 220,
+    "y": 240,
     "wires": [
       [
         "9eb23897.6d9b38"
@@ -251,8 +238,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 410,
-    "y": 180,
+    "x": 430,
+    "y": 240,
     "wires": [
       [
         "f2f64bc8.d21168"
@@ -279,8 +266,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 630,
-    "y": 180,
+    "x": 650,
+    "y": 240,
     "wires": [
       [
         "f6de2518.2672a8"
@@ -298,10 +285,12 @@
     "syntax": "mustache",
     "template": "Niemand is aanwezig. {{{payload.attributes.friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
     "output": "str",
-    "x": 760,
-    "y": 180,
+    "x": 780,
+    "y": 240,
     "wires": [
-      []
+      [
+        "7147e323.11d98c"
+      ]
     ]
   },
   {
@@ -330,8 +319,8 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 220,
-    "y": 220,
+    "x": 240,
+    "y": 280,
     "wires": [
       [
         "73dcb69e.8515b8"
@@ -355,8 +344,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 440,
-    "y": 220,
+    "x": 460,
+    "y": 280,
     "wires": [
       []
     ]
@@ -365,7 +354,7 @@
     "id": "83808dcd.70439",
     "type": "api-call-service",
     "z": "79544bf2.1ff3a4",
-    "name": "turn off warmwater",
+    "name": "turn off water heater",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -378,10 +367,30 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 210,
-    "y": 100,
+    "x": 240,
+    "y": 160,
     "wires": [
       []
     ]
+  },
+  {
+    "id": "7147e323.11d98c",
+    "type": "subflow:3a85158d.efd05a",
+    "z": "79544bf2.1ff3a4",
+    "name": "messages",
+    "env": [],
+    "x": 950,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "c57acb4f.9d1808",
+    "type": "comment",
+    "z": "79544bf2.1ff3a4",
+    "name": "away mode actions",
+    "info": "",
+    "x": 130,
+    "y": 40,
+    "wires": []
   }
 ]

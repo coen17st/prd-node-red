@@ -1,0 +1,124 @@
+[
+  {
+    "id": "fc2fab82.81dbf8",
+    "type": "tab",
+    "label": "adguard",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "9e390214.7782d",
+    "type": "comment",
+    "z": "fc2fab82.81dbf8",
+    "name": "turn on addguard home",
+    "info": "turn on addguard after 30 minutes if switch is set to off",
+    "x": 120,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "c61a2461.b59a38",
+    "type": "server-state-changed",
+    "z": "fc2fab82.81dbf8",
+    "name": "adguard protection state is off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "switch.adguard_protection",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": false,
+    "ignorePrevStateUnavailable": false,
+    "ignoreCurrentStateUnknown": false,
+    "ignoreCurrentStateUnavailable": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 100,
+    "wires": [
+      [
+        "a5bd8a29.fe17e8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "77761c5f.32b5f4",
+    "type": "api-call-service",
+    "z": "fc2fab82.81dbf8",
+    "name": "turn on adguard protection",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "switch",
+    "service": "turn_on",
+    "entityId": "switch.adguard_protection",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 580,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a5bd8a29.fe17e8",
+    "type": "stoptimer",
+    "z": "fc2fab82.81dbf8",
+    "duration": "30",
+    "units": "Minute",
+    "payloadtype": "num",
+    "payloadval": "0",
+    "name": "",
+    "x": 360,
+    "y": 100,
+    "wires": [
+      [
+        "77761c5f.32b5f4"
+      ],
+      []
+    ]
+  }
+]

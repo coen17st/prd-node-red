@@ -2,7 +2,7 @@
   {
     "id": "f180ab88.925788",
     "type": "tab",
-    "label": "shelly i3",
+    "label": "shelly_i3",
     "disabled": false,
     "info": ""
   },
@@ -15,8 +15,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 540,
+    "x": 150,
+    "y": 660,
     "wires": [
       [
         "bd9414b6.e33db8",
@@ -34,8 +34,8 @@
     "format": "handlebars",
     "syntax": "mustache",
     "template": "<html>\n    <head></head>\n    <body>\n        <h1>url: {{req.url}}</h1>\n        <h1>method: {{req.method}}</h1>\n    </body>\n</html>",
-    "x": 440,
-    "y": 40,
+    "x": 500,
+    "y": 80,
     "wires": [
       [
         "de8e98e8.de6cb8"
@@ -49,8 +49,8 @@
     "name": "http response",
     "statusCode": "",
     "headers": {},
-    "x": 600,
-    "y": 40,
+    "x": 660,
+    "y": 80,
     "wires": []
   },
   {
@@ -70,8 +70,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 810,
-    "y": 660,
+    "x": 830,
+    "y": 780,
     "wires": [
       []
     ]
@@ -85,8 +85,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 120,
+    "x": 150,
+    "y": 160,
     "wires": [
       [
         "7dc39f07.0f3dc",
@@ -111,8 +111,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 780,
-    "y": 120,
+    "x": 800,
+    "y": 160,
     "wires": [
       []
     ]
@@ -126,8 +126,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 240,
+    "x": 150,
+    "y": 280,
     "wires": [
       [
         "bd9414b6.e33db8",
@@ -144,8 +144,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 300,
+    "x": 150,
+    "y": 340,
     "wires": [
       [
         "c4aeda1d.85afa8",
@@ -162,8 +162,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 180,
+    "x": 150,
+    "y": 220,
     "wires": [
       [
         "bd9414b6.e33db8"
@@ -179,8 +179,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 180,
-    "y": 360,
+    "x": 160,
+    "y": 400,
     "wires": [
       [
         "bd9414b6.e33db8",
@@ -197,8 +197,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 180,
-    "y": 440,
+    "x": 160,
+    "y": 480,
     "wires": [
       [
         "a682fb38.5bddb8",
@@ -215,8 +215,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 660,
+    "x": 150,
+    "y": 780,
     "wires": [
       [
         "bd9414b6.e33db8",
@@ -233,8 +233,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 720,
+    "x": 150,
+    "y": 840,
     "wires": [
       [
         "bd9414b6.e33db8",
@@ -251,8 +251,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 190,
-    "y": 600,
+    "x": 150,
+    "y": 720,
     "wires": [
       [
         "bd9414b6.e33db8"
@@ -268,8 +268,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 180,
-    "y": 780,
+    "x": 160,
+    "y": 900,
     "wires": [
       [
         "bd9414b6.e33db8"
@@ -285,8 +285,8 @@
     "method": "get",
     "upload": false,
     "swaggerDoc": "",
-    "x": 180,
-    "y": 840,
+    "x": 160,
+    "y": 960,
     "wires": [
       [
         "bd9414b6.e33db8"
@@ -310,8 +310,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 790,
-    "y": 300,
+    "x": 810,
+    "y": 340,
     "wires": [
       []
     ]
@@ -322,7 +322,7 @@
     "z": "f180ab88.925788",
     "name": "state radio station ",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Radio Uit",
     "halt_if_type": "str",
@@ -344,8 +344,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 550,
-    "y": 440,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 570,
+    "y": 480,
     "wires": [
       [
         "c3116dd.2ddc69"
@@ -372,8 +375,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 770,
-    "y": 440,
+    "x": 790,
+    "y": 480,
     "wires": [
       []
     ]
@@ -395,8 +398,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 770,
-    "y": 480,
+    "x": 790,
+    "y": 520,
     "wires": [
       []
     ]
@@ -407,7 +410,7 @@
     "z": "f180ab88.925788",
     "name": "state spotify playlist",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Spotify Uit",
     "halt_if_type": "str",
@@ -429,8 +432,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 550,
-    "y": 360,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 570,
+    "y": 400,
     "wires": [
       [
         "5d60f805.0a0708"
@@ -457,8 +463,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 780,
-    "y": 360,
+    "x": 800,
+    "y": 400,
     "wires": [
       []
     ]
@@ -480,8 +486,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 780,
-    "y": 400,
+    "x": 800,
+    "y": 440,
     "wires": [
       []
     ]
@@ -503,68 +509,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 810,
-    "y": 540,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "a80e0c22.f712",
-    "type": "api-current-state",
-    "z": "f180ab88.925788",
-    "name": "state doorbell chime off",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "switch.doorbell_chime_active",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "x": 790,
-    "y": 1200,
-    "wires": [
-      [
-        "73e735d5.208ebc"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "73e735d5.208ebc",
-    "type": "api-call-service",
-    "z": "f180ab88.925788",
-    "name": "turn on switch chime active",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "switch",
-    "service": "turn_on",
-    "entityId": "switch.doorbell_chime_active",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1040,
-    "y": 1200,
+    "x": 830,
+    "y": 660,
     "wires": [
       []
     ]
@@ -574,11 +520,9 @@
     "type": "subflow:79544bf2.1ff3a4",
     "z": "f180ab88.925788",
     "name": "",
-    "x": 730,
-    "y": 720,
-    "wires": [
-      []
-    ]
+    "x": 750,
+    "y": 840,
+    "wires": []
   },
   {
     "id": "93c5a708.6034b8",
@@ -598,10 +542,30 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 790,
-    "y": 240,
+    "x": 810,
+    "y": 280,
     "wires": [
       []
     ]
+  },
+  {
+    "id": "be5d4d4b.0809d",
+    "type": "comment",
+    "z": "f180ab88.925788",
+    "name": "shelly i3 actions",
+    "info": "",
+    "x": 100,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "107c0d4b.910593",
+    "type": "comment",
+    "z": "f180ab88.925788",
+    "name": "shelly i3 actions",
+    "info": "",
+    "x": 100,
+    "y": 620,
+    "wires": []
   }
 ]

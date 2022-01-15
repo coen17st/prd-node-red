@@ -61,8 +61,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 150,
-    "y": 120,
+    "x": 110,
+    "y": 140,
     "wires": [
       [
         "37466c93.d14b84"
@@ -124,8 +124,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 120,
-    "y": 180,
+    "x": 80,
+    "y": 200,
     "wires": [
       [
         "c8eb1592.520518"
@@ -154,8 +154,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 370,
-    "y": 180,
+    "x": 330,
+    "y": 200,
     "wires": [
       [
         "1351cb3a.cc7995"
@@ -187,8 +187,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 340,
-    "y": 120,
+    "x": 300,
+    "y": 140,
     "wires": [
       [
         "1351cb3a.cc7995"
@@ -204,7 +204,7 @@
     "z": "55da1471.fda0fc",
     "name": "cleaned today is off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -226,8 +226,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 990,
-    "y": 200,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 950,
+    "y": 220,
     "wires": [
       [
         "eccced83.41688"
@@ -256,8 +259,8 @@
     "topic": "",
     "payload": "02:00 Payload 'off'",
     "payloadType": "str",
-    "x": 150,
-    "y": 60,
+    "x": 110,
+    "y": 80,
     "wires": [
       [
         "787efd3b.bd13e4"
@@ -281,8 +284,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 370,
-    "y": 60,
+    "x": 350,
+    "y": 80,
     "wires": [
       []
     ]
@@ -304,8 +307,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1390,
-    "y": 200,
+    "x": 1350,
+    "y": 220,
     "wires": [
       [
         "c643d4d4.2baf98"
@@ -329,8 +332,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1000,
-    "y": 100,
+    "x": 940,
+    "y": 120,
     "wires": [
       []
     ]
@@ -341,7 +344,7 @@
     "z": "55da1471.fda0fc",
     "name": "state is not docked",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "docked",
     "halt_if_type": "str",
@@ -363,8 +366,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 550,
-    "y": 100,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 510,
+    "y": 120,
     "wires": [
       [
         "32d50dd7.16e062"
@@ -378,7 +384,7 @@
     "z": "55da1471.fda0fc",
     "name": "state group persons is home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -400,8 +406,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 580,
-    "y": 180,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 540,
+    "y": 200,
     "wires": [
       [],
       [
@@ -415,7 +424,7 @@
     "z": "55da1471.fda0fc",
     "name": "guest is off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -437,8 +446,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 790,
-    "y": 140,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 750,
+    "y": 160,
     "wires": [
       [
         "60f6cd3f.56a0f4"
@@ -452,7 +464,7 @@
     "z": "55da1471.fda0fc",
     "name": "vacuum is not cleaning",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "cleaning",
     "halt_if_type": "str",
@@ -474,8 +486,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 1200,
-    "y": 200,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1160,
+    "y": 220,
     "wires": [
       [
         "a52152b0.f593b"
@@ -489,7 +504,7 @@
     "z": "55da1471.fda0fc",
     "name": "state is not returning",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "returning",
     "halt_if_type": "str",
@@ -511,8 +526,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 760,
-    "y": 100,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 720,
+    "y": 120,
     "wires": [
       [
         "2a9f3bf0.575684"
@@ -524,10 +542,10 @@
     "id": "8e7bbae.f382348",
     "type": "comment",
     "z": "55da1471.fda0fc",
-    "name": "VACUUM CLEANER",
+    "name": "robot vacuum cleaner",
     "info": "",
-    "x": 150,
-    "y": 20,
+    "x": 120,
+    "y": 40,
     "wires": []
   },
   {
@@ -585,8 +603,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 160,
-    "y": 240,
+    "x": 120,
+    "y": 260,
     "wires": [
       [
         "b555794d.5740c8"
@@ -598,7 +616,7 @@
     "id": "e4d25a8e.b5b258",
     "type": "api-call-service",
     "z": "55da1471.fda0fc",
-    "name": "In APP Notify",
+    "name": "in app notification",
     "server": "4ba92433.2478cc",
     "version": 3,
     "debugenabled": false,
@@ -611,11 +629,11 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1710,
-    "y": 300,
+    "x": 1690,
+    "y": 320,
     "wires": [
       [
-        "db9e2b19.e376b8"
+        "570d124.d715eec"
       ]
     ]
   },
@@ -674,8 +692,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
-    "y": 300,
+    "x": 100,
+    "y": 320,
     "wires": [
       [
         "1c372f1.535d7d1"
@@ -689,7 +707,7 @@
     "z": "55da1471.fda0fc",
     "name": "cleaned today is off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -711,8 +729,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 330,
-    "y": 300,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 290,
+    "y": 320,
     "wires": [
       [
         "c5ad7ab8.30fda8"
@@ -731,11 +752,11 @@
     "syntax": "mustache",
     "template": "De stofzuiger is gestart.",
     "output": "str",
-    "x": 1560,
-    "y": 260,
+    "x": 1520,
+    "y": 280,
     "wires": [
       [
-        "db9e2b19.e376b8"
+        "570d124.d715eec"
       ]
     ]
   },
@@ -750,25 +771,13 @@
     "syntax": "mustache",
     "template": "De stofzuiger zit vast en heeft hulp nodig.",
     "output": "str",
-    "x": 1560,
-    "y": 300,
+    "x": 1520,
+    "y": 320,
     "wires": [
       [
         "e4d25a8e.b5b258"
       ]
     ]
-  },
-  {
-    "id": "db9e2b19.e376b8",
-    "type": "link out",
-    "z": "55da1471.fda0fc",
-    "name": "",
-    "links": [
-      "7b0f1685.0279d8"
-    ],
-    "x": 1835,
-    "y": 260,
-    "wires": []
   },
   {
     "id": "934221e4.b2d0d",
@@ -779,8 +788,8 @@
     "payloadtype": "num",
     "payloadval": "0",
     "name": "",
-    "x": 760,
-    "y": 280,
+    "x": 720,
+    "y": 300,
     "wires": [
       [
         "60f6cd3f.56a0f4"
@@ -797,8 +806,8 @@
     "payloadtype": "num",
     "payloadval": "0",
     "name": "",
-    "x": 760,
-    "y": 320,
+    "x": 720,
+    "y": 340,
     "wires": [
       [
         "6bd54ad5.5aea04"
@@ -812,7 +821,7 @@
     "z": "55da1471.fda0fc",
     "name": "vacuum is not cleaning",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "cleaning",
     "halt_if_type": "str",
@@ -834,8 +843,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 540,
-    "y": 300,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 500,
+    "y": 320,
     "wires": [
       [
         "934221e4.b2d0d",
@@ -861,8 +873,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 950,
-    "y": 320,
+    "x": 910,
+    "y": 340,
     "wires": [
       []
     ]
@@ -922,8 +934,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 170,
-    "y": 360,
+    "x": 130,
+    "y": 380,
     "wires": [
       [
         "272212f1.26bb6e"
@@ -952,8 +964,8 @@
     "entityLocationType": "none",
     "checkCurrentState": true,
     "blockInputOverrides": true,
-    "x": 360,
-    "y": 360,
+    "x": 320,
+    "y": 380,
     "wires": [
       [
         "155ef739.0e1de9"
@@ -967,7 +979,7 @@
     "z": "55da1471.fda0fc",
     "name": "cleaned today is off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -989,8 +1001,11 @@
         "valueType": "entity"
       }
     ],
-    "x": 530,
-    "y": 360,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 490,
+    "y": 380,
     "wires": [
       [
         "a098e71.e0db718"
@@ -1015,10 +1030,19 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 750,
-    "y": 360,
+    "x": 710,
+    "y": 380,
     "wires": [
       []
     ]
+  },
+  {
+    "id": "570d124.d715eec",
+    "type": "subflow:3a85158d.efd05a",
+    "z": "55da1471.fda0fc",
+    "name": "",
+    "x": 1870,
+    "y": 280,
+    "wires": []
   }
 ]

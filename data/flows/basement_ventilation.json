@@ -2,7 +2,7 @@
   {
     "id": "4e909abe.0b62e4",
     "type": "tab",
-    "label": "basement ventilation",
+    "label": "basement_ventilation",
     "disabled": false,
     "info": ""
   },
@@ -76,7 +76,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state wall temperature basement < dewpoint living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.living_room_dewpoint",
     "halt_if_type": "msg",
@@ -98,6 +98,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 790,
     "y": 120,
     "wires": [
@@ -113,7 +116,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state wall temperature basement < dewpoint master bedroom",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.master_bedroom_dewpoint",
     "halt_if_type": "msg",
@@ -135,6 +138,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 800,
     "y": 180,
     "wires": [
@@ -150,7 +156,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity basement < absolute humidity living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.living_room_absolutehumidity",
     "halt_if_type": "msg",
@@ -172,6 +178,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 820,
     "y": 240,
     "wires": [
@@ -187,7 +196,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state ventilation position 0 off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -209,6 +218,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1240,
     "y": 700,
     "wires": [
@@ -272,7 +284,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state temperature outdoor <= 5",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "5",
     "halt_if_type": "num",
@@ -294,6 +306,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 700,
     "wires": [
@@ -311,7 +326,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state heating power basement <= 0%",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "0",
     "halt_if_type": "num",
@@ -333,6 +348,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1230,
     "y": 540,
     "wires": [
@@ -348,7 +366,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state dewpoint living room ",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -370,6 +388,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 390,
     "y": 120,
     "wires": [
@@ -384,7 +405,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state dewpoint master bedroom ",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -406,6 +427,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 180,
     "wires": [
@@ -420,7 +444,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -442,6 +466,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 420,
     "y": 240,
     "wires": [
@@ -456,7 +483,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state dewpoint living room ",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -478,6 +505,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 390,
     "y": 420,
     "wires": [
@@ -492,7 +522,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state wall temperature basement  < dewpoint living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.living_room_dewpoint",
     "halt_if_type": "msg",
@@ -514,6 +544,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 790,
     "y": 420,
     "wires": [
@@ -529,7 +562,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state master bedroom dewpoint",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -551,6 +584,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 480,
     "wires": [
@@ -565,7 +601,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state wall temperature basement < dewpoint master bedroom",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.master_bedroom_dewpoint",
     "halt_if_type": "msg",
@@ -587,6 +623,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 800,
     "y": 480,
     "wires": [
@@ -602,7 +641,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -624,6 +663,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 420,
     "y": 540,
     "wires": [
@@ -638,7 +680,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity basement > absolute humidity living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.living_room_absolutehumidity",
     "halt_if_type": "msg",
@@ -660,6 +702,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 820,
     "y": 540,
     "wires": [
@@ -685,7 +730,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state group persons home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -707,6 +752,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 390,
     "y": 800,
     "wires": [
@@ -724,7 +772,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state ventilation position 2 off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -746,6 +794,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1240,
     "y": 780,
     "wires": [
@@ -771,7 +822,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state ventilation position 3 off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -793,6 +844,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1240,
     "y": 920,
     "wires": [
@@ -1016,7 +1070,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity basement",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -1038,6 +1092,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 420,
     "y": 1820,
     "wires": [
@@ -1052,7 +1109,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state absolute humidity outdoor > absolute humidity basement",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.basement_absolutehumidity",
     "halt_if_type": "msg",
@@ -1074,6 +1131,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 790,
     "y": 1880,
     "wires": [
@@ -1116,7 +1176,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state temperature outdoor > temperature basement",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "sensor.basement_temperature",
     "halt_if_type": "msg",
@@ -1138,6 +1198,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 470,
     "y": 2120,
     "wires": [
@@ -1155,7 +1218,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Basement Heating Power <= 0%",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "0",
     "halt_if_type": "num",
@@ -1177,6 +1240,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 2060,
     "wires": [
@@ -1258,7 +1324,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state precipitation buienradar <= 0",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "0",
     "halt_if_type": "num",
@@ -1280,6 +1346,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 420,
     "y": 1940,
     "wires": [
@@ -1295,7 +1364,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state basement window off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -1317,6 +1386,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1360,
     "y": 2020,
     "wires": [
@@ -1364,7 +1436,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state basement window on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -1386,6 +1458,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1360,
     "y": 1920,
     "wires": [
@@ -1583,7 +1658,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state autonomous on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -1605,6 +1680,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1500,
     "y": 540,
     "wires": [
@@ -1620,7 +1698,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state humidity basement >= 60%",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "60",
     "halt_if_type": "num",
@@ -1642,6 +1720,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 600,
     "wires": [
@@ -1659,7 +1740,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state temperature basement ",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -1681,6 +1762,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 700,
     "y": 600,
     "wires": [
@@ -1695,7 +1779,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state temperature living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -1717,6 +1801,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 960,
     "y": 600,
     "wires": [
@@ -1731,7 +1818,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state humidity living room",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -1753,6 +1840,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1210,
     "y": 600,
     "wires": [
@@ -1891,7 +1981,7 @@
     "z": "4e909abe.0b62e4",
     "name": "Message Ventilatie",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -1910,6 +2000,14 @@
       },
       {
         "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
         "value": ""
       }
     ],
@@ -1930,18 +2028,6 @@
     ]
   },
   {
-    "id": "2bddc73.a825b38",
-    "type": "link out",
-    "z": "4e909abe.0b62e4",
-    "name": "",
-    "links": [
-      "7b0f1685.0279d8"
-    ],
-    "x": 2715,
-    "y": 1260,
-    "wires": []
-  },
-  {
     "id": "27cc17cd.025b08",
     "type": "delay",
     "z": "4e909abe.0b62e4",
@@ -1960,8 +2046,8 @@
     "y": 1140,
     "wires": [
       [
-        "2bddc73.a825b38",
-        "24b246c8.4c72fa"
+        "24b246c8.4c72fa",
+        "9f49fee8.4c9e7"
       ]
     ]
   },
@@ -2133,7 +2219,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state temperature outdoor > 18",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "18",
     "halt_if_type": "num",
@@ -2155,6 +2241,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 2180,
     "wires": [
@@ -2170,7 +2259,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state humidity basement < 65%",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "65",
     "halt_if_type": "num",
@@ -2192,6 +2281,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 750,
     "y": 800,
     "wires": [
@@ -2209,7 +2301,7 @@
     "z": "4e909abe.0b62e4",
     "name": "is daalt",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Daalt",
     "halt_if_type": "str",
@@ -2231,6 +2323,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1020,
     "y": 2340,
     "wires": [
@@ -2246,7 +2341,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state is up",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Stijgt",
     "halt_if_type": "str",
@@ -2268,6 +2363,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1020,
     "y": 2300,
     "wires": [
@@ -2349,7 +2447,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state condidtion buienrader not rainy",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "rainy",
     "halt_if_type": "str",
@@ -2371,6 +2469,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 430,
     "y": 2000,
     "wires": [
@@ -2424,7 +2525,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state basement temperature",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -2446,6 +2547,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 700,
     "y": 1820,
     "wires": [
@@ -2460,7 +2564,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state buienradar temperature",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "num",
@@ -2482,6 +2586,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 400,
     "y": 1880,
     "wires": [
@@ -2496,7 +2603,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state thermostate living room off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "heat",
     "halt_if_type": "str",
@@ -2518,6 +2625,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1010,
     "y": 860,
     "wires": [
@@ -2628,7 +2738,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state ventilation position 0 off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -2650,6 +2760,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1360,
     "y": 200,
     "wires": [
@@ -2665,7 +2778,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation autonomous on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -2687,6 +2800,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1670,
     "y": 200,
     "wires": [
@@ -2970,7 +3086,7 @@
     "z": "4e909abe.0b62e4",
     "name": "state mechanical ventilation autonomous off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -2992,6 +3108,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1010,
     "y": 1140,
     "wires": [
@@ -3417,7 +3536,7 @@
     "z": "4e909abe.0b62e4",
     "name": "",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -3436,6 +3555,14 @@
       },
       {
         "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
         "value": ""
       }
     ],
@@ -3540,5 +3667,14 @@
         "bfdcba16.625018"
       ]
     ]
+  },
+  {
+    "id": "9f49fee8.4c9e7",
+    "type": "subflow:3a85158d.efd05a",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "x": 2750,
+    "y": 1160,
+    "wires": []
   }
 ]

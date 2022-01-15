@@ -1,0 +1,194 @@
+[
+  {
+    "id": "60541649.7e2a38",
+    "type": "tab",
+    "label": "update_notification_home_assistant",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "3bde0d42.2da3c2",
+    "type": "server-state-changed",
+    "z": "60541649.7e2a38",
+    "name": "state updater on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.updater",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 100,
+    "y": 100,
+    "wires": [
+      [
+        "b95490ba.69e6e"
+      ],
+      [
+        "66e977c9.606d38"
+      ]
+    ]
+  },
+  {
+    "id": "b95490ba.69e6e",
+    "type": "template",
+    "z": "60541649.7e2a38",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Versie {{data.new_state.attributes.newest_version}} van Home Assistant is beschikbaar \\n\\n[Release Notes]({{{data.new_state.attributes.release_notes}}})",
+    "output": "str",
+    "x": 280,
+    "y": 100,
+    "wires": [
+      [
+        "dc54cc2f.496df",
+        "c1e5a03a.c06a9"
+      ]
+    ]
+  },
+  {
+    "id": "66e977c9.606d38",
+    "type": "api-call-service",
+    "z": "60541649.7e2a38",
+    "name": "app notification dismiss",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "persistent_notification",
+    "service": "dismiss",
+    "entityId": "",
+    "data": "{\"notification_id\":\"updateHA\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 330,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3a76fdcc.5c73f2",
+    "type": "api-call-service",
+    "z": "60541649.7e2a38",
+    "name": "app notification",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "persistent_notification",
+    "service": "create",
+    "entityId": "",
+    "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\",\"notification_id\":\"{{notification_id}}\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 740,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f1b0b55a.6c7178",
+    "type": "comment",
+    "z": "60541649.7e2a38",
+    "name": "home assistant notification when there is a update available",
+    "info": "",
+    "x": 230,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "dc54cc2f.496df",
+    "type": "change",
+    "z": "60541649.7e2a38",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "Update",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "notification_id",
+        "pt": "msg",
+        "to": "updateHA",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 560,
+    "y": 100,
+    "wires": [
+      [
+        "3a76fdcc.5c73f2"
+      ]
+    ]
+  },
+  {
+    "id": "c1e5a03a.c06a9",
+    "type": "subflow:3a85158d.efd05a",
+    "z": "60541649.7e2a38",
+    "name": "",
+    "x": 550,
+    "y": 140,
+    "wires": []
+  }
+]

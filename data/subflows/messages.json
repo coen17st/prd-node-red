@@ -1,15 +1,29 @@
 [
   {
-    "id": "7564ec02.f4fd84",
-    "type": "tab",
-    "label": "messages",
-    "disabled": false,
-    "info": ""
+    "id": "3a85158d.efd05a",
+    "type": "subflow",
+    "name": "messages",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 40,
+        "y": 40,
+        "wires": [
+          {
+            "id": "97370a88.696b28"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "color": "#DDAA99"
   },
   {
     "id": "97370a88.696b28",
     "type": "change",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "",
     "rules": [
       {
@@ -27,8 +41,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 300,
-    "y": 60,
+    "x": 180,
+    "y": 40,
     "wires": [
       [
         "7836a457.915fdc"
@@ -36,33 +50,9 @@
     ]
   },
   {
-    "id": "7b0f1685.0279d8",
-    "type": "link in",
-    "z": "7564ec02.f4fd84",
-    "name": "message IN",
-    "links": [
-      "2bddc73.a825b38",
-      "39631971.689156",
-      "76a2f2ce.e42e4c",
-      "8a582d16.29ef9",
-      "9bfeecdc.f723d",
-      "db9e2b19.e376b8",
-      "de807278.70c2",
-      "ebd071a5.c6567",
-      "f13b7547.ff3ce8"
-    ],
-    "x": 165,
-    "y": 60,
-    "wires": [
-      [
-        "97370a88.696b28"
-      ]
-    ]
-  },
-  {
     "id": "71177dfd.1f8e74",
     "type": "template",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "time-and-message",
     "field": "tijd-en-message",
     "fieldType": "msg",
@@ -70,8 +60,8 @@
     "syntax": "mustache",
     "template": "{{mytime}}, {{{message}}}",
     "output": "str",
-    "x": 680,
-    "y": 60,
+    "x": 560,
+    "y": 40,
     "wires": [
       [
         "75fc13e6.7a268c"
@@ -81,10 +71,10 @@
   {
     "id": "f7a2e051.4235",
     "type": "ha-entity",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "time-and-message -> sensor message_home_page_1",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -104,6 +94,14 @@
       {
         "property": "unit_of_measurement",
         "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "tijd-en-message",
@@ -116,8 +114,8 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1240,
-    "y": 420,
+    "x": 1120,
+    "y": 400,
     "wires": [
       []
     ]
@@ -125,10 +123,10 @@
   {
     "id": "133fb6cb.864ba9",
     "type": "api-current-state",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "get message_home_page_1",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -144,8 +142,11 @@
         "valueType": "entityState"
       }
     ],
-    "x": 1160,
-    "y": 60,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1040,
+    "y": 40,
     "wires": [
       [
         "43e5dace.e04654"
@@ -155,10 +156,10 @@
   {
     "id": "a393de42.16e7c",
     "type": "ha-entity",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "put sensor message_home_page_1 -> 2",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -178,6 +179,14 @@
       {
         "property": "unit_of_measurement",
         "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "message_home_page_1",
@@ -190,8 +199,8 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1200,
-    "y": 240,
+    "x": 1080,
+    "y": 220,
     "wires": [
       [
         "a6f210fe.26244"
@@ -201,10 +210,10 @@
   {
     "id": "a6f210fe.26244",
     "type": "ha-entity",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "put sensor message_home_page_2 -> 3",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -224,6 +233,14 @@
       {
         "property": "unit_of_measurement",
         "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "message_home_page_2",
@@ -236,8 +253,8 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1200,
-    "y": 300,
+    "x": 1080,
+    "y": 280,
     "wires": [
       [
         "b0fb37b5.a99a68"
@@ -247,10 +264,10 @@
   {
     "id": "43e5dace.e04654",
     "type": "api-current-state",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "get message_home_page_2",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -266,8 +283,11 @@
         "valueType": "entityState"
       }
     ],
-    "x": 1160,
-    "y": 120,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1040,
+    "y": 100,
     "wires": [
       [
         "11d10b51.12cf65"
@@ -277,10 +297,10 @@
   {
     "id": "b0fb37b5.a99a68",
     "type": "ha-entity",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "put sensor message_home_page_3 -> 4",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -300,6 +320,14 @@
       {
         "property": "unit_of_measurement",
         "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "message_home_page_3",
@@ -312,8 +340,8 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1200,
-    "y": 360,
+    "x": 1080,
+    "y": 340,
     "wires": [
       [
         "f7a2e051.4235"
@@ -323,10 +351,10 @@
   {
     "id": "11d10b51.12cf65",
     "type": "api-current-state",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "get message_home_page_3",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -342,8 +370,11 @@
         "valueType": "entityState"
       }
     ],
-    "x": 1160,
-    "y": 180,
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1040,
+    "y": 160,
     "wires": [
       [
         "a393de42.16e7c"
@@ -353,10 +384,10 @@
   {
     "id": "7836a457.915fdc",
     "type": "simpletime",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "",
-    "x": 500,
-    "y": 60,
+    "x": 380,
+    "y": 40,
     "wires": [
       [
         "71177dfd.1f8e74"
@@ -366,7 +397,7 @@
   {
     "id": "75fc13e6.7a268c",
     "type": "switch",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "",
     "property": "message",
     "propertyType": "msg",
@@ -380,8 +411,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 850,
-    "y": 60,
+    "x": 730,
+    "y": 40,
     "wires": [
       [
         "b649fc2b.fab89"
@@ -391,7 +422,7 @@
   {
     "id": "b649fc2b.fab89",
     "type": "switch",
-    "z": "7564ec02.f4fd84",
+    "z": "3a85158d.efd05a",
     "name": "",
     "property": "message",
     "propertyType": "msg",
@@ -405,8 +436,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 970,
-    "y": 60,
+    "x": 850,
+    "y": 40,
     "wires": [
       [
         "133fb6cb.864ba9"

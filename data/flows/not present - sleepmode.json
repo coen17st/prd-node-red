@@ -142,7 +142,7 @@
     "z": "8aa6edec.5a013",
     "name": "state guest off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -164,6 +164,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 400,
     "y": 40,
     "wires": [
@@ -187,7 +190,7 @@
     "z": "8aa6edec.5a013",
     "name": "state group persons home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -209,6 +212,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 430,
     "y": 120,
     "wires": [
@@ -364,7 +370,7 @@
     "z": "8aa6edec.5a013",
     "name": "state outdoor dark",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
@@ -386,6 +392,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 810,
     "y": 660,
     "wires": [
@@ -426,7 +435,7 @@
     "z": "8aa6edec.5a013",
     "name": "state home security off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -448,6 +457,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1800,
     "y": 620,
     "wires": [
@@ -488,7 +500,7 @@
     "z": "8aa6edec.5a013",
     "name": "state home security off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -510,6 +522,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 820,
     "y": 120,
     "wires": [
@@ -596,7 +611,7 @@
     "z": "8aa6edec.5a013",
     "name": "state timer security active",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "active",
     "halt_if_type": "str",
@@ -618,6 +633,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 830,
     "y": 840,
     "wires": [
@@ -633,7 +651,7 @@
     "z": "8aa6edec.5a013",
     "name": "state home security off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -655,6 +673,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 820,
     "y": 780,
     "wires": [
@@ -1304,7 +1325,7 @@
     "z": "8aa6edec.5a013",
     "name": "state doorbell chime off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -1326,6 +1347,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 830,
     "y": 720,
     "wires": [

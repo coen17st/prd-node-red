@@ -2,7 +2,7 @@
   {
     "id": "2910f43f.ab852c",
     "type": "tab",
-    "label": "ENTERTAINMENT",
+    "label": "entertainment",
     "disabled": false,
     "info": ""
   },
@@ -1414,7 +1414,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select media player source living room tv",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
@@ -1423,6 +1423,9 @@
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1400,
     "y": 1540,
     "wires": [
@@ -1438,7 +1441,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select media player source living room google home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Woonkamer Google Home",
     "halt_if_type": "str",
@@ -1447,6 +1450,9 @@
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1430,
     "y": 1480,
     "wires": [
@@ -1462,7 +1468,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select media player source lise's google home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Lise's Google Home",
     "halt_if_type": "str",
@@ -1471,6 +1477,9 @@
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1410,
     "y": 1600,
     "wires": [
@@ -1554,7 +1563,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input select radio station",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -1576,6 +1585,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 410,
     "y": 1180,
     "wires": [
@@ -1590,7 +1602,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select media source livingroom tv",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
@@ -1612,6 +1624,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 950,
     "y": 920,
     "wires": [
@@ -1714,7 +1729,7 @@
     "z": "2910f43f.ab852c",
     "name": "state media player source",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -1736,6 +1751,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 910,
     "y": 1180,
     "wires": [
@@ -1750,7 +1768,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select media player source living room tv",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
@@ -1772,6 +1790,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 980,
     "y": 1260,
     "wires": [
@@ -1969,7 +1990,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input select mediaplayer source",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -1991,6 +2012,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1270,
     "y": 2000,
     "wires": [
@@ -2266,7 +2290,7 @@
     "z": "2910f43f.ab852c",
     "name": "state media player source",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -2288,6 +2312,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 930,
     "y": 1820,
     "wires": [
@@ -2412,7 +2439,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select radio station radio off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Radio Uit",
     "halt_if_type": "str",
@@ -2434,6 +2461,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1500,
     "y": 1780,
     "wires": [
@@ -2513,7 +2543,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input boolean tv off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -2535,6 +2565,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1230,
     "y": 240,
     "wires": [
@@ -2596,7 +2629,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input boolean tv on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -2618,6 +2651,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1230,
     "y": 420,
     "wires": [
@@ -2656,7 +2692,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input boolean tv off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -2678,6 +2714,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1230,
     "y": 360,
     "wires": [
@@ -2716,7 +2755,7 @@
     "z": "2910f43f.ab852c",
     "name": "state input boolean music on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -2738,6 +2777,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1240,
     "y": 480,
     "wires": [
@@ -2753,7 +2795,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select spotify spotify off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Spotify Uit",
     "halt_if_type": "str",
@@ -2775,6 +2817,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1380,
     "y": 1140,
     "wires": [
@@ -2790,7 +2835,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select spotify off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Spotify Uit",
     "halt_if_type": "str",
@@ -2812,6 +2857,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 900,
     "y": 800,
     "wires": [
@@ -2827,7 +2875,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select radio off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Radio Uit",
     "halt_if_type": "str",
@@ -2849,6 +2897,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1140,
     "y": 800,
     "wires": [
@@ -2910,7 +2961,7 @@
     "z": "2910f43f.ab852c",
     "name": "state outdoor dark",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
@@ -2932,6 +2983,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 890,
     "y": 980,
     "wires": [
@@ -3028,7 +3082,7 @@
     "name": "tv input select correction",
     "info": "",
     "x": 150,
-    "y": 20,
+    "y": 40,
     "wires": []
   },
   {
@@ -3076,7 +3130,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select is scherm uit",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Scherm Uit",
     "halt_if_type": "str",
@@ -3098,6 +3152,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 930,
     "y": 80,
     "wires": [
@@ -3113,7 +3170,7 @@
     "z": "2910f43f.ab852c",
     "name": "> 59",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "59",
     "halt_if_type": "num",
@@ -3135,6 +3192,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 750,
     "y": 80,
     "wires": [
@@ -3405,7 +3465,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select media source livingroom tv",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Woonkamer TV",
     "halt_if_type": "str",
@@ -3427,6 +3487,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 950,
     "y": 1040,
     "wires": [
@@ -3580,7 +3643,7 @@
     "z": "2910f43f.ab852c",
     "name": "< 1",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "1",
     "halt_if_type": "num",
@@ -3602,6 +3665,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 750,
     "y": 120,
     "wires": [
@@ -3617,7 +3683,7 @@
     "z": "2910f43f.ab852c",
     "name": "input select is not alles uit",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "Alles Uit",
     "halt_if_type": "str",
@@ -3639,6 +3705,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 930,
     "y": 120,
     "wires": [
@@ -3718,7 +3787,7 @@
     "z": "2910f43f.ab852c",
     "name": "state person coen home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -3740,13 +3809,16 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "override_topic": false,
     "state_location": "payload",
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 370,
-    "y": 2260,
+    "x": 410,
+    "y": 2280,
     "wires": [
       [
         "8b724c44.383e9"
@@ -3760,7 +3832,7 @@
     "z": "2910f43f.ab852c",
     "name": "state media player shield playing",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "playing",
     "halt_if_type": "str",
@@ -3782,12 +3854,15 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "override_topic": false,
     "state_location": "payload",
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 650,
+    "x": 690,
     "y": 2280,
     "wires": [
       [
@@ -3803,7 +3878,7 @@
     "z": "2910f43f.ab852c",
     "name": "state person anne home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -3825,13 +3900,16 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "override_topic": false,
     "state_location": "payload",
     "override_payload": "msg",
     "entity_location": "data",
     "override_data": "msg",
-    "x": 370,
-    "y": 2300,
+    "x": 410,
+    "y": 2340,
     "wires": [
       [
         "8b724c44.383e9"
@@ -3856,8 +3934,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1000,
-    "y": 2280,
+    "x": 1060,
+    "y": 2320,
     "wires": [
       []
     ]
@@ -3873,8 +3951,8 @@
     "syntax": "mustache",
     "template": "TV gepauseerd i.v.m. telefoon gesprek.",
     "output": "str",
-    "x": 860,
-    "y": 2280,
+    "x": 920,
+    "y": 2320,
     "wires": [
       [
         "6d70ecba.7472f4"
@@ -3898,8 +3976,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 870,
-    "y": 2240,
+    "x": 930,
+    "y": 2280,
     "wires": [
       []
     ]
@@ -3959,8 +4037,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 2260,
+    "x": 170,
+    "y": 2280,
     "wires": [
       [
         "d78107e6.77b8e8"
@@ -4023,8 +4101,8 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 130,
-    "y": 2300,
+    "x": 170,
+    "y": 2340,
     "wires": [
       [
         "a7ce2d4e.b4576"
@@ -4036,10 +4114,10 @@
     "id": "91fb6fe8.3da4d",
     "type": "comment",
     "z": "2910f43f.ab852c",
-    "name": "PAUSE WHEN PHONE IS OFFHOOK",
+    "name": "pause when phone is off hook",
     "info": "",
-    "x": 170,
-    "y": 2220,
+    "x": 180,
+    "y": 2240,
     "wires": []
   },
   {
@@ -4141,7 +4219,7 @@
     "z": "2910f43f.ab852c",
     "name": "< 1",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "1",
     "halt_if_type": "num",
@@ -4163,6 +4241,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 750,
     "y": 160,
     "wires": [

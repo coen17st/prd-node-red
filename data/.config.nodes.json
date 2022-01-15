@@ -428,7 +428,7 @@
     },
     "node-red-contrib-cron-plus": {
         "name": "node-red-contrib-cron-plus",
-        "version": "1.5.4",
+        "version": "1.5.5",
         "local": true,
         "nodes": {
             "cronplus": {
@@ -489,17 +489,19 @@
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",
-        "version": "0.37.0",
+        "version": "0.41.3",
         "local": true,
         "nodes": {
             "all": {
                 "name": "all",
                 "types": [
                     "ha-api",
+                    "ha-button",
                     "api-call-service",
                     "server",
                     "api-current-state",
                     "ha-device",
+                    "ha-entity-config",
                     "ha-entity",
                     "server-events",
                     "server-state-changed",
@@ -621,6 +623,23 @@
                 "local": false,
                 "module": "node-red-contrib-string",
                 "file": "/usr/src/node-red/node_modules/node-red-contrib-string/string/string.js"
+            }
+        }
+    },
+    "node-red-contrib-schedex": {
+        "name": "node-red-contrib-schedex",
+        "version": "1.10.6",
+        "local": true,
+        "nodes": {
+            "schedex": {
+                "name": "schedex",
+                "types": [
+                    "schedex"
+                ],
+                "enabled": true,
+                "local": true,
+                "module": "node-red-contrib-schedex",
+                "file": "/data/node_modules/node-red-contrib-schedex/index.js"
             }
         }
     }

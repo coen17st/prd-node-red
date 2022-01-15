@@ -2,7 +2,7 @@
   {
     "id": "4dd07a1d.6e53e4",
     "type": "tab",
-    "label": "outdoor sensors",
+    "label": "weather_station",
     "disabled": false,
     "info": ""
   },
@@ -18,8 +18,8 @@
     "round": false,
     "property": "payload",
     "name": "",
-    "x": 470,
-    "y": 120,
+    "x": 500,
+    "y": 180,
     "wires": [
       [
         "53f6ec34.5fec34"
@@ -81,7 +81,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 120,
+    "x": 130,
     "y": 100,
     "wires": [
       [
@@ -96,7 +96,7 @@
     "z": "4dd07a1d.6e53e4",
     "name": "brightness sun",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -116,6 +116,14 @@
       {
         "property": "unit_of_measurement",
         "value": "%"
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "payload",
@@ -128,8 +136,8 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 660,
-    "y": 140,
+    "x": 680,
+    "y": 200,
     "wires": [
       [
         "75c39ffc.b45f8"
@@ -142,7 +150,7 @@
     "z": "4dd07a1d.6e53e4",
     "name": "opacity sun",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -162,6 +170,14 @@
       {
         "property": "unit_of_measurement",
         "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "payload",
@@ -174,8 +190,8 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1030,
-    "y": 140,
+    "x": 990,
+    "y": 200,
     "wires": [
       []
     ]
@@ -190,8 +206,8 @@
     "noerr": 0,
     "initialize": "",
     "finalize": "",
-    "x": 820,
-    "y": 140,
+    "x": 840,
+    "y": 200,
     "wires": [
       [
         "d8202784.fc5cc8"
@@ -220,8 +236,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 330,
-    "y": 60,
+    "x": 360,
+    "y": 100,
     "wires": [
       [
         "5c56266b.e63438"
@@ -250,8 +266,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 470,
-    "y": 40,
+    "x": 500,
+    "y": 80,
     "wires": [
       [
         "714f8f70.75ec6"
@@ -277,8 +293,8 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 470,
-    "y": 80,
+    "x": 500,
+    "y": 120,
     "wires": [
       [
         "714f8f70.75ec6"
@@ -307,8 +323,8 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 330,
-    "y": 140,
+    "x": 360,
+    "y": 200,
     "wires": [
       [
         "393c05d.70c05fa"
@@ -330,8 +346,8 @@
     "round": false,
     "property": "payload",
     "name": "",
-    "x": 480,
-    "y": 160,
+    "x": 500,
+    "y": 220,
     "wires": [
       [
         "53f6ec34.5fec34"
@@ -350,7 +366,7 @@
     "septopics": true,
     "property": "payload",
     "x": 630,
-    "y": 60,
+    "y": 100,
     "wires": [
       [
         "607a179b.d377f8"
@@ -366,8 +382,8 @@
     "payloadtype": "str",
     "payloadval": "reset",
     "name": "",
-    "x": 850,
-    "y": 60,
+    "x": 790,
+    "y": 100,
     "wires": [
       [
         "5051592a.7844e8"
@@ -381,7 +397,7 @@
     "z": "4dd07a1d.6e53e4",
     "name": "state outdoor light dark",
     "server": "4ba92433.2478cc",
-    "version": 1,
+    "version": 2,
     "debugenabled": false,
     "outputs": 1,
     "entityType": "sensor",
@@ -401,6 +417,14 @@
       {
         "property": "unit_of_measurement",
         "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
       }
     ],
     "state": "payload",
@@ -413,10 +437,20 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1080,
-    "y": 60,
+    "x": 1000,
+    "y": 100,
     "wires": [
       []
     ]
+  },
+  {
+    "id": "e1f379a0.db9e58",
+    "type": "comment",
+    "z": "4dd07a1d.6e53e4",
+    "name": "weather station esp sensors",
+    "info": "",
+    "x": 140,
+    "y": 40,
+    "wires": []
   }
 ]

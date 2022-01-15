@@ -246,7 +246,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state backyard light off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -268,6 +268,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1420,
     "y": 740,
     "wires": [
@@ -283,7 +286,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state frontdoor light off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -305,6 +308,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1420,
     "y": 800,
     "wires": [
@@ -480,7 +486,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state frontdoor light on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -502,6 +508,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1420,
     "y": 240,
     "wires": [
@@ -517,7 +526,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state backyard light on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -539,6 +548,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1420,
     "y": 180,
     "wires": [
@@ -682,7 +694,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state person anne home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -704,6 +716,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 690,
     "y": 740,
     "wires": [
@@ -721,7 +736,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state person coen home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -743,6 +758,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 690,
     "y": 800,
     "wires": [
@@ -760,7 +778,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state livingroom light off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -782,6 +800,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1190,
     "y": 540,
     "wires": [
@@ -822,7 +843,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state harmony on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -844,6 +865,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 670,
     "y": 540,
     "wires": [
@@ -1285,7 +1309,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state persons home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -1307,6 +1331,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 670,
     "y": 60,
     "wires": [
@@ -1324,7 +1351,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state sleep_mode on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -1346,6 +1373,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1180,
     "y": 60,
     "wires": [
@@ -1361,7 +1391,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state guest on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -1383,6 +1413,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 660,
     "y": 120,
     "wires": [
@@ -1425,7 +1458,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state home_security on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -1447,6 +1480,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1190,
     "y": 120,
     "wires": [
@@ -1487,7 +1523,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state outdoor dark",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "dark",
     "halt_if_type": "str",
@@ -1509,6 +1545,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 970,
     "y": 760,
     "wires": [
@@ -1524,7 +1563,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state outdoor light",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "light",
     "halt_if_type": "str",
@@ -1546,6 +1585,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1170,
     "y": 180,
     "wires": [
@@ -1641,7 +1683,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state livingroom light off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -1663,6 +1705,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1430,
     "y": 860,
     "wires": [
@@ -1703,7 +1748,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state guest on",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "on",
     "halt_if_type": "str",
@@ -1725,6 +1770,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1160,
     "y": 680,
     "wires": [
@@ -1742,7 +1790,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state group persons home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "home",
     "halt_if_type": "str",
@@ -1764,6 +1812,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1190,
     "y": 620,
     "wires": [
@@ -1825,7 +1876,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state guest off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -1847,6 +1898,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 360,
     "y": 1020,
     "wires": [
@@ -1862,7 +1916,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state persons not_home",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "not_home",
     "halt_if_type": "str",
@@ -1884,6 +1938,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 390,
     "y": 1080,
     "wires": [
@@ -1899,7 +1956,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state sleep mode off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -1921,6 +1978,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 680,
     "y": 640,
     "wires": [
@@ -1963,7 +2023,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state outdoor light dark",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 1,
     "halt_if": "",
     "halt_if_type": "str",
@@ -1985,6 +2045,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 260,
     "y": 280,
     "wires": [
@@ -2154,7 +2217,7 @@
     "z": "c0da8379.b0dd3",
     "name": "state christmas tree light off",
     "server": "4ba92433.2478cc",
-    "version": 2,
+    "version": 3,
     "outputs": 2,
     "halt_if": "off",
     "halt_if_type": "str",
@@ -2176,6 +2239,9 @@
         "valueType": "entity"
       }
     ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
     "x": 1440,
     "y": 680,
     "wires": [

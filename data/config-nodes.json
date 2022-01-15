@@ -11,26 +11,5 @@
     "cacheJson": true,
     "heartbeat": false,
     "heartbeatInterval": "30"
-  },
-  {
-    "id": "fc10aafd.22f7b8",
-    "type": "mqtt-broker",
-    "name": "",
-    "broker": "prd-mosquitto-app",
-    "port": "1883",
-    "clientid": "Node-RED",
-    "usetls": false,
-    "compatmode": false,
-    "keepalive": "60",
-    "cleansession": true,
-    "birthTopic": "",
-    "birthQos": "0",
-    "birthPayload": "",
-    "closeTopic": "",
-    "closeQos": "0",
-    "closePayload": "",
-    "willTopic": "",
-    "willQos": "0",
-    "willPayload": ""
   }
 ]
