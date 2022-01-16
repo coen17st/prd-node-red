@@ -1,12 +1,5 @@
 [
     {
-        "id": "2910f43f.ab852c",
-        "type": "tab",
-        "label": "entertainment",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "4e909abe.0b62e4",
         "type": "tab",
         "label": "basement_ventilation",
@@ -14,9 +7,16 @@
         "info": ""
     },
     {
+        "id": "2910f43f.ab852c",
+        "type": "tab",
+        "label": "entertainment",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "9605dd85.f395a",
         "type": "tab",
-        "label": "calendar",
+        "label": "calendar_events_actions",
         "disabled": false,
         "info": ""
     },
@@ -37,21 +37,14 @@
     {
         "id": "b13ca13c.9328e",
         "type": "tab",
-        "label": "home security",
+        "label": "home_security",
         "disabled": false,
         "info": ""
     },
     {
         "id": "8aa6edec.5a013",
         "type": "tab",
-        "label": "not present - sleepmode",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "155ca471.b81eac",
-        "type": "tab",
-        "label": "notification_radarr_sonarr",
+        "label": "away_sleepmode",
         "disabled": false,
         "info": ""
     },
@@ -84,6 +77,13 @@
         "info": ""
     },
     {
+        "id": "fc2fab82.81dbf8",
+        "type": "tab",
+        "label": "adguard",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "72ef82b8.9d086c",
         "type": "tab",
         "label": "thumble_dryer",
@@ -98,20 +98,6 @@
         "info": ""
     },
     {
-        "id": "3307402e.92699",
-        "type": "tab",
-        "label": "security_motion_sensor_backyard",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "fc2fab82.81dbf8",
-        "type": "tab",
-        "label": "adguard",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "2437e768.8e34d8",
         "type": "tab",
         "label": "dishwasher",
@@ -119,37 +105,9 @@
         "info": ""
     },
     {
-        "id": "5a8d7bb1.6263b4",
+        "id": "3307402e.92699",
         "type": "tab",
-        "label": "update_notification_hacs",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "7bd54a92.9df5d4",
-        "type": "tab",
-        "label": "update_notification_firmware_shelly",
-        "disabled": true,
-        "info": ""
-    },
-    {
-        "id": "98a989e.d6bca78",
-        "type": "tab",
-        "label": "gas_consumption_notification",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "d5421f8d.f7208",
-        "type": "tab",
-        "label": "notification_outdoor_temperature",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "104cf599.7f235a",
-        "type": "tab",
-        "label": "drone_ci/cd_notification",
+        "label": "security_motion_sensor_backyard",
         "disabled": false,
         "info": ""
     },
@@ -161,9 +119,58 @@
         "info": ""
     },
     {
+        "id": "98a989e.d6bca78",
+        "type": "tab",
+        "label": "notification_gas_consumption",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "155ca471.b81eac",
+        "type": "tab",
+        "label": "notification_radarr_sonarr",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7bd54a92.9df5d4",
+        "type": "tab",
+        "label": "notification_update_firmware_shelly",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d5421f8d.f7208",
+        "type": "tab",
+        "label": "notification_outdoor_temperature",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "60541649.7e2a38",
         "type": "tab",
-        "label": "update_notification_home_assistant",
+        "label": "notification_update_home_assistant",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5a8d7bb1.6263b4",
+        "type": "tab",
+        "label": "notification_update_hacs",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "104cf599.7f235a",
+        "type": "tab",
+        "label": "notification_drone_cicd",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fa4b9474.ba9d68",
+        "type": "tab",
+        "label": "notification_dashboard_messages",
         "disabled": false,
         "info": ""
     },
@@ -412,27 +419,6 @@
         "color": "#DDAA99"
     },
     {
-        "id": "3a85158d.efd05a",
-        "type": "subflow",
-        "name": "messages",
-        "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "97370a88.696b28"
-                    }
-                ]
-            }
-        ],
-        "out": [],
-        "env": [],
-        "color": "#DDAA99"
-    },
-    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -442,7 +428,7 @@
         "ha_boolean": "y|yes|true|on|home|open",
         "connectionDelay": true,
         "cacheJson": true,
-        "heartbeat": false,
+        "heartbeat": true,
         "heartbeatInterval": "30"
     },
     {
@@ -500,7 +486,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 170,
+        "x": 140,
         "y": 300,
         "wires": [
             [
@@ -644,8 +630,8 @@
         "z": "2910f43f.ab852c",
         "name": "HARMONY INPUT SELECT",
         "info": "",
-        "x": 160,
-        "y": 260,
+        "x": 140,
+        "y": 240,
         "wires": []
     },
     {
@@ -3520,7 +3506,7 @@
         "z": "2910f43f.ab852c",
         "name": "tv input select correction",
         "info": "",
-        "x": 150,
+        "x": 130,
         "y": 40,
         "wires": []
     },
@@ -3552,7 +3538,7 @@
         "outputinitially": true,
         "state_type": "num",
         "enableInput": true,
-        "x": 130,
+        "x": 110,
         "y": 100,
         "wires": [
             [
@@ -3711,7 +3697,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 300,
+        "x": 280,
         "y": 100,
         "wires": [
             [
@@ -4373,7 +4359,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1060,
+        "x": 1080,
         "y": 2320,
         "wires": [
             []
@@ -4391,10 +4377,11 @@
         "template": "TV gepauseerd i.v.m. telefoon gesprek.",
         "output": "str",
         "x": 920,
-        "y": 2320,
+        "y": 2340,
         "wires": [
             [
-                "6d70ecba.7472f4"
+                "6d70ecba.7472f4",
+                "61bb3627.3c73a8"
             ]
         ]
     },
@@ -4597,7 +4584,7 @@
         "outputinitially": true,
         "state_type": "num",
         "enableInput": true,
-        "x": 130,
+        "x": 110,
         "y": 160,
         "wires": [
             [
@@ -5048,7 +5035,7 @@
         "payload": "start_flow",
         "payloadType": "str",
         "x": 110,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "eaba4c18.04007",
@@ -6724,7 +6711,8 @@
         "y": 1140,
         "wires": [
             [
-                "1c8856d3.d19249"
+                "1c8856d3.d19249",
+                "289089f4.e41b76"
             ]
         ]
     },
@@ -6802,7 +6790,7 @@
         "outputPayload": "",
         "outputPayloadType": "str",
         "x": 2770,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -6826,8 +6814,7 @@
         "y": 1140,
         "wires": [
             [
-                "24b246c8.4c72fa",
-                "9f49fee8.4c9e7"
+                "24b246c8.4c72fa"
             ]
         ]
     },
@@ -8474,7 +8461,7 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "output_only_on_state_change": true,
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
@@ -8485,78 +8472,25 @@
         "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
                 "property": "data",
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
             }
         ],
-        "x": 140,
-        "y": 240,
+        "x": 100,
+        "y": 100,
         "wires": [
             [
-                "f1dc4ca0.0a48e",
                 "377073a9.cc38cc"
             ]
         ]
     },
     {
-        "id": "f56dedbc.57787",
-        "type": "api-call-service",
-        "z": "9605dd85.f395a",
-        "name": "turn on climate auto mode",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "climate",
-        "service": "set_hvac_mode",
-        "entityId": "climate.basement",
-        "data": "{\"hvac_mode\":\"auto\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 810,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f1dc4ca0.0a48e",
-        "type": "debug",
-        "z": "9605dd85.f395a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 240,
-        "wires": []
-    },
-    {
         "id": "6ad4cba8.7d5a14",
         "type": "schedex",
         "z": "9605dd85.f395a",
-        "name": "",
+        "name": "schedule",
         "passthroughunhandled": false,
         "suspended": false,
         "lat": "",
@@ -8578,11 +8512,11 @@
         "fri": true,
         "sat": true,
         "sun": true,
-        "x": 470,
-        "y": 300,
+        "x": 660,
+        "y": 100,
         "wires": [
             [
-                "f56dedbc.57787"
+                "e9171ff7.af43b"
             ]
         ]
     },
@@ -8590,69 +8524,17 @@
         "id": "377073a9.cc38cc",
         "type": "function",
         "z": "9605dd85.f395a",
-        "name": "",
-        "func": "msg.payload = {};\nmsg.payload.ontime = msg.data.new_state.attributes.start_time.substr(11, 5);\nreturn msg;\n",
+        "name": "check word in message",
+        "func": "// Written by Coen Stam\n\n// Check if new state contains word\nvar string = msg.data.new_state.attributes.message;\nvar word = \"DEVELOPMENT\";\n\n// If new state contains word return msg\nif (string.includes(word))\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 320,
-        "y": 300,
+        "x": 310,
+        "y": 100,
         "wires": [
             [
-                "6ad4cba8.7d5a14"
-            ]
-        ]
-    },
-    {
-        "id": "148c0a04.734526",
-        "type": "api-call-service",
-        "z": "9605dd85.f395a",
-        "name": "turn on climate auto mode",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "climate",
-        "service": "set_temperature",
-        "entityId": "climate.basement",
-        "data": "{\"hvac_mode\":\"heat\",\"temperature\":24}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 810,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "54b4bd.432a5b44",
-        "type": "inject",
-        "z": "9605dd85.f395a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 550,
-        "y": 500,
-        "wires": [
-            [
-                "148c0a04.734526"
+                "cf80420b.1f783"
             ]
         ]
     },
@@ -8711,7 +8593,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 140,
+        "x": 120,
         "y": 160,
         "wires": [
             [
@@ -8744,7 +8626,7 @@
         "entityLocationType": "msg",
         "checkCurrentState": true,
         "blockInputOverrides": true,
-        "x": 920,
+        "x": 900,
         "y": 240,
         "wires": [
             [
@@ -8766,11 +8648,12 @@
         "syntax": "mustache",
         "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
         "output": "str",
-        "x": 1090,
+        "x": 1070,
         "y": 280,
         "wires": [
             [
-                "32209a51.6b6536"
+                "32209a51.6b6536",
+                "5841bec4.a2bed"
             ]
         ]
     },
@@ -8785,11 +8668,12 @@
         "syntax": "mustache",
         "template": "Er is aangebeld, de voordeur is open gedaan. ",
         "output": "str",
-        "x": 1090,
+        "x": 1070,
         "y": 240,
         "wires": [
             [
-                "32209a51.6b6536"
+                "32209a51.6b6536",
+                "5841bec4.a2bed"
             ]
         ]
     },
@@ -8810,12 +8694,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1330,
+        "x": 1310,
         "y": 260,
         "wires": [
             [
-                "aa2e94ac.c75bf8",
-                "b85d5a5c.10bf48"
+                "aa2e94ac.c75bf8"
             ]
         ]
     },
@@ -8865,7 +8748,7 @@
         "outputOnStateChange": false,
         "outputPayload": "",
         "outputPayloadType": "str",
-        "x": 1550,
+        "x": 1530,
         "y": 160,
         "wires": [
             []
@@ -8882,7 +8765,7 @@
         "syntax": "mustache",
         "template": "{{mydom}}-{{mymonth}} {{mytime}}",
         "output": "str",
-        "x": 1130,
+        "x": 1110,
         "y": 160,
         "wires": [
             [
@@ -8921,7 +8804,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 920,
+        "x": 900,
         "y": 320,
         "wires": [
             [
@@ -8951,7 +8834,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1090,
+        "x": 1070,
         "y": 320,
         "wires": [
             [],
@@ -8991,7 +8874,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1590,
+        "x": 1570,
         "y": 260,
         "wires": [
             [
@@ -9017,7 +8900,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1810,
+        "x": 1790,
         "y": 260,
         "wires": [
             []
@@ -9078,7 +8961,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 140,
+        "x": 120,
         "y": 100,
         "wires": [
             [
@@ -9118,7 +9001,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 380,
+        "x": 370,
         "y": 100,
         "wires": [
             [
@@ -9144,7 +9027,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 660,
+        "x": 640,
         "y": 100,
         "wires": [
             []
@@ -9181,7 +9064,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 390,
+        "x": 370,
         "y": 380,
         "wires": [
             [
@@ -9207,7 +9090,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 890,
+        "x": 870,
         "y": 380,
         "wires": [
             [
@@ -9232,7 +9115,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1540,
+        "x": 1520,
         "y": 380,
         "wires": [
             []
@@ -9249,7 +9132,7 @@
         "syntax": "mustache",
         "template": "Er is aangebeld. ",
         "output": "str",
-        "x": 1090,
+        "x": 1070,
         "y": 380,
         "wires": [
             [
@@ -9288,7 +9171,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 390,
+        "x": 370,
         "y": 440,
         "wires": [
             [
@@ -9314,7 +9197,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 920,
+        "x": 900,
         "y": 440,
         "wires": [
             [
@@ -9353,7 +9236,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 670,
+        "x": 650,
         "y": 380,
         "wires": [
             [
@@ -9381,7 +9264,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
+        "x": 630,
         "y": 160,
         "wires": [
             [
@@ -9404,7 +9287,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 480,
+        "x": 400,
         "y": 160,
         "wires": [
             [
@@ -9431,7 +9314,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
+        "x": 630,
         "y": 320,
         "wires": [
             [
@@ -9470,7 +9353,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 660,
+        "x": 640,
         "y": 440,
         "wires": [
             [
@@ -9496,7 +9379,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1580,
+        "x": 1560,
         "y": 440,
         "wires": [
             []
@@ -9526,7 +9409,7 @@
         "myepoch": true,
         "myrawdate": true,
         "mypm": true,
-        "x": 890,
+        "x": 870,
         "y": 160,
         "wires": [
             [
@@ -9551,7 +9434,7 @@
         "send_stop": false,
         "default_start": true,
         "differ": false,
-        "x": 630,
+        "x": 610,
         "y": 240,
         "wires": [
             [
@@ -9571,7 +9454,7 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 1120,
+        "x": 1100,
         "y": 440,
         "wires": [
             [
@@ -9597,7 +9480,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1550,
+        "x": 1530,
         "y": 320,
         "wires": [
             []
@@ -9614,7 +9497,7 @@
         "syntax": "mustache",
         "template": "Er is aangebeld.",
         "output": "str",
-        "x": 1300,
+        "x": 1280,
         "y": 320,
         "wires": [
             [
@@ -11240,8 +11123,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 730,
-        "y": 120,
+        "x": 750,
+        "y": 240,
         "wires": [
             [
                 "29fb388f.6b0768",
@@ -11267,8 +11150,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 1180,
-        "y": 160,
+        "x": 1220,
+        "y": 320,
         "wires": [
             [
                 "76dade0f.884bb"
@@ -11306,8 +11189,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1350,
-        "y": 160,
+        "x": 1390,
+        "y": 320,
         "wires": [
             [
                 "1e0c9024.40fd9",
@@ -11333,8 +11216,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1550,
-        "y": 160,
+        "x": 1690,
+        "y": 360,
         "wires": [
             []
         ]
@@ -11371,7 +11254,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 510,
-        "y": 220,
+        "y": 340,
         "wires": [
             [
                 "3e130ee2.3c60c2"
@@ -11404,7 +11287,7 @@
         ],
         "queue": "none",
         "x": 800,
-        "y": 220,
+        "y": 340,
         "wires": [
             [
                 "74c8186f.59ee08"
@@ -11442,8 +11325,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 780,
-        "y": 40,
+        "x": 960,
+        "y": 120,
         "wires": [
             [
                 "3af8865a.e67f0a"
@@ -11468,8 +11351,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1010,
-        "y": 40,
+        "x": 1190,
+        "y": 120,
         "wires": [
             []
         ]
@@ -11491,8 +11374,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1820,
-        "y": 160,
+        "x": 1960,
+        "y": 320,
         "wires": [
             []
         ]
@@ -11514,21 +11397,19 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1770,
-        "y": 100,
+        "x": 1910,
+        "y": 260,
         "wires": [
-            [
-                "f33a4fe6.0d298"
-            ]
+            []
         ]
     },
     {
         "id": "d60f34c7.e15c08",
         "type": "comment",
         "z": "b13ca13c.9328e",
-        "name": "HOME SECURITY",
+        "name": "home security",
         "info": "",
-        "x": 110,
+        "x": 90,
         "y": 40,
         "wires": []
     },
@@ -11543,13 +11424,14 @@
         "syntax": "mustache",
         "template": "Het alarm gaat af! Schakel beveiliging uit via Home Assistant of Google Home.",
         "output": "str",
-        "x": 1540,
-        "y": 120,
+        "x": 1680,
+        "y": 320,
         "wires": [
             [
                 "ef2d0bf8.6e4c38",
                 "f7d9db6.4177e28",
-                "3ac976e6.9a9d7a"
+                "3ac976e6.9a9d7a",
+                "60473297.21616c"
             ]
         ]
     },
@@ -11609,7 +11491,7 @@
             }
         ],
         "x": 110,
-        "y": 220,
+        "y": 360,
         "wires": [
             [
                 "f717f95f.430aa8"
@@ -11639,7 +11521,7 @@
         "repair": false,
         "outputs": 2,
         "x": 270,
-        "y": 220,
+        "y": 360,
         "wires": [
             [
                 "50a28070.5f3b8"
@@ -11668,7 +11550,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 430,
-        "y": 280,
+        "y": 400,
         "wires": [
             [
                 "7a028f41.56997"
@@ -11695,7 +11577,7 @@
         "to": "",
         "reg": false,
         "x": 1020,
-        "y": 220,
+        "y": 340,
         "wires": [
             [
                 "743671d6.44575"
@@ -11719,8 +11601,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1000,
-        "y": 80,
+        "x": 1180,
+        "y": 160,
         "wires": [
             []
         ]
@@ -11750,7 +11632,7 @@
         ],
         "queue": "none",
         "x": 650,
-        "y": 280,
+        "y": 400,
         "wires": [
             []
         ]
@@ -11772,8 +11654,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1790,
-        "y": 40,
+        "x": 1930,
+        "y": 200,
         "wires": [
             []
         ]
@@ -11789,13 +11671,14 @@
         "syntax": "mustache",
         "template": "De {{door}} is geopend met beveiliging aan. Schakel beveiliging uit via Home Assistant of Google Home.",
         "output": "str",
-        "x": 1540,
-        "y": 80,
+        "x": 1680,
+        "y": 280,
         "wires": [
             [
                 "3ac976e6.9a9d7a",
                 "f7d9db6.4177e28",
-                "ef2d0bf8.6e4c38"
+                "ef2d0bf8.6e4c38",
+                "60473297.21616c"
             ]
         ]
     },
@@ -13390,12 +13273,11 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 110,
+        "x": 90,
         "y": 100,
         "wires": [
             [
                 "77ec7c95.9f6574",
-                "90393ea5.588c",
                 "c1f88ac2.7e0438"
             ]
         ]
@@ -13410,8 +13292,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
-        "x": 340,
-        "y": 100,
+        "x": 280,
+        "y": 180,
         "wires": [
             [
                 "2b16b681.af3d1a"
@@ -13425,24 +13307,8 @@
         "name": "http response",
         "statusCode": "",
         "headers": {},
-        "x": 500,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "90393ea5.588c",
-        "type": "debug",
-        "z": "155ca471.b81eac",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 370,
-        "y": 60,
+        "x": 440,
+        "y": 180,
         "wires": []
     },
     {
@@ -13454,61 +13320,14 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 110,
+        "x": 90,
         "y": 260,
         "wires": [
             [
-                "b7d14f30.91cd1",
-                "51353010.10044",
-                "11634053.7d1e7"
+                "11634053.7d1e7",
+                "77ec7c95.9f6574"
             ]
         ]
-    },
-    {
-        "id": "b7d14f30.91cd1",
-        "type": "template",
-        "z": "155ca471.b81eac",
-        "name": "html page",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
-        "x": 340,
-        "y": 260,
-        "wires": [
-            [
-                "e154c8fa.2b7878"
-            ]
-        ]
-    },
-    {
-        "id": "e154c8fa.2b7878",
-        "type": "http response",
-        "z": "155ca471.b81eac",
-        "name": "http response",
-        "statusCode": "",
-        "headers": {},
-        "x": 500,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "51353010.10044",
-        "type": "debug",
-        "z": "155ca471.b81eac",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 370,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "66863268.0b78dc",
@@ -13522,10 +13341,10 @@
         "template": "Sonarr Event:{{{payload.eventType}}} Title:{{{payload.series.title}}} Episode: {{{payload.episodes[0].title}}} Name:{{{payload.episodeFile.sceneName}}}",
         "output": "str",
         "x": 420,
-        "y": 300,
+        "y": 260,
         "wires": [
             [
-                "5988f34f.434cbc"
+                "a9687ab6.f40698"
             ]
         ]
     },
@@ -13533,20 +13352,10 @@
         "id": "d31eb146.814b8",
         "type": "comment",
         "z": "155ca471.b81eac",
-        "name": "RADARR MESSAGE",
+        "name": "radarr sonarr messages",
         "info": "",
-        "x": 140,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "ac579eaa.c344",
-        "type": "comment",
-        "z": "155ca471.b81eac",
-        "name": "SONARR MESSAGE",
-        "info": "",
-        "x": 140,
-        "y": 220,
+        "x": 120,
+        "y": 40,
         "wires": []
     },
     {
@@ -13561,10 +13370,10 @@
         "template": "Radarr, Film:{{{payload.movie.title}}} Year:{{{payload.movie.year}}}  Kwaliteit:{{{payload.release.quality}}} Indexer: {{{payload.release.indexer}}} Grote: {{{payload.release.size}}}",
         "output": "str",
         "x": 420,
-        "y": 140,
+        "y": 100,
         "wires": [
             [
-                "5988f34f.434cbc"
+                "a9687ab6.f40698"
             ]
         ]
     },
@@ -13585,8 +13394,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 290,
-        "y": 300,
+        "x": 270,
+        "y": 260,
         "wires": [
             [
                 "66863268.0b78dc"
@@ -13610,8 +13419,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 290,
-        "y": 140,
+        "x": 270,
+        "y": 100,
         "wires": [
             [
                 "7da213e7.181bbc"
@@ -15065,7 +14874,7 @@
         "z": "c0da8379.b0dd3",
         "name": "",
         "links": [
-            "7b0f1685.0279d8"
+            "ebf4860d.603538"
         ],
         "x": 2255,
         "y": 480,
@@ -17093,9 +16902,7 @@
         "x": 1730,
         "y": 140,
         "wires": [
-            [
-                "647b5454.747edc"
-            ]
+            []
         ]
     },
     {
@@ -17118,9 +16925,7 @@
         "x": 1710,
         "y": 100,
         "wires": [
-            [
-                "647b5454.747edc"
-            ]
+            []
         ]
     },
     {
@@ -17165,7 +16970,8 @@
         "wires": [
             [
                 "1bb11f6a.844f91",
-                "5bc9b42e.a8dc5c"
+                "5bc9b42e.a8dc5c",
+                "9f9c99bd.1dfe08"
             ]
         ]
     },
@@ -17267,15 +17073,6 @@
         "info": "Set thumble dryer binary sensor on or off based on power measurements`",
         "x": 280,
         "y": 40,
-        "wires": []
-    },
-    {
-        "id": "647b5454.747edc",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "72ef82b8.9d086c",
-        "name": "",
-        "x": 1910,
-        "y": 100,
         "wires": []
     },
     {
@@ -17901,12 +17698,10 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1690,
+        "x": 1750,
         "y": 320,
         "wires": [
-            [
-                "570d124.d715eec"
-            ]
+            []
         ]
     },
     {
@@ -18028,7 +17823,7 @@
         "y": 280,
         "wires": [
             [
-                "570d124.d715eec"
+                "3c488237.d82a4e"
             ]
         ]
     },
@@ -18047,7 +17842,8 @@
         "y": 320,
         "wires": [
             [
-                "e4d25a8e.b5b258"
+                "e4d25a8e.b5b258",
+                "3c488237.d82a4e"
             ]
         ]
     },
@@ -18435,9 +18231,7 @@
         "x": 1770,
         "y": 140,
         "wires": [
-            [
-                "3628e3b7.44b70c"
-            ]
+            []
         ]
     },
     {
@@ -18460,9 +18254,7 @@
         "x": 1750,
         "y": 100,
         "wires": [
-            [
-                "3628e3b7.44b70c"
-            ]
+            []
         ]
     },
     {
@@ -18695,7 +18487,8 @@
         "wires": [
             [
                 "92b6fff2.40bfa",
-                "77080f2c.11b38"
+                "77080f2c.11b38",
+                "2f76ff07.93816"
             ]
         ]
     },
@@ -18734,15 +18527,6 @@
             ],
             []
         ]
-    },
-    {
-        "id": "3628e3b7.44b70c",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "c23003c7.1c978",
-        "name": "",
-        "x": 1950,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "3b9a1fc1.aafd9",
@@ -18891,9 +18675,7 @@
         "x": 780,
         "y": 200,
         "wires": [
-            [
-                "7147e323.11d98c"
-            ]
+            []
         ]
     },
     {
@@ -18997,9 +18779,7 @@
         "x": 780,
         "y": 240,
         "wires": [
-            [
-                "7147e323.11d98c"
-            ]
+            []
         ]
     },
     {
@@ -20519,464 +20299,13 @@
         ]
     },
     {
-        "id": "97370a88.696b28",
-        "type": "change",
-        "z": "3a85158d.efd05a",
-        "name": "",
-        "rules": [
-            {
-                "t": "change",
-                "p": "message",
-                "pt": "msg",
-                "from": "\\n",
-                "fromt": "str",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 180,
-        "y": 40,
-        "wires": [
-            [
-                "7836a457.915fdc"
-            ]
-        ]
-    },
-    {
-        "id": "71177dfd.1f8e74",
-        "type": "template",
-        "z": "3a85158d.efd05a",
-        "name": "time-and-message",
-        "field": "tijd-en-message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{mytime}}, {{{message}}}",
-        "output": "str",
-        "x": 560,
-        "y": 40,
-        "wires": [
-            [
-                "75fc13e6.7a268c"
-            ]
-        ]
-    },
-    {
-        "id": "f7a2e051.4235",
-        "type": "ha-entity",
-        "z": "3a85158d.efd05a",
-        "name": "time-and-message -> sensor message_home_page_1",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityType": "sensor",
-        "config": [
-            {
-                "property": "name",
-                "value": "message_home_page_1"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:message-text-clock"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "tijd-en-message",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": false,
-        "outputLocation": "",
-        "outputLocationType": "none",
-        "inputOverride": "block",
-        "outputOnStateChange": false,
-        "outputPayload": "",
-        "outputPayloadType": "str",
-        "x": 1120,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "133fb6cb.864ba9",
-        "type": "api-current-state",
-        "z": "3a85158d.efd05a",
-        "name": "get message_home_page_1",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.message_home_page_1",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "message_home_page_1",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1040,
-        "y": 40,
-        "wires": [
-            [
-                "43e5dace.e04654"
-            ]
-        ]
-    },
-    {
-        "id": "a393de42.16e7c",
-        "type": "ha-entity",
-        "z": "3a85158d.efd05a",
-        "name": "put sensor message_home_page_1 -> 2",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityType": "sensor",
-        "config": [
-            {
-                "property": "name",
-                "value": "message_home_page_2"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:message-text-clock"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "message_home_page_1",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "",
-        "outputLocationType": "none",
-        "inputOverride": "block",
-        "outputOnStateChange": false,
-        "outputPayload": "",
-        "outputPayloadType": "str",
-        "x": 1080,
-        "y": 220,
-        "wires": [
-            [
-                "a6f210fe.26244"
-            ]
-        ]
-    },
-    {
-        "id": "a6f210fe.26244",
-        "type": "ha-entity",
-        "z": "3a85158d.efd05a",
-        "name": "put sensor message_home_page_2 -> 3",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityType": "sensor",
-        "config": [
-            {
-                "property": "name",
-                "value": "message_home_page_3"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:message-text-clock"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "message_home_page_2",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "",
-        "outputLocationType": "none",
-        "inputOverride": "block",
-        "outputOnStateChange": false,
-        "outputPayload": "",
-        "outputPayloadType": "str",
-        "x": 1080,
-        "y": 280,
-        "wires": [
-            [
-                "b0fb37b5.a99a68"
-            ]
-        ]
-    },
-    {
-        "id": "43e5dace.e04654",
-        "type": "api-current-state",
-        "z": "3a85158d.efd05a",
-        "name": "get message_home_page_2",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.message_home_page_2",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "message_home_page_2",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1040,
-        "y": 100,
-        "wires": [
-            [
-                "11d10b51.12cf65"
-            ]
-        ]
-    },
-    {
-        "id": "b0fb37b5.a99a68",
-        "type": "ha-entity",
-        "z": "3a85158d.efd05a",
-        "name": "put sensor message_home_page_3 -> 4",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityType": "sensor",
-        "config": [
-            {
-                "property": "name",
-                "value": "message_home_page_4"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:message-text-clock"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "state": "message_home_page_3",
-        "stateType": "msg",
-        "attributes": [],
-        "resend": true,
-        "outputLocation": "",
-        "outputLocationType": "none",
-        "inputOverride": "block",
-        "outputOnStateChange": false,
-        "outputPayload": "",
-        "outputPayloadType": "str",
-        "x": 1080,
-        "y": 340,
-        "wires": [
-            [
-                "f7a2e051.4235"
-            ]
-        ]
-    },
-    {
-        "id": "11d10b51.12cf65",
-        "type": "api-current-state",
-        "z": "3a85158d.efd05a",
-        "name": "get message_home_page_3",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.message_home_page_3",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "message_home_page_3",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1040,
-        "y": 160,
-        "wires": [
-            [
-                "a393de42.16e7c"
-            ]
-        ]
-    },
-    {
-        "id": "7836a457.915fdc",
-        "type": "simpletime",
-        "z": "3a85158d.efd05a",
-        "name": "",
-        "x": 380,
-        "y": 40,
-        "wires": [
-            [
-                "71177dfd.1f8e74"
-            ]
-        ]
-    },
-    {
-        "id": "75fc13e6.7a268c",
-        "type": "switch",
-        "z": "3a85158d.efd05a",
-        "name": "",
-        "property": "message",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "unknown",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 730,
-        "y": 40,
-        "wires": [
-            [
-                "b649fc2b.fab89"
-            ]
-        ]
-    },
-    {
-        "id": "b649fc2b.fab89",
-        "type": "switch",
-        "z": "3a85158d.efd05a",
-        "name": "",
-        "property": "message",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "unavailable",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 850,
-        "y": 40,
-        "wires": [
-            [
-                "133fb6cb.864ba9"
-            ]
-        ]
-    },
-    {
-        "id": "9f49fee8.4c9e7",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "x": 2750,
-        "y": 1160,
-        "wires": []
-    },
-    {
         "id": "cc76e29e.b681",
         "type": "comment",
         "z": "3637eeb0.d96232",
         "name": "doorbell automation",
         "info": "doorbell automation",
-        "x": 130,
+        "x": 110,
         "y": 40,
-        "wires": []
-    },
-    {
-        "id": "b85d5a5c.10bf48",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "3637eeb0.d96232",
-        "name": "",
-        "x": 1550,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "f33a4fe6.0d298",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "b13ca13c.9328e",
-        "name": "",
-        "x": 1910,
-        "y": 100,
         "wires": []
     },
     {
@@ -21396,7 +20725,7 @@
         "y": 100,
         "wires": [
             [
-                "ae885845.449c58"
+                "4c169b88.d80854"
             ]
         ]
     },
@@ -21457,7 +20786,7 @@
         "y": 140,
         "wires": [
             [
-                "ae885845.449c58"
+                "4c169b88.d80854"
             ]
         ]
     },
@@ -21636,15 +20965,6 @@
         ]
     },
     {
-        "id": "ae885845.449c58",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "3307402e.92699",
-        "name": "",
-        "x": 1550,
-        "y": 100,
-        "wires": []
-    },
-    {
         "id": "9e390214.7782d",
         "type": "comment",
         "z": "fc2fab82.81dbf8",
@@ -21760,16 +21080,6 @@
         ]
     },
     {
-        "id": "7147e323.11d98c",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "79544bf2.1ff3a4",
-        "name": "messages",
-        "env": [],
-        "x": 950,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "c57acb4f.9d1808",
         "type": "comment",
         "z": "79544bf2.1ff3a4",
@@ -21824,15 +21134,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "570d124.d715eec",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "55da1471.fda0fc",
-        "name": "",
-        "x": 1870,
-        "y": 280,
-        "wires": []
     },
     {
         "id": "be5d4d4b.0809d",
@@ -22137,7 +21438,7 @@
         "y": 100,
         "wires": [
             [
-                "88db940a.326798"
+                "6646c95c.546ca8"
             ]
         ]
     },
@@ -22192,15 +21493,6 @@
         "info": "",
         "x": 90,
         "y": 40,
-        "wires": []
-    },
-    {
-        "id": "88db940a.326798",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "2437e768.8e34d8",
-        "name": "",
-        "x": 1470,
-        "y": 100,
         "wires": []
     },
     {
@@ -22348,7 +21640,8 @@
         "y": 100,
         "wires": [
             [
-                "d9df32a2.60134"
+                "d9df32a2.60134",
+                "6ebf508f.20c57"
             ]
         ]
     },
@@ -22463,7 +21756,8 @@
         "y": 100,
         "wires": [
             [
-                "f2ccd49b.02d018"
+                "f2ccd49b.02d018",
+                "756eefe7.33a9e"
             ]
         ]
     },
@@ -22514,9 +21808,7 @@
         "x": 1270,
         "y": 100,
         "wires": [
-            [
-                "3987aa4e.aa7646"
-            ]
+            []
         ]
     },
     {
@@ -22655,15 +21947,6 @@
             ],
             []
         ]
-    },
-    {
-        "id": "3987aa4e.aa7646",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "7bd54a92.9df5d4",
-        "name": "",
-        "x": 1430,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "8ab9f579.759ce8",
@@ -22858,7 +22141,7 @@
         "y": 100,
         "wires": [
             [
-                "a746e600.b6d258"
+                "121441a.65b76be"
             ]
         ]
     },
@@ -22870,15 +22153,6 @@
         "info": "",
         "x": 190,
         "y": 40,
-        "wires": []
-    },
-    {
-        "id": "a746e600.b6d258",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "98a989e.d6bca78",
-        "name": "",
-        "x": 970,
-        "y": 100,
         "wires": []
     },
     {
@@ -23087,7 +22361,7 @@
         "wires": [
             [
                 "40bcda8e.5a9b94",
-                "c0028ce1.1a94"
+                "823092bd.a7ed7"
             ]
         ]
     },
@@ -23189,15 +22463,6 @@
         ]
     },
     {
-        "id": "c0028ce1.1a94",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "d5421f8d.f7208",
-        "name": "",
-        "x": 1690,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "8e5f1f6.1491be",
         "type": "http in",
         "z": "104cf599.7f235a",
@@ -23261,8 +22526,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 840,
-        "y": 240,
+        "x": 820,
+        "y": 220,
         "wires": [
             []
         ]
@@ -23282,7 +22547,8 @@
         "y": 140,
         "wires": [
             [
-                "a3c4d652.5f0db8"
+                "a3c4d652.5f0db8",
+                "cf34922.125b87"
             ]
         ]
     },
@@ -23303,8 +22569,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 850,
-        "y": 200,
+        "x": 830,
+        "y": 280,
         "wires": [
             []
         ]
@@ -23443,7 +22709,7 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 350,
+        "x": 390,
         "y": 100,
         "wires": [
             [
@@ -23523,7 +22789,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 600,
+        "x": 680,
         "y": 280,
         "wires": [
             [
@@ -23550,7 +22816,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 770,
+        "x": 850,
         "y": 280,
         "wires": [
             [
@@ -23747,7 +23013,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 900,
+        "x": 860,
         "y": 100,
         "wires": [
             [
@@ -23889,7 +23155,7 @@
         "wires": [
             [
                 "dc54cc2f.496df",
-                "c1e5a03a.c06a9"
+                "318a335e.4fd36c"
             ]
         ]
     },
@@ -23911,7 +23177,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 330,
-        "y": 160,
+        "y": 140,
         "wires": [
             []
         ]
@@ -23933,7 +23199,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 740,
+        "x": 800,
         "y": 100,
         "wires": [
             []
@@ -23975,7 +23241,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
+        "x": 620,
         "y": 100,
         "wires": [
             [
@@ -23984,21 +23250,838 @@
         ]
     },
     {
-        "id": "c1e5a03a.c06a9",
-        "type": "subflow:3a85158d.efd05a",
-        "z": "60541649.7e2a38",
+        "id": "ea9a621c.8439e",
+        "type": "change",
+        "z": "fa4b9474.ba9d68",
         "name": "",
-        "x": 550,
+        "rules": [
+            {
+                "t": "change",
+                "p": "message",
+                "pt": "msg",
+                "from": "\\n",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "f220041d.e87868"
+            ]
+        ]
+    },
+    {
+        "id": "2cebe279.474c9e",
+        "type": "template",
+        "z": "fa4b9474.ba9d68",
+        "name": "time-and-message",
+        "field": "tijd-en-message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{mytime}}, {{{message}}}",
+        "output": "str",
+        "x": 560,
+        "y": 100,
+        "wires": [
+            [
+                "4fae69c4.0b11b8"
+            ]
+        ]
+    },
+    {
+        "id": "82e8bc89.afd6f",
+        "type": "ha-entity",
+        "z": "fa4b9474.ba9d68",
+        "name": "time-and-message -> sensor message_home_page_1",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "message_home_page_1"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": "mdi:message-text-clock"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "tijd-en-message",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": false,
+        "outputLocation": "",
+        "outputLocationType": "none",
+        "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 900,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4fae69c4.0b11b8",
+        "type": "api-current-state",
+        "z": "fa4b9474.ba9d68",
+        "name": "get message_home_page_1",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.message_home_page_1",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "message_home_page_1",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 100,
+        "wires": [
+            [
+                "3126f1eb.a88fae"
+            ]
+        ]
+    },
+    {
+        "id": "11bdffba.e4da8",
+        "type": "ha-entity",
+        "z": "fa4b9474.ba9d68",
+        "name": "put sensor message_home_page_1 -> 2",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "message_home_page_2"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": "mdi:message-text-clock"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "message_home_page_1",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "",
+        "outputLocationType": "none",
+        "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 860,
+        "y": 280,
+        "wires": [
+            [
+                "d5f7b717.f22508"
+            ]
+        ]
+    },
+    {
+        "id": "d5f7b717.f22508",
+        "type": "ha-entity",
+        "z": "fa4b9474.ba9d68",
+        "name": "put sensor message_home_page_2 -> 3",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "message_home_page_3"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": "mdi:message-text-clock"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "message_home_page_2",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "",
+        "outputLocationType": "none",
+        "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 860,
+        "y": 340,
+        "wires": [
+            [
+                "14fad9e1.42e016"
+            ]
+        ]
+    },
+    {
+        "id": "3126f1eb.a88fae",
+        "type": "api-current-state",
+        "z": "fa4b9474.ba9d68",
+        "name": "get message_home_page_2",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.message_home_page_2",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "message_home_page_2",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 160,
+        "wires": [
+            [
+                "e837ef9b.ef73"
+            ]
+        ]
+    },
+    {
+        "id": "14fad9e1.42e016",
+        "type": "ha-entity",
+        "z": "fa4b9474.ba9d68",
+        "name": "put sensor message_home_page_3 -> 4",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityType": "sensor",
+        "config": [
+            {
+                "property": "name",
+                "value": "message_home_page_4"
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": "mdi:message-text-clock"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            },
+            {
+                "property": "last_reset",
+                "value": ""
+            }
+        ],
+        "state": "message_home_page_3",
+        "stateType": "msg",
+        "attributes": [],
+        "resend": true,
+        "outputLocation": "",
+        "outputLocationType": "none",
+        "inputOverride": "block",
+        "outputOnStateChange": false,
+        "outputPayload": "",
+        "outputPayloadType": "str",
+        "x": 860,
+        "y": 400,
+        "wires": [
+            [
+                "82e8bc89.afd6f"
+            ]
+        ]
+    },
+    {
+        "id": "e837ef9b.ef73",
+        "type": "api-current-state",
+        "z": "fa4b9474.ba9d68",
+        "name": "get message_home_page_3",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.message_home_page_3",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "message_home_page_3",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "11bdffba.e4da8"
+            ]
+        ]
+    },
+    {
+        "id": "f220041d.e87868",
+        "type": "simpletime",
+        "z": "fa4b9474.ba9d68",
+        "name": "",
+        "mydate": true,
+        "myymd": true,
+        "myyear": true,
+        "mymonth": true,
+        "mymonthn": true,
+        "mydom": true,
+        "mydoy": true,
+        "myday": true,
+        "myhourpm": true,
+        "myhour": true,
+        "mytime": true,
+        "mytimes": true,
+        "myminute": true,
+        "myminutes": true,
+        "mysecond": true,
+        "mymillis": true,
+        "myepoch": true,
+        "myrawdate": true,
+        "mypm": true,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "2cebe279.474c9e"
+            ]
+        ]
+    },
+    {
+        "id": "55d39b39.8dcda4",
+        "type": "comment",
+        "z": "fa4b9474.ba9d68",
+        "name": "messages to home assistant lovelace home dashboard",
+        "info": "messages to home assistant lovelace home dashboard",
+        "x": 220,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ebf4860d.603538",
+        "type": "link in",
+        "z": "fa4b9474.ba9d68",
+        "name": "",
+        "links": [
+            "15aedd3a.a2e193",
+            "cf34922.125b87",
+            "6ebf508f.20c57",
+            "318a335e.4fd36c",
+            "823092bd.a7ed7",
+            "756eefe7.33a9e",
+            "a9687ab6.f40698",
+            "121441a.65b76be",
+            "4c169b88.d80854",
+            "6646c95c.546ca8",
+            "2f76ff07.93816",
+            "9f9c99bd.1dfe08",
+            "3c488237.d82a4e",
+            "9bfeecdc.f723d",
+            "60473297.21616c",
+            "5841bec4.a2bed",
+            "289089f4.e41b76",
+            "61bb3627.3c73a8"
+        ],
+        "x": 35,
+        "y": 100,
+        "wires": [
+            [
+                "ea9a621c.8439e"
+            ]
+        ]
+    },
+    {
+        "id": "cf34922.125b87",
+        "type": "link out",
+        "z": "104cf599.7f235a",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 755,
         "y": 140,
         "wires": []
     },
     {
-        "id": "5988f34f.434cbc",
-        "type": "subflow:3a85158d.efd05a",
+        "id": "6ebf508f.20c57",
+        "type": "link out",
+        "z": "5a8d7bb1.6263b4",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 675,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "318a335e.4fd36c",
+        "type": "link out",
+        "z": "60541649.7e2a38",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 555,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "823092bd.a7ed7",
+        "type": "link out",
+        "z": "d5421f8d.f7208",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1635,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "756eefe7.33a9e",
+        "type": "link out",
+        "z": "7bd54a92.9df5d4",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1055,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a9687ab6.f40698",
+        "type": "link out",
         "z": "155ca471.b81eac",
         "name": "",
-        "x": 830,
-        "y": 260,
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 615,
+        "y": 180,
         "wires": []
+    },
+    {
+        "id": "121441a.65b76be",
+        "type": "link out",
+        "z": "98a989e.d6bca78",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 935,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4c169b88.d80854",
+        "type": "link out",
+        "z": "3307402e.92699",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1295,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6646c95c.546ca8",
+        "type": "link out",
+        "z": "2437e768.8e34d8",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1415,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2f76ff07.93816",
+        "type": "link out",
+        "z": "c23003c7.1c978",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1695,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9f9c99bd.1dfe08",
+        "type": "link out",
+        "z": "72ef82b8.9d086c",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1655,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3c488237.d82a4e",
+        "type": "link out",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1675,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "60473297.21616c",
+        "type": "link out",
+        "z": "b13ca13c.9328e",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1875,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5841bec4.a2bed",
+        "type": "link out",
+        "z": "3637eeb0.d96232",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1235,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "289089f4.e41b76",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 2115,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "61bb3627.3c73a8",
+        "type": "link out",
+        "z": "2910f43f.ab852c",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1035,
+        "y": 2380,
+        "wires": []
+    },
+    {
+        "id": "cf80420b.1f783",
+        "type": "function",
+        "z": "9605dd85.f395a",
+        "name": "set start time",
+        "func": "// Written by Coen Stam\n\n// Create time from start_time attribute\nmsg.payload = {};\nmsg.payload.ontime = msg.data.new_state.attributes.start_time.substr(11, 5);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "6ad4cba8.7d5a14"
+            ]
+        ]
+    },
+    {
+        "id": "e9171ff7.af43b",
+        "type": "api-call-service",
+        "z": "9605dd85.f395a",
+        "name": "set temperature climate basement",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "climate",
+        "service": "set_temperature",
+        "entityId": "climate.basement",
+        "data": "{\"hvac_mode\":\"heat\",\"temperature\":19}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 940,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c83e3ef.9f7cac",
+        "type": "comment",
+        "z": "9605dd85.f395a",
+        "name": "schedule actions based on calendar events",
+        "info": "schedule actions based on calendar events",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ea0f15a1.eeb268",
+        "type": "server-state-changed",
+        "z": "9605dd85.f395a",
+        "name": "calendar lise",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "calendar.lise",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 90,
+        "y": 180,
+        "wires": [
+            [
+                "e8b6ad98.7697a"
+            ]
+        ]
+    },
+    {
+        "id": "e8b6ad98.7697a",
+        "type": "function",
+        "z": "9605dd85.f395a",
+        "name": "check word in message",
+        "func": "// Written by Coen Stam\n\n// Check if new state contains word\nvar string = msg.data.new_state.attributes.message;\nvar word = \"past op\";\n\n// If new state contains word return msg\nif (string.includes(word))\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 310,
+        "y": 180,
+        "wires": [
+            [
+                "66f59609.e2e228"
+            ]
+        ]
+    },
+    {
+        "id": "66f59609.e2e228",
+        "type": "function",
+        "z": "9605dd85.f395a",
+        "name": "set start time",
+        "func": "// Written by Coen Stam\n\n// Create time from start_time attribute\nmsg.payload = {};\nmsg.payload.ontime = msg.data.new_state.attributes.start_time.substr(11, 5);\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "9912da2f.1fd358"
+            ]
+        ]
+    },
+    {
+        "id": "fd9328e7.a31568",
+        "type": "api-call-service",
+        "z": "9605dd85.f395a",
+        "name": "turn on guest mode",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.guest",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 890,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9912da2f.1fd358",
+        "type": "schedex",
+        "z": "9605dd85.f395a",
+        "name": "schedule -90 min",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "",
+        "lon": "",
+        "ontime": "",
+        "ontopic": "",
+        "onpayload": "",
+        "onoffset": "-90",
+        "onrandomoffset": 0,
+        "offtime": "",
+        "offtopic": "",
+        "offpayload": "",
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "fd9328e7.a31568"
+            ]
+        ]
     }
 ]

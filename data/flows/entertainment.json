@@ -61,7 +61,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 170,
+    "x": 140,
     "y": 300,
     "wires": [
       [
@@ -205,8 +205,8 @@
     "z": "2910f43f.ab852c",
     "name": "HARMONY INPUT SELECT",
     "info": "",
-    "x": 160,
-    "y": 260,
+    "x": 140,
+    "y": 240,
     "wires": []
   },
   {
@@ -3081,7 +3081,7 @@
     "z": "2910f43f.ab852c",
     "name": "tv input select correction",
     "info": "",
-    "x": 150,
+    "x": 130,
     "y": 40,
     "wires": []
   },
@@ -3113,7 +3113,7 @@
     "outputinitially": true,
     "state_type": "num",
     "enableInput": true,
-    "x": 130,
+    "x": 110,
     "y": 100,
     "wires": [
       [
@@ -3272,7 +3272,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 300,
+    "x": 280,
     "y": 100,
     "wires": [
       [
@@ -3934,7 +3934,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1060,
+    "x": 1080,
     "y": 2320,
     "wires": [
       []
@@ -3952,10 +3952,11 @@
     "template": "TV gepauseerd i.v.m. telefoon gesprek.",
     "output": "str",
     "x": 920,
-    "y": 2320,
+    "y": 2340,
     "wires": [
       [
-        "6d70ecba.7472f4"
+        "6d70ecba.7472f4",
+        "61bb3627.3c73a8"
       ]
     ]
   },
@@ -4158,7 +4159,7 @@
     "outputinitially": true,
     "state_type": "num",
     "enableInput": true,
-    "x": 130,
+    "x": 110,
     "y": 160,
     "wires": [
       [
@@ -4346,5 +4347,17 @@
         "19b5a0a6.07793f"
       ]
     ]
+  },
+  {
+    "id": "61bb3627.3c73a8",
+    "type": "link out",
+    "z": "2910f43f.ab852c",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 1035,
+    "y": 2380,
+    "wires": []
   }
 ]

@@ -2,7 +2,7 @@
   {
     "id": "5a8d7bb1.6263b4",
     "type": "tab",
-    "label": "update_notification_hacs",
+    "label": "notification_update_hacs",
     "disabled": false,
     "info": ""
   },
@@ -151,7 +151,8 @@
     "y": 100,
     "wires": [
       [
-        "d9df32a2.60134"
+        "d9df32a2.60134",
+        "6ebf508f.20c57"
       ]
     ]
   },
@@ -222,5 +223,17 @@
       ],
       []
     ]
+  },
+  {
+    "id": "6ebf508f.20c57",
+    "type": "link out",
+    "z": "5a8d7bb1.6263b4",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 675,
+    "y": 140,
+    "wires": []
   }
 ]

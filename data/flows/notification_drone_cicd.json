@@ -2,7 +2,7 @@
   {
     "id": "104cf599.7f235a",
     "type": "tab",
-    "label": "drone_ci/cd_notification",
+    "label": "notification_drone_cicd",
     "disabled": false,
     "info": ""
   },
@@ -70,8 +70,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 840,
-    "y": 240,
+    "x": 820,
+    "y": 220,
     "wires": [
       []
     ]
@@ -91,7 +91,8 @@
     "y": 140,
     "wires": [
       [
-        "a3c4d652.5f0db8"
+        "a3c4d652.5f0db8",
+        "cf34922.125b87"
       ]
     ]
   },
@@ -112,8 +113,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 850,
-    "y": 200,
+    "x": 830,
+    "y": 280,
     "wires": [
       []
     ]
@@ -208,5 +209,17 @@
         "61955679.90f4f8"
       ]
     ]
+  },
+  {
+    "id": "cf34922.125b87",
+    "type": "link out",
+    "z": "104cf599.7f235a",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 755,
+    "y": 140,
+    "wires": []
   }
 ]

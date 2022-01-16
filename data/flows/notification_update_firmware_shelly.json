@@ -2,8 +2,8 @@
   {
     "id": "7bd54a92.9df5d4",
     "type": "tab",
-    "label": "update_notification_firmware_shelly",
-    "disabled": true,
+    "label": "notification_update_firmware_shelly",
+    "disabled": false,
     "info": ""
   },
   {
@@ -49,7 +49,8 @@
     "y": 100,
     "wires": [
       [
-        "f2ccd49b.02d018"
+        "f2ccd49b.02d018",
+        "756eefe7.33a9e"
       ]
     ]
   },
@@ -100,9 +101,7 @@
     "x": 1270,
     "y": 100,
     "wires": [
-      [
-        "3987aa4e.aa7646"
-      ]
+      []
     ]
   },
   {
@@ -243,15 +242,6 @@
     ]
   },
   {
-    "id": "3987aa4e.aa7646",
-    "type": "subflow:3a85158d.efd05a",
-    "z": "7bd54a92.9df5d4",
-    "name": "",
-    "x": 1430,
-    "y": 100,
-    "wires": []
-  },
-  {
     "id": "8ab9f579.759ce8",
     "type": "comment",
     "z": "7bd54a92.9df5d4",
@@ -259,6 +249,18 @@
     "info": "",
     "x": 210,
     "y": 40,
+    "wires": []
+  },
+  {
+    "id": "756eefe7.33a9e",
+    "type": "link out",
+    "z": "7bd54a92.9df5d4",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 1055,
+    "y": 140,
     "wires": []
   }
 ]

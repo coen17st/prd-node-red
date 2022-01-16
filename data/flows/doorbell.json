@@ -61,7 +61,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
+    "x": 120,
     "y": 160,
     "wires": [
       [
@@ -94,7 +94,7 @@
     "entityLocationType": "msg",
     "checkCurrentState": true,
     "blockInputOverrides": true,
-    "x": 920,
+    "x": 900,
     "y": 240,
     "wires": [
       [
@@ -116,11 +116,12 @@
     "syntax": "mustache",
     "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
     "output": "str",
-    "x": 1090,
+    "x": 1070,
     "y": 280,
     "wires": [
       [
-        "32209a51.6b6536"
+        "32209a51.6b6536",
+        "5841bec4.a2bed"
       ]
     ]
   },
@@ -135,11 +136,12 @@
     "syntax": "mustache",
     "template": "Er is aangebeld, de voordeur is open gedaan. ",
     "output": "str",
-    "x": 1090,
+    "x": 1070,
     "y": 240,
     "wires": [
       [
-        "32209a51.6b6536"
+        "32209a51.6b6536",
+        "5841bec4.a2bed"
       ]
     ]
   },
@@ -160,12 +162,11 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1330,
+    "x": 1310,
     "y": 260,
     "wires": [
       [
-        "aa2e94ac.c75bf8",
-        "b85d5a5c.10bf48"
+        "aa2e94ac.c75bf8"
       ]
     ]
   },
@@ -215,7 +216,7 @@
     "outputOnStateChange": false,
     "outputPayload": "",
     "outputPayloadType": "str",
-    "x": 1550,
+    "x": 1530,
     "y": 160,
     "wires": [
       []
@@ -232,7 +233,7 @@
     "syntax": "mustache",
     "template": "{{mydom}}-{{mymonth}} {{mytime}}",
     "output": "str",
-    "x": 1130,
+    "x": 1110,
     "y": 160,
     "wires": [
       [
@@ -271,7 +272,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 920,
+    "x": 900,
     "y": 320,
     "wires": [
       [
@@ -301,7 +302,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 1090,
+    "x": 1070,
     "y": 320,
     "wires": [
       [],
@@ -341,7 +342,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 1590,
+    "x": 1570,
     "y": 260,
     "wires": [
       [
@@ -367,7 +368,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1810,
+    "x": 1790,
     "y": 260,
     "wires": [
       []
@@ -428,7 +429,7 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 140,
+    "x": 120,
     "y": 100,
     "wires": [
       [
@@ -468,7 +469,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 380,
+    "x": 370,
     "y": 100,
     "wires": [
       [
@@ -494,7 +495,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 660,
+    "x": 640,
     "y": 100,
     "wires": [
       []
@@ -531,7 +532,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 390,
+    "x": 370,
     "y": 380,
     "wires": [
       [
@@ -557,7 +558,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 890,
+    "x": 870,
     "y": 380,
     "wires": [
       [
@@ -582,7 +583,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1540,
+    "x": 1520,
     "y": 380,
     "wires": [
       []
@@ -599,7 +600,7 @@
     "syntax": "mustache",
     "template": "Er is aangebeld. ",
     "output": "str",
-    "x": 1090,
+    "x": 1070,
     "y": 380,
     "wires": [
       [
@@ -638,7 +639,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 390,
+    "x": 370,
     "y": 440,
     "wires": [
       [
@@ -664,7 +665,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 920,
+    "x": 900,
     "y": 440,
     "wires": [
       [
@@ -703,7 +704,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 670,
+    "x": 650,
     "y": 380,
     "wires": [
       [
@@ -731,7 +732,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 650,
+    "x": 630,
     "y": 160,
     "wires": [
       [
@@ -754,7 +755,7 @@
     "randomLast": "5",
     "randomUnits": "seconds",
     "drop": false,
-    "x": 480,
+    "x": 400,
     "y": 160,
     "wires": [
       [
@@ -781,7 +782,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 650,
+    "x": 630,
     "y": 320,
     "wires": [
       [
@@ -820,7 +821,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 660,
+    "x": 640,
     "y": 440,
     "wires": [
       [
@@ -846,7 +847,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1580,
+    "x": 1560,
     "y": 440,
     "wires": [
       []
@@ -876,7 +877,7 @@
     "myepoch": true,
     "myrawdate": true,
     "mypm": true,
-    "x": 890,
+    "x": 870,
     "y": 160,
     "wires": [
       [
@@ -901,7 +902,7 @@
     "send_stop": false,
     "default_start": true,
     "differ": false,
-    "x": 630,
+    "x": 610,
     "y": 240,
     "wires": [
       [
@@ -921,7 +922,7 @@
     "payloadtype": "num",
     "payloadval": "0",
     "name": "",
-    "x": 1120,
+    "x": 1100,
     "y": 440,
     "wires": [
       [
@@ -947,7 +948,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1550,
+    "x": 1530,
     "y": 320,
     "wires": [
       []
@@ -964,7 +965,7 @@
     "syntax": "mustache",
     "template": "Er is aangebeld.",
     "output": "str",
-    "x": 1300,
+    "x": 1280,
     "y": 320,
     "wires": [
       [
@@ -978,17 +979,20 @@
     "z": "3637eeb0.d96232",
     "name": "doorbell automation",
     "info": "doorbell automation",
-    "x": 130,
+    "x": 110,
     "y": 40,
     "wires": []
   },
   {
-    "id": "b85d5a5c.10bf48",
-    "type": "subflow:3a85158d.efd05a",
+    "id": "5841bec4.a2bed",
+    "type": "link out",
     "z": "3637eeb0.d96232",
     "name": "",
-    "x": 1550,
-    "y": 220,
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 1235,
+    "y": 200,
     "wires": []
   }
 ]

@@ -2,7 +2,7 @@
   {
     "id": "98a989e.d6bca78",
     "type": "tab",
-    "label": "gas_consumption_notification",
+    "label": "notification_gas_consumption",
     "disabled": false,
     "info": ""
   },
@@ -189,7 +189,7 @@
     "y": 100,
     "wires": [
       [
-        "a746e600.b6d258"
+        "121441a.65b76be"
       ]
     ]
   },
@@ -204,11 +204,14 @@
     "wires": []
   },
   {
-    "id": "a746e600.b6d258",
-    "type": "subflow:3a85158d.efd05a",
+    "id": "121441a.65b76be",
+    "type": "link out",
     "z": "98a989e.d6bca78",
     "name": "",
-    "x": 970,
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 935,
     "y": 100,
     "wires": []
   }

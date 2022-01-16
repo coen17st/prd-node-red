@@ -2,7 +2,7 @@
   {
     "id": "60541649.7e2a38",
     "type": "tab",
-    "label": "update_notification_home_assistant",
+    "label": "notification_update_home_assistant",
     "disabled": false,
     "info": ""
   },
@@ -88,7 +88,7 @@
     "wires": [
       [
         "dc54cc2f.496df",
-        "c1e5a03a.c06a9"
+        "318a335e.4fd36c"
       ]
     ]
   },
@@ -110,7 +110,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 330,
-    "y": 160,
+    "y": 140,
     "wires": [
       []
     ]
@@ -132,7 +132,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 740,
+    "x": 800,
     "y": 100,
     "wires": [
       []
@@ -174,7 +174,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 560,
+    "x": 620,
     "y": 100,
     "wires": [
       [
@@ -183,11 +183,14 @@
     ]
   },
   {
-    "id": "c1e5a03a.c06a9",
-    "type": "subflow:3a85158d.efd05a",
+    "id": "318a335e.4fd36c",
+    "type": "link out",
     "z": "60541649.7e2a38",
     "name": "",
-    "x": 550,
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 555,
     "y": 140,
     "wires": []
   }

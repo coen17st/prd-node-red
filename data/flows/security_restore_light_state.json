@@ -49,7 +49,7 @@
     "output_location_type": "msg",
     "output_location": "payload",
     "output_results_count": 1,
-    "x": 350,
+    "x": 390,
     "y": 100,
     "wires": [
       [
@@ -129,7 +129,7 @@
     "randomLast": "5",
     "randomUnits": "seconds",
     "drop": false,
-    "x": 600,
+    "x": 680,
     "y": 280,
     "wires": [
       [
@@ -156,7 +156,7 @@
     "from": "",
     "to": "",
     "reg": false,
-    "x": 770,
+    "x": 850,
     "y": 280,
     "wires": [
       [
@@ -353,7 +353,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 900,
+    "x": 860,
     "y": 100,
     "wires": [
       [

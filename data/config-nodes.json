@@ -9,7 +9,7 @@
     "ha_boolean": "y|yes|true|on|home|open",
     "connectionDelay": true,
     "cacheJson": true,
-    "heartbeat": false,
+    "heartbeat": true,
     "heartbeatInterval": "30"
   }
 ]

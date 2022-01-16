@@ -2,7 +2,7 @@
   {
     "id": "b13ca13c.9328e",
     "type": "tab",
-    "label": "home security",
+    "label": "home_security",
     "disabled": false,
     "info": ""
   },
@@ -194,8 +194,8 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 730,
-    "y": 120,
+    "x": 750,
+    "y": 240,
     "wires": [
       [
         "29fb388f.6b0768",
@@ -221,8 +221,8 @@
     "randomLast": "5",
     "randomUnits": "seconds",
     "drop": false,
-    "x": 1180,
-    "y": 160,
+    "x": 1220,
+    "y": 320,
     "wires": [
       [
         "76dade0f.884bb"
@@ -260,8 +260,8 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 1350,
-    "y": 160,
+    "x": 1390,
+    "y": 320,
     "wires": [
       [
         "1e0c9024.40fd9",
@@ -287,8 +287,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1550,
-    "y": 160,
+    "x": 1690,
+    "y": 360,
     "wires": [
       []
     ]
@@ -325,7 +325,7 @@
     "forType": "num",
     "forUnits": "minutes",
     "x": 510,
-    "y": 220,
+    "y": 340,
     "wires": [
       [
         "3e130ee2.3c60c2"
@@ -358,7 +358,7 @@
     ],
     "queue": "none",
     "x": 800,
-    "y": 220,
+    "y": 340,
     "wires": [
       [
         "74c8186f.59ee08"
@@ -396,8 +396,8 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 780,
-    "y": 40,
+    "x": 960,
+    "y": 120,
     "wires": [
       [
         "3af8865a.e67f0a"
@@ -422,8 +422,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1010,
-    "y": 40,
+    "x": 1190,
+    "y": 120,
     "wires": [
       []
     ]
@@ -445,8 +445,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1820,
-    "y": 160,
+    "x": 1960,
+    "y": 320,
     "wires": [
       []
     ]
@@ -468,21 +468,19 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1770,
-    "y": 100,
+    "x": 1910,
+    "y": 260,
     "wires": [
-      [
-        "f33a4fe6.0d298"
-      ]
+      []
     ]
   },
   {
     "id": "d60f34c7.e15c08",
     "type": "comment",
     "z": "b13ca13c.9328e",
-    "name": "HOME SECURITY",
+    "name": "home security",
     "info": "",
-    "x": 110,
+    "x": 90,
     "y": 40,
     "wires": []
   },
@@ -497,13 +495,14 @@
     "syntax": "mustache",
     "template": "Het alarm gaat af! Schakel beveiliging uit via Home Assistant of Google Home.",
     "output": "str",
-    "x": 1540,
-    "y": 120,
+    "x": 1680,
+    "y": 320,
     "wires": [
       [
         "ef2d0bf8.6e4c38",
         "f7d9db6.4177e28",
-        "3ac976e6.9a9d7a"
+        "3ac976e6.9a9d7a",
+        "60473297.21616c"
       ]
     ]
   },
@@ -563,7 +562,7 @@
       }
     ],
     "x": 110,
-    "y": 220,
+    "y": 360,
     "wires": [
       [
         "f717f95f.430aa8"
@@ -593,7 +592,7 @@
     "repair": false,
     "outputs": 2,
     "x": 270,
-    "y": 220,
+    "y": 360,
     "wires": [
       [
         "50a28070.5f3b8"
@@ -622,7 +621,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 430,
-    "y": 280,
+    "y": 400,
     "wires": [
       [
         "7a028f41.56997"
@@ -649,7 +648,7 @@
     "to": "",
     "reg": false,
     "x": 1020,
-    "y": 220,
+    "y": 340,
     "wires": [
       [
         "743671d6.44575"
@@ -673,8 +672,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1000,
-    "y": 80,
+    "x": 1180,
+    "y": 160,
     "wires": [
       []
     ]
@@ -704,7 +703,7 @@
     ],
     "queue": "none",
     "x": 650,
-    "y": 280,
+    "y": 400,
     "wires": [
       []
     ]
@@ -726,8 +725,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1790,
-    "y": 40,
+    "x": 1930,
+    "y": 200,
     "wires": [
       []
     ]
@@ -743,13 +742,14 @@
     "syntax": "mustache",
     "template": "De {{door}} is geopend met beveiliging aan. Schakel beveiliging uit via Home Assistant of Google Home.",
     "output": "str",
-    "x": 1540,
-    "y": 80,
+    "x": 1680,
+    "y": 280,
     "wires": [
       [
         "3ac976e6.9a9d7a",
         "f7d9db6.4177e28",
-        "ef2d0bf8.6e4c38"
+        "ef2d0bf8.6e4c38",
+        "60473297.21616c"
       ]
     ]
   },
@@ -835,12 +835,15 @@
     ]
   },
   {
-    "id": "f33a4fe6.0d298",
-    "type": "subflow:3a85158d.efd05a",
+    "id": "60473297.21616c",
+    "type": "link out",
     "z": "b13ca13c.9328e",
     "name": "",
-    "x": 1910,
-    "y": 100,
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 1875,
+    "y": 380,
     "wires": []
   }
 ]
