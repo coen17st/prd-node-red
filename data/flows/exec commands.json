@@ -1397,7 +1397,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 390,
+    "x": 410,
     "y": 80,
     "wires": [
       []
@@ -1407,7 +1407,6 @@
     "id": "93608352.5c6e2",
     "type": "cronplus",
     "z": "21c15316.41cc2c",
-    "d": true,
     "name": "every 10 minutes",
     "outputField": "payload",
     "timeZone": "",

@@ -69,7 +69,7 @@
     "ontime": "",
     "ontopic": "",
     "onpayload": "",
-    "onoffset": "30",
+    "onoffset": "",
     "onrandomoffset": 0,
     "offtime": "",
     "offtopic": "",
@@ -144,7 +144,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 940,
+    "x": 920,
     "y": 100,
     "wires": [
       []

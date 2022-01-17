@@ -1,0 +1,855 @@
+[
+  {
+    "id": "b1a9214c.4c71c",
+    "type": "tab",
+    "label": "basement_window",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "968aec4f.db7b8",
+    "type": "comment",
+    "z": "b1a9214c.4c71c",
+    "name": "basement window",
+    "info": "",
+    "x": 110,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "8469a147.10964",
+    "type": "server-state-changed",
+    "z": "b1a9214c.4c71c",
+    "name": "state buienradar precipitation > 0",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.buienradar_precipitation",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "num",
+    "haltifstate": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "outputs": 2,
+    "output_only_on_state_change": false,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "sensor.buienradar_precipitation",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 150,
+    "y": 220,
+    "wires": [
+      [
+        "c431f228.97084"
+      ],
+      [
+        "6692dae9.7caa84"
+      ]
+    ]
+  },
+  {
+    "id": "6692dae9.7caa84",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state absolute humidity basement",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.basement_absolutehumidity",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 500,
+    "y": 320,
+    "wires": [
+      [
+        "1c1129d.09d62d6"
+      ]
+    ]
+  },
+  {
+    "id": "c0684245.6628d",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state absolute humidity outdoor > absolute humidity basement",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.basement_absolutehumidity",
+    "halt_if_type": "msg",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.outdoor_absolutehumidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.outdoor_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 870,
+    "y": 380,
+    "wires": [
+      [
+        "98a47a1b.d6fcc8"
+      ],
+      [
+        "fef0521b.1d64e"
+      ]
+    ]
+  },
+  {
+    "id": "7adaadb8.c5f204",
+    "type": "inject",
+    "z": "b1a9214c.4c71c",
+    "name": "start_flow",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "900",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "start_flow",
+    "payloadType": "str",
+    "x": 90,
+    "y": 320,
+    "wires": [
+      [
+        "6692dae9.7caa84"
+      ]
+    ]
+  },
+  {
+    "id": "6822779.5aa9588",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state temperature outdoor > temperature basement",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.basement_temperature",
+    "halt_if_type": "msg",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.buienradar_temperature",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.buienradar_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 550,
+    "y": 620,
+    "wires": [
+      [
+        "1991431c.890dcd"
+      ],
+      [
+        "6f49345.883a1cc"
+      ]
+    ]
+  },
+  {
+    "id": "b5938ee.f7bec7",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "Basement Heating Power <= 0%",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "lte",
+    "entity_id": "sensor.basement_heating",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_heating",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 490,
+    "y": 560,
+    "wires": [
+      [
+        "6822779.5aa9588"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f82739ec.0019e8",
+    "type": "server-state-changed",
+    "z": "b1a9214c.4c71c",
+    "name": "state heating power basement > 1%",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.basement_heating",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "num",
+    "haltifstate": "1",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_heating",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 160,
+    "y": 100,
+    "wires": [
+      [
+        "8c82a32b.762e7"
+      ],
+      [
+        "6692dae9.7caa84"
+      ]
+    ]
+  },
+  {
+    "id": "fef0521b.1d64e",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state precipitation buienradar <= 0",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "lte",
+    "entity_id": "sensor.buienradar_precipitation",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.ede_precipitation",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 500,
+    "y": 440,
+    "wires": [
+      [
+        "5be90bde.fa4314"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "ee13c1d1.9b3f2",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state basement window off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.basement_window",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.basement_ramen",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1440,
+    "y": 520,
+    "wires": [
+      [
+        "23480068.33efc"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "23480068.33efc",
+    "type": "api-call-service",
+    "z": "b1a9214c.4c71c",
+    "name": "turn on basement window",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_on",
+    "entityId": "input_boolean.basement_ramen",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "basementraam",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
+    "x": 1690,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "704b917a.b0214",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state basement window on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.basement_window",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.basement_ramen",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1440,
+    "y": 420,
+    "wires": [
+      [
+        "d4f8c710.220648"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "d4f8c710.220648",
+    "type": "api-call-service",
+    "z": "b1a9214c.4c71c",
+    "name": "turn off basement window",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "input_boolean",
+    "service": "turn_off",
+    "entityId": "input_boolean.basement_window",
+    "data": "",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [
+      {
+        "property": "basementraam",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "data"
+      }
+    ],
+    "queue": "none",
+    "x": 1690,
+    "y": 420,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6f49345.883a1cc",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state temperature outdoor > 18",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "18",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.buienradar_temperature",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.buienradar_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 490,
+    "y": 680,
+    "wires": [
+      [
+        "1991431c.890dcd"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "b236d4c0.c39c38",
+    "type": "server-state-changed",
+    "z": "b1a9214c.4c71c",
+    "name": "state buienradar condition rainy",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.buienradar_condition",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "rainy",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "weather.buienradar",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 150,
+    "y": 160,
+    "wires": [
+      [
+        "8bf50cc4.c9593"
+      ],
+      [
+        "6692dae9.7caa84"
+      ]
+    ]
+  },
+  {
+    "id": "5be90bde.fa4314",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state condidtion buienrader not rainy",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "rainy",
+    "halt_if_type": "str",
+    "halt_if_compare": "is_not",
+    "entity_id": "sensor.buienradar_condition",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.ede_precipitation",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 510,
+    "y": 500,
+    "wires": [
+      [
+        "b5938ee.f7bec7"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "8bf50cc4.c9593",
+    "type": "template",
+    "z": "b1a9214c.4c71c",
+    "name": "",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Sluit de ramen in de kelder, het regent.",
+    "output": "str",
+    "x": 1200,
+    "y": 160,
+    "wires": [
+      [
+        "704b917a.b0214",
+        "d72ab58.1d91948"
+      ]
+    ]
+  },
+  {
+    "id": "c431f228.97084",
+    "type": "template",
+    "z": "b1a9214c.4c71c",
+    "name": "",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Sluit de ramen in de kelder, dit uur gaat het {{payload}} mm regenen.",
+    "output": "str",
+    "x": 1200,
+    "y": 220,
+    "wires": [
+      [
+        "704b917a.b0214",
+        "d72ab58.1d91948"
+      ]
+    ]
+  },
+  {
+    "id": "1c1129d.09d62d6",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state basement temperature",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.basement_temperature",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 780,
+    "y": 320,
+    "wires": [
+      [
+        "18c2e5bb.4c0cfa"
+      ]
+    ]
+  },
+  {
+    "id": "18c2e5bb.4c0cfa",
+    "type": "api-current-state",
+    "z": "b1a9214c.4c71c",
+    "name": "state buienradar temperature",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.buienradar_temperature",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.buienradar_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 480,
+    "y": 380,
+    "wires": [
+      [
+        "c0684245.6628d"
+      ]
+    ]
+  },
+  {
+    "id": "8c82a32b.762e7",
+    "type": "template",
+    "z": "b1a9214c.4c71c",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Sluit de ramen, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{sensor.basement_heating}} %",
+    "output": "str",
+    "x": 1200,
+    "y": 100,
+    "wires": [
+      [
+        "704b917a.b0214",
+        "d72ab58.1d91948"
+      ]
+    ]
+  },
+  {
+    "id": "1991431c.890dcd",
+    "type": "template",
+    "z": "b1a9214c.4c71c",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Open de ramen in de kelder, buiten is de vochtinhoud lager en temperatuur hoger. \\n \\nAbsolute vochtinhoud buiten: {{sensor.outdoor_absolutehumidity}} g/m³ \\nAbsolute vochtinhoud basement: {{sensor.basement_absolutehumidity}} g/m³ \\n \\nTemperatuur buiten: {{sensor.buienradar_temperature}} °C \\nTemperatuur basement: {{sensor.basement_temperature}} °C",
+    "output": "str",
+    "x": 1200,
+    "y": 520,
+    "wires": [
+      [
+        "ee13c1d1.9b3f2",
+        "d72ab58.1d91948"
+      ]
+    ]
+  },
+  {
+    "id": "98a47a1b.d6fcc8",
+    "type": "template",
+    "z": "b1a9214c.4c71c",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Sluit de ramen in de basement, buiten is de vochtinhoud hoger of de temperatuur lager. \\n \\nAbsolute vochtinhoud buiten: {{sensor.outdoor_absolutehumidity}} g/m³ \\nAbsolute vochtinhoud basement: {{sensor.basement_absolutehumidity}} g/m³ \\n \\nTemperatuur buiten: {{sensor.buienradar_temperature}} °C \\nTemperatuur basement: {{sensor.basement_temperature}} °C",
+    "output": "str",
+    "x": 1200,
+    "y": 400,
+    "wires": [
+      [
+        "704b917a.b0214",
+        "d72ab58.1d91948"
+      ]
+    ]
+  },
+  {
+    "id": "d72ab58.1d91948",
+    "type": "link out",
+    "z": "b1a9214c.4c71c",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 1475,
+    "y": 160,
+    "wires": []
+  }
+]
