@@ -7,6 +7,13 @@
         "info": ""
     },
     {
+        "id": "b1a9214c.4c71c",
+        "type": "tab",
+        "label": "basement_window",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "2910f43f.ab852c",
         "type": "tab",
         "label": "entertainment",
@@ -175,11 +182,18 @@
         "info": ""
     },
     {
-        "id": "b1a9214c.4c71c",
+        "id": "ccde11d9.8710d",
         "type": "tab",
-        "label": "basement_window",
+        "label": "camera_snapshots",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "f9efcae4.0a8728",
+        "type": "tab",
+        "label": "add_email_alias",
+        "disabled": false,
+        "info": "add_email_alias"
     },
     {
         "id": "79544bf2.1ff3a4",
@@ -5052,8 +5066,8 @@
         "z": "4e909abe.0b62e4",
         "name": "CONDITIONS & DATA",
         "info": "",
-        "x": 440,
-        "y": 120,
+        "x": 380,
+        "y": 380,
         "wires": []
     },
     {
@@ -5074,7 +5088,7 @@
         "payload": "start_flow",
         "payloadType": "str",
         "x": 110,
-        "y": 60,
+        "y": 40,
         "wires": [
             [
                 "eaba4c18.04007",
@@ -7560,8 +7574,8 @@
         "syntax": "mustache",
         "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
         "output": "str",
-        "x": 1070,
-        "y": 280,
+        "x": 1100,
+        "y": 260,
         "wires": [
             [
                 "32209a51.6b6536",
@@ -7580,8 +7594,8 @@
         "syntax": "mustache",
         "template": "Er is aangebeld, de voordeur is open gedaan. ",
         "output": "str",
-        "x": 1070,
-        "y": 240,
+        "x": 1100,
+        "y": 220,
         "wires": [
             [
                 "32209a51.6b6536",
@@ -8418,862 +8432,13 @@
         ]
     },
     {
-        "id": "4185b5d1.e9f8fc",
-        "type": "comment",
-        "z": "21c15316.41cc2c",
-        "name": "camera snapshot",
-        "info": "",
-        "x": 120,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "acf38fab.e98a5",
-        "type": "comment",
-        "z": "21c15316.41cc2c",
-        "name": "add email alias to mailserver docker container ",
-        "info": "",
-        "x": 210,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "21eb34fd.08465c",
-        "type": "api-current-state",
-        "z": "21c15316.41cc2c",
-        "name": "alias hidemyid",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "alias",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "input_text.hidemyid_mail_alias",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 380,
-        "y": 220,
-        "wires": [
-            [
-                "66f9d3fa.f1c6bc"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "c0bbafb1.de375",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ssh_command",
-                "pt": "msg",
-                "to": "ssh coen@192.168.1.3",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 910,
-        "y": 240,
-        "wires": [
-            [
-                "3cc98f5c.c688d"
-            ]
-        ]
-    },
-    {
-        "id": "19caa69.01e2659",
-        "type": "api-current-state",
-        "z": "21c15316.41cc2c",
-        "name": "alias theautomation",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "alias",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "input_text.theautomation_mail_alias",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 390,
-        "y": 280,
-        "wires": [
-            [
-                "32e24055.43e0b"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "4d7669d.df23898",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "domain",
-                "pt": "msg",
-                "to": "theautomation.nl",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 280,
-        "wires": [
-            [
-                "c0bbafb1.de375"
-            ]
-        ]
-    },
-    {
-        "id": "809b087d.80b8f8",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "domain",
-                "pt": "msg",
-                "to": "hidemyid.nl",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 220,
-        "wires": [
-            [
-                "c0bbafb1.de375"
-            ]
-        ]
-    },
-    {
-        "id": "66f9d3fa.f1c6bc",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "nempty"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 550,
-        "y": 220,
-        "wires": [
-            [
-                "809b087d.80b8f8"
-            ]
-        ]
-    },
-    {
-        "id": "32e24055.43e0b",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "nempty"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 550,
-        "y": 280,
-        "wires": [
-            [
-                "4d7669d.df23898"
-            ]
-        ]
-    },
-    {
-        "id": "ce48c88b.287d68",
-        "type": "server-state-changed",
-        "z": "21c15316.41cc2c",
-        "name": "script add mail alias is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "script.add_mail_alias",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 150,
-        "y": 220,
-        "wires": [
-            [
-                "21eb34fd.08465c",
-                "19caa69.01e2659"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "10121363.13bb1d",
-        "type": "server-state-changed",
-        "z": "21c15316.41cc2c",
-        "name": "script add mail alias is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "script.delete_mail_alias",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 150,
-        "y": 280,
-        "wires": [
-            [
-                "21eb34fd.08465c",
-                "19caa69.01e2659"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e9fc150b.43b1f8",
-        "type": "exec",
-        "z": "21c15316.41cc2c",
-        "command": "",
-        "addpay": true,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "",
-        "x": 610,
-        "y": 680,
-        "wires": [
-            [],
-            [],
-            [
-                "1c38f472.8d6edc"
-            ]
-        ]
-    },
-    {
-        "id": "7232ec62.6c5494",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "add command",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{ssh_command}}} docker exec prd-mailserver-app setup alias add {{data.state}}@{{{domain}}} coen@{{{domain}}}",
-        "output": "str",
-        "x": 600,
-        "y": 560,
-        "wires": [
-            [
-                "9dd10972.ef7d88"
-            ]
-        ]
-    },
-    {
-        "id": "56ded99a.c9fb38",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "del command",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{ssh_command}}} docker exec prd-mailserver-app setup alias del {{data.state}}@{{{domain}}} coen@{{{domain}}}",
-        "output": "str",
-        "x": 600,
-        "y": 600,
-        "wires": [
-            [
-                "1c4cdd36.dea883"
-            ]
-        ]
-    },
-    {
-        "id": "1c38f472.8d6edc",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "exit code 0",
-        "property": "payload.code",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 130,
-        "y": 780,
-        "wires": [
-            [
-                "c3278f13.bfe78",
-                "df4ec600.c456e8"
-            ],
-            [
-                "b55adcb4.03fb"
-            ]
-        ]
-    },
-    {
-        "id": "c3278f13.bfe78",
-        "type": "api-call-service",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "input_text",
-        "service": "set_value",
-        "entityId": "input_text.hidemyid_mail_alias",
-        "data": "{\"value\":\"\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 390,
-        "y": 780,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "df4ec600.c456e8",
-        "type": "api-call-service",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "input_text",
-        "service": "set_value",
-        "entityId": "input_text.theautomation_mail_alias",
-        "data": "{\"value\":\"\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 390,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "99402d30.86925",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "cat command",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{ssh_command}}} \"cat /home/coen/docker-home-services/mailserver/config/postfix-virtual.cf\"",
-        "output": "str",
-        "x": 1320,
-        "y": 240,
-        "wires": [
-            [
-                "4c22e444.53a67c"
-            ]
-        ]
-    },
-    {
-        "id": "4c22e444.53a67c",
-        "type": "exec",
-        "z": "21c15316.41cc2c",
-        "command": "",
-        "addpay": true,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "",
-        "x": 610,
-        "y": 380,
-        "wires": [
-            [
-                "3fb5878f.44e168"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "3cc98f5c.c688d",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "email address",
-        "field": "email_address",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{data.state}}}@{{{domain}}}",
-        "output": "str",
-        "x": 1140,
-        "y": 240,
-        "wires": [
-            [
-                "99402d30.86925"
-            ]
-        ]
-    },
-    {
-        "id": "3fb5878f.44e168",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "email address exists or not",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "email_address",
-                "vt": "msg"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 180,
-        "y": 540,
-        "wires": [
-            [
-                "706406bf.4faec8"
-            ],
-            [
-                "5d1af524.5eff8c"
-            ]
-        ]
-    },
-    {
-        "id": "5d1af524.5eff8c",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "add or delete",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "script.add_mail_alias",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "script.delete_mail_alias",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 410,
-        "y": 560,
-        "wires": [
-            [
-                "7232ec62.6c5494"
-            ],
-            [
-                "d9d796ca.4b1138"
-            ]
-        ]
-    },
-    {
-        "id": "706406bf.4faec8",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "add or delete",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "script.add_mail_alias",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "script.delete_mail_alias",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 410,
-        "y": 520,
-        "wires": [
-            [
-                "4815dfac.231b3"
-            ],
-            [
-                "56ded99a.c9fb38"
-            ]
-        ]
-    },
-    {
-        "id": "4815dfac.231b3",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alias \"{{{email_address}}}\" bestaat al en kan niet nogmaals worden toegevoegd.",
-        "output": "str",
-        "x": 580,
-        "y": 460,
-        "wires": [
-            [
-                "11ea64c.102f39b"
-            ]
-        ]
-    },
-    {
-        "id": "d9d796ca.4b1138",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alias \"{{{email_address}}}\" bestaat niet en kan daarom niet worden verwijderd.",
-        "output": "str",
-        "x": 580,
-        "y": 500,
-        "wires": [
-            [
-                "11ea64c.102f39b"
-            ]
-        ]
-    },
-    {
-        "id": "af0ab6e.ebff548",
-        "type": "api-call-service",
-        "z": "21c15316.41cc2c",
-        "name": "notify",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "notify",
-        "service": "mobile_app_phone_coen",
-        "entityId": "",
-        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 870,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "11ea64c.102f39b",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "E-mail alias",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 480,
-        "wires": [
-            [
-                "af0ab6e.ebff548"
-            ]
-        ]
-    },
-    {
-        "id": "a36e1c59.e6111",
-        "type": "api-call-service",
-        "z": "21c15316.41cc2c",
-        "name": "notify",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "notify",
-        "service": "mobile_app_phone_coen",
-        "entityId": "",
-        "data": "{\"message\":\"{{message_text}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 590,
-        "y": 860,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9dd10972.ef7d88",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "message_action",
-        "field": "message_action",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "toevoegen",
-        "output": "str",
-        "x": 780,
-        "y": 560,
-        "wires": [
-            [
-                "e9fc150b.43b1f8"
-            ]
-        ]
-    },
-    {
-        "id": "1c4cdd36.dea883",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "message_action",
-        "field": "message_action",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "verwijderen",
-        "output": "str",
-        "x": 780,
-        "y": 600,
-        "wires": [
-            [
-                "e9fc150b.43b1f8"
-            ]
-        ]
-    },
-    {
-        "id": "b55adcb4.03fb",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "message",
-        "field": "message_text",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Error: E-mail alias \"{{{email_address}}}\" {{{message_action}}} is niet gelukt. ",
-        "output": "str",
-        "x": 340,
-        "y": 860,
-        "wires": [
-            [
-                "bc6eec3f.aa403"
-            ]
-        ]
-    },
-    {
-        "id": "bc6eec3f.aa403",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "topic",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "E-mail alias {{{message_action}}}",
-        "output": "str",
-        "x": 470,
-        "y": 860,
-        "wires": [
-            [
-                "a36e1c59.e6111"
-            ]
-        ]
-    },
-    {
         "id": "7d226530.41a43c",
         "type": "comment",
         "z": "21c15316.41cc2c",
         "name": "backup from host to remote machine",
         "info": "",
-        "x": 180,
-        "y": 960,
+        "x": 160,
+        "y": 840,
         "wires": []
     },
     {
@@ -9287,8 +8452,8 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 680,
-        "y": 1000,
+        "x": 660,
+        "y": 880,
         "wires": [
             [
                 "1cd851a9.9a893e"
@@ -9323,8 +8488,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1110,
-        "y": 1020,
+        "x": 1090,
+        "y": 900,
         "wires": [
             [],
             [
@@ -9343,8 +8508,8 @@
         "syntax": "mustache",
         "template": "Error: backup naar backup-host is niet gelukt. ",
         "output": "str",
-        "x": 1280,
-        "y": 1020,
+        "x": 1260,
+        "y": 900,
         "wires": [
             [
                 "a49ae0e7.5e869"
@@ -9368,8 +8533,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1870,
-        "y": 1020,
+        "x": 1850,
+        "y": 900,
         "wires": [
             []
         ]
@@ -9385,8 +8550,8 @@
         "syntax": "mustache",
         "template": "Backup",
         "output": "str",
-        "x": 1410,
-        "y": 1020,
+        "x": 1390,
+        "y": 900,
         "wires": [
             [
                 "d698dab9.797f38"
@@ -9404,8 +8569,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 1090,
-        "y": 980,
+        "x": 1070,
+        "y": 860,
         "wires": [
             [
                 "26030013.e0f55"
@@ -9439,8 +8604,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1210,
-        "y": 960,
+        "x": 1190,
+        "y": 840,
         "wires": [
             [
                 "5099f986.39cc18"
@@ -9464,8 +8629,8 @@
         "syntax": "mustache",
         "template": "Purge backup van \"{{{payload.location}}} is gelukt, {{{payload.bytes}}} verzonden in {{payload.seconds}} seconden.",
         "output": "str",
-        "x": 1900,
-        "y": 940,
+        "x": 1880,
+        "y": 820,
         "wires": [
             [
                 "d698dab9.797f38"
@@ -9496,8 +8661,8 @@
         "propout": "payload",
         "object": "msg",
         "objectout": "msg",
-        "x": 1370,
-        "y": 980,
+        "x": 1350,
+        "y": 860,
         "wires": [
             [
                 "42816bd.2c3fa94"
@@ -9528,8 +8693,8 @@
         "propout": "payload",
         "object": "msg",
         "objectout": "msg",
-        "x": 1370,
-        "y": 900,
+        "x": 1350,
+        "y": 780,
         "wires": [
             [
                 "e564adac.03f29"
@@ -9560,8 +8725,8 @@
         "propout": "payload",
         "object": "msg",
         "objectout": "msg",
-        "x": 1370,
-        "y": 940,
+        "x": 1350,
+        "y": 820,
         "wires": [
             [
                 "ea3123a8.06cac",
@@ -9588,8 +8753,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1510,
-        "y": 900,
+        "x": 1490,
+        "y": 780,
         "wires": [
             [
                 "4afc6fa4.e01d9"
@@ -9615,8 +8780,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1510,
-        "y": 940,
+        "x": 1490,
+        "y": 820,
         "wires": [
             [
                 "4afc6fa4.e01d9"
@@ -9642,8 +8807,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1510,
-        "y": 980,
+        "x": 1490,
+        "y": 860,
         "wires": [
             [
                 "4afc6fa4.e01d9"
@@ -9670,8 +8835,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1750,
-        "y": 940,
+        "x": 1730,
+        "y": 820,
         "wires": [
             [
                 "79978a0a.3132c4"
@@ -9702,8 +8867,8 @@
                 "solarEvents": "sunrise,sunset"
             }
         ],
-        "x": 150,
-        "y": 1000,
+        "x": 130,
+        "y": 880,
         "wires": [
             []
         ]
@@ -9732,8 +8897,8 @@
                 "solarEvents": "sunrise,sunset"
             }
         ],
-        "x": 170,
-        "y": 1080,
+        "x": 150,
+        "y": 960,
         "wires": [
             []
         ]
@@ -9749,8 +8914,8 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 660,
-        "y": 1080,
+        "x": 640,
+        "y": 960,
         "wires": [
             [],
             [],
@@ -9770,8 +8935,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1490,
-        "y": 760,
+        "x": 1470,
+        "y": 640,
         "wires": []
     },
     {
@@ -9787,64 +8952,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1140,
-        "y": 1200,
+        "x": 1120,
+        "y": 1080,
         "wires": []
-    },
-    {
-        "id": "7a12cc07.346f74",
-        "type": "api-call-service",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "shell_command",
-        "service": "camera_snapshot",
-        "entityId": "",
-        "data": "",
-        "dataType": "jsonata",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 410,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "93608352.5c6e2",
-        "type": "cronplus",
-        "z": "21c15316.41cc2c",
-        "name": "every 10 minutes",
-        "outputField": "payload",
-        "timeZone": "",
-        "persistDynamic": false,
-        "commandResponseMsgOutput": "output1",
-        "outputs": 1,
-        "options": [
-            {
-                "name": "schedule1",
-                "topic": "schedule1",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "*/10 * * * *",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 130,
-        "y": 80,
-        "wires": [
-            [
-                "7a12cc07.346f74"
-            ]
-        ]
     },
     {
         "id": "24ab3051.7c08e",
@@ -20434,7 +19544,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 230,
+        "x": 250,
         "y": 100,
         "wires": [
             [
@@ -22756,7 +21866,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 920,
+        "x": 880,
         "y": 100,
         "wires": [
             []
@@ -23856,6 +22966,910 @@
         "y": 680,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "a9e7c050.c05b5",
+        "type": "comment",
+        "z": "ccde11d9.8710d",
+        "name": "camera snapshot",
+        "info": "",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7535c220.a30c6c",
+        "type": "api-call-service",
+        "z": "ccde11d9.8710d",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "shell_command",
+        "service": "camera_snapshot",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 430,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3534d5d4.983eca",
+        "type": "cronplus",
+        "z": "ccde11d9.8710d",
+        "name": "every 10 minutes",
+        "outputField": "payload",
+        "timeZone": "",
+        "persistDynamic": false,
+        "commandResponseMsgOutput": "output1",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "schedule1",
+                "topic": "schedule1",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "*/5 * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "7535c220.a30c6c"
+            ]
+        ]
+    },
+    {
+        "id": "914396ec.421b58",
+        "type": "comment",
+        "z": "f9efcae4.0a8728",
+        "name": "add email alias to mailserver docker container ",
+        "info": "add email alias to mailserver docker container ",
+        "x": 190,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8e7cd1ce.12f69",
+        "type": "api-current-state",
+        "z": "f9efcae4.0a8728",
+        "name": "alias hidemyid",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "alias",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "input_text.hidemyid_mail_alias",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "8e1d323a.91ef7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "63c362fa.94915c",
+        "type": "change",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ssh_command",
+                "pt": "msg",
+                "to": "ssh coen@192.168.1.3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 120,
+        "wires": [
+            [
+                "59a7c16.9877a4"
+            ]
+        ]
+    },
+    {
+        "id": "bb34c6ad.5ad1e8",
+        "type": "api-current-state",
+        "z": "f9efcae4.0a8728",
+        "name": "alias theautomation",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "alias",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "input_text.theautomation_mail_alias",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "d4bf95bb.0c8e88"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "14df7999.3c83b6",
+        "type": "change",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "domain",
+                "pt": "msg",
+                "to": "theautomation.nl",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "63c362fa.94915c"
+            ]
+        ]
+    },
+    {
+        "id": "87d20450.ec0718",
+        "type": "change",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "domain",
+                "pt": "msg",
+                "to": "hidemyid.nl",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 100,
+        "wires": [
+            [
+                "63c362fa.94915c"
+            ]
+        ]
+    },
+    {
+        "id": "8e1d323a.91ef7",
+        "type": "switch",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 100,
+        "wires": [
+            [
+                "87d20450.ec0718"
+            ]
+        ]
+    },
+    {
+        "id": "d4bf95bb.0c8e88",
+        "type": "switch",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nempty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "14df7999.3c83b6"
+            ]
+        ]
+    },
+    {
+        "id": "46c3a039.7b921",
+        "type": "server-state-changed",
+        "z": "f9efcae4.0a8728",
+        "name": "script add mail alias is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "script.add_mail_alias",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "8e7cd1ce.12f69",
+                "bb34c6ad.5ad1e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "96f0ae09.82b49",
+        "type": "server-state-changed",
+        "z": "f9efcae4.0a8728",
+        "name": "script add mail alias is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "script.delete_mail_alias",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "8e7cd1ce.12f69",
+                "bb34c6ad.5ad1e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b0bdc8c1.6c9fc8",
+        "type": "exec",
+        "z": "f9efcae4.0a8728",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [],
+            [],
+            [
+                "59fdeabc.668d94"
+            ]
+        ]
+    },
+    {
+        "id": "2d078017.68e42",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "add command",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{ssh_command}}} docker exec prd-mailserver-app setup alias add {{data.state}}@{{{domain}}} coen@{{{domain}}}",
+        "output": "str",
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "63149408.38e6bc"
+            ]
+        ]
+    },
+    {
+        "id": "291a2d6a.173ca2",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "del command",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{ssh_command}}} docker exec prd-mailserver-app setup alias del {{data.state}}@{{{domain}}} coen@{{{domain}}}",
+        "output": "str",
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "d25c87e6.da2818"
+            ]
+        ]
+    },
+    {
+        "id": "59fdeabc.668d94",
+        "type": "switch",
+        "z": "f9efcae4.0a8728",
+        "name": "exit code 0",
+        "property": "payload.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "b4d34188.b4a93",
+                "f0db6c3b.fa87f"
+            ],
+            [
+                "bbb23816.393488"
+            ]
+        ]
+    },
+    {
+        "id": "b4d34188.b4a93",
+        "type": "api-call-service",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_text",
+        "service": "set_value",
+        "entityId": "input_text.hidemyid_mail_alias",
+        "data": "{\"value\":\"\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 370,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0db6c3b.fa87f",
+        "type": "api-call-service",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_text",
+        "service": "set_value",
+        "entityId": "input_text.theautomation_mail_alias",
+        "data": "{\"value\":\"\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 370,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2b7cf6d.8cc9f",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "cat command",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{ssh_command}}} \"cat /home/coen/docker-home-services/mailserver/config/postfix-virtual.cf\"",
+        "output": "str",
+        "x": 1120,
+        "y": 180,
+        "wires": [
+            [
+                "fde2bdff.1e5c8"
+            ]
+        ]
+    },
+    {
+        "id": "fde2bdff.1e5c8",
+        "type": "exec",
+        "z": "f9efcae4.0a8728",
+        "command": "",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "7d12910b.57472"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "59a7c16.9877a4",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "email address",
+        "field": "email_address",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{data.state}}}@{{{domain}}}",
+        "output": "str",
+        "x": 1120,
+        "y": 120,
+        "wires": [
+            [
+                "f2b7cf6d.8cc9f"
+            ]
+        ]
+    },
+    {
+        "id": "7d12910b.57472",
+        "type": "switch",
+        "z": "f9efcae4.0a8728",
+        "name": "email address exists or not",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "email_address",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "9daf1483.f68928"
+            ],
+            [
+                "a177f7b4.5cd5e8"
+            ]
+        ]
+    },
+    {
+        "id": "a177f7b4.5cd5e8",
+        "type": "switch",
+        "z": "f9efcae4.0a8728",
+        "name": "add or delete",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "script.add_mail_alias",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "script.delete_mail_alias",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [
+                "2d078017.68e42"
+            ],
+            [
+                "aa34dbf6.0d04c8"
+            ]
+        ]
+    },
+    {
+        "id": "9daf1483.f68928",
+        "type": "switch",
+        "z": "f9efcae4.0a8728",
+        "name": "add or delete",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "script.add_mail_alias",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "script.delete_mail_alias",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 400,
+        "wires": [
+            [
+                "cd407be3.63ccb8"
+            ],
+            [
+                "291a2d6a.173ca2"
+            ]
+        ]
+    },
+    {
+        "id": "cd407be3.63ccb8",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alias \"{{{email_address}}}\" bestaat al en kan niet nogmaals worden toegevoegd.",
+        "output": "str",
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "22c718ff.c27678"
+            ]
+        ]
+    },
+    {
+        "id": "aa34dbf6.0d04c8",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alias \"{{{email_address}}}\" bestaat niet en kan daarom niet worden verwijderd.",
+        "output": "str",
+        "x": 560,
+        "y": 380,
+        "wires": [
+            [
+                "22c718ff.c27678"
+            ]
+        ]
+    },
+    {
+        "id": "f7817321.f43fd",
+        "type": "api-call-service",
+        "z": "f9efcae4.0a8728",
+        "name": "notify",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_phone_coen",
+        "entityId": "",
+        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 850,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22c718ff.c27678",
+        "type": "change",
+        "z": "f9efcae4.0a8728",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "E-mail alias",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "f7817321.f43fd"
+            ]
+        ]
+    },
+    {
+        "id": "421e412f.6e627",
+        "type": "api-call-service",
+        "z": "f9efcae4.0a8728",
+        "name": "notify",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_phone_coen",
+        "entityId": "",
+        "data": "{\"message\":\"{{message_text}}\",\"title\":\"{{topic}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63149408.38e6bc",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "message_action",
+        "field": "message_action",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "toevoegen",
+        "output": "str",
+        "x": 760,
+        "y": 440,
+        "wires": [
+            [
+                "b0bdc8c1.6c9fc8"
+            ]
+        ]
+    },
+    {
+        "id": "d25c87e6.da2818",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "message_action",
+        "field": "message_action",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "verwijderen",
+        "output": "str",
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "b0bdc8c1.6c9fc8"
+            ]
+        ]
+    },
+    {
+        "id": "bbb23816.393488",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "message",
+        "field": "message_text",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Error: E-mail alias \"{{{email_address}}}\" {{{message_action}}} is niet gelukt. ",
+        "output": "str",
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "b8cef7a2.882a18"
+            ]
+        ]
+    },
+    {
+        "id": "b8cef7a2.882a18",
+        "type": "template",
+        "z": "f9efcae4.0a8728",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "E-mail alias {{{message_action}}}",
+        "output": "str",
+        "x": 450,
+        "y": 740,
+        "wires": [
+            [
+                "421e412f.6e627"
+            ]
         ]
     }
 ]

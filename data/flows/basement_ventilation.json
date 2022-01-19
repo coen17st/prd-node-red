@@ -246,8 +246,8 @@
     "z": "4e909abe.0b62e4",
     "name": "CONDITIONS & DATA",
     "info": "",
-    "x": 440,
-    "y": 120,
+    "x": 380,
+    "y": 380,
     "wires": []
   },
   {
@@ -268,7 +268,7 @@
     "payload": "start_flow",
     "payloadType": "str",
     "x": 110,
-    "y": 60,
+    "y": 40,
     "wires": [
       [
         "eaba4c18.04007",

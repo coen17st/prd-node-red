@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ccde11d9.8710d",
+    "type": "tab",
+    "label": "camera_snapshots",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "a9e7c050.c05b5",
+    "type": "comment",
+    "z": "ccde11d9.8710d",
+    "name": "camera snapshot",
+    "info": "",
+    "x": 100,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "7535c220.a30c6c",
+    "type": "api-call-service",
+    "z": "ccde11d9.8710d",
+    "name": "",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "shell_command",
+    "service": "camera_snapshot",
+    "entityId": "",
+    "data": "",
+    "dataType": "jsonata",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 430,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "3534d5d4.983eca",
+    "type": "cronplus",
+    "z": "ccde11d9.8710d",
+    "name": "every 10 minutes",
+    "outputField": "payload",
+    "timeZone": "",
+    "persistDynamic": false,
+    "commandResponseMsgOutput": "output1",
+    "outputs": 1,
+    "options": [
+      {
+        "name": "schedule1",
+        "topic": "schedule1",
+        "payloadType": "default",
+        "payload": "",
+        "expressionType": "cron",
+        "expression": "*/5 * * * *",
+        "location": "",
+        "offset": "0",
+        "solarType": "all",
+        "solarEvents": "sunrise,sunset"
+      }
+    ],
+    "x": 110,
+    "y": 100,
+    "wires": [
+      [
+        "7535c220.a30c6c"
+      ]
+    ]
+  }
+]

@@ -102,7 +102,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 230,
+    "x": 250,
     "y": 100,
     "wires": [
       [

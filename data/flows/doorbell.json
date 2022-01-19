@@ -116,8 +116,8 @@
     "syntax": "mustache",
     "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
     "output": "str",
-    "x": 1070,
-    "y": 280,
+    "x": 1100,
+    "y": 260,
     "wires": [
       [
         "32209a51.6b6536",
@@ -136,8 +136,8 @@
     "syntax": "mustache",
     "template": "Er is aangebeld, de voordeur is open gedaan. ",
     "output": "str",
-    "x": 1070,
-    "y": 240,
+    "x": 1100,
+    "y": 220,
     "wires": [
       [
         "32209a51.6b6536",
