@@ -19092,8 +19092,8 @@
         "id": "be5d4d4b.0809d",
         "type": "comment",
         "z": "f180ab88.925788",
-        "name": "shelly i3 actions",
-        "info": "",
+        "name": "shelly i3 actions ",
+        "info": "[shellyi3.lan](http://shellyi3.lan)",
         "x": 100,
         "y": 40,
         "wires": []
@@ -23471,8 +23471,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 110,
-        "y": 660,
+        "x": 390,
+        "y": 640,
         "wires": [
             [
                 "b4d34188.b4a93",
@@ -23500,8 +23500,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 370,
-        "y": 660,
+        "x": 650,
+        "y": 640,
         "wires": [
             []
         ]
@@ -23523,8 +23523,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 370,
-        "y": 700,
+        "x": 650,
+        "y": 680,
         "wires": [
             []
         ]
@@ -23540,8 +23540,8 @@
         "syntax": "mustache",
         "template": "{{{ssh_command}}} \"cat /home/coen/docker-home-services/mailserver/config/postfix-virtual.cf\"",
         "output": "str",
-        "x": 1120,
-        "y": 180,
+        "x": 1300,
+        "y": 120,
         "wires": [
             [
                 "fde2bdff.1e5c8"
@@ -23740,8 +23740,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 850,
-        "y": 360,
+        "x": 1050,
+        "y": 520,
         "wires": [
             []
         ]
@@ -23771,29 +23771,6 @@
             [
                 "f7817321.f43fd"
             ]
-        ]
-    },
-    {
-        "id": "421e412f.6e627",
-        "type": "api-call-service",
-        "z": "f9efcae4.0a8728",
-        "name": "notify",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "notify",
-        "service": "mobile_app_phone_coen",
-        "entityId": "",
-        "data": "{\"message\":\"{{message_text}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 740,
-        "wires": [
-            []
         ]
     },
     {
@@ -23845,8 +23822,8 @@
         "syntax": "mustache",
         "template": "Error: E-mail alias \"{{{email_address}}}\" {{{message_action}}} is niet gelukt. ",
         "output": "str",
-        "x": 320,
-        "y": 740,
+        "x": 600,
+        "y": 720,
         "wires": [
             [
                 "b8cef7a2.882a18"
@@ -23864,11 +23841,11 @@
         "syntax": "mustache",
         "template": "E-mail alias {{{message_action}}}",
         "output": "str",
-        "x": 450,
-        "y": 740,
+        "x": 730,
+        "y": 720,
         "wires": [
             [
-                "421e412f.6e627"
+                "f7817321.f43fd"
             ]
         ]
     }

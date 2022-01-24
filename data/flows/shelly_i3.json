@@ -552,8 +552,8 @@
     "id": "be5d4d4b.0809d",
     "type": "comment",
     "z": "f180ab88.925788",
-    "name": "shelly i3 actions",
-    "info": "",
+    "name": "shelly i3 actions ",
+    "info": "[shellyi3.lan](http://shellyi3.lan)",
     "x": 100,
     "y": 40,
     "wires": []
