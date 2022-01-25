@@ -43,7 +43,7 @@
     "id": "3534d5d4.983eca",
     "type": "cronplus",
     "z": "ccde11d9.8710d",
-    "name": "every 10 minutes",
+    "name": "every 5 minutes",
     "outputField": "payload",
     "timeZone": "",
     "persistDynamic": false,
@@ -63,7 +63,7 @@
         "solarEvents": "sunrise,sunset"
       }
     ],
-    "x": 110,
+    "x": 100,
     "y": 100,
     "wires": [
       [

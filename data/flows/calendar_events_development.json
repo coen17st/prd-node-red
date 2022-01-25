@@ -2,7 +2,7 @@
   {
     "id": "9605dd85.f395a",
     "type": "tab",
-    "label": "calendar_events_actions",
+    "label": "calendar_events_development",
     "disabled": false,
     "info": ""
   },
@@ -83,11 +83,11 @@
     "fri": true,
     "sat": true,
     "sun": true,
-    "x": 660,
+    "x": 680,
     "y": 100,
     "wires": [
       [
-        "e9171ff7.af43b"
+        "2bbaf616.ec124a"
       ]
     ]
   },
@@ -144,7 +144,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 880,
+    "x": 1160,
     "y": 100,
     "wires": [
       []
@@ -154,17 +154,62 @@
     "id": "2c83e3ef.9f7cac",
     "type": "comment",
     "z": "9605dd85.f395a",
-    "name": "schedule actions based on calendar events",
-    "info": "schedule actions based on calendar events",
-    "x": 180,
+    "name": "turn on basement heating when calendar event contains \"development\" and coen is home. When state person.coen changed to not_home heating will go to auto mode",
+    "info": "turn on basement heating when calendar event contains \"development\" and coen is home. When state person.coen changed to not_home heating will go to auto mode",
+    "x": 570,
     "y": 40,
     "wires": []
   },
   {
-    "id": "ea0f15a1.eeb268",
+    "id": "2bbaf616.ec124a",
+    "type": "api-current-state",
+    "z": "9605dd85.f395a",
+    "name": "person coen is home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "person.coen",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 880,
+    "y": 100,
+    "wires": [
+      [
+        "e9171ff7.af43b"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "aedcd937.1ca508",
     "type": "server-state-changed",
     "z": "9605dd85.f395a",
-    "name": "calendar lise",
+    "name": "person coen is not home",
     "server": "4ba92433.2478cc",
     "version": 3,
     "exposeToHomeAssistant": false,
@@ -178,15 +223,15 @@
         "value": ""
       }
     ],
-    "entityidfilter": "calendar.lise",
+    "entityidfilter": "person.coen",
     "entityidfiltertype": "exact",
     "outputinitially": true,
     "state_type": "str",
-    "haltifstate": "",
+    "haltifstate": "home",
     "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 1,
-    "output_only_on_state_change": false,
+    "halt_if_compare": "is_not",
+    "outputs": 2,
+    "output_only_on_state_change": true,
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
@@ -215,105 +260,98 @@
         "valueType": "triggerId"
       }
     ],
-    "x": 90,
-    "y": 180,
+    "x": 130,
+    "y": 160,
     "wires": [
       [
-        "e8b6ad98.7697a"
-      ]
-    ]
-  },
-  {
-    "id": "e8b6ad98.7697a",
-    "type": "function",
-    "z": "9605dd85.f395a",
-    "name": "check word in message",
-    "func": "// Written by Coen Stam\n\n// Check if new state contains word\nvar string = msg.data.new_state.attributes.message;\nvar word = \"past op\";\n\n// If new state contains word return msg\nif (string.includes(word))\nreturn msg;",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 310,
-    "y": 180,
-    "wires": [
-      [
-        "66f59609.e2e228"
-      ]
-    ]
-  },
-  {
-    "id": "66f59609.e2e228",
-    "type": "function",
-    "z": "9605dd85.f395a",
-    "name": "set start time",
-    "func": "// Written by Coen Stam\n\n// Create time from start_time attribute\nmsg.payload = {};\nmsg.payload.ontime = msg.data.new_state.attributes.start_time.substr(11, 5);\nreturn msg;\n",
-    "outputs": 1,
-    "noerr": 0,
-    "initialize": "",
-    "finalize": "",
-    "x": 510,
-    "y": 180,
-    "wires": [
-      [
-        "9912da2f.1fd358"
-      ]
-    ]
-  },
-  {
-    "id": "fd9328e7.a31568",
-    "type": "api-call-service",
-    "z": "9605dd85.f395a",
-    "name": "turn on guest mode",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_boolean",
-    "service": "turn_on",
-    "entityId": "input_boolean.guest",
-    "data": "",
-    "dataType": "jsonata",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 890,
-    "y": 180,
-    "wires": [
+        "a2e5ff99.41b23"
+      ],
       []
     ]
   },
   {
-    "id": "9912da2f.1fd358",
-    "type": "schedex",
+    "id": "a2894712.f96908",
+    "type": "function",
     "z": "9605dd85.f395a",
-    "name": "schedule -90 min",
-    "passthroughunhandled": false,
-    "suspended": false,
-    "lat": "",
-    "lon": "",
-    "ontime": "",
-    "ontopic": "",
-    "onpayload": "",
-    "onoffset": "-90",
-    "onrandomoffset": 0,
-    "offtime": "",
-    "offtopic": "",
-    "offpayload": "",
-    "offoffset": 0,
-    "offrandomoffset": 0,
-    "mon": true,
-    "tue": true,
-    "wed": true,
-    "thu": true,
-    "fri": true,
-    "sat": true,
-    "sun": true,
-    "x": 690,
-    "y": 180,
+    "name": "check word in message",
+    "func": "// Written by Coen Stam\n\n// Check if new state contains word\nvar string = msg.data.attributes.message;\nvar word = \"DEVELOPMENT\";\n\n// If new state contains word return msg\nif (string.includes(word))\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 550,
+    "y": 160,
     "wires": [
       [
-        "fd9328e7.a31568"
+        "1a80c797.424038"
       ]
+    ]
+  },
+  {
+    "id": "a2e5ff99.41b23",
+    "type": "api-current-state",
+    "z": "9605dd85.f395a",
+    "name": "calendar state",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "calendar.prompt7",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 340,
+    "y": 160,
+    "wires": [
+      [
+        "a2894712.f96908"
+      ]
+    ]
+  },
+  {
+    "id": "1a80c797.424038",
+    "type": "api-call-service",
+    "z": "9605dd85.f395a",
+    "name": "set temperature climate basement",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "debugenabled": false,
+    "service_domain": "climate",
+    "service": "set_hvac_mode",
+    "entityId": "climate.basement",
+    "data": "{\"hvac_mode\":\"auto\"}",
+    "dataType": "json",
+    "mergecontext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 920,
+    "y": 160,
+    "wires": [
+      []
     ]
   }
 ]
