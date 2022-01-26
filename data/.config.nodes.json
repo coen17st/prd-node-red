@@ -375,23 +375,6 @@
             }
         }
     },
-    "node-red-node-tail": {
-        "name": "node-red-node-tail",
-        "version": "0.3.1",
-        "local": true,
-        "nodes": {
-            "tail": {
-                "name": "tail",
-                "types": [
-                    "tail"
-                ],
-                "enabled": true,
-                "local": true,
-                "module": "node-red-node-tail",
-                "file": "/data/node_modules/node-red-node-tail/28-tail.js"
-            }
-        }
-    },
     "node-red-contrib-simpletime": {
         "name": "node-red-contrib-simpletime",
         "version": "2.10.0",
@@ -441,51 +424,8 @@
                 "module": "node-red-contrib-cron-plus",
                 "file": "/data/node_modules/node-red-contrib-cron-plus/cronplus.js"
             }
-        }
-    },
-    "node-red-contrib-flow-manager": {
-        "name": "node-red-contrib-flow-manager",
-        "version": "0.7.2",
-        "local": true,
-        "nodes": {
-            "flow-manager": {
-                "name": "flow-manager",
-                "types": [],
-                "enabled": true,
-                "local": true,
-                "module": "node-red-contrib-flow-manager",
-                "file": "/data/node_modules/node-red-contrib-flow-manager/flow-manager.js"
-            }
-        }
-    },
-    "node-red-contrib-harmony": {
-        "name": "node-red-contrib-harmony",
-        "version": "1.2.6",
-        "local": true,
-        "nodes": {
-            "harmony": {
-                "name": "harmony",
-                "types": [
-                    "H command",
-                    "H activity",
-                    "H observe"
-                ],
-                "enabled": true,
-                "local": true,
-                "module": "node-red-contrib-harmony",
-                "file": "/data/node_modules/node-red-contrib-harmony/harmony/harmony.js"
-            },
-            "harmony-server": {
-                "name": "harmony-server",
-                "types": [
-                    "harmony-server"
-                ],
-                "enabled": true,
-                "local": true,
-                "module": "node-red-contrib-harmony",
-                "file": "/data/node_modules/node-red-contrib-harmony/harmony/harmony-server.js"
-            }
-        }
+        },
+        "pending_version": "1.5.6"
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",

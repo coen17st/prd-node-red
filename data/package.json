@@ -18,10 +18,8 @@
         "node-red": "1.2.9",
         "node-red-contrib-calc": "~1.0.5",
         "node-red-contrib-cast": "~0.2.16",
-        "node-red-contrib-cron-plus": "~1.5.5",
-        "node-red-contrib-flow-manager": "0.7.2",
+        "node-red-contrib-cron-plus": "~1.5.6",
         "node-red-contrib-google-tts": "1.1.1",
-        "node-red-contrib-harmony": "~1.2.6",
         "node-red-contrib-home-assistant-websocket": "~0.41.3",
         "node-red-contrib-schedex": "~1.10.6",
         "node-red-contrib-simpletime": "~2.10.0",
@@ -29,8 +27,7 @@
         "node-red-contrib-string": "1.0.0",
         "node-red-contrib-time-range-switch": "~1.1.2",
         "node-red-contrib-traffic": "~0.2.1",
-        "node-red-node-rbe": "~0.5.0",
-        "node-red-node-tail": "~0.3.1"
+        "node-red-node-rbe": "~0.5.0"
     },
     "engines": {
         "node": ">=10"
