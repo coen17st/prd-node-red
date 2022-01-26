@@ -411,7 +411,7 @@
     },
     "node-red-contrib-cron-plus": {
         "name": "node-red-contrib-cron-plus",
-        "version": "1.5.5",
+        "version": "1.5.6",
         "local": true,
         "nodes": {
             "cronplus": {
@@ -424,8 +424,7 @@
                 "module": "node-red-contrib-cron-plus",
                 "file": "/data/node_modules/node-red-contrib-cron-plus/cronplus.js"
             }
-        },
-        "pending_version": "1.5.6"
+        }
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",
@@ -532,27 +531,10 @@
             }
         }
     },
-    "node-red-contrib-google-tts": {
-        "name": "node-red-contrib-google-tts",
-        "version": "1.1.1",
-        "local": false,
-        "nodes": {
-            "google-tts": {
-                "name": "google-tts",
-                "types": [
-                    "google-tts"
-                ],
-                "enabled": true,
-                "local": false,
-                "module": "node-red-contrib-google-tts",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-google-tts/google-tts.js"
-            }
-        }
-    },
     "node-red-contrib-string": {
         "name": "node-red-contrib-string",
         "version": "1.0.0",
-        "local": false,
+        "local": true,
         "nodes": {
             "string": {
                 "name": "string",
@@ -560,9 +542,9 @@
                     "string"
                 ],
                 "enabled": true,
-                "local": false,
+                "local": true,
                 "module": "node-red-contrib-string",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-string/string/string.js"
+                "file": "/data/node_modules/node-red-contrib-string/string/string.js"
             }
         }
     },
@@ -580,6 +562,67 @@
                 "local": true,
                 "module": "node-red-contrib-schedex",
                 "file": "/data/node_modules/node-red-contrib-schedex/index.js"
+            }
+        }
+    },
+    "node-red-contrib-flow-manager": {
+        "name": "node-red-contrib-flow-manager",
+        "version": "0.7.2",
+        "local": false,
+        "nodes": {
+            "flow-manager": {
+                "name": "flow-manager",
+                "types": [],
+                "enabled": true,
+                "local": false,
+                "module": "node-red-contrib-flow-manager",
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-flow-manager/flow-manager.js"
+            }
+        }
+    },
+    "node-red-contrib-harmony": {
+        "name": "node-red-contrib-harmony",
+        "version": "1.2.6",
+        "local": false,
+        "nodes": {
+            "harmony": {
+                "name": "harmony",
+                "types": [
+                    "H command",
+                    "H activity",
+                    "H observe"
+                ],
+                "enabled": false,
+                "local": false,
+                "module": "node-red-contrib-harmony",
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-harmony/harmony/harmony.js"
+            },
+            "harmony-server": {
+                "name": "harmony-server",
+                "types": [
+                    "harmony-server"
+                ],
+                "enabled": false,
+                "local": false,
+                "module": "node-red-contrib-harmony",
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-harmony/harmony/harmony-server.js"
+            }
+        }
+    },
+    "node-red-node-tail": {
+        "name": "node-red-node-tail",
+        "version": "0.3.2",
+        "local": false,
+        "nodes": {
+            "tail": {
+                "name": "tail",
+                "types": [
+                    "tail"
+                ],
+                "enabled": false,
+                "local": false,
+                "module": "node-red-node-tail",
+                "file": "/usr/src/node-red/node_modules/node-red-node-tail/28-tail.js"
             }
         }
     }
