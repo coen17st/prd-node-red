@@ -21,7 +21,7 @@
         "node-red-contrib-cron-plus": "~1.5.6",
         "node-red-contrib-google-tts": "1.1.1",
         "node-red-contrib-home-assistant-websocket": "~0.41.3",
-        "node-red-contrib-schedex": "~1.10.6",
+        // "node-red-contrib-schedex": "~1.10.6",
         "node-red-contrib-simpletime": "~2.10.0",
         "node-red-contrib-stoptimer": "0.0.7",
         "node-red-contrib-string": "1.0.0",
