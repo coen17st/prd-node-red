@@ -1,1050 +1,923 @@
 [
-  {
-    "id": "55da1471.fda0fc",
-    "type": "tab",
-    "label": "vacuum cleaner",
-    "disabled": false,
-    "info": ""
-  },
-  {
-    "id": "b7cf63f8.77958",
-    "type": "server-state-changed",
-    "z": "55da1471.fda0fc",
-    "name": "state group persons",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "group.persons",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 1,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 110,
-    "y": 140,
-    "wires": [
-      [
-        "37466c93.d14b84"
-      ]
-    ]
-  },
-  {
-    "id": "b6290ea8.c1e6f",
-    "type": "server-state-changed",
-    "z": "55da1471.fda0fc",
-    "name": "state guest ",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.guest",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 1,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 80,
-    "y": 200,
-    "wires": [
-      [
-        "c8eb1592.520518"
-      ]
-    ]
-  },
-  {
-    "id": "c8eb1592.520518",
-    "type": "switch",
-    "z": "55da1471.fda0fc",
-    "name": "on / off ",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "on",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "off",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 330,
-    "y": 200,
-    "wires": [
-      [
-        "1351cb3a.cc7995"
-      ],
-      [
-        "87dec77c.9877c8"
-      ]
-    ]
-  },
-  {
-    "id": "37466c93.d14b84",
-    "type": "switch",
-    "z": "55da1471.fda0fc",
-    "name": "home / ! home",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "home",
-        "vt": "str"
-      },
-      {
-        "t": "neq",
-        "v": "home",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 300,
-    "y": 140,
-    "wires": [
-      [
-        "1351cb3a.cc7995"
-      ],
-      [
-        "353d562e.3dd04a"
-      ]
-    ]
-  },
-  {
-    "id": "60f6cd3f.56a0f4",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "cleaned today is off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.vacuum_cleaned",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 950,
-    "y": 220,
-    "wires": [
-      [
-        "eccced83.41688"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "85128ba5.bef108",
-    "type": "inject",
-    "z": "55da1471.fda0fc",
-    "name": "",
-    "props": [
-      {
-        "p": "payload"
-      },
-      {
-        "p": "topic",
-        "vt": "str"
-      }
-    ],
-    "repeat": "",
-    "crontab": "00 02 * * *",
-    "once": false,
-    "onceDelay": 0.1,
-    "topic": "",
-    "payload": "02:00 Payload 'off'",
-    "payloadType": "str",
-    "x": 110,
-    "y": 80,
-    "wires": [
-      [
-        "787efd3b.bd13e4"
-      ]
-    ]
-  },
-  {
-    "id": "787efd3b.bd13e4",
-    "type": "api-call-service",
-    "z": "55da1471.fda0fc",
-    "name": "turn off vacuum cleaned ",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_boolean",
-    "service": "turn_off",
-    "entityId": "input_boolean.vacuum_cleaned",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 350,
-    "y": 80,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "a52152b0.f593b",
-    "type": "api-call-service",
-    "z": "55da1471.fda0fc",
-    "name": "start vacuum",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "vacuum",
-    "service": "start",
-    "entityId": "vacuum.robot_vacuum",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1350,
-    "y": 220,
-    "wires": [
-      [
-        "c643d4d4.2baf98"
-      ]
-    ]
-  },
-  {
-    "id": "2a9f3bf0.575684",
-    "type": "api-call-service",
-    "z": "55da1471.fda0fc",
-    "name": "return to base",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "vacuum",
-    "service": "return_to_base",
-    "entityId": "vacuum.robot_vacuum",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 940,
-    "y": 120,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "1351cb3a.cc7995",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "state is not docked",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "docked",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "vacuum.robot_vacuum",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 510,
-    "y": 120,
-    "wires": [
-      [
-        "32d50dd7.16e062"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "87dec77c.9877c8",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "state group persons is home",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "home",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "group.persons",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 540,
-    "y": 200,
-    "wires": [
-      [],
-      [
-        "353d562e.3dd04a"
-      ]
-    ]
-  },
-  {
-    "id": "353d562e.3dd04a",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "guest is off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.guest",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 750,
-    "y": 160,
-    "wires": [
-      [
-        "60f6cd3f.56a0f4"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "eccced83.41688",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "vacuum is not cleaning",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "cleaning",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "vacuum.robot_vacuum",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 1160,
-    "y": 220,
-    "wires": [
-      [
-        "a52152b0.f593b"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "32d50dd7.16e062",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "state is not returning",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "returning",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "vacuum.robot_vacuum",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 720,
-    "y": 120,
-    "wires": [
-      [
-        "2a9f3bf0.575684"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "8e7bbae.f382348",
-    "type": "comment",
-    "z": "55da1471.fda0fc",
-    "name": "robot vacuum cleaner",
-    "info": "",
-    "x": 120,
-    "y": 40,
-    "wires": []
-  },
-  {
-    "id": "a236a61.195e958",
-    "type": "server-state-changed",
-    "z": "55da1471.fda0fc",
-    "name": "Vacuum State is error",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "vacuum.robot_vacuum",
-    "entityidfiltertype": "exact",
-    "outputinitially": true,
-    "state_type": "str",
-    "haltifstate": "error",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 120,
-    "y": 260,
-    "wires": [
-      [
-        "b555794d.5740c8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "e4d25a8e.b5b258",
-    "type": "api-call-service",
-    "z": "55da1471.fda0fc",
-    "name": "in app notification",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "persistent_notification",
-    "service": "create",
-    "entityId": "",
-    "data": "{\"message\":\"{{message}}\",\"title\":\"Stofzuiger\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1750,
-    "y": 320,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "173b8941.c73507",
-    "type": "server-state-changed",
-    "z": "55da1471.fda0fc",
-    "name": "sleep mode is on",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "input_boolean.sleep_mode",
-    "entityidfiltertype": "exact",
-    "outputinitially": false,
-    "state_type": "str",
-    "haltifstate": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 100,
-    "y": 320,
-    "wires": [
-      [
-        "1c372f1.535d7d1"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "1c372f1.535d7d1",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "cleaned today is off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.vacuum_cleaned",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 290,
-    "y": 320,
-    "wires": [
-      [
-        "c5ad7ab8.30fda8"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "c643d4d4.2baf98",
-    "type": "template",
-    "z": "55da1471.fda0fc",
-    "name": "message",
-    "field": "message",
-    "fieldType": "msg",
-    "format": "handlebars",
-    "syntax": "mustache",
-    "template": "De stofzuiger is gestart.",
-    "output": "str",
-    "x": 1520,
-    "y": 280,
-    "wires": [
-      [
-        "3c488237.d82a4e"
-      ]
-    ]
-  },
-  {
-    "id": "b555794d.5740c8",
-    "type": "template",
-    "z": "55da1471.fda0fc",
-    "name": "message",
-    "field": "message",
-    "fieldType": "msg",
-    "format": "handlebars",
-    "syntax": "mustache",
-    "template": "De stofzuiger zit vast en heeft hulp nodig.",
-    "output": "str",
-    "x": 1520,
-    "y": 320,
-    "wires": [
-      [
-        "e4d25a8e.b5b258",
-        "3c488237.d82a4e"
-      ]
-    ]
-  },
-  {
-    "id": "934221e4.b2d0d",
-    "type": "stoptimer",
-    "z": "55da1471.fda0fc",
-    "duration": "10",
-    "units": "Minute",
-    "payloadtype": "num",
-    "payloadval": "0",
-    "name": "",
-    "x": 720,
-    "y": 300,
-    "wires": [
-      [
-        "60f6cd3f.56a0f4"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "3cf95b5d.b388f4",
-    "type": "stoptimer",
-    "z": "55da1471.fda0fc",
-    "duration": "5",
-    "units": "Second",
-    "payloadtype": "num",
-    "payloadval": "0",
-    "name": "",
-    "x": 720,
-    "y": 340,
-    "wires": [
-      [
-        "6bd54ad5.5aea04"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "c5ad7ab8.30fda8",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "vacuum is not cleaning",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "cleaning",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "vacuum.robot_vacuum",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 500,
-    "y": 320,
-    "wires": [
-      [
-        "934221e4.b2d0d",
-        "3cf95b5d.b388f4"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "6bd54ad5.5aea04",
-    "type": "api-call-service",
-    "z": "55da1471.fda0fc",
-    "name": "google say",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "tts",
-    "service": "google_say",
-    "entityId": "media_player.living_room_google_speaker",
-    "data": "{\"message\":\"over tien minuten start de stofzuiger\",\"language\":\"nl\"}",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 910,
-    "y": 340,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "1494387d.fca0a8",
-    "type": "server-state-changed",
-    "z": "55da1471.fda0fc",
-    "name": "vacuum state is cleaning",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityidfilter": "vacuum.robot_vacuum",
-    "entityidfiltertype": "exact",
-    "outputinitially": true,
-    "state_type": "str",
-    "haltifstate": "cleaning",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "outputs": 2,
-    "output_only_on_state_change": true,
-    "for": "",
-    "forType": "num",
-    "forUnits": "minutes",
-    "ignorePrevStateNull": false,
-    "ignorePrevStateUnknown": false,
-    "ignorePrevStateUnavailable": false,
-    "ignoreCurrentStateUnknown": false,
-    "ignoreCurrentStateUnavailable": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "eventData"
-      },
-      {
-        "property": "topic",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "triggerId"
-      }
-    ],
-    "x": 130,
-    "y": 380,
-    "wires": [
-      [
-        "272212f1.26bb6e"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "272212f1.26bb6e",
-    "type": "ha-wait-until",
-    "z": "55da1471.fda0fc",
-    "name": "",
-    "server": "4ba92433.2478cc",
-    "version": 0,
-    "outputs": 2,
-    "entityId": "vacuum.robot_vacuum",
-    "entityIdFilterType": "exact",
-    "property": "state",
-    "comparator": "is",
-    "value": "returning",
-    "valueType": "str",
-    "timeout": "90",
-    "timeoutType": "num",
-    "timeoutUnits": "minutes",
-    "entityLocation": "",
-    "entityLocationType": "none",
-    "checkCurrentState": true,
-    "blockInputOverrides": true,
-    "x": 320,
-    "y": 380,
-    "wires": [
-      [
-        "155ef739.0e1de9"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "155ef739.0e1de9",
-    "type": "api-current-state",
-    "z": "55da1471.fda0fc",
-    "name": "cleaned today is off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "input_boolean.vacuum_cleaned",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 490,
-    "y": 380,
-    "wires": [
-      [
-        "a098e71.e0db718"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "a098e71.e0db718",
-    "type": "api-call-service",
-    "z": "55da1471.fda0fc",
-    "name": "turn off vacuum cleaned ",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "debugenabled": false,
-    "service_domain": "input_boolean",
-    "service": "turn_on",
-    "entityId": "input_boolean.vacuum_cleaned",
-    "data": "",
-    "dataType": "json",
-    "mergecontext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 710,
-    "y": 380,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "3c488237.d82a4e",
-    "type": "link out",
-    "z": "55da1471.fda0fc",
-    "name": "",
-    "links": [
-      "ebf4860d.603538"
-    ],
-    "x": 1675,
-    "y": 240,
-    "wires": []
-  }
+	{
+		"id": "55da1471.fda0fc",
+		"type": "tab",
+		"label": "vacuum cleaner",
+		"disabled": false,
+		"info": ""
+	},
+	{
+		"id": "b7cf63f8.77958",
+		"type": "server-state-changed",
+		"z": "55da1471.fda0fc",
+		"name": "state group persons",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"exposeToHomeAssistant": false,
+		"haConfig": [
+			{
+				"property": "name",
+				"value": ""
+			},
+			{
+				"property": "icon",
+				"value": ""
+			}
+		],
+		"entityidfilter": "group.persons",
+		"entityidfiltertype": "exact",
+		"outputinitially": false,
+		"state_type": "str",
+		"haltifstate": "",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"outputs": 1,
+		"output_only_on_state_change": true,
+		"for": "",
+		"forType": "num",
+		"forUnits": "minutes",
+		"ignorePrevStateNull": false,
+		"ignorePrevStateUnknown": false,
+		"ignorePrevStateUnavailable": false,
+		"ignoreCurrentStateUnknown": false,
+		"ignoreCurrentStateUnavailable": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "eventData"
+			},
+			{
+				"property": "topic",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "triggerId"
+			}
+		],
+		"x": 110,
+		"y": 140,
+		"wires": [["37466c93.d14b84"]]
+	},
+	{
+		"id": "b6290ea8.c1e6f",
+		"type": "server-state-changed",
+		"z": "55da1471.fda0fc",
+		"name": "state guest ",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"exposeToHomeAssistant": false,
+		"haConfig": [
+			{
+				"property": "name",
+				"value": ""
+			},
+			{
+				"property": "icon",
+				"value": ""
+			}
+		],
+		"entityidfilter": "input_boolean.guest",
+		"entityidfiltertype": "exact",
+		"outputinitially": false,
+		"state_type": "str",
+		"haltifstate": "",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"outputs": 1,
+		"output_only_on_state_change": true,
+		"for": "",
+		"forType": "num",
+		"forUnits": "minutes",
+		"ignorePrevStateNull": false,
+		"ignorePrevStateUnknown": false,
+		"ignorePrevStateUnavailable": false,
+		"ignoreCurrentStateUnknown": false,
+		"ignoreCurrentStateUnavailable": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "eventData"
+			},
+			{
+				"property": "topic",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "triggerId"
+			}
+		],
+		"x": 80,
+		"y": 200,
+		"wires": [["c8eb1592.520518"]]
+	},
+	{
+		"id": "c8eb1592.520518",
+		"type": "switch",
+		"z": "55da1471.fda0fc",
+		"name": "on / off ",
+		"property": "payload",
+		"propertyType": "msg",
+		"rules": [
+			{
+				"t": "eq",
+				"v": "on",
+				"vt": "str"
+			},
+			{
+				"t": "eq",
+				"v": "off",
+				"vt": "str"
+			}
+		],
+		"checkall": "true",
+		"repair": false,
+		"outputs": 2,
+		"x": 330,
+		"y": 200,
+		"wires": [["1351cb3a.cc7995"], ["87dec77c.9877c8"]]
+	},
+	{
+		"id": "37466c93.d14b84",
+		"type": "switch",
+		"z": "55da1471.fda0fc",
+		"name": "home / ! home",
+		"property": "payload",
+		"propertyType": "msg",
+		"rules": [
+			{
+				"t": "eq",
+				"v": "home",
+				"vt": "str"
+			},
+			{
+				"t": "neq",
+				"v": "home",
+				"vt": "str"
+			}
+		],
+		"checkall": "true",
+		"repair": false,
+		"outputs": 2,
+		"x": 300,
+		"y": 140,
+		"wires": [["1351cb3a.cc7995"], ["353d562e.3dd04a"]]
+	},
+	{
+		"id": "60f6cd3f.56a0f4",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "cleaned today is off",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "off",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"entity_id": "input_boolean.vacuum_cleaned",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 950,
+		"y": 220,
+		"wires": [["eccced83.41688"], []]
+	},
+	{
+		"id": "85128ba5.bef108",
+		"type": "inject",
+		"z": "55da1471.fda0fc",
+		"name": "",
+		"props": [
+			{
+				"p": "payload"
+			},
+			{
+				"p": "topic",
+				"vt": "str"
+			}
+		],
+		"repeat": "",
+		"crontab": "00 02 * * *",
+		"once": false,
+		"onceDelay": 0.1,
+		"topic": "",
+		"payload": "02:00 Payload 'off'",
+		"payloadType": "str",
+		"x": 110,
+		"y": 80,
+		"wires": [["787efd3b.bd13e4"]]
+	},
+	{
+		"id": "787efd3b.bd13e4",
+		"type": "api-call-service",
+		"z": "55da1471.fda0fc",
+		"name": "turn off vacuum cleaned ",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"debugenabled": false,
+		"service_domain": "input_boolean",
+		"service": "turn_off",
+		"entityId": "input_boolean.vacuum_cleaned",
+		"data": "",
+		"dataType": "json",
+		"mergecontext": "",
+		"mustacheAltTags": false,
+		"outputProperties": [],
+		"queue": "none",
+		"x": 350,
+		"y": 80,
+		"wires": [[]]
+	},
+	{
+		"id": "a52152b0.f593b",
+		"type": "api-call-service",
+		"z": "55da1471.fda0fc",
+		"name": "start vacuum",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"debugenabled": false,
+		"service_domain": "vacuum",
+		"service": "start",
+		"entityId": "vacuum.robot_vacuum",
+		"data": "",
+		"dataType": "json",
+		"mergecontext": "",
+		"mustacheAltTags": false,
+		"outputProperties": [],
+		"queue": "none",
+		"x": 1350,
+		"y": 220,
+		"wires": [["c643d4d4.2baf98"]]
+	},
+	{
+		"id": "2a9f3bf0.575684",
+		"type": "api-call-service",
+		"z": "55da1471.fda0fc",
+		"name": "return to base",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"debugenabled": false,
+		"service_domain": "vacuum",
+		"service": "return_to_base",
+		"entityId": "vacuum.robot_vacuum",
+		"data": "",
+		"dataType": "json",
+		"mergecontext": "",
+		"mustacheAltTags": false,
+		"outputProperties": [],
+		"queue": "none",
+		"x": 940,
+		"y": 120,
+		"wires": [[]]
+	},
+	{
+		"id": "1351cb3a.cc7995",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "state is not docked",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "docked",
+		"halt_if_type": "str",
+		"halt_if_compare": "is_not",
+		"entity_id": "vacuum.robot_vacuum",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 510,
+		"y": 120,
+		"wires": [["32d50dd7.16e062"], []]
+	},
+	{
+		"id": "87dec77c.9877c8",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "state group persons is home",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "home",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"entity_id": "group.persons",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 540,
+		"y": 200,
+		"wires": [[], ["353d562e.3dd04a"]]
+	},
+	{
+		"id": "353d562e.3dd04a",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "guest is off",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "off",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"entity_id": "input_boolean.guest",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 750,
+		"y": 160,
+		"wires": [["60f6cd3f.56a0f4"], []]
+	},
+	{
+		"id": "eccced83.41688",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "vacuum is not cleaning",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "cleaning",
+		"halt_if_type": "str",
+		"halt_if_compare": "is_not",
+		"entity_id": "vacuum.robot_vacuum",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 1160,
+		"y": 220,
+		"wires": [["a52152b0.f593b"], []]
+	},
+	{
+		"id": "32d50dd7.16e062",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "state is not returning",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "returning",
+		"halt_if_type": "str",
+		"halt_if_compare": "is_not",
+		"entity_id": "vacuum.robot_vacuum",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 720,
+		"y": 120,
+		"wires": [["2a9f3bf0.575684"], []]
+	},
+	{
+		"id": "8e7bbae.f382348",
+		"type": "comment",
+		"z": "55da1471.fda0fc",
+		"name": "robot vacuum cleaner",
+		"info": "",
+		"x": 120,
+		"y": 40,
+		"wires": []
+	},
+	{
+		"id": "a236a61.195e958",
+		"type": "server-state-changed",
+		"z": "55da1471.fda0fc",
+		"name": "Vacuum State is error",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"exposeToHomeAssistant": false,
+		"haConfig": [
+			{
+				"property": "name",
+				"value": ""
+			},
+			{
+				"property": "icon",
+				"value": ""
+			}
+		],
+		"entityidfilter": "vacuum.robot_vacuum",
+		"entityidfiltertype": "exact",
+		"outputinitially": true,
+		"state_type": "str",
+		"haltifstate": "error",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"outputs": 2,
+		"output_only_on_state_change": true,
+		"for": "",
+		"forType": "num",
+		"forUnits": "minutes",
+		"ignorePrevStateNull": false,
+		"ignorePrevStateUnknown": false,
+		"ignorePrevStateUnavailable": false,
+		"ignoreCurrentStateUnknown": false,
+		"ignoreCurrentStateUnavailable": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "eventData"
+			},
+			{
+				"property": "topic",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "triggerId"
+			}
+		],
+		"x": 120,
+		"y": 260,
+		"wires": [["b555794d.5740c8"], []]
+	},
+	{
+		"id": "e4d25a8e.b5b258",
+		"type": "api-call-service",
+		"z": "55da1471.fda0fc",
+		"name": "in app notification",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"debugenabled": false,
+		"service_domain": "persistent_notification",
+		"service": "create",
+		"entityId": "",
+		"data": "{\"message\":\"{{message}}\",\"title\":\"Stofzuiger\"}",
+		"dataType": "json",
+		"mergecontext": "",
+		"mustacheAltTags": false,
+		"outputProperties": [],
+		"queue": "none",
+		"x": 1750,
+		"y": 320,
+		"wires": [[]]
+	},
+	{
+		"id": "173b8941.c73507",
+		"type": "server-state-changed",
+		"z": "55da1471.fda0fc",
+		"name": "sleep mode is on",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"exposeToHomeAssistant": false,
+		"haConfig": [
+			{
+				"property": "name",
+				"value": ""
+			},
+			{
+				"property": "icon",
+				"value": ""
+			}
+		],
+		"entityidfilter": "input_boolean.sleep_mode",
+		"entityidfiltertype": "exact",
+		"outputinitially": false,
+		"state_type": "str",
+		"haltifstate": "on",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"outputs": 2,
+		"output_only_on_state_change": true,
+		"for": "",
+		"forType": "num",
+		"forUnits": "minutes",
+		"ignorePrevStateNull": false,
+		"ignorePrevStateUnknown": false,
+		"ignorePrevStateUnavailable": false,
+		"ignoreCurrentStateUnknown": false,
+		"ignoreCurrentStateUnavailable": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "eventData"
+			},
+			{
+				"property": "topic",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "triggerId"
+			}
+		],
+		"x": 100,
+		"y": 320,
+		"wires": [["1c372f1.535d7d1"], []]
+	},
+	{
+		"id": "1c372f1.535d7d1",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "cleaned today is off",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "off",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"entity_id": "input_boolean.vacuum_cleaned",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 290,
+		"y": 320,
+		"wires": [["c5ad7ab8.30fda8"], []]
+	},
+	{
+		"id": "c643d4d4.2baf98",
+		"type": "template",
+		"z": "55da1471.fda0fc",
+		"name": "message",
+		"field": "message",
+		"fieldType": "msg",
+		"format": "handlebars",
+		"syntax": "mustache",
+		"template": "De stofzuiger is gestart.",
+		"output": "str",
+		"x": 1520,
+		"y": 280,
+		"wires": [["3c488237.d82a4e"]]
+	},
+	{
+		"id": "b555794d.5740c8",
+		"type": "template",
+		"z": "55da1471.fda0fc",
+		"name": "message",
+		"field": "message",
+		"fieldType": "msg",
+		"format": "handlebars",
+		"syntax": "mustache",
+		"template": "De stofzuiger zit vast en heeft hulp nodig.",
+		"output": "str",
+		"x": 1520,
+		"y": 320,
+		"wires": [["e4d25a8e.b5b258", "3c488237.d82a4e"]]
+	},
+	{
+		"id": "934221e4.b2d0d",
+		"type": "stoptimer",
+		"z": "55da1471.fda0fc",
+		"duration": "10",
+		"units": "Minute",
+		"payloadtype": "num",
+		"payloadval": "0",
+		"name": "",
+		"x": 720,
+		"y": 300,
+		"wires": [["60f6cd3f.56a0f4"], []]
+	},
+	{
+		"id": "3cf95b5d.b388f4",
+		"type": "stoptimer",
+		"z": "55da1471.fda0fc",
+		"duration": "5",
+		"units": "Second",
+		"payloadtype": "num",
+		"payloadval": "0",
+		"name": "",
+		"x": 720,
+		"y": 340,
+		"wires": [["6bd54ad5.5aea04"], []]
+	},
+	{
+		"id": "c5ad7ab8.30fda8",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "vacuum is not cleaning",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "cleaning",
+		"halt_if_type": "str",
+		"halt_if_compare": "is_not",
+		"entity_id": "vacuum.robot_vacuum",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 500,
+		"y": 320,
+		"wires": [["934221e4.b2d0d", "3cf95b5d.b388f4"], []]
+	},
+	{
+		"id": "6bd54ad5.5aea04",
+		"type": "api-call-service",
+		"z": "55da1471.fda0fc",
+		"name": "google say",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"debugenabled": false,
+		"service_domain": "tts",
+		"service": "google_say",
+		"entityId": "media_player.home_speaker",
+		"data": "{\"message\":\"over tien minuten start de stofzuiger\",\"language\":\"nl\"}",
+		"dataType": "json",
+		"mergecontext": "",
+		"mustacheAltTags": false,
+		"outputProperties": [],
+		"queue": "none",
+		"x": 910,
+		"y": 340,
+		"wires": [[]]
+	},
+	{
+		"id": "1494387d.fca0a8",
+		"type": "server-state-changed",
+		"z": "55da1471.fda0fc",
+		"name": "vacuum state is cleaning",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"exposeToHomeAssistant": false,
+		"haConfig": [
+			{
+				"property": "name",
+				"value": ""
+			},
+			{
+				"property": "icon",
+				"value": ""
+			}
+		],
+		"entityidfilter": "vacuum.robot_vacuum",
+		"entityidfiltertype": "exact",
+		"outputinitially": true,
+		"state_type": "str",
+		"haltifstate": "cleaning",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"outputs": 2,
+		"output_only_on_state_change": true,
+		"for": "",
+		"forType": "num",
+		"forUnits": "minutes",
+		"ignorePrevStateNull": false,
+		"ignorePrevStateUnknown": false,
+		"ignorePrevStateUnavailable": false,
+		"ignoreCurrentStateUnknown": false,
+		"ignoreCurrentStateUnavailable": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "eventData"
+			},
+			{
+				"property": "topic",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "triggerId"
+			}
+		],
+		"x": 130,
+		"y": 380,
+		"wires": [["272212f1.26bb6e"], []]
+	},
+	{
+		"id": "272212f1.26bb6e",
+		"type": "ha-wait-until",
+		"z": "55da1471.fda0fc",
+		"name": "",
+		"server": "4ba92433.2478cc",
+		"version": 0,
+		"outputs": 2,
+		"entityId": "vacuum.robot_vacuum",
+		"entityIdFilterType": "exact",
+		"property": "state",
+		"comparator": "is",
+		"value": "returning",
+		"valueType": "str",
+		"timeout": "90",
+		"timeoutType": "num",
+		"timeoutUnits": "minutes",
+		"entityLocation": "",
+		"entityLocationType": "none",
+		"checkCurrentState": true,
+		"blockInputOverrides": true,
+		"x": 320,
+		"y": 380,
+		"wires": [["155ef739.0e1de9"], []]
+	},
+	{
+		"id": "155ef739.0e1de9",
+		"type": "api-current-state",
+		"z": "55da1471.fda0fc",
+		"name": "cleaned today is off",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"outputs": 2,
+		"halt_if": "off",
+		"halt_if_type": "str",
+		"halt_if_compare": "is",
+		"entity_id": "input_boolean.vacuum_cleaned",
+		"state_type": "str",
+		"blockInputOverrides": false,
+		"outputProperties": [
+			{
+				"property": "payload",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entityState"
+			},
+			{
+				"property": "data",
+				"propertyType": "msg",
+				"value": "",
+				"valueType": "entity"
+			}
+		],
+		"for": 0,
+		"forType": "num",
+		"forUnits": "minutes",
+		"x": 490,
+		"y": 380,
+		"wires": [["a098e71.e0db718"], []]
+	},
+	{
+		"id": "a098e71.e0db718",
+		"type": "api-call-service",
+		"z": "55da1471.fda0fc",
+		"name": "turn off vacuum cleaned ",
+		"server": "4ba92433.2478cc",
+		"version": 3,
+		"debugenabled": false,
+		"service_domain": "input_boolean",
+		"service": "turn_on",
+		"entityId": "input_boolean.vacuum_cleaned",
+		"data": "",
+		"dataType": "json",
+		"mergecontext": "",
+		"mustacheAltTags": false,
+		"outputProperties": [],
+		"queue": "none",
+		"x": 710,
+		"y": 380,
+		"wires": [[]]
+	},
+	{
+		"id": "3c488237.d82a4e",
+		"type": "link out",
+		"z": "55da1471.fda0fc",
+		"name": "",
+		"links": ["ebf4860d.603538"],
+		"x": 1675,
+		"y": 240,
+		"wires": []
+	}
 ]
