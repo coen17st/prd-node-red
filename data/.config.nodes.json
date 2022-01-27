@@ -551,7 +551,7 @@
     "node-red-contrib-schedex": {
         "name": "node-red-contrib-schedex",
         "version": "1.10.6",
-        "local": true,
+        "local": false,
         "nodes": {
             "schedex": {
                 "name": "schedex",
@@ -559,9 +559,9 @@
                     "schedex"
                 ],
                 "enabled": true,
-                "local": true,
+                "local": false,
                 "module": "node-red-contrib-schedex",
-                "file": "/data/node_modules/node-red-contrib-schedex/index.js"
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-schedex/index.js"
             }
         }
     },
@@ -623,6 +623,23 @@
                 "local": false,
                 "module": "node-red-node-tail",
                 "file": "/usr/src/node-red/node_modules/node-red-node-tail/28-tail.js"
+            }
+        }
+    },
+    "node-red-contrib-google-tts": {
+        "name": "node-red-contrib-google-tts",
+        "version": "1.1.1",
+        "local": false,
+        "nodes": {
+            "google-tts": {
+                "name": "google-tts",
+                "types": [
+                    "google-tts"
+                ],
+                "enabled": true,
+                "local": false,
+                "module": "node-red-contrib-google-tts",
+                "file": "/usr/src/node-red/node_modules/node-red-contrib-google-tts/google-tts.js"
             }
         }
     }
