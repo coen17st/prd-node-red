@@ -548,70 +548,9 @@
             }
         }
     },
-    "node-red-contrib-schedex": {
-        "name": "node-red-contrib-schedex",
-        "version": "1.10.6",
-        "local": false,
-        "nodes": {
-            "schedex": {
-                "name": "schedex",
-                "types": [
-                    "schedex"
-                ],
-                "enabled": true,
-                "local": false,
-                "module": "node-red-contrib-schedex",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-schedex/index.js"
-            }
-        }
-    },
-    "node-red-contrib-flow-manager": {
-        "name": "node-red-contrib-flow-manager",
-        "version": "0.7.2",
-        "local": false,
-        "nodes": {
-            "flow-manager": {
-                "name": "flow-manager",
-                "types": [],
-                "enabled": true,
-                "local": false,
-                "module": "node-red-contrib-flow-manager",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-flow-manager/flow-manager.js"
-            }
-        }
-    },
-    "node-red-contrib-harmony": {
-        "name": "node-red-contrib-harmony",
-        "version": "1.2.6",
-        "local": false,
-        "nodes": {
-            "harmony": {
-                "name": "harmony",
-                "types": [
-                    "H command",
-                    "H activity",
-                    "H observe"
-                ],
-                "enabled": false,
-                "local": false,
-                "module": "node-red-contrib-harmony",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-harmony/harmony/harmony.js"
-            },
-            "harmony-server": {
-                "name": "harmony-server",
-                "types": [
-                    "harmony-server"
-                ],
-                "enabled": false,
-                "local": false,
-                "module": "node-red-contrib-harmony",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-harmony/harmony/harmony-server.js"
-            }
-        }
-    },
     "node-red-node-tail": {
         "name": "node-red-node-tail",
-        "version": "0.3.2",
+        "version": "0.1.1",
         "local": false,
         "nodes": {
             "tail": {
@@ -626,20 +565,20 @@
             }
         }
     },
-    "node-red-contrib-google-tts": {
-        "name": "node-red-contrib-google-tts",
-        "version": "1.1.1",
-        "local": false,
+    "node-red-contrib-schedex": {
+        "name": "node-red-contrib-schedex",
+        "version": "1.10.6",
+        "local": true,
         "nodes": {
-            "google-tts": {
-                "name": "google-tts",
+            "schedex": {
+                "name": "schedex",
                 "types": [
-                    "google-tts"
+                    "schedex"
                 ],
                 "enabled": true,
-                "local": false,
-                "module": "node-red-contrib-google-tts",
-                "file": "/usr/src/node-red/node_modules/node-red-contrib-google-tts/google-tts.js"
+                "local": true,
+                "module": "node-red-contrib-schedex",
+                "file": "/data/node_modules/node-red-contrib-schedex/index.js"
             }
         }
     }
