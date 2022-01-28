@@ -1919,7 +1919,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1400,
-        "y": 1540,
+        "y": 1480,
         "wires": [
             [
                 "affc5f88.87461"
@@ -1935,7 +1935,7 @@
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "Woonkamer Google Home",
+        "halt_if": "Woonkamer Google Home Speaker",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "input_select.mediaplayer_destination",
@@ -1946,7 +1946,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1430,
-        "y": 1480,
+        "y": 1540,
         "wires": [
             [
                 "8c1725fb.827dd8"
@@ -1962,7 +1962,7 @@
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "Lise's Google Home",
+        "halt_if": "Lise's Google Home Speaker",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "input_select.mediaplayer_destination",
@@ -3523,7 +3523,7 @@
         "port": "",
         "volume": "",
         "x": 1740,
-        "y": 1540,
+        "y": 1480,
         "wires": [
             []
         ],
@@ -3538,11 +3538,11 @@
         "contentType": "audio/mp3",
         "message": "",
         "language": "en",
-        "ip": "Google-Home.lan",
+        "ip": "google-home.lan",
         "port": "",
         "volume": "50",
         "x": 1760,
-        "y": 1480,
+        "y": 1540,
         "wires": [
             []
         ],
@@ -3557,7 +3557,7 @@
         "contentType": "audio/mp3",
         "message": "",
         "language": "en",
-        "ip": "Google-Home-Mini.lan",
+        "ip": "google-home-mini.lan",
         "port": "",
         "volume": "50",
         "x": 1780,
@@ -7423,40 +7423,6 @@
         "wires": [
             [
                 "377073a9.cc38cc"
-            ]
-        ]
-    },
-    {
-        "id": "6ad4cba8.7d5a14",
-        "type": "schedex",
-        "z": "9605dd85.f395a",
-        "name": "schedule",
-        "passthroughunhandled": false,
-        "suspended": false,
-        "lat": "",
-        "lon": "",
-        "ontime": "",
-        "ontopic": "",
-        "onpayload": "",
-        "onoffset": "",
-        "onrandomoffset": 0,
-        "offtime": "",
-        "offtopic": "",
-        "offpayload": "",
-        "offoffset": 0,
-        "offrandomoffset": 0,
-        "mon": true,
-        "tue": true,
-        "wed": true,
-        "thu": true,
-        "fri": true,
-        "sat": true,
-        "sun": true,
-        "x": 680,
-        "y": 100,
-        "wires": [
-            [
-                "2bbaf616.ec124a"
             ]
         ]
     },
@@ -23889,40 +23855,6 @@
         ]
     },
     {
-        "id": "14e85e99.eee3d1",
-        "type": "schedex",
-        "z": "2751da37.549936",
-        "name": "schedule -90 min",
-        "passthroughunhandled": false,
-        "suspended": false,
-        "lat": "",
-        "lon": "",
-        "ontime": "",
-        "ontopic": "",
-        "onpayload": "",
-        "onoffset": "-90",
-        "onrandomoffset": 0,
-        "offtime": "",
-        "offtopic": "",
-        "offpayload": "",
-        "offoffset": 0,
-        "offrandomoffset": 0,
-        "mon": true,
-        "tue": true,
-        "wed": true,
-        "thu": true,
-        "fri": true,
-        "sat": true,
-        "sun": true,
-        "x": 690,
-        "y": 80,
-        "wires": [
-            [
-                "7f384e9c.a03be"
-            ]
-        ]
-    },
-    {
         "id": "71978835.1dc428",
         "type": "function",
         "z": "2751da37.549936",
@@ -24226,6 +24158,74 @@
         "wires": [
             [
                 "e9bf979c.c56098"
+            ]
+        ]
+    },
+    {
+        "id": "6ad4cba8.7d5a14",
+        "type": "schedex",
+        "z": "9605dd85.f395a",
+        "name": "schedule",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "",
+        "lon": "",
+        "ontime": "",
+        "ontopic": "",
+        "onpayload": "",
+        "onoffset": "",
+        "onrandomoffset": 0,
+        "offtime": "",
+        "offtopic": "",
+        "offpayload": "",
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 680,
+        "y": 100,
+        "wires": [
+            [
+                "2bbaf616.ec124a"
+            ]
+        ]
+    },
+    {
+        "id": "14e85e99.eee3d1",
+        "type": "schedex",
+        "z": "2751da37.549936",
+        "name": "schedule -90 min",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "",
+        "lon": "",
+        "ontime": "",
+        "ontopic": "",
+        "onpayload": "",
+        "onoffset": "-90",
+        "onrandomoffset": 0,
+        "offtime": "",
+        "offtopic": "",
+        "offpayload": "",
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "7f384e9c.a03be"
             ]
         ]
     }
