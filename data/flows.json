@@ -210,6 +210,13 @@
         "info": ""
     },
     {
+        "id": "db765ce9.6dc",
+        "type": "tab",
+        "label": "speedtest",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "away",
@@ -21810,7 +21817,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1160,
+        "x": 1140,
         "y": 100,
         "wires": [
             []
@@ -24228,5 +24235,70 @@
                 "7f384e9c.a03be"
             ]
         ]
+    },
+    {
+        "id": "bf64ddfa.fdf9",
+        "type": "cronplus",
+        "z": "db765ce9.6dc",
+        "name": "at 12:00",
+        "outputField": "payload",
+        "timeZone": "",
+        "persistDynamic": false,
+        "commandResponseMsgOutput": "output1",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "at 12:00",
+                "topic": "speedtest",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "0 0 12 * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "4e4ef071.566e6"
+            ]
+        ]
+    },
+    {
+        "id": "4e4ef071.566e6",
+        "type": "api-call-service",
+        "z": "db765ce9.6dc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "speedtestdotnet",
+        "service": "speedtest",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 300,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b037eb2a.c10708",
+        "type": "comment",
+        "z": "db765ce9.6dc",
+        "name": "run speedtest in home assistsant",
+        "info": "run speedtest in home assistsant",
+        "x": 150,
+        "y": 40,
+        "wires": []
     }
 ]
