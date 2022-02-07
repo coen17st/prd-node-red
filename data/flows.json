@@ -7,13 +7,6 @@
         "info": "add_email_alias"
     },
     {
-        "id": "fc2fab82.81dbf8",
-        "type": "tab",
-        "label": "adguard",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "8aa6edec.5a013",
         "type": "tab",
         "label": "away_sleepmode",
@@ -77,9 +70,9 @@
         "info": ""
     },
     {
-        "id": "21c15316.41cc2c",
+        "id": "884be31f.370fe",
         "type": "tab",
-        "label": "exec commands",
+        "label": "exec_command_certbot_renewal",
         "disabled": false,
         "info": ""
     },
@@ -114,7 +107,7 @@
     {
         "id": "55da1471.fda0fc",
         "type": "tab",
-        "label": "vacuum cleaner",
+        "label": "vacuum_cleaner",
         "disabled": false,
         "info": ""
     },
@@ -161,13 +154,6 @@
         "info": ""
     },
     {
-        "id": "7bd54a92.9df5d4",
-        "type": "tab",
-        "label": "notification_update_firmware_shelly",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "d5421f8d.f7208",
         "type": "tab",
         "label": "notification_outdoor_temperature",
@@ -203,13 +189,6 @@
         "info": ""
     },
     {
-        "id": "884be31f.370fe",
-        "type": "tab",
-        "label": "exec_command_certbot_renewal",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "db765ce9.6dc",
         "type": "tab",
         "label": "speedtest",
@@ -224,8 +203,8 @@
         "category": "",
         "in": [
             {
-                "x": 60,
-                "y": 180,
+                "x": 40,
+                "y": 100,
                 "wires": [
                     {
                         "id": "f401f4f7.3ab058"
@@ -244,6 +223,9 @@
                     },
                     {
                         "id": "83808dcd.70439"
+                    },
+                    {
+                        "id": "5644cdae.e32cc4"
                     }
                 ]
             }
@@ -8419,494 +8401,6 @@
         ]
     },
     {
-        "id": "7d226530.41a43c",
-        "type": "comment",
-        "z": "21c15316.41cc2c",
-        "name": "backup from host to remote machine",
-        "info": "",
-        "x": 160,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "d8804666.d57cf8",
-        "type": "exec",
-        "z": "21c15316.41cc2c",
-        "command": "ssh coen@192.168.1.3 'bash /home/coen/hosts-config/proxmox-ve/docker-host/backup_purge.sh'",
-        "addpay": false,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "",
-        "x": 640,
-        "y": 100,
-        "wires": [
-            [
-                "1cd851a9.9a893e"
-            ],
-            [],
-            [
-                "8bb352f8.425d7"
-            ]
-        ]
-    },
-    {
-        "id": "8bb352f8.425d7",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "exit code 0",
-        "property": "payload.code",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 1150,
-        "y": 240,
-        "wires": [
-            [],
-            [
-                "183c15c.501efea"
-            ]
-        ]
-    },
-    {
-        "id": "183c15c.501efea",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Error: backup naar backup-host is niet gelukt. ",
-        "output": "str",
-        "x": 1300,
-        "y": 240,
-        "wires": [
-            [
-                "a49ae0e7.5e869"
-            ]
-        ]
-    },
-    {
-        "id": "d698dab9.797f38",
-        "type": "api-call-service",
-        "z": "21c15316.41cc2c",
-        "name": "notify",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "notify",
-        "service": "mobile_app_phone_coen",
-        "entityId": "",
-        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1870,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a49ae0e7.5e869",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "topic",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Backup",
-        "output": "str",
-        "x": 1430,
-        "y": 240,
-        "wires": [
-            [
-                "d698dab9.797f38"
-            ]
-        ]
-    },
-    {
-        "id": "1cd851a9.9a893e",
-        "type": "split",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": "1",
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 1150,
-        "y": 100,
-        "wires": [
-            [
-                "26030013.e0f55"
-            ]
-        ]
-    },
-    {
-        "id": "26030013.e0f55",
-        "type": "switch",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "property": "parts.index",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "11",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "14",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 1270,
-        "y": 100,
-        "wires": [
-            [
-                "5099f986.39cc18"
-            ],
-            [
-                "79cb6095.ffcaa"
-            ],
-            [
-                "554e684a.67c2c8"
-            ]
-        ]
-    },
-    {
-        "id": "79978a0a.3132c4",
-        "type": "template",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Purge backup van \"{{{payload.location}}} is gelukt, {{{payload.bytes}}} verzonden in {{payload.seconds}} seconden.",
-        "output": "str",
-        "x": 1900,
-        "y": 200,
-        "wires": [
-            [
-                "d698dab9.797f38"
-            ]
-        ]
-    },
-    {
-        "id": "554e684a.67c2c8",
-        "type": "string",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "methods": [
-            {
-                "name": "between",
-                "params": [
-                    {
-                        "type": "str",
-                        "value": "File list transfer time: "
-                    },
-                    {
-                        "type": "str",
-                        "value": " "
-                    }
-                ]
-            }
-        ],
-        "prop": "payload",
-        "propout": "payload",
-        "object": "msg",
-        "objectout": "msg",
-        "x": 1450,
-        "y": 180,
-        "wires": [
-            [
-                "42816bd.2c3fa94"
-            ]
-        ]
-    },
-    {
-        "id": "5099f986.39cc18",
-        "type": "string",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "methods": [
-            {
-                "name": "between",
-                "params": [
-                    {
-                        "type": "str",
-                        "value": "of "
-                    },
-                    {
-                        "type": "str",
-                        "value": "."
-                    }
-                ]
-            }
-        ],
-        "prop": "payload",
-        "propout": "payload",
-        "object": "msg",
-        "objectout": "msg",
-        "x": 1450,
-        "y": 100,
-        "wires": [
-            [
-                "e564adac.03f29"
-            ]
-        ]
-    },
-    {
-        "id": "79cb6095.ffcaa",
-        "type": "string",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "methods": [
-            {
-                "name": "between",
-                "params": [
-                    {
-                        "type": "str",
-                        "value": ": "
-                    },
-                    {
-                        "type": "str",
-                        "value": " "
-                    }
-                ]
-            }
-        ],
-        "prop": "payload",
-        "propout": "payload",
-        "object": "msg",
-        "objectout": "msg",
-        "x": 1450,
-        "y": 140,
-        "wires": [
-            [
-                "ea3123a8.06cac"
-            ]
-        ]
-    },
-    {
-        "id": "e564adac.03f29",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "location",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1590,
-        "y": 100,
-        "wires": [
-            [
-                "4afc6fa4.e01d9"
-            ]
-        ]
-    },
-    {
-        "id": "ea3123a8.06cac",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "bytes",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1590,
-        "y": 140,
-        "wires": [
-            [
-                "4afc6fa4.e01d9"
-            ]
-        ]
-    },
-    {
-        "id": "42816bd.2c3fa94",
-        "type": "change",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "seconds",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1590,
-        "y": 180,
-        "wires": [
-            [
-                "4afc6fa4.e01d9"
-            ]
-        ]
-    },
-    {
-        "id": "4afc6fa4.e01d9",
-        "type": "join",
-        "z": "21c15316.41cc2c",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1750,
-        "y": 200,
-        "wires": [
-            [
-                "79978a0a.3132c4"
-            ]
-        ]
-    },
-    {
-        "id": "4e2b355d.088c2c",
-        "type": "cronplus",
-        "z": "21c15316.41cc2c",
-        "name": "every day @ 03:00",
-        "outputField": "payload",
-        "timeZone": "",
-        "persistDynamic": false,
-        "commandResponseMsgOutput": "output1",
-        "outputs": 1,
-        "options": [
-            {
-                "name": "schedule1",
-                "topic": "schedule1",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "0 0 3 ? * *",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 110,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a4bdb7f3.c632b8",
-        "type": "cronplus",
-        "z": "21c15316.41cc2c",
-        "name": "every 1ste of the month @ 03:00",
-        "outputField": "payload",
-        "timeZone": "",
-        "persistDynamic": false,
-        "commandResponseMsgOutput": "output1",
-        "outputs": 1,
-        "options": [
-            {
-                "name": "schedule1",
-                "topic": "schedule1",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "0 0 3 1 * *",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 150,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4b25aa61.d6ded4",
-        "type": "exec",
-        "z": "21c15316.41cc2c",
-        "command": "ssh coen@192.168.1.3 'bash /home/coen/hosts-config/proxmox-ve/docker-host/backup_.sh'",
-        "addpay": false,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "",
-        "x": 620,
-        "y": 240,
-        "wires": [
-            [],
-            [],
-            []
-        ]
-    },
-    {
         "id": "24ab3051.7c08e",
         "type": "server-state-changed",
         "z": "b13ca13c.9328e",
@@ -10810,7 +10304,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "De verwarming in {{payload.attributes.friendly_name}} is van handmatige naar automatische stand geschakeld.",
+        "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatige naar automatische stand geschakeld.",
         "output": "str",
         "x": 1620,
         "y": 540,
@@ -11264,7 +10758,7 @@
         "syntax": "mustache",
         "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
         "x": 280,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "2b16b681.af3d1a"
@@ -11279,7 +10773,7 @@
         "statusCode": "",
         "headers": {},
         "x": 440,
-        "y": 180,
+        "y": 160,
         "wires": []
     },
     {
@@ -11292,7 +10786,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 90,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
                 "11634053.7d1e7",
@@ -11312,7 +10806,7 @@
         "template": "Sonarr Event:{{{payload.eventType}}} Title:{{{payload.series.title}}} Episode: {{{payload.episodes[0].title}}} Name:{{{payload.episodeFile.sceneName}}}",
         "output": "str",
         "x": 420,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
                 "a9687ab6.f40698"
@@ -11366,7 +10860,7 @@
         "repair": false,
         "outputs": 1,
         "x": 270,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
                 "66863268.0b78dc"
@@ -16448,8 +15942,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 280,
-        "y": 120,
+        "x": 260,
+        "y": 180,
         "wires": [
             []
         ]
@@ -16471,8 +15965,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 240,
-        "y": 80,
+        "x": 220,
+        "y": 140,
         "wires": [
             []
         ]
@@ -16503,8 +15997,8 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 230,
-        "y": 200,
+        "x": 210,
+        "y": 260,
         "wires": [
             [
                 "397bbd3d.0bb3f2"
@@ -16528,8 +16022,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 470,
-        "y": 200,
+        "x": 450,
+        "y": 260,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -16556,8 +16050,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 650,
-        "y": 200,
+        "x": 630,
+        "y": 260,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -16575,8 +16069,8 @@
         "syntax": "mustache",
         "template": "De verwarming in {{payload.attributes.friendly_name}} is van handmatige naar automatische stand geschakeld.",
         "output": "str",
-        "x": 780,
-        "y": 200,
+        "x": 760,
+        "y": 260,
         "wires": [
             []
         ]
@@ -16607,8 +16101,8 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 220,
-        "y": 240,
+        "x": 200,
+        "y": 300,
         "wires": [
             [
                 "9eb23897.6d9b38"
@@ -16632,8 +16126,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 430,
-        "y": 240,
+        "x": 410,
+        "y": 300,
         "wires": [
             [
                 "f2f64bc8.d21168"
@@ -16660,8 +16154,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 650,
-        "y": 240,
+        "x": 630,
+        "y": 300,
         "wires": [
             [
                 "f6de2518.2672a8"
@@ -16679,8 +16173,8 @@
         "syntax": "mustache",
         "template": "Niemand is aanwezig. {{{payload.attributes.friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
-        "x": 780,
-        "y": 240,
+        "x": 760,
+        "y": 300,
         "wires": [
             []
         ]
@@ -16711,8 +16205,8 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 240,
-        "y": 280,
+        "x": 220,
+        "y": 340,
         "wires": [
             [
                 "73dcb69e.8515b8"
@@ -16736,8 +16230,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 460,
-        "y": 280,
+        "x": 440,
+        "y": 340,
         "wires": [
             []
         ]
@@ -16759,8 +16253,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 240,
-        "y": 160,
+        "x": 220,
+        "y": 220,
         "wires": [
             []
         ]
@@ -18868,127 +18362,12 @@
         ]
     },
     {
-        "id": "9e390214.7782d",
-        "type": "comment",
-        "z": "fc2fab82.81dbf8",
-        "name": "turn on addguard home",
-        "info": "turn on addguard after 30 minutes if switch is set to off",
-        "x": 120,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "c61a2461.b59a38",
-        "type": "server-state-changed",
-        "z": "fc2fab82.81dbf8",
-        "name": "adguard protection state is off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.adguard_protection",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 140,
-        "y": 100,
-        "wires": [
-            [
-                "a5bd8a29.fe17e8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "77761c5f.32b5f4",
-        "type": "api-call-service",
-        "z": "fc2fab82.81dbf8",
-        "name": "turn on adguard protection",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.adguard_protection",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 580,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a5bd8a29.fe17e8",
-        "type": "stoptimer",
-        "z": "fc2fab82.81dbf8",
-        "duration": "30",
-        "units": "Minute",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 360,
-        "y": 100,
-        "wires": [
-            [
-                "77761c5f.32b5f4"
-            ],
-            []
-        ]
-    },
-    {
         "id": "c57acb4f.9d1808",
         "type": "comment",
         "z": "79544bf2.1ff3a4",
         "name": "away mode actions",
         "info": "",
-        "x": 130,
+        "x": 110,
         "y": 40,
         "wires": []
     },
@@ -19615,251 +18994,6 @@
             ],
             []
         ]
-    },
-    {
-        "id": "eb453bd8.ef7508",
-        "type": "ha-get-entities",
-        "z": "7bd54a92.9df5d4",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 0,
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "binary_sensor.",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 570,
-        "y": 100,
-        "wires": [
-            [
-                "e0125027.d7118"
-            ]
-        ]
-    },
-    {
-        "id": "54f37ef6.18154",
-        "type": "template",
-        "z": "7bd54a92.9df5d4",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Er is een {{payload.attributes.shelly_type}} firmware update beschikbaar voor {{payload.attributes.shelly_id}} met IP-adres {{payload.attributes.ip_address}}. \\n \\nHuidige Firmware versie: {{payload.attributes.firmware_version}}\\n Beschikbare Firmware versie: {{payload.attributes.latest_fw_version}}",
-        "output": "str",
-        "x": 960,
-        "y": 100,
-        "wires": [
-            [
-                "f2ccd49b.02d018",
-                "756eefe7.33a9e"
-            ]
-        ]
-    },
-    {
-        "id": "f2ccd49b.02d018",
-        "type": "change",
-        "z": "7bd54a92.9df5d4",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Update",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1110,
-        "y": 100,
-        "wires": [
-            [
-                "dcf0faf5.c11678"
-            ]
-        ]
-    },
-    {
-        "id": "dcf0faf5.c11678",
-        "type": "api-call-service",
-        "z": "7bd54a92.9df5d4",
-        "name": "In APP Notify",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "persistent_notification",
-        "service": "create",
-        "entityId": "",
-        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1270,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b3dfa4a.f848158",
-        "type": "inject",
-        "z": "7bd54a92.9df5d4",
-        "name": "Every day @ 09:00",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 09 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 100,
-        "wires": [
-            [
-                "2c62a069.dd1a1"
-            ]
-        ]
-    },
-    {
-        "id": "f8f4425e.795dc",
-        "type": "server-state-changed",
-        "z": "7bd54a92.9df5d4",
-        "name": "firmware_update is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "firmware_update",
-        "entityidfiltertype": "regex",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 120,
-        "y": 140,
-        "wires": [
-            [
-                "2c62a069.dd1a1"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e0125027.d7118",
-        "type": "switch",
-        "z": "7bd54a92.9df5d4",
-        "name": "regex \"Upgrade firmware\"",
-        "property": "payload.attributes.friendly_name",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "regex",
-                "v": "Firmware Update",
-                "vt": "str",
-                "case": false
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 770,
-        "y": 100,
-        "wires": [
-            [
-                "54f37ef6.18154"
-            ]
-        ]
-    },
-    {
-        "id": "2c62a069.dd1a1",
-        "type": "stoptimer",
-        "z": "7bd54a92.9df5d4",
-        "duration": "10",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 390,
-        "y": 100,
-        "wires": [
-            [
-                "eb453bd8.ef7508"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8ab9f579.759ce8",
-        "type": "comment",
-        "z": "7bd54a92.9df5d4",
-        "name": "notification when shelly devices has firmware update",
-        "info": "",
-        "x": 210,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "6429429b.d1375c",
@@ -21639,18 +20773,6 @@
         "wires": []
     },
     {
-        "id": "756eefe7.33a9e",
-        "type": "link out",
-        "z": "7bd54a92.9df5d4",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 1055,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "a9687ab6.f40698",
         "type": "link out",
         "z": "155ca471.b81eac",
@@ -21659,7 +20781,7 @@
             "ebf4860d.603538"
         ],
         "x": 615,
-        "y": 180,
+        "y": 160,
         "wires": []
     },
     {
@@ -24300,5 +23422,28 @@
         "x": 150,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "5644cdae.e32cc4",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn off childlock kitchen",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "switch",
+        "service": "turn_off",
+        "entityId": "switch.childlock_kitchen_switch",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 230,
+        "y": 100,
+        "wires": [
+            []
+        ]
     }
 ]
