@@ -23882,5 +23882,34 @@
                 "f30c6f29.a7983"
             ]
         ]
+    },
+    {
+        "id": "1758f933.9e5147",
+        "type": "inject",
+        "z": "884be31f.370fe",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "e5f3a68e.517128"
+            ]
+        ]
     }
 ]
