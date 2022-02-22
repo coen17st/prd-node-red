@@ -203,13 +203,6 @@
         "info": ""
     },
     {
-        "id": "a5a3ba21.9eb6c8",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "away",
@@ -23480,21 +23473,21 @@
         ],
         "entityidfilter": "binary_sensor.pfsense_lan_firmware_updates_available",
         "entityidfiltertype": "exact",
-        "outputinitially": false,
+        "outputinitially": true,
         "state_type": "str",
-        "haltifstate": "",
+        "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 1,
+        "outputs": 2,
         "output_only_on_state_change": true,
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -23516,8 +23509,11 @@
             }
         ],
         "x": 100,
-        "y": 120,
+        "y": 100,
         "wires": [
+            [
+                "13d845d9.64571a"
+            ],
             []
         ]
     },
@@ -23577,10 +23573,10 @@
             }
         ],
         "x": 120,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
-                "27eb7ee1.6076f2"
+                "f30c6f29.a7983"
             ],
             []
         ]
@@ -23594,10 +23590,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is \"{{payload.category}}\" probleem gemeld in pfSense. \\n ",
+        "template": "Er is probleem gemeld in [pfSense](https://pfsense.lan:444)",
         "output": "str",
-        "x": 1040,
-        "y": 180,
+        "x": 300,
+        "y": 160,
         "wires": [
             [
                 "1e3cf70c.21e239",
@@ -23613,8 +23609,8 @@
         "links": [
             "ebf4860d.603538"
         ],
-        "x": 975,
-        "y": 100,
+        "x": 415,
+        "y": 160,
         "wires": []
     },
     {
@@ -23634,8 +23630,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1190,
-        "y": 260,
+        "x": 490,
+        "y": 100,
         "wires": [
             []
         ]
@@ -23664,226 +23660,6 @@
         ]
     },
     {
-        "id": "3149f240.c0e25e",
-        "type": "inject",
-        "z": "a5a3ba21.9eb6c8",
-        "name": "Array of decimals",
-        "props": [
-            {
-                "p": "payload",
-                "v": "[1.67,2.98,3.12,4.99,5.50]",
-                "vt": "json"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "string"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[1.67,2.98,3.12,4.99,5.50]",
-        "payloadType": "json",
-        "x": 280,
-        "y": 140,
-        "wires": [
-            [
-                "bd57baa6.00f998"
-            ]
-        ]
-    },
-    {
-        "id": "bd57baa6.00f998",
-        "type": "split",
-        "z": "a5a3ba21.9eb6c8",
-        "name": "Split array",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": "1",
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 360,
-        "y": 200,
-        "wires": [
-            [
-                "7ab9e9ed.d514b8"
-            ]
-        ]
-    },
-    {
-        "id": "7ab9e9ed.d514b8",
-        "type": "range",
-        "z": "a5a3ba21.9eb6c8",
-        "minin": "0",
-        "maxin": "10",
-        "minout": "0",
-        "maxout": "10",
-        "action": "scale",
-        "round": true,
-        "property": "payload",
-        "name": "Round value",
-        "x": 510,
-        "y": 200,
-        "wires": [
-            [
-                "f26660ab.007b3"
-            ]
-        ]
-    },
-    {
-        "id": "f26660ab.007b3",
-        "type": "join",
-        "z": "a5a3ba21.9eb6c8",
-        "name": "",
-        "mode": "auto",
-        "build": "string",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": "false",
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "x": 650,
-        "y": 200,
-        "wires": [
-            [
-                "f9b5abac.f13828"
-            ]
-        ]
-    },
-    {
-        "id": "f9b5abac.f13828",
-        "type": "debug",
-        "z": "a5a3ba21.9eb6c8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 710,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "c8e45410.662d78",
-        "type": "debug",
-        "z": "6135b991.c53398",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "27eb7ee1.6076f2",
-        "type": "change",
-        "z": "6135b991.c53398",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "data.new_state.attributes.pending_notices",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 340,
-        "y": 180,
-        "wires": [
-            [
-                "a3b464ed.e97898"
-            ]
-        ]
-    },
-    {
-        "id": "a3b464ed.e97898",
-        "type": "split",
-        "z": "6135b991.c53398",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 510,
-        "y": 180,
-        "wires": [
-            [
-                "cf1d0d28.df307"
-            ]
-        ]
-    },
-    {
-        "id": "cf1d0d28.df307",
-        "type": "change",
-        "z": "6135b991.c53398",
-        "name": "remove html tags",
-        "rules": [
-            {
-                "t": "change",
-                "p": "payload.notice",
-                "pt": "msg",
-                "from": "&amp|;lt|;title|;gt;|;h1|;center|;body|;html|;head;|;\\/title|;\\/head|;\\/body|;\\/html|;\\/center|;\\/h1|;hr|;head",
-                "fromt": "re",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 670,
-        "y": 180,
-        "wires": [
-            [
-                "523505e6.443d1c",
-                "c8e45410.662d78"
-            ]
-        ]
-    },
-    {
-        "id": "523505e6.443d1c",
-        "type": "function",
-        "z": "6135b991.c53398",
-        "name": "",
-        "func": "msg.message = msg.message.replace(/\\n/g,\" \");\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 840,
-        "y": 180,
-        "wires": [
-            [
-                "f30c6f29.a7983"
-            ]
-        ]
-    },
-    {
         "id": "1758f933.9e5147",
         "type": "inject",
         "z": "884be31f.370fe",
@@ -23909,6 +23685,26 @@
         "wires": [
             [
                 "e5f3a68e.517128"
+            ]
+        ]
+    },
+    {
+        "id": "13d845d9.64571a",
+        "type": "template",
+        "z": "6135b991.c53398",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is een update beschikbaar voor [pfSense](https://pfsense.lan:444)",
+        "output": "str",
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "e39bfe51.c1032",
+                "1e3cf70c.21e239"
             ]
         ]
     }
