@@ -77,13 +77,6 @@
         "info": ""
     },
     {
-        "id": "b13ca13c.9328e",
-        "type": "tab",
-        "label": "home_security",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "4dd07a1d.6e53e4",
         "type": "tab",
         "label": "weather_station",
@@ -126,16 +119,9 @@
         "info": ""
     },
     {
-        "id": "3307402e.92699",
+        "id": "b13ca13c.9328e",
         "type": "tab",
-        "label": "security_motion_sensor_backyard",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "d2165c67.2a702",
-        "type": "tab",
-        "label": "security_restore_light_state",
+        "label": "security_home",
         "disabled": false,
         "info": ""
     },
@@ -199,6 +185,13 @@
         "id": "6135b991.c53398",
         "type": "tab",
         "label": "notification_pfsense",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cde79c08.e4f488",
+        "type": "tab",
+        "label": "smoke_co_alarm",
         "disabled": false,
         "info": ""
     },
@@ -482,6 +475,27 @@
         "color": "#DDAA99"
     },
     {
+        "id": "99804b5f.9adb6",
+        "type": "subflow",
+        "name": "alarm lights",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "fd745c51.01fc5"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -572,16 +586,6 @@
             },
             {
                 "t": "eq",
-                "v": "Netflix",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "Smart TV",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
                 "v": "Scherm Uit",
                 "vt": "str"
             },
@@ -593,24 +597,20 @@
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 5,
+        "outputs": 3,
         "x": 630,
         "y": 300,
         "wires": [
             [
-                "9781b7f5.1f10a8"
-            ],
-            [
-                "106323c6.82befc"
-            ],
-            [
-                "174d4ece.332d31"
+                "9781b7f5.1f10a8",
+                "f4efa586.d10fc8"
             ],
             [
                 "82bc95cc.bfebe8"
             ],
             [
-                "6da8cb20.30d0f4"
+                "6da8cb20.30d0f4",
+                "39c8a943.e5d596"
             ]
         ]
     },
@@ -3772,31 +3772,6 @@
         ]
     },
     {
-        "id": "106323c6.82befc",
-        "type": "api-call-service",
-        "z": "2910f43f.ab852c",
-        "name": "turn on harmony netflix",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.harmony_hub_01_netflix",
-        "data": "",
-        "dataType": "jsonata",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 900,
-        "y": 300,
-        "wires": [
-            [
-                "fca7e96b.18f578"
-            ]
-        ]
-    },
-    {
         "id": "9781b7f5.1f10a8",
         "type": "api-call-service",
         "z": "2910f43f.ab852c",
@@ -3840,35 +3815,10 @@
         "outputProperties": [],
         "queue": "none",
         "x": 920,
-        "y": 380,
+        "y": 320,
         "wires": [
             [
                 "6a32b719.5d34d8"
-            ]
-        ]
-    },
-    {
-        "id": "174d4ece.332d31",
-        "type": "api-call-service",
-        "z": "2910f43f.ab852c",
-        "name": "turn on harmony smart tv",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "switch",
-        "service": "turn_on",
-        "entityId": "switch.harmony_hub_01_smart_tv",
-        "data": "",
-        "dataType": "jsonata",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 910,
-        "y": 340,
-        "wires": [
-            [
-                "fca7e96b.18f578"
             ]
         ]
     },
@@ -3890,7 +3840,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 910,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "36ac824f.34face",
@@ -17713,662 +17663,6 @@
         "wires": []
     },
     {
-        "id": "e003376e.a1de18",
-        "type": "server-state-changed",
-        "z": "3307402e.92699",
-        "name": "state motion sensor backyard",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.pt2262_ef9bc6",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 1,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 140,
-        "y": 100,
-        "wires": [
-            [
-                "9804ea38.ee6148"
-            ]
-        ]
-    },
-    {
-        "id": "9804ea38.ee6148",
-        "type": "switch",
-        "z": "3307402e.92699",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "on",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "off",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 330,
-        "y": 100,
-        "wires": [
-            [
-                "d6057287.31193",
-                "af563027.93955"
-            ],
-            [
-                "8bb5296d.66d298"
-            ]
-        ]
-    },
-    {
-        "id": "c79ae37f.72693",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "state backyard string light",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "light.shellydimmer_backyard_string_l",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1130,
-        "y": 180,
-        "wires": [
-            [
-                "ac36340e.ddaae8",
-                "3d4ce4dc.0cc7dc"
-            ]
-        ]
-    },
-    {
-        "id": "97732592.429328",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "state barn door light",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "light.shelly1_barn_door",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1120,
-        "y": 220,
-        "wires": [
-            [
-                "ac36340e.ddaae8",
-                "2da65710.05e048"
-            ]
-        ]
-    },
-    {
-        "id": "3d4ce4dc.0cc7dc",
-        "type": "api-call-service",
-        "z": "3307402e.92699",
-        "name": "turn on light backyard string",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "light",
-        "service": "turn_on",
-        "entityId": "light.shellydimmer_backyard_string_l",
-        "data": "{\"brightness\":\"255\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1600,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2da65710.05e048",
-        "type": "api-call-service",
-        "z": "3307402e.92699",
-        "name": "turn on light barn door",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "light",
-        "service": "turn_on",
-        "entityId": "light.shelly1_barn_door",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1580,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "645892e9.fff9ec",
-        "type": "switch",
-        "z": "3307402e.92699",
-        "name": "on / off",
-        "property": "data.state",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "on",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "off",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 1390,
-        "y": 280,
-        "wires": [
-            [
-                "eb1a6960.781558"
-            ],
-            [
-                "a99e57e8.471588"
-            ]
-        ]
-    },
-    {
-        "id": "ea579947.6898e8",
-        "type": "delay",
-        "z": "3307402e.92699",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 800,
-        "y": 280,
-        "wires": [
-            [
-                "b17c4a7f.349188"
-            ]
-        ]
-    },
-    {
-        "id": "b17c4a7f.349188",
-        "type": "change",
-        "z": "3307402e.92699",
-        "name": "start hold",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "red",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 280,
-        "wires": [
-            [
-                "ac36340e.ddaae8"
-            ]
-        ]
-    },
-    {
-        "id": "eb1a6960.781558",
-        "type": "api-call-service",
-        "z": "3307402e.92699",
-        "name": "restore light on state",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "light",
-        "service": "turn_on",
-        "entityId": "{{data.entity_id}}",
-        "data": "{\"brightness\":\"{{data.attributes.brightness}}\"}",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1580,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a99e57e8.471588",
-        "type": "api-call-service",
-        "z": "3307402e.92699",
-        "name": "restore light off state",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "debugenabled": false,
-        "service_domain": "light",
-        "service": "turn_off",
-        "entityId": "{{data.entity_id}}",
-        "data": "",
-        "dataType": "json",
-        "mergecontext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1580,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3c18e0fd.fde54",
-        "type": "comment",
-        "z": "3307402e.92699",
-        "name": "motion sensor backyard",
-        "info": "motion sensor backyard",
-        "x": 120,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "d6057287.31193",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "outdoor is dark",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "dark",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.outdoor_light_dark",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 520,
-        "y": 140,
-        "wires": [
-            [
-                "b6c90637.02d998"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "6af26902.742a18",
-        "type": "template",
-        "z": "3307402e.92699",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Beweging in achtertuin gedetecteerd. Beveiliging staat aan. ",
-        "output": "str",
-        "x": 1080,
-        "y": 100,
-        "wires": [
-            [
-                "4c169b88.d80854"
-            ]
-        ]
-    },
-    {
-        "id": "af563027.93955",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "persons is home",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "group.persons",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 520,
-        "y": 100,
-        "wires": [
-            [
-                "8b05727e.943a6"
-            ],
-            [
-                "20c7b841.cefe98"
-            ]
-        ]
-    },
-    {
-        "id": "2c3b18f.cc50ee8",
-        "type": "template",
-        "z": "3307402e.92699",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Beweging in achtertuin gedetecteerd. Niemand is aanwezig en gast staat uit.",
-        "output": "str",
-        "x": 1080,
-        "y": 140,
-        "wires": [
-            [
-                "4c169b88.d80854"
-            ]
-        ]
-    },
-    {
-        "id": "b6c90637.02d998",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "state home security is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.home_security",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "input_boolean.home_security",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 850,
-        "y": 180,
-        "wires": [
-            [
-                "c79ae37f.72693",
-                "97732592.429328"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8b05727e.943a6",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "state home security is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.home_security",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "input_boolean.home_security",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 850,
-        "y": 100,
-        "wires": [
-            [
-                "6af26902.742a18"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8bb5296d.66d298",
-        "type": "change",
-        "z": "3307402e.92699",
-        "name": "send green to traffic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 220,
-        "wires": [
-            [
-                "ac36340e.ddaae8",
-                "ea579947.6898e8"
-            ]
-        ]
-    },
-    {
-        "id": "20c7b841.cefe98",
-        "type": "api-current-state",
-        "z": "3307402e.92699",
-        "name": "state guest is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.guest",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 820,
-        "y": 140,
-        "wires": [
-            [],
-            [
-                "2c3b18f.cc50ee8"
-            ]
-        ]
-    },
-    {
-        "id": "ac36340e.ddaae8",
-        "type": "traffic",
-        "z": "3307402e.92699",
-        "name": "traffic",
-        "property_allow": "payload",
-        "filter_allow": "green",
-        "ignore_case_allow": false,
-        "negate_allow": false,
-        "send_allow": false,
-        "property_stop": "payload",
-        "filter_stop": "red",
-        "ignore_case_stop": false,
-        "negate_stop": false,
-        "send_stop": false,
-        "default_start": false,
-        "differ": true,
-        "x": 1270,
-        "y": 280,
-        "wires": [
-            [
-                "645892e9.fff9ec"
-            ]
-        ]
-    },
-    {
         "id": "c57acb4f.9d1808",
         "type": "comment",
         "z": "79544bf2.1ff3a4",
@@ -19713,7 +19007,7 @@
     {
         "id": "af7b80fc.c3023",
         "type": "api-call-service",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "restore light on state",
         "server": "4ba92433.2478cc",
         "version": 3,
@@ -19727,7 +19021,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1100,
+        "x": 1160,
         "y": 160,
         "wires": [
             []
@@ -19736,7 +19030,7 @@
     {
         "id": "bcb3a700.ce17f8",
         "type": "ha-get-entities",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "get all lights",
         "server": "4ba92433.2478cc",
         "version": 0,
@@ -19753,7 +19047,7 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 390,
+        "x": 330,
         "y": 100,
         "wires": [
             [
@@ -19765,7 +19059,7 @@
     {
         "id": "5230c2e.d12123c",
         "type": "switch",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "on / off",
         "property": "payload.state",
         "propertyType": "msg",
@@ -19784,7 +19078,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 930,
+        "x": 950,
         "y": 180,
         "wires": [
             [
@@ -19798,7 +19092,7 @@
     {
         "id": "e15ce8b1.b6e1b8",
         "type": "api-call-service",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "restore light off state",
         "server": "4ba92433.2478cc",
         "version": 3,
@@ -19812,7 +19106,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1100,
+        "x": 1160,
         "y": 200,
         "wires": [
             []
@@ -19821,7 +19115,7 @@
     {
         "id": "ff3fd036.814d8",
         "type": "delay",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "",
         "pauseType": "delay",
         "timeout": "5",
@@ -19833,7 +19127,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 680,
+        "x": 740,
         "y": 280,
         "wires": [
             [
@@ -19844,7 +19138,7 @@
     {
         "id": "c6fb625.0c939a",
         "type": "change",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "send red to traffic",
         "rules": [
             {
@@ -19860,7 +19154,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
+        "x": 910,
         "y": 280,
         "wires": [
             [
@@ -19871,7 +19165,7 @@
     {
         "id": "fc63001e.69dc4",
         "type": "change",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "set domain to light",
         "rules": [
             {
@@ -19887,7 +19181,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
+        "x": 530,
         "y": 140,
         "wires": [
             [
@@ -19898,7 +19192,7 @@
     {
         "id": "952a70ca.b8532",
         "type": "change",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "send green to traffic",
         "rules": [
             {
@@ -19914,7 +19208,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
+        "x": 530,
         "y": 180,
         "wires": [
             [
@@ -19923,60 +19217,9 @@
         ]
     },
     {
-        "id": "4021fe53.9152",
-        "type": "server-state-changed",
-        "z": "d2165c67.2a702",
-        "name": "state alarm",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.alarm",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 1,
-        "output_only_on_state_change": false,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "alarm",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            }
-        ],
-        "x": 80,
-        "y": 100,
-        "wires": [
-            [
-                "fd745c51.01fc5"
-            ]
-        ]
-    },
-    {
         "id": "fd745c51.01fc5",
         "type": "switch",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "",
         "property": "alarm",
         "propertyType": "msg",
@@ -19995,7 +19238,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 210,
+        "x": 150,
         "y": 100,
         "wires": [
             [
@@ -20007,19 +19250,9 @@
         ]
     },
     {
-        "id": "ef7250a4.5fe61",
-        "type": "comment",
-        "z": "d2165c67.2a702",
-        "name": "restore lights state after alarm",
-        "info": "",
-        "x": 140,
-        "y": 40,
-        "wires": []
-    },
-    {
         "id": "449328ad.e5c798",
         "type": "api-call-service",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "turn on all lights",
         "server": "4ba92433.2478cc",
         "version": 3,
@@ -20033,43 +19266,16 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1080,
+        "x": 1140,
         "y": 100,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "66fcb39a.d4402c",
-        "type": "api-current-state",
-        "z": "d2165c67.2a702",
-        "name": "state light dark",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "dark",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.outdoor_light_dark",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 860,
-        "y": 100,
-        "wires": [
-            [
-                "449328ad.e5c798"
-            ],
             []
         ]
     },
     {
         "id": "b3c56923.a20108",
         "type": "traffic",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "traffic",
         "property_allow": "payload",
         "filter_allow": "green",
@@ -20083,7 +19289,7 @@
         "send_stop": false,
         "default_start": false,
         "differ": true,
-        "x": 770,
+        "x": 730,
         "y": 180,
         "wires": [
             [
@@ -20095,7 +19301,7 @@
     {
         "id": "cf32e234.47719",
         "type": "switch",
-        "z": "d2165c67.2a702",
+        "z": "99804b5f.9adb6",
         "name": "exclude light",
         "property": "payload.entity_id",
         "propertyType": "msg",
@@ -20109,11 +19315,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 570,
+        "x": 510,
         "y": 100,
         "wires": [
             [
-                "66fcb39a.d4402c"
+                "449328ad.e5c798"
             ]
         ]
     },
@@ -20722,7 +19928,10 @@
             "61bb3627.3c73a8",
             "d72ab58.1d91948",
             "651b6e34.8b57d",
-            "1e3cf70c.21e239"
+            "1e3cf70c.21e239",
+            "cd181994.e2ccc8",
+            "24fe4408.a81eb4",
+            "3f462a6b.94f916"
         ],
         "x": 35,
         "y": 100,
@@ -20802,18 +20011,6 @@
         ],
         "x": 935,
         "y": 100,
-        "wires": []
-    },
-    {
-        "id": "4c169b88.d80854",
-        "type": "link out",
-        "z": "3307402e.92699",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 1295,
-        "y": 120,
         "wires": []
     },
     {
@@ -23706,6 +22903,1407 @@
                 "e39bfe51.c1032",
                 "1e3cf70c.21e239"
             ]
+        ]
+    },
+    {
+        "id": "39c8a943.e5d596",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "turn off media player tv ",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "media_player",
+        "service": "turn_off",
+        "entityId": "media_player.tv_01",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 900,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4efa586.d10fc8",
+        "type": "api-call-service",
+        "z": "2910f43f.ab852c",
+        "name": "turn off media player tv ",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "media_player",
+        "service": "turn_on",
+        "entityId": "media_player.tv_01",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 900,
+        "y": 220,
+        "wires": [
+            [
+                "fca7e96b.18f578"
+            ]
+        ]
+    },
+    {
+        "id": "dc93ddfe.5bd4a",
+        "type": "comment",
+        "z": "cde79c08.e4f488",
+        "name": "notify when a smoke or co alarm goes on",
+        "info": "notify when a message appears in pfsense",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "743eb0e6.61b368",
+        "type": "server-state-changed",
+        "z": "cde79c08.e4f488",
+        "name": "smoke co alarm test livingroom",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.zcombo_g_smoke_co_alarm_smoke_alarm_smoke_alarm_test",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bc9788a0.2fc028",
+        "type": "server-state-changed",
+        "z": "cde79c08.e4f488",
+        "name": "smoke detected livingroom",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.zcombo_g_smoke_co_alarm_smoke_alarm_smoke_detected",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "alarm_state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "7cdcd90a.9cd33"
+            ]
+        ]
+    },
+    {
+        "id": "3fdbb752.798ec8",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "name": "message smoke detected",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is rook gedecteed in de {{location}}",
+        "output": "str",
+        "x": 610,
+        "y": 200,
+        "wires": [
+            [
+                "8f9a86a6.9ca938",
+                "64de60b8.ee87d8"
+            ]
+        ]
+    },
+    {
+        "id": "acaf455.81dc638",
+        "type": "change",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Alarm",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "alarm",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 160,
+        "wires": [
+            [
+                "8b811e89.d8907",
+                "64dbfd97.f3e984",
+                "b64a8e86.d9fa8",
+                "3f462a6b.94f916"
+            ]
+        ]
+    },
+    {
+        "id": "7cdcd90a.9cd33",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "name": "location livingroom",
+        "field": "location",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "woonkamer",
+        "output": "str",
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "3fdbb752.798ec8"
+            ]
+        ]
+    },
+    {
+        "id": "fd7b8a4d.52e6c8",
+        "type": "server-state-changed",
+        "z": "cde79c08.e4f488",
+        "name": "smoke detected upstairs",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.zcombo_g_smoke_co_alarm_smoke_alarm_smoke_detected_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "alarm_state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "3f622d19.96609a"
+            ]
+        ]
+    },
+    {
+        "id": "d75a3b89.b17828",
+        "type": "server-state-changed",
+        "z": "cde79c08.e4f488",
+        "name": "smoke detected basement",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.zcombo_g_smoke_co_alarm_smoke_alarm_smoke_detected_3",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "alarm_state",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "c5e700b.742ef"
+            ]
+        ]
+    },
+    {
+        "id": "3f622d19.96609a",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "name": "location upstairs",
+        "field": "location",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "hal boven",
+        "output": "str",
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "3fdbb752.798ec8"
+            ]
+        ]
+    },
+    {
+        "id": "c5e700b.742ef",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "name": "location basement",
+        "field": "location",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "kelder",
+        "output": "str",
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "3fdbb752.798ec8"
+            ]
+        ]
+    },
+    {
+        "id": "8b811e89.d8907",
+        "type": "api-call-service",
+        "z": "cde79c08.e4f488",
+        "name": "app notification",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "persistent_notification",
+        "service": "create",
+        "entityId": "",
+        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1200,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "64dbfd97.f3e984",
+        "type": "api-call-service",
+        "z": "cde79c08.e4f488",
+        "name": "push notification",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "notify",
+        "entityId": "",
+        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1200,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1548a33.8b84e",
+        "type": "server-state-changed",
+        "z": "b13ca13c.9328e",
+        "name": "state motion sensor backyard",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.pt2262_ef9bc6",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "1fc8e81d.30a58"
+            ]
+        ]
+    },
+    {
+        "id": "1fc8e81d.30a58",
+        "type": "switch",
+        "z": "b13ca13c.9328e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "c8c0e9cd.bff87",
+                "2211e616.4f8a9a"
+            ],
+            [
+                "dcd44f33.d800f"
+            ]
+        ]
+    },
+    {
+        "id": "2a6cacb.90dec54",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "state backyard string light",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.shellydimmer_backyard_string_l",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1130,
+        "y": 620,
+        "wires": [
+            [
+                "2b8dd7fb.fee7e",
+                "b3835587.ac057"
+            ]
+        ]
+    },
+    {
+        "id": "d493d13f.c887b",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "state barn door light",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.shelly1_barn_door",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1120,
+        "y": 660,
+        "wires": [
+            [
+                "2b8dd7fb.fee7e",
+                "40686e04.986ca8"
+            ]
+        ]
+    },
+    {
+        "id": "b3835587.ac057",
+        "type": "api-call-service",
+        "z": "b13ca13c.9328e",
+        "name": "turn on light backyard string",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.shellydimmer_backyard_string_l",
+        "data": "{\"brightness\":\"255\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1600,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "40686e04.986ca8",
+        "type": "api-call-service",
+        "z": "b13ca13c.9328e",
+        "name": "turn on light barn door",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.shelly1_barn_door",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a5afd1b.488c54",
+        "type": "switch",
+        "z": "b13ca13c.9328e",
+        "name": "on / off",
+        "property": "data.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1390,
+        "y": 720,
+        "wires": [
+            [
+                "aad29463.bd8a28"
+            ],
+            [
+                "4a7857bc.12e9d8"
+            ]
+        ]
+    },
+    {
+        "id": "8ad8d1d.fddd9b",
+        "type": "delay",
+        "z": "b13ca13c.9328e",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 800,
+        "y": 720,
+        "wires": [
+            [
+                "42761224.de2a34"
+            ]
+        ]
+    },
+    {
+        "id": "42761224.de2a34",
+        "type": "change",
+        "z": "b13ca13c.9328e",
+        "name": "start hold",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "red",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 720,
+        "wires": [
+            [
+                "2b8dd7fb.fee7e"
+            ]
+        ]
+    },
+    {
+        "id": "aad29463.bd8a28",
+        "type": "api-call-service",
+        "z": "b13ca13c.9328e",
+        "name": "restore light on state",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "{{data.entity_id}}",
+        "data": "{\"brightness\":\"{{data.attributes.brightness}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a7857bc.12e9d8",
+        "type": "api-call-service",
+        "z": "b13ca13c.9328e",
+        "name": "restore light off state",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "{{data.entity_id}}",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d92e029.14a6e",
+        "type": "comment",
+        "z": "b13ca13c.9328e",
+        "name": "motion sensor backyard",
+        "info": "motion sensor backyard",
+        "x": 120,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c8c0e9cd.bff87",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "outdoor is dark",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "dark",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.outdoor_light_dark",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 520,
+        "y": 580,
+        "wires": [
+            [
+                "3048fc65.e0e3f4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5c5667e.353b698",
+        "type": "template",
+        "z": "b13ca13c.9328e",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beweging in achtertuin gedetecteerd. Beveiliging staat aan. ",
+        "output": "str",
+        "x": 1080,
+        "y": 540,
+        "wires": [
+            [
+                "24fe4408.a81eb4"
+            ]
+        ]
+    },
+    {
+        "id": "2211e616.4f8a9a",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "persons is home",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "group.persons",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 520,
+        "y": 540,
+        "wires": [
+            [
+                "bc819a58.cf17e8"
+            ],
+            [
+                "eeef05f0.3a6b8"
+            ]
+        ]
+    },
+    {
+        "id": "5ce935e7.58275c",
+        "type": "template",
+        "z": "b13ca13c.9328e",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beweging in achtertuin gedetecteerd. Niemand is aanwezig en gast staat uit.",
+        "output": "str",
+        "x": 1080,
+        "y": 580,
+        "wires": [
+            [
+                "24fe4408.a81eb4"
+            ]
+        ]
+    },
+    {
+        "id": "3048fc65.e0e3f4",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "state home security is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.home_security",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "input_boolean.home_security",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 850,
+        "y": 620,
+        "wires": [
+            [
+                "2a6cacb.90dec54",
+                "d493d13f.c887b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bc819a58.cf17e8",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "state home security is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.home_security",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "input_boolean.home_security",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 850,
+        "y": 540,
+        "wires": [
+            [
+                "5c5667e.353b698"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dcd44f33.d800f",
+        "type": "change",
+        "z": "b13ca13c.9328e",
+        "name": "send green to traffic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "green",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 660,
+        "wires": [
+            [
+                "2b8dd7fb.fee7e",
+                "8ad8d1d.fddd9b"
+            ]
+        ]
+    },
+    {
+        "id": "eeef05f0.3a6b8",
+        "type": "api-current-state",
+        "z": "b13ca13c.9328e",
+        "name": "state guest is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.guest",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 580,
+        "wires": [
+            [],
+            [
+                "5ce935e7.58275c"
+            ]
+        ]
+    },
+    {
+        "id": "2b8dd7fb.fee7e",
+        "type": "traffic",
+        "z": "b13ca13c.9328e",
+        "name": "traffic",
+        "property_allow": "payload",
+        "filter_allow": "green",
+        "ignore_case_allow": false,
+        "negate_allow": false,
+        "send_allow": false,
+        "property_stop": "payload",
+        "filter_stop": "red",
+        "ignore_case_stop": false,
+        "negate_stop": false,
+        "send_stop": false,
+        "default_start": false,
+        "differ": true,
+        "x": 1270,
+        "y": 720,
+        "wires": [
+            [
+                "4a5afd1b.488c54"
+            ]
+        ]
+    },
+    {
+        "id": "24fe4408.a81eb4",
+        "type": "link out",
+        "z": "b13ca13c.9328e",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1295,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "32df022c.a85eb6",
+        "type": "server-state-changed",
+        "z": "b13ca13c.9328e",
+        "name": "state alarm",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.alarm",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "alarm",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "x": 80,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "726bf481.1a702c",
+        "type": "comment",
+        "z": "b13ca13c.9328e",
+        "name": "restore lights state after alarm",
+        "info": "",
+        "x": 140,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "17fc6f2f.1f2ff9",
+        "type": "subflow:99804b5f.9adb6",
+        "z": "b13ca13c.9328e",
+        "name": "alarm lights",
+        "env": [],
+        "x": 230,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "b64a8e86.d9fa8",
+        "type": "subflow:99804b5f.9adb6",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "env": [],
+        "x": 1190,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "8f9a86a6.9ca938",
+        "type": "switch",
+        "z": "cde79c08.e4f488",
+        "name": "on / off",
+        "property": "alarm_state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 810,
+        "y": 200,
+        "wires": [
+            [
+                "acaf455.81dc638"
+            ],
+            [
+                "56c87bdc.b016ac"
+            ]
+        ]
+    },
+    {
+        "id": "56c87bdc.b016ac",
+        "type": "change",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alarm",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 220,
+        "wires": [
+            [
+                "b64a8e86.d9fa8"
+            ]
+        ]
+    },
+    {
+        "id": "3f462a6b.94f916",
+        "type": "link out",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "links": [
+            "ebf4860d.603538"
+        ],
+        "x": 1135,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "64de60b8.ee87d8",
+        "type": "debug",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fb92086a.22ae98",
+        "type": "comment",
+        "z": "99804b5f.9adb6",
+        "name": "input requirements",
+        "info": "msg.alarm = off \nmsg.alarm = on",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3eca8ed.fdb0c72",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "name": "location livingroom",
+        "field": "location",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "woonkamer",
+        "output": "str",
+        "x": 710,
+        "y": 540,
+        "wires": [
+            [
+                "d114a94f.d56b38"
+            ]
+        ]
+    },
+    {
+        "id": "d114a94f.d56b38",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "name": "message smoke detected",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is rook gedecteed in de {{location}}",
+        "output": "str",
+        "x": 930,
+        "y": 540,
+        "wires": [
+            [
+                "80fa3f99.7bfa98"
+            ]
+        ]
+    },
+    {
+        "id": "47d624ba.ae5044",
+        "type": "inject",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "props": [
+            {
+                "p": "alarm_state",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "3eca8ed.fdb0c72"
+            ]
+        ]
+    },
+    {
+        "id": "80fa3f99.7bfa98",
+        "type": "api-call-service",
+        "z": "cde79c08.e4f488",
+        "name": "app notification",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "mobile_app_phone_coen",
+        "entityId": "",
+        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\",\"data\":{\"ttl\":0,\"priority\":\"high\",\"channel\":\"alarm_stream\"}}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1140,
+        "y": 540,
+        "wires": [
+            []
         ]
     }
 ]
