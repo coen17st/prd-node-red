@@ -38,7 +38,7 @@
         "id": "9605dd85.f395a",
         "type": "tab",
         "label": "calendar_events_development",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
