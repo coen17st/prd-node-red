@@ -13,7 +13,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  # volumeName: pvc-643a415e-bc02-4d98-b454-21e45ed0c5d6
+  volumeName: pvc-ceb5510c-57e2-4884-b7e4-b57d71930207
 
 ---
 kind: Deployment
