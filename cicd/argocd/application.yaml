@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/theautomation/node-red.git
     targetRevision: k8s
-    path: deploy/kubernetes
+    path: deploy/k8s
     directory:
       recurse: true
   destination:
