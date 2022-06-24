@@ -70,12 +70,12 @@ metadata:
   namespace: home-automation
 spec:
   encryptedData:
-    flows_cred: AgAmpvx07H2Vc1arLYGJuMkAjmGegONv289s5B3oeabw2qBx8IFp633JojtWQMSNNzP0f+ZeAT2MoRLU7mKdTt2wpKQZ26mljn91HGVPFZw3HHljWhCduV8Qm1nQZ39FmhfFLWmZ4w9AMzplYfRk7eKT/WiOWAJywlvOqlpb0JhgN3VHZiC5uxT2NdET6YUO/HgRtGkyJuZpBaPdptmGoU/56oKLXaIFAYG9qtazaD9svDpuYjcYvX5sXLZysVg1Uk/aMHoZzEJvtLTrikEdpkojLg1pDo/DZ7hhjPG6WDZEKM3a1O6x3+GMU8L///E+Q2SfaPmp3UAaNzSxhEySDv1wMw9HOBToeIHGf2i0w2KNZQkxp90dppaw/Pq4NaL1DYTx2NUhcFqtOmVw5vO/VncKq2wNj9zEmaIaEGq+P1erHxiWIdjcWkrN+Fi8jE0NJD3xCo1aVKX0c8WOGnszW/+h02czj5SrdI2sZWl9w0ktnEShcQdA2GUpYnIAqneHvVPDVdknYHR0bh+0smjAlFiyURrmcK0cAl1ATJR8HQ9+U+jg3AdGdIcIdZflQvdqxNKjQYFBnQhqkantuGu8mvnxvX8M1eLzezYrgXn+2b3WT1OnDK+YKLtSziC9Feng19ozJ7sGsrgF4TiKcP66jJJSLjZpdlKvIlhpFyYmk5T2EWmzWK6Ig0J8KaBXlioeIdMr347XJLLdOKObfzlcC9hQzHQPG5CNKnVzbkfD9Tkx3SSWu+5pKqGBGKCRZWXFktclV8vP4Q00+CkbsUDYX9AygcIW7AtF7OYkX3wHq4oEzv3Cu8Ym8R1ZVAPIR3IYo87xGS7+oyNlFSXPeoILIa9Vwtledgz3JaOZryFCHbiNV1eZny1dOX0prR8DR9z2kMVrnr87mdryzC524P0FBfBY65npssbH/WW4UeRzAtr5ARdXazjt2Zja6v4bWU3h/x4D9z3P4yRBGAr1u/glzY6k7+nK+71WNaBJ05MWfT7KfjIjeVew+WPe5n5iE2PUwzQ16OHLWQ492EwrZEZ+Y/B2p0uzofne6USLCxcTb7JUZVeMCdf4tnmQ0xLhWtMsVvSeXgqZrrycIHvRLYpYaMzUXywcLnDnhIrk3Jata99M88Yo8tQG2yJbTA00KyNHGr8qOvsKj/4paWQrEXZIuPC29YmD8bt8JM6z5d1/48m3eW+JtbtCWsyFfDJ27aMxGeAyh7+Ea0dzA2Y5UeFAPbeerBnW4VP/BwFRqurOaDNraQ==
+    flows-cred: AgAmpvx07H2Vc1arLYGJuMkAjmGegONv289s5B3oeabw2qBx8IFp633JojtWQMSNNzP0f+ZeAT2MoRLU7mKdTt2wpKQZ26mljn91HGVPFZw3HHljWhCduV8Qm1nQZ39FmhfFLWmZ4w9AMzplYfRk7eKT/WiOWAJywlvOqlpb0JhgN3VHZiC5uxT2NdET6YUO/HgRtGkyJuZpBaPdptmGoU/56oKLXaIFAYG9qtazaD9svDpuYjcYvX5sXLZysVg1Uk/aMHoZzEJvtLTrikEdpkojLg1pDo/DZ7hhjPG6WDZEKM3a1O6x3+GMU8L///E+Q2SfaPmp3UAaNzSxhEySDv1wMw9HOBToeIHGf2i0w2KNZQkxp90dppaw/Pq4NaL1DYTx2NUhcFqtOmVw5vO/VncKq2wNj9zEmaIaEGq+P1erHxiWIdjcWkrN+Fi8jE0NJD3xCo1aVKX0c8WOGnszW/+h02czj5SrdI2sZWl9w0ktnEShcQdA2GUpYnIAqneHvVPDVdknYHR0bh+0smjAlFiyURrmcK0cAl1ATJR8HQ9+U+jg3AdGdIcIdZflQvdqxNKjQYFBnQhqkantuGu8mvnxvX8M1eLzezYrgXn+2b3WT1OnDK+YKLtSziC9Feng19ozJ7sGsrgF4TiKcP66jJJSLjZpdlKvIlhpFyYmk5T2EWmzWK6Ig0J8KaBXlioeIdMr347XJLLdOKObfzlcC9hQzHQPG5CNKnVzbkfD9Tkx3SSWu+5pKqGBGKCRZWXFktclV8vP4Q00+CkbsUDYX9AygcIW7AtF7OYkX3wHq4oEzv3Cu8Ym8R1ZVAPIR3IYo87xGS7+oyNlFSXPeoILIa9Vwtledgz3JaOZryFCHbiNV1eZny1dOX0prR8DR9z2kMVrnr87mdryzC524P0FBfBY65npssbH/WW4UeRzAtr5ARdXazjt2Zja6v4bWU3h/x4D9z3P4yRBGAr1u/glzY6k7+nK+71WNaBJ05MWfT7KfjIjeVew+WPe5n5iE2PUwzQ16OHLWQ492EwrZEZ+Y/B2p0uzofne6USLCxcTb7JUZVeMCdf4tnmQ0xLhWtMsVvSeXgqZrrycIHvRLYpYaMzUXywcLnDnhIrk3Jata99M88Yo8tQG2yJbTA00KyNHGr8qOvsKj/4paWQrEXZIuPC29YmD8bt8JM6z5d1/48m3eW+JtbtCWsyFfDJ27aMxGeAyh7+Ea0dzA2Y5UeFAPbeerBnW4VP/BwFRqurOaDNraQ==
   template:
     data:
       flows_cred.json: |-
         {
-            "$": "{{ index . "flows_cred" }}"
+            "$": "{{ index . "flows-cred" }}"
         }
     metadata:
       labels:
@@ -129,7 +129,7 @@ spec:
         - name: settings
           secret:
             secretName: settings
-        - name: flow_cred
+        - name: flow-cred
           secret:
             secretName: flows-credentials
       imagePullSecrets:
