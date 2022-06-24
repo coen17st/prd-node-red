@@ -105,7 +105,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: "container-image-registry.theautomation.nl/home-automation/node-red:latest@sha256:4166d440a679abb9feaaa924bfd847c58337383be07114f59cdf43c8013ba90f"
+          image: "container-image-registry.theautomation.nl/home-automation/node-red:latest@sha256:373a5b39469e9b8c7cc6320fb6745d8e58635dce48176f1a21c936f64688c659"
           imagePullPolicy: Always
           resources: {}
           ports:
