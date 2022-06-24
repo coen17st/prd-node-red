@@ -17240,8 +17240,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head></head>\n    <body>\n        <h1>url: {{req.url}}</h1>\n        <h1>method: {{req.method}}</h1>\n    </body>\n</html>",
-        "x": 500,
-        "y": 80,
+        "x": 440,
+        "y": 120,
         "wires": [
             [
                 "de8e98e8.de6cb8"
@@ -17255,8 +17255,8 @@
         "name": "http response",
         "statusCode": "",
         "headers": {},
-        "x": 660,
-        "y": 80,
+        "x": 600,
+        "y": 120,
         "wires": []
     },
     {
