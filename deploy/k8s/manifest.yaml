@@ -1,50 +1,6 @@
-# ---
-# kind: PersistentVolume
-# apiVersion: v1
-# metadata:
-#   name: pv-nfs-node-red-data
-# spec:
-#   storageClassName: "freenas-nfs-manual-csi"
-#   capacity:
-#     storage: 5Gi
-#   accessModes:
-#     - ReadWriteMany
-#   persistentVolumeReclaimPolicy: Retain
-#   mountOptions:
-#     - nfsvers=4
-#     - nolock
-#     - noatime
-#   csi:
-#     driver: org.democratic-csi.node-manual
-#     readOnly: false
-#     fsType: nfs
-#     volumeHandle: pv-nfs-node-red-data
-#     volumeAttributes:
-#       server: storage-server.lan
-#       share: /mnt/r10_8tb/k8s/node-red-data
-#       node_attach_driver: nfs
-#       provisioner_driver: node-manual
-
-# ---
-# kind: PersistentVolumeClaim
-# apiVersion: v1
-# metadata:
-#   name: pvc-nfs-node-red-data
-#   namespace: home-automation
-#   annotations:
-#     volume.beta.kubernetes.io/storage-class: "freenas-nfs-manual-csi"
-# spec:
-#   storageClassName: freenas-nfs-manual-csi
-#   accessModes:
-#     - ReadWriteMany
-#   resources:
-#     requests:
-#       storage: 5Gi
-#   volumeName: pv-nfs-node-red-data
-
 ---
-apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
+apiVersion: bitnami.com/v1alpha1
 metadata:
   name: settings
   namespace: home-automation
@@ -107,6 +63,27 @@ spec:
         app: node-red
 
 ---
+kind: SealedSecret
+apiVersion: bitnami.com/v1alpha1
+metadata:
+  name: flows-credentials
+  namespace: home-automation
+spec:
+  encryptedData:
+    flows_cred: AgAmpvx07H2Vc1arLYGJuMkAjmGegONv289s5B3oeabw2qBx8IFp633JojtWQMSNNzP0f+ZeAT2MoRLU7mKdTt2wpKQZ26mljn91HGVPFZw3HHljWhCduV8Qm1nQZ39FmhfFLWmZ4w9AMzplYfRk7eKT/WiOWAJywlvOqlpb0JhgN3VHZiC5uxT2NdET6YUO/HgRtGkyJuZpBaPdptmGoU/56oKLXaIFAYG9qtazaD9svDpuYjcYvX5sXLZysVg1Uk/aMHoZzEJvtLTrikEdpkojLg1pDo/DZ7hhjPG6WDZEKM3a1O6x3+GMU8L///E+Q2SfaPmp3UAaNzSxhEySDv1wMw9HOBToeIHGf2i0w2KNZQkxp90dppaw/Pq4NaL1DYTx2NUhcFqtOmVw5vO/VncKq2wNj9zEmaIaEGq+P1erHxiWIdjcWkrN+Fi8jE0NJD3xCo1aVKX0c8WOGnszW/+h02czj5SrdI2sZWl9w0ktnEShcQdA2GUpYnIAqneHvVPDVdknYHR0bh+0smjAlFiyURrmcK0cAl1ATJR8HQ9+U+jg3AdGdIcIdZflQvdqxNKjQYFBnQhqkantuGu8mvnxvX8M1eLzezYrgXn+2b3WT1OnDK+YKLtSziC9Feng19ozJ7sGsrgF4TiKcP66jJJSLjZpdlKvIlhpFyYmk5T2EWmzWK6Ig0J8KaBXlioeIdMr347XJLLdOKObfzlcC9hQzHQPG5CNKnVzbkfD9Tkx3SSWu+5pKqGBGKCRZWXFktclV8vP4Q00+CkbsUDYX9AygcIW7AtF7OYkX3wHq4oEzv3Cu8Ym8R1ZVAPIR3IYo87xGS7+oyNlFSXPeoILIa9Vwtledgz3JaOZryFCHbiNV1eZny1dOX0prR8DR9z2kMVrnr87mdryzC524P0FBfBY65npssbH/WW4UeRzAtr5ARdXazjt2Zja6v4bWU3h/x4D9z3P4yRBGAr1u/glzY6k7+nK+71WNaBJ05MWfT7KfjIjeVew+WPe5n5iE2PUwzQ16OHLWQ492EwrZEZ+Y/B2p0uzofne6USLCxcTb7JUZVeMCdf4tnmQ0xLhWtMsVvSeXgqZrrycIHvRLYpYaMzUXywcLnDnhIrk3Jata99M88Yo8tQG2yJbTA00KyNHGr8qOvsKj/4paWQrEXZIuPC29YmD8bt8JM6z5d1/48m3eW+JtbtCWsyFfDJ27aMxGeAyh7+Ea0dzA2Y5UeFAPbeerBnW4VP/BwFRqurOaDNraQ==
+  template:
+    data:
+      flows_cred.json: |-
+        {
+            "$": "{{ index . "flows_cred" }}"
+        }
+    metadata:
+      labels:
+        app: node-red
+      name: flows-credentials
+      namespace: home-automation
+
+---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -145,13 +122,16 @@ spec:
             - name: settings
               mountPath: /data/settings.js
               subPath: settings.js
+            - name: flow_cred
+              mountPath: /data/flows_cred.json
+              subPath: flows_cred.json
       volumes:
-        # - name: data
-        #   persistentVolumeClaim:
-        #     claimName: pvc-nfs-node-red-data
         - name: settings
           secret:
             secretName: settings
+        - name: flow_cred
+          secret:
+            secretName: flows-credentials
       imagePullSecrets:
         - name: container-image-registry-credentials
 
