@@ -152,6 +152,8 @@ spec:
         - name: settings
           secret:
             secretName: settings
+      imagePullSecrets:
+        - name: container-image-registry-credentials
 
 ---
 kind: Service
