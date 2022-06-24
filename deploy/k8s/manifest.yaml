@@ -146,9 +146,9 @@ spec:
               mountPath: /data/settings.js
               subPath: settings.js
       volumes:
-        - name: data
-          persistentVolumeClaim:
-            claimName: pvc-nfs-node-red-data
+        # - name: data
+        #   persistentVolumeClaim:
+        #     claimName: pvc-nfs-node-red-data
         - name: settings
           secret:
             secretName: settings
