@@ -1,4 +1,3 @@
----
 kind: SealedSecret
 apiVersion: bitnami.com/v1alpha1
 metadata:
@@ -7,13 +6,14 @@ metadata:
 spec:
   encryptedData:
     adminAuth_password: AgDrunVqVva0KwWuS0TH4y4PVsBAf7BCQhmEDH4g/ZtVGEcV8raqMNpOJsc2wJcXQDVlGginpPpcoKssCd9P/od9cJ0Zqc9HKbdBsGz6TG33RxAd0y14SWSKwVDW76ebt3vVzVV01BoVAe6CmFxVwWlNvQakYwsEf65GyMV0MX2NPT+uIkUawzoagKfSRVDl91usgAFXfut0XHU09zqPsvVc/lX/BZGK2vkfBlAOlr6krCkFzFc3SluuaDsNDNm+QNOkBr6oDvGp62xZEwp8zlj679SYo9MD8ePuHv6JSRx3Ij2rc5wtBr/zZs5n52NvrCf+1glZDPut2VvcnmnUx6sQ7P6K8ye5foPb6qpjzWUZsW+VSb0poEhF3b/ys18S2oDKpfcyTOFHqiLOgtB0RIG+Ho9UqV0CANAj6HaihhG1V0RmbRXmWnp+1OpjmMa3wjuKscIM9ctlWHZzoUEyIMoHiCQdJXVHG8Kwx0OIunSz5NNsc2/Dv+Qn4JsF83ejrvNIqRJcEwb/hEJYy3wnDDji4amKod0ifSh3GmgrwKRHMAO8wMilOkuFx61enuAumpqUEbAOnlzAmICNgGdBfPbt4WgfdBfp/7ZHcNWmnhRyQ/b2BPmLdXSc5MbUZIjVMDymjBW/MyED0yedjZs7X591dFc5b+0YQCVcG1eaJqd9rysG/hN5mBQ1Nl4SzcuMNMRo2kOstZ23UEEDJUMoXa75NeJzXv+RInjLZdHHL27dVcIY4e1eA3xvr+u6U+wwlNxxt9bJgCHnXGkxwvc=
+    credentialSecret: AgA9chRLY7JomV6NQMjXmPVdKKXPhYAo1e62Z/ybEmBJy8bSnwy1rp6Tf84ExieG80a+E+Ripze6a3aDiwinxVXoq+a1zPd8YVji1SocKHxThz51cDx1f0aSuBPRgPI0+zscSc8lXJNuNISRZ9vlhvLV7zFlrFfIcOk3E8w02YZ1ef/BkA57fJIxuoC5YhWblFCw0/kTuq2nHzdzhjW12929+vVkLV4b0qfljSLjyMRXyb1X/9edbHfdPb5mWcZ/ivxm/qq6+ndH2sNRc6VtVbDwSc0H+LwpNmFnGBBACkx7bDeK8n2dbEDbq2ysz5r3ZMdlovg/77U7AnsNqqMrEsYi/g0t+EgvMzEDKeaW+UCt7dgBerpi4KXPQJypWd8HmdKACkXUKC2mpdEfn4aW1c6Srz9ai9tWiY2tIVoVea7/CbVUKktzYdLh+vZSAimPW5VSSZk6MOkOxgmBNU0gTjNKxbjKmSUXp7XdlNnVHFkDZ+ArOwzlFutyVRBD+UBYpKpNJ3c82gh3cJgdp+woxcYA9rm+hk8zdB98JNoiXNzU6fnkcRM/OoNfErAOw9d0Rn6gt13WrCJN8S5D87aqd+2RcJ/Dxb1BFNoL1tahuJhkj4MmInwrqZJ0pntzGpPQadc3DqrxK3YfKVgyM8+7a5z4wmXCYmHC3oVNerHtkQmFILIkoEJU+HzPP0pp4xLjODb4tivAdPKlMABJE90XabL8jz1kg+TlZg==
     httpAuth: AgBEwm9YTjWVlBYAuWXemk/NUZvEmPh1SQinA4pFcmVoKLVxXFvrmSqc1GXtF/oatKZtcrSdPwwbTfFpbC1goaQF1HM18lnhnJcajMkSPmJ/tAZsQDi/XlrH6qasgguPZ0TBWXdX1gS+S7MpP/iAoXMa3gwRRrUHmeqYYg5mC74RM3e/AXXT8gPsTPj+ZzuostyZzHzrGC2AZiEMLhvfj5tOglLj3yfOjAcDlMbIPsfpUSysXwm8eNC/VWr9tso1NSgh7o2ZDO9RYYSvYuWv62T/2oKLLUSF6eqeI4Yznrk3HqUQDXMT4ZBYviKead5chW9WVfm2LxGAh1PPzX48iFN4stvQ9MefteE1gW8pB0p7+suDQgNLblMYF40W+oP94l/YE6Ywd/GNUIjmWz1ue5zU2opNprjpyamek1lWJ4MmooggNnejAuIg9jiPZx2YnI2MokFobp6GIqAQYjr02giqdmQT+LUK6OPCr4AHCPES7H8OPqY0/tYV8pGQ4lKgukUBjWl2JAAQ7HLhyH8E9kaGTK2DijN6NPcYzpSk44vBR1BKijNz+so8yUX4TnVov0VY47fQKMouupqNnAkq4CBxlHx9D57ky+0IDwFK7dX57HCBZPKstN1xGLDGzXDVLrILpWucDD2Q2H38hcsQPIGSxCAl2CtaRcqMDSI+apzOqwDGHoAnNpbnU+lGi+7YTpXxcXl0Nm9EXrocC/WngA+Q4B76XfnIBm1jsk0w9gg/6CYiAfW0XAYfCn5wko2sCbuchNq4wjAjkzv2U8A=
   template:
     data:
       settings.js: |-
         module.exports = {
             flowFile: 'flows.json',
-            credentialSecret: "a-secret-key",
+            credentialSecret: "{{ index . "credentialSecret" }}",
             flowFilePretty: true,
             adminAuth: {
             type: "credentials",
