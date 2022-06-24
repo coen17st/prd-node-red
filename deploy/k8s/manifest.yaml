@@ -1,19 +1,110 @@
+# ---
+# kind: PersistentVolume
+# apiVersion: v1
+# metadata:
+#   name: pv-nfs-node-red-data
+# spec:
+#   storageClassName: "freenas-nfs-manual-csi"
+#   capacity:
+#     storage: 5Gi
+#   accessModes:
+#     - ReadWriteMany
+#   persistentVolumeReclaimPolicy: Retain
+#   mountOptions:
+#     - nfsvers=4
+#     - nolock
+#     - noatime
+#   csi:
+#     driver: org.democratic-csi.node-manual
+#     readOnly: false
+#     fsType: nfs
+#     volumeHandle: pv-nfs-node-red-data
+#     volumeAttributes:
+#       server: storage-server.lan
+#       share: /mnt/r10_8tb/k8s/node-red-data
+#       node_attach_driver: nfs
+#       provisioner_driver: node-manual
+
+# ---
+# kind: PersistentVolumeClaim
+# apiVersion: v1
+# metadata:
+#   name: pvc-nfs-node-red-data
+#   namespace: home-automation
+#   annotations:
+#     volume.beta.kubernetes.io/storage-class: "freenas-nfs-manual-csi"
+# spec:
+#   storageClassName: freenas-nfs-manual-csi
+#   accessModes:
+#     - ReadWriteMany
+#   resources:
+#     requests:
+#       storage: 5Gi
+#   volumeName: pv-nfs-node-red-data
+
 ---
-kind: PersistentVolumeClaim
-apiVersion: v1
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
-  name: pvc-nfs-node-red
+  name: settings
   namespace: home-automation
-  annotations:
-    volume.beta.kubernetes.io/storage-class: "freenas-nfs-csi"
 spec:
-  storageClassName: freenas-nfs-csi
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 5Gi
-  volumeName: pvc-ceb5510c-57e2-4884-b7e4-b57d71930207
+  encryptedData:
+    adminAuth_password: AgDrunVqVva0KwWuS0TH4y4PVsBAf7BCQhmEDH4g/ZtVGEcV8raqMNpOJsc2wJcXQDVlGginpPpcoKssCd9P/od9cJ0Zqc9HKbdBsGz6TG33RxAd0y14SWSKwVDW76ebt3vVzVV01BoVAe6CmFxVwWlNvQakYwsEf65GyMV0MX2NPT+uIkUawzoagKfSRVDl91usgAFXfut0XHU09zqPsvVc/lX/BZGK2vkfBlAOlr6krCkFzFc3SluuaDsNDNm+QNOkBr6oDvGp62xZEwp8zlj679SYo9MD8ePuHv6JSRx3Ij2rc5wtBr/zZs5n52NvrCf+1glZDPut2VvcnmnUx6sQ7P6K8ye5foPb6qpjzWUZsW+VSb0poEhF3b/ys18S2oDKpfcyTOFHqiLOgtB0RIG+Ho9UqV0CANAj6HaihhG1V0RmbRXmWnp+1OpjmMa3wjuKscIM9ctlWHZzoUEyIMoHiCQdJXVHG8Kwx0OIunSz5NNsc2/Dv+Qn4JsF83ejrvNIqRJcEwb/hEJYy3wnDDji4amKod0ifSh3GmgrwKRHMAO8wMilOkuFx61enuAumpqUEbAOnlzAmICNgGdBfPbt4WgfdBfp/7ZHcNWmnhRyQ/b2BPmLdXSc5MbUZIjVMDymjBW/MyED0yedjZs7X591dFc5b+0YQCVcG1eaJqd9rysG/hN5mBQ1Nl4SzcuMNMRo2kOstZ23UEEDJUMoXa75NeJzXv+RInjLZdHHL27dVcIY4e1eA3xvr+u6U+wwlNxxt9bJgCHnXGkxwvc=
+    httpAuth: AgBEwm9YTjWVlBYAuWXemk/NUZvEmPh1SQinA4pFcmVoKLVxXFvrmSqc1GXtF/oatKZtcrSdPwwbTfFpbC1goaQF1HM18lnhnJcajMkSPmJ/tAZsQDi/XlrH6qasgguPZ0TBWXdX1gS+S7MpP/iAoXMa3gwRRrUHmeqYYg5mC74RM3e/AXXT8gPsTPj+ZzuostyZzHzrGC2AZiEMLhvfj5tOglLj3yfOjAcDlMbIPsfpUSysXwm8eNC/VWr9tso1NSgh7o2ZDO9RYYSvYuWv62T/2oKLLUSF6eqeI4Yznrk3HqUQDXMT4ZBYviKead5chW9WVfm2LxGAh1PPzX48iFN4stvQ9MefteE1gW8pB0p7+suDQgNLblMYF40W+oP94l/YE6Ywd/GNUIjmWz1ue5zU2opNprjpyamek1lWJ4MmooggNnejAuIg9jiPZx2YnI2MokFobp6GIqAQYjr02giqdmQT+LUK6OPCr4AHCPES7H8OPqY0/tYV8pGQ4lKgukUBjWl2JAAQ7HLhyH8E9kaGTK2DijN6NPcYzpSk44vBR1BKijNz+so8yUX4TnVov0VY47fQKMouupqNnAkq4CBxlHx9D57ky+0IDwFK7dX57HCBZPKstN1xGLDGzXDVLrILpWucDD2Q2H38hcsQPIGSxCAl2CtaRcqMDSI+apzOqwDGHoAnNpbnU+lGi+7YTpXxcXl0Nm9EXrocC/WngA+Q4B76XfnIBm1jsk0w9gg/6CYiAfW0XAYfCn5wko2sCbuchNq4wjAjkzv2U8A=
+  template:
+    data:
+      settings.js: |-
+        module.exports = {
+            flowFile: 'flows.json',
+            credentialSecret: "a-secret-key",
+            flowFilePretty: true,
+            adminAuth: {
+            type: "credentials",
+            users: [{
+                username: "admin",
+                password: "{{ index . "adminAuth_password" }}",
+                permissions: "*"
+            }]
+            },
+            httpNodeAuth: {user:"nodered-endpoint",pass:"{{ index . "httpAuth" }}"},
+            httpStaticAuth: {user:"nodered-endpoint",pass:"{{ index . "httpAuth" }}"},
+            uiPort: process.env.PORT || 1880,
+            logging: {
+                console: {
+                    level: "info",
+                    metrics: false,
+                    audit: false
+                }
+            },
+            exportGlobalContextKeys: false,
+            externalModules: {},
+            editorTheme: {
+                palette: {},
+                projects: {
+                    enabled: false,
+                    workflow: {
+                        mode: "manual"
+                    }
+                },
+                codeEditor: {
+                    lib: "ace",
+                    options: {
+                        theme: "vs",
+                    }
+                }
+            },
+            functionExternalModules: true,
+            functionGlobalContext: {},
+            debugMaxLength: 1000,
+            mqttReconnectTime: 15000,
+            serialReconnectTime: 15000,
+        }
+    metadata:
+      name: settings
+      namespace: home-automation
+      labels:
+        app: node-red
 
 ---
 kind: Deployment
@@ -41,8 +132,7 @@ spec:
           imagePullPolicy: Always
           resources: {}
           ports:
-            - name: http
-              containerPort: 1880
+            - containerPort: 1880
               protocol: TCP
           env:
             - name: TZ
@@ -52,12 +142,16 @@ spec:
             - name: PUID
               value: "1000"
           volumeMounts:
-            - name: data
-              mountPath: /data
+            - name: settings
+              mountPath: /data/settings.js
+              subPath: settings.js
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: pvc-nfs-node-red
+            claimName: pvc-nfs-node-red-data
+        - name: settings
+          secret:
+            secretName: settings
 
 ---
 kind: Service
@@ -72,10 +166,9 @@ spec:
     app: node-red
   type: ClusterIP
   ports:
-    - name: "1880"
-      port: 1880
+    - port: 1880
       protocol: TCP
-      targetPort: http
+      targetPort: 1880
   sessionAffinity: None
 
 ---

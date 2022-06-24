@@ -1,0 +1,23 @@
+FROM nodered/node-red:2.2.2
+
+WORKDIR /usr/src/node-red
+
+RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
+
+COPY data/settings.js /data/settings.js
+
+COPY data/flows.json /data/flows.json
+
+# INSTALL PACKAGES
+RUN npm install \
+    node-red-contrib-calc \
+    node-red-contrib-cast \
+    node-red-contrib-cron-plus \
+    node-red-contrib-home-assistant-websocket \
+    node-red-contrib-schedex \
+    node-red-contrib-simpletime \
+    node-red-contrib-stoptimer \
+    node-red-contrib-string \
+    node-red-contrib-time-range-switch \
+    node-red-contrib-traffic \
+    node-red-node-rbe
