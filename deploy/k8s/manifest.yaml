@@ -122,7 +122,7 @@ spec:
             - name: settings
               mountPath: /data/settings.js
               subPath: settings.js
-            - name: flow_cred
+            - name: flow-cred
               mountPath: /data/flows_cred.json
               subPath: flows_cred.json
       volumes:
