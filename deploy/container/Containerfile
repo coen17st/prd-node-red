@@ -1,4 +1,4 @@
-FROM nodered/node-red:2.2.2
+FROM nodered/node-red:2.2.1
 
 WORKDIR /usr/src/node-red
 
@@ -10,6 +10,7 @@ COPY src/data/flows.json /data/flows.json
 RUN npm install \
     node-red-contrib-calc \
     node-red-contrib-cron-plus \
+    node-red-contrib-cast \
     node-red-contrib-home-assistant-websocket \
     node-red-contrib-schedex \
     node-red-contrib-simpletime \
