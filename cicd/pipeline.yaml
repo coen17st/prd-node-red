@@ -22,6 +22,10 @@ steps:
     image: quay.io/buildah/stable:v1.23.3
     environment:
       STORAGE_DRIVER: overlay
+      FORMAT: oci
+      TLSVERIFY: "false"
+      DOCKERFILE: "./deploy/container/Containerfile"
+      IMAGE: "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest"
+      CONTEXT: "."
     commands:
-      - buildah --help
-      - echo $(STORAGE_DRIVER)
+      - buildah --storage-driver=$(STORAGE_DRIVER) build --format=$(FORMAT) --tls-verify=$(TLSVERIFY) --no-cache -f $(DOCKERFILE) -t $(IMAGE) $(CONTEXT)
