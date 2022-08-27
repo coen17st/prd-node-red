@@ -1,1 +1,9 @@
-/home/coen/github/node-red-config/cicd/drone/pipeline.yaml
+---
+kind: pipeline
+name: validate
+
+steps:
+  - name: yamllint
+    image: sdesbure/yamllint:latest
+    commands:
+      - yamllint -c ./.yamllint .
