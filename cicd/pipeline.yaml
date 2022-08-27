@@ -1,30 +1,30 @@
----
-kind: pipeline
-type: kubernetes
-name: validate
+# ---
+# kind: pipeline
+# type: kubernetes
+# name: validate
 
-steps:
-  - name: yamllint
-    image: sdesbure/yamllint:latest
-    commands:
-      - yamllint -c ./cicd/.yamllint .
+# steps:
+#   - name: yamllint
+#     image: sdesbure/yamllint:latest
+#     commands:
+#       - yamllint -c ./cicd/.yamllint .
 
 ---
 kind: pipeline
 type: kubernetes
 name: build
 
-depends_on:
-  - validate
+# depends_on:
+#   - validate
 
 steps:
   - name: publish
     image: quay.io/buildah/stable:v1.23.3
-    environment:
-      CONTAINER_FORMAT: "oci"
-      TLSVERIFY: "false"
-      DOCKERFILE: "./deploy/container/Containerfile"
-      CONTAINER_IMAGE: "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest"
-      CONTEXT: "."
+    # environment:
+    #   CONTAINER_FORMAT: "oci"
+    #   TLSVERIFY: "false"
+    #   DOCKERFILE: "./deploy/container/Containerfile"
+    #   CONTAINER_IMAGE: "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest"
+    #   CONTEXT: "."
     commands:
-      - buildah --storage-driver=$(STORAGE_DRIVER) build --format=$(CONTAINER_FORMAT) --tls-verify=$(TLSVERIFY) --no-cache -f $(DOCKERFILE) -t $(CONTAINER_IMAGE) $(CONTEXT)
+      - buildah build --format=oci --tls-verify=false --no-cache -f ./deploy/container/Containerfile -t "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest" .
