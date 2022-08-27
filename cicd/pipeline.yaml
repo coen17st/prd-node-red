@@ -28,4 +28,4 @@ steps:
       IMAGE: "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest"
       CONTEXT: "."
     commands:
-      - buildah --storage-driver=$(STORAGE_DRIVER) build --format=$(FORMAT) --tls-verify=$(TLSVERIFY) --no-cache -f $(DOCKERFILE) -t $(IMAGE) $(CONTEXT)
+      - buildah build --format=$(FORMAT) --tls-verify=$(TLSVERIFY) --no-cache -f $(DOCKERFILE) -t $(IMAGE) $(CONTEXT)
