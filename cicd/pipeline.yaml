@@ -20,5 +20,8 @@ depends_on:
 steps:
   - name: publish
     image: quay.io/buildah/stable:v1.23.3
+    environment:
+      STORAGE_DRIVER: overlay
     commands:
       - buildah --help
+      - echo $(STORAGE_DRIVER)
