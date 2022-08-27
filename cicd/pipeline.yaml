@@ -8,3 +8,17 @@ steps:
     image: sdesbure/yamllint:latest
     commands:
       - yamllint -c ./cicd/.yamllint .
+
+---
+kind: pipeline
+type: kubernetes
+name: build
+
+depends_on:
+  - validate
+
+steps:
+  - name: publish  
+    image: quay.io/buildah:v1.26
+    commands:
+      - buildah --help
