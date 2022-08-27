@@ -18,7 +18,7 @@ depends_on:
   - validate
 
 steps:
-  - name: publish  
+  - name: publish
     image: quay.io/buildah:v1.26
     commands:
       - buildah --help
