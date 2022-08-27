@@ -27,4 +27,4 @@ steps:
     #   CONTAINER_IMAGE: "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest"
     #   CONTEXT: "."
     commands:
-      - buildah build --format=oci --tls-verify=false --no-cache -f ./deploy/container/Containerfile -t "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest" .
+      - buildah build --format=oci --tls-verify=false --no-cache -f "./deploy/container/Containerfile" -t "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest" .
