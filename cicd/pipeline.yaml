@@ -19,18 +19,9 @@ depends_on:
 
 steps:
   - name: publish
-    image: plugins/buildah
-    settings:
-      dry-run: true
-      dockerfile: ./deploy/container/Containerfile
-      context: .
-      tags: latest
-      repo: container-image-registry.theautomation.nl/test-drone
-      registry: docker.io
-      username:
-        from_secret: container_image_registry_username
-      password:
-        from_secret: container_image_registry_password
+    image: quay.io/buildah/stable:v1.23.3
+    commands:
+      - buildah --help
 
 ---
 kind: secret
