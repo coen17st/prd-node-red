@@ -22,7 +22,7 @@ steps:
     image: quay.io/buildah/stable:v1.23.3
     commands:
       - buildah --help
-      - buildah build ./deploy/container/Containerfile
+      - buildah --storage-driver=vfs build ./deploy/container/Containerfile
 
 ---
 kind: secret
