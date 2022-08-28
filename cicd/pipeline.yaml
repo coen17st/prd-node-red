@@ -24,7 +24,7 @@ steps:
     user: 0
     commands:
       - buildah --help
-      - buildah --storage-driver=vfs build ./deploy/container/Containerfile
+      - buildah build ./deploy/container/Containerfile
 
 ---
 kind: secret
