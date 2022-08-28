@@ -24,14 +24,13 @@ steps:
       dry-run: true
       dockerfile: ./deploy/container/Containerfile
       context: .
-      tags: buildahoutput
-      repo: docker.io/harness/ci-automation
+      tags: latest
+      repo: container-image-registry.theautomation.nl/test-drone
       registry: docker.io
       username:
         from_secret: container_image_registry_username
       password:
         from_secret: container_image_registry_password
-      layers: true
 
 ---
 kind: secret
