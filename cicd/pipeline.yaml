@@ -20,6 +20,7 @@ depends_on:
 steps:
   - name: publish
     image: quay.io/buildah/stable
+    privileged: true
     user: 0
     commands:
       - buildah --help
