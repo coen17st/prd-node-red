@@ -1,30 +1,48 @@
-# ---
-# kind: pipeline
-# type: kubernetes
-# name: validate
+---
+kind: pipeline
+type: kubernetes
+name: validate
 
-# steps:
-#   - name: yamllint
-#     image: sdesbure/yamllint:latest
-#     commands:
-#       - yamllint -c ./cicd/.yamllint .
+steps:
+  - name: yamllint
+    image: sdesbure/yamllint:latest
+    commands:
+      - yamllint -c ./cicd/.yamllint .
 
 ---
 kind: pipeline
 type: kubernetes
 name: build
 
-# depends_on:
-#   - validate
+depends_on:
+  - validate
 
 steps:
-  - name: publish
-    image: quay.io/buildah/stable:v1.23.3
-    # environment:
-    #   CONTAINER_FORMAT: "oci"
-    #   TLSVERIFY: "false"
-    #   DOCKERFILE: "./deploy/container/Containerfile"
-    #   CONTAINER_IMAGE: "container-image-registry.devops.svc:5000/home-automation/$(context.pipelineRun.name):latest"
-    #   CONTEXT: "."
-    commands:
-      - buildah build --format=oci --tls-verify=false --no-cache -f "./deploy/container/Containerfile" -t "container-image-registry.devops.svc:5000/home-automation/home-assistant:latest" .
+  - name: publish  
+    image: plugins/buildah
+    settings:
+      dry-run: true
+      dockerfile: ./deploy/container/Containerfile
+      context: .
+      tags: buildahoutput
+      repo: docker.io/harness/ci-automation
+      registry: docker.io
+      username:
+        from_secret: container_image_registry_username
+      password:
+        from_secret: container_image_registry_password
+      layers: true
+
+---
+kind: secret
+name: container_image_registry_username
+get:
+  path: container-image-registry-auth
+  name: username
+
+---
+kind: secret
+name: container_image_registry_password
+get:
+  path: container-image-registry-auth
+  name: password
