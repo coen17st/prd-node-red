@@ -20,6 +20,7 @@ depends_on:
 steps:
   - name: publish
     image: quay.io/buildah/stable
+    user: 0
     commands:
       - buildah --help
       - buildah --storage-driver=vfs build ./deploy/container/Containerfile
