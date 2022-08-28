@@ -1,4 +1,4 @@
-FROM nodered/node-red:2.2.1
+FROM docker.io/nodered/node-red:2.2.1
 
 WORKDIR /usr/src/node-red
 
