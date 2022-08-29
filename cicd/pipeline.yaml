@@ -12,18 +12,22 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: build
+name: build-push
 
 depends_on:
   - validate
 
 steps:
-  - name: publish
+  - name: build
     image: quay.io/buildah/stable
     privileged: true
+    environment:
+      IMAGE: "container-image-registry.devops.svc:5000/home-automation/home-assistant:latest"
+      CONTAINERFILE: "./deploy/container/main/Containerfile"
+      GOARCH: amd64
     commands:
       - buildah --help
-      - buildah bud -f ./deploy/container/main/Containerfile
+      - buildah bud -f ${CONTAINERFILE}
       - ls -R
 
 ---
