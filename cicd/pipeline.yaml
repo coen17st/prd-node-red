@@ -27,7 +27,7 @@ steps:
       GOARCH: amd64
     commands:
       - buildah --help
-      - buildah bud -f $(CONTAINERFILE)
+      - buildah bud -f $${CONTAINERFILE}
       - ls -R
 
 ---
