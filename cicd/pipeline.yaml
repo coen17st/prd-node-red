@@ -24,10 +24,12 @@ steps:
     environment:
       IMAGE: "container-image-registry.devops.svc:5000/home-automation/home-assistant:latest"
       CONTAINERFILE: "./deploy/container/main/Containerfile"
-      GOARCH: amd64
+      STORAGE_DRIVER: "overlay"
+      FORMAT: "oci"
+      CONTEXT: "."
+      TLSVERIFY: "false"
     commands:
-      - buildah --help
-      - buildah bud -f $${CONTAINERFILE}
+      - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
       - ls -R
 
 ---
