@@ -24,7 +24,7 @@ steps:
     commands:
       - buildah --help
       - cd /drone/src/
-      - buildah build ./deploy/container/main/Containerfile
+      - buildah bud -f ./deploy/container/main/Containerfile
 
 ---
 kind: secret
