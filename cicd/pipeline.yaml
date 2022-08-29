@@ -23,7 +23,7 @@ steps:
     privileged: true
     commands:
       - buildah --help
-      - buildah build ./deploy/container/Containerfile
+      - buildah build ./deploy/container/main/Containerfile
 
 ---
 kind: secret
