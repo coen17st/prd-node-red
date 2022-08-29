@@ -12,13 +12,13 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: build-push
+name: publish
 
 depends_on:
   - validate
 
 steps:
-  - name: build
+  - name: build-push
     image: quay.io/buildah/stable
     privileged: true
     environment:
@@ -30,6 +30,7 @@ steps:
       TLSVERIFY: "false"
     commands:
       - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
+      - buildah --storage-driver=$${STORAGE_DRIVER} push --tls-verify=$${TLSVERIFY} --digestfile /tmp/image-digest $${IMAGE} docker://$${IMAGE} cat /tmp/image-digest
       - ls -R
 
 ---
