@@ -23,8 +23,8 @@ steps:
     privileged: true
     commands:
       - buildah --help
-      - cd /drone/src/
       - buildah bud -f ./deploy/container/main/Containerfile
+      - ls -R
 
 ---
 kind: secret
