@@ -30,7 +30,7 @@ steps:
       TLSVERIFY: "false"
     commands:
       - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
-      - buildah push --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE} 
+      - buildah push --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
       - cat /tmp/image-digest
 
 ---
