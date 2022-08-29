@@ -23,6 +23,7 @@ steps:
     privileged: true
     commands:
       - buildah --help
+      - cd /drone/src/
       - buildah build ./deploy/container/main/Containerfile
 
 ---
