@@ -57,12 +57,12 @@ steps:
 kind: secret
 name: username
 get:
-  path: container-image-registry-auth
+  path: testdocker
   name: username
 
 ---
 kind: secret
 name: password
 get:
-  path: container-image-registry-auth
+  path: testdocker
   name: password
