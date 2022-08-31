@@ -28,7 +28,13 @@ steps:
       FORMAT: "oci"
       CONTEXT: "."
       TLSVERIFY: "false"
+      USERNAME:
+        from_secret: username
+      PASSWORD:
+        from_secret: password
     commands:
+      - echo $${username}
+      - echo $${password}
       - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
       - buildah push --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
       - cat /tmp/image-digest
