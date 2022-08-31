@@ -49,9 +49,8 @@ steps:
       PASSWORD:
         from_secret: password
     commands:
-      - echo $${USERNAME}
+      - echo $USERNAME
       - echo $${PASSWORD}
-      - cat ./test.txt
       - env
 
 ---
