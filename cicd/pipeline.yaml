@@ -49,10 +49,10 @@ steps:
       PASSWORD:
         from_secret: password
     commands:
-      - echo $${USERNAME} >> test.txt
-      - echo $${PASSWORD} >> test.txt
-      - echo 'hallo' >> test.txt
+      - echo $${USERNAME}
+      - echo $${PASSWORD}
       - cat ./test.txt
+      - env
 
 ---
 kind: secret
