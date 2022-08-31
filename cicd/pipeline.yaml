@@ -29,9 +29,9 @@ steps:
       CONTEXT: "."
       TLSVERIFY: "false"
       USERNAME:
-        from_secret: username
+        from_secret: container_image_registry_username
       PASSWORD:
-        from_secret: password
+        from_secret: container_image_registry_password
     commands:
       - echo $${USERNAME} >> test.txt
       - echo ${PASSWORD} >> test.txt
