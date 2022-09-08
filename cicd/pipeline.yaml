@@ -23,7 +23,6 @@ steps:
     privileged: true
     environment:
       REGISTRY_HOST: "container-image-registry.devops.svc:5000"
-      IMAGE: "container-image-registry.devops.svc:5000/home-assistant:latest"
       CONTAINERFILE: "./deploy/container/main/Containerfile"
       STORAGE_DRIVER: "overlay"
       FORMAT: "oci"
@@ -34,10 +33,9 @@ steps:
       PASSWORD:
         from_secret: container_image_registry_password
     commands:
-      - echo $${DRONE_BUILD_NUMBER}
-      - echo $${DRONE_REPO_NAME}
-      - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} $${CONTEXT}
-      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
+      - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} --layers=true $${CONTEXT}
+      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest
+      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
       - cat /tmp/image-digest
 
 ---
