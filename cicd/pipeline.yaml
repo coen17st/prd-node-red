@@ -33,8 +33,11 @@ steps:
       PASSWORD:
         from_secret: container_image_registry_password
     commands:
+      - echo "buildnumber is $${DRONE_BUILD_NUMBER}"
+      - echo $${DRONE_BUILD_NUMBER} > test.txt
+      - cat test.txt
       - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
-      - buildah push --tls-verify=$${TLSVERIFY} --creds=$${USERNAME}:$${PASSWORD} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
+      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
       - cat /tmp/image-digest
 
 ---
