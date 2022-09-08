@@ -18,51 +18,39 @@ depends_on:
   - validate
 
 steps:
-  # - name: build-push
-  #   image: quay.io/buildah/stable
-  #   privileged: true
-  #   environment:
-  #     IMAGE: "container-image-registry.devops.svc:5000/home-automation/home-assistant:latest"
-  #     CONTAINERFILE: "./deploy/container/main/Containerfile"
-  #     STORAGE_DRIVER: "overlay"
-  #     FORMAT: "oci"
-  #     CONTEXT: "."
-  #     TLSVERIFY: "false"
-  #     USERNAME:
-  #       from_secret: container_image_registry_username
-  #     PASSWORD:
-  #       from_secret: container_image_registry_password
-  #   commands:
-  #     - echo $${USERNAME} >> test.txt
-  #     - echo ${PASSWORD} >> test.txt
-  #     - echo 'hallo' >> test.txt
-  #     - cat ./test.txt
-  #     - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
-  #     - buildah push --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
-  #     - cat /tmp/image-digest
-
-  - name: build
-    image: alpine
+  - name: build-push
+    image: quay.io/buildah/stable
+    privileged: true
     environment:
+      IMAGE: "container-image-registry.devops.svc:5000/home-automation/home-assistant:latest"
+      CONTAINERFILE: "./deploy/container/main/Containerfile"
+      STORAGE_DRIVER: "overlay"
+      FORMAT: "oci"
+      CONTEXT: "."
+      TLSVERIFY: "false"
       USERNAME:
-        from_secret: username
+        from_secret: container_image_registry_username
       PASSWORD:
-        from_secret: password
+        from_secret: container_image_registry_password
     commands:
-      - echo $USERNAME
-      - echo $${PASSWORD}
-      - env
+      - echo $${USERNAME} >> test.txt
+      - echo ${PASSWORD} >> test.txt
+      - echo 'hallo' >> test.txt
+      - cat ./test.txt
+      - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${IMAGE} $${CONTEXT}
+      - buildah push --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${IMAGE} docker://$${IMAGE}
+      - cat /tmp/image-digest
 
 ---
 kind: secret
-name: username
+name: container_image_registry_username
 get:
-  path: testdocker
+  path: container-image-registry-auth
   name: username
 
 ---
 kind: secret
-name: password
+name: container_image_registry_password
 get:
-  path: testdocker
+  path: container-image-registry-auth
   name: password
