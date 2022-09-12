@@ -9,34 +9,48 @@ steps:
     commands:
       - yamllint -c ./cicd/.yamllint .
 
+# ---
+# kind: pipeline
+# type: kubernetes
+# name: build
+
+# depends_on:
+#   - validate
+
+# steps:
+#   - name: build-push
+#     image: quay.io/buildah/stable
+#     privileged: true
+#     environment:
+#       REGISTRY_HOST: "container-image-registry.devops.svc:5000"
+#       CONTAINERFILE: "./deploy/container/main/Containerfile"
+#       STORAGE_DRIVER: "overlay"
+#       FORMAT: "oci"
+#       CONTEXT: "."
+#       TLSVERIFY: "false"
+#       USERNAME:
+#         from_secret: container_image_registry_username
+#       PASSWORD:
+#         from_secret: container_image_registry_password
+#     commands:
+#       - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} --layers=true $${CONTEXT}
+#       - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest
+#       - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
+#       - cat /tmp/image-digest
+
 ---
 kind: pipeline
 type: kubernetes
-name: publish
+name: update-manifest
 
 depends_on:
   - validate
 
 steps:
   - name: build-push
-    image: quay.io/buildah/stable
-    privileged: true
-    environment:
-      REGISTRY_HOST: "container-image-registry.devops.svc:5000"
-      CONTAINERFILE: "./deploy/container/main/Containerfile"
-      STORAGE_DRIVER: "overlay"
-      FORMAT: "oci"
-      CONTEXT: "."
-      TLSVERIFY: "false"
-      USERNAME:
-        from_secret: container_image_registry_username
-      PASSWORD:
-        from_secret: container_image_registry_password
+    image: mikefarah/yq/latest
     commands:
-      - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} --layers=true $${CONTEXT}
-      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest
-      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
-      - cat /tmp/image-digest
+      - cat ./deploy/k8s/manifest.yaml
 
 ---
 kind: secret
