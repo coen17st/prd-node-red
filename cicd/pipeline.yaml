@@ -52,16 +52,16 @@ steps:
     commands:
       - cat ./deploy/k8s/manifest.yaml
 
----
-kind: secret
-name: container_image_registry_username
-get:
-  path: container-image-registry-auth
-  name: username
+# ---
+# kind: secret
+# name: container_image_registry_username
+# get:
+#   path: container-image-registry-auth
+#   name: username
 
----
-kind: secret
-name: container_image_registry_password
-get:
-  path: container-image-registry-auth
-  name: password
+# ---
+# kind: secret
+# name: container_image_registry_password
+# get:
+#   path: container-image-registry-auth
+#   name: password
