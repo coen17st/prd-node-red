@@ -51,6 +51,7 @@ steps:
     image: mikefarah/yq:latest
     commands:
       - cat ./deploy/k8s/manifest.yaml
+      - yq '.metadata.name[0]' < ./deploy/k8s/manifest.yaml
 
 # ---
 # kind: secret
