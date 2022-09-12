@@ -48,7 +48,7 @@ depends_on:
 
 steps:
   - name: set-tag
-    image: mikefarah/yq/latest
+    image: mikefarah/yq:latest
     commands:
       - cat ./deploy/k8s/manifest.yaml
 
