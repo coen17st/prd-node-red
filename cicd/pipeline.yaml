@@ -48,13 +48,13 @@ steps:
     image: alpine:latest
     environment:
       YQ_VERSION: "4.27.5"
-      YQ_BINARY: ""
       <<: *default_environment
     commands:
       - |
         set -ex
-        wget https://github.com/mikefarah/yq/releases/download/$${YQ_VERSION}/$${YQ_BINARY} -O /usr/bin/yq && chmod +x /usr/bin/yq
-      - application="$${DRONE_REPO_NAME}" image="test2" yq -i '(.spec | select(.template.spec.containers[]).template.spec.containers[] | select(.name == strenv(application)).image) |= strenv(image)' ./deploy/k8s/manifest.yaml
+        wget https://github.com/mikefarah/yq/releases/download/$${YQ_VERSION}/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
+      # - application="$${DRONE_REPO_NAME}" image="test2" yq -i '(.spec | select(.template.spec.containers[]).template.spec.containers[] | select(.name == strenv(application)).image) |= strenv(image)' ./deploy/k8s/manifest.yaml
+      - yq --version
       - cat ./deploy/k8s/manifest.yaml
 
 ---
