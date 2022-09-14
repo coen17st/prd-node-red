@@ -1,21 +1,21 @@
----
-kind: pipeline
-type: kubernetes
-name: validate
+# ---
+# kind: pipeline
+# type: kubernetes
+# name: validate
 
-steps:
-  - name: yamllint
-    image: sdesbure/yamllint:latest
-    commands:
-      - yamllint -c ./cicd/.yamllint .
+# steps:
+#   - name: yamllint
+#     image: sdesbure/yamllint:latest
+#     commands:
+#       - yamllint -c ./cicd/.yamllint .
 
 ---
 kind: pipeline
 type: kubernetes
 name: build
 
-depends_on:
-  - validate
+# depends_on:
+#   - validate
 
 steps:
   - name: build-push
@@ -37,7 +37,8 @@ steps:
       - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest
       - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
       - cat /tmp/image-digest
-      - echo $${REGISTRY_HOST} > .registry_host
+      - echo $${REGISTRY_HOST} > ./.registry_host
+      - echo ${PWD}
 
 ---
 kind: pipeline
