@@ -9,34 +9,35 @@ steps:
     commands:
       - yamllint -c ./cicd/.yamllint .
 
-# ---
-# kind: pipeline
-# type: kubernetes
-# name: build
+---
+kind: pipeline
+type: kubernetes
+name: build
 
-# depends_on:
-#   - validate
+depends_on:
+  - validate
 
-# steps:
-#   - name: build-push
-#     image: quay.io/buildah/stable
-#     privileged: true
-#     environment:
-#       REGISTRY_HOST: "container-image-registry.devops.svc:5000"
-#       CONTAINERFILE: "./deploy/container/main/Containerfile"
-#       STORAGE_DRIVER: "overlay"
-#       FORMAT: "oci"
-#       CONTEXT: "."
-#       TLSVERIFY: "false"
-#       USERNAME:
-#         from_secret: container_image_registry_username
-#       PASSWORD:
-#         from_secret: container_image_registry_password
-#     commands:
-#       - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} --layers=true $${CONTEXT}
-#       - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest
-#       - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
-#       - cat /tmp/image-digest
+steps:
+  - name: build-push
+    image: quay.io/buildah/stable
+    privileged: true
+    environment:
+      REGISTRY_HOST: "container-image-registry.devops.svc:5000"
+      CONTAINERFILE: "./deploy/container/main/Containerfile"
+      STORAGE_DRIVER: "overlay"
+      FORMAT: "oci"
+      CONTEXT: "."
+      TLSVERIFY: "false"
+      USERNAME:
+        from_secret: container_image_registry_username
+      PASSWORD:
+        from_secret: container_image_registry_password
+    commands:
+      - buildah --storage-driver=$${STORAGE_DRIVER} bud --format=$${FORMAT} --tls-verify=$${TLSVERIFY} --no-cache -f $${CONTAINERFILE} -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest -t $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} --layers=true $${CONTEXT}
+      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:latest
+      - buildah push --creds=$${USERNAME}:$${PASSWORD} --tls-verify=$${TLSVERIFY} --digestfile=/tmp/image-digest $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
+      - cat /tmp/image-digest
+      - echo $${REGISTRY_HOST} > .registry_host
 
 ---
 kind: pipeline
@@ -50,19 +51,21 @@ steps:
   - name: set-tag
     image: mikefarah/yq:latest
     commands:
-      # - cat ./deploy/k8s/manifest.yaml
-      - yq eval '.metadata.name' ./deploy/k8s/manifest.yaml
+      - cat .registry_host
+      - cat ./deploy/k8s/manifest.yaml
+      - application="$${DRONE_REPO_NAME}" image="test2" yq -i '(.spec | select(.template.spec.containers[]).template.spec.containers[] | select(.name == strenv(application)).image) |= strenv(image)' ./deploy/k8s/manifest.yaml
+      - cat ./deploy/k8s/manifest.yaml
 
-# ---
-# kind: secret
-# name: container_image_registry_username
-# get:
-#   path: container-image-registry-auth
-#   name: username
+---
+kind: secret
+name: container_image_registry_username
+get:
+  path: container-image-registry-auth
+  name: username
 
-# ---
-# kind: secret
-# name: container_image_registry_password
-# get:
-#   path: container-image-registry-auth
-#   name: password
+---
+kind: secret
+name: container_image_registry_password
+get:
+  path: container-image-registry-auth
+  name: password
