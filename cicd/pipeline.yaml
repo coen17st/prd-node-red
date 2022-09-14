@@ -1,21 +1,21 @@
-# ---
-# kind: pipeline
-# type: kubernetes
-# name: validate
+---
+kind: pipeline
+type: kubernetes
+name: validate
 
-# steps:
-#   - name: yamllint
-#     image: sdesbure/yamllint:latest
-#     commands:
-#       - yamllint -c ./cicd/.yamllint .
+steps:
+  - name: yamllint
+    image: sdesbure/yamllint:latest
+    commands:
+      - yamllint -c ./cicd/.yamllint .
 
 ---
 kind: pipeline
 type: kubernetes
 name: build
 
-# depends_on:
-#   - validate
+depends_on:
+  - validate
 
 steps:
   - name: build-push
