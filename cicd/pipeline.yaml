@@ -50,10 +50,8 @@ steps:
     environment:
       <<: *default_environment
     commands:
-      - cat .registry_host
-      - cat ./deploy/k8s/manifest.yaml
       - application="$${DRONE_REPO_NAME}" image="test2" yq -i '(.spec | select(.template.spec.containers[]).template.spec.containers[] | select(.name == strenv(application)).image) |= strenv(image)' ./deploy/k8s/manifest.yaml
-      - cat ./deploy/k8s/manifest.yaml
+
 
 ---
 kind: secret
