@@ -45,7 +45,7 @@ type: kubernetes
 name: update-manifest
 
 depends_on:
-  - validate
+  - build
 
 steps:
   - name: set-tag
