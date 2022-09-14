@@ -44,15 +44,6 @@ steps:
       - echo $${REGISTRY_HOST} > ./.registry_host
       - echo ${PWD}
 
----
-kind: pipeline
-type: kubernetes
-name: update-manifest
-
-depends_on:
-  - build
-
-steps:
   - name: set-tag
     image: mikefarah/yq:latest
     commands:
