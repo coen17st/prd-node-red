@@ -18,7 +18,7 @@ depends_on:
   - validate
 
 steps:
-  - name: build-push
+  - name: build-push-image
     image: quay.io/buildah/stable
     privileged: true
     environment:
