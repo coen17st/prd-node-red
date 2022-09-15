@@ -73,8 +73,8 @@ steps:
   - name: push kubernetes manifest
     image: appleboy/drone-git-push
     settings:
-      remote_name: $${DRONE_GIT_HTTP_URL}
-      branch: $${DRONE_BRANCH}
+      remote_name: ${DRONE_GIT_HTTP_URL}
+      branch: ${DRONE_BRANCH}
       force: false
       commit: true
       commit_message: "[skip ci] test"
