@@ -78,6 +78,8 @@ steps:
       force: false
       commit: true
       commit_message: "[skip ci] test"
+      ssh_key:
+        from_secret: github_ssh_key
 
 ---
 kind: secret
@@ -92,3 +94,10 @@ name: container_image_registry_password
 get:
   path: container-image-registry-auth
   name: password
+
+---
+kind: secret
+name: github_ssh_key
+get:
+  path: id_rsa
+  name: github-ssh-keys
