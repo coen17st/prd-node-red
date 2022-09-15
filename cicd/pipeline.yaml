@@ -100,5 +100,5 @@ get:
 kind: secret
 name: github_ssh_key
 get:
-  path: id_rsa
-  name: github-ssh-keys
+  path: github-ssh-keys
+  name: id_rsa
