@@ -103,7 +103,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: "container-image-registry.theautomation.nl/node-red:130"
+          image: "container-image-registry.theautomation.nl/node-red:133"
           imagePullPolicy: Always
           resources: {}
           ports:
