@@ -18,7 +18,7 @@ depends_on:
   - validate
 
 steps:
-  - name: build-push-image
+  - name: Build and push image
     image: quay.io/buildah/stable
     privileged: true
     environment:
@@ -55,7 +55,7 @@ steps:
         $${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER} \
         docker://$${REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}
 
-  - name: set-tag
+  - name: Update manifest
     image: alpine:latest
     environment:
       PUBLIC_REGISTRY_HOST: "container-image-registry.theautomation.nl"
@@ -69,6 +69,14 @@ steps:
         application="$${DRONE_REPO_NAME}" image="$${PUBLIC_REGISTRY_HOST}/$${DRONE_REPO_NAME}:$${DRONE_BUILD_NUMBER}" \
         yq -i '(.spec | select(.template.spec.containers[]).template.spec.containers[] | select(.name == strenv(application)).image) |= strenv(image)' ./deploy/k8s/manifest.yaml
       - cat ./deploy/k8s/manifest.yaml
+
+  - name: Push commit manifest
+    image: appleboy/drone-git-push
+    settings:
+      branch: main
+      force: false
+      commit: true
+      commit_message: "[skip ci] test"
 
 ---
 kind: secret
