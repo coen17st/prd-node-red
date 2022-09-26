@@ -22,14 +22,13 @@ steps:
     image: quay.io/buildah/stable
     privileged: true
     environment:
-      REGISTRY_HOST: "container-image-registry.devops.svc:5000"
+      REGISTRY_HOST: "harbor-registry.devops.svc:5000"
       CONTAINERFILE: "./deploy/container/main/Containerfile"
       STORAGE_DRIVER: "overlay"
       FORMAT: "oci"
       CONTEXT: "."
       TLSVERIFY: "false"
-      USERNAME:
-        from_secret: container_image_registry_username
+      USERNAME: theautomation
       PASSWORD:
         from_secret: container_image_registry_password
     commands:
@@ -58,7 +57,7 @@ steps:
   - name: update kubernetes manifest
     image: alpine:latest
     environment:
-      PUBLIC_REGISTRY_HOST: "container-image-registry.theautomation.nl"
+      PUBLIC_REGISTRY_HOST: "harbor.k8s.lan"
       YQ_VERSION: "v4.27.5"
     commands:
       - |
@@ -84,17 +83,10 @@ steps:
 
 ---
 kind: secret
-name: container_image_registry_username
-get:
-  path: container-image-registry-auth
-  name: username
-
----
-kind: secret
 name: container_image_registry_password
 get:
-  path: container-image-registry-auth
-  name: password
+  path: harbor-core
+  name: REGISTRY_CREDENTIAL_PASSWORD
 
 ---
 kind: secret
