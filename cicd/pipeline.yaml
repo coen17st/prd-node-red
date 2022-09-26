@@ -22,7 +22,7 @@ steps:
     image: quay.io/buildah/stable
     privileged: true
     environment:
-      REGISTRY_HOST: "harbor-registry.devops.svc:5000"
+      REGISTRY_HOST: "harbor.k8s.lan/k8s"
       CONTAINERFILE: "./deploy/container/main/Containerfile"
       STORAGE_DRIVER: "overlay"
       FORMAT: "oci"
@@ -57,7 +57,7 @@ steps:
   - name: update kubernetes manifest
     image: alpine:latest
     environment:
-      PUBLIC_REGISTRY_HOST: "harbor.k8s.lan"
+      PUBLIC_REGISTRY_HOST: "harbor.k8s.lan/k8s"
       YQ_VERSION: "v4.27.5"
     commands:
       - |
