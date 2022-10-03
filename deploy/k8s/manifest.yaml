@@ -130,8 +130,7 @@ spec:
         - name: flow-cred
           secret:
             secretName: flows-credentials
-      imagePullSecrets:
-        - name: container-image-registry-credentials
+
 ---
 kind: Service
 apiVersion: v1
