@@ -103,7 +103,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: "harbor.k8s.lan/library/node-red:148"
+          image: "harbor.k8s.lan/library/node-red:149"
           imagePullPolicy: Always
           resources: {}
           ports:
@@ -130,7 +130,6 @@ spec:
         - name: flow-cred
           secret:
             secretName: flows-credentials
-
 ---
 kind: Service
 apiVersion: v1
