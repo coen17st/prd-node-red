@@ -7,7 +7,7 @@ steps:
   - name: yamllint
     image: sdesbure/yamllint:latest
     commands:
-      - yamllint -c ./cicd/.yamllint .
+      - yamllint -c ./cicd/.yamllint.yaml .
 
 ---
 kind: pipeline
