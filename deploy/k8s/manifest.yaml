@@ -133,6 +133,8 @@ spec:
         - name: flow-cred
           secret:
             secretName: flows-credentials
+      imagePullSecrets:
+        - name: harbor-registry-creds
 
 ---
 kind: Service
