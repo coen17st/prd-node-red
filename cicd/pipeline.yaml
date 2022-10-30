@@ -17,7 +17,7 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: publish
+name: build
 
 depends_on:
   - validate
