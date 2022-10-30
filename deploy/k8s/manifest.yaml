@@ -43,13 +43,6 @@ spec:
                     workflow: {
                         mode: "manual"
                     }
-                },
-                codeEditor: {
-                    lib: "ace",
-                    options: {
-                        theme: "vs",
-                    }
-                }
             },
             functionExternalModules: true,
             functionGlobalContext: {},
