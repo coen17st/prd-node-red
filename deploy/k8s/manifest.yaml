@@ -43,6 +43,10 @@ spec:
                     workflow: {
                         mode: "manual"
                     }
+                },
+                codeEditor: {
+                    lib: "monaco",
+                }
             },
             functionExternalModules: true,
             functionGlobalContext: {},
@@ -99,7 +103,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: "harbor.k8s.lan/k8s/node-red:159"
+          image: "harbor.k8s.lan/k8s/node-red:158"
           imagePullPolicy: Always
           resources: {}
           ports:
