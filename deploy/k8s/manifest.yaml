@@ -48,6 +48,7 @@ spec:
                     lib: "monaco",
                 }
             },
+            tours: false,
             functionExternalModules: true,
             functionGlobalContext: {},
             debugMaxLength: 1000,
