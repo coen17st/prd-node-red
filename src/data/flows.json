@@ -18609,7 +18609,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "binary_sensor.backdoor_access_control_window_door_is_open",
+        "entityidfilter": "binary_sensor.recessed_door_sensor_gen5_window_door_is_open_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -18672,7 +18672,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "binary_sensor.frontdoor_access_control_window_door_is_open",
+        "entityidfilter": "binary_sensor.recessed_door_sensor_gen5_window_door_is_open",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -18780,7 +18780,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 750,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "29fb388f.6b0768",
