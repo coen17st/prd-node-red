@@ -163,13 +163,6 @@
         "info": ""
     },
     {
-        "id": "104cf599.7f235a",
-        "type": "tab",
-        "label": "notification_drone_cicd",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "cde79c08.e4f488",
         "type": "tab",
         "label": "smoke_co_alarm",
@@ -290,7 +283,7 @@
         ],
         "out": [
             {
-                "x": 500,
+                "x": 540,
                 "y": 320,
                 "wires": [
                     {
@@ -334,7 +327,7 @@
         ],
         "out": [
             {
-                "x": 500,
+                "x": 540,
                 "y": 320,
                 "wires": [
                     {
@@ -378,7 +371,7 @@
         ],
         "out": [
             {
-                "x": 500,
+                "x": 540,
                 "y": 320,
                 "wires": [
                     {
@@ -422,7 +415,7 @@
         ],
         "out": [
             {
-                "x": 500,
+                "x": 540,
                 "y": 320,
                 "wires": [
                     {
@@ -729,78 +722,6 @@
             {
                 "property": "icon",
                 "value": ""
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "53f6ec34.5fec34",
-        "type": "ha-entity-config",
-        "server": "4ba92433.2478cc",
-        "deviceConfig": "",
-        "name": "sensor config for brightness sun",
-        "version": 6,
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "sun_brightness"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:weather-sunny"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": "%"
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "resend": true
-    },
-    {
-        "id": "d8202784.fc5cc8",
-        "type": "ha-entity-config",
-        "server": "4ba92433.2478cc",
-        "deviceConfig": "",
-        "name": "sensor config for opacity sun",
-        "version": 6,
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "sun_opacity"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:weather-sunny"
             },
             {
                 "property": "unit_of_measurement",
@@ -3985,8 +3906,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 180,
-        "y": 40,
+        "x": 140,
+        "y": 60,
         "wires": [
             [
                 "99dc8873.517068"
@@ -4049,7 +3970,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
+        "x": 90,
         "y": 120,
         "wires": [
             [
@@ -5541,8 +5462,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 420,
-        "y": 300,
+        "x": 400,
+        "y": 320,
         "wires": [
             [
                 "3c8358ad.4658e8"
@@ -5581,8 +5502,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 790,
-        "y": 120,
+        "x": 770,
+        "y": 140,
         "wires": [
             [
                 "c12f7192.293c9"
@@ -5621,8 +5542,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 800,
-        "y": 180,
+        "x": 780,
+        "y": 200,
         "wires": [
             [
                 "d2804939.6f48f8"
@@ -5661,8 +5582,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 820,
-        "y": 240,
+        "x": 800,
+        "y": 260,
         "wires": [
             [
                 "b8424afd.8d7fe8"
@@ -5681,7 +5602,7 @@
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_boolean.mechanical_ventilation_position_1",
+        "entity_id": "input_boolean.mechanical_ventilation_position_0",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -5701,11 +5622,11 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1240,
-        "y": 700,
+        "x": 1220,
+        "y": 720,
         "wires": [
             [
-                "d114af33.07ee4"
+                "3f57f7c64c501b93"
             ],
             []
         ]
@@ -5716,8 +5637,8 @@
         "z": "4e909abe.0b62e4",
         "name": "MECHANICAL VENTILATION POSITION 0",
         "info": "",
-        "x": 440,
-        "y": 80,
+        "x": 420,
+        "y": 100,
         "wires": []
     },
     {
@@ -5726,8 +5647,8 @@
         "z": "4e909abe.0b62e4",
         "name": "CONDITIONS & DATA",
         "info": "",
-        "x": 380,
-        "y": 380,
+        "x": 360,
+        "y": 400,
         "wires": []
     },
     {
@@ -5747,8 +5668,8 @@
         "topic": "",
         "payload": "start_flow",
         "payloadType": "str",
-        "x": 110,
-        "y": 40,
+        "x": 90,
+        "y": 100,
         "wires": [
             [
                 "eaba4c18.04007",
@@ -5789,8 +5710,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 410,
-        "y": 700,
+        "x": 390,
+        "y": 720,
         "wires": [
             [
                 "f58250ec.e0fa1"
@@ -5831,8 +5752,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1230,
-        "y": 540,
+        "x": 1210,
+        "y": 560,
         "wires": [
             [
                 "4e1d6c0e.bd6b44"
@@ -5871,8 +5792,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 390,
-        "y": 120,
+        "x": 370,
+        "y": 140,
         "wires": [
             [
                 "cbe4be0.ad6c74"
@@ -5910,8 +5831,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 410,
-        "y": 180,
+        "x": 390,
+        "y": 200,
         "wires": [
             [
                 "ff0ab6a6.950ca8"
@@ -5949,8 +5870,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 420,
-        "y": 240,
+        "x": 400,
+        "y": 260,
         "wires": [
             [
                 "8a2090d8.a2185"
@@ -5988,8 +5909,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 390,
-        "y": 420,
+        "x": 370,
+        "y": 440,
         "wires": [
             [
                 "87cfa72a.3e07e8"
@@ -6027,8 +5948,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 790,
-        "y": 420,
+        "x": 770,
+        "y": 440,
         "wires": [
             [
                 "e07eea7c.6e4af8"
@@ -6067,8 +5988,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 410,
-        "y": 480,
+        "x": 390,
+        "y": 500,
         "wires": [
             [
                 "a028c18f.9355b"
@@ -6106,8 +6027,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 800,
-        "y": 480,
+        "x": 780,
+        "y": 500,
         "wires": [
             [
                 "4bc7b417.d7b80c"
@@ -6146,8 +6067,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 420,
-        "y": 540,
+        "x": 400,
+        "y": 560,
         "wires": [
             [
                 "56b3697b.621e98"
@@ -6185,8 +6106,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 820,
-        "y": 540,
+        "x": 800,
+        "y": 560,
         "wires": [
             [
                 "13e032a.2acbbcd"
@@ -6200,8 +6121,8 @@
         "z": "4e909abe.0b62e4",
         "name": "MECHANICAL VENTILATION POSITION 2",
         "info": "",
-        "x": 440,
-        "y": 760,
+        "x": 420,
+        "y": 780,
         "wires": []
     },
     {
@@ -6235,8 +6156,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 390,
-        "y": 800,
+        "x": 370,
+        "y": 820,
         "wires": [
             [
                 "610ee8e1.0e94b8"
@@ -6277,8 +6198,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1240,
-        "y": 780,
+        "x": 1220,
+        "y": 800,
         "wires": [
             [
                 "54922ba7.31ebb4"
@@ -6292,8 +6213,8 @@
         "z": "4e909abe.0b62e4",
         "name": "MECHANICAL VENTILATION POSITION 3",
         "info": "",
-        "x": 440,
-        "y": 880,
+        "x": 420,
+        "y": 900,
         "wires": []
     },
     {
@@ -6327,8 +6248,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1240,
-        "y": 920,
+        "x": 1220,
+        "y": 940,
         "wires": [
             [
                 "320c3cf2.5620d4"
@@ -6391,8 +6312,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
-        "y": 100,
+        "x": 110,
+        "y": 160,
         "wires": [
             [
                 "eaba4c18.04007",
@@ -6457,8 +6378,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 100,
-        "y": 160,
+        "x": 80,
+        "y": 220,
         "wires": [
             [
                 "eaba4c18.04007",
@@ -6474,8 +6395,8 @@
         "z": "4e909abe.0b62e4",
         "name": "MECHANICAL VENTILATION POSITION MANUAL",
         "info": "",
-        "x": 470,
-        "y": 1000,
+        "x": 450,
+        "y": 1020,
         "wires": []
     },
     {
@@ -6533,8 +6454,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1040,
+        "x": 420,
+        "y": 1060,
         "wires": [
             [
                 "9e8a7cf7.88d51"
@@ -6597,8 +6518,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
-        "y": 220,
+        "x": 110,
+        "y": 280,
         "wires": [
             [
                 "eaba4c18.04007",
@@ -6614,8 +6535,8 @@
         "z": "4e909abe.0b62e4",
         "name": "MECHANICAL VENTILATION POSITION 1",
         "info": "",
-        "x": 440,
-        "y": 660,
+        "x": 420,
+        "y": 680,
         "wires": []
     },
     {
@@ -6649,8 +6570,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1500,
-        "y": 540,
+        "x": 1480,
+        "y": 560,
         "wires": [
             [
                 "52a3b09f.ae48"
@@ -6689,8 +6610,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 420,
-        "y": 600,
+        "x": 400,
+        "y": 620,
         "wires": [
             [
                 "e21c63fd.6345e"
@@ -6731,8 +6652,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 700,
-        "y": 600,
+        "x": 680,
+        "y": 620,
         "wires": [
             [
                 "d21542c5.837e4"
@@ -6770,8 +6691,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 960,
-        "y": 600,
+        "x": 940,
+        "y": 620,
         "wires": [
             [
                 "ea92ebb5.4d1288"
@@ -6809,8 +6730,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1210,
-        "y": 600,
+        "x": 1190,
+        "y": 620,
         "wires": [
             [
                 "a037b96e.97bc58"
@@ -6836,8 +6757,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 2420,
-        "y": 1140,
+        "x": 2400,
+        "y": 1160,
         "wires": [
             [
                 "27cc17cd.025b08"
@@ -6855,8 +6776,8 @@
         "syntax": "mustache",
         "template": "{{topic}} stand 2 is automatisch ingeschakeld.",
         "output": "str",
-        "x": 1720,
-        "y": 780,
+        "x": 1700,
+        "y": 800,
         "wires": [
             [
                 "8373567d.35b008"
@@ -6874,8 +6795,8 @@
         "syntax": "mustache",
         "template": "{{topic}} stand 3 is automatisch ingeschakeld.",
         "output": "str",
-        "x": 1720,
-        "y": 920,
+        "x": 1700,
+        "y": 940,
         "wires": [
             [
                 "8373567d.35b008"
@@ -6908,8 +6829,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2000,
-        "y": 1140,
+        "x": 1980,
+        "y": 1160,
         "wires": [
             [
                 "1c8856d3.d19249",
@@ -6936,8 +6857,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1470,
-        "y": 600,
+        "x": 1450,
+        "y": 620,
         "wires": [
             [
                 "e07362ff.ad189"
@@ -6960,8 +6881,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 2580,
-        "y": 1140,
+        "x": 2560,
+        "y": 1160,
         "wires": [
             [
                 "f05f69b7b628264f"
@@ -6999,8 +6920,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 750,
-        "y": 800,
+        "x": 730,
+        "y": 820,
         "wires": [
             [
                 "46771664.f639e8"
@@ -7041,8 +6962,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1010,
-        "y": 860,
+        "x": 990,
+        "y": 880,
         "wires": [
             [
                 "65f41c8.8e8cde4"
@@ -7063,8 +6984,8 @@
         "endTime": "22:00",
         "startOffset": 0,
         "endOffset": 0,
-        "x": 350,
-        "y": 920,
+        "x": 330,
+        "y": 940,
         "wires": [
             [
                 "b5d8b43d.943a18"
@@ -7080,8 +7001,8 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 1510,
-        "y": 920,
+        "x": 1490,
+        "y": 940,
         "wires": [
             [
                 "5ce9303e.d40b8"
@@ -7099,8 +7020,8 @@
         "syntax": "mustache",
         "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de mslaapkmer is {{ssensor.master_bedroom_dewpoint}} ℃   ",
         "output": "str",
-        "x": 1140,
-        "y": 180,
+        "x": 1120,
+        "y": 200,
         "wires": [
             [
                 "476cfb88.13ea74"
@@ -7118,8 +7039,8 @@
         "syntax": "mustache",
         "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_absolutehumidity}} g/m³ is hoger dan in de kelder {{sensor.basement_absolutehumidity}} g/m³",
         "output": "str",
-        "x": 1140,
-        "y": 240,
+        "x": 1120,
+        "y": 260,
         "wires": [
             [
                 "476cfb88.13ea74"
@@ -7137,8 +7058,8 @@
         "syntax": "mustache",
         "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{payload}}%",
         "output": "str",
-        "x": 1140,
-        "y": 300,
+        "x": 1120,
+        "y": 320,
         "wires": [
             [
                 "476cfb88.13ea74"
@@ -7176,8 +7097,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1360,
-        "y": 200,
+        "x": 1340,
+        "y": 220,
         "wires": [
             [
                 "d38a7750.f848b8"
@@ -7216,8 +7137,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1670,
-        "y": 200,
+        "x": 1650,
+        "y": 220,
         "wires": [
             [
                 "83e00d58.7e733"
@@ -7280,8 +7201,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1100,
+        "x": 420,
+        "y": 1120,
         "wires": [
             [
                 "5fba04f5.3847ac"
@@ -7344,8 +7265,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1160,
+        "x": 420,
+        "y": 1180,
         "wires": [
             [
                 "cbdc5416.0cbcd8"
@@ -7408,8 +7329,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1220,
+        "x": 420,
+        "y": 1240,
         "wires": [
             [
                 "91b0640c.1b4d68"
@@ -7428,8 +7349,8 @@
         "syntax": "mustache",
         "template": "Mechanische Ventilatie stand 1 is handmatig ingeschakeld.",
         "output": "str",
-        "x": 700,
-        "y": 1040,
+        "x": 680,
+        "y": 1060,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -7447,8 +7368,8 @@
         "syntax": "mustache",
         "template": "Mechanische Ventilatie stand 2 is handmatig ingeschakeld.",
         "output": "str",
-        "x": 700,
-        "y": 1100,
+        "x": 680,
+        "y": 1120,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -7466,8 +7387,8 @@
         "syntax": "mustache",
         "template": "Mechanische Ventilatie stand 3 is handmatig ingeschakeld.",
         "output": "str",
-        "x": 700,
-        "y": 1160,
+        "x": 680,
+        "y": 1180,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -7485,8 +7406,8 @@
         "syntax": "mustache",
         "template": "Mechanische Ventilatie is handmatig uitgeschakeld.",
         "output": "str",
-        "x": 700,
-        "y": 1220,
+        "x": 680,
+        "y": 1240,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -7524,8 +7445,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1010,
-        "y": 1140,
+        "x": 990,
+        "y": 1160,
         "wires": [
             [
                 "8373567d.35b008"
@@ -7534,26 +7455,13 @@
         ]
     },
     {
-        "id": "d114af33.07ee4",
-        "type": "subflow:db575387.da1ff",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "x": 1510,
-        "y": 700,
-        "wires": [
-            [
-                "8373567d.35b008"
-            ]
-        ]
-    },
-    {
         "id": "83e00d58.7e733",
         "type": "subflow:ae97b8c4.cadf68",
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 1990,
-        "y": 200,
+        "x": 1970,
+        "y": 220,
         "wires": [
             [
                 "8373567d.35b008"
@@ -7565,8 +7473,8 @@
         "type": "subflow:279f5735.2f95d8",
         "z": "4e909abe.0b62e4",
         "name": "",
-        "x": 1510,
-        "y": 780,
+        "x": 1490,
+        "y": 800,
         "wires": [
             [
                 "c7b58913.752ad8"
@@ -7579,8 +7487,8 @@
         "z": "4e909abe.0b62e4",
         "name": "INPUT BOOLEAN MECHANICAL VENTILATION",
         "info": "",
-        "x": 460,
-        "y": 1280,
+        "x": 440,
+        "y": 1300,
         "wires": []
     },
     {
@@ -7638,8 +7546,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1320,
+        "x": 420,
+        "y": 1340,
         "wires": [
             [
                 "1bd4cbe8.185c54"
@@ -7702,8 +7610,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1380,
+        "x": 420,
+        "y": 1400,
         "wires": [
             [
                 "234dfa41.bd6986"
@@ -7766,8 +7674,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1440,
+        "x": 420,
+        "y": 1460,
         "wires": [
             [
                 "66f4c227.6b8aac"
@@ -7830,8 +7738,8 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 440,
-        "y": 1500,
+        "x": 420,
+        "y": 1520,
         "wires": [
             [
                 "6e490cae.31f974"
@@ -7845,8 +7753,8 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 770,
-        "y": 1380,
+        "x": 750,
+        "y": 1400,
         "wires": [
             []
         ]
@@ -7857,8 +7765,8 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 770,
-        "y": 1320,
+        "x": 750,
+        "y": 1340,
         "wires": [
             []
         ]
@@ -7869,8 +7777,8 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 770,
-        "y": 1500,
+        "x": 750,
+        "y": 1520,
         "wires": [
             []
         ]
@@ -7880,8 +7788,8 @@
         "type": "subflow:279f5735.2f95d8",
         "z": "4e909abe.0b62e4",
         "name": "",
-        "x": 770,
-        "y": 1440,
+        "x": 750,
+        "y": 1460,
         "wires": [
             []
         ]
@@ -7907,8 +7815,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2200,
-        "y": 1140,
+        "x": 2180,
+        "y": 1160,
         "wires": [
             [
                 "9a6df146.3a1aa"
@@ -7926,8 +7834,8 @@
         "syntax": "mustache",
         "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is{{sensor.living_room_dewpoint}} ℃ ",
         "output": "str",
-        "x": 1140,
-        "y": 120,
+        "x": 1120,
+        "y": 140,
         "wires": [
             [
                 "476cfb88.13ea74"
@@ -7945,8 +7853,8 @@
         "syntax": "mustache",
         "template": "{{topic}} stand 1 is automatisch ingeschakeld. Het is buiten {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
-        "x": 1000,
-        "y": 720,
+        "x": 980,
+        "y": 740,
         "wires": [
             [
                 "bfdcba16.625018"
@@ -7964,8 +7872,8 @@
         "syntax": "mustache",
         "template": "{{topic}} stand 1 is automatisch ingeschakeld. De luchtvochtigheid in de kelder is {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
-        "x": 1000,
-        "y": 680,
+        "x": 980,
+        "y": 700,
         "wires": [
             [
                 "bfdcba16.625018"
@@ -7980,8 +7888,8 @@
         "links": [
             "ebf4860d.603538"
         ],
-        "x": 2115,
-        "y": 1080,
+        "x": 2095,
+        "y": 1100,
         "wires": []
     },
     {
@@ -7996,10 +7904,33 @@
         "attributes": [],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 2770,
-        "y": 1140,
+        "x": 2750,
+        "y": 1160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "46fd77b05f226788",
+        "type": "comment",
+        "z": "4e909abe.0b62e4",
+        "name": "basement ventilation",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3f57f7c64c501b93",
+        "type": "subflow:ae97b8c4.cadf68",
+        "z": "4e909abe.0b62e4",
+        "name": "",
+        "x": 1490,
+        "y": 720,
+        "wires": [
+            [
+                "8373567d.35b008"
+            ]
         ]
     },
     {
@@ -13690,26 +13621,6 @@
         ]
     },
     {
-        "id": "393c05d.70c05fa",
-        "type": "range",
-        "z": "4dd07a1d.6e53e4",
-        "minin": "0",
-        "maxin": "100",
-        "minout": "0",
-        "maxout": "100",
-        "action": "roll",
-        "round": false,
-        "property": "payload",
-        "name": "",
-        "x": 500,
-        "y": 180,
-        "wires": [
-            [
-                "1d7018340470cf41"
-            ]
-        ]
-    },
-    {
         "id": "49bcf8fe.de1de8",
         "type": "server-state-changed",
         "z": "4dd07a1d.6e53e4",
@@ -13768,26 +13679,7 @@
         "y": 100,
         "wires": [
             [
-                "98d4039.5ff7f",
-                "b77336d5.a64478"
-            ]
-        ]
-    },
-    {
-        "id": "75c39ffc.b45f8",
-        "type": "function",
-        "z": "4dd07a1d.6e53e4",
-        "name": "",
-        "func": "msg.payload = (msg.payload)/(100);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 840,
-        "y": 200,
-        "wires": [
-            [
-                "6ac98cd0e7299210"
+                "98d4039.5ff7f"
             ]
         ]
     },
@@ -13879,59 +13771,6 @@
         ]
     },
     {
-        "id": "b77336d5.a64478",
-        "type": "switch",
-        "z": "4dd07a1d.6e53e4",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lte",
-                "v": "300",
-                "vt": "num"
-            },
-            {
-                "t": "gt",
-                "v": "300",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 360,
-        "y": 200,
-        "wires": [
-            [
-                "393c05d.70c05fa"
-            ],
-            [
-                "ad811737.45bd18"
-            ]
-        ]
-    },
-    {
-        "id": "ad811737.45bd18",
-        "type": "range",
-        "z": "4dd07a1d.6e53e4",
-        "minin": "100",
-        "maxin": "550",
-        "minout": "50",
-        "maxout": "100",
-        "action": "clamp",
-        "round": false,
-        "property": "payload",
-        "name": "",
-        "x": 500,
-        "y": 220,
-        "wires": [
-            [
-                "1d7018340470cf41"
-            ]
-        ]
-    },
-    {
         "id": "714f8f70.75ec6",
         "type": "rbe",
         "z": "4dd07a1d.6e53e4",
@@ -13977,44 +13816,6 @@
         "x": 140,
         "y": 40,
         "wires": []
-    },
-    {
-        "id": "1d7018340470cf41",
-        "type": "ha-sensor",
-        "z": "4dd07a1d.6e53e4",
-        "name": "brightness sun",
-        "entityConfig": "53f6ec34.5fec34",
-        "version": 0,
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 680,
-        "y": 200,
-        "wires": [
-            [
-                "75c39ffc.b45f8"
-            ]
-        ]
-    },
-    {
-        "id": "6ac98cd0e7299210",
-        "type": "ha-sensor",
-        "z": "4dd07a1d.6e53e4",
-        "name": "opacity sun",
-        "entityConfig": "d8202784.fc5cc8",
-        "version": 0,
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 990,
-        "y": 200,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "7d19b3aa717186ea",
@@ -14241,7 +14042,7 @@
         ],
         "entityidfilter": "group.persons",
         "entityidfiltertype": "exact",
-        "outputinitially": false,
+        "outputinitially": true,
         "state_type": "str",
         "haltifstate": "",
         "halt_if_type": "str",
@@ -21550,227 +21351,6 @@
             "ebf4860d.603538"
         ],
         "x": 675,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "8e5f1f6.1491be",
-        "type": "http in",
-        "z": "104cf599.7f235a",
-        "name": "",
-        "url": "/drone/notify",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 110,
-        "y": 100,
-        "wires": [
-            [
-                "84537b3a.709288",
-                "dfdd1ed0.0ec7"
-            ]
-        ]
-    },
-    {
-        "id": "84537b3a.709288",
-        "type": "template",
-        "z": "104cf599.7f235a",
-        "name": "html page",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "<html>\n    <head></head>\n    <body>\n        <h1>ontvangen{{ payload.name }}!</h1>\n    </body>\n</html>",
-        "x": 320,
-        "y": 100,
-        "wires": [
-            [
-                "d9bf46aa.3954e8"
-            ]
-        ]
-    },
-    {
-        "id": "d9bf46aa.3954e8",
-        "type": "http response",
-        "z": "104cf599.7f235a",
-        "name": "http response",
-        "statusCode": "",
-        "headers": {},
-        "x": 480,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "61955679.90f4f8",
-        "type": "api-call-service",
-        "z": "104cf599.7f235a",
-        "name": "app notification",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"CI/CD\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 820,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dfdd1ed0.0ec7",
-        "type": "template",
-        "z": "104cf599.7f235a",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "drone.io build [{{payload.repo}}]({{{payload.buildlink}}}/) status: *{{payload.status}}*",
-        "output": "str",
-        "x": 320,
-        "y": 140,
-        "wires": [
-            [
-                "a3c4d652.5f0db8",
-                "cf34922.125b87"
-            ]
-        ]
-    },
-    {
-        "id": "814e4a7e.8b6d68",
-        "type": "api-call-service",
-        "z": "104cf599.7f235a",
-        "name": "notify phone coen",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_coen",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"CI/CD\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 830,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f1a98b5e.843778",
-        "type": "switch",
-        "z": "104cf599.7f235a",
-        "name": "",
-        "property": "payload.status",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "failure",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 570,
-        "y": 280,
-        "wires": [
-            [
-                "814e4a7e.8b6d68"
-            ]
-        ]
-    },
-    {
-        "id": "214c7ea4.35c312",
-        "type": "comment",
-        "z": "104cf599.7f235a",
-        "name": "drone ci/cd notification",
-        "info": "",
-        "x": 120,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "ab8984f7.2ca958",
-        "type": "delay",
-        "z": "104cf599.7f235a",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 520,
-        "y": 160,
-        "wires": [
-            [
-                "f1a98b5e.843778",
-                "61955679.90f4f8"
-            ]
-        ]
-    },
-    {
-        "id": "a3c4d652.5f0db8",
-        "type": "switch",
-        "z": "104cf599.7f235a",
-        "name": "",
-        "property": "payload.repo",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "home-assistant",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 330,
-        "y": 200,
-        "wires": [
-            [
-                "ab8984f7.2ca958"
-            ],
-            [
-                "f1a98b5e.843778",
-                "61955679.90f4f8"
-            ]
-        ]
-    },
-    {
-        "id": "cf34922.125b87",
-        "type": "link out",
-        "z": "104cf599.7f235a",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 755,
         "y": 140,
         "wires": []
     },
