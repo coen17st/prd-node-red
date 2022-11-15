@@ -1776,7 +1776,7 @@
         "id": "a25d7a80.b14218",
         "type": "api-call-service",
         "z": "ae97b8c4.cadf68",
-        "name": "turn off basement ventilation sw 02",
+        "name": "turn off basement ventilation sw 01",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -1785,7 +1785,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.basement_ventilation_sw_02"
+            "switch.basement_ventilation_sw_01"
         ],
         "data": "",
         "dataType": "json",
@@ -2067,7 +2067,7 @@
         "id": "8668dce7.57953",
         "type": "api-call-service",
         "z": "db575387.da1ff",
-        "name": "turn on basement ventilation sw 02",
+        "name": "turn on basement ventilation sw 01",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -2076,7 +2076,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.basement_ventilation_sw_02"
+            "switch.basement_ventilation_sw_01"
         ],
         "data": "",
         "dataType": "json",
@@ -2586,7 +2586,7 @@
         "id": "22428d95.0b7e92",
         "type": "api-call-service",
         "z": "279f5735.2f95d8",
-        "name": "turn on basement ventilation sw 02",
+        "name": "turn on basement ventilation sw 01",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -2595,7 +2595,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.basement_ventilation_sw_02"
+            "switch.basement_ventilation_sw_01"
         ],
         "data": "",
         "dataType": "json",
@@ -2911,7 +2911,7 @@
         "id": "30d47f9.e06228",
         "type": "api-call-service",
         "z": "7d5d30e3.483af",
-        "name": "turn on basement ventilation sw 02",
+        "name": "turn on basement ventilation sw 01",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -2920,7 +2920,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.basement_ventilation_sw_02"
+            "switch.basement_ventilation_sw_01"
         ],
         "data": "",
         "dataType": "json",
@@ -3393,7 +3393,9 @@
         "domain": "media_player",
         "service": "turn_off",
         "areaId": [],
-        "deviceId": [],
+        "deviceId": [
+            "04231b4687b2ffc01c97df5552a05026"
+        ],
         "entityId": [],
         "data": "",
         "dataType": "jsonata",
@@ -3411,7 +3413,7 @@
         "id": "19c16b81a65ce03d",
         "type": "api-call-service",
         "z": "0f710598d50e0596",
-        "name": "turn off media player shield",
+        "name": "turn off media players",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -3419,14 +3421,18 @@
         "service": "turn_off",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
+        "entityId": [
+            "media_player.lise_s_kamer",
+            "media_player.shield",
+            "media_player.tv_01"
+        ],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 220,
+        "x": 200,
         "y": 120,
         "wires": [
             []
