@@ -46,7 +46,7 @@
         "id": "ccde11d9.8710d",
         "type": "tab",
         "label": "camera_snapshots",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -70,13 +70,6 @@
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "884be31f.370fe",
-        "type": "tab",
-        "label": "exec_command_certbot_renewal",
-        "disabled": false,
-        "info": ""
     },
     {
         "id": "4dd07a1d.6e53e4",
@@ -9524,7 +9517,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 430,
+        "x": 340,
         "y": 100,
         "wires": [
             []
@@ -9926,7 +9919,7 @@
             }
         ],
         "x": 120,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "f98986e3.e78848",
@@ -9945,13 +9938,13 @@
         "server": "4ba92433.2478cc",
         "version": 2,
         "outputs": 2,
-        "entityId": "binary_sensor.frontdoor_access_control_window_door_is_open",
+        "entityId": "binary_sensor.recessed_door_sensor_gen5_window_door_is_open",
         "entityIdFilterType": "exact",
         "property": "state",
         "comparator": "is",
         "value": "on",
         "valueType": "str",
-        "timeout": "61",
+        "timeout": "60",
         "timeoutType": "num",
         "timeoutUnits": "seconds",
         "checkCurrentState": true,
@@ -9965,7 +9958,7 @@
             }
         ],
         "x": 900,
-        "y": 240,
+        "y": 260,
         "wires": [
             [
                 "45dfd14d.84864"
@@ -9987,7 +9980,7 @@
         "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
         "output": "str",
         "x": 1100,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "32209a51.6b6536",
@@ -10007,7 +10000,7 @@
         "template": "Er is aangebeld, de voordeur is open gedaan. ",
         "output": "str",
         "x": 1100,
-        "y": 220,
+        "y": 240,
         "wires": [
             [
                 "32209a51.6b6536",
@@ -10035,7 +10028,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1310,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "aa2e94ac.c75bf8"
@@ -10054,7 +10047,7 @@
         "template": "{{mydom}}-{{mymonth}} {{mytime}}",
         "output": "str",
         "x": 1110,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "f44aaff0d8299e32"
@@ -10093,7 +10086,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 900,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "63738500.aace1c"
@@ -10123,7 +10116,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1070,
-        "y": 320,
+        "y": 340,
         "wires": [
             [],
             [
@@ -10163,7 +10156,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1570,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "d0000832.eafa28"
@@ -10191,7 +10184,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1790,
-        "y": 260,
+        "y": 280,
         "wires": [
             []
         ]
@@ -10291,7 +10284,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 370,
+        "x": 360,
         "y": 100,
         "wires": [
             [
@@ -10321,7 +10314,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 640,
+        "x": 620,
         "y": 100,
         "wires": [
             []
@@ -10359,7 +10352,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "c1191c26.764cf"
@@ -10389,7 +10382,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 870,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "74b0f721.d079c8"
@@ -10405,7 +10398,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "notify",
-        "service": "tv_woonkamer",
+        "service": "tv_01",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -10416,7 +10409,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1520,
-        "y": 380,
+        "y": 400,
         "wires": [
             []
         ]
@@ -10433,7 +10426,7 @@
         "template": "Er is aangebeld. ",
         "output": "str",
         "x": 1070,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "cdd2f7dd.b79268"
@@ -10472,7 +10465,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "d6c8ef4a.6f6e9"
@@ -10493,7 +10486,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "shelly1_front_door"
+            "light.shelly1_front_door"
         ],
         "data": "",
         "dataType": "json",
@@ -10502,7 +10495,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 900,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "f39e3558.7e0a48"
@@ -10541,7 +10534,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 650,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "c63cd5dd.2969b8"
@@ -10569,7 +10562,7 @@
         "to": "",
         "reg": false,
         "x": 630,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "fa85ecea.e1cdd"
@@ -10592,8 +10585,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 400,
-        "y": 160,
+        "x": 340,
+        "y": 180,
         "wires": [
             [
                 "26977249.cf194e"
@@ -10620,7 +10613,7 @@
         "to": "",
         "reg": false,
         "x": 630,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "fa85ecea.e1cdd"
@@ -10638,7 +10631,7 @@
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "shelly1_front_door",
+        "entity_id": "light.shelly1_front_door",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -10659,7 +10652,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 640,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "c3f4b74d.a01278"
@@ -10680,7 +10673,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "shelly1_front_door"
+            "light.shelly1_front_door"
         ],
         "data": "",
         "dataType": "json",
@@ -10689,7 +10682,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1560,
-        "y": 440,
+        "y": 460,
         "wires": [
             []
         ]
@@ -10719,7 +10712,7 @@
         "myrawdate": true,
         "mypm": true,
         "x": 870,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "7c117ebf.4e87b"
@@ -10743,7 +10736,7 @@
         "send_stop": false,
         "default_start": true,
         "differ": false,
-        "x": 610,
+        "x": 630,
         "y": 240,
         "wires": [
             [
@@ -10764,7 +10757,7 @@
         "payloadval": "0",
         "name": "",
         "x": 1100,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "4566a0c1.1b69e"
@@ -10794,7 +10787,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1530,
-        "y": 320,
+        "y": 340,
         "wires": [
             []
         ]
@@ -10811,7 +10804,7 @@
         "template": "Er is aangebeld.",
         "output": "str",
         "x": 1280,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "211ffb19.e76354"
@@ -10837,7 +10830,7 @@
             "ebf4860d.603538"
         ],
         "x": 1235,
-        "y": 200,
+        "y": 220,
         "wires": []
     },
     {
@@ -10853,7 +10846,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 1530,
-        "y": 160,
+        "y": 180,
         "wires": [
             []
         ]
@@ -11864,7 +11857,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "notify",
-        "service": "tv_woonkamer",
+        "service": "tv_01",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -13387,235 +13380,6 @@
         "wires": [
             [
                 "5bb7f1bee6db7996"
-            ]
-        ]
-    },
-    {
-        "id": "e5f3a68e.517128",
-        "type": "exec",
-        "z": "884be31f.370fe",
-        "command": "ssh coen@192.168.1.3 'bash /home/coen/docker-home-services/reverse-proxy/letsencrypt.sh'",
-        "addpay": false,
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "oldrc": false,
-        "name": "exec letsencrypt.sh",
-        "x": 310,
-        "y": 100,
-        "wires": [
-            [],
-            [],
-            [
-                "700c2a20.53f784"
-            ]
-        ]
-    },
-    {
-        "id": "700c2a20.53f784",
-        "type": "switch",
-        "z": "884be31f.370fe",
-        "name": "",
-        "property": "payload.code",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "0",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 470,
-        "y": 100,
-        "wires": [
-            [
-                "e4f91251.4e05f"
-            ],
-            [
-                "861e89da.fb5868"
-            ]
-        ]
-    },
-    {
-        "id": "8e780f4f.06522",
-        "type": "cronplus",
-        "z": "884be31f.370fe",
-        "name": "At 19:00 on Sunday",
-        "outputField": "payload",
-        "timeZone": "",
-        "persistDynamic": false,
-        "commandResponseMsgOutput": "output1",
-        "outputs": 1,
-        "options": [
-            {
-                "name": "At 19:00 on Sunday",
-                "topic": "every week",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "0 19 * * 0",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 110,
-        "y": 100,
-        "wires": [
-            [
-                "e5f3a68e.517128"
-            ]
-        ]
-    },
-    {
-        "id": "e4f91251.4e05f",
-        "type": "template",
-        "z": "884be31f.370fe",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Execution of Certbot renewal script failed!",
-        "output": "str",
-        "x": 600,
-        "y": 100,
-        "wires": [
-            [
-                "651b6e34.8b57d",
-                "1deaac71.64ecb4"
-            ]
-        ]
-    },
-    {
-        "id": "651b6e34.8b57d",
-        "type": "link out",
-        "z": "884be31f.370fe",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 735,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "1c1eb956.0acf57",
-        "type": "comment",
-        "z": "884be31f.370fe",
-        "name": "execute cerbot renewal bash shell script",
-        "info": "",
-        "x": 170,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "861e89da.fb5868",
-        "type": "template",
-        "z": "884be31f.370fe",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Execution of Certbot renewal script succeeded.",
-        "output": "str",
-        "x": 600,
-        "y": 140,
-        "wires": [
-            [
-                "651b6e34.8b57d",
-                "1deaac71.64ecb4"
-            ]
-        ]
-    },
-    {
-        "id": "e9bf979c.c56098",
-        "type": "api-call-service",
-        "z": "884be31f.370fe",
-        "name": "app notification",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 960,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1deaac71.64ecb4",
-        "type": "change",
-        "z": "884be31f.370fe",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Certbot Renewal",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 790,
-        "y": 140,
-        "wires": [
-            [
-                "e9bf979c.c56098"
-            ]
-        ]
-    },
-    {
-        "id": "1758f933.9e5147",
-        "type": "inject",
-        "z": "884be31f.370fe",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 180,
-        "wires": [
-            [
-                "e5f3a68e.517128"
             ]
         ]
     },
