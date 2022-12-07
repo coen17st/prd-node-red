@@ -2,9 +2,17 @@
     {
         "id": "8aa6edec.5a013",
         "type": "tab",
-        "label": "away",
+        "label": "away_desired_state",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "df5d8f386b74d541",
+        "type": "tab",
+        "label": "sleep",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "c0da8379.b0dd3",
@@ -170,9 +178,9 @@
         "info": ""
     },
     {
-        "id": "df5d8f386b74d541",
+        "id": "61bef8ab2a5befa2",
         "type": "tab",
-        "label": "sleep",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
@@ -211,6 +219,9 @@
                     },
                     {
                         "id": "70042c68d7934e2a"
+                    },
+                    {
+                        "id": "107f8f280b2777b5"
                     }
                 ]
             }
@@ -624,6 +635,30 @@
         "wires": [
             [
                 "dc31aee5.5b1f3"
+            ]
+        ]
+    },
+    {
+        "id": "fd0992d579e52c73",
+        "type": "junction",
+        "z": "8aa6edec.5a013",
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "fc85d1e2.ac029"
+            ]
+        ]
+    },
+    {
+        "id": "76fc5cd8933d341b",
+        "type": "junction",
+        "z": "8aa6edec.5a013",
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "8afb3387.bc64f"
             ]
         ]
     },
@@ -1250,7 +1285,7 @@
         "id": "1cacf9f.2645206",
         "type": "ha-get-entities",
         "z": "79544bf2.1ff3a4",
-        "name": "lookup media players",
+        "name": "lookup media players is not off",
         "server": "4ba92433.2478cc",
         "version": 0,
         "rules": [
@@ -1272,7 +1307,7 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 220,
+        "x": 250,
         "y": 500,
         "wires": [
             [
@@ -1536,6 +1571,82 @@
         "x": 260,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "107f8f280b2777b5",
+        "type": "api-current-state",
+        "z": "79544bf2.1ff3a4",
+        "name": "reciever power > 1",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "1",
+        "halt_if_type": "num",
+        "halt_if_compare": "gt",
+        "entity_id": "sensor.shellyplug_reciever_power",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "52bea4fa61492a55"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "52bea4fa61492a55",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "send off command to reciever",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
+        "entityId": [
+            "remote.harmony_hub_01"
+        ],
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 560,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "27d24c41.6784e4",
@@ -4166,7 +4277,7 @@
             }
         ],
         "x": 140,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
                 "99dc8873.517068"
@@ -4230,13 +4341,13 @@
             }
         ],
         "x": 90,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "86e3be2e.bc7b4"
             ],
             [
-                "fc85d1e2.ac029"
+                "fd0992d579e52c73"
             ]
         ]
     },
@@ -4272,10 +4383,11 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 380,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
-                "49ea77ab.4cfa28"
+                "49ea77ab.4cfa28",
+                "8d40faa88a9cd112"
             ],
             []
         ]
@@ -4312,14 +4424,15 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 410,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "ce720787.d6dd18"
             ],
             [
                 "49ea77ab.4cfa28",
-                "8afb3387.bc64f"
+                "76fc5cd8933d341b",
+                "f3398caf62b1ef7a"
             ]
         ]
     },
@@ -4340,147 +4453,11 @@
         "drop": false,
         "outputs": 1,
         "x": 740,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
                 "ab07aadadf97ba44"
             ]
-        ]
-    },
-    {
-        "id": "ecbb9c1d.54996",
-        "type": "api-call-service",
-        "z": "8aa6edec.5a013",
-        "name": "start timer security",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "timer",
-        "service": "start",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "timer.home_security"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1010,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1a921b80.6cb295",
-        "type": "api-call-service",
-        "z": "8aa6edec.5a013",
-        "name": "stop timer security",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "timer",
-        "service": "cancel",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "timer.home_security"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1010,
-        "y": 500,
-        "wires": [
-            [
-                "e6a0a8cb.534cc8"
-            ]
-        ]
-    },
-    {
-        "id": "543ebe7.ceeb34",
-        "type": "api-current-state",
-        "z": "8aa6edec.5a013",
-        "name": "state timer security active",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "active",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "timer.home_security",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "timer.security",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 790,
-        "y": 500,
-        "wires": [
-            [
-                "1a921b80.6cb295"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e0b2abfe.e5f668",
-        "type": "api-current-state",
-        "z": "8aa6edec.5a013",
-        "name": "state home security off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.home_security",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 780,
-        "y": 440,
-        "wires": [
-            [
-                "ecbb9c1d.54996"
-            ],
-            []
         ]
     },
     {
@@ -4492,8 +4469,8 @@
             "e0ebe989.841c68",
             "7b0f1685.0279d8"
         ],
-        "x": 1425,
-        "y": 120,
+        "x": 1385,
+        "y": 140,
         "wires": []
     },
     {
@@ -4508,7 +4485,7 @@
         "template": "Gast stand is uitgeschakeld {{payload.attributes.friendly_name}} is aanwezig.",
         "output": "str",
         "x": 1260,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
                 "de807278.70c2"
@@ -4542,7 +4519,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 780,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
                 "872aa09a.5c242"
@@ -4570,7 +4547,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 950,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
                 "5a965a7.3bd68a4"
@@ -4589,7 +4566,7 @@
         "template": "Gast stand is uitgeschakeld en niemand is aanwezig. Lampen zijn uitgeschakeld en beveiliging ingeschakeld. ",
         "output": "str",
         "x": 1260,
-        "y": 120,
+        "y": 180,
         "wires": [
             [
                 "de807278.70c2"
@@ -4608,36 +4585,11 @@
         "template": "Gast stand is ingeschakeld.",
         "output": "str",
         "x": 1260,
-        "y": 160,
+        "y": 220,
         "wires": [
             [
                 "de807278.70c2"
             ]
-        ]
-    },
-    {
-        "id": "e6a0a8cb.534cc8",
-        "type": "change",
-        "z": "8aa6edec.5a013",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "reset",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1280,
-        "y": 500,
-        "wires": [
-            []
         ]
     },
     {
@@ -4672,7 +4624,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 780,
-        "y": 320,
+        "y": 260,
         "wires": [
             [
                 "30a120b8f94715ba"
@@ -4702,7 +4654,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1020,
-        "y": 320,
+        "y": 260,
         "wires": [
             [
                 "c54e1335a9784d8c"
@@ -4721,7 +4673,7 @@
         "template": "Huis beveiliging is automatisch ingeschakeld",
         "output": "str",
         "x": 1260,
-        "y": 320,
+        "y": 260,
         "wires": [
             [
                 "de807278.70c2"
@@ -4734,11 +4686,38 @@
         "z": "8aa6edec.5a013",
         "name": "",
         "x": 960,
-        "y": 40,
+        "y": 100,
         "wires": []
     },
     {
-        "id": "ec7fc97b85fc874f",
+        "id": "e98d4730eef641b7",
+        "type": "api-call-service",
+        "z": "8aa6edec.5a013",
+        "name": "turn on switch chime active",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.doorbell_chime_active"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1040,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d40faa88a9cd112",
         "type": "api-current-state",
         "z": "8aa6edec.5a013",
         "name": "state doorbell chime off",
@@ -4769,18 +4748,303 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 790,
-        "y": 260,
+        "y": 320,
         "wires": [
             [
-                "bda1346b2f42aaaf"
+                "e98d4730eef641b7"
             ],
             []
         ]
     },
     {
-        "id": "bda1346b2f42aaaf",
-        "type": "api-call-service",
+        "id": "2e713f167c7e9287",
+        "type": "comment",
         "z": "8aa6edec.5a013",
+        "name": "the desired state when nobody is home and guest switch is off",
+        "info": "",
+        "x": 240,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5cae0c8061f75a53",
+        "type": "subflow:79544bf2.1ff3a4",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "x": 440,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "de71b23081ef77cd",
+        "type": "switch",
+        "z": "df5d8f386b74d541",
+        "name": "on / off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "5cae0c8061f75a53",
+                "6787b740.c04b28",
+                "133eb9dcf3273f11",
+                "79d70712bae7a67b",
+                "e101cb7ce1fd0970"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c7ba0b7c7d7f42f4",
+        "type": "server-state-changed",
+        "z": "df5d8f386b74d541",
+        "name": "state sleepmode",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.sleep_mode",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "house_event",
+                "propertyType": "msg",
+                "value": "sleepmode",
+                "valueType": "str"
+            }
+        ],
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "de71b23081ef77cd"
+            ]
+        ]
+    },
+    {
+        "id": "6787b740.c04b28",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state outdoor dark",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "dark",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.outdoor_light_dark",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 470,
+        "y": 100,
+        "wires": [
+            [
+                "134e114c720a4f35"
+            ],
+            [
+                "83da19b4eed2ddcd"
+            ]
+        ]
+    },
+    {
+        "id": "407ba343.c0affc",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "turn on light kitchen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.shellydimmer_kitchen"
+        ],
+        "data": "{\"brightness_pct\":45}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 850,
+        "y": 80,
+        "wires": [
+            [
+                "69a0749d.4f467c"
+            ]
+        ]
+    },
+    {
+        "id": "69a0749d.4f467c",
+        "type": "delay",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 80,
+        "wires": [
+            [
+                "dc31aee5.5b1f3"
+            ]
+        ]
+    },
+    {
+        "id": "dc31aee5.5b1f3",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "turn off light kitchen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.shellydimmer_kitchen"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1210,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "133eb9dcf3273f11",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state doorbell chime off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.doorbell_chime_active",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "f99fb5b5de6ba970"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f99fb5b5de6ba970",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
         "name": "turn on switch chime active",
         "server": "4ba92433.2478cc",
         "version": 5,
@@ -4798,9 +5062,484 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1040,
-        "y": 260,
+        "x": 1240,
+        "y": 180,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c02a96fab9d6d716",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "turn on home security",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.home_security"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1220,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79d70712bae7a67b",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state home security off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.home_security",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "5dbf80c959123905"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5dbf80c959123905",
+        "type": "delay",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 240,
+        "wires": [
+            [
+                "c02a96fab9d6d716"
+            ]
+        ]
+    },
+    {
+        "id": "e101cb7ce1fd0970",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state home security off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.home_security",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "502ed746a5dd4b84"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "502ed746a5dd4b84",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "start timer security",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "timer",
+        "service": "start",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "timer.home_security"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "7fb9ce14.0e751"
+            ]
+        ]
+    },
+    {
+        "id": "7fb9ce14.0e751",
+        "type": "delay",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "8a22a508.80a108"
+            ]
+        ]
+    },
+    {
+        "id": "8a22a508.80a108",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state home security off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.home_security",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1220,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "134e114c720a4f35",
+        "type": "delay",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 680,
+        "y": 80,
+        "wires": [
+            [
+                "407ba343.c0affc"
+            ]
+        ]
+    },
+    {
+        "id": "1a921b80.6cb295",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "stop timer security",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "timer",
+        "service": "cancel",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "timer.home_security"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 670,
+        "y": 520,
+        "wires": [
+            [
+                "e6a0a8cb.534cc8"
+            ]
+        ]
+    },
+    {
+        "id": "543ebe7.ceeb34",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state timer security active",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "active",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "timer.home_security",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "timer.security",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 450,
+        "y": 520,
+        "wires": [
+            [
+                "1a921b80.6cb295"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e0b2abfe.e5f668",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state home security off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.home_security",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "ecbb9c1d.54996"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e6a0a8cb.534cc8",
+        "type": "change",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecbb9c1d.54996",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "start timer security",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "timer",
+        "service": "start",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "timer.home_security"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 670,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bda1346b2f42aaaf",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "turn on switch chime active",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.doorbell_chime_active"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec7fc97b85fc874f",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state doorbell chime off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.doorbell_chime_active",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "bda1346b2f42aaaf"
+            ],
             []
         ]
     },
@@ -21462,546 +22201,30 @@
         ]
     },
     {
-        "id": "5cae0c8061f75a53",
-        "type": "subflow:79544bf2.1ff3a4",
-        "z": "df5d8f386b74d541",
+        "id": "99f2a4c013e94c5b",
+        "type": "inject",
+        "z": "61bef8ab2a5befa2",
         "name": "",
-        "x": 440,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "de71b23081ef77cd",
-        "type": "switch",
-        "z": "df5d8f386b74d541",
-        "name": "on / off",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
+        "props": [
             {
-                "t": "eq",
-                "v": "on",
-                "vt": "str"
+                "p": "payload"
             },
             {
-                "t": "eq",
-                "v": "off",
+                "p": "topic",
                 "vt": "str"
             }
         ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 250,
-        "y": 160,
-        "wires": [
-            [
-                "5cae0c8061f75a53",
-                "6787b740.c04b28",
-                "133eb9dcf3273f11",
-                "79d70712bae7a67b",
-                "e101cb7ce1fd0970"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "c7ba0b7c7d7f42f4",
-        "type": "server-state-changed",
-        "z": "df5d8f386b74d541",
-        "name": "state sleepmode",
-        "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.sleep_mode",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 1,
-        "output_only_on_state_change": true,
-        "for": "",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 100,
-        "y": 160,
-        "wires": [
-            [
-                "de71b23081ef77cd"
-            ]
-        ]
-    },
-    {
-        "id": "6787b740.c04b28",
-        "type": "api-current-state",
-        "z": "df5d8f386b74d541",
-        "name": "state outdoor dark",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "dark",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.outdoor_light_dark",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 470,
-        "y": 100,
-        "wires": [
-            [
-                "134e114c720a4f35"
-            ],
-            [
-                "83da19b4eed2ddcd"
-            ]
-        ]
-    },
-    {
-        "id": "407ba343.c0affc",
-        "type": "api-call-service",
-        "z": "df5d8f386b74d541",
-        "name": "turn on light kitchen",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.shellydimmer_kitchen"
-        ],
-        "data": "{\"brightness_pct\":45}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 850,
-        "y": 80,
-        "wires": [
-            [
-                "69a0749d.4f467c"
-            ]
-        ]
-    },
-    {
-        "id": "69a0749d.4f467c",
-        "type": "delay",
-        "z": "df5d8f386b74d541",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "20",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 1030,
-        "y": 80,
-        "wires": [
-            [
-                "dc31aee5.5b1f3"
-            ]
-        ]
-    },
-    {
-        "id": "dc31aee5.5b1f3",
-        "type": "api-call-service",
-        "z": "df5d8f386b74d541",
-        "name": "turn off light kitchen",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.shellydimmer_kitchen"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1210,
-        "y": 120,
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 340,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "133eb9dcf3273f11",
-        "type": "api-current-state",
-        "z": "df5d8f386b74d541",
-        "name": "state doorbell chime off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.doorbell_chime_active",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 490,
-        "y": 180,
-        "wires": [
-            [
-                "f99fb5b5de6ba970"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "f99fb5b5de6ba970",
-        "type": "api-call-service",
-        "z": "df5d8f386b74d541",
-        "name": "turn on switch chime active",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.doorbell_chime_active"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1240,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c02a96fab9d6d716",
-        "type": "api-call-service",
-        "z": "df5d8f386b74d541",
-        "name": "turn on home security",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_boolean.home_security"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1220,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "79d70712bae7a67b",
-        "type": "api-current-state",
-        "z": "df5d8f386b74d541",
-        "name": "state home security off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.home_security",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 480,
-        "y": 240,
-        "wires": [
-            [
-                "5dbf80c959123905"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "5dbf80c959123905",
-        "type": "delay",
-        "z": "df5d8f386b74d541",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "20",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 1030,
-        "y": 240,
-        "wires": [
-            [
-                "c02a96fab9d6d716"
-            ]
-        ]
-    },
-    {
-        "id": "e101cb7ce1fd0970",
-        "type": "api-current-state",
-        "z": "df5d8f386b74d541",
-        "name": "state home security off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.home_security",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 480,
-        "y": 300,
-        "wires": [
-            [
-                "502ed746a5dd4b84"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "502ed746a5dd4b84",
-        "type": "api-call-service",
-        "z": "df5d8f386b74d541",
-        "name": "start timer security",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "timer",
-        "service": "start",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "timer.home_security"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 850,
-        "y": 300,
-        "wires": [
-            [
-                "7fb9ce14.0e751"
-            ]
-        ]
-    },
-    {
-        "id": "7fb9ce14.0e751",
-        "type": "delay",
-        "z": "df5d8f386b74d541",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "20",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 1030,
-        "y": 300,
-        "wires": [
-            [
-                "8a22a508.80a108"
-            ]
-        ]
-    },
-    {
-        "id": "8a22a508.80a108",
-        "type": "api-current-state",
-        "z": "df5d8f386b74d541",
-        "name": "state home security off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.home_security",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1220,
-        "y": 300,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "134e114c720a4f35",
-        "type": "delay",
-        "z": "df5d8f386b74d541",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 680,
-        "y": 80,
-        "wires": [
-            [
-                "407ba343.c0affc"
-            ]
         ]
     }
 ]
