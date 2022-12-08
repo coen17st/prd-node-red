@@ -178,14 +178,6 @@
         "info": ""
     },
     {
-        "id": "61bef8ab2a5befa2",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "off_mode",
@@ -630,8 +622,8 @@
         "id": "83da19b4eed2ddcd",
         "type": "junction",
         "z": "df5d8f386b74d541",
-        "x": 620,
-        "y": 120,
+        "x": 600,
+        "y": 180,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -1208,7 +1200,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "De verwarming in {{payload.attributes.friendly_name}} is van handmatige naar automatische stand geschakeld.",
+        "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
         "x": 1100,
         "y": 380,
@@ -1479,7 +1471,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{payload.attributes.friendly_name}}",
+        "template": "{{{payload.attributes.friendly_name}}}",
         "output": "str",
         "x": 800,
         "y": 440,
@@ -1526,7 +1518,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Niemand is aanwezig. {{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
+        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
         "x": 1100,
         "y": 440,
@@ -2065,6 +2057,427 @@
         "queue": "none",
         "x": 1130,
         "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0cb67556a76c3eb6",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "settings",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"Settings\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "cf00d899d2781cb6"
+            ]
+        ]
+    },
+    {
+        "id": "cf00d899d2781cb6",
+        "type": "delay",
+        "z": "ae0491bb.4f1eb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "e0f1e08196cc43ed"
+            ]
+        ]
+    },
+    {
+        "id": "e0f1e08196cc43ed",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction up",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionUp\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 170,
+        "y": 560,
+        "wires": [
+            [
+                "492f9c2f417adbc0"
+            ]
+        ]
+    },
+    {
+        "id": "492f9c2f417adbc0",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "ok",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "61868499a0e641a7"
+            ]
+        ]
+    },
+    {
+        "id": "61868499a0e641a7",
+        "type": "delay",
+        "z": "ae0491bb.4f1eb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 640,
+        "wires": [
+            [
+                "aa61b3bb09b8e640"
+            ]
+        ]
+    },
+    {
+        "id": "aa61b3bb09b8e640",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction right",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionRight\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 680,
+        "wires": [
+            [
+                "9c84278ddd3b4b7c"
+            ]
+        ]
+    },
+    {
+        "id": "9c84278ddd3b4b7c",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 720,
+        "wires": [
+            [
+                "b949cdb0a6b89e6d"
+            ]
+        ]
+    },
+    {
+        "id": "b949cdb0a6b89e6d",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 760,
+        "wires": [
+            [
+                "ee2763a4c7d55b6e"
+            ]
+        ]
+    },
+    {
+        "id": "ee2763a4c7d55b6e",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "ok",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 150,
+        "y": 800,
+        "wires": [
+            [
+                "ec672ea39b8cb757"
+            ]
+        ]
+    },
+    {
+        "id": "ec672ea39b8cb757",
+        "type": "delay",
+        "z": "ae0491bb.4f1eb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 160,
+        "y": 840,
+        "wires": [
+            [
+                "29bc7fa15d86492c"
+            ]
+        ]
+    },
+    {
+        "id": "29bc7fa15d86492c",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 880,
+        "wires": [
+            [
+                "59da5ab9e20994ab"
+            ]
+        ]
+    },
+    {
+        "id": "59da5ab9e20994ab",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 920,
+        "wires": [
+            [
+                "ce6efda282df248d"
+            ]
+        ]
+    },
+    {
+        "id": "ce6efda282df248d",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 960,
+        "wires": [
+            [
+                "4556255aaaa94371"
+            ]
+        ]
+    },
+    {
+        "id": "4556255aaaa94371",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 1000,
+        "wires": [
+            [
+                "8a87f73650b20136"
+            ]
+        ]
+    },
+    {
+        "id": "8a87f73650b20136",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "direction down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 1040,
+        "wires": [
+            [
+                "65bc6278f83c250e"
+            ]
+        ]
+    },
+    {
+        "id": "65bc6278f83c250e",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "ok",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 150,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -3721,7 +4134,7 @@
         "entityId": [
             "media_player.lise_s_kamer",
             "media_player.shield",
-            "media_player.tv_01"
+            "media_player.lg_webos_smart_tv"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -4771,8 +5184,8 @@
         "type": "subflow:79544bf2.1ff3a4",
         "z": "df5d8f386b74d541",
         "name": "",
-        "x": 440,
-        "y": 40,
+        "x": 420,
+        "y": 100,
         "wires": []
     },
     {
@@ -4798,16 +5211,23 @@
         "repair": false,
         "outputs": 2,
         "x": 250,
-        "y": 160,
+        "y": 100,
         "wires": [
             [
                 "5cae0c8061f75a53",
                 "6787b740.c04b28",
                 "133eb9dcf3273f11",
                 "79d70712bae7a67b",
-                "e101cb7ce1fd0970"
+                "e101cb7ce1fd0970",
+                "6af74f914175416e",
+                "e0b2abfe.e5f668",
+                "ec7fc97b85fc874f"
             ],
-            []
+            [
+                "db55b88457c68f5a",
+                "543ebe7.ceeb34",
+                "ec7fc97b85fc874f"
+            ]
         ]
     },
     {
@@ -4872,7 +5292,7 @@
             }
         ],
         "x": 100,
-        "y": 160,
+        "y": 100,
         "wires": [
             [
                 "de71b23081ef77cd"
@@ -4910,11 +5330,11 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 470,
-        "y": 100,
+        "x": 450,
+        "y": 160,
         "wires": [
             [
-                "134e114c720a4f35"
+                "ebd55c80f4d49503"
             ],
             [
                 "83da19b4eed2ddcd"
@@ -4942,8 +5362,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 850,
-        "y": 80,
+        "x": 1050,
+        "y": 140,
         "wires": [
             [
                 "69a0749d.4f467c"
@@ -4966,8 +5386,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 1030,
-        "y": 80,
+        "x": 1230,
+        "y": 140,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -4995,8 +5415,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1210,
-        "y": 120,
+        "x": 1410,
+        "y": 180,
         "wires": [
             []
         ]
@@ -5032,8 +5452,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 490,
-        "y": 180,
+        "x": 470,
+        "y": 220,
         "wires": [
             [
                 "f99fb5b5de6ba970"
@@ -5062,8 +5482,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1240,
-        "y": 180,
+        "x": 1440,
+        "y": 240,
         "wires": [
             []
         ]
@@ -5089,8 +5509,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1220,
-        "y": 240,
+        "x": 1420,
+        "y": 300,
         "wires": [
             []
         ]
@@ -5126,8 +5546,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 480,
-        "y": 240,
+        "x": 460,
+        "y": 280,
         "wires": [
             [
                 "5dbf80c959123905"
@@ -5151,8 +5571,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 1030,
-        "y": 240,
+        "x": 1230,
+        "y": 300,
         "wires": [
             [
                 "c02a96fab9d6d716"
@@ -5190,8 +5610,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 480,
-        "y": 300,
+        "x": 460,
+        "y": 340,
         "wires": [
             [
                 "502ed746a5dd4b84"
@@ -5220,8 +5640,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 850,
-        "y": 300,
+        "x": 1050,
+        "y": 360,
         "wires": [
             [
                 "7fb9ce14.0e751"
@@ -5244,8 +5664,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 1030,
-        "y": 300,
+        "x": 1230,
+        "y": 360,
         "wires": [
             [
                 "8a22a508.80a108"
@@ -5283,8 +5703,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1220,
-        "y": 300,
+        "x": 1420,
+        "y": 360,
         "wires": [
             [],
             []
@@ -5307,8 +5727,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 680,
-        "y": 80,
+        "x": 880,
+        "y": 140,
         "wires": [
             [
                 "407ba343.c0affc"
@@ -5336,12 +5756,10 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 670,
-        "y": 520,
+        "x": 690,
+        "y": 640,
         "wires": [
-            [
-                "e6a0a8cb.534cc8"
-            ]
+            []
         ]
     },
     {
@@ -5375,8 +5793,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 450,
-        "y": 520,
+        "x": 470,
+        "y": 640,
         "wires": [
             [
                 "1a921b80.6cb295"
@@ -5415,37 +5833,12 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 440,
+        "x": 460,
         "y": 460,
         "wires": [
             [
                 "ecbb9c1d.54996"
             ],
-            []
-        ]
-    },
-    {
-        "id": "e6a0a8cb.534cc8",
-        "type": "change",
-        "z": "df5d8f386b74d541",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "reset",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 520,
-        "wires": [
             []
         ]
     },
@@ -5470,7 +5863,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 670,
+        "x": 690,
         "y": 460,
         "wires": [
             []
@@ -5497,8 +5890,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 680,
-        "y": 560,
+        "x": 720,
+        "y": 520,
         "wires": [
             []
         ]
@@ -5534,11 +5927,116 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 430,
-        "y": 560,
+        "x": 470,
+        "y": 520,
         "wires": [
             [
                 "bda1346b2f42aaaf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "79965611fd409cc3",
+        "type": "comment",
+        "z": "df5d8f386b74d541",
+        "name": "sleepmode",
+        "info": "",
+        "x": 80,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6af74f914175416e",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "set theme dark",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "frontend",
+        "service": "set_theme",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"name\":\"Google Dark Theme\",\"mode\":\"dark\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db55b88457c68f5a",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "set theme light",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "frontend",
+        "service": "set_theme",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"name\":\"light_theme\",\"mode\":\"light\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ebd55c80f4d49503",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state kitchen light is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.shellydimmer_kitchen",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 700,
+        "y": 140,
+        "wires": [
+            [
+                "134e114c720a4f35"
             ],
             []
         ]
@@ -9610,7 +10108,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 990,
+        "x": 1030,
         "y": 1160,
         "wires": [
             [
@@ -10500,7 +10998,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1440,
-        "y": 520,
+        "y": 660,
         "wires": [
             [
                 "23480068.33efc"
@@ -10537,7 +11035,7 @@
         ],
         "queue": "none",
         "x": 1690,
-        "y": 520,
+        "y": 660,
         "wires": [
             []
         ]
@@ -10574,7 +11072,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1440,
-        "y": 420,
+        "y": 380,
         "wires": [
             [
                 "d4f8c710.220648"
@@ -10611,7 +11109,7 @@
         ],
         "queue": "none",
         "x": 1690,
-        "y": 420,
+        "y": 380,
         "wires": [
             []
         ]
@@ -10912,7 +11410,7 @@
         "template": "Open de ramen in de kelder, buiten is de vochtinhoud lager en temperatuur hoger. \\n \\nAbsolute vochtinhoud buiten: {{sensor.outdoor_absolutehumidity}} g/m³ \\nAbsolute vochtinhoud basement: {{sensor.basement_absolutehumidity}} g/m³ \\n \\nTemperatuur buiten: {{sensor.buienradar_temperature}} °C \\nTemperatuur basement: {{sensor.basement_temperature}} °C",
         "output": "str",
         "x": 1200,
-        "y": 520,
+        "y": 660,
         "wires": [
             [
                 "ee13c1d1.9b3f2",
@@ -12571,7 +13069,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "notify",
-        "service": "tv_01",
+        "service": "lg_webos_smart_tv",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -14030,7 +14528,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "notify",
-        "service": "tv_01",
+        "service": "lg_webos_smart_tv",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -22198,33 +22696,6 @@
             [
                 "d7eb7b2f57d080f8"
             ]
-        ]
-    },
-    {
-        "id": "99f2a4c013e94c5b",
-        "type": "inject",
-        "z": "61bef8ab2a5befa2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 560,
-        "y": 340,
-        "wires": [
-            []
         ]
     }
 ]
