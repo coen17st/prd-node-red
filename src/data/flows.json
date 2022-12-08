@@ -178,6 +178,14 @@
         "info": ""
     },
     {
+        "id": "8849528a34bc8399",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "off_mode",
@@ -232,21 +240,24 @@
         "in": [
             {
                 "x": 40,
-                "y": 80,
+                "y": 40,
                 "wires": [
                     {
-                        "id": "27d24c41.6784e4"
+                        "id": "87e756ffacd6829f"
+                    },
+                    {
+                        "id": "8818e636f63e70c7"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 1380,
-                "y": 380,
+                "x": 700,
+                "y": 940,
                 "wires": [
                     {
-                        "id": "c1223607.623888",
+                        "id": "b5d58b74756d067b",
                         "port": 0
                     }
                 ]
@@ -623,7 +634,7 @@
         "type": "junction",
         "z": "df5d8f386b74d541",
         "x": 600,
-        "y": 180,
+        "y": 260,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -651,6 +662,30 @@
         "wires": [
             [
                 "8afb3387.bc64f"
+            ]
+        ]
+    },
+    {
+        "id": "3f2d73738e07f715",
+        "type": "junction",
+        "z": "df5d8f386b74d541",
+        "x": 1580,
+        "y": 160,
+        "wires": [
+            [
+                "e954fe7e068d253c"
+            ]
+        ]
+    },
+    {
+        "id": "8a83c3e223e7aefe",
+        "type": "junction",
+        "z": "df5d8f386b74d541",
+        "x": 1580,
+        "y": 780,
+        "wires": [
+            [
+                "e954fe7e068d253c"
             ]
         ]
     },
@@ -1641,97 +1676,21 @@
         ]
     },
     {
-        "id": "27d24c41.6784e4",
+        "id": "0cb67556a76c3eb6",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "settings",
+        "name": "menu",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "webostv",
+        "service": "button",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"Settings\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 140,
-        "y": 80,
-        "wires": [
-            [
-                "bd4a65f1.2f10b8"
-            ]
-        ]
-    },
-    {
-        "id": "bd4a65f1.2f10b8",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 280,
-        "y": 80,
-        "wires": [
-            [
-                "c8a0bb04.4a9f38"
-            ]
-        ]
-    },
-    {
-        "id": "c8a0bb04.4a9f38",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction up",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionUp\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 430,
-        "y": 40,
-        "wires": [
-            [
-                "2959c718.54e398"
-            ]
-        ]
-    },
-    {
-        "id": "2959c718.54e398",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "ok",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"MENU\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -1741,17 +1700,17 @@
         "y": 40,
         "wires": [
             [
-                "802f5285.e58e9"
+                "9621a5ab59f17f1d"
             ]
         ]
     },
     {
-        "id": "802f5285.e58e9",
+        "id": "9621a5ab59f17f1d",
         "type": "delay",
         "z": "ae0491bb.4f1eb",
         "name": "",
         "pauseType": "delay",
-        "timeout": "4",
+        "timeout": "2",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -1760,724 +1719,556 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "x": 700,
-        "y": 40,
+        "x": 580,
+        "y": 100,
         "wires": [
             [
-                "eb43c55d.638068"
+                "a6141d7f24e678d5"
             ]
         ]
     },
     {
-        "id": "eb43c55d.638068",
+        "id": "a6141d7f24e678d5",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "direction right",
+        "name": "up",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "webostv",
+        "service": "button",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionRight\",\"device\":\"53126253\"}",
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"UP\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 860,
-        "y": 40,
+        "x": 570,
+        "y": 160,
         "wires": [
             [
-                "96014a75.b34268"
+                "372c256cc66284f8"
             ]
         ]
     },
     {
-        "id": "96014a75.b34268",
+        "id": "372c256cc66284f8",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "direction down",
+        "name": "enter",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "webostv",
+        "service": "button",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"ENTER\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 860,
-        "y": 80,
-        "wires": [
-            [
-                "6b3a8704.250e08"
-            ]
-        ]
-    },
-    {
-        "id": "6b3a8704.250e08",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 860,
-        "y": 120,
-        "wires": [
-            [
-                "1e9c39aa.2122b6"
-            ]
-        ]
-    },
-    {
-        "id": "1e9c39aa.2122b6",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "ok",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1010,
-        "y": 120,
-        "wires": [
-            [
-                "806c67ec.155ab8"
-            ]
-        ]
-    },
-    {
-        "id": "806c67ec.155ab8",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 1140,
-        "y": 120,
-        "wires": [
-            [
-                "6f77a077.2b592"
-            ]
-        ]
-    },
-    {
-        "id": "6f77a077.2b592",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1160,
-        "y": 180,
-        "wires": [
-            [
-                "8ad1f200.2c8b8"
-            ]
-        ]
-    },
-    {
-        "id": "8ad1f200.2c8b8",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1160,
+        "x": 570,
         "y": 220,
         "wires": [
             [
-                "9ab1aa55.96da68"
+                "634edaa3d367bcca"
             ]
         ]
     },
     {
-        "id": "9ab1aa55.96da68",
-        "type": "api-call-service",
+        "id": "634edaa3d367bcca",
+        "type": "delay",
         "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1160,
-        "y": 260,
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 280,
         "wires": [
             [
-                "a23d5005.46a28"
+                "82c3359a9c878c1b"
             ]
         ]
     },
     {
-        "id": "a23d5005.46a28",
+        "id": "82c3359a9c878c1b",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "direction down",
+        "name": "right",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "webostv",
+        "service": "button",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"RIGHT\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1160,
-        "y": 300,
-        "wires": [
-            [
-                "3241ea16.67d666"
-            ]
-        ]
-    },
-    {
-        "id": "3241ea16.67d666",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1160,
+        "x": 570,
         "y": 340,
         "wires": [
             [
-                "c1223607.623888"
+                "3b83b4b27e719961"
             ]
         ]
     },
     {
-        "id": "c1223607.623888",
+        "id": "3b83b4b27e719961",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "ok",
+        "name": "down",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "webostv",
+        "service": "button",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1130,
-        "y": 380,
+        "x": 570,
+        "y": 400,
+        "wires": [
+            [
+                "200180c86ab0497a"
+            ]
+        ]
+    },
+    {
+        "id": "200180c86ab0497a",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 460,
+        "wires": [
+            [
+                "4ea092644f9fb7ea"
+            ]
+        ]
+    },
+    {
+        "id": "2d232cf30f095ee3",
+        "type": "delay",
+        "z": "ae0491bb.4f1eb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "36cc4e864ed3816d"
+            ]
+        ]
+    },
+    {
+        "id": "4ea092644f9fb7ea",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "enter",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"ENTER\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 520,
+        "wires": [
+            [
+                "2d232cf30f095ee3"
+            ]
+        ]
+    },
+    {
+        "id": "36cc4e864ed3816d",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 640,
+        "wires": [
+            [
+                "2b197b6c70876464"
+            ]
+        ]
+    },
+    {
+        "id": "2b197b6c70876464",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 700,
+        "wires": [
+            [
+                "32fb32522351bf7a"
+            ]
+        ]
+    },
+    {
+        "id": "32fb32522351bf7a",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 760,
+        "wires": [
+            [
+                "99448eb7146c2a2f"
+            ]
+        ]
+    },
+    {
+        "id": "99448eb7146c2a2f",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 820,
+        "wires": [
+            [
+                "17ece4362f57060b"
+            ]
+        ]
+    },
+    {
+        "id": "17ece4362f57060b",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "down",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"DOWN\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 880,
+        "wires": [
+            [
+                "b5d58b74756d067b"
+            ]
+        ]
+    },
+    {
+        "id": "b5d58b74756d067b",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "enter",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "button",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"button\":\"ENTER\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 570,
+        "y": 940,
         "wires": [
             []
         ]
     },
     {
-        "id": "0cb67556a76c3eb6",
+        "id": "87e756ffacd6829f",
+        "type": "api-current-state",
+        "z": "ae0491bb.4f1eb",
+        "name": "state lg tv off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.lg_webos_smart_tv",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 190,
+        "y": 40,
+        "wires": [
+            [
+                "77a4b45bf5189c15"
+            ],
+            [
+                "0cb67556a76c3eb6"
+            ]
+        ]
+    },
+    {
+        "id": "77a4b45bf5189c15",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "settings",
+        "name": "turn on lg tv",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "wake_on_lan",
+        "service": "send_magic_packet",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"Settings\",\"device\":\"53126253\"}",
+        "data": "{\"mac\":\"38:8c:50:62:11:4d\",\"broadcast_address\":\"192.168.30.50\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 160,
-        "y": 480,
+        "x": 370,
+        "y": 20,
         "wires": [
             [
-                "cf00d899d2781cb6"
+                "0cb67556a76c3eb6"
             ]
         ]
     },
     {
-        "id": "cf00d899d2781cb6",
-        "type": "delay",
+        "id": "8818e636f63e70c7",
+        "type": "api-current-state",
         "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 160,
-        "y": 520,
+        "name": "state shield off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.shield",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 200,
+        "y": 80,
         "wires": [
             [
-                "e0f1e08196cc43ed"
-            ]
+                "be65f0d63b84b58c"
+            ],
+            []
         ]
     },
     {
-        "id": "e0f1e08196cc43ed",
+        "id": "be65f0d63b84b58c",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "direction up",
+        "name": "turn on shield",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "media_player",
+        "service": "turn_on",
         "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionUp\",\"device\":\"53126253\"}",
-        "dataType": "json",
+        "deviceId": [
+            "aa1a5fa6d13fc3224345d871874f8619"
+        ],
+        "entityId": [
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 170,
-        "y": 560,
-        "wires": [
-            [
-                "492f9c2f417adbc0"
-            ]
-        ]
-    },
-    {
-        "id": "492f9c2f417adbc0",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "ok",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 150,
-        "y": 600,
-        "wires": [
-            [
-                "61868499a0e641a7"
-            ]
-        ]
-    },
-    {
-        "id": "61868499a0e641a7",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 160,
-        "y": 640,
-        "wires": [
-            [
-                "aa61b3bb09b8e640"
-            ]
-        ]
-    },
-    {
-        "id": "aa61b3bb09b8e640",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction right",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionRight\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 680,
-        "wires": [
-            [
-                "9c84278ddd3b4b7c"
-            ]
-        ]
-    },
-    {
-        "id": "9c84278ddd3b4b7c",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 720,
-        "wires": [
-            [
-                "b949cdb0a6b89e6d"
-            ]
-        ]
-    },
-    {
-        "id": "b949cdb0a6b89e6d",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 760,
-        "wires": [
-            [
-                "ee2763a4c7d55b6e"
-            ]
-        ]
-    },
-    {
-        "id": "ee2763a4c7d55b6e",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "ok",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 150,
-        "y": 800,
-        "wires": [
-            [
-                "ec672ea39b8cb757"
-            ]
-        ]
-    },
-    {
-        "id": "ec672ea39b8cb757",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 160,
-        "y": 840,
-        "wires": [
-            [
-                "29bc7fa15d86492c"
-            ]
-        ]
-    },
-    {
-        "id": "29bc7fa15d86492c",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 880,
-        "wires": [
-            [
-                "59da5ab9e20994ab"
-            ]
-        ]
-    },
-    {
-        "id": "59da5ab9e20994ab",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 920,
-        "wires": [
-            [
-                "ce6efda282df248d"
-            ]
-        ]
-    },
-    {
-        "id": "ce6efda282df248d",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 960,
-        "wires": [
-            [
-                "4556255aaaa94371"
-            ]
-        ]
-    },
-    {
-        "id": "4556255aaaa94371",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 1000,
-        "wires": [
-            [
-                "8a87f73650b20136"
-            ]
-        ]
-    },
-    {
-        "id": "8a87f73650b20136",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "direction down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"DirectionDown\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 180,
-        "y": 1040,
-        "wires": [
-            [
-                "65bc6278f83c250e"
-            ]
-        ]
-    },
-    {
-        "id": "65bc6278f83c250e",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "ok",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"entity_id\":\"remote.harmony_hub_1\",\"command\":\"OK\",\"device\":\"53126253\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 150,
-        "y": 1080,
+        "x": 380,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5221,12 +5012,14 @@
                 "e101cb7ce1fd0970",
                 "6af74f914175416e",
                 "e0b2abfe.e5f668",
-                "ec7fc97b85fc874f"
+                "ec7fc97b85fc874f",
+                "57e5e121ffdbfd66"
             ],
             [
                 "db55b88457c68f5a",
                 "543ebe7.ceeb34",
-                "ec7fc97b85fc874f"
+                "ec7fc97b85fc874f",
+                "0b3eee8df6f7d979"
             ]
         ]
     },
@@ -5331,7 +5124,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 450,
-        "y": 160,
+        "y": 240,
         "wires": [
             [
                 "ebd55c80f4d49503"
@@ -5363,7 +5156,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1050,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "69a0749d.4f467c"
@@ -5387,7 +5180,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -5416,7 +5209,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1410,
-        "y": 180,
+        "y": 260,
         "wires": [
             []
         ]
@@ -5453,7 +5246,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 220,
+        "y": 300,
         "wires": [
             [
                 "f99fb5b5de6ba970"
@@ -5483,7 +5276,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1440,
-        "y": 240,
+        "y": 320,
         "wires": [
             []
         ]
@@ -5510,7 +5303,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1420,
-        "y": 300,
+        "y": 380,
         "wires": [
             []
         ]
@@ -5547,7 +5340,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 280,
+        "y": 360,
         "wires": [
             [
                 "5dbf80c959123905"
@@ -5572,7 +5365,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 300,
+        "y": 380,
         "wires": [
             [
                 "c02a96fab9d6d716"
@@ -5611,7 +5404,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
                 "502ed746a5dd4b84"
@@ -5641,7 +5434,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1050,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
                 "7fb9ce14.0e751"
@@ -5665,7 +5458,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
                 "8a22a508.80a108"
@@ -5704,7 +5497,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1420,
-        "y": 360,
+        "y": 440,
         "wires": [
             [],
             []
@@ -5728,7 +5521,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 880,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "407ba343.c0affc"
@@ -5757,7 +5550,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 690,
-        "y": 640,
+        "y": 720,
         "wires": [
             []
         ]
@@ -5794,7 +5587,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 640,
+        "y": 720,
         "wires": [
             [
                 "1a921b80.6cb295"
@@ -5834,7 +5627,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "ecbb9c1d.54996"
@@ -5864,7 +5657,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 690,
-        "y": 460,
+        "y": 540,
         "wires": [
             []
         ]
@@ -5891,7 +5684,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 720,
-        "y": 520,
+        "y": 600,
         "wires": [
             []
         ]
@@ -5928,7 +5721,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 520,
+        "y": 600,
         "wires": [
             [
                 "bda1346b2f42aaaf"
@@ -5966,7 +5759,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 400,
+        "y": 480,
         "wires": [
             []
         ]
@@ -5991,7 +5784,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 580,
+        "y": 660,
         "wires": [
             []
         ]
@@ -6033,12 +5826,153 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 700,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "134e114c720a4f35"
             ],
             []
+        ]
+    },
+    {
+        "id": "0b3eee8df6f7d979",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state garbage today",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Geen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "sensor.afval_vandaag",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 460,
+        "y": 780,
+        "wires": [
+            [
+                "7587cad2483c7fe0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "57e5e121ffdbfd66",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state garbage tomorrow",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Geen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "sensor.afval_morgen",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "90fa355210409171"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "90fa355210409171",
+        "type": "template",
+        "z": "df5d8f386b74d541",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Morgen wordt de {{payload}} container opgehaald.",
+        "output": "str",
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "3f2d73738e07f715"
+            ]
+        ]
+    },
+    {
+        "id": "e954fe7e068d253c",
+        "type": "link out",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "links": [
+            "e0ebe989.841c68",
+            "7b0f1685.0279d8"
+        ],
+        "x": 1715,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "7587cad2483c7fe0",
+        "type": "template",
+        "z": "df5d8f386b74d541",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vandaag wordt de {{payload}} container opgehaald.",
+        "output": "str",
+        "x": 660,
+        "y": 780,
+        "wires": [
+            [
+                "8a83c3e223e7aefe"
+            ]
         ]
     },
     {
@@ -22696,6 +22630,49 @@
             [
                 "d7eb7b2f57d080f8"
             ]
+        ]
+    },
+    {
+        "id": "be738c4ee4b83e0f",
+        "type": "debug",
+        "z": "8849528a34bc8399",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "81c2264ceaf595c6",
+        "type": "inject",
+        "z": "8849528a34bc8399",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 420,
+        "wires": [
+            []
         ]
     }
 ]
