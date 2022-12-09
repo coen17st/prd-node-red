@@ -17,4 +17,5 @@ RUN npm install \
     node-red-contrib-stoptimer \
     node-red-contrib-string \
     node-red-contrib-time-range-switch \
-    node-red-contrib-traffic
+    node-red-contrib-traffic \
+    node-red-contrib-flow-manager
