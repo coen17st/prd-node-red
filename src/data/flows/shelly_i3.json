@@ -1,0 +1,607 @@
+[
+  {
+    "id": "f180ab88.925788",
+    "type": "tab",
+    "label": "shelly_i3",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "1744a4b7.bf476b",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw2/shortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 660,
+    "wires": [
+      [
+        "bd9414b6.e33db8",
+        "bfb3705a.97302"
+      ]
+    ]
+  },
+  {
+    "id": "bd9414b6.e33db8",
+    "type": "template",
+    "z": "f180ab88.925788",
+    "name": "html page",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "<html>\n    <head></head>\n    <body>\n        <h1>url: {{req.url}}</h1>\n        <h1>method: {{req.method}}</h1>\n    </body>\n</html>",
+    "x": 440,
+    "y": 120,
+    "wires": [
+      [
+        "de8e98e8.de6cb8"
+      ]
+    ]
+  },
+  {
+    "id": "de8e98e8.de6cb8",
+    "type": "http response",
+    "z": "f180ab88.925788",
+    "name": "http response",
+    "statusCode": "",
+    "headers": {},
+    "x": 600,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "23adc282.4b50fe",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "toggle childlock kitchen switch",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "switch.childlock_kitchen_switch"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 830,
+    "y": 780,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "dd28a240.39e4c",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw1/shortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 160,
+    "wires": [
+      [
+        "7dc39f07.0f3dc",
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "7dc39f07.0f3dc",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "toggle light backyard",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_backyard_string_l"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 800,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4c6493d9.d3994c",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw1/2xshortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 280,
+    "wires": [
+      [
+        "bd9414b6.e33db8",
+        "93c5a708.6034b8"
+      ]
+    ]
+  },
+  {
+    "id": "c035bfe3.65223",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw1/3xshortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 340,
+    "wires": [
+      [
+        "c4aeda1d.85afa8",
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "b7cb4077.7c896",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw1/longpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 220,
+    "wires": [
+      [
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "573a7c42.323584",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw1/shortlongpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 160,
+    "y": 400,
+    "wires": [
+      [
+        "bd9414b6.e33db8",
+        "a8a674f.b7a5f88"
+      ]
+    ]
+  },
+  {
+    "id": "5aeec774.e42788",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw1/longshortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 160,
+    "y": 480,
+    "wires": [
+      [
+        "a682fb38.5bddb8",
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "2029a45c.da097c",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw2/2xshortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 780,
+    "wires": [
+      [
+        "bd9414b6.e33db8",
+        "23adc282.4b50fe"
+      ]
+    ]
+  },
+  {
+    "id": "cfe4e96a.778968",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw2/3xshortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 840,
+    "wires": [
+      [
+        "bd9414b6.e33db8",
+        "4bf2349a.895f9c"
+      ]
+    ]
+  },
+  {
+    "id": "ce607043.8c34d",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw2/longpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 150,
+    "y": 720,
+    "wires": [
+      [
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "34269c6c.0fe4c4",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw2/shortlongpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 160,
+    "y": 900,
+    "wires": [
+      [
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "fe2d0c08.d90d",
+    "type": "http in",
+    "z": "f180ab88.925788",
+    "name": "",
+    "url": "/shellyi3/sw2/longshortpressed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 160,
+    "y": 960,
+    "wires": [
+      [
+        "bd9414b6.e33db8"
+      ]
+    ]
+  },
+  {
+    "id": "c4aeda1d.85afa8",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "toggle switch sleepmode",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_boolean",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.sleep_mode"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 810,
+    "y": 340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a682fb38.5bddb8",
+    "type": "api-current-state",
+    "z": "f180ab88.925788",
+    "name": "state radio station ",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "Radio Uit",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_select.radio_station",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 570,
+    "y": 480,
+    "wires": [
+      [
+        "c3116dd.2ddc69"
+      ],
+      [
+        "8cf0345.f0a8ec8"
+      ]
+    ]
+  },
+  {
+    "id": "c3116dd.2ddc69",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "select radio station",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_select",
+    "service": "select_option",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_select.radio_station"
+    ],
+    "data": "{\"option\":\"NPO Radio 2\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 790,
+    "y": 480,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8cf0345.f0a8ec8",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "select radio station",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_select",
+    "service": "select_option",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_select.radio_station"
+    ],
+    "data": "{\"option\":\"Radio Uit\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 790,
+    "y": 520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a8a674f.b7a5f88",
+    "type": "api-current-state",
+    "z": "f180ab88.925788",
+    "name": "state spotify playlist",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "Spotify Uit",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_select.spotify_playlist",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 570,
+    "y": 400,
+    "wires": [
+      [
+        "5d60f805.0a0708"
+      ],
+      [
+        "8e12adb4.621f8"
+      ]
+    ]
+  },
+  {
+    "id": "5d60f805.0a0708",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "select spotify playlist",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_select",
+    "service": "select_option",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_select.spotify_playlist"
+    ],
+    "data": "{\"option\":\"Mijn Muziek\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 800,
+    "y": 400,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8e12adb4.621f8",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "select spotify playlist",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_select",
+    "service": "select_option",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_select.radio_station"
+    ],
+    "data": "{\"option\":\"Spotify Uit\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 800,
+    "y": 440,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bfb3705a.97302",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "name": "toggle light barn hanging lamp",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_barn_hanging_lamp"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 830,
+    "y": 660,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4bf2349a.895f9c",
+    "type": "subflow:79544bf2.1ff3a4",
+    "z": "f180ab88.925788",
+    "name": "",
+    "x": 750,
+    "y": 840,
+    "wires": []
+  },
+  {
+    "id": "93c5a708.6034b8",
+    "type": "api-call-service",
+    "z": "f180ab88.925788",
+    "d": true,
+    "name": "toggle light christmas tree",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "toggle",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.christmas_tree"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 810,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "be5d4d4b.0809d",
+    "type": "comment",
+    "z": "f180ab88.925788",
+    "name": "shelly i3 actions ",
+    "info": "[shellyi3.lan](http://shellyi3.lan)",
+    "x": 100,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "107c0d4b.910593",
+    "type": "comment",
+    "z": "f180ab88.925788",
+    "name": "shelly i3 actions",
+    "info": "",
+    "x": 100,
+    "y": 620,
+    "wires": []
+  }
+]

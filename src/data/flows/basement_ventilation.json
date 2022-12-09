@@ -1,0 +1,2535 @@
+[
+  {
+    "id": "4e909abe.0b62e4",
+    "type": "tab",
+    "label": "basement_ventilation",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "a0fea0e8.d9a66",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state heating power basement  > 5",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.basement_heating",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "num",
+    "haltifstate": "5",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 400,
+    "y": 320,
+    "wires": [
+      [
+        "3c8358ad.4658e8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "cbe4be0.ad6c74",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state wall temperature basement < dewpoint living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.living_room_dewpoint",
+    "halt_if_type": "msg",
+    "halt_if_compare": "lt",
+    "entity_id": "sensor.basement_wall_temperature_offset",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_wall_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 770,
+    "y": 140,
+    "wires": [
+      [
+        "c12f7192.293c9"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "ff0ab6a6.950ca8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state wall temperature basement < dewpoint master bedroom",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.master_bedroom_dewpoint",
+    "halt_if_type": "msg",
+    "halt_if_compare": "lt",
+    "entity_id": "sensor.basement_wall_temperature_offset",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_wall_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 780,
+    "y": 200,
+    "wires": [
+      [
+        "d2804939.6f48f8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "8a2090d8.a2185",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state absolute humidity basement < absolute humidity living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.living_room_absolutehumidity",
+    "halt_if_type": "msg",
+    "halt_if_compare": "lt",
+    "entity_id": "sensor.basement_absolutehumidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 800,
+    "y": 260,
+    "wires": [
+      [
+        "b8424afd.8d7fe8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "bfdcba16.625018",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state ventilation position 0 off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_position_0",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanical_ventilation_position_1",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1220,
+    "y": 720,
+    "wires": [
+      [
+        "3f57f7c64c501b93"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "71ae7bb3.7f9984",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "MECHANICAL VENTILATION POSITION 0",
+    "info": "",
+    "x": 420,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "ea6ec719.ab0d88",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "CONDITIONS & DATA",
+    "info": "",
+    "x": 360,
+    "y": 400,
+    "wires": []
+  },
+  {
+    "id": "75db2fdc.c1e22",
+    "type": "inject",
+    "z": "4e909abe.0b62e4",
+    "name": "start_flow",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "900",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "start_flow",
+    "payloadType": "str",
+    "x": 90,
+    "y": 100,
+    "wires": [
+      [
+        "eaba4c18.04007",
+        "476a9b5a.95d894",
+        "4abb03cf.8c49ec",
+        "599646a9.361b38"
+      ]
+    ]
+  },
+  {
+    "id": "e07362ff.ad189",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state temperature outdoor <= 5",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "5",
+    "halt_if_type": "num",
+    "halt_if_compare": "lte",
+    "entity_id": "sensor.buienradar_temperature",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.buienradar_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 390,
+    "y": 720,
+    "wires": [
+      [
+        "f58250ec.e0fa1"
+      ],
+      [
+        "240fac46.902e04"
+      ]
+    ]
+  },
+  {
+    "id": "13e032a.2acbbcd",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state heating power basement <= 0%",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "0",
+    "halt_if_type": "num",
+    "halt_if_compare": "lte",
+    "entity_id": "sensor.basement_heating",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_heating",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1210,
+    "y": 560,
+    "wires": [
+      [
+        "4e1d6c0e.bd6b44"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "eaba4c18.04007",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state dewpoint living room ",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.living_room_dewpoint",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 370,
+    "y": 140,
+    "wires": [
+      [
+        "cbe4be0.ad6c74"
+      ]
+    ]
+  },
+  {
+    "id": "476a9b5a.95d894",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state dewpoint master bedroom ",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.master_bedroom_dewpoint",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.master_bedroom_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 390,
+    "y": 200,
+    "wires": [
+      [
+        "ff0ab6a6.950ca8"
+      ]
+    ]
+  },
+  {
+    "id": "4abb03cf.8c49ec",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state absolute humidity living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.living_room_absolutehumidity",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 400,
+    "y": 260,
+    "wires": [
+      [
+        "8a2090d8.a2185"
+      ]
+    ]
+  },
+  {
+    "id": "599646a9.361b38",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state dewpoint living room ",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.living_room_dewpoint",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 370,
+    "y": 440,
+    "wires": [
+      [
+        "87cfa72a.3e07e8"
+      ]
+    ]
+  },
+  {
+    "id": "87cfa72a.3e07e8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state wall temperature basement  < dewpoint living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.living_room_dewpoint",
+    "halt_if_type": "msg",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.basement_wall_temperature_offset",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_wall_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 770,
+    "y": 440,
+    "wires": [
+      [
+        "e07eea7c.6e4af8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "e07eea7c.6e4af8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state master bedroom dewpoint",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.master_bedroom_dewpoint",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.master_bedroom_dewpoint",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 390,
+    "y": 500,
+    "wires": [
+      [
+        "a028c18f.9355b"
+      ]
+    ]
+  },
+  {
+    "id": "a028c18f.9355b",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state wall temperature basement < dewpoint master bedroom",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.master_bedroom_dewpoint",
+    "halt_if_type": "msg",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.basement_wall_temperature_offset",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_wall_temperature_offset",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 780,
+    "y": 500,
+    "wires": [
+      [
+        "4bc7b417.d7b80c"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "4bc7b417.d7b80c",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state absolute humidity living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.living_room_absolutehumidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 400,
+    "y": 560,
+    "wires": [
+      [
+        "56b3697b.621e98"
+      ]
+    ]
+  },
+  {
+    "id": "56b3697b.621e98",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state absolute humidity basement > absolute humidity living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "sensor.living_room_absolutehumidity",
+    "halt_if_type": "msg",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.basement_absolutehumidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_absolutehumidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 800,
+    "y": 560,
+    "wires": [
+      [
+        "13e032a.2acbbcd"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "5066d89a.d3afd8",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "MECHANICAL VENTILATION POSITION 2",
+    "info": "",
+    "x": 420,
+    "y": 780,
+    "wires": []
+  },
+  {
+    "id": "240fac46.902e04",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state group persons home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "group.persons",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "group.persons",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 370,
+    "y": 820,
+    "wires": [
+      [
+        "610ee8e1.0e94b8"
+      ],
+      [
+        "65f41c8.8e8cde4"
+      ]
+    ]
+  },
+  {
+    "id": "46771664.f639e8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state ventilation position 2 off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_position_2",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanical_ventilation_position_2",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1220,
+    "y": 800,
+    "wires": [
+      [
+        "54922ba7.31ebb4"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "48b7ec1c.3e71b4",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "MECHANICAL VENTILATION POSITION 3",
+    "info": "",
+    "x": 420,
+    "y": 900,
+    "wires": []
+  },
+  {
+    "id": "b5d8b43d.943a18",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state ventilation position 3 off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_position_3",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanical_ventilation_position_3",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1220,
+    "y": 940,
+    "wires": [
+      [
+        "320c3cf2.5620d4"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "defe3bd3.cdc4d8",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state group person",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "group.persons",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 160,
+    "wires": [
+      [
+        "eaba4c18.04007",
+        "476a9b5a.95d894",
+        "4abb03cf.8c49ec",
+        "599646a9.361b38"
+      ]
+    ]
+  },
+  {
+    "id": "4146f6c2.d77108",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state guest",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.guest",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 80,
+    "y": 220,
+    "wires": [
+      [
+        "eaba4c18.04007",
+        "476a9b5a.95d894",
+        "4abb03cf.8c49ec",
+        "599646a9.361b38"
+      ]
+    ]
+  },
+  {
+    "id": "55ffc090.d9b5b",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "MECHANICAL VENTILATION POSITION MANUAL",
+    "info": "",
+    "x": 450,
+    "y": 1020,
+    "wires": []
+  },
+  {
+    "id": "7fcc0134.64917",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 1 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_1",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1060,
+    "wires": [
+      [
+        "9e8a7cf7.88d51"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "1a262b04.0f6c75",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state autonomous",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_autonomous",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 280,
+    "wires": [
+      [
+        "eaba4c18.04007",
+        "476a9b5a.95d894",
+        "4abb03cf.8c49ec",
+        "599646a9.361b38"
+      ]
+    ]
+  },
+  {
+    "id": "533ea7cb.8c5ca8",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "MECHANICAL VENTILATION POSITION 1",
+    "info": "",
+    "x": 420,
+    "y": 680,
+    "wires": []
+  },
+  {
+    "id": "4e1d6c0e.bd6b44",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state autonomous on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_autonomous",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_autonoom",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1480,
+    "y": 560,
+    "wires": [
+      [
+        "52a3b09f.ae48"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "52a3b09f.ae48",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state humidity basement >= 60%",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "60",
+    "halt_if_type": "num",
+    "halt_if_compare": "gt",
+    "entity_id": "sensor.basement_humidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_humidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 400,
+    "y": 620,
+    "wires": [
+      [
+        "e21c63fd.6345e"
+      ],
+      [
+        "4b24c6f.ecf9538"
+      ]
+    ]
+  },
+  {
+    "id": "e21c63fd.6345e",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state temperature basement ",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.basement_temperature",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 680,
+    "y": 620,
+    "wires": [
+      [
+        "d21542c5.837e4"
+      ]
+    ]
+  },
+  {
+    "id": "d21542c5.837e4",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state temperature living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.living_room_temperature",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_temperature",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 940,
+    "y": 620,
+    "wires": [
+      [
+        "ea92ebb5.4d1288"
+      ]
+    ]
+  },
+  {
+    "id": "ea92ebb5.4d1288",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state humidity living room",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.living_room_humidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.living_room_humidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1190,
+    "y": 620,
+    "wires": [
+      [
+        "a037b96e.97bc58"
+      ]
+    ]
+  },
+  {
+    "id": "9a6df146.3a1aa",
+    "type": "api-call-service",
+    "z": "4e909abe.0b62e4",
+    "name": "app notification",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "persistent_notification",
+    "service": "create",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\"notification_id\":\"{{notification_id}}\",\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 2400,
+    "y": 1160,
+    "wires": [
+      [
+        "27cc17cd.025b08"
+      ]
+    ]
+  },
+  {
+    "id": "c7b58913.752ad8",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{topic}} stand 2 is automatisch ingeschakeld.",
+    "output": "str",
+    "x": 1700,
+    "y": 800,
+    "wires": [
+      [
+        "8373567d.35b008"
+      ]
+    ]
+  },
+  {
+    "id": "5ce9303e.d40b8",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{topic}} stand 3 is automatisch ingeschakeld.",
+    "output": "str",
+    "x": 1700,
+    "y": 940,
+    "wires": [
+      [
+        "8373567d.35b008"
+      ]
+    ]
+  },
+  {
+    "id": "8373567d.35b008",
+    "type": "change",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "Mechanische Ventilatie",
+        "tot": "str"
+      },
+      {
+        "t": "set",
+        "p": "notification_id",
+        "pt": "msg",
+        "to": "Mechanische Ventilatie",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1980,
+    "y": 1160,
+    "wires": [
+      [
+        "1c8856d3.d19249",
+        "289089f4.e41b76"
+      ]
+    ]
+  },
+  {
+    "id": "a037b96e.97bc58",
+    "type": "change",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "topic",
+        "pt": "msg",
+        "to": "Mechanische ventilatie",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1450,
+    "y": 620,
+    "wires": [
+      [
+        "e07362ff.ad189"
+      ]
+    ]
+  },
+  {
+    "id": "27cc17cd.025b08",
+    "type": "delay",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "2",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "outputs": 1,
+    "x": 2560,
+    "y": 1160,
+    "wires": [
+      [
+        "f05f69b7b628264f"
+      ]
+    ]
+  },
+  {
+    "id": "610ee8e1.0e94b8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state humidity basement < 65%",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "65",
+    "halt_if_type": "num",
+    "halt_if_compare": "lt",
+    "entity_id": "sensor.basement_humidity",
+    "state_type": "num",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "sensor.basement_humidity",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 730,
+    "y": 820,
+    "wires": [
+      [
+        "46771664.f639e8"
+      ],
+      [
+        "adc16743.ab04f8"
+      ]
+    ]
+  },
+  {
+    "id": "adc16743.ab04f8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state thermostate living room off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "heat",
+    "halt_if_type": "str",
+    "halt_if_compare": "is_not",
+    "entity_id": "climate.living_room",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 990,
+    "y": 880,
+    "wires": [
+      [
+        "65f41c8.8e8cde4"
+      ],
+      [
+        "46771664.f639e8"
+      ]
+    ]
+  },
+  {
+    "id": "65f41c8.8e8cde4",
+    "type": "time-range-switch",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "lat": "52.04436",
+    "lon": "5.67134",
+    "startTime": "09:00",
+    "endTime": "22:00",
+    "startOffset": 0,
+    "endOffset": 0,
+    "x": 330,
+    "y": 940,
+    "wires": [
+      [
+        "b5d8b43d.943a18"
+      ],
+      [
+        "46771664.f639e8"
+      ]
+    ]
+  },
+  {
+    "id": "320c3cf2.5620d4",
+    "type": "subflow:7d5d30e3.483af",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "env": [],
+    "x": 1490,
+    "y": 940,
+    "wires": [
+      [
+        "5ce9303e.d40b8"
+      ]
+    ]
+  },
+  {
+    "id": "d2804939.6f48f8",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de mslaapkmer is {{ssensor.master_bedroom_dewpoint}} ℃   ",
+    "output": "str",
+    "x": 1120,
+    "y": 200,
+    "wires": [
+      [
+        "476cfb88.13ea74"
+      ]
+    ]
+  },
+  {
+    "id": "b8424afd.8d7fe8",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_absolutehumidity}} g/m³ is hoger dan in de kelder {{sensor.basement_absolutehumidity}} g/m³",
+    "output": "str",
+    "x": 1120,
+    "y": 260,
+    "wires": [
+      [
+        "476cfb88.13ea74"
+      ]
+    ]
+  },
+  {
+    "id": "3c8358ad.4658e8",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{payload}}%",
+    "output": "str",
+    "x": 1120,
+    "y": 320,
+    "wires": [
+      [
+        "476cfb88.13ea74"
+      ]
+    ]
+  },
+  {
+    "id": "476cfb88.13ea74",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state ventilation position 0 off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_position_0",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_stand_uit",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1340,
+    "y": 220,
+    "wires": [
+      [
+        "d38a7750.f848b8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "d38a7750.f848b8",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation autonomous on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_autonomous",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_autonoom",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1650,
+    "y": 220,
+    "wires": [
+      [
+        "83e00d58.7e733"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f5c03471.585f88",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 2 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_2",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1120,
+    "wires": [
+      [
+        "5fba04f5.3847ac"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "fce79366.4dc17",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 3 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_3",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1180,
+    "wires": [
+      [
+        "cbdc5416.0cbcd8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9c749cb3.fd1b8",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 0 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_0",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1240,
+    "wires": [
+      [
+        "91b0640c.1b4d68"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9e8a7cf7.88d51",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische Ventilatie stand 1 is handmatig ingeschakeld.",
+    "output": "str",
+    "x": 680,
+    "y": 1060,
+    "wires": [
+      [
+        "46d491e1.18c83"
+      ]
+    ]
+  },
+  {
+    "id": "5fba04f5.3847ac",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische Ventilatie stand 2 is handmatig ingeschakeld.",
+    "output": "str",
+    "x": 680,
+    "y": 1120,
+    "wires": [
+      [
+        "46d491e1.18c83"
+      ]
+    ]
+  },
+  {
+    "id": "cbdc5416.0cbcd8",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische Ventilatie stand 3 is handmatig ingeschakeld.",
+    "output": "str",
+    "x": 680,
+    "y": 1180,
+    "wires": [
+      [
+        "46d491e1.18c83"
+      ]
+    ]
+  },
+  {
+    "id": "91b0640c.1b4d68",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische Ventilatie is handmatig uitgeschakeld.",
+    "output": "str",
+    "x": 680,
+    "y": 1240,
+    "wires": [
+      [
+        "46d491e1.18c83"
+      ]
+    ]
+  },
+  {
+    "id": "46d491e1.18c83",
+    "type": "api-current-state",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation autonomous off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.mechanical_ventilation_autonomous",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "input_boolean.mechanische_ventilatie_autonoom",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1030,
+    "y": 1160,
+    "wires": [
+      [
+        "8373567d.35b008"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "83e00d58.7e733",
+    "type": "subflow:ae97b8c4.cadf68",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "env": [],
+    "x": 1970,
+    "y": 220,
+    "wires": [
+      [
+        "8373567d.35b008"
+      ]
+    ]
+  },
+  {
+    "id": "54922ba7.31ebb4",
+    "type": "subflow:279f5735.2f95d8",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "x": 1490,
+    "y": 800,
+    "wires": [
+      [
+        "c7b58913.752ad8"
+      ]
+    ]
+  },
+  {
+    "id": "7b52e1a6.51c84",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "INPUT BOOLEAN MECHANICAL VENTILATION",
+    "info": "",
+    "x": 440,
+    "y": 1300,
+    "wires": []
+  },
+  {
+    "id": "dcb087f1.7dab78",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 0 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_0",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1340,
+    "wires": [
+      [
+        "1bd4cbe8.185c54"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "8e51a253.d8dde",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 1 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_1",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1400,
+    "wires": [
+      [
+        "234dfa41.bd6986"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c83efd35.f7a48",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 2 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_2",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1460,
+    "wires": [
+      [
+        "66f4c227.6b8aac"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "cb035d1b.0d3f9",
+    "type": "server-state-changed",
+    "z": "4e909abe.0b62e4",
+    "name": "state mechanical ventilation position 3 on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.mechanical_ventilation_position_3",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 420,
+    "y": 1520,
+    "wires": [
+      [
+        "6e490cae.31f974"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "234dfa41.bd6986",
+    "type": "subflow:db575387.da1ff",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "env": [],
+    "x": 750,
+    "y": 1400,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1bd4cbe8.185c54",
+    "type": "subflow:ae97b8c4.cadf68",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "env": [],
+    "x": 750,
+    "y": 1340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6e490cae.31f974",
+    "type": "subflow:7d5d30e3.483af",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "env": [],
+    "x": 750,
+    "y": 1520,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "66f4c227.6b8aac",
+    "type": "subflow:279f5735.2f95d8",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "x": 750,
+    "y": 1460,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1c8856d3.d19249",
+    "type": "change",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "rules": [
+      {
+        "t": "change",
+        "p": "message",
+        "pt": "msg",
+        "from": "\\n",
+        "fromt": "str",
+        "to": "",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 2180,
+    "y": 1160,
+    "wires": [
+      [
+        "9a6df146.3a1aa"
+      ]
+    ]
+  },
+  {
+    "id": "c12f7192.293c9",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is{{sensor.living_room_dewpoint}} ℃ ",
+    "output": "str",
+    "x": 1120,
+    "y": 140,
+    "wires": [
+      [
+        "476cfb88.13ea74"
+      ]
+    ]
+  },
+  {
+    "id": "f58250ec.e0fa1",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{topic}} stand 1 is automatisch ingeschakeld. Het is buiten {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
+    "output": "str",
+    "x": 980,
+    "y": 740,
+    "wires": [
+      [
+        "bfdcba16.625018"
+      ]
+    ]
+  },
+  {
+    "id": "4b24c6f.ecf9538",
+    "type": "template",
+    "z": "4e909abe.0b62e4",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{topic}} stand 1 is automatisch ingeschakeld. De luchtvochtigheid in de kelder is {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
+    "output": "str",
+    "x": 980,
+    "y": 700,
+    "wires": [
+      [
+        "bfdcba16.625018"
+      ]
+    ]
+  },
+  {
+    "id": "289089f4.e41b76",
+    "type": "link out",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 2095,
+    "y": 1100,
+    "wires": []
+  },
+  {
+    "id": "f05f69b7b628264f",
+    "type": "ha-sensor",
+    "z": "4e909abe.0b62e4",
+    "name": "Message Ventilatie",
+    "entityConfig": "24b246c8.4c72fa",
+    "version": 0,
+    "state": "message",
+    "stateType": "msg",
+    "attributes": [],
+    "inputOverride": "allow",
+    "outputProperties": [],
+    "x": 2750,
+    "y": 1160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "46fd77b05f226788",
+    "type": "comment",
+    "z": "4e909abe.0b62e4",
+    "name": "basement ventilation",
+    "info": "",
+    "x": 110,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "3f57f7c64c501b93",
+    "type": "subflow:ae97b8c4.cadf68",
+    "z": "4e909abe.0b62e4",
+    "name": "",
+    "x": 1490,
+    "y": 720,
+    "wires": [
+      [
+        "8373567d.35b008"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,363 @@
+[
+  {
+    "id": "99804b5f.9adb6",
+    "type": "subflow",
+    "name": "alarm lights",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 40,
+        "y": 100,
+        "wires": [
+          {
+            "id": "fd745c51.01fc5"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "color": "#DDAA99"
+  },
+  {
+    "id": "af7b80fc.c3023",
+    "type": "api-call-service",
+    "z": "99804b5f.9adb6",
+    "name": "restore light on state",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{payload.entity_id}}"
+    ],
+    "data": "{\"brightness\":\"{{payload.attributes.brightness}}\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1160,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bcb3a700.ce17f8",
+    "type": "ha-get-entities",
+    "z": "99804b5f.9adb6",
+    "name": "get all lights",
+    "server": "4ba92433.2478cc",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "starts_with",
+        "value": "light.shelly",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "split",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "payload",
+    "output_results_count": 1,
+    "x": 330,
+    "y": 100,
+    "wires": [
+      [
+        "cf32e234.47719",
+        "fc63001e.69dc4"
+      ]
+    ]
+  },
+  {
+    "id": "5230c2e.d12123c",
+    "type": "switch",
+    "z": "99804b5f.9adb6",
+    "name": "on / off",
+    "property": "payload.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "on",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "off",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 950,
+    "y": 180,
+    "wires": [
+      [
+        "af7b80fc.c3023"
+      ],
+      [
+        "e15ce8b1.b6e1b8"
+      ]
+    ]
+  },
+  {
+    "id": "e15ce8b1.b6e1b8",
+    "type": "api-call-service",
+    "z": "99804b5f.9adb6",
+    "name": "restore light off state",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "{{payload.domain}}",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "{{payload.entity_id}}"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1160,
+    "y": 200,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ff3fd036.814d8",
+    "type": "delay",
+    "z": "99804b5f.9adb6",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "outputs": 1,
+    "x": 740,
+    "y": 280,
+    "wires": [
+      [
+        "c6fb625.0c939a"
+      ]
+    ]
+  },
+  {
+    "id": "c6fb625.0c939a",
+    "type": "change",
+    "z": "99804b5f.9adb6",
+    "name": "send red to traffic",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "red",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 910,
+    "y": 280,
+    "wires": [
+      [
+        "b3c56923.a20108"
+      ]
+    ]
+  },
+  {
+    "id": "fc63001e.69dc4",
+    "type": "change",
+    "z": "99804b5f.9adb6",
+    "name": "set domain to light",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload.domain",
+        "pt": "msg",
+        "to": "light",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 140,
+    "wires": [
+      [
+        "b3c56923.a20108"
+      ]
+    ]
+  },
+  {
+    "id": "952a70ca.b8532",
+    "type": "change",
+    "z": "99804b5f.9adb6",
+    "name": "send green to traffic",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "green",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 530,
+    "y": 180,
+    "wires": [
+      [
+        "b3c56923.a20108"
+      ]
+    ]
+  },
+  {
+    "id": "fd745c51.01fc5",
+    "type": "switch",
+    "z": "99804b5f.9adb6",
+    "name": "",
+    "property": "alarm",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "on",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "off",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 150,
+    "y": 100,
+    "wires": [
+      [
+        "bcb3a700.ce17f8"
+      ],
+      [
+        "952a70ca.b8532"
+      ]
+    ]
+  },
+  {
+    "id": "449328ad.e5c798",
+    "type": "api-call-service",
+    "z": "99804b5f.9adb6",
+    "name": "turn on all lights",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\"entity_id\":\"{{payload.entity_id}}\",\"brightness\":255}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1140,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "b3c56923.a20108",
+    "type": "traffic",
+    "z": "99804b5f.9adb6",
+    "name": "traffic",
+    "property_allow": "payload",
+    "filter_allow": "green",
+    "ignore_case_allow": false,
+    "negate_allow": false,
+    "send_allow": false,
+    "property_stop": "payload",
+    "filter_stop": "red",
+    "ignore_case_stop": false,
+    "negate_stop": false,
+    "send_stop": false,
+    "default_start": false,
+    "differ": true,
+    "x": 730,
+    "y": 180,
+    "wires": [
+      [
+        "ff3fd036.814d8",
+        "5230c2e.d12123c"
+      ]
+    ]
+  },
+  {
+    "id": "cf32e234.47719",
+    "type": "switch",
+    "z": "99804b5f.9adb6",
+    "name": "exclude light",
+    "property": "payload.entity_id",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "neq",
+        "v": "light.shellydimmer_lises_room",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 510,
+    "y": 100,
+    "wires": [
+      [
+        "449328ad.e5c798"
+      ]
+    ]
+  },
+  {
+    "id": "fb92086a.22ae98",
+    "type": "comment",
+    "z": "99804b5f.9adb6",
+    "name": "input requirements",
+    "info": "msg.alarm = off \nmsg.alarm = on",
+    "x": 110,
+    "y": 40,
+    "wires": []
+  }
+]

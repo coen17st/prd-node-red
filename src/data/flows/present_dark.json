@@ -1,0 +1,2038 @@
+[
+  {
+    "id": "c0da8379.b0dd3",
+    "type": "tab",
+    "label": "present_dark",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "9e995be6.7976b8",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn on light backyard",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_backyard_string_l"
+    ],
+    "data": "{\"brightness\":50}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 740,
+    "wires": [
+      [
+        "13ca8b62.27a4a5"
+      ]
+    ]
+  },
+  {
+    "id": "e137297f.088698",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn on light front door",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shelly1_front_door"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 800,
+    "wires": [
+      [
+        "13ca8b62.27a4a5"
+      ]
+    ]
+  },
+  {
+    "id": "d5736355.e4e8e",
+    "type": "switch",
+    "z": "c0da8379.b0dd3",
+    "name": "payload light dark",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "light",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "dark",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 370,
+    "y": 460,
+    "wires": [
+      [
+        "9c489e3f.49b89",
+        "298ec9d5.35e576",
+        "5d939da2.20d8c4",
+        "cc64f27a.c792c"
+      ],
+      [
+        "c3dc83f5.77118",
+        "b7ae8452.581398"
+      ]
+    ]
+  },
+  {
+    "id": "f916039a.ab914",
+    "type": "switch",
+    "z": "c0da8379.b0dd3",
+    "name": "state home not_home",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "home",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 380,
+    "y": 600,
+    "wires": [
+      [
+        "ed71f712.b69338",
+        "60ffd46b.e9534c"
+      ]
+    ]
+  },
+  {
+    "id": "ca6dfbcc.46ac18",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off light front door ",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shelly1_front_door"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 220,
+    "wires": [
+      [
+        "1ae2e15a.a292cf"
+      ]
+    ]
+  },
+  {
+    "id": "c29767f.9905c98",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off light backyard",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_backyard_string_l"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 160,
+    "wires": [
+      [
+        "1ae2e15a.a292cf"
+      ]
+    ]
+  },
+  {
+    "id": "c52b3e07.1a75e",
+    "type": "server-state-changed",
+    "z": "c0da8379.b0dd3",
+    "name": "state persons",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "group.persons",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 110,
+    "y": 600,
+    "wires": [
+      [
+        "f916039a.ab914"
+      ]
+    ]
+  },
+  {
+    "id": "d08ebe33.48973",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state backyard light off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shellydimmer_backyard_string_l",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1420,
+    "y": 740,
+    "wires": [
+      [
+        "9e995be6.7976b8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "cc18abb3.ae2a18",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state frontdoor light off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shelly1_front_door",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1420,
+    "y": 800,
+    "wires": [
+      [
+        "e137297f.088698"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9b31430f.b380a",
+    "type": "server-state-changed",
+    "z": "c0da8379.b0dd3",
+    "name": "state outdoor light dark",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "sensor.outdoor_light_dark",
+    "entityidfiltertype": "exact",
+    "outputinitially": true,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 460,
+    "wires": [
+      [
+        "d5736355.e4e8e"
+      ]
+    ]
+  },
+  {
+    "id": "e84b117e.dd59d",
+    "type": "server-state-changed",
+    "z": "c0da8379.b0dd3",
+    "name": "state guest",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "input_boolean.guest",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 1,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 100,
+    "y": 660,
+    "wires": [
+      [
+        "9b83ef6.7af1c1"
+      ]
+    ]
+  },
+  {
+    "id": "9b83ef6.7af1c1",
+    "type": "switch",
+    "z": "c0da8379.b0dd3",
+    "name": "state guest on off",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "on",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "off",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 370,
+    "y": 660,
+    "wires": [
+      [
+        "ed71f712.b69338",
+        "9f66d88d.57dad8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "1f0643fe.cb32cc",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state frontdoor light on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shelly1_front_door",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1420,
+    "y": 240,
+    "wires": [
+      [
+        "ca6dfbcc.46ac18"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "d48ea384.8d1d",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state backyard light on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shellydimmer_backyard_string_l",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1420,
+    "y": 180,
+    "wires": [
+      [
+        "c29767f.9905c98"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "b86ec736.0cd658",
+    "type": "server-state-changed",
+    "z": "c0da8379.b0dd3",
+    "name": "state person coen home",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "person.coen",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 140,
+    "y": 740,
+    "wires": [
+      [
+        "c0a73100.b726e"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f8f2314a.940eb",
+    "type": "server-state-changed",
+    "z": "c0da8379.b0dd3",
+    "name": "state person anne home",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "person.anne",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 150,
+    "y": 800,
+    "wires": [
+      [
+        "b53f891b.1feb08"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "c0a73100.b726e",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state person anne home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "person.anne",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 690,
+    "y": 740,
+    "wires": [
+      [
+        "5f497d57.150f44",
+        "aab516c6.d5acf8",
+        "ed71f712.b69338"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "b53f891b.1feb08",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state person coen home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "person.coen",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 690,
+    "y": 800,
+    "wires": [
+      [
+        "aab516c6.d5acf8",
+        "ed71f712.b69338",
+        "5f497d57.150f44"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "ce9cbf76.39de5",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state livingroom light off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shellydimmer_living_room",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "light.shellydimmer_living_room",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1190,
+    "y": 540,
+    "wires": [
+      [
+        "f7dd5719.04dbc8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f7dd5719.04dbc8",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn on light livingroom ",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_living_room"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 420,
+    "wires": [
+      [
+        "b50fb918.44f928"
+      ]
+    ]
+  },
+  {
+    "id": "c3dc83f5.77118",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state harmony on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "remote.harmony_hub_01",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "remote.harmony_hub_01",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data_remote.harmony_hub_01",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 670,
+    "y": 540,
+    "wires": [
+      [
+        "171a4247.1ffeee"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "171a4247.1ffeee",
+    "type": "switch",
+    "z": "c0da8379.b0dd3",
+    "name": "activity harmony tv/netflix",
+    "property": "data_remote.harmony_hub_01.attributes.current_activity",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "TV",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "Netflix",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 950,
+    "y": 540,
+    "wires": [
+      [
+        "ce9cbf76.39de5"
+      ],
+      [
+        "ce9cbf76.39de5"
+      ]
+    ]
+  },
+  {
+    "id": "cea43bad.d11358",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Het is donker en er is iemand aanwezig. {{{data.attributes.friendly_name}}} verlichting is ingeschakeld.",
+    "output": "str",
+    "x": 2060,
+    "y": 780,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
+    ]
+  },
+  {
+    "id": "9bfeecdc.f723d",
+    "type": "link out",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "links": [
+      "ebf4860d.603538"
+    ],
+    "x": 2255,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "60ffd46b.e9534c",
+    "type": "ha-get-entities",
+    "z": "c0da8379.b0dd3",
+    "name": "lookup person home",
+    "server": "4ba92433.2478cc",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "starts_with",
+        "value": "person.",
+        "valueType": "str"
+      },
+      {
+        "property": "state",
+        "logic": "is",
+        "value": "home",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "split",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "payload",
+    "output_results_count": 1,
+    "x": 680,
+    "y": 920,
+    "wires": [
+      [
+        "6ca20d6c.62d004"
+      ]
+    ]
+  },
+  {
+    "id": "b9ba0c85.bcd94",
+    "type": "join",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "mode": "custom",
+    "build": "string",
+    "property": "friendly_name_person",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": ", ",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 1130,
+    "y": 920,
+    "wires": [
+      [
+        "a5f68bf8.968328"
+      ]
+    ]
+  },
+  {
+    "id": "6ca20d6c.62d004",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "Format Friendly Name",
+    "field": "friendly_name_person",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{payload.attributes.friendly_name}}",
+    "output": "str",
+    "x": 940,
+    "y": 920,
+    "wires": [
+      [
+        "b9ba0c85.bcd94"
+      ]
+    ]
+  },
+  {
+    "id": "da57c41e.c506f8",
+    "type": "ha-get-entities",
+    "z": "c0da8379.b0dd3",
+    "name": "lookup light on",
+    "server": "4ba92433.2478cc",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "starts_with",
+        "value": "light.shelly",
+        "valueType": "str"
+      },
+      {
+        "property": "state",
+        "logic": "is",
+        "value": "on",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "split",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "payload",
+    "output_results_count": 1,
+    "x": 660,
+    "y": 980,
+    "wires": [
+      [
+        "fd3c7297.9684e"
+      ]
+    ]
+  },
+  {
+    "id": "fd3c7297.9684e",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "Format Friendly Name",
+    "field": "friendly_name_lampen",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{payload.attributes.friendly_name}}",
+    "output": "str",
+    "x": 940,
+    "y": 980,
+    "wires": [
+      [
+        "1928247d.6ddacc"
+      ]
+    ]
+  },
+  {
+    "id": "1928247d.6ddacc",
+    "type": "join",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "mode": "custom",
+    "build": "string",
+    "property": "friendly_name_lampen",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": ", ",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 1130,
+    "y": 980,
+    "wires": [
+      [
+        "d129b86a.aa0f58"
+      ]
+    ]
+  },
+  {
+    "id": "d129b86a.aa0f58",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{friendly_name_person}} is thuis gekomen en het is donker. {{friendly_name_lampen}} verlichting is ingeschakeld",
+    "output": "str",
+    "x": 2060,
+    "y": 980,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
+    ]
+  },
+  {
+    "id": "efdb1a4f.c5e9b8",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{data.attributes.friendly_name}} verlichting is automatisch uitgeschakeld",
+    "output": "str",
+    "x": 2060,
+    "y": 180,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
+    ]
+  },
+  {
+    "id": "b50fb918.44f928",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{data.attributes.friendly_name}} verlichting is ingeschakeld omdat Harmony activiteit {{data_remote.harmony_hub_01.attributes.current_activity}} actief is. ",
+    "output": "str",
+    "x": 2060,
+    "y": 340,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
+    ]
+  },
+  {
+    "id": "23da98f2.f85338",
+    "type": "inject",
+    "z": "c0da8379.b0dd3",
+    "name": "06:30 'on' payload",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "30 06 * * 1,2,3,4,5",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "on",
+    "payloadType": "str",
+    "x": 130,
+    "y": 120,
+    "wires": [
+      [
+        "298ec9d5.35e576",
+        "9c489e3f.49b89",
+        "2175515c.be3ebe"
+      ]
+    ]
+  },
+  {
+    "id": "e07b8aed.7d4548",
+    "type": "inject",
+    "z": "c0da8379.b0dd3",
+    "name": "07:00 'on' payload",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "00 07 * * 6,0",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "on",
+    "payloadType": "str",
+    "x": 130,
+    "y": 60,
+    "wires": [
+      [
+        "298ec9d5.35e576",
+        "9c489e3f.49b89",
+        "2175515c.be3ebe"
+      ]
+    ]
+  },
+  {
+    "id": "298ec9d5.35e576",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state persons home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "group.persons",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 670,
+    "y": 60,
+    "wires": [
+      [
+        "aab516c6.d5acf8",
+        "ed71f712.b69338",
+        "6a1e682.ce28098"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "aab516c6.d5acf8",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state sleep_mode on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.sleep_mode",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1180,
+    "y": 60,
+    "wires": [
+      [
+        "f86b599d.352918"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "9c489e3f.49b89",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state guest on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.guest",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 660,
+    "y": 120,
+    "wires": [
+      [
+        "aab516c6.d5acf8",
+        "ed71f712.b69338",
+        "6a1e682.ce28098"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "f86b599d.352918",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off sleep mode",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.sleep_mode"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1710,
+    "y": 40,
+    "wires": [
+      [
+        "f9016d05.455ab"
+      ]
+    ]
+  },
+  {
+    "id": "ed71f712.b69338",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state home_security on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.home_security",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1190,
+    "y": 120,
+    "wires": [
+      [
+        "1902dc19.17ed64"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "1902dc19.17ed64",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off home security",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "input_boolean",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "input_boolean.home_security"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 100,
+    "wires": [
+      [
+        "2746e153.92344e"
+      ]
+    ]
+  },
+  {
+    "id": "5f497d57.150f44",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state outdoor dark",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "dark",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.outdoor_light_dark",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 970,
+    "y": 760,
+    "wires": [
+      [
+        "bfdc7b40.f9a528"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "6a1e682.ce28098",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state outdoor light",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "light",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.outdoor_light_dark",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1170,
+    "y": 180,
+    "wires": [
+      [
+        "d48ea384.8d1d",
+        "1f0643fe.cb32cc",
+        "4c07afb2e623f468"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "a5f68bf8.968328",
+    "type": "delay",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "5",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "outputs": 1,
+    "x": 1380,
+    "y": 920,
+    "wires": [
+      [
+        "da57c41e.c506f8"
+      ]
+    ]
+  },
+  {
+    "id": "13ca8b62.27a4a5",
+    "type": "join",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "mode": "custom",
+    "build": "string",
+    "property": "data.attributes.friendly_name",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": ", ",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "5",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "num",
+    "reduceFixup": "",
+    "x": 1910,
+    "y": 780,
+    "wires": [
+      [
+        "cea43bad.d11358"
+      ]
+    ]
+  },
+  {
+    "id": "1ae2e15a.a292cf",
+    "type": "join",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "mode": "custom",
+    "build": "string",
+    "property": "data.attributes.friendly_name",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": ", ",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "5",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 1930,
+    "y": 180,
+    "wires": [
+      [
+        "efdb1a4f.c5e9b8"
+      ]
+    ]
+  },
+  {
+    "id": "a8a31543.6e54b8",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state livingroom light off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shellydimmer_living_room",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1430,
+    "y": 860,
+    "wires": [
+      [
+        "fd5eca9e.417048"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "fd5eca9e.417048",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn on light livingroom",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_living_room"
+    ],
+    "data": "{\"brightness\":80}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 860,
+    "wires": [
+      [
+        "13ca8b62.27a4a5"
+      ]
+    ]
+  },
+  {
+    "id": "d1463709.a63de8",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state guest on",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.guest",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1160,
+    "y": 680,
+    "wires": [
+      [
+        "d08ebe33.48973",
+        "cc18abb3.ae2a18",
+        "96e8c657ef1ee07e"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "ab57e30e.f2b96",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state group persons home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "group.persons",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1190,
+    "y": 620,
+    "wires": [
+      [
+        "d08ebe33.48973",
+        "cc18abb3.ae2a18"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "255f30c3.c9935",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state sleep mode off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "input_boolean.sleep_mode",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 680,
+    "y": 640,
+    "wires": [
+      [
+        "ab57e30e.f2b96",
+        "d1463709.a63de8"
+      ],
+      []
+    ]
+  },
+  {
+    "id": "bfdc7b40.f9a528",
+    "type": "delay",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "15",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "outputs": 1,
+    "x": 1140,
+    "y": 760,
+    "wires": [
+      [
+        "d08ebe33.48973",
+        "cc18abb3.ae2a18",
+        "a8a31543.6e54b8"
+      ]
+    ]
+  },
+  {
+    "id": "2175515c.be3ebe",
+    "type": "api-current-state",
+    "z": "c0da8379.b0dd3",
+    "name": "state outdoor light dark",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.outdoor_light_dark",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 260,
+    "y": 280,
+    "wires": [
+      [
+        "d5736355.e4e8e"
+      ]
+    ]
+  },
+  {
+    "id": "b7ae8452.581398",
+    "type": "delay",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "outputs": 1,
+    "x": 340,
+    "y": 520,
+    "wires": [
+      [
+        "255f30c3.c9935"
+      ]
+    ]
+  },
+  {
+    "id": "9f66d88d.57dad8",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn on water heater",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "water_heater",
+    "service": "set_temperature",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "water_heater.warm_water"
+    ],
+    "data": "{\"temperature\":\"61\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1720,
+    "y": 360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "cc64f27a.c792c",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off light front door",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shelly1_front_door"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 680,
+    "y": 340,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "5d939da2.20d8c4",
+    "type": "api-call-service",
+    "z": "c0da8379.b0dd3",
+    "name": "turn off light backyard",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [
+      "light.shellydimmer_backyard_string_l"
+    ],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 680,
+    "y": 280,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f9016d05.455ab",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Slaapstand is automatisch uitgeschakeld",
+    "output": "str",
+    "x": 2060,
+    "y": 40,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
+    ]
+  },
+  {
+    "id": "2746e153.92344e",
+    "type": "template",
+    "z": "c0da8379.b0dd3",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Beveiliging is automatisch uitgeschakeld",
+    "output": "str",
+    "x": 2060,
+    "y": 100,
+    "wires": [
+      [
+        "9bfeecdc.f723d"
+      ]
+    ]
+  },
+  {
+    "id": "4c07afb2e623f468",
+    "type": "subflow:b93cc1561f32248d",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "x": 1760,
+    "y": 300,
+    "wires": []
+  },
+  {
+    "id": "96e8c657ef1ee07e",
+    "type": "subflow:d7eb731ec2383a42",
+    "z": "c0da8379.b0dd3",
+    "name": "",
+    "x": 1750,
+    "y": 680,
+    "wires": []
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "id": "46d98b35c2eee05b",
+    "type": "tab",
+    "label": "custom_energy_sensor",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "7f181c3a969cf13c",
+    "type": "join",
+    "z": "46d98b35c2eee05b",
+    "name": "",
+    "mode": "custom",
+    "build": "array",
+    "property": "",
+    "propertyType": "full",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 470,
+    "y": 100,
+    "wires": [
+      [
+        "ef67c1284ddb8eed"
+      ]
+    ]
+  },
+  {
+    "id": "ef67c1284ddb8eed",
+    "type": "function",
+    "z": "46d98b35c2eee05b",
+    "name": "calculation",
+    "func": "// Make delivered value negative\nmsg.delivered =- parseFloat(msg.delivered);\n\n// Sum two values\nmsg.sum = parseFloat(msg.returned) + msg.delivered;\n\n// Set 3 decimals. Side effect is string value\nmsg.payload = msg.sum.toFixed(3) \nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 610,
+    "y": 100,
+    "wires": [
+      [
+        "99a64ef46dadb061"
+      ]
+    ]
+  },
+  {
+    "id": "ba77f8da98851350",
+    "type": "api-current-state",
+    "z": "46d98b35c2eee05b",
+    "name": "state currently returned",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.dsmr_reading_electricity_currently_returned",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "returned",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 270,
+    "y": 160,
+    "wires": [
+      [
+        "7f181c3a969cf13c"
+      ]
+    ]
+  },
+  {
+    "id": "6fc7768f0e0e7113",
+    "type": "api-current-state",
+    "z": "46d98b35c2eee05b",
+    "name": "state currently delivered",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "num",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.dsmr_reading_electricity_currently_delivered",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "delivered",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": "0",
+    "forType": "num",
+    "forUnits": "minutes",
+    "override_topic": false,
+    "state_location": "payload",
+    "override_payload": "msg",
+    "entity_location": "data",
+    "override_data": "msg",
+    "x": 270,
+    "y": 100,
+    "wires": [
+      [
+        "7f181c3a969cf13c"
+      ]
+    ]
+  },
+  {
+    "id": "8dc59865117f6040",
+    "type": "inject",
+    "z": "46d98b35c2eee05b",
+    "name": "",
+    "props": [],
+    "repeat": "1",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "1",
+    "topic": "",
+    "x": 70,
+    "y": 100,
+    "wires": [
+      [
+        "6fc7768f0e0e7113",
+        "ba77f8da98851350"
+      ]
+    ]
+  },
+  {
+    "id": "fc249a2f095e860f",
+    "type": "comment",
+    "z": "46d98b35c2eee05b",
+    "name": "energy sensor",
+    "info": "",
+    "x": 90,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "99a64ef46dadb061",
+    "type": "ha-sensor",
+    "z": "46d98b35c2eee05b",
+    "name": "custom_energy",
+    "entityConfig": "7befa0b16196877c",
+    "version": 0,
+    "state": "payload",
+    "stateType": "msg",
+    "attributes": [],
+    "inputOverride": "allow",
+    "outputProperties": [],
+    "x": 780,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  }
+]
