@@ -178,14 +178,6 @@
         "info": ""
     },
     {
-        "id": "8849528a34bc8399",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "off_mode",
@@ -197,16 +189,10 @@
                 "y": 100,
                 "wires": [
                     {
-                        "id": "3b9a1fc1.aafd9"
-                    },
-                    {
                         "id": "f9028094.57a62"
                     },
                     {
                         "id": "e0b2428a.a371b"
-                    },
-                    {
-                        "id": "1cacf9f.2645206"
                     },
                     {
                         "id": "83808dcd.70439"
@@ -221,7 +207,7 @@
                         "id": "70042c68d7934e2a"
                     },
                     {
-                        "id": "107f8f280b2777b5"
+                        "id": "db8cc8f4bb9386ab"
                     }
                 ]
             }
@@ -234,36 +220,29 @@
     {
         "id": "ae0491bb.4f1eb",
         "type": "subflow",
-        "name": "lg tv screen off",
+        "name": "tv_screen_off_mode_on",
         "info": "",
         "category": "",
         "in": [
             {
                 "x": 40,
-                "y": 40,
+                "y": 80,
                 "wires": [
                     {
                         "id": "87e756ffacd6829f"
                     },
                     {
                         "id": "8818e636f63e70c7"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 700,
-                "y": 940,
-                "wires": [
+                    },
                     {
-                        "id": "b5d58b74756d067b",
-                        "port": 0
+                        "id": "9c8540912fe0314a"
                     }
                 ]
             }
         ],
+        "out": [],
         "env": [],
+        "meta": {},
         "color": "#DDAA99"
     },
     {
@@ -498,7 +477,7 @@
     {
         "id": "0f710598d50e0596",
         "type": "subflow",
-        "name": "turn_off_tv",
+        "name": "tv_mode_off",
         "info": "",
         "category": "",
         "in": [
@@ -506,12 +485,6 @@
                 "x": 40,
                 "y": 40,
                 "wires": [
-                    {
-                        "id": "6fd09e62187c11c3"
-                    },
-                    {
-                        "id": "8e175d7684e5c54b"
-                    },
                     {
                         "id": "19c16b81a65ce03d"
                     },
@@ -526,56 +499,12 @@
                     },
                     {
                         "id": "1f164f2207e30219"
-                    }
-                ]
-            }
-        ],
-        "out": [],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99"
-    },
-    {
-        "id": "a0c733b89be2ea24",
-        "type": "subflow",
-        "name": "turn_on_tv",
-        "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "338d1d653883e09c"
                     },
                     {
-                        "id": "9d6de1e8ac88dd57"
+                        "id": "6a12c49028cb62b2"
                     },
                     {
-                        "id": "afac95cd3be3c75a"
-                    }
-                ]
-            }
-        ],
-        "out": [],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99"
-    },
-    {
-        "id": "b1ddcd26d280c47d",
-        "type": "subflow",
-        "name": "turn_on_tv-screen-off",
-        "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "e87e52d59f0caacc"
+                        "id": "46e45a22c53e320a"
                     }
                 ]
             }
@@ -620,6 +549,40 @@
                 "wires": [
                     {
                         "id": "4b6b1e831da55dcd"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "9ed9ce7ce8f74ca0",
+        "type": "subflow",
+        "name": "tv_mode_on",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "4475221b0f43f4e4"
+                    },
+                    {
+                        "id": "cbffe613f7b4d2cd"
+                    },
+                    {
+                        "id": "ab941695962a49ca"
+                    },
+                    {
+                        "id": "7f5cef110bdd252e"
+                    },
+                    {
+                        "id": "329c7722f738ab7c"
                     }
                 ]
             }
@@ -686,6 +649,42 @@
         "wires": [
             [
                 "e954fe7e068d253c"
+            ]
+        ]
+    },
+    {
+        "id": "7f5cef110bdd252e",
+        "type": "junction",
+        "z": "9ed9ce7ce8f74ca0",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "39676675d41d2349"
+            ]
+        ]
+    },
+    {
+        "id": "f416f671eb6479be",
+        "type": "junction",
+        "z": "ae0491bb.4f1eb",
+        "x": 500,
+        "y": 120,
+        "wires": [
+            [
+                "0cb67556a76c3eb6"
+            ]
+        ]
+    },
+    {
+        "id": "329c7722f738ab7c",
+        "type": "junction",
+        "z": "9ed9ce7ce8f74ca0",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "71594be305815ee3"
             ]
         ]
     },
@@ -1129,8 +1128,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 260,
-        "y": 260,
+        "x": 600,
+        "y": 300,
         "wires": [
             []
         ]
@@ -1162,7 +1161,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 230,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "397bbd3d.0bb3f2"
@@ -1191,7 +1190,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 570,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -1219,7 +1218,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 970,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -1238,7 +1237,7 @@
         "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
         "x": 1100,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "ad7f00b7b2b0e671"
@@ -1272,7 +1271,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 200,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "9eb23897.6d9b38"
@@ -1301,72 +1300,11 @@
         "outputProperties": [],
         "queue": "none",
         "x": 530,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "fda4eae176ed738e"
             ]
-        ]
-    },
-    {
-        "id": "1cacf9f.2645206",
-        "type": "ha-get-entities",
-        "z": "79544bf2.1ff3a4",
-        "name": "lookup media players is not off",
-        "server": "4ba92433.2478cc",
-        "version": 0,
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "media_player",
-                "valueType": "str"
-            },
-            {
-                "property": "state",
-                "logic": "is_not",
-                "value": "off",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 250,
-        "y": 500,
-        "wires": [
-            [
-                "73dcb69e.8515b8"
-            ]
-        ]
-    },
-    {
-        "id": "73dcb69e.8515b8",
-        "type": "api-call-service",
-        "z": "79544bf2.1ff3a4",
-        "name": "turn off media players",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "media_player",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "{{payload.entity_id}}"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 560,
-        "y": 500,
-        "wires": [
-            []
         ]
     },
     {
@@ -1391,7 +1329,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 220,
-        "y": 200,
+        "y": 220,
         "wires": [
             []
         ]
@@ -1428,7 +1366,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 230,
-        "y": 140,
+        "y": 160,
         "wires": [
             []
         ]
@@ -1455,7 +1393,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 270,
-        "y": 320,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1467,7 +1405,7 @@
         "name": "",
         "links": [],
         "x": 1375,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -1490,7 +1428,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1250,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "a680c17548559ce2"
@@ -1509,7 +1447,7 @@
         "template": "{{{payload.attributes.friendly_name}}}",
         "output": "str",
         "x": 800,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "58d0a2479b16b408"
@@ -1537,7 +1475,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 970,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "89625810ae98a2fc"
@@ -1556,7 +1494,7 @@
         "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
         "x": 1100,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "a8dadd67cf109c6d"
@@ -1583,7 +1521,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1250,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "a680c17548559ce2"
@@ -1600,19 +1538,19 @@
         "wires": []
     },
     {
-        "id": "107f8f280b2777b5",
+        "id": "db8cc8f4bb9386ab",
         "type": "api-current-state",
         "z": "79544bf2.1ff3a4",
-        "name": "reciever power > 1",
+        "name": "state input select is all off",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "1",
-        "halt_if_type": "num",
-        "halt_if_compare": "gt",
-        "entity_id": "sensor.shellyplug_reciever_power",
+        "halt_if": "Alles Uit",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.harmonyhub",
         "state_type": "str",
-        "blockInputOverrides": false,
+        "blockInputOverrides": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -1627,500 +1565,52 @@
                 "valueType": "entity"
             }
         ],
-        "for": "0",
+        "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 210,
-        "y": 560,
+        "x": 230,
+        "y": 280,
         "wires": [
             [
-                "52bea4fa61492a55"
+                "8b596edabf419a04"
             ],
-            []
+            [
+                "3b9a1fc1.aafd9"
+            ]
         ]
     },
     {
-        "id": "52bea4fa61492a55",
-        "type": "api-call-service",
+        "id": "8b596edabf419a04",
+        "type": "subflow:0f710598d50e0596",
         "z": "79544bf2.1ff3a4",
-        "name": "send off command to reciever",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
-        "areaId": [
-            "living_room"
-        ],
-        "deviceId": [
-            "34a73fe47cda5c964dcb946e48f8a307"
-        ],
-        "entityId": [
-            "remote.harmony_hub_01"
-        ],
-        "data": "{\"device\":\"53126254\",\"command\":\"PowerOff\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 590,
-        "y": 560,
-        "wires": [
-            []
-        ]
+        "name": "",
+        "x": 530,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "0cb67556a76c3eb6",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
-        "name": "menu",
+        "name": "turn off screen",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "webostv",
-        "service": "button",
+        "service": "command",
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "media_player.lg_webos_smart_tv"
         ],
-        "data": "{\"button\":\"MENU\"}",
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOffScreen\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 570,
-        "y": 40,
-        "wires": [
-            [
-                "9621a5ab59f17f1d"
-            ]
-        ]
-    },
-    {
-        "id": "9621a5ab59f17f1d",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 580,
-        "y": 100,
-        "wires": [
-            [
-                "a6141d7f24e678d5"
-            ]
-        ]
-    },
-    {
-        "id": "a6141d7f24e678d5",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "up",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"UP\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 160,
-        "wires": [
-            [
-                "372c256cc66284f8"
-            ]
-        ]
-    },
-    {
-        "id": "372c256cc66284f8",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "enter",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"ENTER\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 220,
-        "wires": [
-            [
-                "634edaa3d367bcca"
-            ]
-        ]
-    },
-    {
-        "id": "634edaa3d367bcca",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 580,
-        "y": 280,
-        "wires": [
-            [
-                "82c3359a9c878c1b"
-            ]
-        ]
-    },
-    {
-        "id": "82c3359a9c878c1b",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "right",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"RIGHT\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 340,
-        "wires": [
-            [
-                "3b83b4b27e719961"
-            ]
-        ]
-    },
-    {
-        "id": "3b83b4b27e719961",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 400,
-        "wires": [
-            [
-                "200180c86ab0497a"
-            ]
-        ]
-    },
-    {
-        "id": "200180c86ab0497a",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 460,
-        "wires": [
-            [
-                "4ea092644f9fb7ea"
-            ]
-        ]
-    },
-    {
-        "id": "2d232cf30f095ee3",
-        "type": "delay",
-        "z": "ae0491bb.4f1eb",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 580,
-        "y": 580,
-        "wires": [
-            [
-                "36cc4e864ed3816d"
-            ]
-        ]
-    },
-    {
-        "id": "4ea092644f9fb7ea",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "enter",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"ENTER\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 520,
-        "wires": [
-            [
-                "2d232cf30f095ee3"
-            ]
-        ]
-    },
-    {
-        "id": "36cc4e864ed3816d",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 640,
-        "wires": [
-            [
-                "2b197b6c70876464"
-            ]
-        ]
-    },
-    {
-        "id": "2b197b6c70876464",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 700,
-        "wires": [
-            [
-                "32fb32522351bf7a"
-            ]
-        ]
-    },
-    {
-        "id": "32fb32522351bf7a",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 760,
-        "wires": [
-            [
-                "99448eb7146c2a2f"
-            ]
-        ]
-    },
-    {
-        "id": "99448eb7146c2a2f",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 820,
-        "wires": [
-            [
-                "17ece4362f57060b"
-            ]
-        ]
-    },
-    {
-        "id": "17ece4362f57060b",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "down",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"DOWN\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 880,
-        "wires": [
-            [
-                "b5d58b74756d067b"
-            ]
-        ]
-    },
-    {
-        "id": "b5d58b74756d067b",
-        "type": "api-call-service",
-        "z": "ae0491bb.4f1eb",
-        "name": "enter",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "button",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"button\":\"ENTER\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 570,
-        "y": 940,
+        "x": 700,
+        "y": 80,
         "wires": [
             []
         ]
@@ -2162,13 +1652,13 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 190,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
                 "77a4b45bf5189c15"
             ],
             [
-                "0cb67556a76c3eb6"
+                "f416f671eb6479be"
             ]
         ]
     },
@@ -2191,8 +1681,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 370,
-        "y": 20,
+        "x": 430,
+        "y": 80,
         "wires": [
             [
                 "0cb67556a76c3eb6"
@@ -2236,7 +1726,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 200,
-        "y": 80,
+        "y": 160,
         "wires": [
             [
                 "be65f0d63b84b58c"
@@ -2267,9 +1757,76 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 380,
-        "y": 80,
+        "x": 440,
+        "y": 160,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87a4edd77543d7f3",
+        "type": "api-call-service",
+        "z": "ae0491bb.4f1eb",
+        "name": "turn on input boolean music",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.music"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 480,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c8540912fe0314a",
+        "type": "api-current-state",
+        "z": "ae0491bb.4f1eb",
+        "name": "state input boolean tv off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.music",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "87a4edd77543d7f3"
+            ],
             []
         ]
     },
@@ -3855,62 +3412,6 @@
         "wires": []
     },
     {
-        "id": "6fd09e62187c11c3",
-        "type": "api-call-service",
-        "z": "0f710598d50e0596",
-        "name": "turn off harmony activity",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [
-            "34a73fe47cda5c964dcb946e48f8a307"
-        ],
-        "entityId": [
-            "remote.harmony_hub_01"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 210,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8e175d7684e5c54b",
-        "type": "api-call-service",
-        "z": "0f710598d50e0596",
-        "name": "turn off media player tv ",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "media_player",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [
-            "04231b4687b2ffc01c97df5552a05026"
-        ],
-        "entityId": [],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 200,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "19c16b81a65ce03d",
         "type": "api-call-service",
         "z": "0f710598d50e0596",
@@ -3923,9 +3424,10 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
+            "media_player.home_speaker",
+            "media_player.lg_webos_smart_tv",
             "media_player.lise_s_kamer",
-            "media_player.shield",
-            "media_player.lg_webos_smart_tv"
+            "media_player.shield"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -3933,8 +3435,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 200,
-        "y": 120,
+        "x": 220,
+        "y": 40,
         "wires": [
             []
         ]
@@ -3970,8 +3472,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 220,
-        "y": 40,
+        "x": 240,
+        "y": 340,
         "wires": [
             [
                 "ed81a86bf1f06d72"
@@ -4000,8 +3502,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 490,
-        "y": 40,
+        "x": 510,
+        "y": 340,
         "wires": [
             []
         ]
@@ -4037,8 +3539,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 230,
-        "y": 80,
+        "x": 250,
+        "y": 400,
         "wires": [
             [
                 "7df266f8e004a08d"
@@ -4067,8 +3569,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 500,
-        "y": 80,
+        "x": 520,
+        "y": 400,
         "wires": [
             []
         ]
@@ -4094,8 +3596,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 180,
-        "y": 240,
+        "x": 200,
+        "y": 220,
         "wires": [
             []
         ]
@@ -4121,145 +3623,49 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 180,
+        "x": 200,
         "y": 280,
         "wires": [
             []
         ]
     },
     {
-        "id": "338d1d653883e09c",
+        "id": "6a12c49028cb62b2",
         "type": "api-call-service",
-        "z": "a0c733b89be2ea24",
-        "name": "turn on harmony tv",
+        "z": "0f710598d50e0596",
+        "name": "turn off tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"system/turnOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46e45a22c53e320a",
+        "type": "api-call-service",
+        "z": "0f710598d50e0596",
+        "name": "turn off reciever",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "remote",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [
-            "34a73fe47cda5c964dcb946e48f8a307"
-        ],
-        "entityId": [
-            "remote.harmony_hub_01"
-        ],
-        "data": "{\"activity\":\"TV\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 190,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9d6de1e8ac88dd57",
-        "type": "api-call-service",
-        "z": "a0c733b89be2ea24",
-        "name": "turn on media player shield",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "media_player",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.shield"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 220,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ae7d2f091783073a",
-        "type": "api-call-service",
-        "z": "a0c733b89be2ea24",
-        "name": "turn on input boolean tv",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_boolean.tv"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 470,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "afac95cd3be3c75a",
-        "type": "api-current-state",
-        "z": "a0c733b89be2ea24",
-        "name": "state input boolean tv is off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.tv",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 220,
-        "y": 40,
-        "wires": [
-            [
-                "ae7d2f091783073a"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e87e52d59f0caacc",
-        "type": "api-call-service",
-        "z": "b1ddcd26d280c47d",
-        "name": "turn on harmony screen off",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "turn_on",
+        "service": "send_command",
         "areaId": [
             "living_room"
         ],
@@ -4267,86 +3673,16 @@
             "34a73fe47cda5c964dcb946e48f8a307"
         ],
         "entityId": [
-            "remote.harmony_hub_01",
-            "switch.harmony_hub_01_scherm_uit"
+            "remote.harmony_hub_01"
         ],
-        "data": "{\"activity\":\"Scherm Uit\"}",
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOff\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
         "x": 200,
-        "y": 40,
-        "wires": [
-            [
-                "e42617fbbbe99380"
-            ]
-        ]
-    },
-    {
-        "id": "e42617fbbbe99380",
-        "type": "api-current-state",
-        "z": "b1ddcd26d280c47d",
-        "name": "state input boolean tv off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.music",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 450,
-        "y": 40,
-        "wires": [
-            [
-                "81105c06164d2a4f"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "81105c06164d2a4f",
-        "type": "api-call-service",
-        "z": "b1ddcd26d280c47d",
-        "name": "turn on input boolean music",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_boolean.music"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 700,
-        "y": 40,
+        "y": 160,
         "wires": [
             []
         ]
@@ -4424,6 +3760,283 @@
         "x": 230,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "4475221b0f43f4e4",
+        "type": "api-current-state",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "state lg tv off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.lg_webos_smart_tv",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "17562b3633ad1a62"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cbffe613f7b4d2cd",
+        "type": "api-current-state",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "state shield off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.shield",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "210448aceed6c74e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "210448aceed6c74e",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on shield",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "aa1a5fa6d13fc3224345d871874f8619"
+        ],
+        "entityId": [
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17562b3633ad1a62",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on lg tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "wake_on_lan",
+        "service": "send_magic_packet",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"mac\":\"38:8c:50:62:11:4d\",\"broadcast_address\":\"192.168.30.50\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5c0ae3969af85fb",
+        "type": "comment",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on tv, shield mediaplayer and receiver",
+        "info": "",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ab941695962a49ca",
+        "type": "api-current-state",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "state input boolean tv is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.tv",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "c5696bd905d5d0b2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c5696bd905d5d0b2",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on input boolean tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.tv"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 490,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39676675d41d2349",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on receiver",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
+        "entityId": [
+            "remote.harmony_hub_01"
+        ],
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOn\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71594be305815ee3",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on screen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 260,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "a8b7af48.25638",
@@ -5777,7 +5390,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"name\":\"light_theme\",\"mode\":\"light\"}",
+        "data": "{\"name\":\"light_theme\",\"mode\":\"Google Light Theme\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -13463,7 +13076,7 @@
         "name": "tv and media entertaiment automations",
         "info": "",
         "x": 170,
-        "y": 20,
+        "y": 40,
         "wires": []
     },
     {
@@ -13492,7 +13105,7 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "output_only_on_state_change": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -13533,7 +13146,7 @@
         "id": "b812932c302a921c",
         "type": "switch",
         "z": "a5c3a1afe9d96a84",
-        "name": "harmony activity",
+        "name": "input select media activity",
         "property": "data.new_state.state",
         "propertyType": "msg",
         "rules": [
@@ -13556,46 +13169,19 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 400,
+        "x": 430,
         "y": 140,
         "wires": [
             [
-                "0f3d60e905e31024"
+                "c357ab37ba5939a1"
             ],
             [
-                "62ca8444e83dd835"
+                "e6879d0bbfe5c516"
             ],
             [
-                "5690d4fd4de01d28"
+                "5b3959565038d2d3"
             ]
         ]
-    },
-    {
-        "id": "5690d4fd4de01d28",
-        "type": "subflow:0f710598d50e0596",
-        "z": "a5c3a1afe9d96a84",
-        "name": "turn_off_tv",
-        "x": 650,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "0f3d60e905e31024",
-        "type": "subflow:a0c733b89be2ea24",
-        "z": "a5c3a1afe9d96a84",
-        "name": "turn_on_tv",
-        "x": 650,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "62ca8444e83dd835",
-        "type": "subflow:b1ddcd26d280c47d",
-        "z": "a5c3a1afe9d96a84",
-        "name": "turn_on_tv-screen-off",
-        "x": 680,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "db7aae72f8cf0c42",
@@ -14154,7 +13740,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1000,
+        "x": 1020,
         "y": 600,
         "wires": [
             []
@@ -14271,7 +13857,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 900,
+        "x": 1020,
         "y": 560,
         "wires": [
             []
@@ -14487,7 +14073,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "TV gepauseerd i.v.m. telefoon gesprek.",
+        "template": "TV gepauseerd i.v.m. telefoongesprek.",
         "output": "str",
         "x": 920,
         "y": 1600,
@@ -14922,7 +14508,7 @@
         "id": "54adb4bdc8246923",
         "type": "comment",
         "z": "a5c3a1afe9d96a84",
-        "name": "RADIO",
+        "name": "radio",
         "info": "",
         "x": 70,
         "y": 680,
@@ -15987,6 +15573,33 @@
                 "5bb7f1bee6db7996"
             ]
         ]
+    },
+    {
+        "id": "e6879d0bbfe5c516",
+        "type": "subflow:ae0491bb.4f1eb",
+        "z": "a5c3a1afe9d96a84",
+        "name": "",
+        "x": 690,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c357ab37ba5939a1",
+        "type": "subflow:9ed9ce7ce8f74ca0",
+        "z": "a5c3a1afe9d96a84",
+        "name": "",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5b3959565038d2d3",
+        "type": "subflow:0f710598d50e0596",
+        "z": "a5c3a1afe9d96a84",
+        "name": "",
+        "x": 650,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "49bcf8fe.de1de8",
@@ -22630,49 +22243,6 @@
             [
                 "d7eb7b2f57d080f8"
             ]
-        ]
-    },
-    {
-        "id": "be738c4ee4b83e0f",
-        "type": "debug",
-        "z": "8849528a34bc8399",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "81c2264ceaf595c6",
-        "type": "inject",
-        "z": "8849528a34bc8399",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 440,
-        "y": 420,
-        "wires": [
-            []
         ]
     }
 ]
