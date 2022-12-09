@@ -1,0 +1,421 @@
+[
+  {
+    "id": "4ba92433.2478cc",
+    "type": "server",
+    "name": "Home Assistant",
+    "version": 5,
+    "addon": false,
+    "rejectUnauthorizedCerts": false,
+    "ha_boolean": "y|yes|true|on|home|open",
+    "connectionDelay": true,
+    "cacheJson": true,
+    "heartbeat": true,
+    "heartbeatInterval": "30",
+    "areaSelector": "friendlyName",
+    "deviceSelector": "friendlyName",
+    "entitySelector": "friendlyName",
+    "statusSeparator": "at: ",
+    "statusYear": "hidden",
+    "statusMonth": "short",
+    "statusDay": "numeric",
+    "statusHourCycle": "h23",
+    "statusTimeFormat": "h:m",
+    "enableGlobalContextStore": true
+  },
+  {
+    "id": "24b246c8.4c72fa",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for Message Ventilatie",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "message_mechanical_ventilation"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:message-text-clock"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "7befa0b16196877c",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for custom_energy",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "custom_energy"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": "Kw"
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "7ebeacd9.171704",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "binary sensor config for sensor dishwasher",
+    "version": 6,
+    "entityType": "binary_sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "dishwasher"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:dishwasher"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "b9f1299c.62c1b8",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for b9f1299c.62c1b8",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "rang_at"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "5051592a.7844e8",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for state outdoor light dark",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "outdoor_light_dark"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "891dab0e.0a8b18",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "binary sensor config for sensor tumble dryer",
+    "version": 6,
+    "entityType": "binary_sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "tumble_dryer"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:tumble-dryer"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "bdbe52c.932a5b",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "binary sensor config for sensor washing machine",
+    "version": 6,
+    "entityType": "binary_sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "washing_machine"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:washing-machine"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "82e8bc89.afd6f",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for time-and-message -> sensor message_home_page_1",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "message_home_page_1"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:message-text-clock"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": false
+  },
+  {
+    "id": "11bdffba.e4da8",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for put sensor message_home_page_1 -> 2",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "message_home_page_2"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:message-text-clock"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "d5f7b717.f22508",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for put sensor message_home_page_2 -> 3",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "message_home_page_3"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:message-text-clock"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  },
+  {
+    "id": "14fad9e1.42e016",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for put sensor message_home_page_3 -> 4",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "message_home_page_4"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": "mdi:message-text-clock"
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
+  }
+]
