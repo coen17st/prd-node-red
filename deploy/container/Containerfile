@@ -4,7 +4,7 @@ WORKDIR /usr/src/node-red
 
 RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 
-COPY ./src/data /data
+COPY ./src/data/ /data/
 
 # INSTALL PACKAGES
 RUN npm install \
