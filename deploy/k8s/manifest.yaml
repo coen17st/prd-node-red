@@ -95,8 +95,6 @@ spec:
   selector:
     matchLabels:
       app: node-red
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
