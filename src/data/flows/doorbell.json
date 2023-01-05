@@ -1,1056 +1,926 @@
 [
   {
-      "id": "3637eeb0.d96232",
-      "type": "tab",
-      "label": "doorbell",
-      "disabled": false,
-      "info": ""
+    "id": "3637eeb0.d96232",
+    "type": "tab",
+    "label": "doorbell",
+    "disabled": false,
+    "info": ""
   },
   {
-      "id": "aa8eb1c4.30d7e",
-      "type": "server-state-changed",
-      "z": "3637eeb0.d96232",
-      "name": "state doorbell button on",
-      "server": "4ba92433.2478cc",
-      "version": 4,
-      "exposeToHomeAssistant": false,
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          }
+    "id": "aa8eb1c4.30d7e",
+    "type": "server-state-changed",
+    "z": "3637eeb0.d96232",
+    "name": "state doorbell button on",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "binary_sensor.doorbell_button",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "on",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 180,
+    "wires": [
+      [
+        "f98986e3.e78848",
+        "11f67152.16638f",
+        "a97cf09e.3c5d8",
+        "fa85ecea.e1cdd"
       ],
-      "entityidfilter": "binary_sensor.doorbell_button",
-      "entityidfiltertype": "exact",
-      "outputinitially": false,
-      "state_type": "str",
-      "haltifstate": "on",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "outputs": 2,
-      "output_only_on_state_change": true,
-      "for": "",
-      "forType": "num",
-      "forUnits": "minutes",
-      "ignorePrevStateNull": false,
-      "ignorePrevStateUnknown": true,
-      "ignorePrevStateUnavailable": true,
-      "ignoreCurrentStateUnknown": true,
-      "ignoreCurrentStateUnavailable": true,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "eventData"
-          },
-          {
-              "property": "topic",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "triggerId"
-          }
-      ],
-      "x": 120,
-      "y": 180,
-      "wires": [
-          [
-              "f98986e3.e78848",
-              "11f67152.16638f",
-              "a97cf09e.3c5d8",
-              "fa85ecea.e1cdd"
-          ],
-          []
+      []
+    ]
+  },
+  {
+    "id": "bc0b175d.2363b8",
+    "type": "ha-wait-until",
+    "z": "3637eeb0.d96232",
+    "name": "wait until front door on",
+    "server": "4ba92433.2478cc",
+    "version": 2,
+    "outputs": 2,
+    "entityId": "binary_sensor.frontdoor_window_door_is_open",
+    "entityIdFilterType": "exact",
+    "property": "state",
+    "comparator": "is",
+    "value": "on",
+    "valueType": "str",
+    "timeout": "60",
+    "timeoutType": "num",
+    "timeoutUnits": "seconds",
+    "checkCurrentState": true,
+    "blockInputOverrides": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "x": 900,
+    "y": 260,
+    "wires": [["45dfd14d.84864"], ["5fb184d4.6599ac"]]
+  },
+  {
+    "id": "5fb184d4.6599ac",
+    "type": "template",
+    "z": "3637eeb0.d96232",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
+    "output": "str",
+    "x": 1100,
+    "y": 280,
+    "wires": [["32209a51.6b6536", "5841bec4.a2bed"]]
+  },
+  {
+    "id": "45dfd14d.84864",
+    "type": "template",
+    "z": "3637eeb0.d96232",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Er is aangebeld, de voordeur is open gedaan. ",
+    "output": "str",
+    "x": 1100,
+    "y": 240,
+    "wires": [["32209a51.6b6536", "5841bec4.a2bed"]]
+  },
+  {
+    "id": "32209a51.6b6536",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "notify phone coen",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "mobile_app_phone_coen",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1310,
+    "y": 280,
+    "wires": [["aa2e94ac.c75bf8"]]
+  },
+  {
+    "id": "7c117ebf.4e87b",
+    "type": "template",
+    "z": "3637eeb0.d96232",
+    "name": "time and message",
+    "field": "time",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "{{mydom}}-{{mymonth}} {{mytime}}",
+    "output": "str",
+    "x": 1110,
+    "y": 180,
+    "wires": [["f44aaff0d8299e32"]]
+  },
+  {
+    "id": "9f65aaf4.43f4c8",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state doorbell chime",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 1,
+    "halt_if": "",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "switch.doorbell_chime_active",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 900,
+    "y": 340,
+    "wires": [["63738500.aace1c"]]
+  },
+  {
+    "id": "63738500.aace1c",
+    "type": "switch",
+    "z": "3637eeb0.d96232",
+    "name": "switch",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "on",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "off",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 1070,
+    "y": 340,
+    "wires": [[], ["50618f0.36d7e7"]]
+  },
+  {
+    "id": "aa2e94ac.c75bf8",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state persons not home",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "not_home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "group.persons",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 1570,
+    "y": 280,
+    "wires": [["d0000832.eafa28"], []]
+  },
+  {
+    "id": "d0000832.eafa28",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "notify phone anne",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "mobile_app_phone_anne",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1790,
+    "y": 280,
+    "wires": [[]]
+  },
+  {
+    "id": "bff3378b.fb3928",
+    "type": "server-state-changed",
+    "z": "3637eeb0.d96232",
+    "name": "state persons not home",
+    "server": "4ba92433.2478cc",
+    "version": 4,
+    "exposeToHomeAssistant": false,
+    "haConfig": [
+      {
+        "property": "name",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      }
+    ],
+    "entityidfilter": "group.persons",
+    "entityidfiltertype": "exact",
+    "outputinitially": false,
+    "state_type": "str",
+    "haltifstate": "not_home",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "outputs": 2,
+    "output_only_on_state_change": true,
+    "for": "",
+    "forType": "num",
+    "forUnits": "minutes",
+    "ignorePrevStateNull": false,
+    "ignorePrevStateUnknown": true,
+    "ignorePrevStateUnavailable": true,
+    "ignoreCurrentStateUnknown": true,
+    "ignoreCurrentStateUnavailable": true,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "eventData"
+      },
+      {
+        "property": "topic",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "triggerId"
+      }
+    ],
+    "x": 120,
+    "y": 100,
+    "wires": [["59bbde6d.37f02"], []]
+  },
+  {
+    "id": "59bbde6d.37f02",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state doorbell off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "switch.doorbell_chime_active",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 360,
+    "y": 100,
+    "wires": [["d1c2946f.425ad8"], []]
+  },
+  {
+    "id": "d1c2946f.425ad8",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "turn on doorbell chime",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["switch.doorbell_chime_active"],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 620,
+    "y": 100,
+    "wires": [[]]
+  },
+  {
+    "id": "f98986e3.e78848",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state shield playing",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "playing",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "media_player.shield",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 370,
+    "y": 400,
+    "wires": [["c1191c26.764cf"], []]
+  },
+  {
+    "id": "c63cd5dd.2969b8",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "pause shield",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "media_player",
+    "service": "media_pause",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["media_player.shield"],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 870,
+    "y": 400,
+    "wires": [["74b0f721.d079c8"]]
+  },
+  {
+    "id": "cdd2f7dd.b79268",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "notify tv",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "notify",
+    "service": "lg_webos_smart_tv",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1520,
+    "y": 400,
+    "wires": [[]]
+  },
+  {
+    "id": "74b0f721.d079c8",
+    "type": "template",
+    "z": "3637eeb0.d96232",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Er is aangebeld. ",
+    "output": "str",
+    "x": 1070,
+    "y": 400,
+    "wires": [["cdd2f7dd.b79268"]]
+  },
+  {
+    "id": "11f67152.16638f",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state outdoor dark",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "dark",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "sensor.outdoor_light_dark",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 370,
+    "y": 460,
+    "wires": [["d6c8ef4a.6f6e9"], []]
+  },
+  {
+    "id": "c3f4b74d.a01278",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "turn on light front door",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["light.shelly1_front_door"],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 900,
+    "y": 460,
+    "wires": [["f39e3558.7e0a48"]]
+  },
+  {
+    "id": "c1191c26.764cf",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state harmony screen off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "Scherm Uit",
+    "halt_if_type": "str",
+    "halt_if_compare": "is_not",
+    "entity_id": "input_select.harmonyhub",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 650,
+    "y": 400,
+    "wires": [["c63cd5dd.2969b8"], []]
+  },
+  {
+    "id": "26977249.cf194e",
+    "type": "change",
+    "z": "3637eeb0.d96232",
+    "name": "set payload open",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "open",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 630,
+    "y": 180,
+    "wires": [["fa85ecea.e1cdd"]]
+  },
+  {
+    "id": "a97cf09e.3c5d8",
+    "type": "delay",
+    "z": "3637eeb0.d96232",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "7",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "outputs": 1,
+    "x": 340,
+    "y": 180,
+    "wires": [["26977249.cf194e"]]
+  },
+  {
+    "id": "896e21b5.a4b9e",
+    "type": "change",
+    "z": "3637eeb0.d96232",
+    "name": "set payload close",
+    "rules": [
+      {
+        "t": "set",
+        "p": "payload",
+        "pt": "msg",
+        "to": "close",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 630,
+    "y": 300,
+    "wires": [["fa85ecea.e1cdd"]]
+  },
+  {
+    "id": "d6c8ef4a.6f6e9",
+    "type": "api-current-state",
+    "z": "3637eeb0.d96232",
+    "name": "state light front door off",
+    "server": "4ba92433.2478cc",
+    "version": 3,
+    "outputs": 2,
+    "halt_if": "off",
+    "halt_if_type": "str",
+    "halt_if_compare": "is",
+    "entity_id": "light.shelly1_front_door",
+    "state_type": "str",
+    "blockInputOverrides": false,
+    "outputProperties": [
+      {
+        "property": "payload",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entityState"
+      },
+      {
+        "property": "data",
+        "propertyType": "msg",
+        "value": "",
+        "valueType": "entity"
+      }
+    ],
+    "for": 0,
+    "forType": "num",
+    "forUnits": "minutes",
+    "x": 640,
+    "y": 460,
+    "wires": [["c3f4b74d.a01278"], []]
+  },
+  {
+    "id": "4566a0c1.1b69e",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "turn off light front door",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "light",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["light.shelly1_front_door"],
+    "data": "",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1560,
+    "y": 460,
+    "wires": [[]]
+  },
+  {
+    "id": "9a850a23.0f7348",
+    "type": "simpletime",
+    "z": "3637eeb0.d96232",
+    "name": "",
+    "mydate": true,
+    "myymd": true,
+    "myyear": true,
+    "mymonth": true,
+    "mymonthn": true,
+    "mydom": true,
+    "mydoy": true,
+    "myday": true,
+    "myhourpm": true,
+    "myhour": true,
+    "mytime": true,
+    "mytimes": true,
+    "myminute": true,
+    "myminutes": true,
+    "mysecond": true,
+    "mymillis": true,
+    "myepoch": true,
+    "myrawdate": true,
+    "mypm": true,
+    "x": 870,
+    "y": 180,
+    "wires": [["7c117ebf.4e87b"]]
+  },
+  {
+    "id": "fa85ecea.e1cdd",
+    "type": "traffic",
+    "z": "3637eeb0.d96232",
+    "name": "traffic light",
+    "property_allow": "payload",
+    "filter_allow": "open",
+    "ignore_case_allow": false,
+    "negate_allow": false,
+    "send_allow": false,
+    "property_stop": "payload",
+    "filter_stop": "close",
+    "ignore_case_stop": false,
+    "negate_stop": false,
+    "send_stop": false,
+    "default_start": true,
+    "differ": false,
+    "x": 630,
+    "y": 240,
+    "wires": [
+      [
+        "896e21b5.a4b9e",
+        "9a850a23.0f7348",
+        "bc0b175d.2363b8",
+        "9f65aaf4.43f4c8"
       ]
+    ]
   },
   {
-      "id": "bc0b175d.2363b8",
-      "type": "ha-wait-until",
-      "z": "3637eeb0.d96232",
-      "name": "wait until front door on",
-      "server": "4ba92433.2478cc",
-      "version": 2,
-      "outputs": 2,
-      "entityId": "binary_sensor.recessed_door_sensor_gen5_window_door_is_open",
-      "entityIdFilterType": "exact",
-      "property": "state",
-      "comparator": "is",
-      "value": "on",
-      "valueType": "str",
-      "timeout": "60",
-      "timeoutType": "num",
-      "timeoutUnits": "seconds",
-      "checkCurrentState": true,
-      "blockInputOverrides": true,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "x": 900,
-      "y": 260,
-      "wires": [
-          [
-              "45dfd14d.84864"
-          ],
-          [
-              "5fb184d4.6599ac"
-          ]
-      ]
+    "id": "f39e3558.7e0a48",
+    "type": "stoptimer",
+    "z": "3637eeb0.d96232",
+    "duration": "10",
+    "units": "Minute",
+    "payloadtype": "num",
+    "payloadval": "0",
+    "name": "",
+    "x": 1100,
+    "y": 460,
+    "wires": [["4566a0c1.1b69e"], []]
   },
   {
-      "id": "5fb184d4.6599ac",
-      "type": "template",
-      "z": "3637eeb0.d96232",
-      "name": "message",
-      "field": "message",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
-      "output": "str",
-      "x": 1100,
-      "y": 280,
-      "wires": [
-          [
-              "32209a51.6b6536",
-              "5841bec4.a2bed"
-          ]
-      ]
+    "id": "211ffb19.e76354",
+    "type": "api-call-service",
+    "z": "3637eeb0.d96232",
+    "name": "google say",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "tts",
+    "service": "google_say",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["media_player.home_speaker"],
+    "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1530,
+    "y": 340,
+    "wires": [[]]
   },
   {
-      "id": "45dfd14d.84864",
-      "type": "template",
-      "z": "3637eeb0.d96232",
-      "name": "message",
-      "field": "message",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "Er is aangebeld, de voordeur is open gedaan. ",
-      "output": "str",
-      "x": 1100,
-      "y": 240,
-      "wires": [
-          [
-              "32209a51.6b6536",
-              "5841bec4.a2bed"
-          ]
-      ]
+    "id": "50618f0.36d7e7",
+    "type": "template",
+    "z": "3637eeb0.d96232",
+    "name": "message",
+    "field": "message",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Er is aangebeld.",
+    "output": "str",
+    "x": 1280,
+    "y": 340,
+    "wires": [["211ffb19.e76354"]]
   },
   {
-      "id": "32209a51.6b6536",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "notify phone coen",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "notify",
-      "service": "mobile_app_phone_coen",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [],
-      "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 1310,
-      "y": 280,
-      "wires": [
-          [
-              "aa2e94ac.c75bf8"
-          ]
-      ]
+    "id": "cc76e29e.b681",
+    "type": "comment",
+    "z": "3637eeb0.d96232",
+    "name": "doorbell automation",
+    "info": "doorbell automation",
+    "x": 110,
+    "y": 40,
+    "wires": []
   },
   {
-      "id": "7c117ebf.4e87b",
-      "type": "template",
-      "z": "3637eeb0.d96232",
-      "name": "time and message",
-      "field": "time",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "{{mydom}}-{{mymonth}} {{mytime}}",
-      "output": "str",
-      "x": 1110,
-      "y": 180,
-      "wires": [
-          [
-              "f44aaff0d8299e32"
-          ]
-      ]
+    "id": "5841bec4.a2bed",
+    "type": "link out",
+    "z": "3637eeb0.d96232",
+    "name": "",
+    "links": ["ebf4860d.603538"],
+    "x": 1235,
+    "y": 220,
+    "wires": []
   },
   {
-      "id": "9f65aaf4.43f4c8",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state doorbell chime",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 1,
-      "halt_if": "",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "switch.doorbell_chime_active",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 900,
-      "y": 340,
-      "wires": [
-          [
-              "63738500.aace1c"
-          ]
-      ]
+    "id": "f44aaff0d8299e32",
+    "type": "ha-sensor",
+    "z": "3637eeb0.d96232",
+    "name": "",
+    "entityConfig": "b9f1299c.62c1b8",
+    "version": 0,
+    "state": "time",
+    "stateType": "msg",
+    "attributes": [],
+    "inputOverride": "allow",
+    "outputProperties": [],
+    "x": 1530,
+    "y": 180,
+    "wires": [[]]
   },
   {
-      "id": "63738500.aace1c",
-      "type": "switch",
-      "z": "3637eeb0.d96232",
-      "name": "switch",
-      "property": "payload",
-      "propertyType": "msg",
-      "rules": [
-          {
-              "t": "eq",
-              "v": "on",
-              "vt": "str"
-          },
-          {
-              "t": "eq",
-              "v": "off",
-              "vt": "str"
-          }
-      ],
-      "checkall": "true",
-      "repair": false,
-      "outputs": 2,
-      "x": 1070,
-      "y": 340,
-      "wires": [
-          [],
-          [
-              "50618f0.36d7e7"
-          ]
-      ]
+    "id": "4ba92433.2478cc",
+    "type": "server",
+    "name": "Home Assistant",
+    "version": 5,
+    "addon": false,
+    "rejectUnauthorizedCerts": false,
+    "ha_boolean": "y|yes|true|on|home|open",
+    "connectionDelay": true,
+    "cacheJson": true,
+    "heartbeat": true,
+    "heartbeatInterval": "30",
+    "areaSelector": "friendlyName",
+    "deviceSelector": "friendlyName",
+    "entitySelector": "friendlyName",
+    "statusSeparator": "at: ",
+    "statusYear": "hidden",
+    "statusMonth": "short",
+    "statusDay": "numeric",
+    "statusHourCycle": "h23",
+    "statusTimeFormat": "h:m",
+    "enableGlobalContextStore": true
   },
   {
-      "id": "aa2e94ac.c75bf8",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state persons not home",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "not_home",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "group.persons",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 1570,
-      "y": 280,
-      "wires": [
-          [
-              "d0000832.eafa28"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "d0000832.eafa28",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "notify phone anne",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "notify",
-      "service": "mobile_app_phone_anne",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [],
-      "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 1790,
-      "y": 280,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "bff3378b.fb3928",
-      "type": "server-state-changed",
-      "z": "3637eeb0.d96232",
-      "name": "state persons not home",
-      "server": "4ba92433.2478cc",
-      "version": 4,
-      "exposeToHomeAssistant": false,
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          }
-      ],
-      "entityidfilter": "group.persons",
-      "entityidfiltertype": "exact",
-      "outputinitially": false,
-      "state_type": "str",
-      "haltifstate": "not_home",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "outputs": 2,
-      "output_only_on_state_change": true,
-      "for": "",
-      "forType": "num",
-      "forUnits": "minutes",
-      "ignorePrevStateNull": false,
-      "ignorePrevStateUnknown": true,
-      "ignorePrevStateUnavailable": true,
-      "ignoreCurrentStateUnknown": true,
-      "ignoreCurrentStateUnavailable": true,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "eventData"
-          },
-          {
-              "property": "topic",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "triggerId"
-          }
-      ],
-      "x": 120,
-      "y": 100,
-      "wires": [
-          [
-              "59bbde6d.37f02"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "59bbde6d.37f02",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state doorbell off",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "off",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "switch.doorbell_chime_active",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 360,
-      "y": 100,
-      "wires": [
-          [
-              "d1c2946f.425ad8"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "d1c2946f.425ad8",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "turn on doorbell chime",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "switch",
-      "service": "turn_on",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "switch.doorbell_chime_active"
-      ],
-      "data": "",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 620,
-      "y": 100,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "f98986e3.e78848",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state shield playing",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "playing",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "media_player.shield",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 370,
-      "y": 400,
-      "wires": [
-          [
-              "c1191c26.764cf"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "c63cd5dd.2969b8",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "pause shield",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "media_player",
-      "service": "media_pause",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "media_player.shield"
-      ],
-      "data": "",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 870,
-      "y": 400,
-      "wires": [
-          [
-              "74b0f721.d079c8"
-          ]
-      ]
-  },
-  {
-      "id": "cdd2f7dd.b79268",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "notify tv",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "notify",
-      "service": "lg_webos_smart_tv",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [],
-      "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 1520,
-      "y": 400,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "74b0f721.d079c8",
-      "type": "template",
-      "z": "3637eeb0.d96232",
-      "name": "message",
-      "field": "message",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "Er is aangebeld. ",
-      "output": "str",
-      "x": 1070,
-      "y": 400,
-      "wires": [
-          [
-              "cdd2f7dd.b79268"
-          ]
-      ]
-  },
-  {
-      "id": "11f67152.16638f",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state outdoor dark",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "dark",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "sensor.outdoor_light_dark",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 370,
-      "y": 460,
-      "wires": [
-          [
-              "d6c8ef4a.6f6e9"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "c3f4b74d.a01278",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "turn on light front door",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "light",
-      "service": "turn_on",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "light.shelly1_front_door"
-      ],
-      "data": "",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 900,
-      "y": 460,
-      "wires": [
-          [
-              "f39e3558.7e0a48"
-          ]
-      ]
-  },
-  {
-      "id": "c1191c26.764cf",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state harmony screen off",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "Scherm Uit",
-      "halt_if_type": "str",
-      "halt_if_compare": "is_not",
-      "entity_id": "input_select.harmonyhub",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 650,
-      "y": 400,
-      "wires": [
-          [
-              "c63cd5dd.2969b8"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "26977249.cf194e",
-      "type": "change",
-      "z": "3637eeb0.d96232",
-      "name": "set payload open",
-      "rules": [
-          {
-              "t": "set",
-              "p": "payload",
-              "pt": "msg",
-              "to": "open",
-              "tot": "str"
-          }
-      ],
-      "action": "",
-      "property": "",
-      "from": "",
-      "to": "",
-      "reg": false,
-      "x": 630,
-      "y": 180,
-      "wires": [
-          [
-              "fa85ecea.e1cdd"
-          ]
-      ]
-  },
-  {
-      "id": "a97cf09e.3c5d8",
-      "type": "delay",
-      "z": "3637eeb0.d96232",
-      "name": "",
-      "pauseType": "delay",
-      "timeout": "7",
-      "timeoutUnits": "seconds",
-      "rate": "1",
-      "nbRateUnits": "1",
-      "rateUnits": "second",
-      "randomFirst": "1",
-      "randomLast": "5",
-      "randomUnits": "seconds",
-      "drop": false,
-      "outputs": 1,
-      "x": 340,
-      "y": 180,
-      "wires": [
-          [
-              "26977249.cf194e"
-          ]
-      ]
-  },
-  {
-      "id": "896e21b5.a4b9e",
-      "type": "change",
-      "z": "3637eeb0.d96232",
-      "name": "set payload close",
-      "rules": [
-          {
-              "t": "set",
-              "p": "payload",
-              "pt": "msg",
-              "to": "close",
-              "tot": "str"
-          }
-      ],
-      "action": "",
-      "property": "",
-      "from": "",
-      "to": "",
-      "reg": false,
-      "x": 630,
-      "y": 300,
-      "wires": [
-          [
-              "fa85ecea.e1cdd"
-          ]
-      ]
-  },
-  {
-      "id": "d6c8ef4a.6f6e9",
-      "type": "api-current-state",
-      "z": "3637eeb0.d96232",
-      "name": "state light front door off",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "off",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "light.shelly1_front_door",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 640,
-      "y": 460,
-      "wires": [
-          [
-              "c3f4b74d.a01278"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "4566a0c1.1b69e",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "turn off light front door",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "light",
-      "service": "turn_off",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "light.shelly1_front_door"
-      ],
-      "data": "",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 1560,
-      "y": 460,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "9a850a23.0f7348",
-      "type": "simpletime",
-      "z": "3637eeb0.d96232",
-      "name": "",
-      "mydate": true,
-      "myymd": true,
-      "myyear": true,
-      "mymonth": true,
-      "mymonthn": true,
-      "mydom": true,
-      "mydoy": true,
-      "myday": true,
-      "myhourpm": true,
-      "myhour": true,
-      "mytime": true,
-      "mytimes": true,
-      "myminute": true,
-      "myminutes": true,
-      "mysecond": true,
-      "mymillis": true,
-      "myepoch": true,
-      "myrawdate": true,
-      "mypm": true,
-      "x": 870,
-      "y": 180,
-      "wires": [
-          [
-              "7c117ebf.4e87b"
-          ]
-      ]
-  },
-  {
-      "id": "fa85ecea.e1cdd",
-      "type": "traffic",
-      "z": "3637eeb0.d96232",
-      "name": "traffic light",
-      "property_allow": "payload",
-      "filter_allow": "open",
-      "ignore_case_allow": false,
-      "negate_allow": false,
-      "send_allow": false,
-      "property_stop": "payload",
-      "filter_stop": "close",
-      "ignore_case_stop": false,
-      "negate_stop": false,
-      "send_stop": false,
-      "default_start": true,
-      "differ": false,
-      "x": 630,
-      "y": 240,
-      "wires": [
-          [
-              "896e21b5.a4b9e",
-              "9a850a23.0f7348",
-              "bc0b175d.2363b8",
-              "9f65aaf4.43f4c8"
-          ]
-      ]
-  },
-  {
-      "id": "f39e3558.7e0a48",
-      "type": "stoptimer",
-      "z": "3637eeb0.d96232",
-      "duration": "10",
-      "units": "Minute",
-      "payloadtype": "num",
-      "payloadval": "0",
-      "name": "",
-      "x": 1100,
-      "y": 460,
-      "wires": [
-          [
-              "4566a0c1.1b69e"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "211ffb19.e76354",
-      "type": "api-call-service",
-      "z": "3637eeb0.d96232",
-      "name": "google say",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "tts",
-      "service": "google_say",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "media_player.home_speaker"
-      ],
-      "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 1530,
-      "y": 340,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "50618f0.36d7e7",
-      "type": "template",
-      "z": "3637eeb0.d96232",
-      "name": "message",
-      "field": "message",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "Er is aangebeld.",
-      "output": "str",
-      "x": 1280,
-      "y": 340,
-      "wires": [
-          [
-              "211ffb19.e76354"
-          ]
-      ]
-  },
-  {
-      "id": "cc76e29e.b681",
-      "type": "comment",
-      "z": "3637eeb0.d96232",
-      "name": "doorbell automation",
-      "info": "doorbell automation",
-      "x": 110,
-      "y": 40,
-      "wires": []
-  },
-  {
-      "id": "5841bec4.a2bed",
-      "type": "link out",
-      "z": "3637eeb0.d96232",
-      "name": "",
-      "links": [
-          "ebf4860d.603538"
-      ],
-      "x": 1235,
-      "y": 220,
-      "wires": []
-  },
-  {
-      "id": "f44aaff0d8299e32",
-      "type": "ha-sensor",
-      "z": "3637eeb0.d96232",
-      "name": "",
-      "entityConfig": "b9f1299c.62c1b8",
-      "version": 0,
-      "state": "time",
-      "stateType": "msg",
-      "attributes": [],
-      "inputOverride": "allow",
-      "outputProperties": [],
-      "x": 1530,
-      "y": 180,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "4ba92433.2478cc",
-      "type": "server",
-      "name": "Home Assistant",
-      "version": 5,
-      "addon": false,
-      "rejectUnauthorizedCerts": false,
-      "ha_boolean": "y|yes|true|on|home|open",
-      "connectionDelay": true,
-      "cacheJson": true,
-      "heartbeat": true,
-      "heartbeatInterval": "30",
-      "areaSelector": "friendlyName",
-      "deviceSelector": "friendlyName",
-      "entitySelector": "friendlyName",
-      "statusSeparator": "at: ",
-      "statusYear": "hidden",
-      "statusMonth": "short",
-      "statusDay": "numeric",
-      "statusHourCycle": "h23",
-      "statusTimeFormat": "h:m",
-      "enableGlobalContextStore": true
-  },
-  {
-      "id": "b9f1299c.62c1b8",
-      "type": "ha-entity-config",
-      "server": "4ba92433.2478cc",
-      "deviceConfig": "",
-      "name": "sensor config for b9f1299c.62c1b8",
-      "version": 6,
-      "entityType": "sensor",
-      "haConfig": [
-          {
-              "property": "name",
-              "value": "rang_at"
-          },
-          {
-              "property": "device_class",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          },
-          {
-              "property": "unit_of_measurement",
-              "value": ""
-          },
-          {
-              "property": "state_class",
-              "value": ""
-          },
-          {
-              "property": "last_reset",
-              "value": ""
-          }
-      ],
-      "resend": true
+    "id": "b9f1299c.62c1b8",
+    "type": "ha-entity-config",
+    "server": "4ba92433.2478cc",
+    "deviceConfig": "",
+    "name": "sensor config for b9f1299c.62c1b8",
+    "version": 6,
+    "entityType": "sensor",
+    "haConfig": [
+      {
+        "property": "name",
+        "value": "rang_at"
+      },
+      {
+        "property": "device_class",
+        "value": ""
+      },
+      {
+        "property": "icon",
+        "value": ""
+      },
+      {
+        "property": "unit_of_measurement",
+        "value": ""
+      },
+      {
+        "property": "state_class",
+        "value": ""
+      },
+      {
+        "property": "last_reset",
+        "value": ""
+      }
+    ],
+    "resend": true
   }
 ]
