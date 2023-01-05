@@ -1,5 +1,115 @@
 [
   {
+    "id": "d7eb731ec2383a42",
+    "type": "subflow",
+    "name": "temp_frontyard_powersocket_on",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 40,
+        "y": 100,
+        "wires": [
+          {
+            "id": "4b6b1e831da55dcd"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "4b6b1e831da55dcd",
+    "type": "api-call-service",
+    "z": "d7eb731ec2383a42",
+    "name": "turn on frontyard powersocket",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_on",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["switch.shelly1_frontyard_powersocket"],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 210,
+    "y": 100,
+    "wires": [[]]
+  },
+  {
+    "id": "31356d632aa7ee6a",
+    "type": "comment",
+    "z": "d7eb731ec2383a42",
+    "name": "temporary subflow to turn on powersocket christmas lights",
+    "info": "",
+    "x": 230,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "b93cc1561f32248d",
+    "type": "subflow",
+    "name": "temp_frontyard_powersocket_off",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 40,
+        "y": 100,
+        "wires": [
+          {
+            "id": "441696546b08b299"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "441696546b08b299",
+    "type": "api-call-service",
+    "z": "b93cc1561f32248d",
+    "name": "turn off frontyard powersocket",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "switch",
+    "service": "turn_off",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["switch.shelly1_frontyard_powersocket"],
+    "data": "",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 210,
+    "y": 100,
+    "wires": [[]]
+  },
+  {
+    "id": "ce4fb69f6baf8bae",
+    "type": "comment",
+    "z": "b93cc1561f32248d",
+    "name": "temporary subflow to turn off powersocket christmas lights",
+    "info": "",
+    "x": 230,
+    "y": 40,
+    "wires": []
+  },
+  {
     "id": "c0da8379.b0dd3",
     "type": "tab",
     "label": "present_dark",
@@ -18,9 +128,7 @@
     "service": "turn_on",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shellydimmer_backyard_string_l"
-    ],
+    "entityId": ["light.shellydimmer_backyard_string_l"],
     "data": "{\"brightness\":50}",
     "dataType": "json",
     "mergeContext": "",
@@ -29,11 +137,7 @@
     "queue": "none",
     "x": 1720,
     "y": 740,
-    "wires": [
-      [
-        "13ca8b62.27a4a5"
-      ]
-    ]
+    "wires": [["13ca8b62.27a4a5"]]
   },
   {
     "id": "e137297f.088698",
@@ -47,9 +151,7 @@
     "service": "turn_on",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shelly1_front_door"
-    ],
+    "entityId": ["light.shelly1_front_door"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -58,11 +160,7 @@
     "queue": "none",
     "x": 1720,
     "y": 800,
-    "wires": [
-      [
-        "13ca8b62.27a4a5"
-      ]
-    ]
+    "wires": [["13ca8b62.27a4a5"]]
   },
   {
     "id": "d5736355.e4e8e",
@@ -95,10 +193,7 @@
         "5d939da2.20d8c4",
         "cc64f27a.c792c"
       ],
-      [
-        "c3dc83f5.77118",
-        "b7ae8452.581398"
-      ]
+      ["c3dc83f5.77118", "b7ae8452.581398"]
     ]
   },
   {
@@ -120,12 +215,7 @@
     "outputs": 1,
     "x": 380,
     "y": 600,
-    "wires": [
-      [
-        "ed71f712.b69338",
-        "60ffd46b.e9534c"
-      ]
-    ]
+    "wires": [["ed71f712.b69338", "60ffd46b.e9534c"]]
   },
   {
     "id": "ca6dfbcc.46ac18",
@@ -139,9 +229,7 @@
     "service": "turn_off",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shelly1_front_door"
-    ],
+    "entityId": ["light.shelly1_front_door"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -150,11 +238,7 @@
     "queue": "none",
     "x": 1720,
     "y": 220,
-    "wires": [
-      [
-        "1ae2e15a.a292cf"
-      ]
-    ]
+    "wires": [["1ae2e15a.a292cf"]]
   },
   {
     "id": "c29767f.9905c98",
@@ -168,9 +252,7 @@
     "service": "turn_off",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shellydimmer_backyard_string_l"
-    ],
+    "entityId": ["light.shellydimmer_backyard_string_l"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -179,11 +261,7 @@
     "queue": "none",
     "x": 1720,
     "y": 160,
-    "wires": [
-      [
-        "1ae2e15a.a292cf"
-      ]
-    ]
+    "wires": [["1ae2e15a.a292cf"]]
   },
   {
     "id": "c52b3e07.1a75e",
@@ -242,11 +320,7 @@
     ],
     "x": 110,
     "y": 600,
-    "wires": [
-      [
-        "f916039a.ab914"
-      ]
-    ]
+    "wires": [["f916039a.ab914"]]
   },
   {
     "id": "d08ebe33.48973",
@@ -281,12 +355,7 @@
     "forUnits": "minutes",
     "x": 1420,
     "y": 740,
-    "wires": [
-      [
-        "9e995be6.7976b8"
-      ],
-      []
-    ]
+    "wires": [["9e995be6.7976b8"], []]
   },
   {
     "id": "cc18abb3.ae2a18",
@@ -321,12 +390,7 @@
     "forUnits": "minutes",
     "x": 1420,
     "y": 800,
-    "wires": [
-      [
-        "e137297f.088698"
-      ],
-      []
-    ]
+    "wires": [["e137297f.088698"], []]
   },
   {
     "id": "9b31430f.b380a",
@@ -385,11 +449,7 @@
     ],
     "x": 140,
     "y": 460,
-    "wires": [
-      [
-        "d5736355.e4e8e"
-      ]
-    ]
+    "wires": [["d5736355.e4e8e"]]
   },
   {
     "id": "e84b117e.dd59d",
@@ -448,11 +508,7 @@
     ],
     "x": 100,
     "y": 660,
-    "wires": [
-      [
-        "9b83ef6.7af1c1"
-      ]
-    ]
+    "wires": [["9b83ef6.7af1c1"]]
   },
   {
     "id": "9b83ef6.7af1c1",
@@ -478,13 +534,7 @@
     "outputs": 2,
     "x": 370,
     "y": 660,
-    "wires": [
-      [
-        "ed71f712.b69338",
-        "9f66d88d.57dad8"
-      ],
-      []
-    ]
+    "wires": [["ed71f712.b69338", "9f66d88d.57dad8"], []]
   },
   {
     "id": "1f0643fe.cb32cc",
@@ -519,12 +569,7 @@
     "forUnits": "minutes",
     "x": 1420,
     "y": 240,
-    "wires": [
-      [
-        "ca6dfbcc.46ac18"
-      ],
-      []
-    ]
+    "wires": [["ca6dfbcc.46ac18"], []]
   },
   {
     "id": "d48ea384.8d1d",
@@ -559,12 +604,7 @@
     "forUnits": "minutes",
     "x": 1420,
     "y": 180,
-    "wires": [
-      [
-        "c29767f.9905c98"
-      ],
-      []
-    ]
+    "wires": [["c29767f.9905c98"], []]
   },
   {
     "id": "b86ec736.0cd658",
@@ -623,12 +663,7 @@
     ],
     "x": 140,
     "y": 740,
-    "wires": [
-      [
-        "c0a73100.b726e"
-      ],
-      []
-    ]
+    "wires": [["c0a73100.b726e"], []]
   },
   {
     "id": "f8f2314a.940eb",
@@ -687,12 +722,7 @@
     ],
     "x": 150,
     "y": 800,
-    "wires": [
-      [
-        "b53f891b.1feb08"
-      ],
-      []
-    ]
+    "wires": [["b53f891b.1feb08"], []]
   },
   {
     "id": "c0a73100.b726e",
@@ -727,14 +757,7 @@
     "forUnits": "minutes",
     "x": 690,
     "y": 740,
-    "wires": [
-      [
-        "5f497d57.150f44",
-        "aab516c6.d5acf8",
-        "ed71f712.b69338"
-      ],
-      []
-    ]
+    "wires": [["5f497d57.150f44", "aab516c6.d5acf8", "ed71f712.b69338"], []]
   },
   {
     "id": "b53f891b.1feb08",
@@ -769,14 +792,7 @@
     "forUnits": "minutes",
     "x": 690,
     "y": 800,
-    "wires": [
-      [
-        "aab516c6.d5acf8",
-        "ed71f712.b69338",
-        "5f497d57.150f44"
-      ],
-      []
-    ]
+    "wires": [["aab516c6.d5acf8", "ed71f712.b69338", "5f497d57.150f44"], []]
   },
   {
     "id": "ce9cbf76.39de5",
@@ -811,12 +827,7 @@
     "forUnits": "minutes",
     "x": 1190,
     "y": 540,
-    "wires": [
-      [
-        "f7dd5719.04dbc8"
-      ],
-      []
-    ]
+    "wires": [["f7dd5719.04dbc8"], []]
   },
   {
     "id": "f7dd5719.04dbc8",
@@ -830,9 +841,7 @@
     "service": "turn_on",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shellydimmer_living_room"
-    ],
+    "entityId": ["light.shellydimmer_living_room"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -841,11 +850,7 @@
     "queue": "none",
     "x": 1720,
     "y": 420,
-    "wires": [
-      [
-        "b50fb918.44f928"
-      ]
-    ]
+    "wires": [["b50fb918.44f928"]]
   },
   {
     "id": "c3dc83f5.77118",
@@ -880,12 +885,7 @@
     "forUnits": "minutes",
     "x": 670,
     "y": 540,
-    "wires": [
-      [
-        "171a4247.1ffeee"
-      ],
-      []
-    ]
+    "wires": [["171a4247.1ffeee"], []]
   },
   {
     "id": "171a4247.1ffeee",
@@ -909,16 +909,9 @@
     "checkall": "true",
     "repair": false,
     "outputs": 2,
-    "x": 950,
+    "x": 930,
     "y": 540,
-    "wires": [
-      [
-        "ce9cbf76.39de5"
-      ],
-      [
-        "ce9cbf76.39de5"
-      ]
-    ]
+    "wires": [["ce9cbf76.39de5"], ["ce9cbf76.39de5"]]
   },
   {
     "id": "cea43bad.d11358",
@@ -933,20 +926,14 @@
     "output": "str",
     "x": 2060,
     "y": 780,
-    "wires": [
-      [
-        "9bfeecdc.f723d"
-      ]
-    ]
+    "wires": [["9bfeecdc.f723d"]]
   },
   {
     "id": "9bfeecdc.f723d",
     "type": "link out",
     "z": "c0da8379.b0dd3",
     "name": "",
-    "links": [
-      "ebf4860d.603538"
-    ],
+    "links": ["ebf4860d.603538"],
     "x": 2255,
     "y": 480,
     "wires": []
@@ -979,11 +966,7 @@
     "output_results_count": 1,
     "x": 680,
     "y": 920,
-    "wires": [
-      [
-        "6ca20d6c.62d004"
-      ]
-    ]
+    "wires": [["6ca20d6c.62d004"]]
   },
   {
     "id": "b9ba0c85.bcd94",
@@ -1007,11 +990,7 @@
     "reduceFixup": "",
     "x": 1130,
     "y": 920,
-    "wires": [
-      [
-        "a5f68bf8.968328"
-      ]
-    ]
+    "wires": [["a5f68bf8.968328"]]
   },
   {
     "id": "6ca20d6c.62d004",
@@ -1026,11 +1005,7 @@
     "output": "str",
     "x": 940,
     "y": 920,
-    "wires": [
-      [
-        "b9ba0c85.bcd94"
-      ]
-    ]
+    "wires": [["b9ba0c85.bcd94"]]
   },
   {
     "id": "da57c41e.c506f8",
@@ -1060,11 +1035,7 @@
     "output_results_count": 1,
     "x": 660,
     "y": 980,
-    "wires": [
-      [
-        "fd3c7297.9684e"
-      ]
-    ]
+    "wires": [["fd3c7297.9684e"]]
   },
   {
     "id": "fd3c7297.9684e",
@@ -1079,11 +1050,7 @@
     "output": "str",
     "x": 940,
     "y": 980,
-    "wires": [
-      [
-        "1928247d.6ddacc"
-      ]
-    ]
+    "wires": [["1928247d.6ddacc"]]
   },
   {
     "id": "1928247d.6ddacc",
@@ -1107,11 +1074,7 @@
     "reduceFixup": "",
     "x": 1130,
     "y": 980,
-    "wires": [
-      [
-        "d129b86a.aa0f58"
-      ]
-    ]
+    "wires": [["d129b86a.aa0f58"]]
   },
   {
     "id": "d129b86a.aa0f58",
@@ -1126,11 +1089,7 @@
     "output": "str",
     "x": 2060,
     "y": 980,
-    "wires": [
-      [
-        "9bfeecdc.f723d"
-      ]
-    ]
+    "wires": [["9bfeecdc.f723d"]]
   },
   {
     "id": "efdb1a4f.c5e9b8",
@@ -1145,11 +1104,7 @@
     "output": "str",
     "x": 2060,
     "y": 180,
-    "wires": [
-      [
-        "9bfeecdc.f723d"
-      ]
-    ]
+    "wires": [["9bfeecdc.f723d"]]
   },
   {
     "id": "b50fb918.44f928",
@@ -1164,11 +1119,7 @@
     "output": "str",
     "x": 2060,
     "y": 340,
-    "wires": [
-      [
-        "9bfeecdc.f723d"
-      ]
-    ]
+    "wires": [["9bfeecdc.f723d"]]
   },
   {
     "id": "23da98f2.f85338",
@@ -1193,13 +1144,7 @@
     "payloadType": "str",
     "x": 130,
     "y": 120,
-    "wires": [
-      [
-        "298ec9d5.35e576",
-        "9c489e3f.49b89",
-        "2175515c.be3ebe"
-      ]
-    ]
+    "wires": [["298ec9d5.35e576", "9c489e3f.49b89", "2175515c.be3ebe"]]
   },
   {
     "id": "e07b8aed.7d4548",
@@ -1224,13 +1169,7 @@
     "payloadType": "str",
     "x": 130,
     "y": 60,
-    "wires": [
-      [
-        "298ec9d5.35e576",
-        "9c489e3f.49b89",
-        "2175515c.be3ebe"
-      ]
-    ]
+    "wires": [["298ec9d5.35e576", "9c489e3f.49b89", "2175515c.be3ebe"]]
   },
   {
     "id": "298ec9d5.35e576",
@@ -1265,14 +1204,7 @@
     "forUnits": "minutes",
     "x": 670,
     "y": 60,
-    "wires": [
-      [
-        "aab516c6.d5acf8",
-        "ed71f712.b69338",
-        "6a1e682.ce28098"
-      ],
-      []
-    ]
+    "wires": [["aab516c6.d5acf8", "ed71f712.b69338", "6a1e682.ce28098"], []]
   },
   {
     "id": "aab516c6.d5acf8",
@@ -1307,12 +1239,7 @@
     "forUnits": "minutes",
     "x": 1180,
     "y": 60,
-    "wires": [
-      [
-        "f86b599d.352918"
-      ],
-      []
-    ]
+    "wires": [["f86b599d.352918"], []]
   },
   {
     "id": "9c489e3f.49b89",
@@ -1347,14 +1274,7 @@
     "forUnits": "minutes",
     "x": 660,
     "y": 120,
-    "wires": [
-      [
-        "aab516c6.d5acf8",
-        "ed71f712.b69338",
-        "6a1e682.ce28098"
-      ],
-      []
-    ]
+    "wires": [["aab516c6.d5acf8", "ed71f712.b69338", "6a1e682.ce28098"], []]
   },
   {
     "id": "f86b599d.352918",
@@ -1368,9 +1288,7 @@
     "service": "turn_off",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "input_boolean.sleep_mode"
-    ],
+    "entityId": ["input_boolean.sleep_mode"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -1379,11 +1297,7 @@
     "queue": "none",
     "x": 1710,
     "y": 40,
-    "wires": [
-      [
-        "f9016d05.455ab"
-      ]
-    ]
+    "wires": [["f9016d05.455ab"]]
   },
   {
     "id": "ed71f712.b69338",
@@ -1418,12 +1332,7 @@
     "forUnits": "minutes",
     "x": 1190,
     "y": 120,
-    "wires": [
-      [
-        "1902dc19.17ed64"
-      ],
-      []
-    ]
+    "wires": [["1902dc19.17ed64"], []]
   },
   {
     "id": "1902dc19.17ed64",
@@ -1437,9 +1346,7 @@
     "service": "turn_off",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "input_boolean.home_security"
-    ],
+    "entityId": ["input_boolean.home_security"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -1448,11 +1355,7 @@
     "queue": "none",
     "x": 1720,
     "y": 100,
-    "wires": [
-      [
-        "2746e153.92344e"
-      ]
-    ]
+    "wires": [["2746e153.92344e"]]
   },
   {
     "id": "5f497d57.150f44",
@@ -1487,12 +1390,7 @@
     "forUnits": "minutes",
     "x": 970,
     "y": 760,
-    "wires": [
-      [
-        "bfdc7b40.f9a528"
-      ],
-      []
-    ]
+    "wires": [["bfdc7b40.f9a528"], []]
   },
   {
     "id": "6a1e682.ce28098",
@@ -1527,14 +1425,7 @@
     "forUnits": "minutes",
     "x": 1170,
     "y": 180,
-    "wires": [
-      [
-        "d48ea384.8d1d",
-        "1f0643fe.cb32cc",
-        "4c07afb2e623f468"
-      ],
-      []
-    ]
+    "wires": [["d48ea384.8d1d", "1f0643fe.cb32cc", "4c07afb2e623f468"], []]
   },
   {
     "id": "a5f68bf8.968328",
@@ -1554,11 +1445,7 @@
     "outputs": 1,
     "x": 1380,
     "y": 920,
-    "wires": [
-      [
-        "da57c41e.c506f8"
-      ]
-    ]
+    "wires": [["da57c41e.c506f8"]]
   },
   {
     "id": "13ca8b62.27a4a5",
@@ -1582,11 +1469,7 @@
     "reduceFixup": "",
     "x": 1910,
     "y": 780,
-    "wires": [
-      [
-        "cea43bad.d11358"
-      ]
-    ]
+    "wires": [["cea43bad.d11358"]]
   },
   {
     "id": "1ae2e15a.a292cf",
@@ -1610,11 +1493,7 @@
     "reduceFixup": "",
     "x": 1930,
     "y": 180,
-    "wires": [
-      [
-        "efdb1a4f.c5e9b8"
-      ]
-    ]
+    "wires": [["efdb1a4f.c5e9b8"]]
   },
   {
     "id": "a8a31543.6e54b8",
@@ -1649,12 +1528,7 @@
     "forUnits": "minutes",
     "x": 1430,
     "y": 860,
-    "wires": [
-      [
-        "fd5eca9e.417048"
-      ],
-      []
-    ]
+    "wires": [["fd5eca9e.417048"], []]
   },
   {
     "id": "fd5eca9e.417048",
@@ -1668,9 +1542,7 @@
     "service": "turn_on",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shellydimmer_living_room"
-    ],
+    "entityId": ["light.shellydimmer_living_room"],
     "data": "{\"brightness\":80}",
     "dataType": "json",
     "mergeContext": "",
@@ -1679,11 +1551,7 @@
     "queue": "none",
     "x": 1720,
     "y": 860,
-    "wires": [
-      [
-        "13ca8b62.27a4a5"
-      ]
-    ]
+    "wires": [["13ca8b62.27a4a5"]]
   },
   {
     "id": "d1463709.a63de8",
@@ -1718,14 +1586,7 @@
     "forUnits": "minutes",
     "x": 1160,
     "y": 680,
-    "wires": [
-      [
-        "d08ebe33.48973",
-        "cc18abb3.ae2a18",
-        "96e8c657ef1ee07e"
-      ],
-      []
-    ]
+    "wires": [["d08ebe33.48973", "cc18abb3.ae2a18", "96e8c657ef1ee07e"], []]
   },
   {
     "id": "ab57e30e.f2b96",
@@ -1760,13 +1621,7 @@
     "forUnits": "minutes",
     "x": 1190,
     "y": 620,
-    "wires": [
-      [
-        "d08ebe33.48973",
-        "cc18abb3.ae2a18"
-      ],
-      []
-    ]
+    "wires": [["d08ebe33.48973", "cc18abb3.ae2a18"], []]
   },
   {
     "id": "255f30c3.c9935",
@@ -1801,13 +1656,7 @@
     "forUnits": "minutes",
     "x": 680,
     "y": 640,
-    "wires": [
-      [
-        "ab57e30e.f2b96",
-        "d1463709.a63de8"
-      ],
-      []
-    ]
+    "wires": [["ab57e30e.f2b96", "d1463709.a63de8"], []]
   },
   {
     "id": "bfdc7b40.f9a528",
@@ -1827,13 +1676,7 @@
     "outputs": 1,
     "x": 1140,
     "y": 760,
-    "wires": [
-      [
-        "d08ebe33.48973",
-        "cc18abb3.ae2a18",
-        "a8a31543.6e54b8"
-      ]
-    ]
+    "wires": [["d08ebe33.48973", "cc18abb3.ae2a18", "a8a31543.6e54b8"]]
   },
   {
     "id": "2175515c.be3ebe",
@@ -1868,11 +1711,7 @@
     "forUnits": "minutes",
     "x": 260,
     "y": 280,
-    "wires": [
-      [
-        "d5736355.e4e8e"
-      ]
-    ]
+    "wires": [["d5736355.e4e8e"]]
   },
   {
     "id": "b7ae8452.581398",
@@ -1892,11 +1731,7 @@
     "outputs": 1,
     "x": 340,
     "y": 520,
-    "wires": [
-      [
-        "255f30c3.c9935"
-      ]
-    ]
+    "wires": [["255f30c3.c9935"]]
   },
   {
     "id": "9f66d88d.57dad8",
@@ -1910,9 +1745,7 @@
     "service": "set_temperature",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "water_heater.warm_water"
-    ],
+    "entityId": ["water_heater.warm_water"],
     "data": "{\"temperature\":\"61\"}",
     "dataType": "json",
     "mergeContext": "",
@@ -1921,9 +1754,7 @@
     "queue": "none",
     "x": 1720,
     "y": 360,
-    "wires": [
-      []
-    ]
+    "wires": [[]]
   },
   {
     "id": "cc64f27a.c792c",
@@ -1937,9 +1768,7 @@
     "service": "turn_off",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shelly1_front_door"
-    ],
+    "entityId": ["light.shelly1_front_door"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -1948,9 +1777,7 @@
     "queue": "none",
     "x": 680,
     "y": 340,
-    "wires": [
-      []
-    ]
+    "wires": [[]]
   },
   {
     "id": "5d939da2.20d8c4",
@@ -1964,9 +1791,7 @@
     "service": "turn_off",
     "areaId": [],
     "deviceId": [],
-    "entityId": [
-      "light.shellydimmer_backyard_string_l"
-    ],
+    "entityId": ["light.shellydimmer_backyard_string_l"],
     "data": "",
     "dataType": "json",
     "mergeContext": "",
@@ -1975,9 +1800,7 @@
     "queue": "none",
     "x": 680,
     "y": 280,
-    "wires": [
-      []
-    ]
+    "wires": [[]]
   },
   {
     "id": "f9016d05.455ab",
@@ -1992,11 +1815,7 @@
     "output": "str",
     "x": 2060,
     "y": 40,
-    "wires": [
-      [
-        "9bfeecdc.f723d"
-      ]
-    ]
+    "wires": [["9bfeecdc.f723d"]]
   },
   {
     "id": "2746e153.92344e",
@@ -2011,11 +1830,7 @@
     "output": "str",
     "x": 2060,
     "y": 100,
-    "wires": [
-      [
-        "9bfeecdc.f723d"
-      ]
-    ]
+    "wires": [["9bfeecdc.f723d"]]
   },
   {
     "id": "4c07afb2e623f468",
@@ -2034,5 +1849,28 @@
     "x": 1750,
     "y": 680,
     "wires": []
+  },
+  {
+    "id": "4ba92433.2478cc",
+    "type": "server",
+    "name": "Home Assistant",
+    "version": 5,
+    "addon": false,
+    "rejectUnauthorizedCerts": false,
+    "ha_boolean": "y|yes|true|on|home|open",
+    "connectionDelay": true,
+    "cacheJson": true,
+    "heartbeat": true,
+    "heartbeatInterval": "30",
+    "areaSelector": "friendlyName",
+    "deviceSelector": "friendlyName",
+    "entitySelector": "friendlyName",
+    "statusSeparator": "at: ",
+    "statusYear": "hidden",
+    "statusMonth": "short",
+    "statusDay": "numeric",
+    "statusHourCycle": "h23",
+    "statusTimeFormat": "h:m",
+    "enableGlobalContextStore": true
   }
 ]
