@@ -335,12 +335,9 @@
     "category": "",
     "in": [
       {
-        "x": 40,
-        "y": 100,
+        "x": 52,
+        "y": 104,
         "wires": [
-          {
-            "id": "f9028094.57a62"
-          },
           {
             "id": "e0b2428a.a371b"
           },
@@ -358,6 +355,9 @@
           },
           {
             "id": "db8cc8f4bb9386ab"
+          },
+          {
+            "id": "f9028094.57a62"
           }
         ]
       }
@@ -386,39 +386,9 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 600,
+    "x": 520,
     "y": 300,
     "wires": [[]]
-  },
-  {
-    "id": "f9028094.57a62",
-    "type": "ha-get-entities",
-    "z": "79544bf2.1ff3a4",
-    "name": "lookup climate is not auto",
-    "server": "4ba92433.2478cc",
-    "version": 0,
-    "rules": [
-      {
-        "property": "entity_id",
-        "logic": "starts_with",
-        "value": "climate.",
-        "valueType": "str"
-      },
-      {
-        "property": "state",
-        "logic": "is_not",
-        "value": "auto",
-        "valueType": "str"
-      }
-    ],
-    "output_type": "split",
-    "output_empty_results": false,
-    "output_location_type": "msg",
-    "output_location": "payload",
-    "output_results_count": 1,
-    "x": 230,
-    "y": 420,
-    "wires": [["397bbd3d.0bb3f2"]]
   },
   {
     "id": "397bbd3d.0bb3f2",
@@ -439,8 +409,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 570,
-    "y": 420,
+    "x": 470,
+    "y": 480,
     "wires": [["477c8f0e.c4289"]]
   },
   {
@@ -463,8 +433,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 970,
-    "y": 420,
+    "x": 730,
+    "y": 480,
     "wires": [["b85d118c.fbdc4"]]
   },
   {
@@ -478,8 +448,8 @@
     "syntax": "mustache",
     "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
     "output": "str",
-    "x": 1100,
-    "y": 420,
+    "x": 860,
+    "y": 480,
     "wires": [["ad7f00b7b2b0e671"]]
   },
   {
@@ -509,7 +479,7 @@
     "output_location": "payload",
     "output_results_count": 1,
     "x": 200,
-    "y": 480,
+    "y": 420,
     "wires": [["9eb23897.6d9b38"]]
   },
   {
@@ -531,8 +501,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 530,
-    "y": 480,
+    "x": 370,
+    "y": 420,
     "wires": [["fda4eae176ed738e"]]
   },
   {
@@ -620,8 +590,8 @@
     "z": "79544bf2.1ff3a4",
     "name": "",
     "links": [],
-    "x": 1375,
-    "y": 440,
+    "x": 1965,
+    "y": 420,
     "wires": []
   },
   {
@@ -643,8 +613,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1250,
-    "y": 420,
+    "x": 1010,
+    "y": 480,
     "wires": [["a680c17548559ce2"]]
   },
   {
@@ -658,8 +628,8 @@
     "syntax": "mustache",
     "template": "{{{payload.attributes.friendly_name}}}",
     "output": "str",
-    "x": 800,
-    "y": 480,
+    "x": 560,
+    "y": 420,
     "wires": [["58d0a2479b16b408"]]
   },
   {
@@ -682,8 +652,8 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 970,
-    "y": 480,
+    "x": 730,
+    "y": 420,
     "wires": [["89625810ae98a2fc"]]
   },
   {
@@ -697,8 +667,8 @@
     "syntax": "mustache",
     "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
     "output": "str",
-    "x": 1100,
-    "y": 480,
+    "x": 860,
+    "y": 420,
     "wires": [["a8dadd67cf109c6d"]]
   },
   {
@@ -720,8 +690,8 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 1250,
-    "y": 480,
+    "x": 1010,
+    "y": 420,
     "wires": [["a680c17548559ce2"]]
   },
   {
@@ -773,9 +743,39 @@
     "type": "subflow:0f710598d50e0596",
     "z": "79544bf2.1ff3a4",
     "name": "",
-    "x": 530,
+    "x": 450,
     "y": 260,
     "wires": []
+  },
+  {
+    "id": "f9028094.57a62",
+    "type": "ha-get-entities",
+    "z": "79544bf2.1ff3a4",
+    "name": "lookup climate is not auto",
+    "server": "4ba92433.2478cc",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "starts_with",
+        "value": "climate.",
+        "valueType": "str"
+      },
+      {
+        "property": "state",
+        "logic": "is_not",
+        "value": "auto",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "split",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "payload",
+    "output_results_count": 1,
+    "x": 230,
+    "y": 480,
+    "wires": [["397bbd3d.0bb3f2"]]
   },
   {
     "id": "8aa6edec.5a013",
@@ -951,7 +951,7 @@
     "forUnits": "minutes",
     "x": 380,
     "y": 100,
-    "wires": [["49ea77ab.4cfa28", "8d40faa88a9cd112"], []]
+    "wires": [["49ea77ab.4cfa28", "8d40faa88a9cd112", "b932464b99aa9267"], []]
   },
   {
     "id": "86e3be2e.bc7b4",
@@ -988,7 +988,12 @@
     "y": 160,
     "wires": [
       ["ce720787.d6dd18"],
-      ["49ea77ab.4cfa28", "76fc5cd8933d341b", "f3398caf62b1ef7a"]
+      [
+        "49ea77ab.4cfa28",
+        "76fc5cd8933d341b",
+        "f3398caf62b1ef7a",
+        "b932464b99aa9267"
+      ]
     ]
   },
   {
@@ -1269,6 +1274,85 @@
     "x": 240,
     "y": 40,
     "wires": []
+  },
+  {
+    "id": "b932464b99aa9267",
+    "type": "ha-get-entities",
+    "z": "8aa6edec.5a013",
+    "name": "lookup climate preset mode is not away",
+    "server": "4ba92433.2478cc",
+    "version": 0,
+    "rules": [
+      {
+        "property": "entity_id",
+        "logic": "starts_with",
+        "value": "climate.",
+        "valueType": "str"
+      },
+      {
+        "property": "attributes.preset_mode",
+        "logic": "is_not",
+        "value": "away",
+        "valueType": "str"
+      }
+    ],
+    "output_type": "split",
+    "output_empty_results": false,
+    "output_location_type": "msg",
+    "output_location": "payload",
+    "output_results_count": 1,
+    "x": 840,
+    "y": 380,
+    "wires": [["d23cc387ab9241d2"]]
+  },
+  {
+    "id": "d23cc387ab9241d2",
+    "type": "api-call-service",
+    "z": "8aa6edec.5a013",
+    "name": "set preset mode climate away",
+    "server": "4ba92433.2478cc",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "climate",
+    "service": "set_preset_mode",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["{{payload.entity_id}}"],
+    "data": "{\"preset_mode\":\"away\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1150,
+    "y": 380,
+    "wires": [["b5a7bb579cbd6cfd"]]
+  },
+  {
+    "id": "b5a7bb579cbd6cfd",
+    "type": "ha-wait-until",
+    "z": "8aa6edec.5a013",
+    "name": "wait until tado mode is away",
+    "server": "4ba92433.2478cc",
+    "version": 2,
+    "outputs": 1,
+    "entityId": "sensor.warm_water_tado_mode",
+    "entityIdFilterType": "exact",
+    "property": "state",
+    "comparator": "is",
+    "value": "AWAY",
+    "valueType": "str",
+    "timeout": "0",
+    "timeoutType": "num",
+    "timeoutUnits": "seconds",
+    "checkCurrentState": true,
+    "blockInputOverrides": true,
+    "outputProperties": [],
+    "entityLocation": "data",
+    "entityLocationType": "none",
+    "x": 1420,
+    "y": 380,
+    "wires": [[]]
   },
   {
     "id": "4ba92433.2478cc",
