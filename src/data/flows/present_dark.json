@@ -213,7 +213,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 350,
+    "x": 390,
     "y": 600,
     "wires": [["ed71f712.b69338", "60ffd46b.e9534c", "227abad75eeb983d"]]
   },
@@ -283,7 +283,7 @@
     ],
     "entityidfilter": "group.persons",
     "entityidfiltertype": "exact",
-    "outputinitially": true,
+    "outputinitially": false,
     "state_type": "str",
     "haltifstate": "",
     "halt_if_type": "str",
@@ -856,62 +856,23 @@
     "id": "c3dc83f5.77118",
     "type": "api-current-state",
     "z": "c0da8379.b0dd3",
-    "name": "state harmony on",
+    "name": "input select activity is tv",
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "on",
+    "halt_if": "TV",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "remote.harmony_hub_01",
+    "entity_id": "input_select.harmonyhub",
     "state_type": "str",
     "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "remote.harmony_hub_01",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data_remote.harmony_hub_01",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
+    "outputProperties": [],
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 670,
-    "y": 540,
-    "wires": [["171a4247.1ffeee"], []]
-  },
-  {
-    "id": "171a4247.1ffeee",
-    "type": "switch",
-    "z": "c0da8379.b0dd3",
-    "name": "activity harmony tv/netflix",
-    "property": "data_remote.harmony_hub_01.attributes.current_activity",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "TV",
-        "vt": "str"
-      },
-      {
-        "t": "eq",
-        "v": "Netflix",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 930,
-    "y": 540,
-    "wires": [["ce9cbf76.39de5"], ["ce9cbf76.39de5"]]
+    "x": 690,
+    "y": 460,
+    "wires": [["ce9cbf76.39de5"], []]
   },
   {
     "id": "cea43bad.d11358",
