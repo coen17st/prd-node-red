@@ -949,9 +949,17 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 380,
+    "x": 360,
     "y": 100,
-    "wires": [["49ea77ab.4cfa28", "8d40faa88a9cd112", "b932464b99aa9267"], []]
+    "wires": [
+      [
+        "49ea77ab.4cfa28",
+        "8d40faa88a9cd112",
+        "b932464b99aa9267",
+        "f3398caf62b1ef7a"
+      ],
+      []
+    ]
   },
   {
     "id": "86e3be2e.bc7b4",
@@ -984,7 +992,7 @@
     "for": 0,
     "forType": "num",
     "forUnits": "minutes",
-    "x": 410,
+    "x": 390,
     "y": 160,
     "wires": [
       ["ce720787.d6dd18"],
