@@ -117,6 +117,14 @@
     "info": ""
   },
   {
+    "id": "3a382a8359e83419",
+    "type": "junction",
+    "z": "c0da8379.b0dd3",
+    "x": 1260,
+    "y": 580,
+    "wires": [["9f66d88d.57dad8"]]
+  },
+  {
     "id": "9e995be6.7976b8",
     "type": "api-call-service",
     "z": "c0da8379.b0dd3",
@@ -213,7 +221,7 @@
     "checkall": "true",
     "repair": false,
     "outputs": 1,
-    "x": 610,
+    "x": 390,
     "y": 600,
     "wires": [["ed71f712.b69338", "60ffd46b.e9534c", "227abad75eeb983d"]]
   },
@@ -320,7 +328,7 @@
     ],
     "x": 110,
     "y": 600,
-    "wires": [["af4eaf595d5072d5"]]
+    "wires": [["f916039a.ab914"]]
   },
   {
     "id": "d08ebe33.48973",
@@ -534,7 +542,7 @@
     "outputs": 2,
     "x": 370,
     "y": 660,
-    "wires": [["ed71f712.b69338", "9f66d88d.57dad8", "227abad75eeb983d"], []]
+    "wires": [["ed71f712.b69338", "227abad75eeb983d", "3a382a8359e83419"], []]
   },
   {
     "id": "1f0643fe.cb32cc",
@@ -895,7 +903,7 @@
     "z": "c0da8379.b0dd3",
     "name": "",
     "links": ["ebf4860d.603538"],
-    "x": 2255,
+    "x": 2475,
     "y": 480,
     "wires": []
   },
@@ -1078,8 +1086,8 @@
     "syntax": "mustache",
     "template": "{{data.attributes.friendly_name}} verlichting is ingeschakeld omdat Harmony activiteit {{data_remote.harmony_hub_01.attributes.current_activity}} actief is. ",
     "output": "str",
-    "x": 2060,
-    "y": 340,
+    "x": 2240,
+    "y": 540,
     "wires": [["9bfeecdc.f723d"]]
   },
   {
@@ -1714,7 +1722,7 @@
     "outputProperties": [],
     "queue": "none",
     "x": 1920,
-    "y": 600,
+    "y": 580,
     "wires": [[]]
   },
   {
@@ -1736,7 +1744,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 680,
+    "x": 660,
     "y": 340,
     "wires": [[]]
   },
@@ -1759,7 +1767,7 @@
     "mustacheAltTags": false,
     "outputProperties": [],
     "queue": "none",
-    "x": 680,
+    "x": 660,
     "y": 280,
     "wires": [[]]
   },
@@ -1798,8 +1806,8 @@
     "type": "subflow:b93cc1561f32248d",
     "z": "c0da8379.b0dd3",
     "name": "",
-    "x": 1760,
-    "y": 300,
+    "x": 1460,
+    "y": 320,
     "wires": []
   },
   {
@@ -1823,7 +1831,7 @@
     "service": "set_preset_mode",
     "areaId": [],
     "deviceId": [],
-    "entityId": ["climate.basement"],
+    "entityId": ["{{payload.entity_id}}"],
     "data": "{\"preset_mode\":\"home\"}",
     "dataType": "json",
     "mergeContext": "",
@@ -1832,7 +1840,7 @@
     "queue": "none",
     "x": 1730,
     "y": 480,
-    "wires": [[]]
+    "wires": [["a4128ce45e4e787a"]]
   },
   {
     "id": "227abad75eeb983d",
@@ -1865,65 +1873,27 @@
     "wires": [["cdf62b8c35fee85c"]]
   },
   {
-    "id": "12eb7e9d79ce0291",
-    "type": "switch",
+    "id": "a4128ce45e4e787a",
+    "type": "api-call-service",
     "z": "c0da8379.b0dd3",
-    "name": "uptime is above 1 min",
-    "property": "data.timeSinceChangedMs",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "gt",
-        "v": "60000",
-        "vt": "num"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 1,
-    "x": 420,
-    "y": 600,
-    "wires": [["f916039a.ab914"]]
-  },
-  {
-    "id": "af4eaf595d5072d5",
-    "type": "api-current-state",
-    "z": "c0da8379.b0dd3",
-    "name": "uptime",
+    "name": "turn on climate auto mode",
     "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 1,
-    "halt_if": "",
-    "halt_if_type": "num",
-    "halt_if_compare": "is",
-    "entity_id": "sensor.uptime",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": "0",
-    "forType": "num",
-    "forUnits": "minutes",
-    "override_topic": false,
-    "state_location": "payload",
-    "override_payload": "msg",
-    "entity_location": "data",
-    "override_data": "msg",
-    "x": 250,
-    "y": 600,
-    "wires": [["12eb7e9d79ce0291"]]
+    "version": 5,
+    "debugenabled": false,
+    "domain": "climate",
+    "service": "set_hvac_mode",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": ["{{payload.entity_id}}"],
+    "data": "{\"hvac_mode\":\"auto\"}",
+    "dataType": "json",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1990,
+    "y": 480,
+    "wires": [[]]
   },
   {
     "id": "4ba92433.2478cc",
