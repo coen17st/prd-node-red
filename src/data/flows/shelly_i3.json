@@ -1014,10 +1014,10 @@
         "y": 120,
         "wires": [
             [
-                "50431910a8796898"
+                "bfb3705a.97302"
             ],
             [
-                "5f8efcaec75665b3"
+                "23adc282.4b50fe"
             ],
             [
                 "4bf2349a.895f9c"
@@ -1077,70 +1077,16 @@
         "y": 460,
         "wires": [
             [
-                "bfb3705a.97302"
+                "50431910a8796898"
             ],
             [
-                "23adc282.4b50fe"
+                "5f8efcaec75665b3"
             ],
             [
                 "c4aeda1d.85afa8"
             ],
             [],
             [],
-            []
-        ]
-    },
-    {
-        "id": "5f8efcaec75665b3",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "toggle light christmas tree",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "toggle",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.christmas_tree"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 950,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "50431910a8796898",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "toggle light backyard",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "toggle",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.shellydimmer_backyard_string_l"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 940,
-        "y": 100,
-        "wires": [
             []
         ]
     },
@@ -1153,60 +1099,6 @@
         "x": 270,
         "y": 40,
         "wires": []
-    },
-    {
-        "id": "bfb3705a.97302",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "toggle light barn hanging lamp",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "toggle",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.shellydimmer_barn_hanging_lamp"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 970,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "23adc282.4b50fe",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "toggle childlock kitchen switch",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "toggle",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.childlock_kitchen_switch"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 970,
-        "y": 480,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "5de4c93f0f01b4d6",
@@ -1465,6 +1357,114 @@
         "queue": "none",
         "x": 1130,
         "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50431910a8796898",
+        "type": "api-call-service",
+        "z": "f180ab88.925788",
+        "name": "toggle light backyard",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "toggle",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.shellydimmer_backyard_string_l"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 940,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfb3705a.97302",
+        "type": "api-call-service",
+        "z": "f180ab88.925788",
+        "name": "toggle light barn hanging lamp",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "toggle",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.shellydimmer_barn_hanging_lamp"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 970,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f8efcaec75665b3",
+        "type": "api-call-service",
+        "z": "f180ab88.925788",
+        "name": "toggle light christmas tree",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "toggle",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.christmas_tree"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23adc282.4b50fe",
+        "type": "api-call-service",
+        "z": "f180ab88.925788",
+        "name": "toggle childlock kitchen switch",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "toggle",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.childlock_kitchen_switch"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 970,
+        "y": 140,
         "wires": [
             []
         ]
