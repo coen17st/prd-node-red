@@ -158,7 +158,7 @@
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "sensor.sensor.living_room_thermal_comfort_absolute_humidity",
+    "halt_if": "sensor.living_room_thermal_comfort_absolute_humidity",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
     "entity_id": "sensor.basement_thermal_comfort_absolute_humidity",
@@ -449,12 +449,12 @@
     "halt_if": "",
     "halt_if_type": "str",
     "halt_if_compare": "is",
-    "entity_id": "sensor.sensor.living_room_thermal_comfort_absolute_humidity",
+    "entity_id": "sensor.living_room_thermal_comfort_absolute_humidity",
     "state_type": "str",
     "blockInputOverrides": false,
     "outputProperties": [
       {
-        "property": "sensor.sensor.living_room_thermal_comfort_absolute_humidity",
+        "property": "sensor.living_room_thermal_comfort_absolute_humidity",
         "propertyType": "msg",
         "value": "",
         "valueType": "entityState"
@@ -646,12 +646,12 @@
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "entity_id": "sensor.sensor.living_room_thermal_comfort_absolute_humidity",
+    "entity_id": "sensor.living_room_thermal_comfort_absolute_humidity",
     "state_type": "num",
     "blockInputOverrides": false,
     "outputProperties": [
       {
-        "property": "sensor.sensor.living_room_thermal_comfort_absolute_humidity",
+        "property": "sensor.living_room_thermal_comfort_absolute_humidity",
         "propertyType": "msg",
         "value": "",
         "valueType": "entityState"
@@ -682,7 +682,7 @@
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "sensor.sensor.living_room_thermal_comfort_absolute_humidity",
+    "halt_if": "sensor.living_room_thermal_comfort_absolute_humidity",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
     "entity_id": "sensor.basement_thermal_comfort_absolute_humidity",
@@ -1636,7 +1636,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
+    "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
     "output": "str",
     "x": 1120,
     "y": 260,
