@@ -78,7 +78,7 @@
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "sensor.living_room_dewpoint",
+    "halt_if": "sensor.living_room_thermal_comfort_dew_point",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
     "entity_id": "sensor.basement_wall_temperature_offset",
@@ -118,7 +118,7 @@
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "sensor.master_bedroom_dewpoint",
+    "halt_if": "sensor.master_bedroom_thermal_comfort_dew_point",
     "halt_if_type": "msg",
     "halt_if_compare": "lt",
     "entity_id": "sensor.basement_wall_temperature_offset",
@@ -371,12 +371,12 @@
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "entity_id": "sensor.living_room_dewpoint",
+    "entity_id": "sensor.living_room_thermal_comfort_dew_point",
     "state_type": "num",
     "blockInputOverrides": false,
     "outputProperties": [
       {
-        "property": "sensor.living_room_dewpoint",
+        "property": "sensor.living_room_thermal_comfort_dew_point",
         "propertyType": "msg",
         "value": "",
         "valueType": "entityState"
@@ -410,12 +410,12 @@
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "entity_id": "sensor.master_bedroom_dewpoint",
+    "entity_id": "sensor.master_bedroom_thermal_comfort_dew_point",
     "state_type": "num",
     "blockInputOverrides": false,
     "outputProperties": [
       {
-        "property": "sensor.master_bedroom_dewpoint",
+        "property": "sensor.master_bedroom_thermal_comfort_dew_point",
         "propertyType": "msg",
         "value": "",
         "valueType": "entityState"
@@ -488,12 +488,12 @@
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "entity_id": "sensor.living_room_dewpoint",
+    "entity_id": "sensor.living_room_thermal_comfort_dew_point",
     "state_type": "num",
     "blockInputOverrides": false,
     "outputProperties": [
       {
-        "property": "sensor.living_room_dewpoint",
+        "property": "sensor.living_room_thermal_comfort_dew_point",
         "propertyType": "msg",
         "value": "",
         "valueType": "entityState"
@@ -524,7 +524,7 @@
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "sensor.living_room_dewpoint",
+    "halt_if": "sensor.living_room_thermal_comfort_dew_point",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
     "entity_id": "sensor.basement_wall_temperature_offset",
@@ -567,12 +567,12 @@
     "halt_if": "",
     "halt_if_type": "num",
     "halt_if_compare": "is",
-    "entity_id": "sensor.master_bedroom_dewpoint",
+    "entity_id": "sensor.master_bedroom_thermal_comfort_dew_point",
     "state_type": "num",
     "blockInputOverrides": false,
     "outputProperties": [
       {
-        "property": "sensor.master_bedroom_dewpoint",
+        "property": "sensor.master_bedroom_thermal_comfort_dew_point",
         "propertyType": "msg",
         "value": "",
         "valueType": "entityState"
@@ -603,7 +603,7 @@
     "server": "4ba92433.2478cc",
     "version": 3,
     "outputs": 2,
-    "halt_if": "sensor.master_bedroom_dewpoint",
+    "halt_if": "sensor.master_bedroom_thermal_comfort_dew_point",
     "halt_if_type": "msg",
     "halt_if_compare": "gt",
     "entity_id": "sensor.basement_wall_temperature_offset",
@@ -1617,7 +1617,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de mslaapkmer is {{ssensor.master_bedroom_dewpoint}} ℃   ",
+    "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de mslaapkmer is {{ssensor.master_bedroom_thermal_comfort_dew_point}} ℃   ",
     "output": "str",
     "x": 1120,
     "y": 200,
@@ -2431,7 +2431,7 @@
     "fieldType": "msg",
     "format": "handlebars",
     "syntax": "mustache",
-    "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is{{sensor.living_room_dewpoint}} ℃ ",
+    "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is{{sensor.living_room_thermal_comfort_dew_point}} ℃ ",
     "output": "str",
     "x": 1120,
     "y": 140,
