@@ -379,12 +379,9 @@
         "category": "",
         "in": [
             {
-                "x": 40,
-                "y": 100,
+                "x": 52,
+                "y": 104,
                 "wires": [
-                    {
-                        "id": "f9028094.57a62"
-                    },
                     {
                         "id": "e0b2428a.a371b"
                     },
@@ -402,6 +399,9 @@
                     },
                     {
                         "id": "db8cc8f4bb9386ab"
+                    },
+                    {
+                        "id": "f9028094.57a62"
                     }
                 ]
             }
@@ -432,44 +432,10 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 600,
+        "x": 520,
         "y": 300,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "f9028094.57a62",
-        "type": "ha-get-entities",
-        "z": "79544bf2.1ff3a4",
-        "name": "lookup climate is not auto",
-        "server": "4ba92433.2478cc",
-        "version": 0,
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "climate.",
-                "valueType": "str"
-            },
-            {
-                "property": "state",
-                "logic": "is_not",
-                "value": "auto",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 230,
-        "y": 420,
-        "wires": [
-            [
-                "397bbd3d.0bb3f2"
-            ]
         ]
     },
     {
@@ -493,8 +459,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 570,
-        "y": 420,
+        "x": 470,
+        "y": 480,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -521,8 +487,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 970,
-        "y": 420,
+        "x": 730,
+        "y": 480,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -540,8 +506,8 @@
         "syntax": "mustache",
         "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
-        "x": 1100,
-        "y": 420,
+        "x": 860,
+        "y": 480,
         "wires": [
             [
                 "ad7f00b7b2b0e671"
@@ -575,7 +541,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 200,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "9eb23897.6d9b38"
@@ -603,8 +569,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 530,
-        "y": 480,
+        "x": 370,
+        "y": 420,
         "wires": [
             [
                 "fda4eae176ed738e"
@@ -708,8 +674,8 @@
         "z": "79544bf2.1ff3a4",
         "name": "",
         "links": [],
-        "x": 1375,
-        "y": 440,
+        "x": 1965,
+        "y": 420,
         "wires": []
     },
     {
@@ -731,8 +697,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1250,
-        "y": 420,
+        "x": 1010,
+        "y": 480,
         "wires": [
             [
                 "a680c17548559ce2"
@@ -750,8 +716,8 @@
         "syntax": "mustache",
         "template": "{{{payload.attributes.friendly_name}}}",
         "output": "str",
-        "x": 800,
-        "y": 480,
+        "x": 560,
+        "y": 420,
         "wires": [
             [
                 "58d0a2479b16b408"
@@ -778,8 +744,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 970,
-        "y": 480,
+        "x": 730,
+        "y": 420,
         "wires": [
             [
                 "89625810ae98a2fc"
@@ -797,8 +763,8 @@
         "syntax": "mustache",
         "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
-        "x": 1100,
-        "y": 480,
+        "x": 860,
+        "y": 420,
         "wires": [
             [
                 "a8dadd67cf109c6d"
@@ -824,8 +790,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1250,
-        "y": 480,
+        "x": 1010,
+        "y": 420,
         "wires": [
             [
                 "a680c17548559ce2"
@@ -888,9 +854,43 @@
         "type": "subflow:0f710598d50e0596",
         "z": "79544bf2.1ff3a4",
         "name": "",
-        "x": 530,
+        "x": 450,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "f9028094.57a62",
+        "type": "ha-get-entities",
+        "z": "79544bf2.1ff3a4",
+        "name": "lookup climate is not auto",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "climate.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is_not",
+                "value": "auto",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 230,
+        "y": 480,
+        "wires": [
+            [
+                "397bbd3d.0bb3f2"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
@@ -928,34 +928,10 @@
         "type": "junction",
         "z": "df5d8f386b74d541",
         "x": 600,
-        "y": 260,
+        "y": 180,
         "wires": [
             [
                 "dc31aee5.5b1f3"
-            ]
-        ]
-    },
-    {
-        "id": "3f2d73738e07f715",
-        "type": "junction",
-        "z": "df5d8f386b74d541",
-        "x": 1580,
-        "y": 160,
-        "wires": [
-            [
-                "e954fe7e068d253c"
-            ]
-        ]
-    },
-    {
-        "id": "8a83c3e223e7aefe",
-        "type": "junction",
-        "z": "df5d8f386b74d541",
-        "x": 1580,
-        "y": 780,
-        "wires": [
-            [
-                "e954fe7e068d253c"
             ]
         ]
     },
@@ -999,16 +975,15 @@
                 "133eb9dcf3273f11",
                 "79d70712bae7a67b",
                 "e101cb7ce1fd0970",
-                "6af74f914175416e",
                 "e0b2abfe.e5f668",
                 "ec7fc97b85fc874f",
-                "57e5e121ffdbfd66"
+                "6af74f914175416e",
+                "815212ec75081f73"
             ],
             [
-                "db55b88457c68f5a",
                 "543ebe7.ceeb34",
                 "ec7fc97b85fc874f",
-                "0b3eee8df6f7d979"
+                "db55b88457c68f5a"
             ]
         ]
     },
@@ -1082,6 +1057,16 @@
         ]
     },
     {
+        "id": "79965611fd409cc3",
+        "type": "comment",
+        "z": "df5d8f386b74d541",
+        "name": "sleepmode",
+        "info": "",
+        "x": 80,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "6787b740.c04b28",
         "type": "api-current-state",
         "z": "df5d8f386b74d541",
@@ -1113,7 +1098,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 450,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "134e114c720a4f35"
@@ -1145,7 +1130,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 870,
-        "y": 220,
+        "y": 140,
         "wires": [
             [
                 "69a0749d.4f467c"
@@ -1169,7 +1154,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 220,
+        "y": 140,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -1198,7 +1183,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1410,
-        "y": 260,
+        "y": 180,
         "wires": [
             []
         ]
@@ -1235,7 +1220,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 300,
+        "y": 220,
         "wires": [
             [
                 "f99fb5b5de6ba970"
@@ -1265,7 +1250,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1440,
-        "y": 320,
+        "y": 240,
         "wires": [
             []
         ]
@@ -1292,7 +1277,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1420,
-        "y": 380,
+        "y": 300,
         "wires": [
             []
         ]
@@ -1329,7 +1314,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 360,
+        "y": 280,
         "wires": [
             [
                 "5dbf80c959123905"
@@ -1354,7 +1339,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 380,
+        "y": 300,
         "wires": [
             [
                 "c02a96fab9d6d716"
@@ -1393,7 +1378,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 420,
+        "y": 340,
         "wires": [
             [
                 "502ed746a5dd4b84"
@@ -1423,7 +1408,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1050,
-        "y": 440,
+        "y": 360,
         "wires": [
             [
                 "7fb9ce14.0e751"
@@ -1447,7 +1432,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 440,
+        "y": 360,
         "wires": [
             [
                 "8a22a508.80a108"
@@ -1486,7 +1471,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1420,
-        "y": 440,
+        "y": 360,
         "wires": [
             [],
             []
@@ -1510,7 +1495,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 680,
-        "y": 220,
+        "y": 140,
         "wires": [
             [
                 "407ba343.c0affc"
@@ -1539,7 +1524,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 690,
-        "y": 720,
+        "y": 640,
         "wires": [
             []
         ]
@@ -1576,7 +1561,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 720,
+        "y": 640,
         "wires": [
             [
                 "1a921b80.6cb295"
@@ -1616,7 +1601,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 540,
+        "y": 460,
         "wires": [
             [
                 "ecbb9c1d.54996"
@@ -1646,7 +1631,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 690,
-        "y": 540,
+        "y": 460,
         "wires": [
             []
         ]
@@ -1673,7 +1658,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 720,
-        "y": 600,
+        "y": 520,
         "wires": [
             []
         ]
@@ -1710,23 +1695,13 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 600,
+        "y": 520,
         "wires": [
             [
                 "bda1346b2f42aaaf"
             ],
             []
         ]
-    },
-    {
-        "id": "79965611fd409cc3",
-        "type": "comment",
-        "z": "df5d8f386b74d541",
-        "name": "sleepmode",
-        "info": "",
-        "x": 80,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "6af74f914175416e",
@@ -1748,7 +1723,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 480,
+        "y": 400,
         "wires": [
             []
         ]
@@ -1773,53 +1748,8 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 660,
+        "y": 580,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0b3eee8df6f7d979",
-        "type": "api-current-state",
-        "z": "df5d8f386b74d541",
-        "name": "state garbage today",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "Geen",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "sensor.afval_vandaag",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 460,
-        "y": 780,
-        "wires": [
-            [
-                "7587cad2483c7fe0"
-            ],
             []
         ]
     },
@@ -1859,8 +1789,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 470,
-        "y": 160,
+        "x": 650,
+        "y": 680,
         "wires": [
             [
                 "90fa355210409171"
@@ -1877,10 +1807,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Let op, morgen wordt de {{payload}} container opgehaald. Staat de container al aan de weg?",
+        "template": "Let op, morgen wordt de {{payload}} container opgehaald.",
         "output": "str",
-        "x": 680,
-        "y": 160,
+        "x": 860,
+        "y": 720,
         "wires": [
             [
                 "380b7368c41951bc"
@@ -1896,28 +1826,9 @@
         "links": [
             "ebf4860d.603538"
         ],
-        "x": 1715,
-        "y": 440,
+        "x": 1475,
+        "y": 720,
         "wires": []
-    },
-    {
-        "id": "7587cad2483c7fe0",
-        "type": "template",
-        "z": "df5d8f386b74d541",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Vandaag wordt de {{payload}} container opgehaald.",
-        "output": "str",
-        "x": 660,
-        "y": 780,
-        "wires": [
-            [
-                "8a83c3e223e7aefe"
-            ]
-        ]
     },
     {
         "id": "896550d8f8c29cf6",
@@ -1940,11 +1851,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1390,
-        "y": 160,
+        "x": 1370,
+        "y": 720,
         "wires": [
             [
-                "3f2d73738e07f715"
+                "e954fe7e068d253c"
             ]
         ]
     },
@@ -1970,12 +1881,79 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 950,
-        "y": 160,
+        "x": 1110,
+        "y": 720,
         "wires": [
             [
                 "896550d8f8c29cf6"
             ]
+        ]
+    },
+    {
+        "id": "815212ec75081f73",
+        "type": "time-range-switch",
+        "z": "df5d8f386b74d541",
+        "name": "",
+        "lat": "52.0434",
+        "lon": "5.6773",
+        "startTime": "05:00",
+        "endTime": "00:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 430,
+        "y": 700,
+        "wires": [
+            [
+                "57e5e121ffdbfd66"
+            ],
+            [
+                "0b3eee8df6f7d979"
+            ]
+        ]
+    },
+    {
+        "id": "0b3eee8df6f7d979",
+        "type": "api-current-state",
+        "z": "df5d8f386b74d541",
+        "name": "state garbage today",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Geen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "sensor.afval_vandaag",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 640,
+        "y": 740,
+        "wires": [
+            [
+                "90fa355210409171"
+            ],
+            []
         ]
     }
 ]
