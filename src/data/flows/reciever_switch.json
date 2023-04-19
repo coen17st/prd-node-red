@@ -8,10 +8,182 @@
         "env": []
     },
     {
-        "id": "50986f3b758e1e4d",
-        "type": "server-state-changed",
+        "id": "e32ad7df336029d3",
+        "type": "ha-button",
         "z": "1a6ef62886bebc0d",
         "name": "",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "65aaa7d0996bc4bd",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 70,
+        "y": 80,
+        "wires": [
+            [
+                "79a27ca1787241f8"
+            ]
+        ]
+    },
+    {
+        "id": "79a27ca1787241f8",
+        "type": "api-current-state",
+        "z": "1a6ef62886bebc0d",
+        "name": "reciever power",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.shellyplug_reciever_power",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            [
+                "0a71aa5b68f863b8"
+            ]
+        ]
+    },
+    {
+        "id": "0a71aa5b68f863b8",
+        "type": "switch",
+        "z": "1a6ef62886bebc0d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "4",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 430,
+        "y": 80,
+        "wires": [
+            [
+                "f36bbb44f3cf015f"
+            ],
+            [
+                "234f89762fc306d4"
+            ]
+        ]
+    },
+    {
+        "id": "234f89762fc306d4",
+        "type": "api-call-service",
+        "z": "1a6ef62886bebc0d",
+        "name": "turn on receiver",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
+        "entityId": [
+            "remote.harmony_hub_01"
+        ],
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOn\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 600,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f36bbb44f3cf015f",
+        "type": "api-call-service",
+        "z": "1a6ef62886bebc0d",
+        "name": "turn off receiver",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
+        "entityId": [
+            "remote.harmony_hub_01"
+        ],
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 600,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "493778724cd8bfb0",
+        "type": "server-state-changed",
+        "z": "1a6ef62886bebc0d",
+        "name": "receiver power",
         "server": "4ba92433.2478cc",
         "version": 4,
         "exposeToHomeAssistant": false,
@@ -27,13 +199,13 @@
         ],
         "entityidfilter": "sensor.shellyplug_reciever_power",
         "entityidfiltertype": "exact",
-        "outputinitially": true,
+        "outputinitially": false,
         "state_type": "str",
         "haltifstate": "",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -62,16 +234,16 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 220,
-        "y": 1000,
+        "x": 100,
+        "y": 180,
         "wires": [
             [
-                "8e4b931b92fa3aab"
+                "721f486a52bf9c36"
             ]
         ]
     },
     {
-        "id": "8e4b931b92fa3aab",
+        "id": "721f486a52bf9c36",
         "type": "switch",
         "z": "1a6ef62886bebc0d",
         "name": "",
@@ -92,44 +264,26 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 490,
-        "y": 1000,
+        "x": 250,
+        "y": 180,
         "wires": [
             [
-                "6654bb4b8a16504a"
+                "c10afca66085add3"
             ],
             [
-                "2d8a90aff75281ab"
+                "0d018fdce10bd378"
             ]
         ]
     },
     {
-        "id": "3a9c2a6648d04e72",
-        "type": "ha-binary-sensor",
-        "z": "1a6ef62886bebc0d",
-        "name": "receiver_state",
-        "entityConfig": "7ebeacd9.171704",
-        "version": 0,
-        "state": "receiver-state",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 1040,
-        "y": 1000,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0f172a84ec1d82a8",
+        "id": "c10afca66085add3",
         "type": "change",
         "z": "1a6ef62886bebc0d",
-        "name": "on state",
+        "name": "on",
         "rules": [
             {
                 "t": "set",
-                "p": "receiver-state",
+                "p": "payload",
                 "pt": "msg",
                 "to": "on",
                 "tot": "str"
@@ -140,23 +294,23 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
-        "y": 980,
+        "x": 430,
+        "y": 160,
         "wires": [
             [
-                "3a9c2a6648d04e72"
+                "a2e46eabb4786525"
             ]
         ]
     },
     {
-        "id": "8f92e851c2128846",
+        "id": "0d018fdce10bd378",
         "type": "change",
         "z": "1a6ef62886bebc0d",
-        "name": "off state",
+        "name": "off",
         "rules": [
             {
                 "t": "set",
-                "p": "receiver-state",
+                "p": "payload",
                 "pt": "msg",
                 "to": "off",
                 "tot": "str"
@@ -167,170 +321,64 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
-        "y": 1040,
+        "x": 430,
+        "y": 200,
         "wires": [
             [
-                "3a9c2a6648d04e72"
+                "a2e46eabb4786525"
             ]
         ]
     },
     {
-        "id": "2d8a90aff75281ab",
-        "type": "api-current-state",
+        "id": "a2e46eabb4786525",
+        "type": "ha-binary-sensor",
         "z": "1a6ef62886bebc0d",
-        "name": "receiver switch is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.receiver",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 660,
-        "y": 1040,
-        "wires": [
-            [
-                "8f92e851c2128846"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "6654bb4b8a16504a",
-        "type": "api-current-state",
-        "z": "1a6ef62886bebc0d",
-        "name": "receiver switch is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.receiver",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 660,
-        "y": 980,
-        "wires": [
-            [
-                "0f172a84ec1d82a8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "55b11d036aefd91a",
-        "type": "api-current-state",
-        "z": "1a6ef62886bebc0d",
-        "name": "switch receiver",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.receiver",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 120,
-        "y": 1120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "21e98a79034a398a",
-        "type": "api-call-service",
-        "z": "1a6ef62886bebc0d",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "remote",
-        "service": "toggle",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
+        "name": "receiver",
+        "entityConfig": "c0f2ea3e778823b7",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
         "outputProperties": [],
-        "queue": "none",
-        "x": 320,
-        "y": 1120,
+        "x": 600,
+        "y": 180,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "65aaa7d0996bc4bd",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "button_receiver",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Receiver"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
     },
     {
         "id": "4ba92433.2478cc",
@@ -356,39 +404,36 @@
         "enableGlobalContextStore": true
     },
     {
-        "id": "7ebeacd9.171704",
+        "id": "c0f2ea3e778823b7",
         "type": "ha-entity-config",
         "server": "4ba92433.2478cc",
         "deviceConfig": "",
-        "name": "binary sensor config for sensor dishwasher",
-        "version": 6,
+        "name": "receiver",
+        "version": "6",
         "entityType": "binary_sensor",
         "haConfig": [
             {
                 "property": "name",
-                "value": "dishwasher"
+                "value": "receiver"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
             },
             {
                 "property": "device_class",
                 "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:dishwasher"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
             }
         ],
-        "resend": true
+        "resend": false,
+        "debugEnabled": false
     }
 ]
