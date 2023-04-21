@@ -1,0 +1,519 @@
+[
+    {
+        "id": "67a16d037f1a73fc",
+        "type": "tab",
+        "label": "tv_switch",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b447ea52606c4aa0",
+        "type": "api-current-state",
+        "z": "67a16d037f1a73fc",
+        "name": "tv state is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.lg_webos_smart_tv",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "95ca42ece794382d"
+            ],
+            [
+                "f3225c8aa6495cce"
+            ]
+        ]
+    },
+    {
+        "id": "3ad861c67030f3f1",
+        "type": "server-state-changed",
+        "z": "67a16d037f1a73fc",
+        "name": "lg tv mediaplayer is off",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "media_player.lg_webos_smart_tv",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "4a35bcbba9fd8659"
+            ],
+            [
+                "cc3caee8d4e6c43d"
+            ]
+        ]
+    },
+    {
+        "id": "dec82ecde28afe10",
+        "type": "ha-binary-sensor",
+        "z": "67a16d037f1a73fc",
+        "name": "tv_device",
+        "entityConfig": "c0f2ea3e778823b7",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 720,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d0e86d57dfb2254",
+        "type": "comment",
+        "z": "67a16d037f1a73fc",
+        "name": "flow that can toggle tv device on or off and creates a binary sensor with state of the tv device",
+        "info": "",
+        "x": 340,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "dee97d1f6c034c15",
+        "type": "ha-button",
+        "z": "67a16d037f1a73fc",
+        "name": "",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "334728918669134a",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 70,
+        "y": 140,
+        "wires": [
+            [
+                "b447ea52606c4aa0"
+            ]
+        ]
+    },
+    {
+        "id": "95ca42ece794382d",
+        "type": "api-call-service",
+        "z": "67a16d037f1a73fc",
+        "name": "wake on lan tv device",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "wake_on_lan",
+        "service": "send_magic_packet",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"mac\":\"38:8c:50:62:11:4d\",\"broadcast_address\":\"10.0.30.80\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3225c8aa6495cce",
+        "type": "api-call-service",
+        "z": "67a16d037f1a73fc",
+        "name": "turn off tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"system/turnOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 420,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a35bcbba9fd8659",
+        "type": "change",
+        "z": "67a16d037f1a73fc",
+        "name": "off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 300,
+        "wires": [
+            [
+                "afe8dd136d43aa93"
+            ]
+        ]
+    },
+    {
+        "id": "cc3caee8d4e6c43d",
+        "type": "change",
+        "z": "67a16d037f1a73fc",
+        "name": "on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 360,
+        "wires": [
+            [
+                "afe8dd136d43aa93"
+            ]
+        ]
+    },
+    {
+        "id": "8211130b5d730cd2",
+        "type": "server-state-changed",
+        "z": "67a16d037f1a73fc",
+        "name": "tv device power",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.shellyplug_tv_power",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "ed5d49dfd967e4eb"
+            ]
+        ]
+    },
+    {
+        "id": "ed5d49dfd967e4eb",
+        "type": "switch",
+        "z": "67a16d037f1a73fc",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "0.1",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "0.1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 360,
+        "wires": [
+            [
+                "4a35bcbba9fd8659"
+            ],
+            [
+                "cc3caee8d4e6c43d"
+            ]
+        ]
+    },
+    {
+        "id": "1ca6cd4f788d2e7e",
+        "type": "comment",
+        "z": "67a16d037f1a73fc",
+        "name": "turn on or off binary sensor tv device",
+        "info": "",
+        "x": 180,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2649cbdc707a22dd",
+        "type": "comment",
+        "z": "67a16d037f1a73fc",
+        "name": "button to toggle tv device on/off",
+        "info": "",
+        "x": 170,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "afe8dd136d43aa93",
+        "type": "rbe",
+        "z": "67a16d037f1a73fc",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "dec82ecde28afe10"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "c0f2ea3e778823b7",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "tv_device",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "tv_device"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "334728918669134a",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "tv_device",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "tv_device"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]

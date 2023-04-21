@@ -1,263 +1,263 @@
 [
-  {
-      "id": "9ed9ce7ce8f74ca0",
-      "type": "subflow",
-      "name": "tv_mode_on",
-      "info": "",
-      "category": "",
-      "in": [
-          {
-              "x": 40,
-              "y": 100,
-              "wires": [
-                  {
-                      "id": "cbffe613f7b4d2cd"
-                  },
-                  {
-                      "id": "ab941695962a49ca"
-                  },
-                  {
-                      "id": "39676675d41d2349"
-                  },
-                  {
-                      "id": "71594be305815ee3"
-                  }
-              ]
-          }
-      ],
-      "out": [],
-      "env": [],
-      "meta": {},
-      "color": "#DDAA99"
-  },
-  {
-      "id": "cbffe613f7b4d2cd",
-      "type": "api-current-state",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "state shield is not on",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "on",
-      "halt_if_type": "str",
-      "halt_if_compare": "is_not",
-      "entity_id": "media_player.shield",
-      "state_type": "str",
-      "blockInputOverrides": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": "0",
-      "forType": "num",
-      "forUnits": "minutes",
-      "override_topic": false,
-      "state_location": "payload",
-      "override_payload": "msg",
-      "entity_location": "data",
-      "override_data": "msg",
-      "x": 240,
-      "y": 140,
-      "wires": [
-          [
-              "210448aceed6c74e"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "210448aceed6c74e",
-      "type": "api-call-service",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "turn on shield",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "media_player",
-      "service": "turn_on",
-      "areaId": [],
-      "deviceId": [
-          "aa1a5fa6d13fc3224345d871874f8619"
-      ],
-      "entityId": [
-          "media_player.shield"
-      ],
-      "data": "",
-      "dataType": "jsonata",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 440,
-      "y": 140,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "e5c0ae3969af85fb",
-      "type": "comment",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "turn on tv, shield mediaplayer and receiver",
-      "info": "",
-      "x": 180,
-      "y": 40,
-      "wires": []
-  },
-  {
-      "id": "ab941695962a49ca",
-      "type": "api-current-state",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "state input boolean tv is off",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 2,
-      "halt_if": "off",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "input_boolean.tv",
-      "state_type": "str",
-      "blockInputOverrides": true,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entity"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 260,
-      "y": 100,
-      "wires": [
-          [
-              "c5696bd905d5d0b2"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "c5696bd905d5d0b2",
-      "type": "api-call-service",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "turn on input boolean tv",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "input_boolean",
-      "service": "turn_on",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "input_boolean.tv"
-      ],
-      "data": "",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 510,
-      "y": 100,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "39676675d41d2349",
-      "type": "api-call-service",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "turn on receiver",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "remote",
-      "service": "send_command",
-      "areaId": [],
-      "deviceId": [
-          "34a73fe47cda5c964dcb946e48f8a307"
-      ],
-      "entityId": [
-          "remote.harmony_hub_01"
-      ],
-      "data": "{\"device\":\"53126254\",\"command\":\"PowerOn\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 220,
-      "y": 180,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "71594be305815ee3",
-      "type": "api-call-service",
-      "z": "9ed9ce7ce8f74ca0",
-      "name": "turn on screen",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "webostv",
-      "service": "command",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [
-          "media_player.lg_webos_smart_tv"
-      ],
-      "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 220,
-      "y": 220,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "4ba92433.2478cc",
-      "type": "server",
-      "name": "Home Assistant",
-      "version": 5,
-      "addon": false,
-      "rejectUnauthorizedCerts": false,
-      "ha_boolean": "y|yes|true|on|home|open",
-      "connectionDelay": true,
-      "cacheJson": true,
-      "heartbeat": true,
-      "heartbeatInterval": "30",
-      "areaSelector": "friendlyName",
-      "deviceSelector": "friendlyName",
-      "entitySelector": "friendlyName",
-      "statusSeparator": "at: ",
-      "statusYear": "hidden",
-      "statusMonth": "short",
-      "statusDay": "numeric",
-      "statusHourCycle": "h23",
-      "statusTimeFormat": "h:m",
-      "enableGlobalContextStore": true
-  }
+    {
+        "id": "9ed9ce7ce8f74ca0",
+        "type": "subflow",
+        "name": "tv_mode_on",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "cbffe613f7b4d2cd"
+                    },
+                    {
+                        "id": "ab941695962a49ca"
+                    },
+                    {
+                        "id": "39676675d41d2349"
+                    },
+                    {
+                        "id": "71594be305815ee3"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "cbffe613f7b4d2cd",
+        "type": "api-current-state",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "state shield is not on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "media_player.shield",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 220,
+        "y": 100,
+        "wires": [
+            [
+                "210448aceed6c74e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "210448aceed6c74e",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on shield",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "aa1a5fa6d13fc3224345d871874f8619"
+        ],
+        "entityId": [
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 460,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5c0ae3969af85fb",
+        "type": "comment",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on tv, shield mediaplayer and receiver",
+        "info": "",
+        "x": 180,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ab941695962a49ca",
+        "type": "api-current-state",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "state input boolean tv is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.tv",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 240,
+        "y": 140,
+        "wires": [
+            [
+                "c5696bd905d5d0b2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c5696bd905d5d0b2",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on input boolean tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.tv"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 490,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39676675d41d2349",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on receiver",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
+        "entityId": [
+            "remote.harmony_hub_01"
+        ],
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOn\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 200,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71594be305815ee3",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "turn on screen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 200,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
 ]
