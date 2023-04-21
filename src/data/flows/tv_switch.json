@@ -47,7 +47,7 @@
         "y": 140,
         "wires": [
             [
-                "95ca42ece794382d"
+                "92d4bb3590a48b30"
             ],
             [
                 "f3225c8aa6495cce"
@@ -186,31 +186,6 @@
         ]
     },
     {
-        "id": "95ca42ece794382d",
-        "type": "api-call-service",
-        "z": "67a16d037f1a73fc",
-        "name": "wake on lan tv device",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "wake_on_lan",
-        "service": "send_magic_packet",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"mac\":\"38:8c:50:62:11:4d\",\"broadcast_address\":\"10.0.30.80\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 460,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "f3225c8aa6495cce",
         "type": "api-call-service",
         "z": "67a16d037f1a73fc",
@@ -234,7 +209,9 @@
         "x": 420,
         "y": 180,
         "wires": [
-            []
+            [
+                "2fc1bb2e88abcd89"
+            ]
         ]
     },
     {
@@ -428,6 +405,62 @@
         ]
     },
     {
+        "id": "92d4bb3590a48b30",
+        "type": "api-call-service",
+        "z": "67a16d037f1a73fc",
+        "name": "turn on shield mediaplayer",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.shield_2",
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 480,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2fc1bb2e88abcd89",
+        "type": "api-call-service",
+        "z": "67a16d037f1a73fc",
+        "name": "turn off shield mediaplayer",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.shield_2",
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 620,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -455,13 +488,13 @@
         "type": "ha-entity-config",
         "server": "4ba92433.2478cc",
         "deviceConfig": "",
-        "name": "tv_device",
+        "name": "receiver",
         "version": "6",
         "entityType": "binary_sensor",
         "haConfig": [
             {
                 "property": "name",
-                "value": "tv_device"
+                "value": "receiver"
             },
             {
                 "property": "icon",
