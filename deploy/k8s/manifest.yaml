@@ -37,7 +37,6 @@ spec:
             exportGlobalContextKeys: false,
             externalModules: {},
             editorTheme: {
-                theme: "dark",
                 palette: {},
                 projects: {
                     enabled: false,
