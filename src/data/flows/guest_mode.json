@@ -1,0 +1,765 @@
+[
+  {
+      "id": "a7a34028d045deee",
+      "type": "tab",
+      "label": "guest_mode",
+      "disabled": false,
+      "info": "",
+      "env": []
+  },
+  {
+      "id": "d2c560378b1b926b",
+      "type": "server-state-changed",
+      "z": "a7a34028d045deee",
+      "name": "babysitter calendar event ",
+      "server": "4ba92433.2478cc",
+      "version": 4,
+      "exposeToHomeAssistant": false,
+      "haConfig": [
+          {
+              "property": "name",
+              "value": ""
+          },
+          {
+              "property": "icon",
+              "value": ""
+          }
+      ],
+      "entityidfilter": "calendar.lise_babysitter",
+      "entityidfiltertype": "exact",
+      "outputinitially": true,
+      "state_type": "str",
+      "haltifstate": "on",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "outputs": 2,
+      "output_only_on_state_change": true,
+      "for": "0",
+      "forType": "num",
+      "forUnits": "minutes",
+      "ignorePrevStateNull": false,
+      "ignorePrevStateUnknown": false,
+      "ignorePrevStateUnavailable": false,
+      "ignoreCurrentStateUnknown": false,
+      "ignoreCurrentStateUnavailable": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "eventData"
+          },
+          {
+              "property": "topic",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "triggerId"
+          }
+      ],
+      "x": 130,
+      "y": 140,
+      "wires": [
+          [
+              "0f8b5cf3541d59c4"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "4fd065fd91ad5c32",
+      "type": "comment",
+      "z": "a7a34028d045deee",
+      "name": "turn on guest mode if calendar event with words \"past\" is found in Lise calendar guest mode will be turn on",
+      "info": "",
+      "x": 400,
+      "y": 100,
+      "wires": []
+  },
+  {
+      "id": "0f8b5cf3541d59c4",
+      "type": "api-call-service",
+      "z": "a7a34028d045deee",
+      "name": "turn on guest mode",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "input_boolean",
+      "service": "turn_on",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [
+          "input_boolean.guest"
+      ],
+      "data": "",
+      "dataType": "jsonata",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 350,
+      "y": 140,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "880a3593d9f19b8c",
+      "type": "comment",
+      "z": "a7a34028d045deee",
+      "name": "flow to turn on or off geust most based on certain events",
+      "info": "",
+      "x": 220,
+      "y": 40,
+      "wires": []
+  },
+  {
+      "id": "6a89a7042f3cf8ed",
+      "type": "comment",
+      "z": "a7a34028d045deee",
+      "name": "If persons are not at home and a door has been opened, ask if the guest mode needs to be turned on.",
+      "info": "",
+      "x": 390,
+      "y": 200,
+      "wires": []
+  },
+  {
+      "id": "a8d73cbf04664678",
+      "type": "comment",
+      "z": "a7a34028d045deee",
+      "name": "listen to guest mode on notification answer event ",
+      "info": "",
+      "x": 220,
+      "y": 400,
+      "wires": []
+  },
+  {
+      "id": "555fa53e220c24b1",
+      "type": "server-events",
+      "z": "a7a34028d045deee",
+      "name": "mobile event listner",
+      "server": "4ba92433.2478cc",
+      "version": 2,
+      "eventType": "mobile_app_notification_action",
+      "exposeToHomeAssistant": false,
+      "eventData": "{\"action\":\"GUEST_MODE_ON\"}",
+      "haConfig": [
+          {
+              "property": "name",
+              "value": ""
+          },
+          {
+              "property": "icon",
+              "value": ""
+          }
+      ],
+      "waitForRunning": true,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "eventData"
+          },
+          {
+              "property": "topic",
+              "propertyType": "msg",
+              "value": "$outputData(\"eventData\").event_type",
+              "valueType": "jsonata"
+          }
+      ],
+      "event_type": "",
+      "x": 110,
+      "y": 440,
+      "wires": [
+          [
+              "9fc1160da24a5102"
+          ]
+      ]
+  },
+  {
+      "id": "9fc1160da24a5102",
+      "type": "api-call-service",
+      "z": "a7a34028d045deee",
+      "name": "turn on guest mode",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "input_boolean",
+      "service": "turn_on",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [
+          "input_boolean.guest"
+      ],
+      "data": "",
+      "dataType": "jsonata",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 310,
+      "y": 440,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "eabe11216373d312",
+      "type": "server-state-changed",
+      "z": "a7a34028d045deee",
+      "name": "state change for all doors",
+      "server": "4ba92433.2478cc",
+      "version": 4,
+      "exposeToHomeAssistant": false,
+      "haConfig": [
+          {
+              "property": "name",
+              "value": ""
+          },
+          {
+              "property": "icon",
+              "value": ""
+          }
+      ],
+      "entityidfilter": "binary_sensor.*door_window",
+      "entityidfiltertype": "regex",
+      "outputinitially": false,
+      "state_type": "str",
+      "haltifstate": "",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "outputs": 1,
+      "output_only_on_state_change": true,
+      "for": "0",
+      "forType": "num",
+      "forUnits": "minutes",
+      "ignorePrevStateNull": false,
+      "ignorePrevStateUnknown": false,
+      "ignorePrevStateUnavailable": false,
+      "ignoreCurrentStateUnknown": false,
+      "ignoreCurrentStateUnavailable": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "eventData"
+          },
+          {
+              "property": "topic",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "triggerId"
+          }
+      ],
+      "x": 130,
+      "y": 240,
+      "wires": [
+          [
+              "39691718b80b4105"
+          ]
+      ]
+  },
+  {
+      "id": "88e2c415c85c433e",
+      "type": "switch",
+      "z": "a7a34028d045deee",
+      "name": "door is open",
+      "property": "data.new_state.state",
+      "propertyType": "msg",
+      "rules": [
+          {
+              "t": "eq",
+              "v": "on",
+              "vt": "str"
+          }
+      ],
+      "checkall": "true",
+      "repair": false,
+      "outputs": 1,
+      "x": 790,
+      "y": 240,
+      "wires": [
+          [
+              "1ec3bf6ac9ee7791"
+          ]
+      ]
+  },
+  {
+      "id": "1ec3bf6ac9ee7791",
+      "type": "change",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "rules": [
+          {
+              "t": "change",
+              "p": "topic",
+              "pt": "msg",
+              "from": "binary_sensor.backdoor_window_door_is_open",
+              "fromt": "str",
+              "to": "achterdeur",
+              "tot": "str"
+          },
+          {
+              "t": "change",
+              "p": "topic",
+              "pt": "msg",
+              "from": "binary_sensor.frontdoor_window_door_is_open",
+              "fromt": "str",
+              "to": "voordeur",
+              "tot": "str"
+          }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 960,
+      "y": 240,
+      "wires": [
+          [
+              "0c62bc9a0d9a194f"
+          ]
+      ]
+  },
+  {
+      "id": "0c62bc9a0d9a194f",
+      "type": "change",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "rules": [
+          {
+              "t": "set",
+              "p": "custom_action_1_title",
+              "pt": "msg",
+              "to": "JA",
+              "tot": "str"
+          },
+          {
+              "t": "set",
+              "p": "custom_action_2_title",
+              "pt": "msg",
+              "to": "NEE",
+              "tot": "str"
+          }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 1140,
+      "y": 240,
+      "wires": [
+          [
+              "c59198334458c906",
+              "5ecb0e583f2b2539"
+          ]
+      ]
+  },
+  {
+      "id": "c59198334458c906",
+      "type": "api-call-service",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "notify",
+      "service": "mobile_app_phone_coen",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [],
+      "data": "{\"message\":\"De {{topic}} is geopend en de gastmodus is uitgeschakeld. Wil je de gastmodus inschakelen?\",\"data\":{\"actions\":[{\"action\":\"GUEST_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1370,
+      "y": 220,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "66cf63b03080aadb",
+      "type": "server-events",
+      "z": "a7a34028d045deee",
+      "name": "listen to shelly click events",
+      "server": "4ba92433.2478cc",
+      "version": 2,
+      "eventType": "shelly.click",
+      "exposeToHomeAssistant": false,
+      "eventData": "",
+      "haConfig": [
+          {
+              "property": "name",
+              "value": ""
+          },
+          {
+              "property": "icon",
+              "value": ""
+          }
+      ],
+      "waitForRunning": true,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "eventData"
+          },
+          {
+              "property": "topic",
+              "propertyType": "msg",
+              "value": "$outputData(\"eventData\").event_type",
+              "valueType": "jsonata"
+          }
+      ],
+      "event_type": "",
+      "x": 130,
+      "y": 340,
+      "wires": [
+          [
+              "59a9a1e67b92890a"
+          ]
+      ]
+  },
+  {
+      "id": "39691718b80b4105",
+      "type": "api-current-state",
+      "z": "a7a34028d045deee",
+      "name": "guest mode is off",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "off",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "entity_id": "input_boolean.guest",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": "0",
+      "forType": "num",
+      "forUnits": "minutes",
+      "override_topic": false,
+      "state_location": "payload",
+      "override_payload": "msg",
+      "entity_location": "data",
+      "override_data": "msg",
+      "x": 350,
+      "y": 240,
+      "wires": [
+          [
+              "4c5e48409ce3be8d"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "4c5e48409ce3be8d",
+      "type": "api-current-state",
+      "z": "a7a34028d045deee",
+      "name": "group persons is not home",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "not_home",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "entity_id": "group.persons",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": "0",
+      "forType": "num",
+      "forUnits": "minutes",
+      "override_topic": false,
+      "state_location": "payload",
+      "override_payload": "msg",
+      "entity_location": "data",
+      "override_data": "msg",
+      "x": 580,
+      "y": 240,
+      "wires": [
+          [
+              "88e2c415c85c433e"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "89a4b058eca2d620",
+      "type": "comment",
+      "z": "a7a34028d045deee",
+      "name": "if shelly click event where fired and nobody is home and guest mode is off, ask if the guest mode needs to be turned on.",
+      "info": "",
+      "x": 440,
+      "y": 300,
+      "wires": []
+  },
+  {
+      "id": "072df3e380eea942",
+      "type": "api-current-state",
+      "z": "a7a34028d045deee",
+      "name": "group persons is not home",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "not_home",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "entity_id": "group.persons",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": "0",
+      "forType": "num",
+      "forUnits": "minutes",
+      "override_topic": false,
+      "state_location": "payload",
+      "override_payload": "msg",
+      "entity_location": "data",
+      "override_data": "msg",
+      "x": 580,
+      "y": 340,
+      "wires": [
+          [
+              "739f5c7d5d53c7e8"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "59a9a1e67b92890a",
+      "type": "api-current-state",
+      "z": "a7a34028d045deee",
+      "name": "guest mode is off",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "off",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "entity_id": "input_boolean.guest",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": "0",
+      "forType": "num",
+      "forUnits": "minutes",
+      "override_topic": false,
+      "state_location": "payload",
+      "override_payload": "msg",
+      "entity_location": "data",
+      "override_data": "msg",
+      "x": 350,
+      "y": 340,
+      "wires": [
+          [
+              "072df3e380eea942"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "739f5c7d5d53c7e8",
+      "type": "change",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "rules": [
+          {
+              "t": "set",
+              "p": "custom_action_1_title",
+              "pt": "msg",
+              "to": "JA",
+              "tot": "str"
+          },
+          {
+              "t": "set",
+              "p": "custom_action_2_title",
+              "pt": "msg",
+              "to": "NEE",
+              "tot": "str"
+          }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 800,
+      "y": 340,
+      "wires": [
+          [
+              "0915111c33b047ff",
+              "875cbdaaca5616fa"
+          ]
+      ]
+  },
+  {
+      "id": "0915111c33b047ff",
+      "type": "api-call-service",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "notify",
+      "service": "mobile_app_phone_coen",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [],
+      "data": "{\"message\":\"Er lijkt iemand in huis te zijn en de gastmodus is uitgeschakeld. Wil je de gastmodus inschakelen?\",\"data\":{\"actions\":[{\"action\":\"GUEST_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1030,
+      "y": 340,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "875cbdaaca5616fa",
+      "type": "api-call-service",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "notify",
+      "service": "mobile_app_phone_anne",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [],
+      "data": "{\"message\":\"Er lijkt iemand in huis te zijn en de gastmodus is uitgeschakeld. Wil je de gastmodus inschakelen?\",\"data\":{\"actions\":[{\"action\":\"GUEST_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1030,
+      "y": 400,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "5ecb0e583f2b2539",
+      "type": "api-call-service",
+      "z": "a7a34028d045deee",
+      "name": "",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "notify",
+      "service": "mobile_app_phone_coen",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [],
+      "data": "{\"message\":\"De {{topic}} is geopend en de gastmodus is uitgeschakeld. Wil je de gastmodus inschakelen?\",\"data\":{\"actions\":[{\"action\":\"GUEST_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1370,
+      "y": 280,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "4ba92433.2478cc",
+      "type": "server",
+      "name": "Home Assistant",
+      "version": 5,
+      "addon": false,
+      "rejectUnauthorizedCerts": false,
+      "ha_boolean": "y|yes|true|on|home|open",
+      "connectionDelay": true,
+      "cacheJson": true,
+      "heartbeat": true,
+      "heartbeatInterval": "30",
+      "areaSelector": "friendlyName",
+      "deviceSelector": "friendlyName",
+      "entitySelector": "friendlyName",
+      "statusSeparator": "at: ",
+      "statusYear": "hidden",
+      "statusMonth": "short",
+      "statusDay": "numeric",
+      "statusHourCycle": "h23",
+      "statusTimeFormat": "h:m",
+      "enableGlobalContextStore": true
+  }
+]

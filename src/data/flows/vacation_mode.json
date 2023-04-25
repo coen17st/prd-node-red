@@ -8,70 +8,6 @@
         "env": []
     },
     {
-        "id": "26a044fad0bd8da2",
-        "type": "server-state-changed",
-        "z": "e98ae3c9db1bd6c3",
-        "name": "state persons not home for 1 day",
-        "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "group.persons",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "not_home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": "1",
-        "forType": "num",
-        "forUnits": "days",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 150,
-        "y": 140,
-        "wires": [
-            [
-                "8299791033488b99"
-            ],
-            []
-        ]
-    },
-    {
         "id": "505fd0b6095e5990",
         "type": "inject",
         "z": "e98ae3c9db1bd6c3",
@@ -89,7 +25,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 620,
+        "y": 440,
         "wires": [
             [
                 "4aec915beb25bfb5"
@@ -132,11 +68,11 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 320,
-        "y": 620,
+        "x": 300,
+        "y": 440,
         "wires": [
             [
-                "bb6f9be9a8d52d38"
+                "52372f03201c1339"
             ],
             []
         ]
@@ -167,17 +103,19 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 690,
-        "y": 620,
+        "x": 670,
+        "y": 440,
         "wires": [
-            []
+            [
+                "bdeb3f3c3092a9db"
+            ]
         ]
     },
     {
         "id": "4fdeb47515a56739",
         "type": "delay",
         "z": "e98ae3c9db1bd6c3",
-        "name": "",
+        "name": "random delay",
         "pauseType": "random",
         "timeout": "5",
         "timeoutUnits": "seconds",
@@ -185,14 +123,17 @@
         "nbRateUnits": "1",
         "rateUnits": "second",
         "randomFirst": "5",
-        "randomLast": "36",
+        "randomLast": "40",
         "randomUnits": "minutes",
         "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "x": 920,
-        "y": 620,
+        "x": 1380,
+        "y": 440,
         "wires": [
-            []
+            [
+                "e2878c3736a9cd88"
+            ]
         ]
     },
     {
@@ -232,7 +173,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 440,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
                 "fb8451f100d9bf63"
@@ -258,7 +199,7 @@
         "repair": false,
         "outputs": 1,
         "x": 250,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
                 "2da11a2951cd690b"
@@ -321,7 +262,7 @@
             }
         ],
         "x": 90,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
                 "289eb5762afd854e"
@@ -350,7 +291,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 660,
-        "y": 260,
+        "y": 340,
         "wires": [
             []
         ]
@@ -362,7 +303,7 @@
         "name": "turn off vacation mode when someone comes home",
         "info": "",
         "x": 230,
-        "y": 220,
+        "y": 300,
         "wires": []
     },
     {
@@ -421,15 +362,258 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 520,
-        "y": 580,
+        "x": 500,
+        "y": 440,
         "wires": [
-            [],
+            [
+                "bb6f9be9a8d52d38"
+            ],
             []
         ]
     },
     {
-        "id": "8299791033488b99",
+        "id": "8319e5e91e71a1ed",
+        "type": "comment",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "turn on and off random lights in vacation lights group if vacation mode is on and outdoor is dark",
+        "info": "",
+        "x": 360,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b0ab3842efd58c4a",
+        "type": "api-call-service",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "turn on light",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "{\"brightness_pct\":\"{{dimlevel}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1210,
+        "y": 440,
+        "wires": [
+            [
+                "4fdeb47515a56739"
+            ]
+        ]
+    },
+    {
+        "id": "e2878c3736a9cd88",
+        "type": "api-call-service",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "turn off light",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1550,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68fb6d09797ade29",
+        "type": "random",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "random dim level",
+        "low": "20",
+        "high": "60",
+        "inte": "true",
+        "property": "dimlevel",
+        "x": 1030,
+        "y": 440,
+        "wires": [
+            [
+                "b0ab3842efd58c4a"
+            ]
+        ]
+    },
+    {
+        "id": "bdeb3f3c3092a9db",
+        "type": "delay",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "random delay",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "2",
+        "randomLast": "20",
+        "randomUnits": "minutes",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 440,
+        "wires": [
+            [
+                "68fb6d09797ade29"
+            ]
+        ]
+    },
+    {
+        "id": "5e8342333f16177a",
+        "type": "api-call-service",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_coen",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{{custom_message}}}\",\"data\":{\"actions\":[{\"action\":\"VACATION_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 830,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79ce4db3aa0b5c53",
+        "type": "server-events",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "eventType": "mobile_app_notification_action",
+        "exposeToHomeAssistant": false,
+        "eventData": "{\"action\":\"VACATION_MODE_ON\"}",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "f047140113012c45"
+            ]
+        ]
+    },
+    {
+        "id": "629cb438e0ae0dfa",
+        "type": "server-state-changed",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "state persons not home for 1 day",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "group.persons",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "not_home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "1",
+        "forType": "num",
+        "forUnits": "days",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "7f8a5bbec56c9729"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7f8a5bbec56c9729",
         "type": "api-current-state",
         "z": "e98ae3c9db1bd6c3",
         "name": "vacation mode is off",
@@ -467,19 +651,115 @@
         "x": 400,
         "y": 140,
         "wires": [
-            [],
+            [
+                "17ba99eecd06d428"
+            ],
             []
         ]
     },
     {
-        "id": "8319e5e91e71a1ed",
+        "id": "17ba99eecd06d428",
+        "type": "change",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "custom_message",
+                "pt": "msg",
+                "to": "Er is niemand thuis, wil je de vakantie stand thuis aanzetten?",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "custom_action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "custom_action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "5e8342333f16177a",
+                "8f3b898136f18dc9"
+            ]
+        ]
+    },
+    {
+        "id": "319e2f002dcdb37f",
         "type": "comment",
         "z": "e98ae3c9db1bd6c3",
-        "name": "turn on and off random lights in vacation lights group if vacation mode is on and outdoor is dark",
+        "name": "listen to vacation mode on notification answer event ",
         "info": "",
-        "x": 360,
-        "y": 340,
+        "x": 230,
+        "y": 200,
         "wires": []
+    },
+    {
+        "id": "f047140113012c45",
+        "type": "api-call-service",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "turn on vacation mode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.vacation_mode"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f3b898136f18dc9",
+        "type": "api-call-service",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_anne",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{{custom_message}}}\",\"data\":{\"actions\":[{\"action\":\"VACATION_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4ba92433.2478cc",
