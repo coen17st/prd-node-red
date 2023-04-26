@@ -1,0 +1,317 @@
+[
+    {
+        "id": "9a69a535b1203724",
+        "type": "tab",
+        "label": "receiver_auto_turn_off",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f91fa138a7f2abc1",
+        "type": "server-state-changed",
+        "z": "9a69a535b1203724",
+        "name": "receiver power",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.shellyplug_reciever_power",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "8777a418e97e0ad5"
+            ]
+        ]
+    },
+    {
+        "id": "e0879954dcf1d35b",
+        "type": "comment",
+        "z": "9a69a535b1203724",
+        "name": "automaticly turn off receiver when nothing else is on or playing",
+        "info": "",
+        "x": 240,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8777a418e97e0ad5",
+        "type": "api-current-state",
+        "z": "9a69a535b1203724",
+        "name": "harmony activiteit is alles uit",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Alles Uit",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.harmonyhub",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "9d45a39ca5257c50"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9d45a39ca5257c50",
+        "type": "api-current-state",
+        "z": "9a69a535b1203724",
+        "name": "shield is not playing",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "media_player.shield",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "30e2f9b22a4f6e9e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "30e2f9b22a4f6e9e",
+        "type": "api-current-state",
+        "z": "9a69a535b1203724",
+        "name": "shield_2 is not playing",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "media_player.shield_2",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 760,
+        "y": 80,
+        "wires": [
+            [
+                "4562b239495a8e67"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4562b239495a8e67",
+        "type": "api-current-state",
+        "z": "9a69a535b1203724",
+        "name": "lg webos player is not on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "media_player.lg_webos_smart_tv",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 990,
+        "y": 80,
+        "wires": [
+            [
+                "78ba731d3c889a39"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "78ba731d3c889a39",
+        "type": "api-call-service",
+        "z": "9a69a535b1203724",
+        "name": "turn off reciever",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "remote",
+        "service": "send_command",
+        "areaId": [
+            "living_room"
+        ],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
+        "entityId": [
+            "remote.harmony_hub_01"
+        ],
+        "data": "{\"device\":\"53126254\",\"command\":\"PowerOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
