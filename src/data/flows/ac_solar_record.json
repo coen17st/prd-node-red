@@ -1,0 +1,262 @@
+[
+    {
+        "id": "99c1372046e45da7",
+        "type": "tab",
+        "label": "ac_solar_record",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "80dc13087104d323",
+        "type": "server-state-changed",
+        "z": "99c1372046e45da7",
+        "name": "solaredge kwh today",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.solaredge_modbus_ac_energy_kwh_today",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "15",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "aab1bbee72f90c90"
+            ]
+        ]
+    },
+    {
+        "id": "aab1bbee72f90c90",
+        "type": "api-current-state",
+        "z": "99c1372046e45da7",
+        "name": "highest_ac_solar_day  < solaredge kwh yoday ",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "payload",
+        "halt_if_type": "msg",
+        "halt_if_compare": "lt",
+        "entity_id": "sensor.highest_ac_solar_day",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "7cd4e46a5732025c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1f1bf1690903b6a9",
+        "type": "ha-sensor",
+        "z": "99c1372046e45da7",
+        "name": "highest_ac_solar_day sensor",
+        "entityConfig": "897c190112264208",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "date",
+                "value": "date",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 1180,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a0300d7bafb66f44",
+        "type": "comment",
+        "z": "99c1372046e45da7",
+        "name": "A sensor that stores the value and date when the most Kwh is produced bij solar power (daily record)",
+        "info": "",
+        "x": 360,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7cd4e46a5732025c",
+        "type": "split",
+        "z": "99c1372046e45da7",
+        "name": "split on T character",
+        "splt": "T",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 690,
+        "y": 100,
+        "wires": [
+            [
+                "5b4b13260509c2fb"
+            ]
+        ]
+    },
+    {
+        "id": "5b4b13260509c2fb",
+        "type": "change",
+        "z": "99c1372046e45da7",
+        "name": "change msg payload to date",
+        "rules": [
+            {
+                "t": "set",
+                "p": "date",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 100,
+        "wires": [
+            [
+                "1f1bf1690903b6a9"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "897c190112264208",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "highest_ac_solar_day",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "highest_ac_solar_day"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "energy"
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "kWh"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]
