@@ -817,7 +817,8 @@
         "y": 380,
         "wires": [
             [
-                "60f6cd3f.56a0f4"
+                "60f6cd3f.56a0f4",
+                "86a736ea711dfb00"
             ],
             []
         ]
@@ -832,7 +833,7 @@
         "payloadval": "0",
         "name": "",
         "x": 720,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "8addd786c01dce16"
@@ -903,7 +904,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1250,
-        "y": 420,
+        "y": 460,
         "wires": [
             []
         ]
@@ -964,7 +965,7 @@
             }
         ],
         "x": 130,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "272212f1.26bb6e"
@@ -993,7 +994,7 @@
         "blockInputOverrides": true,
         "outputProperties": [],
         "x": 320,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "155ef739.0e1de9"
@@ -1033,7 +1034,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 490,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "a098e71.e0db718"
@@ -1063,7 +1064,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 700,
-        "y": 460,
+        "y": 660,
         "wires": [
             []
         ]
@@ -1103,7 +1104,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 990,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "6bd54ad5.5aea04"
@@ -1177,6 +1178,159 @@
             [
                 "734801f342d9257e"
             ]
+        ]
+    },
+    {
+        "id": "94c4319ebf27b878",
+        "type": "api-call-service",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_coen",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{{custom_message}}}\",\"data\":{\"actions\":[{\"action\":\"IGNORE\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"robot-vacuum\"},{\"action\":\"{{action_payload}}\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"robot-vacuum\"}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1170,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86a736ea711dfb00",
+        "type": "change",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "custom_message",
+                "pt": "msg",
+                "to": "Moet over 10 minuten de stofzuiger starten?",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "custom_action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "custom_action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "action_payload",
+                "pt": "msg",
+                "to": "VACUUM_AUTOCLEANING_OFF",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 380,
+        "wires": [
+            [
+                "94c4319ebf27b878",
+                "ebf340d77bbe7a85"
+            ]
+        ]
+    },
+    {
+        "id": "cbb046587922e1c0",
+        "type": "server-events",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "eventType": "mobile_app_notification_action",
+        "exposeToHomeAssistant": false,
+        "eventData": "{\"action\":\"VACUUM_AUTOCLEANING_OFF\"}",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "a098e71.e0db718"
+            ]
+        ]
+    },
+    {
+        "id": "035179dc3e7fddad",
+        "type": "comment",
+        "z": "55da1471.fda0fc",
+        "name": "listen to vacation mode on notification answer event ",
+        "info": "",
+        "x": 230,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ebf340d77bbe7a85",
+        "type": "api-call-service",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_anne",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{{custom_message}}}\",\"data\":{\"actions\":[{\"action\":\"IGNORE\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"robot-vacuum\"},{\"action\":\"{{action_payload}}\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"robot-vacuum\"}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1170,
+        "y": 400,
+        "wires": [
+            []
         ]
     },
     {
