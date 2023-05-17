@@ -1,0 +1,87 @@
+[
+    {
+        "id": "f05b3c485997a30f",
+        "type": "tab",
+        "label": "slack_notification",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "84aa39b1e53385d3",
+        "type": "inject",
+        "z": "f05b3c485997a30f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "80831f8e51c682d4"
+            ]
+        ]
+    },
+    {
+        "id": "80831f8e51c682d4",
+        "type": "api-call-service",
+        "z": "f05b3c485997a30f",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Fallback Text\",\"target\":\"#home-assistant\",\"title\":\"Reminder\",\"data\":{\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"This is a mrkdwn section block *this is bold*, and ~thiss crossed out~, and <https://google.com|this is a link>\"}}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
