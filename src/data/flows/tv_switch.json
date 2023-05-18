@@ -109,7 +109,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 200,
+        "x": 120,
         "y": 300,
         "wires": [
             [
@@ -207,7 +207,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 420,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "2fc1bb2e88abcd89"
@@ -427,7 +427,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 480,
-        "y": 120,
+        "y": 140,
         "wires": [
             []
         ]
@@ -455,7 +455,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 620,
-        "y": 180,
+        "y": 200,
         "wires": [
             []
         ]
@@ -513,7 +513,7 @@
                 "value": ""
             }
         ],
-        "resend": false,
+        "resend": true,
         "debugEnabled": false
     },
     {

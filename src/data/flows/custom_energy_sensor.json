@@ -27,7 +27,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 470,
+        "x": 490,
         "y": 100,
         "wires": [
             [
@@ -46,7 +46,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
+        "x": 630,
         "y": 100,
         "wires": [
             [
@@ -90,7 +90,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 270,
+        "x": 290,
         "y": 160,
         "wires": [
             [
@@ -134,7 +134,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 270,
+        "x": 290,
         "y": 100,
         "wires": [
             [
@@ -153,7 +153,7 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "x": 70,
+        "x": 90,
         "y": 100,
         "wires": [
             [
@@ -184,7 +184,7 @@
         "attributes": [],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 780,
+        "x": 800,
         "y": 100,
         "wires": [
             []
@@ -248,7 +248,7 @@
             },
             {
                 "property": "state_class",
-                "value": "measurement"
+                "value": ""
             }
         ],
         "resend": true,

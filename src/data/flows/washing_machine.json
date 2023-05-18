@@ -1,444 +1,500 @@
 [
   {
-    "id": "c23003c7.1c978",
-    "type": "tab",
-    "label": "washing_machine",
-    "disabled": false,
-    "info": ""
+      "id": "c23003c7.1c978",
+      "type": "tab",
+      "label": "washing_machine",
+      "disabled": false,
+      "info": ""
   },
   {
-    "id": "3e4cd67e.efae1a",
-    "type": "switch",
-    "z": "c23003c7.1c978",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "gt",
-        "v": "10",
-        "vt": "num"
-      },
-      {
-        "t": "lte",
-        "v": "3.9",
-        "vt": "num"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 2,
-    "x": 530,
-    "y": 100,
-    "wires": [
-      [
-        "487d5ed4.e5e61"
+      "id": "3e4cd67e.efae1a",
+      "type": "switch",
+      "z": "c23003c7.1c978",
+      "name": "",
+      "property": "payload",
+      "propertyType": "msg",
+      "rules": [
+          {
+              "t": "gt",
+              "v": "10",
+              "vt": "num"
+          },
+          {
+              "t": "lte",
+              "v": "3.9",
+              "vt": "num"
+          }
       ],
-      [
-        "bf29d7a3.4b42e8"
+      "checkall": "true",
+      "repair": false,
+      "outputs": 2,
+      "x": 530,
+      "y": 100,
+      "wires": [
+          [
+              "487d5ed4.e5e61"
+          ],
+          [
+              "bf29d7a3.4b42e8"
+          ]
       ]
-    ]
   },
   {
-    "id": "9def52c1.f5b5a",
-    "type": "trigger-state",
-    "z": "c23003c7.1c978",
-    "name": "state washing machine watt",
-    "server": "4ba92433.2478cc",
-    "version": 2,
-    "exposeToHomeAssistant": false,
-    "haConfig": [
-      {
-        "property": "name",
-        "value": ""
-      },
-      {
-        "property": "icon",
-        "value": ""
-      }
-    ],
-    "entityid": "sensor.metered_wall_plug_switch_power",
-    "entityidfiltertype": "exact",
-    "debugenabled": false,
-    "constraints": [],
-    "inputs": 1,
-    "outputs": 2,
-    "customoutputs": [],
-    "outputinitially": false,
-    "state_type": "num",
-    "enableInput": true,
-    "x": 140,
-    "y": 100,
-    "wires": [
-      [
-        "1de77a16.189c66"
+      "id": "9def52c1.f5b5a",
+      "type": "trigger-state",
+      "z": "c23003c7.1c978",
+      "name": "state washing machine watt",
+      "server": "4ba92433.2478cc",
+      "version": 2,
+      "exposeToHomeAssistant": false,
+      "haConfig": [
+          {
+              "property": "name",
+              "value": ""
+          },
+          {
+              "property": "icon",
+              "value": ""
+          }
       ],
-      []
-    ]
-  },
-  {
-    "id": "8de0025c.f9ce2",
-    "type": "comment",
-    "z": "c23003c7.1c978",
-    "name": "Set washing machine binary sensor on or off based on power measurements",
-    "info": "Set washing machine binary sensor on or off based on power measurements",
-    "x": 290,
-    "y": 40,
-    "wires": []
-  },
-  {
-    "id": "e7bf73ef.78973",
-    "type": "change",
-    "z": "c23003c7.1c978",
-    "name": "",
-    "rules": [
-      {
-        "t": "set",
-        "p": "url",
-        "pt": "msg",
-        "to": "http://192.168.1.20:8123/local/audio/wasmachine_klaar.mp3",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 1390,
-    "y": 100,
-    "wires": [
-      [
-        "624c4873.555098"
+      "entityid": "sensor.metered_wall_plug_switch_power",
+      "entityidfiltertype": "exact",
+      "debugenabled": false,
+      "constraints": [],
+      "inputs": 1,
+      "outputs": 2,
+      "customoutputs": [],
+      "outputinitially": false,
+      "state_type": "num",
+      "enableInput": true,
+      "x": 140,
+      "y": 100,
+      "wires": [
+          [
+              "1de77a16.189c66"
+          ],
+          []
       ]
-    ]
   },
   {
-    "id": "92b6fff2.40bfa",
-    "type": "api-call-service",
-    "z": "c23003c7.1c978",
-    "name": "in app notification",
-    "server": "4ba92433.2478cc",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "persistent_notification",
-    "service": "create",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [],
-    "data": "{\"message\":\"{{message}}\",\"title\":\"Wasmachine\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1770,
-    "y": 140,
-    "wires": [
-      []
-    ]
+      "id": "8de0025c.f9ce2",
+      "type": "comment",
+      "z": "c23003c7.1c978",
+      "name": "Set washing machine binary sensor on or off based on power measurements",
+      "info": "Set washing machine binary sensor on or off based on power measurements",
+      "x": 290,
+      "y": 40,
+      "wires": []
   },
   {
-    "id": "ca2d6f4.4a1db9",
-    "type": "api-call-service",
-    "z": "c23003c7.1c978",
-    "name": "media_stop",
-    "server": "4ba92433.2478cc",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "media_player",
-    "service": "turn_off",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.home_speaker"
-    ],
-    "data": "",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1750,
-    "y": 100,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "4bbf608.80d0ca",
-    "type": "change",
-    "z": "c23003c7.1c978",
-    "name": "",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "on",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 860,
-    "y": 80,
-    "wires": [
-      [
-        "84dfbc214d4e3a8d"
-      ]
-    ]
-  },
-  {
-    "id": "26d18854.3c6808",
-    "type": "change",
-    "z": "c23003c7.1c978",
-    "name": "",
-    "rules": [
-      {
-        "t": "set",
-        "p": "payload",
-        "pt": "msg",
-        "to": "off",
-        "tot": "str"
-      }
-    ],
-    "action": "",
-    "property": "",
-    "from": "",
-    "to": "",
-    "reg": false,
-    "x": 860,
-    "y": 120,
-    "wires": [
-      [
-        "84dfbc214d4e3a8d"
-      ]
-    ]
-  },
-  {
-    "id": "487d5ed4.e5e61",
-    "type": "api-current-state",
-    "z": "c23003c7.1c978",
-    "name": "state is not on",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "on",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "binary_sensor.washing_machine",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 680,
-    "y": 80,
-    "wires": [
-      [
-        "4bbf608.80d0ca"
+      "id": "e7bf73ef.78973",
+      "type": "change",
+      "z": "c23003c7.1c978",
+      "name": "",
+      "rules": [
+          {
+              "t": "set",
+              "p": "url",
+              "pt": "msg",
+              "to": "http://192.168.1.20:8123/local/audio/wasmachine_klaar.mp3",
+              "tot": "str"
+          }
       ],
-      []
-    ]
-  },
-  {
-    "id": "bf29d7a3.4b42e8",
-    "type": "api-current-state",
-    "z": "c23003c7.1c978",
-    "name": "state is not off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is_not",
-    "entity_id": "binary_sensor.washing_machine",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 680,
-    "y": 120,
-    "wires": [
-      [
-        "26d18854.3c6808"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "48fe7380.0c049c",
-    "type": "switch",
-    "z": "c23003c7.1c978",
-    "name": "",
-    "property": "payload",
-    "propertyType": "msg",
-    "rules": [
-      {
-        "t": "eq",
-        "v": "off",
-        "vt": "str"
-      }
-    ],
-    "checkall": "true",
-    "repair": false,
-    "outputs": 1,
-    "x": 1250,
-    "y": 100,
-    "wires": [
-      [
-        "e7bf73ef.78973",
-        "15fc6fc5.41655"
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 1390,
+      "y": 100,
+      "wires": [
+          [
+              "624c4873.555098"
+          ]
       ]
-    ]
   },
   {
-    "id": "15fc6fc5.41655",
-    "type": "template",
-    "z": "c23003c7.1c978",
-    "name": "message",
-    "field": "message",
-    "fieldType": "msg",
-    "format": "handlebars",
-    "syntax": "mustache",
-    "template": "De wasmachine is klaar.",
-    "output": "str",
-    "x": 1380,
-    "y": 140,
-    "wires": [
-      [
-        "92b6fff2.40bfa",
-        "77080f2c.11b38",
-        "2f76ff07.93816"
+      "id": "92b6fff2.40bfa",
+      "type": "api-call-service",
+      "z": "c23003c7.1c978",
+      "name": "in app notification",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "persistent_notification",
+      "service": "create",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [],
+      "data": "{\"message\":\"{{message}}\",\"title\":\"Wasmachine\"}",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1770,
+      "y": 160,
+      "wires": [
+          []
       ]
-    ]
   },
   {
-    "id": "1de77a16.189c66",
-    "type": "stoptimer",
-    "z": "c23003c7.1c978",
-    "duration": "10",
-    "units": "Second",
-    "payloadtype": "num",
-    "payloadval": "0",
-    "name": "",
-    "x": 370,
-    "y": 100,
-    "wires": [
-      [
-        "3e4cd67e.efae1a"
+      "id": "ca2d6f4.4a1db9",
+      "type": "api-call-service",
+      "z": "c23003c7.1c978",
+      "name": "media_stop",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "media_player",
+      "service": "turn_off",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [
+          "media_player.home_speaker"
       ],
-      []
-    ]
-  },
-  {
-    "id": "624c4873.555098",
-    "type": "stoptimer",
-    "z": "c23003c7.1c978",
-    "duration": "10",
-    "units": "Second",
-    "payloadtype": "num",
-    "payloadval": "0",
-    "name": "",
-    "x": 1570,
-    "y": 100,
-    "wires": [
-      [
-        "ca2d6f4.4a1db9"
-      ],
-      []
-    ]
-  },
-  {
-    "id": "77080f2c.11b38",
-    "type": "api-call-service",
-    "z": "c23003c7.1c978",
-    "name": "google say",
-    "server": "4ba92433.2478cc",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "tts",
-    "service": "google_say",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "media_player.home_speaker"
-    ],
-    "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 1750,
-    "y": 180,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "2f76ff07.93816",
-    "type": "link out",
-    "z": "c23003c7.1c978",
-    "name": "",
-    "links": [
-      "ebf4860d.603538"
-    ],
-    "x": 1695,
-    "y": 240,
-    "wires": []
-  },
-  {
-    "id": "84dfbc214d4e3a8d",
-    "type": "ha-binary-sensor",
-    "z": "c23003c7.1c978",
-    "name": "sensor washing machine",
-    "entityConfig": "bdbe52c.932a5b",
-    "version": 0,
-    "state": "payload",
-    "stateType": "msg",
-    "attributes": [],
-    "inputOverride": "allow",
-    "outputProperties": [],
-    "x": 1070,
-    "y": 100,
-    "wires": [
-      [
-        "48fe7380.0c049c"
+      "data": "",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1750,
+      "y": 100,
+      "wires": [
+          []
       ]
-    ]
+  },
+  {
+      "id": "4bbf608.80d0ca",
+      "type": "change",
+      "z": "c23003c7.1c978",
+      "name": "",
+      "rules": [
+          {
+              "t": "set",
+              "p": "payload",
+              "pt": "msg",
+              "to": "on",
+              "tot": "str"
+          }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 860,
+      "y": 100,
+      "wires": [
+          [
+              "84dfbc214d4e3a8d"
+          ]
+      ]
+  },
+  {
+      "id": "26d18854.3c6808",
+      "type": "change",
+      "z": "c23003c7.1c978",
+      "name": "",
+      "rules": [
+          {
+              "t": "set",
+              "p": "payload",
+              "pt": "msg",
+              "to": "off",
+              "tot": "str"
+          }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 860,
+      "y": 160,
+      "wires": [
+          [
+              "84dfbc214d4e3a8d"
+          ]
+      ]
+  },
+  {
+      "id": "487d5ed4.e5e61",
+      "type": "api-current-state",
+      "z": "c23003c7.1c978",
+      "name": "state is not on",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "on",
+      "halt_if_type": "str",
+      "halt_if_compare": "is_not",
+      "entity_id": "binary_sensor.washing_machine",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": 0,
+      "forType": "num",
+      "forUnits": "minutes",
+      "x": 680,
+      "y": 100,
+      "wires": [
+          [
+              "4bbf608.80d0ca"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "bf29d7a3.4b42e8",
+      "type": "api-current-state",
+      "z": "c23003c7.1c978",
+      "name": "state is not off",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "off",
+      "halt_if_type": "str",
+      "halt_if_compare": "is_not",
+      "entity_id": "binary_sensor.washing_machine",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": 0,
+      "forType": "num",
+      "forUnits": "minutes",
+      "x": 680,
+      "y": 160,
+      "wires": [
+          [
+              "26d18854.3c6808"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "48fe7380.0c049c",
+      "type": "switch",
+      "z": "c23003c7.1c978",
+      "name": "",
+      "property": "payload",
+      "propertyType": "msg",
+      "rules": [
+          {
+              "t": "eq",
+              "v": "off",
+              "vt": "str"
+          }
+      ],
+      "checkall": "true",
+      "repair": false,
+      "outputs": 1,
+      "x": 1250,
+      "y": 100,
+      "wires": [
+          [
+              "e7bf73ef.78973",
+              "15fc6fc5.41655"
+          ]
+      ]
+  },
+  {
+      "id": "15fc6fc5.41655",
+      "type": "template",
+      "z": "c23003c7.1c978",
+      "name": "message",
+      "field": "message",
+      "fieldType": "msg",
+      "format": "handlebars",
+      "syntax": "mustache",
+      "template": "De wasmachine is klaar.",
+      "output": "str",
+      "x": 1380,
+      "y": 140,
+      "wires": [
+          [
+              "92b6fff2.40bfa",
+              "77080f2c.11b38",
+              "2f76ff07.93816"
+          ]
+      ]
+  },
+  {
+      "id": "1de77a16.189c66",
+      "type": "stoptimer",
+      "z": "c23003c7.1c978",
+      "duration": "10",
+      "units": "Second",
+      "payloadtype": "num",
+      "payloadval": "0",
+      "name": "",
+      "x": 370,
+      "y": 100,
+      "wires": [
+          [
+              "3e4cd67e.efae1a"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "624c4873.555098",
+      "type": "stoptimer",
+      "z": "c23003c7.1c978",
+      "duration": "10",
+      "units": "Second",
+      "payloadtype": "num",
+      "payloadval": "0",
+      "name": "",
+      "x": 1570,
+      "y": 100,
+      "wires": [
+          [
+              "ca2d6f4.4a1db9"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "77080f2c.11b38",
+      "type": "api-call-service",
+      "z": "c23003c7.1c978",
+      "name": "google say",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "tts",
+      "service": "google_say",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [
+          "media_player.home_speaker"
+      ],
+      "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 1750,
+      "y": 220,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "2f76ff07.93816",
+      "type": "link out",
+      "z": "c23003c7.1c978",
+      "name": "",
+      "links": [
+          "ebf4860d.603538"
+      ],
+      "x": 1695,
+      "y": 280,
+      "wires": []
+  },
+  {
+      "id": "84dfbc214d4e3a8d",
+      "type": "ha-binary-sensor",
+      "z": "c23003c7.1c978",
+      "name": "sensor washing machine",
+      "entityConfig": "bdbe52c.932a5b",
+      "version": 0,
+      "state": "payload",
+      "stateType": "msg",
+      "attributes": [],
+      "inputOverride": "allow",
+      "outputProperties": [],
+      "x": 1070,
+      "y": 100,
+      "wires": [
+          [
+              "48fe7380.0c049c"
+          ]
+      ]
+  },
+  {
+      "id": "4ba92433.2478cc",
+      "type": "server",
+      "name": "Home Assistant",
+      "version": 5,
+      "addon": false,
+      "rejectUnauthorizedCerts": false,
+      "ha_boolean": "y|yes|true|on|home|open",
+      "connectionDelay": true,
+      "cacheJson": true,
+      "heartbeat": true,
+      "heartbeatInterval": "30",
+      "areaSelector": "friendlyName",
+      "deviceSelector": "friendlyName",
+      "entitySelector": "friendlyName",
+      "statusSeparator": "at: ",
+      "statusYear": "hidden",
+      "statusMonth": "short",
+      "statusDay": "numeric",
+      "statusHourCycle": "h23",
+      "statusTimeFormat": "h:m",
+      "enableGlobalContextStore": true
+  },
+  {
+      "id": "bdbe52c.932a5b",
+      "type": "ha-entity-config",
+      "server": "4ba92433.2478cc",
+      "deviceConfig": "",
+      "name": "binary sensor config for sensor washing machine",
+      "version": "6",
+      "entityType": "binary_sensor",
+      "haConfig": [
+          {
+              "property": "name",
+              "value": "washing_machine"
+          },
+          {
+              "property": "icon",
+              "value": "mdi:washing-machine"
+          },
+          {
+              "property": "entity_category",
+              "value": ""
+          },
+          {
+              "property": "entity_picture",
+              "value": ""
+          },
+          {
+              "property": "device_class",
+              "value": ""
+          }
+      ],
+      "resend": true,
+      "debugEnabled": false
   }
 ]
