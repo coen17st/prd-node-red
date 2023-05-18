@@ -11,7 +11,7 @@
         "type": "junction",
         "z": "55da1471.fda0fc",
         "x": 720,
-        "y": 220,
+        "y": 240,
         "wires": [
             [
                 "1351cb3a.cc7995"
@@ -74,7 +74,7 @@
             }
         ],
         "x": 110,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "37466c93.d14b84"
@@ -137,7 +137,7 @@
             }
         ],
         "x": 80,
-        "y": 240,
+        "y": 260,
         "wires": [
             [
                 "c8eb1592.520518"
@@ -167,7 +167,7 @@
         "repair": false,
         "outputs": 2,
         "x": 330,
-        "y": 240,
+        "y": 260,
         "wires": [
             [
                 "252893d959f094a0"
@@ -200,7 +200,7 @@
         "repair": false,
         "outputs": 2,
         "x": 320,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "1351cb3a.cc7995"
@@ -242,7 +242,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 950,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "eccced83.41688"
@@ -272,7 +272,7 @@
         "payload": "02:00 Payload 'off'",
         "payloadType": "str",
         "x": 110,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "787efd3b.bd13e4"
@@ -301,7 +301,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 340,
-        "y": 80,
+        "y": 100,
         "wires": [
             []
         ]
@@ -328,7 +328,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1350,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "c643d4d4.2baf98"
@@ -357,7 +357,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1380,
-        "y": 120,
+        "y": 140,
         "wires": [
             []
         ]
@@ -394,7 +394,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 950,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "32d50dd7.16e062"
@@ -434,7 +434,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 540,
-        "y": 260,
+        "y": 280,
         "wires": [
             [],
             [
@@ -474,7 +474,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 930,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "60f6cd3f.56a0f4"
@@ -514,7 +514,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1160,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "a52152b0.f593b"
@@ -554,7 +554,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1160,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "2a9f3bf0.575684"
@@ -628,7 +628,7 @@
             }
         ],
         "x": 120,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "b555794d.5740c8"
@@ -656,7 +656,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1750,
-        "y": 320,
+        "y": 340,
         "wires": [
             []
         ]
@@ -717,7 +717,7 @@
             }
         ],
         "x": 100,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "1c372f1.535d7d1"
@@ -757,7 +757,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 290,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "c5ad7ab8.30fda8"
@@ -777,7 +777,7 @@
         "template": "De stofzuiger is gestart.",
         "output": "str",
         "x": 1520,
-        "y": 260,
+        "y": 280,
         "wires": [
             [
                 "3c488237.d82a4e"
@@ -796,7 +796,7 @@
         "template": "De stofzuiger zit vast en heeft hulp nodig.",
         "output": "str",
         "x": 1520,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "e4d25a8e.b5b258",
@@ -814,11 +814,10 @@
         "payloadval": "0",
         "name": "",
         "x": 720,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
-                "60f6cd3f.56a0f4",
-                "86a736ea711dfb00"
+                "60f6cd3f.56a0f4"
             ],
             []
         ]
@@ -833,7 +832,7 @@
         "payloadval": "0",
         "name": "",
         "x": 720,
-        "y": 460,
+        "y": 480,
         "wires": [
             [
                 "8addd786c01dce16"
@@ -873,11 +872,12 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 500,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "934221e4.b2d0d",
-                "3cf95b5d.b388f4"
+                "3cf95b5d.b388f4",
+                "86a736ea711dfb00"
             ],
             []
         ]
@@ -904,7 +904,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1250,
-        "y": 460,
+        "y": 480,
         "wires": [
             []
         ]
@@ -965,7 +965,7 @@
             }
         ],
         "x": 130,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "272212f1.26bb6e"
@@ -994,7 +994,7 @@
         "blockInputOverrides": true,
         "outputProperties": [],
         "x": 320,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "155ef739.0e1de9"
@@ -1034,7 +1034,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 490,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "a098e71.e0db718"
@@ -1064,7 +1064,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 700,
-        "y": 660,
+        "y": 680,
         "wires": [
             []
         ]
@@ -1078,7 +1078,7 @@
             "ebf4860d.603538"
         ],
         "x": 1675,
-        "y": 240,
+        "y": 260,
         "wires": []
     },
     {
@@ -1104,7 +1104,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 990,
-        "y": 460,
+        "y": 480,
         "wires": [
             [
                 "6bd54ad5.5aea04"
@@ -1129,7 +1129,7 @@
         "repair": false,
         "outputs": 1,
         "x": 640,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "353d562e.3dd04a"
@@ -1173,7 +1173,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 470,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "734801f342d9257e"
@@ -1200,7 +1200,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1170,
-        "y": 340,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1246,7 +1246,7 @@
         "to": "",
         "reg": false,
         "x": 920,
-        "y": 380,
+        "y": 400,
         "wires": [
             [
                 "94c4319ebf27b878",
@@ -1291,7 +1291,7 @@
         ],
         "event_type": "",
         "x": 170,
-        "y": 660,
+        "y": 680,
         "wires": [
             [
                 "a098e71.e0db718"
@@ -1305,7 +1305,7 @@
         "name": "listen to vacation mode on notification answer event ",
         "info": "",
         "x": 230,
-        "y": 620,
+        "y": 640,
         "wires": []
     },
     {
@@ -1328,7 +1328,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1170,
-        "y": 400,
+        "y": 420,
         "wires": [
             []
         ]
