@@ -401,7 +401,7 @@
                 "value": ""
             }
         ],
-        "resend": false,
+        "resend": true,
         "debugEnabled": false
     }
-]
+]   
