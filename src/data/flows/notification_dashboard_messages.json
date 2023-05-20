@@ -1,503 +1,503 @@
 [
-  {
-      "id": "fa4b9474.ba9d68",
-      "type": "tab",
-      "label": "notification_dashboard_messages",
-      "disabled": false,
-      "info": ""
-  },
-  {
-      "id": "ea9a621c.8439e",
-      "type": "change",
-      "z": "fa4b9474.ba9d68",
-      "name": "",
-      "rules": [
-          {
-              "t": "change",
-              "p": "message",
-              "pt": "msg",
-              "from": "\\n",
-              "fromt": "str",
-              "to": "",
-              "tot": "str"
-          }
-      ],
-      "action": "",
-      "property": "",
-      "from": "",
-      "to": "",
-      "reg": false,
-      "x": 180,
-      "y": 100,
-      "wires": [
-          [
-              "f220041d.e87868"
-          ]
-      ]
-  },
-  {
-      "id": "2cebe279.474c9e",
-      "type": "template",
-      "z": "fa4b9474.ba9d68",
-      "name": "time-and-message",
-      "field": "tijd-en-message",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "{{mytime}}, {{{message}}}",
-      "output": "str",
-      "x": 560,
-      "y": 100,
-      "wires": [
-          [
-              "4fae69c4.0b11b8"
-          ]
-      ]
-  },
-  {
-      "id": "4fae69c4.0b11b8",
-      "type": "api-current-state",
-      "z": "fa4b9474.ba9d68",
-      "name": "get message_home_page_1",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 1,
-      "halt_if": "",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "sensor.message_home_page_1",
-      "state_type": "str",
-      "blockInputOverrides": true,
-      "outputProperties": [
-          {
-              "property": "message_home_page_1",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 820,
-      "y": 100,
-      "wires": [
-          [
-              "3126f1eb.a88fae"
-          ]
-      ]
-  },
-  {
-      "id": "3126f1eb.a88fae",
-      "type": "api-current-state",
-      "z": "fa4b9474.ba9d68",
-      "name": "get message_home_page_2",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 1,
-      "halt_if": "",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "sensor.message_home_page_2",
-      "state_type": "str",
-      "blockInputOverrides": true,
-      "outputProperties": [
-          {
-              "property": "message_home_page_2",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 820,
-      "y": 160,
-      "wires": [
-          [
-              "e837ef9b.ef73"
-          ]
-      ]
-  },
-  {
-      "id": "e837ef9b.ef73",
-      "type": "api-current-state",
-      "z": "fa4b9474.ba9d68",
-      "name": "get message_home_page_3",
-      "server": "4ba92433.2478cc",
-      "version": 3,
-      "outputs": 1,
-      "halt_if": "",
-      "halt_if_type": "str",
-      "halt_if_compare": "is",
-      "entity_id": "sensor.message_home_page_3",
-      "state_type": "str",
-      "blockInputOverrides": true,
-      "outputProperties": [
-          {
-              "property": "message_home_page_3",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          }
-      ],
-      "for": 0,
-      "forType": "num",
-      "forUnits": "minutes",
-      "x": 820,
-      "y": 220,
-      "wires": [
-          [
-              "0e1fd36f901fbafe"
-          ]
-      ]
-  },
-  {
-      "id": "f220041d.e87868",
-      "type": "simpletime",
-      "z": "fa4b9474.ba9d68",
-      "name": "",
-      "mydate": false,
-      "myymd": false,
-      "myyear": false,
-      "mymonth": false,
-      "mymonthn": false,
-      "mydom": false,
-      "mydoy": false,
-      "myday": false,
-      "myhourpm": false,
-      "myhour": false,
-      "mytime": true,
-      "mytimes": false,
-      "myminute": false,
-      "myminutes": false,
-      "mysecond": false,
-      "mymillis": false,
-      "myepoch": false,
-      "myrawdate": false,
-      "mypm": false,
-      "x": 380,
-      "y": 100,
-      "wires": [
-          [
-              "2cebe279.474c9e"
-          ]
-      ]
-  },
-  {
-      "id": "55d39b39.8dcda4",
-      "type": "comment",
-      "z": "fa4b9474.ba9d68",
-      "name": "messages to home assistant lovelace home dashboard",
-      "info": "messages to home assistant lovelace home dashboard",
-      "x": 220,
-      "y": 40,
-      "wires": []
-  },
-  {
-      "id": "ebf4860d.603538",
-      "type": "link in",
-      "z": "fa4b9474.ba9d68",
-      "name": "",
-      "links": [
-          "15aedd3a.a2e193",
-          "cf34922.125b87",
-          "6ebf508f.20c57",
-          "318a335e.4fd36c",
-          "823092bd.a7ed7",
-          "756eefe7.33a9e",
-          "a9687ab6.f40698",
-          "121441a.65b76be",
-          "4c169b88.d80854",
-          "6646c95c.546ca8",
-          "2f76ff07.93816",
-          "9f9c99bd.1dfe08",
-          "3c488237.d82a4e",
-          "9bfeecdc.f723d",
-          "60473297.21616c",
-          "5841bec4.a2bed",
-          "289089f4.e41b76",
-          "61bb3627.3c73a8",
-          "d72ab58.1d91948",
-          "651b6e34.8b57d",
-          "1e3cf70c.21e239",
-          "cd181994.e2ccc8",
-          "24fe4408.a81eb4",
-          "3f462a6b.94f916",
-          "ff76935b03fd415e"
-      ],
-      "x": 35,
-      "y": 100,
-      "wires": [
-          [
-              "ea9a621c.8439e"
-          ]
-      ]
-  },
-  {
-      "id": "0e1fd36f901fbafe",
-      "type": "ha-sensor",
-      "z": "fa4b9474.ba9d68",
-      "name": "message_home_page_1",
-      "entityConfig": "57da3a9b94ae4d40",
-      "version": 0,
-      "state": "message_home_page_1",
-      "stateType": "msg",
-      "attributes": [],
-      "inputOverride": "block",
-      "outputProperties": [],
-      "x": 810,
-      "y": 280,
-      "wires": [
-          [
-              "5bf65d895822e7a0"
-          ]
-      ]
-  },
-  {
-      "id": "5bf65d895822e7a0",
-      "type": "ha-sensor",
-      "z": "fa4b9474.ba9d68",
-      "name": "message_home_page_2",
-      "entityConfig": "9487f498a74211d7",
-      "version": 0,
-      "state": "message_home_page_2",
-      "stateType": "msg",
-      "attributes": [],
-      "inputOverride": "block",
-      "outputProperties": [],
-      "x": 810,
-      "y": 340,
-      "wires": [
-          [
-              "d898d6706eac4585"
-          ]
-      ]
-  },
-  {
-      "id": "d898d6706eac4585",
-      "type": "ha-sensor",
-      "z": "fa4b9474.ba9d68",
-      "name": "message_home_page_3",
-      "entityConfig": "7fe64949661e7552",
-      "version": 0,
-      "state": "message_home_page_3",
-      "stateType": "msg",
-      "attributes": [],
-      "inputOverride": "block",
-      "outputProperties": [],
-      "x": 810,
-      "y": 400,
-      "wires": [
-          [
-              "70df48e0ccdbef06"
-          ]
-      ]
-  },
-  {
-      "id": "70df48e0ccdbef06",
-      "type": "ha-sensor",
-      "z": "fa4b9474.ba9d68",
-      "name": "time-and-message",
-      "entityConfig": "6cdb3d857a327257",
-      "version": 0,
-      "state": "tijd-en-message",
-      "stateType": "msg",
-      "attributes": [],
-      "inputOverride": "allow",
-      "outputProperties": [],
-      "x": 790,
-      "y": 460,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "4ba92433.2478cc",
-      "type": "server",
-      "name": "Home Assistant",
-      "version": 5,
-      "addon": false,
-      "rejectUnauthorizedCerts": false,
-      "ha_boolean": "y|yes|true|on|home|open",
-      "connectionDelay": true,
-      "cacheJson": true,
-      "heartbeat": true,
-      "heartbeatInterval": "30",
-      "areaSelector": "friendlyName",
-      "deviceSelector": "friendlyName",
-      "entitySelector": "friendlyName",
-      "statusSeparator": "at: ",
-      "statusYear": "hidden",
-      "statusMonth": "short",
-      "statusDay": "numeric",
-      "statusHourCycle": "h23",
-      "statusTimeFormat": "h:m",
-      "enableGlobalContextStore": true
-  },
-  {
-      "id": "57da3a9b94ae4d40",
-      "type": "ha-entity-config",
-      "server": "4ba92433.2478cc",
-      "deviceConfig": "",
-      "name": "message_home_page_1",
-      "version": "6",
-      "entityType": "sensor",
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          },
-          {
-              "property": "entity_category",
-              "value": ""
-          },
-          {
-              "property": "entity_picture",
-              "value": ""
-          },
-          {
-              "property": "device_class",
-              "value": ""
-          },
-          {
-              "property": "unit_of_measurement",
-              "value": ""
-          },
-          {
-              "property": "state_class",
-              "value": ""
-          }
-      ],
-      "resend": true,
-      "debugEnabled": false
-  },
-  {
-      "id": "9487f498a74211d7",
-      "type": "ha-entity-config",
-      "server": "4ba92433.2478cc",
-      "deviceConfig": "",
-      "name": "message_home_page_2",
-      "version": "6",
-      "entityType": "sensor",
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          },
-          {
-              "property": "entity_category",
-              "value": ""
-          },
-          {
-              "property": "entity_picture",
-              "value": ""
-          },
-          {
-              "property": "device_class",
-              "value": ""
-          },
-          {
-              "property": "unit_of_measurement",
-              "value": ""
-          },
-          {
-              "property": "state_class",
-              "value": ""
-          }
-      ],
-      "resend": true,
-      "debugEnabled": false
-  },
-  {
-      "id": "7fe64949661e7552",
-      "type": "ha-entity-config",
-      "server": "4ba92433.2478cc",
-      "deviceConfig": "",
-      "name": "message_home_page_3",
-      "version": "6",
-      "entityType": "sensor",
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          },
-          {
-              "property": "entity_category",
-              "value": ""
-          },
-          {
-              "property": "entity_picture",
-              "value": ""
-          },
-          {
-              "property": "device_class",
-              "value": ""
-          },
-          {
-              "property": "unit_of_measurement",
-              "value": ""
-          },
-          {
-              "property": "state_class",
-              "value": ""
-          }
-      ],
-      "resend": true,
-      "debugEnabled": false
-  },
-  {
-      "id": "6cdb3d857a327257",
-      "type": "ha-entity-config",
-      "server": "4ba92433.2478cc",
-      "deviceConfig": "",
-      "name": "time-and-message",
-      "version": "6",
-      "entityType": "sensor",
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          },
-          {
-              "property": "entity_category",
-              "value": ""
-          },
-          {
-              "property": "entity_picture",
-              "value": ""
-          },
-          {
-              "property": "device_class",
-              "value": ""
-          },
-          {
-              "property": "unit_of_measurement",
-              "value": ""
-          },
-          {
-              "property": "state_class",
-              "value": ""
-          }
-      ],
-      "resend": true,
-      "debugEnabled": false
-  }
+    {
+        "id": "fa4b9474.ba9d68",
+        "type": "tab",
+        "label": "notification_dashboard_messages",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ea9a621c.8439e",
+        "type": "change",
+        "z": "fa4b9474.ba9d68",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "message",
+                "pt": "msg",
+                "from": "\\n",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "f220041d.e87868"
+            ]
+        ]
+    },
+    {
+        "id": "2cebe279.474c9e",
+        "type": "template",
+        "z": "fa4b9474.ba9d68",
+        "name": "time-and-message",
+        "field": "tijd-en-message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{mytime}}, {{{message}}}",
+        "output": "str",
+        "x": 560,
+        "y": 100,
+        "wires": [
+            [
+                "4fae69c4.0b11b8"
+            ]
+        ]
+    },
+    {
+        "id": "4fae69c4.0b11b8",
+        "type": "api-current-state",
+        "z": "fa4b9474.ba9d68",
+        "name": "get message_home_page_1",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.message_home_page_1",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "message_home_page_1",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 100,
+        "wires": [
+            [
+                "3126f1eb.a88fae"
+            ]
+        ]
+    },
+    {
+        "id": "3126f1eb.a88fae",
+        "type": "api-current-state",
+        "z": "fa4b9474.ba9d68",
+        "name": "get message_home_page_2",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.message_home_page_2",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "message_home_page_2",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 160,
+        "wires": [
+            [
+                "e837ef9b.ef73"
+            ]
+        ]
+    },
+    {
+        "id": "e837ef9b.ef73",
+        "type": "api-current-state",
+        "z": "fa4b9474.ba9d68",
+        "name": "get message_home_page_3",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.message_home_page_3",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "message_home_page_3",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "0e1fd36f901fbafe"
+            ]
+        ]
+    },
+    {
+        "id": "f220041d.e87868",
+        "type": "simpletime",
+        "z": "fa4b9474.ba9d68",
+        "name": "",
+        "mydate": false,
+        "myymd": false,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": true,
+        "mytimes": false,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "2cebe279.474c9e"
+            ]
+        ]
+    },
+    {
+        "id": "55d39b39.8dcda4",
+        "type": "comment",
+        "z": "fa4b9474.ba9d68",
+        "name": "messages to home assistant lovelace home dashboard",
+        "info": "messages to home assistant lovelace home dashboard",
+        "x": 220,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ebf4860d.603538",
+        "type": "link in",
+        "z": "fa4b9474.ba9d68",
+        "name": "",
+        "links": [
+            "15aedd3a.a2e193",
+            "cf34922.125b87",
+            "6ebf508f.20c57",
+            "318a335e.4fd36c",
+            "823092bd.a7ed7",
+            "756eefe7.33a9e",
+            "a9687ab6.f40698",
+            "121441a.65b76be",
+            "4c169b88.d80854",
+            "6646c95c.546ca8",
+            "2f76ff07.93816",
+            "9f9c99bd.1dfe08",
+            "3c488237.d82a4e",
+            "9bfeecdc.f723d",
+            "60473297.21616c",
+            "5841bec4.a2bed",
+            "289089f4.e41b76",
+            "61bb3627.3c73a8",
+            "d72ab58.1d91948",
+            "651b6e34.8b57d",
+            "1e3cf70c.21e239",
+            "cd181994.e2ccc8",
+            "24fe4408.a81eb4",
+            "3f462a6b.94f916",
+            "ff76935b03fd415e"
+        ],
+        "x": 35,
+        "y": 100,
+        "wires": [
+            [
+                "ea9a621c.8439e"
+            ]
+        ]
+    },
+    {
+        "id": "0e1fd36f901fbafe",
+        "type": "ha-sensor",
+        "z": "fa4b9474.ba9d68",
+        "name": "message_home_page_1",
+        "entityConfig": "57da3a9b94ae4d40",
+        "version": 0,
+        "state": "message_home_page_1",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 810,
+        "y": 280,
+        "wires": [
+            [
+                "5bf65d895822e7a0"
+            ]
+        ]
+    },
+    {
+        "id": "5bf65d895822e7a0",
+        "type": "ha-sensor",
+        "z": "fa4b9474.ba9d68",
+        "name": "message_home_page_2",
+        "entityConfig": "9487f498a74211d7",
+        "version": 0,
+        "state": "message_home_page_2",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "d898d6706eac4585"
+            ]
+        ]
+    },
+    {
+        "id": "d898d6706eac4585",
+        "type": "ha-sensor",
+        "z": "fa4b9474.ba9d68",
+        "name": "message_home_page_3",
+        "entityConfig": "7fe64949661e7552",
+        "version": 0,
+        "state": "message_home_page_3",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "block",
+        "outputProperties": [],
+        "x": 810,
+        "y": 400,
+        "wires": [
+            [
+                "70df48e0ccdbef06"
+            ]
+        ]
+    },
+    {
+        "id": "70df48e0ccdbef06",
+        "type": "ha-sensor",
+        "z": "fa4b9474.ba9d68",
+        "name": "time-and-message",
+        "entityConfig": "6cdb3d857a327257",
+        "version": 0,
+        "state": "tijd-en-message",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 790,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "57da3a9b94ae4d40",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "message_home_page_1",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "message_home_page_1"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
+        "debugEnabled": false
+    },
+    {
+        "id": "9487f498a74211d7",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "message_home_page_2",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "message_home_page_2"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
+        "debugEnabled": false
+    },
+    {
+        "id": "7fe64949661e7552",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "message_home_page_3",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "message_home_page_3"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
+        "debugEnabled": false
+    },
+    {
+        "id": "6cdb3d857a327257",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "time-and-message",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "time-and-message"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
+        "debugEnabled": false
+    }
 ]
