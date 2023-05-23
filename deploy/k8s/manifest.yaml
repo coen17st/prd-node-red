@@ -62,25 +62,18 @@ spec:
         app: node-red
 
 ---
-kind: SealedSecret
-apiVersion: bitnami.com/v1alpha1
+kind: ConfigMap
+apiVersion: v1
 metadata:
-  name: flows-credentials
+  name: node-red-flows-credentials
   namespace: home-automation
-spec:
-  encryptedData:
-    flows-cred: AgBuvrvwfkSmtxUdcYapmc+18dEsWmg85sl6NQfYnH/tLGExRR3gfMTHWNe4clQsu+1h66ZwGVn6oKVXDrh3xylxkQIrAE+75BEhk0lmbd+VGo8g8WFPdsZyO6TnqUyyvz+cHsJKLa+P/wpsWtKODVSi0OqzMh/JsH8JeV70rboP7a7c3WSbTZvAsbz320LsCNBb6aXypehNlOAuS41xYAOngMdz16OrCcMk8gETrprV1BedD8K1RtClPr/49mCfx5JRH29PcAAOn3reM6zjRmRKgrXO1LCv8e2xWkZlp2IqJc28eJ8smEvOBmKuig6nmGVNs2r2CUiWwHpwoSdA/tjsxmuH8bXwPGU45zwwu0KDPxMhPSIZuv9EhsT6ue6zmLhplXFARpNA6OSAk6OxOCHntdJNHxtb1noKyKjkkhDiPssVFxKPYszGSC9nwPNIZkcN8y3l2zd1XJvC0yHBK86kn6ZjMzOmGT9AbJ7pl5zAlhDTfHl3rSo1LqNoo0ddceEyjQbpeJEv7focwz8ie+vCEWUUn5y4MjxT5JSoTctFCt2Sh/0r9Zof85XX/EKe/277yo2R77NHeSN/DcCl6cnGbtJ3By9JUZeZ6HokDe2fP3CXIlNacikGDDVemePgqo/749PJpI/eiy7v4ob3o5ZrT6w+5z/373n1YkM37jisxbgQZGSLU6elntgjdYwTPaPHX63pZzVJJAO2lsCfjRL1oCTTWapaOVyB9zTI4MidGlJfyVfbmkP89XGDjS8QQ5efH915A/0EzX0j8kEy12hmu/1RZOaSf7JTyuiCfvk6uS031aKTSCi/4qB2/yfViisJ4q50QApmjYqBxg9qHnCB4hvFtlphgicRvqSGBAGd38nSIicoa5uVmcGhwcO/AlGF+0vVOVlmusmoOv1ycOBAKJXW+2WJv1rD1HfGaa2WZGbeQgn5Yg0a/jNOokVuqQTS2GG+WlpztzrSoyBt1pvbWqPvaGygqEwzhHXF9YmbnBX3mxZ7beaD/dQntD8Qj0mVF538MfNOEuAlR01ow/0Yvmp1pueb+c2pE982iffrnZnD6vXvq5Crj85W8zZZY34JhAD7y0sUctdWkyXMf+Nrl8Px83gQ/v9r+0x+9dpWSFfmxmruuQY2mUEs1mrmJ4mvPaFTBZC3+yEuPZpOslEM4egdLSmwjsfYy/ky0YntTkGekdPTbeO6daFuzqDfNxZIUYsL9tX3kfLMjygSVJta61UMb6Lm1WBOeDCrpHp7lA==
-  template:
-    data:
-      flows_cred.json: |-
-        {
-            "$": "{{ index . "flows-cred" }}"
-        }
-    metadata:
-      name: flows-credentials
-      namespace: home-automation
-      labels:
-        app: node-red
+  labels:
+    app: node-red
+data:
+  flows_cred.json: |-
+    {
+        "$": "4f7aac9fd29ea66e64ea08593192d4cfZs12lSGPZGkAEJPL/OZR4opDLPTUJjtpkNgPUso3Ym72f1ZaK06Vr9Ry/Dhcg4hNOdiEMpLD3L0ldOpXyodLQJbxSTzOOpaWiXTLO89ug1Pjfj4o8uVwo8JtSHLJbY1ndTWrywAqzDDdL/g93uuPetSnTMckjd/pM5+4Na+u5jE4dvHeIGdXxQxssWEWmZxomk4PbFvEWKUWzedkRtkmXNV5tH75zXPCRhB1xjDk5E1zGUXX3h84LtJz0v/Ilvz4X8CUnFJUW+UBvY/XS37ym7KmkQPAHAKxk3Y5j3o+H+PsDStvgfJNUYyj+CWmvUZ7Mg7P+PI0uJfy2dhvvzh3QQFHvvvLPHD56IJ1bTCyI/lBx94="
+    }
 
 ---
 kind: Deployment
@@ -127,8 +120,8 @@ spec:
           secret:
             secretName: settings
         - name: flow-cred
-          secret:
-            secretName: flows-credentials
+          configMap:
+            name: node-red-flows-credentials
       imagePullSecrets:
         - name: harbor-registry-creds
 
