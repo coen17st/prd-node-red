@@ -25,7 +25,6 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "sensor.solaredge_modbus_ac_energy_kwh_today",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
@@ -360,6 +359,24 @@
         "wires": []
     },
     {
+        "id": "122d704723bc1cb0",
+        "type": "mqtt out",
+        "z": "99c1372046e45da7",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "36dee637778341ba",
+        "x": 90,
+        "y": 180,
+        "wires": []
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -371,9 +388,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "id",
-        "deviceSelector": "id",
-        "entitySelector": "id",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
@@ -417,10 +434,37 @@
             },
             {
                 "property": "state_class",
-                "value": "measurement"
+                "value": "total"
             }
         ],
         "resend": true,
         "debugEnabled": false
+    },
+    {
+        "id": "36dee637778341ba",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     }
 ]
