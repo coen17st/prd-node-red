@@ -25,6 +25,7 @@
                 "value": ""
             }
         ],
+        "entityidfilter": "sensor.solaredge_modbus_ac_energy_kwh_today",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
@@ -80,7 +81,7 @@
         "halt_if": "payload",
         "halt_if_type": "msg",
         "halt_if_compare": "lt",
-        "entity_id": "sensor.highest_ac_solar_day",
+        "entity_id": "sensor.mqtt_ac_solar_record",
         "state_type": "str",
         "blockInputOverrides": true,
         "outputProperties": [
@@ -103,8 +104,7 @@
         "y": 100,
         "wires": [
             [
-                "4caed127a6212e55",
-                "2f412a7ff334f882"
+                "27b51aa55e598e0f"
             ],
             []
         ]
@@ -118,160 +118,6 @@
         "x": 340,
         "y": 40,
         "wires": []
-    },
-    {
-        "id": "7cd4e46a5732025c",
-        "type": "split",
-        "z": "99c1372046e45da7",
-        "name": "split on T character",
-        "splt": "T",
-        "spltType": "str",
-        "arraySplt": "1",
-        "arraySpltType": "len",
-        "stream": true,
-        "addname": "",
-        "x": 1510,
-        "y": 140,
-        "wires": [
-            [
-                "87d1d0fed6316877"
-            ]
-        ]
-    },
-    {
-        "id": "1f1bf1690903b6a9",
-        "type": "ha-sensor",
-        "z": "99c1372046e45da7",
-        "name": "highest_ac_solar_day sensor",
-        "entityConfig": "897c190112264208",
-        "version": 0,
-        "state": "payload.kwh",
-        "stateType": "msg",
-        "attributes": [
-            {
-                "property": "date",
-                "value": "payload.date",
-                "valueType": "msg"
-            }
-        ],
-        "inputOverride": "block",
-        "outputProperties": [],
-        "x": 1900,
-        "y": 100,
-        "wires": [
-            [
-                "49ffb0ad7fb55ab2"
-            ]
-        ]
-    },
-    {
-        "id": "a5116da9a911fdeb",
-        "type": "change",
-        "z": "99c1372046e45da7",
-        "name": "change msg data.last_updated to payload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "data.last_updated",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1240,
-        "y": 140,
-        "wires": [
-            [
-                "7cd4e46a5732025c"
-            ]
-        ]
-    },
-    {
-        "id": "87d1d0fed6316877",
-        "type": "join",
-        "z": "99c1372046e45da7",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1690,
-        "y": 100,
-        "wires": [
-            [
-                "1f1bf1690903b6a9"
-            ]
-        ]
-    },
-    {
-        "id": "4caed127a6212e55",
-        "type": "change",
-        "z": "99c1372046e45da7",
-        "name": "set topic kwh",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "kwh",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 970,
-        "y": 100,
-        "wires": [
-            [
-                "27b51aa55e598e0f"
-            ]
-        ]
-    },
-    {
-        "id": "2f412a7ff334f882",
-        "type": "change",
-        "z": "99c1372046e45da7",
-        "name": "set topic date",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "date",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 970,
-        "y": 140,
-        "wires": [
-            [
-                "a5116da9a911fdeb"
-            ]
-        ]
     },
     {
         "id": "74cc10441231f8f2",
@@ -296,34 +142,32 @@
         "id": "27b51aa55e598e0f",
         "type": "function",
         "z": "99c1372046e45da7",
-        "name": "change float number to string with 3 decimals",
-        "func": "msg.payload = parseFloat(msg.payload).toFixed(3);\nreturn msg;",
+        "name": "create string kwh payload and date",
+        "func": "// Set payload to a 3 decimal number as string\nmsg.payload = parseFloat(msg.payload).toFixed(3);\n\n// Create YYYY-MM-DD value from datetime string\nvar datetime = msg.data.last_updated;\nmsg.date = datetime.split('T')[0];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1230,
+        "x": 1020,
         "y": 100,
         "wires": [
             [
-                "87d1d0fed6316877"
+                "3cceba91547a7d4e"
             ]
         ]
     },
     {
-        "id": "6bcd589c5a93d510",
+        "id": "6a870ac713200910",
         "type": "inject",
         "z": "99c1372046e45da7",
         "name": "",
         "props": [
             {
-                "p": "payload.kwh",
-                "v": "31.860",
-                "vt": "str"
+                "p": "payload"
             },
             {
-                "p": "payload.date",
+                "p": "date",
                 "v": "2023-05-18",
                 "vt": "str"
             }
@@ -333,48 +177,52 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1690,
-        "y": 200,
+        "payload": "31.860",
+        "payloadType": "str",
+        "x": 1090,
+        "y": 140,
         "wires": [
             [
-                "1f1bf1690903b6a9"
+                "3cceba91547a7d4e"
             ]
         ]
-    },
-    {
-        "id": "49ffb0ad7fb55ab2",
-        "type": "debug",
-        "z": "99c1372046e45da7",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1910,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "122d704723bc1cb0",
         "type": "mqtt out",
         "z": "99c1372046e45da7",
         "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
+        "topic": "/homeassistant/solar/ac_solar_record",
+        "qos": "1",
+        "retain": "true",
         "respTopic": "",
         "contentType": "",
         "userProps": "",
         "correl": "",
         "expiry": "",
         "broker": "36dee637778341ba",
-        "x": 90,
-        "y": 180,
+        "x": 1470,
+        "y": 100,
         "wires": []
+    },
+    {
+        "id": "3cceba91547a7d4e",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"value\": \"{{payload}}\",\n    \"date\": \"{{date}}\"\n}",
+        "output": "json",
+        "x": 1240,
+        "y": 100,
+        "wires": [
+            [
+                "122d704723bc1cb0"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
@@ -398,47 +246,6 @@
         "statusHourCycle": "h23",
         "statusTimeFormat": "h:m",
         "enableGlobalContextStore": true
-    },
-    {
-        "id": "897c190112264208",
-        "type": "ha-entity-config",
-        "server": "4ba92433.2478cc",
-        "deviceConfig": "",
-        "name": "highest_ac_solar_day",
-        "version": "6",
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "highest_ac_solar_day"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": "energy"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": "kWh"
-            },
-            {
-                "property": "state_class",
-                "value": "total"
-            }
-        ],
-        "resend": true,
-        "debugEnabled": false
     },
     {
         "id": "36dee637778341ba",
