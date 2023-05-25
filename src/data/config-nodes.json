@@ -23,47 +23,6 @@
     "enableGlobalContextStore": true
   },
   {
-    "id": "897c190112264208",
-    "type": "ha-entity-config",
-    "server": "4ba92433.2478cc",
-    "deviceConfig": "",
-    "name": "highest_ac_solar_day",
-    "version": "6",
-    "entityType": "sensor",
-    "haConfig": [
-      {
-        "property": "name",
-        "value": "highest_ac_solar_day"
-      },
-      {
-        "property": "icon",
-        "value": ""
-      },
-      {
-        "property": "entity_category",
-        "value": ""
-      },
-      {
-        "property": "entity_picture",
-        "value": ""
-      },
-      {
-        "property": "device_class",
-        "value": "energy"
-      },
-      {
-        "property": "unit_of_measurement",
-        "value": "kWh"
-      },
-      {
-        "property": "state_class",
-        "value": "total"
-      }
-    ],
-    "resend": true,
-    "debugEnabled": false
-  },
-  {
     "id": "24b246c8.4c72fa",
     "type": "ha-entity-config",
     "server": "4ba92433.2478cc",
