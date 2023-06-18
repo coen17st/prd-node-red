@@ -27,7 +27,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 180,
-        "y": 120,
+        "y": 100,
         "wires": [
             []
         ]
@@ -36,10 +36,13 @@
         "id": "bd9cdd75dc745e7b",
         "type": "link in",
         "z": "f05b3c485997a30f",
-        "name": "link in 1",
-        "links": [],
+        "name": "in slack notification",
+        "links": [
+            "8bfcd75b97bda111",
+            "c732292ca9ae2f0e"
+        ],
         "x": 35,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "80831f8e51c682d4"
