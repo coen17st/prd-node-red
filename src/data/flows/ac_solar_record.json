@@ -168,7 +168,7 @@
             },
             {
                 "p": "date",
-                "v": "2023-05-18",
+                "v": "2023-05-26",
                 "vt": "str"
             }
         ],
@@ -177,7 +177,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "31.860",
+        "payload": "34.080",
         "payloadType": "str",
         "x": 1090,
         "y": 140,
