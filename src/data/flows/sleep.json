@@ -398,10 +398,10 @@
                         "id": "70042c68d7934e2a"
                     },
                     {
-                        "id": "db8cc8f4bb9386ab"
+                        "id": "f9028094.57a62"
                     },
                     {
-                        "id": "f9028094.57a62"
+                        "id": "8b596edabf419a04"
                     }
                 ]
             }
@@ -1007,7 +1007,7 @@
         ],
         "entityidfilter": "input_boolean.sleep_mode",
         "entityidfiltertype": "exact",
-        "outputinitially": false,
+        "outputinitially": true,
         "state_type": "str",
         "haltifstate": "",
         "halt_if_type": "str",
