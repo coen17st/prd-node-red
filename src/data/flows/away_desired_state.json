@@ -907,7 +907,7 @@
         "y": 220,
         "wires": [
             [
-                "fc85d1e2.ac029"
+                "8df06fee2e54ec51"
             ]
         ]
     },
@@ -1151,25 +1151,6 @@
         ]
     },
     {
-        "id": "fc85d1e2.ac029",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Gaststand is ingeschakeld.",
-        "output": "str",
-        "x": 1480,
-        "y": 240,
-        "wires": [
-            [
-                "de807278.70c2"
-            ]
-        ]
-    },
-    {
         "id": "f3398caf62b1ef7a",
         "type": "api-current-state",
         "z": "8aa6edec.5a013",
@@ -1243,17 +1224,17 @@
         "type": "template",
         "z": "8aa6edec.5a013",
         "name": "message",
-        "field": "message",
+        "field": "message_text",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "Huisbeveiligingstand is automatisch ingeschakeld",
         "output": "str",
         "x": 1480,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
-                "de807278.70c2"
+                "4cae9d7337c365a3"
             ]
         ]
     },
@@ -1578,17 +1559,74 @@
         ]
     },
     {
-        "id": "de807278.70c2",
+        "id": "8df06fee2e54ec51",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "name": "message",
+        "field": "message_text",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "gastmodus is ingeschakeld.",
+        "output": "str",
+        "x": 1480,
+        "y": 240,
+        "wires": [
+            [
+                "35a38abca6a676c0"
+            ]
+        ]
+    },
+    {
+        "id": "35a38abca6a676c0",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "name": "message title",
+        "field": "message_title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "gastmodus",
+        "output": "str",
+        "x": 1630,
+        "y": 240,
+        "wires": [
+            [
+                "faee844e5db0c9f9"
+            ]
+        ]
+    },
+    {
+        "id": "faee844e5db0c9f9",
         "type": "link out",
         "z": "8aa6edec.5a013",
-        "name": "",
+        "name": "link out 3",
+        "mode": "link",
         "links": [
-            "e0ebe989.841c68",
-            "7b0f1685.0279d8"
+            "bd9cdd75dc745e7b"
         ],
-        "x": 1605,
-        "y": 160,
+        "x": 1755,
+        "y": 280,
         "wires": []
+    },
+    {
+        "id": "4cae9d7337c365a3",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "name": "message title",
+        "field": "message_title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "beveiliging",
+        "output": "str",
+        "x": 1630,
+        "y": 320,
+        "wires": [
+            [
+                "faee844e5db0c9f9"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",

@@ -220,9 +220,61 @@
         "y": 100,
         "wires": [
             [
-                "122d704723bc1cb0"
+                "122d704723bc1cb0",
+                "78446cc47ece69cf"
             ]
         ]
+    },
+    {
+        "id": "78446cc47ece69cf",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "message",
+        "field": "message_text",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is een nieuw zonne-energie dagrecord gemeten. :sunny: :bar_chart: \\n Waarde: {{payload}} kWh \\n Datum: {{date}}",
+        "output": "str",
+        "x": 1380,
+        "y": 200,
+        "wires": [
+            [
+                "5610ead96c675fba"
+            ]
+        ]
+    },
+    {
+        "id": "5610ead96c675fba",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "message title",
+        "field": "message_title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zonne-energie",
+        "output": "str",
+        "x": 1530,
+        "y": 200,
+        "wires": [
+            [
+                "c732292ca9ae2f0e"
+            ]
+        ]
+    },
+    {
+        "id": "c732292ca9ae2f0e",
+        "type": "link out",
+        "z": "99c1372046e45da7",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "bd9cdd75dc745e7b"
+        ],
+        "x": 1635,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "4ba92433.2478cc",
