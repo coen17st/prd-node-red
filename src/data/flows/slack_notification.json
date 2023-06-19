@@ -61,6 +61,31 @@
         "wires": []
     },
     {
+        "id": "4925c479bb432dfb",
+        "type": "api-call-service",
+        "z": "f05b3c485997a30f",
+        "name": "test",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{message_text}}\",\"target\":\"#home-assistant\",\"title\":\"{{message_title}}\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"New request\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"*Type:*\\nPaid Time Off\"},{\"type\":\"mrkdwn\",\"text\":\"*Created by:*\\n<example.com|Fred Enriquez>\"}]},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"*When:*\\nAug 10 - Aug 13\"}]},{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"<https://example.com|View request>\"}}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
