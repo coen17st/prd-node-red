@@ -1418,7 +1418,7 @@
         "state_type": "num",
         "haltifstate": "5",
         "halt_if_type": "num",
-        "halt_if_compare": "gt",
+        "halt_if_compare": "lt",
         "outputs": 2,
         "output_only_on_state_change": true,
         "for": "",
@@ -1453,7 +1453,7 @@
         "y": 320,
         "wires": [
             [
-                "3c8358ad.4658e8"
+                "466f23cc5674fa22"
             ],
             []
         ]
@@ -1493,7 +1493,7 @@
         "y": 140,
         "wires": [
             [
-                "c12f7192.293c9"
+                "a104a83026f8fd84"
             ],
             []
         ]
@@ -1508,7 +1508,7 @@
         "outputs": 2,
         "halt_if": "sensor.master_bedroom_thermal_comfort_dew_point",
         "halt_if_type": "msg",
-        "halt_if_compare": "lt",
+        "halt_if_compare": "gt",
         "entity_id": "sensor.basement_wall_temperature_offset",
         "state_type": "num",
         "blockInputOverrides": false,
@@ -1533,7 +1533,7 @@
         "y": 200,
         "wires": [
             [
-                "d2804939.6f48f8"
+                "528b70bf555994d2"
             ],
             []
         ]
@@ -1573,7 +1573,7 @@
         "y": 260,
         "wires": [
             [
-                "b8424afd.8d7fe8"
+                "eb7fc4be79c0effe"
             ],
             []
         ]
@@ -2726,33 +2726,6 @@
         ]
     },
     {
-        "id": "9a6df146.3a1aa",
-        "type": "api-call-service",
-        "z": "4e909abe.0b62e4",
-        "name": "app notification",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"notification_id\":\"{{notification_id}}\",\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 2400,
-        "y": 1160,
-        "wires": [
-            [
-                "27cc17cd.025b08"
-            ]
-        ]
-    },
-    {
         "id": "c7b58913.752ad8",
         "type": "template",
         "z": "4e909abe.0b62e4",
@@ -2763,7 +2736,7 @@
         "syntax": "mustache",
         "template": "{{topic}} stand 2 is automatisch ingeschakeld.",
         "output": "str",
-        "x": 1700,
+        "x": 1740,
         "y": 800,
         "wires": [
             [
@@ -2782,7 +2755,7 @@
         "syntax": "mustache",
         "template": "{{topic}} stand 3 is automatisch ingeschakeld.",
         "output": "str",
-        "x": 1700,
+        "x": 1740,
         "y": 940,
         "wires": [
             [
@@ -2820,8 +2793,7 @@
         "y": 1160,
         "wires": [
             [
-                "1c8856d3.d19249",
-                "289089f4.e41b76"
+                "1c8856d3.d19249"
             ]
         ]
     },
@@ -2849,30 +2821,6 @@
         "wires": [
             [
                 "e07362ff.ad189"
-            ]
-        ]
-    },
-    {
-        "id": "27cc17cd.025b08",
-        "type": "delay",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 2560,
-        "y": 1160,
-        "wires": [
-            [
-                "f05f69b7b628264f"
             ]
         ]
     },
@@ -2997,63 +2945,6 @@
         ]
     },
     {
-        "id": "d2804939.6f48f8",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de mslaapkmer is {{ssensor.master_bedroom_thermal_comfort_dew_point}} ℃   ",
-        "output": "str",
-        "x": 1120,
-        "y": 200,
-        "wires": [
-            [
-                "476cfb88.13ea74"
-            ]
-        ]
-    },
-    {
-        "id": "b8424afd.8d7fe8",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
-        "output": "str",
-        "x": 1120,
-        "y": 260,
-        "wires": [
-            [
-                "476cfb88.13ea74"
-            ]
-        ]
-    },
-    {
-        "id": "3c8358ad.4658e8",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{payload}}%",
-        "output": "str",
-        "x": 1120,
-        "y": 320,
-        "wires": [
-            [
-                "476cfb88.13ea74"
-            ]
-        ]
-    },
-    {
         "id": "476cfb88.13ea74",
         "type": "api-current-state",
         "z": "4e909abe.0b62e4",
@@ -3084,7 +2975,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1340,
+        "x": 1380,
         "y": 220,
         "wires": [
             [
@@ -3124,7 +3015,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1650,
+        "x": 1690,
         "y": 220,
         "wires": [
             [
@@ -3447,7 +3338,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 1970,
+        "x": 2010,
         "y": 220,
         "wires": [
             [
@@ -3806,26 +3697,8 @@
         "y": 1160,
         "wires": [
             [
-                "9a6df146.3a1aa"
-            ]
-        ]
-    },
-    {
-        "id": "c12f7192.293c9",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is{{sensor.living_room_thermal_comfort_dew_point}} ℃ ",
-        "output": "str",
-        "x": 1120,
-        "y": 140,
-        "wires": [
-            [
-                "476cfb88.13ea74"
+                "8afd566d75b90320",
+                "e464564e596ac0d1"
             ]
         ]
     },
@@ -3838,7 +3711,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 1 is automatisch ingeschakeld. Het is buiten {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
+        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De temperatuur buiten is: {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
         "y": 740,
@@ -3857,7 +3730,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De luchtvochtigheid in de kelder is {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
+        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De luchtvochtigheid in de kelder is: {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
         "y": 700,
@@ -3865,36 +3738,6 @@
             [
                 "bfdcba16.625018"
             ]
-        ]
-    },
-    {
-        "id": "289089f4.e41b76",
-        "type": "link out",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 2095,
-        "y": 1100,
-        "wires": []
-    },
-    {
-        "id": "f05f69b7b628264f",
-        "type": "ha-sensor",
-        "z": "4e909abe.0b62e4",
-        "name": "Message Ventilatie",
-        "entityConfig": "24b246c8.4c72fa",
-        "version": 0,
-        "state": "message",
-        "stateType": "msg",
-        "attributes": [],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 2750,
-        "y": 1160,
-        "wires": [
-            []
         ]
     },
     {
@@ -3919,6 +3762,124 @@
         ]
     },
     {
+        "id": "a104a83026f8fd84",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert mogelijk tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is: {{sensor.living_room_thermal_comfort_dew_point}} ℃",
+        "output": "str",
+        "x": 1120,
+        "y": 140,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "528b70bf555994d2",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert mogelijk tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de slaapkamer is: {{sensor.master_bedroom_thermal_comfort_dew_point}} ℃",
+        "output": "str",
+        "x": 1120,
+        "y": 200,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "eb7fc4be79c0effe",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ en is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
+        "output": "str",
+        "x": 1120,
+        "y": 260,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "466f23cc5674fa22",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{payload}}%",
+        "output": "str",
+        "x": 1120,
+        "y": 320,
+        "wires": [
+            [
+                "476cfb88.13ea74"
+            ]
+        ]
+    },
+    {
+        "id": "8afd566d75b90320",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "slack message",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Ventilatie\",\"target\":\"#home-assistant\",\"title\":\"Ventilatie\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Ventilatie :dash:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"{{{message}}}\"}]}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 2400,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e464564e596ac0d1",
+        "type": "debug",
+        "z": "4e909abe.0b62e4",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2450,
+        "y": 960,
+        "wires": []
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -3940,41 +3901,5 @@
         "statusHourCycle": "h23",
         "statusTimeFormat": "h:m",
         "enableGlobalContextStore": true
-    },
-    {
-        "id": "24b246c8.4c72fa",
-        "type": "ha-entity-config",
-        "server": "4ba92433.2478cc",
-        "deviceConfig": "",
-        "name": "sensor config for Message Ventilatie",
-        "version": 6,
-        "entityType": "sensor",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "message_mechanical_ventilation"
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": "mdi:message-text-clock"
-            },
-            {
-                "property": "unit_of_measurement",
-                "value": ""
-            },
-            {
-                "property": "state_class",
-                "value": ""
-            },
-            {
-                "property": "last_reset",
-                "value": ""
-            }
-        ],
-        "resend": true
     }
 ]
