@@ -23,47 +23,6 @@
     "enableGlobalContextStore": true
   },
   {
-    "id": "24b246c8.4c72fa",
-    "type": "ha-entity-config",
-    "server": "4ba92433.2478cc",
-    "deviceConfig": "",
-    "name": "message_mechanical_ventilation",
-    "version": "6",
-    "entityType": "sensor",
-    "haConfig": [
-      {
-        "property": "name",
-        "value": "message_mechanical_ventilation"
-      },
-      {
-        "property": "icon",
-        "value": "mdi:message-text-clock"
-      },
-      {
-        "property": "entity_category",
-        "value": ""
-      },
-      {
-        "property": "entity_picture",
-        "value": ""
-      },
-      {
-        "property": "device_class",
-        "value": ""
-      },
-      {
-        "property": "unit_of_measurement",
-        "value": ""
-      },
-      {
-        "property": "state_class",
-        "value": ""
-      }
-    ],
-    "resend": true,
-    "debugEnabled": false
-  },
-  {
     "id": "7befa0b16196877c",
     "type": "ha-entity-config",
     "server": "4ba92433.2478cc",
