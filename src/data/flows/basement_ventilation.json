@@ -3697,7 +3697,7 @@
         "y": 1160,
         "wires": [
             [
-                "8afd566d75b90320"
+                "2f76b3aeaadfacce"
             ]
         ]
     },
@@ -3855,10 +3855,30 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 2400,
+        "x": 2500,
         "y": 1160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "2f76b3aeaadfacce",
+        "type": "rbe",
+        "z": "4e909abe.0b62e4",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2350,
+        "y": 1160,
+        "wires": [
+            [
+                "8afd566d75b90320"
+            ]
         ]
     },
     {
