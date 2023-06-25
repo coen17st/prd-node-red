@@ -900,18 +900,6 @@
         "info": ""
     },
     {
-        "id": "fd0992d579e52c73",
-        "type": "junction",
-        "z": "8aa6edec.5a013",
-        "x": 200,
-        "y": 220,
-        "wires": [
-            [
-                "8df06fee2e54ec51"
-            ]
-        ]
-    },
-    {
         "id": "a8b7af48.25638",
         "type": "server-state-changed",
         "z": "8aa6edec.5a013",
@@ -1037,7 +1025,7 @@
                 "86e3be2e.bc7b4"
             ],
             [
-                "fd0992d579e52c73"
+                "49509f9ed6939729"
             ]
         ]
     },
@@ -1215,26 +1203,7 @@
         "y": 320,
         "wires": [
             [
-                "c54e1335a9784d8c"
-            ]
-        ]
-    },
-    {
-        "id": "c54e1335a9784d8c",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "name": "message",
-        "field": "message_text",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Huisbeveiligingstand is automatisch ingeschakeld",
-        "output": "str",
-        "x": 1480,
-        "y": 320,
-        "wires": [
-            [
-                "4cae9d7337c365a3"
+                "d1bc843790834774"
             ]
         ]
     },
@@ -1559,73 +1528,53 @@
         ]
     },
     {
-        "id": "8df06fee2e54ec51",
-        "type": "template",
+        "id": "49509f9ed6939729",
+        "type": "api-call-service",
         "z": "8aa6edec.5a013",
-        "name": "message",
-        "field": "message_text",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "gastmodus is ingeschakeld.",
-        "output": "str",
-        "x": 1480,
-        "y": 240,
+        "name": "slack message",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Gastmodus\",\"target\":\"#home-assistant\",\"title\":\"Gastmodus\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Gastmodus :person_in_tuxedo:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"Gastmodus is ingeschakeld :white_check_mark:\"}]}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 280,
+        "y": 220,
         "wires": [
-            [
-                "35a38abca6a676c0"
-            ]
+            []
         ]
     },
     {
-        "id": "35a38abca6a676c0",
-        "type": "template",
+        "id": "d1bc843790834774",
+        "type": "api-call-service",
         "z": "8aa6edec.5a013",
-        "name": "message title",
-        "field": "message_title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "gastmodus",
-        "output": "str",
-        "x": 1630,
-        "y": 240,
-        "wires": [
-            [
-                "faee844e5db0c9f9"
-            ]
-        ]
-    },
-    {
-        "id": "faee844e5db0c9f9",
-        "type": "link out",
-        "z": "8aa6edec.5a013",
-        "name": "link out 3",
-        "mode": "link",
-        "links": [
-            "bd9cdd75dc745e7b"
-        ],
-        "x": 1755,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "4cae9d7337c365a3",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "name": "message title",
-        "field": "message_title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "beveiliging",
-        "output": "str",
-        "x": 1630,
+        "name": "slack message",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Huisbeveiliging\",\"target\":\"#home-assistant\",\"title\":\"Huisbeveiliging\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Huisbeveiliging :closed_lock_with_key:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"Huisbeveiliging is ingeschakeld :white_check_mark:\"}]}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1440,
         "y": 320,
         "wires": [
-            [
-                "faee844e5db0c9f9"
-            ]
+            []
         ]
     },
     {
