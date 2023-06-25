@@ -317,17 +317,17 @@
         "domain": "vacuum",
         "service": "start",
         "areaId": [],
-        "deviceId": [
-            "59644701f2397363b328494ea9691d33"
+        "deviceId": [],
+        "entityId": [
+            "vacuum.roborock_s6_pure"
         ],
-        "entityId": [],
         "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1350,
+        "x": 1370,
         "y": 340,
         "wires": [
             [
