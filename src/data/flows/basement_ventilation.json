@@ -1418,7 +1418,7 @@
         "state_type": "num",
         "haltifstate": "5",
         "halt_if_type": "num",
-        "halt_if_compare": "lt",
+        "halt_if_compare": "gt",
         "outputs": 2,
         "output_only_on_state_change": true,
         "for": "",
@@ -1508,7 +1508,7 @@
         "outputs": 2,
         "halt_if": "sensor.master_bedroom_thermal_comfort_dew_point",
         "halt_if_type": "msg",
-        "halt_if_compare": "gt",
+        "halt_if_compare": "lt",
         "entity_id": "sensor.basement_wall_temperature_offset",
         "state_type": "num",
         "blockInputOverrides": false,
@@ -3729,7 +3729,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De luchtvochtigheid in de kelder is: {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
+        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De relative luchtvochtigheid in de kelder is: {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
         "y": 700,
@@ -3757,7 +3757,9 @@
         "x": 1530,
         "y": 720,
         "wires": [
-            []
+            [
+                "8373567d.35b008"
+            ]
         ]
     },
     {
@@ -3826,7 +3828,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{payload}}%",
+        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n\\nKelder Heating Power is {{payload}}%",
         "output": "str",
         "x": 1120,
         "y": 320,
