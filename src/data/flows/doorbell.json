@@ -120,14 +120,13 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is aangebeld, de voordeur is niet open gedaan. ",
+        "template": "Er is aangebeld maar de voordeur is niet open gedaan. ",
         "output": "str",
         "x": 1100,
         "y": 260,
         "wires": [
             [
-                "32209a51.6b6536",
-                "5841bec4.a2bed"
+                "32209a51.6b6536"
             ]
         ]
     },
@@ -147,7 +146,7 @@
         "wires": [
             [
                 "32209a51.6b6536",
-                "5841bec4.a2bed"
+                "b250cddf400e573e"
             ]
         ]
     },
@@ -913,18 +912,6 @@
         "wires": []
     },
     {
-        "id": "5841bec4.a2bed",
-        "type": "link out",
-        "z": "3637eeb0.d96232",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 1235,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "30224e76c039750b",
         "type": "ha-wait-until",
         "z": "3637eeb0.d96232",
@@ -952,6 +939,31 @@
             [
                 "211ffb19.e76354"
             ]
+        ]
+    },
+    {
+        "id": "b250cddf400e573e",
+        "type": "api-call-service",
+        "z": "3637eeb0.d96232",
+        "name": "slack message",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Deurbel\",\"target\":\"#home-assistant\",\"title\":\"Deurbel\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Deurbel :door:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"{{{message}}}\"}]}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 220,
+        "wires": [
+            []
         ]
     },
     {
