@@ -928,7 +928,7 @@
         "type": "junction",
         "z": "df5d8f386b74d541",
         "x": 600,
-        "y": 240,
+        "y": 280,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -941,7 +941,7 @@
         "z": "df5d8f386b74d541",
         "name": "",
         "x": 420,
-        "y": 160,
+        "y": 200,
         "wires": []
     },
     {
@@ -967,7 +967,7 @@
         "repair": false,
         "outputs": 2,
         "x": 250,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
                 "5cae0c8061f75a53",
@@ -979,7 +979,8 @@
                 "ec7fc97b85fc874f",
                 "6af74f914175416e",
                 "815212ec75081f73",
-                "a85f801df57cb535"
+                "a85f801df57cb535",
+                "4a7fc876d7020e5e"
             ],
             [
                 "543ebe7.ceeb34",
@@ -1050,7 +1051,7 @@
             }
         ],
         "x": 100,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
                 "de71b23081ef77cd"
@@ -1099,7 +1100,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 450,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "134e114c720a4f35"
@@ -1131,7 +1132,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 870,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "69a0749d.4f467c"
@@ -1155,7 +1156,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "dc31aee5.5b1f3"
@@ -1184,7 +1185,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1410,
-        "y": 240,
+        "y": 280,
         "wires": [
             []
         ]
@@ -1221,7 +1222,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 280,
+        "y": 320,
         "wires": [
             [
                 "f99fb5b5de6ba970"
@@ -1251,7 +1252,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1440,
-        "y": 300,
+        "y": 340,
         "wires": [
             []
         ]
@@ -1278,7 +1279,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1420,
-        "y": 360,
+        "y": 400,
         "wires": [
             []
         ]
@@ -1315,7 +1316,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "5dbf80c959123905"
@@ -1340,7 +1341,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "c02a96fab9d6d716"
@@ -1379,7 +1380,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "502ed746a5dd4b84"
@@ -1409,7 +1410,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1050,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "7fb9ce14.0e751"
@@ -1433,7 +1434,7 @@
         "drop": false,
         "outputs": 1,
         "x": 1230,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "8a22a508.80a108"
@@ -1472,7 +1473,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1420,
-        "y": 420,
+        "y": 460,
         "wires": [
             [],
             []
@@ -1496,7 +1497,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 680,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "407ba343.c0affc"
@@ -1525,7 +1526,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 690,
-        "y": 700,
+        "y": 740,
         "wires": [
             []
         ]
@@ -1562,7 +1563,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "1a921b80.6cb295"
@@ -1602,7 +1603,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 460,
-        "y": 520,
+        "y": 560,
         "wires": [
             [
                 "ecbb9c1d.54996"
@@ -1632,7 +1633,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 690,
-        "y": 520,
+        "y": 560,
         "wires": [
             []
         ]
@@ -1659,7 +1660,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 720,
-        "y": 580,
+        "y": 620,
         "wires": [
             []
         ]
@@ -1696,7 +1697,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 470,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "bda1346b2f42aaaf"
@@ -1724,7 +1725,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 460,
+        "y": 500,
         "wires": [
             []
         ]
@@ -1749,7 +1750,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 640,
+        "y": 680,
         "wires": [
             []
         ]
@@ -1791,7 +1792,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 650,
-        "y": 740,
+        "y": 780,
         "wires": [
             [
                 "90fa355210409171"
@@ -1811,7 +1812,7 @@
         "template": "Let op, morgen wordt de {{payload}} container opgehaald.",
         "output": "str",
         "x": 860,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "380b7368c41951bc"
@@ -1828,7 +1829,7 @@
             "ebf4860d.603538"
         ],
         "x": 1475,
-        "y": 780,
+        "y": 820,
         "wires": []
     },
     {
@@ -1853,7 +1854,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1370,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "e954fe7e068d253c"
@@ -1883,7 +1884,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 1110,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "896550d8f8c29cf6"
@@ -1902,7 +1903,7 @@
         "startOffset": 0,
         "endOffset": 0,
         "x": 430,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
                 "57e5e121ffdbfd66"
@@ -1949,7 +1950,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 640,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "90fa355210409171"
@@ -1977,7 +1978,34 @@
         "outputProperties": [],
         "queue": "none",
         "x": 440,
-        "y": 100,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a7fc876d7020e5e",
+        "type": "api-call-service",
+        "z": "df5d8f386b74d541",
+        "name": "start speedtest",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "homeassistant",
+        "service": "update_entity",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "sensor.speedtest_download"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 80,
         "wires": [
             []
         ]
