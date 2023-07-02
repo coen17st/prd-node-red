@@ -1042,12 +1042,6 @@
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "triggerId"
-            },
-            {
-                "property": "house_event",
-                "propertyType": "msg",
-                "value": "sleepmode",
-                "valueType": "str"
             }
         ],
         "x": 100,
@@ -1971,7 +1965,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{    \"name\": \"google_dark_theme\",    \"mode\": \"dark\"}}",
+        "data": "{\"name\":\"google_dark_theme\",\"mode\":\"dark\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
