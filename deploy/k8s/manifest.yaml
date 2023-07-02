@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: "harbor.k8s.lan/k8s/node-red:286"
+          image: "harbor.k8s.lan/k8s/node-red:287"
           imagePullPolicy: Always
           resources: {}
           ports:
