@@ -1,0 +1,130 @@
+[
+    {
+        "id": "d75716f30ab50f51",
+        "type": "tab",
+        "label": "vacuum_cleaner_goto_trash_can",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0a557caa506ed5ba",
+        "type": "inject",
+        "z": "d75716f30ab50f51",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 08 * * 1",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "c919cd9fc4d86548"
+            ]
+        ]
+    },
+    {
+        "id": "c919cd9fc4d86548",
+        "type": "ha-wait-until",
+        "z": "d75716f30ab50f51",
+        "name": "vacuum is idle",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "vacuum.roborock_s6_pure",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "idle",
+        "valueType": "str",
+        "timeout": "12",
+        "timeoutType": "num",
+        "timeoutUnits": "hours",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 260,
+        "y": 100,
+        "wires": [
+            [
+                "d1271eec3942fa45"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d1271eec3942fa45",
+        "type": "api-call-service",
+        "z": "d75716f30ab50f51",
+        "name": "goto trash can",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "roborock",
+        "service": "vacuum_goto",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "vacuum.roborock_s6_pure"
+        ],
+        "data": "{\"x_coord\":29235,\"y_coord\":26134}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c724e1ce3b75fdca",
+        "type": "comment",
+        "z": "d75716f30ab50f51",
+        "name": "vacuum go to trash can every monday morning",
+        "info": "",
+        "x": 200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
