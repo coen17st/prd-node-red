@@ -43,16 +43,16 @@
         "name": "vacuum is idle",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 2,
+        "outputs": 1,
         "entityId": "vacuum.roborock_s6_pure",
         "entityIdFilterType": "exact",
         "property": "state",
         "comparator": "is",
         "value": "idle",
         "valueType": "str",
-        "timeout": "12",
+        "timeout": "0",
         "timeoutType": "num",
-        "timeoutUnits": "hours",
+        "timeoutUnits": "minutes",
         "checkCurrentState": true,
         "blockInputOverrides": true,
         "outputProperties": [],
@@ -63,8 +63,7 @@
         "wires": [
             [
                 "d1271eec3942fa45"
-            ],
-            []
+            ]
         ]
     },
     {
