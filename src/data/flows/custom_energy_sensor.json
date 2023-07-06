@@ -40,7 +40,7 @@
         "type": "function",
         "z": "46d98b35c2eee05b",
         "name": "calculation",
-        "func": "// Make delivered value negative\nmsg.delivered =- parseFloat(msg.delivered);\n\n// Sum two values\nmsg.sum = parseFloat(msg.returned) + msg.delivered;\n\n// Set 3 decimals. Side effect is string value\nmsg.payload = msg.sum.toFixed(3) \nreturn msg;",
+        "func": "// // Make delivered value negative\n// msg.delivered =- parseFloat(msg.delivered);\n\n// // Sum two values\n// msg.sum = parseFloat(msg.returned) + msg.delivered;\n\n// // Set 3 decimals. Side effect is string value\n// msg.payload = msg.sum.toFixed(3) \n// return msg;\n\n// Make delivered value negative\nmsg.delivered = - parseFloat(msg.delivered);\n\n// Sum two values\nmsg.payload = (parseFloat(msg.returned) + msg.delivered) * 1000;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -218,7 +218,7 @@
         "type": "ha-entity-config",
         "server": "4ba92433.2478cc",
         "deviceConfig": "",
-        "name": "sensor config for custom_energy",
+        "name": "custom_energy",
         "version": "6",
         "entityType": "sensor",
         "haConfig": [
@@ -240,11 +240,11 @@
             },
             {
                 "property": "device_class",
-                "value": "energy"
+                "value": "power"
             },
             {
                 "property": "unit_of_measurement",
-                "value": "Wh"
+                "value": "W"
             },
             {
                 "property": "state_class",
