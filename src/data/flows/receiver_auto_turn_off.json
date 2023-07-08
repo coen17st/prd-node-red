@@ -91,7 +91,7 @@
         "halt_if": "Alles Uit",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.harmonyhub",
+        "entity_id": "input_select.entertainment_activity",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
