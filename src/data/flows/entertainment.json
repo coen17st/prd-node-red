@@ -964,7 +964,7 @@
             },
             {
                 "t": "eq",
-                "v": "Alles Uit",
+                "v": "Uitschakelen",
                 "vt": "str"
             }
         ],
@@ -1705,7 +1705,7 @@
         "entityId": [
             "input_select.entertainment_activity"
         ],
-        "data": "{\"option\":\"Alles Uit\"}",
+        "data": "{\"option\":\"Uitschakelen\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -3288,7 +3288,7 @@
         "entityId": [
             "input_select.entertainment_activity"
         ],
-        "data": "{\"option\":\"Alles Uit\"}",
+        "data": "{\"option\":\"Uitschakelen\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,

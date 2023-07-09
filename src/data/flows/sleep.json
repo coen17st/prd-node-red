@@ -415,7 +415,7 @@
         "id": "3b9a1fc1.aafd9",
         "type": "api-call-service",
         "z": "79544bf2.1ff3a4",
-        "name": "input select entertainment_activity alles uit",
+        "name": "input select entertainment_activity uitschakelen",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -426,7 +426,7 @@
         "entityId": [
             "input_select.entertainment_activity"
         ],
-        "data": "{\"option\":\"Alles Uit\"}",
+        "data": "{\"option\":\"Uitschakelen\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -815,7 +815,7 @@
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "Alles Uit",
+        "halt_if": "Uitschakelen",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "input_select.entertainment_activity",
