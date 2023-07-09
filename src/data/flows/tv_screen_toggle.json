@@ -1,0 +1,241 @@
+[
+    {
+        "id": "2c496b90815e2d15",
+        "type": "tab",
+        "label": "tv_screen_toggle",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ff3a844c97e00f29",
+        "type": "switch",
+        "z": "2c496b90815e2d15",
+        "name": "screen on/off",
+        "property": "screen",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "On",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "On",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 100,
+        "wires": [
+            [
+                "62bc4f4208a1c07d"
+            ],
+            [
+                "6849baa07572b9b8"
+            ]
+        ]
+    },
+    {
+        "id": "62bc4f4208a1c07d",
+        "type": "change",
+        "z": "2c496b90815e2d15",
+        "name": "set screen to on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "screen",
+                "pt": "flow",
+                "to": "On",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "On",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 100,
+        "wires": [
+            [
+                "bf0edd39a6bab4fd"
+            ]
+        ]
+    },
+    {
+        "id": "bf0edd39a6bab4fd",
+        "type": "api-call-service",
+        "z": "2c496b90815e2d15",
+        "name": "tv screen toggle",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turn{{topic}}Screen\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6849baa07572b9b8",
+        "type": "change",
+        "z": "2c496b90815e2d15",
+        "name": "set screen to off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "screen",
+                "pt": "flow",
+                "to": "Off",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "bf0edd39a6bab4fd"
+            ]
+        ]
+    },
+    {
+        "id": "0c90784f625412ea",
+        "type": "comment",
+        "z": "2c496b90815e2d15",
+        "name": "endpoint to toggle tv screen on/off",
+        "info": "",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "89261028e8c833f2",
+        "type": "ha-button",
+        "z": "2c496b90815e2d15",
+        "name": "tv screen toggle button",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "8cfcbd4314535fdb",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "ff3a844c97e00f29"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "8cfcbd4314535fdb",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "tv_screen_toggle",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "Beeldscherm"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]
