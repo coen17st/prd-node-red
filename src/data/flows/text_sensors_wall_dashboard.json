@@ -1,0 +1,130 @@
+[
+    {
+        "id": "20f4c55b952212d2",
+        "type": "tab",
+        "label": "text_sensors_wall_dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "208c06cda660e0ea",
+        "type": "inject",
+        "z": "20f4c55b952212d2",
+        "name": "",
+        "props": [
+            {
+                "p": "text",
+                "v": "test tekst 2",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            },
+            {
+                "p": "icon",
+                "v": "mdi:message-question",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 240,
+        "y": 1000,
+        "wires": [
+            [
+                "e20625fa90e6011f"
+            ]
+        ]
+    },
+    {
+        "id": "e20625fa90e6011f",
+        "type": "ha-binary-sensor",
+        "z": "20f4c55b952212d2",
+        "name": "wall_dashboard_notification",
+        "entityConfig": "c9d4a71c9ef10ab5",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "text",
+                "value": "text",
+                "valueType": "msg"
+            },
+            {
+                "property": "icon",
+                "value": "icon",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 460,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9d4a71c9ef10ab5",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "wall_dashboard_notification",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "wall_dashboard_notification"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
