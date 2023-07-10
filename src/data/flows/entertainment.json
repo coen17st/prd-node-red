@@ -772,7 +772,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 740,
+        "x": 460,
         "y": 100,
         "wires": [
             []
@@ -804,53 +804,8 @@
         "y": 100,
         "wires": [
             [
-                "19bc30746baef510"
-            ]
-        ]
-    },
-    {
-        "id": "19bc30746baef510",
-        "type": "api-current-state",
-        "z": "ae0491bb.4f1eb",
-        "name": "harmony activity is scherm uit",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "Scherm Uit",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_select.entertainment_activity",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 510,
-        "y": 100,
-        "wires": [
-            [
                 "0cb67556a76c3eb6"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -867,7 +822,7 @@
         "id": "a5c3a1afe9d96a84",
         "type": "tab",
         "label": "entertainment",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
