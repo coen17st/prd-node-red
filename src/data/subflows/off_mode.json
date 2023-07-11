@@ -294,9 +294,7 @@
         "areaId": [
             "living_room"
         ],
-        "deviceId": [
-            "34a73fe47cda5c964dcb946e48f8a307"
-        ],
+        "deviceId": [],
         "entityId": [
             "remote.harmony_hub_01"
         ],
@@ -339,7 +337,7 @@
                         "id": "f9028094.57a62"
                     },
                     {
-                        "id": "119d10b6d592e44b"
+                        "id": "db8cc8f4bb9386ab"
                     }
                 ]
             }
@@ -348,18 +346,6 @@
         "env": [],
         "meta": {},
         "color": "#DDAA99"
-    },
-    {
-        "id": "119d10b6d592e44b",
-        "type": "junction",
-        "z": "79544bf2.1ff3a4",
-        "x": 360,
-        "y": 120,
-        "wires": [
-            [
-                "8b596edabf419a04"
-            ]
-        ]
     },
     {
         "id": "3b9a1fc1.aafd9",
@@ -382,7 +368,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 520,
+        "x": 560,
         "y": 300,
         "wires": [
             []

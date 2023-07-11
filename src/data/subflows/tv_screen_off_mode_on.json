@@ -201,6 +201,46 @@
         ]
     },
     {
+        "id": "e324372da3a76b29",
+        "type": "ha-wait-until",
+        "z": "ae0491bb.4f1eb",
+        "name": "wait until lg webos tv mediaplayer is on",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 1,
+        "entityId": "media_player.lg_webos_smart_tv",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "on",
+        "valueType": "str",
+        "timeout": "0",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "0cb67556a76c3eb6"
+            ]
+        ]
+    },
+    {
+        "id": "54d7a449b5482909",
+        "type": "comment",
+        "z": "ae0491bb.4f1eb",
+        "name": "turn on receiver, tv and turn off screen for low energy usage",
+        "info": "",
+        "x": 230,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "0cb67556a76c3eb6",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
@@ -221,96 +261,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 740,
+        "x": 520,
         "y": 100,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "e324372da3a76b29",
-        "type": "ha-wait-until",
-        "z": "ae0491bb.4f1eb",
-        "name": "wait until tv mediaplayer is on",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "media_player.lg_webos_smart_tv",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is_not",
-        "value": "off",
-        "valueType": "str",
-        "timeout": "0",
-        "timeoutType": "num",
-        "timeoutUnits": "seconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 240,
-        "y": 100,
-        "wires": [
-            [
-                "19bc30746baef510"
-            ]
-        ]
-    },
-    {
-        "id": "19bc30746baef510",
-        "type": "api-current-state",
-        "z": "ae0491bb.4f1eb",
-        "name": "harmony activity is scherm uit",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "Scherm Uit",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_select.entertainment_activity",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 510,
-        "y": 100,
-        "wires": [
-            [
-                "0cb67556a76c3eb6"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "54d7a449b5482909",
-        "type": "comment",
-        "z": "ae0491bb.4f1eb",
-        "name": "turn on tv and turn off screen for low energy usage",
-        "info": "",
-        "x": 210,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "4ba92433.2478cc",

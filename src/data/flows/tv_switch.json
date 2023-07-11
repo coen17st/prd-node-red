@@ -417,7 +417,6 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.shield_2",
             "media_player.shield"
         ],
         "data": "",
@@ -445,7 +444,6 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.shield_2",
             "media_player.shield"
         ],
         "data": "",

@@ -201,6 +201,46 @@
         ]
     },
     {
+        "id": "e324372da3a76b29",
+        "type": "ha-wait-until",
+        "z": "ae0491bb.4f1eb",
+        "name": "wait until lg webos tv mediaplayer is on",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 1,
+        "entityId": "media_player.lg_webos_smart_tv",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "on",
+        "valueType": "str",
+        "timeout": "0",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "0cb67556a76c3eb6"
+            ]
+        ]
+    },
+    {
+        "id": "54d7a449b5482909",
+        "type": "comment",
+        "z": "ae0491bb.4f1eb",
+        "name": "turn on receiver, tv and turn off screen for low energy usage",
+        "info": "",
+        "x": 230,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "0cb67556a76c3eb6",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
@@ -221,51 +261,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 460,
+        "x": 520,
         "y": 100,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "e324372da3a76b29",
-        "type": "ha-wait-until",
-        "z": "ae0491bb.4f1eb",
-        "name": "wait until tv mediaplayer is on",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "media_player.lg_webos_smart_tv",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is",
-        "value": "on",
-        "valueType": "str",
-        "timeout": "0",
-        "timeoutType": "num",
-        "timeoutUnits": "seconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 240,
-        "y": 100,
-        "wires": [
-            [
-                "0cb67556a76c3eb6"
-            ]
-        ]
-    },
-    {
-        "id": "54d7a449b5482909",
-        "type": "comment",
-        "z": "ae0491bb.4f1eb",
-        "name": "turn on tv and turn off screen for low energy usage",
-        "info": "",
-        "x": 210,
-        "y": 40,
-        "wires": []
     },
     {
         "id": "0f710598d50e0596",
@@ -562,9 +562,7 @@
         "areaId": [
             "living_room"
         ],
-        "deviceId": [
-            "34a73fe47cda5c964dcb946e48f8a307"
-        ],
+        "deviceId": [],
         "entityId": [
             "remote.harmony_hub_01"
         ],
@@ -936,7 +934,8 @@
                 "6899ab80b8f4ccfd"
             ],
             [
-                "b6c13f3e88d196d9"
+                "b6c13f3e88d196d9",
+                "7602bd2250b367d8"
             ]
         ]
     },
@@ -944,9 +943,9 @@
         "id": "419130d9cbaac3b6",
         "type": "comment",
         "z": "79866c45b34ebc3c",
-        "name": "frontend input select",
+        "name": "frontend activity input select",
         "info": "",
-        "x": 130,
+        "x": 160,
         "y": 100,
         "wires": []
     },
@@ -983,7 +982,7 @@
         "repair": false,
         "outputs": 4,
         "x": 330,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "11141d51e1cc0a89"
@@ -1055,7 +1054,7 @@
             }
         ],
         "x": 130,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "e16e36f693cd77e6"
@@ -1084,7 +1083,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 880,
-        "y": 320,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1121,7 +1120,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 610,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "90aa7330b7dcb647"
@@ -1161,7 +1160,7 @@
         "forType": "num",
         "forUnits": "seconds",
         "x": 610,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "0b032a7e9e924f5e"
@@ -1206,7 +1205,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 370,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "47159d792a448631"
@@ -1251,7 +1250,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 650,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "057c6a119a6a4e2e",
@@ -1297,7 +1296,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 370,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "47159d792a448631"
@@ -1325,7 +1324,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1040,
-        "y": 1080,
+        "y": 1120,
         "wires": [
             []
         ]
@@ -1342,7 +1341,7 @@
         "template": "TV gepauseerd i.v.m. telefoongesprek.",
         "output": "str",
         "x": 880,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "c1521a93f4823d6a",
@@ -1372,7 +1371,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 890,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -1433,7 +1432,7 @@
             }
         ],
         "x": 130,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "91ad59d63c5a49f3"
@@ -1497,7 +1496,7 @@
             }
         ],
         "x": 130,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "cd21f3c2a8ff9e38"
@@ -1512,7 +1511,7 @@
         "name": "pause when phone is off hook",
         "info": "",
         "x": 160,
-        "y": 1000,
+        "y": 1040,
         "wires": []
     },
     {
@@ -1524,7 +1523,7 @@
             "ebf4860d.603538"
         ],
         "x": 995,
-        "y": 1140,
+        "y": 1180,
         "wires": []
     },
     {
@@ -1583,7 +1582,7 @@
             }
         ],
         "x": 140,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "848c101e0f43b693"
@@ -1678,7 +1677,7 @@
         "repair": false,
         "outputs": 15,
         "x": 370,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "e514c36156bd0e38"
@@ -1731,10 +1730,10 @@
         "id": "f6d3dbf1cd63075c",
         "type": "comment",
         "z": "79866c45b34ebc3c",
-        "name": "radio",
+        "name": "action when selecting radio station",
         "info": "",
-        "x": 90,
-        "y": 460,
+        "x": 180,
+        "y": 500,
         "wires": []
     },
     {
@@ -1757,7 +1756,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1784,7 +1783,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 530,
+        "y": 570,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1811,7 +1810,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1838,7 +1837,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 590,
+        "y": 630,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1865,7 +1864,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1892,7 +1891,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 650,
+        "y": 690,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1919,7 +1918,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 680,
+        "y": 720,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1946,7 +1945,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 710,
+        "y": 750,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1973,7 +1972,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 740,
+        "y": 780,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2000,7 +1999,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 770,
+        "y": 810,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2027,7 +2026,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2054,7 +2053,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 830,
+        "y": 870,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2081,7 +2080,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 860,
+        "y": 900,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2108,7 +2107,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 890,
+        "y": 930,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2135,7 +2134,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2182,7 +2181,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1040,
-        "y": 500,
+        "y": 540,
         "wires": [
             []
         ]
@@ -2210,10 +2209,11 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 810,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
-                "dd9f2d1024f98824"
+                "dd9f2d1024f98824",
+                "8f2b019bbb6a0228"
             ]
         ]
     },
@@ -2224,7 +2224,7 @@
         "name": "action based on content",
         "info": "",
         "x": 140,
-        "y": 280,
+        "y": 320,
         "wires": []
     },
     {
@@ -2241,9 +2241,123 @@
         "type": "subflow:ae0491bb.4f1eb",
         "z": "79866c45b34ebc3c",
         "name": "",
-        "x": 910,
-        "y": 380,
+        "x": 930,
+        "y": 420,
         "wires": []
+    },
+    {
+        "id": "7602bd2250b367d8",
+        "type": "ha-wait-until",
+        "z": "79866c45b34ebc3c",
+        "name": "wait until nvidia shield mediaplayer is on",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "media_player.shield",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "paused",
+        "valueType": "str",
+        "timeout": "20",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 760,
+        "y": 260,
+        "wires": [
+            [
+                "edaa3a9645cc28fa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "28a8a84a3423603e",
+        "type": "api-call-service",
+        "z": "79866c45b34ebc3c",
+        "name": "play last played radio station",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_select",
+        "service": "select_option",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_select.radio_station"
+        ],
+        "data": "{\"option\":\"{{payload}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1320,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f2b019bbb6a0228",
+        "type": "ha-sensor",
+        "z": "79866c45b34ebc3c",
+        "name": "last played radio station",
+        "entityConfig": "f7917d8c144527e9",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 1050,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edaa3a9645cc28fa",
+        "type": "api-current-state",
+        "z": "79866c45b34ebc3c",
+        "name": "get last played radio station",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.last_played_radio_station",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1060,
+        "y": 260,
+        "wires": [
+            [
+                "28a8a84a3423603e"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
@@ -2267,5 +2381,46 @@
         "statusHourCycle": "h23",
         "statusTimeFormat": "h:m",
         "enableGlobalContextStore": true
+    },
+    {
+        "id": "f7917d8c144527e9",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "last played radio station",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "last played radio station"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
     }
 ]
