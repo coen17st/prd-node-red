@@ -27,7 +27,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 450,
-        "y": 100,
+        "y": 80,
         "wires": [
             []
         ]
@@ -52,7 +52,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 450,
-        "y": 180,
+        "y": 140,
         "wires": [
             []
         ]
@@ -113,7 +113,7 @@
             }
         ],
         "x": 100,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "249f5902cd409334",
@@ -177,7 +177,7 @@
             }
         ],
         "x": 100,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "249f5902cd409334",
@@ -189,9 +189,9 @@
         "id": "42ddeb921e7ac3ac",
         "type": "comment",
         "z": "2a2d89771193fb8b",
-        "name": "get location when door is open",
+        "name": "Get location when door is open",
         "info": "",
-        "x": 140,
+        "x": 150,
         "y": 40,
         "wires": []
     },

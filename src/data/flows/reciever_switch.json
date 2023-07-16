@@ -37,7 +37,7 @@
             }
         ],
         "x": 70,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "79a27ca1787241f8"
@@ -81,7 +81,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 260,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "0a71aa5b68f863b8"
@@ -111,7 +111,7 @@
         "repair": false,
         "outputs": 2,
         "x": 430,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "f36bbb44f3cf015f"
@@ -145,7 +145,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 620,
-        "y": 200,
+        "y": 180,
         "wires": [
             []
         ]
@@ -174,7 +174,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 620,
-        "y": 140,
+        "y": 120,
         "wires": [
             []
         ]
@@ -235,7 +235,7 @@
             }
         ],
         "x": 100,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "721f486a52bf9c36"
@@ -265,7 +265,7 @@
         "repair": false,
         "outputs": 2,
         "x": 290,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "c10afca66085add3"
@@ -295,7 +295,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "2dc718ac1a979697"
@@ -322,7 +322,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "2dc718ac1a979697"
@@ -342,7 +342,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 620,
-        "y": 260,
+        "y": 240,
         "wires": [
             []
         ]
@@ -354,7 +354,7 @@
         "name": "turn on or off binary sensor device",
         "info": "",
         "x": 180,
-        "y": 220,
+        "y": 200,
         "wires": []
     },
     {
@@ -364,7 +364,7 @@
         "name": "button to toggle device on/off",
         "info": "",
         "x": 160,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {

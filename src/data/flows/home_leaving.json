@@ -313,65 +313,6 @@
         ]
     },
     {
-        "id": "b93cc1561f32248d",
-        "type": "subflow",
-        "name": "temp_frontyard_powersocket_off",
-        "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 40,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "441696546b08b299"
-                    }
-                ]
-            }
-        ],
-        "out": [],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99"
-    },
-    {
-        "id": "441696546b08b299",
-        "type": "api-call-service",
-        "z": "b93cc1561f32248d",
-        "name": "turn off frontyard powersocket",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.shelly1_frontyard_powersocket"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 210,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ce4fb69f6baf8bae",
-        "type": "comment",
-        "z": "b93cc1561f32248d",
-        "name": "temporary subflow to turn off powersocket christmas lights",
-        "info": "",
-        "x": 230,
-        "y": 40,
-        "wires": []
-    },
-    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "off_mode",
@@ -395,13 +336,10 @@
                         "id": "8f9f8583.d61818"
                     },
                     {
-                        "id": "70042c68d7934e2a"
-                    },
-                    {
                         "id": "f9028094.57a62"
                     },
                     {
-                        "id": "8b596edabf419a04"
+                        "id": "db8cc8f4bb9386ab"
                     }
                 ]
             }
@@ -432,8 +370,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 520,
-        "y": 300,
+        "x": 560,
+        "y": 240,
         "wires": [
             []
         ]
@@ -460,7 +398,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 470,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -488,7 +426,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 730,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -507,7 +445,7 @@
         "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
         "x": 860,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "ad7f00b7b2b0e671"
@@ -541,7 +479,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 200,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "9eb23897.6d9b38"
@@ -570,7 +508,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 370,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "fda4eae176ed738e"
@@ -599,7 +537,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 220,
-        "y": 220,
+        "y": 160,
         "wires": [
             []
         ]
@@ -636,7 +574,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 230,
-        "y": 160,
+        "y": 100,
         "wires": [
             []
         ]
@@ -663,20 +601,10 @@
         "outputProperties": [],
         "queue": "none",
         "x": 270,
-        "y": 360,
+        "y": 300,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "a680c17548559ce2",
-        "type": "link out",
-        "z": "79544bf2.1ff3a4",
-        "name": "",
-        "links": [],
-        "x": 1965,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "ad7f00b7b2b0e671",
@@ -698,11 +626,9 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1010,
-        "y": 480,
+        "y": 420,
         "wires": [
-            [
-                "a680c17548559ce2"
-            ]
+            []
         ]
     },
     {
@@ -717,7 +643,7 @@
         "template": "{{{payload.attributes.friendly_name}}}",
         "output": "str",
         "x": 560,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "58d0a2479b16b408"
@@ -745,7 +671,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 730,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "89625810ae98a2fc"
@@ -764,7 +690,7 @@
         "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
         "x": 860,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "a8dadd67cf109c6d"
@@ -791,21 +717,10 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1010,
-        "y": 420,
+        "y": 360,
         "wires": [
-            [
-                "a680c17548559ce2"
-            ]
+            []
         ]
-    },
-    {
-        "id": "70042c68d7934e2a",
-        "type": "subflow:b93cc1561f32248d",
-        "z": "79544bf2.1ff3a4",
-        "name": "",
-        "x": 260,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "db8cc8f4bb9386ab",
@@ -839,7 +754,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 230,
-        "y": 280,
+        "y": 220,
         "wires": [
             [
                 "8b596edabf419a04"
@@ -855,7 +770,7 @@
         "z": "79544bf2.1ff3a4",
         "name": "",
         "x": 450,
-        "y": 260,
+        "y": 200,
         "wires": []
     },
     {
@@ -885,7 +800,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 230,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "397bbd3d.0bb3f2"
@@ -895,7 +810,7 @@
     {
         "id": "8aa6edec.5a013",
         "type": "tab",
-        "label": "away_desired_state",
+        "label": "home_leaving",
         "disabled": false,
         "info": ""
     },
@@ -955,7 +870,7 @@
             }
         ],
         "x": 140,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "af4eaf595d5072d5"
@@ -1019,7 +934,7 @@
             }
         ],
         "x": 90,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "86e3be2e.bc7b4"
@@ -1061,7 +976,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 700,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "49ea77ab.4cfa28",
@@ -1104,7 +1019,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 670,
-        "y": 180,
+        "y": 160,
         "wires": [
             [],
             [
@@ -1130,8 +1045,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 920,
-        "y": 100,
+        "x": 960,
+        "y": 80,
         "wires": [
             [
                 "ab07aadadf97ba44"
@@ -1170,7 +1085,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1000,
-        "y": 320,
+        "y": 140,
         "wires": [
             [
                 "30a120b8f94715ba"
@@ -1200,7 +1115,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1240,
-        "y": 320,
+        "y": 140,
         "wires": [
             [
                 "d1bc843790834774"
@@ -1212,8 +1127,8 @@
         "type": "subflow:79544bf2.1ff3a4",
         "z": "8aa6edec.5a013",
         "name": "",
-        "x": 1060,
-        "y": 100,
+        "x": 1100,
+        "y": 80,
         "wires": []
     },
     {
@@ -1238,7 +1153,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1260,
-        "y": 380,
+        "y": 200,
         "wires": [
             []
         ]
@@ -1275,7 +1190,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1010,
-        "y": 380,
+        "y": 200,
         "wires": [
             [
                 "e98d4730eef641b7"
@@ -1287,7 +1202,7 @@
         "id": "2e713f167c7e9287",
         "type": "comment",
         "z": "8aa6edec.5a013",
-        "name": "the desired state when nobody is home and guest switch is off",
+        "name": "A desired state when nobody is home and guest switch is off",
         "info": "",
         "x": 240,
         "y": 40,
@@ -1320,7 +1235,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 1060,
-        "y": 440,
+        "y": 260,
         "wires": [
             [
                 "d23cc387ab9241d2"
@@ -1349,7 +1264,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1370,
-        "y": 440,
+        "y": 260,
         "wires": [
             []
         ]
@@ -1391,7 +1306,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 330,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "12eb7e9d79ce0291"
@@ -1416,7 +1331,7 @@
         "repair": false,
         "outputs": 1,
         "x": 500,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "99dc8873.517068"
@@ -1479,7 +1394,7 @@
             }
         ],
         "x": 120,
-        "y": 280,
+        "y": 260,
         "wires": [
             [
                 "418ec65b2ffc66b5"
@@ -1519,7 +1434,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 320,
-        "y": 280,
+        "y": 260,
         "wires": [
             [
                 "86e3be2e.bc7b4"
@@ -1547,7 +1462,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 280,
-        "y": 220,
+        "y": 200,
         "wires": [
             []
         ]
@@ -1572,7 +1487,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1440,
-        "y": 320,
+        "y": 140,
         "wires": [
             []
         ]

@@ -29,7 +29,7 @@
         "repair": false,
         "outputs": 2,
         "x": 490,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "5914d077.55a55"
@@ -59,7 +59,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "bea742545d56e3a3"
@@ -86,7 +86,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "bea742545d56e3a3"
@@ -125,7 +125,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 640,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "36f24fd5.59924"
@@ -165,7 +165,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 640,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "54b1f381.39c02c"
@@ -202,7 +202,7 @@
         "state_type": "num",
         "enableInput": true,
         "x": 120,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "376373ce.b5758c"
@@ -228,7 +228,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1150,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "2a923ba7f294667c"
@@ -245,7 +245,7 @@
         "payloadval": "0",
         "name": "",
         "x": 330,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "a204cf33.7f292"
@@ -266,7 +266,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 1010,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "ef6b748.eeaf388"
@@ -303,7 +303,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1300,
-        "y": 100,
+        "y": 80,
         "wires": [
             []
         ]

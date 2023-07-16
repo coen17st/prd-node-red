@@ -294,7 +294,9 @@
         "areaId": [
             "living_room"
         ],
-        "deviceId": [],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
         "entityId": [
             "remote.harmony_hub_01"
         ],
@@ -369,7 +371,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 560,
-        "y": 300,
+        "y": 240,
         "wires": [
             []
         ]
@@ -396,7 +398,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 470,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -424,7 +426,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 730,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -443,7 +445,7 @@
         "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
         "x": 860,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "ad7f00b7b2b0e671"
@@ -477,7 +479,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 200,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "9eb23897.6d9b38"
@@ -506,7 +508,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 370,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "fda4eae176ed738e"
@@ -535,7 +537,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 220,
-        "y": 220,
+        "y": 160,
         "wires": [
             []
         ]
@@ -572,7 +574,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 230,
-        "y": 160,
+        "y": 100,
         "wires": [
             []
         ]
@@ -599,20 +601,10 @@
         "outputProperties": [],
         "queue": "none",
         "x": 270,
-        "y": 360,
+        "y": 300,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "a680c17548559ce2",
-        "type": "link out",
-        "z": "79544bf2.1ff3a4",
-        "name": "",
-        "links": [],
-        "x": 1965,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "ad7f00b7b2b0e671",
@@ -634,11 +626,9 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1010,
-        "y": 480,
+        "y": 420,
         "wires": [
-            [
-                "a680c17548559ce2"
-            ]
+            []
         ]
     },
     {
@@ -653,7 +643,7 @@
         "template": "{{{payload.attributes.friendly_name}}}",
         "output": "str",
         "x": 560,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "58d0a2479b16b408"
@@ -681,7 +671,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 730,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "89625810ae98a2fc"
@@ -700,7 +690,7 @@
         "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
         "x": 860,
-        "y": 420,
+        "y": 360,
         "wires": [
             [
                 "a8dadd67cf109c6d"
@@ -727,11 +717,9 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1010,
-        "y": 420,
+        "y": 360,
         "wires": [
-            [
-                "a680c17548559ce2"
-            ]
+            []
         ]
     },
     {
@@ -766,7 +754,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 230,
-        "y": 280,
+        "y": 220,
         "wires": [
             [
                 "8b596edabf419a04"
@@ -782,7 +770,7 @@
         "z": "79544bf2.1ff3a4",
         "name": "",
         "x": 450,
-        "y": 260,
+        "y": 200,
         "wires": []
     },
     {
@@ -812,7 +800,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 230,
-        "y": 480,
+        "y": 420,
         "wires": [
             [
                 "397bbd3d.0bb3f2"

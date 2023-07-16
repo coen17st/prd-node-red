@@ -28,7 +28,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 490,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "ef67c1284ddb8eed"
@@ -47,7 +47,7 @@
         "finalize": "",
         "libs": [],
         "x": 630,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "99a64ef46dadb061"
@@ -91,7 +91,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 290,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "7f181c3a969cf13c"
@@ -135,7 +135,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 290,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "7f181c3a969cf13c"
@@ -154,7 +154,7 @@
         "onceDelay": "1",
         "topic": "",
         "x": 90,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "6fc7768f0e0e7113",
@@ -185,7 +185,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 800,
-        "y": 100,
+        "y": 80,
         "wires": [
             []
         ]
@@ -240,11 +240,11 @@
             },
             {
                 "property": "device_class",
-                "value": "power"
+                "value": "energy"
             },
             {
                 "property": "unit_of_measurement",
-                "value": "W"
+                "value": "Wh"
             },
             {
                 "property": "state_class",

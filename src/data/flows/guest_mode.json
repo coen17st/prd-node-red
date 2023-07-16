@@ -63,7 +63,7 @@
             }
         ],
         "x": 130,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "0f8b5cf3541d59c4"
@@ -78,7 +78,7 @@
         "name": "turn on guest mode if calendar event with words \"past\" is found in Lise calendar",
         "info": "",
         "x": 320,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -103,7 +103,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 350,
-        "y": 140,
+        "y": 120,
         "wires": [
             []
         ]
@@ -125,7 +125,7 @@
         "name": "If persons are not at home and a door has been opened, ask if the guest mode needs to be turned on.",
         "info": "",
         "x": 390,
-        "y": 200,
+        "y": 180,
         "wires": []
     },
     {
@@ -135,7 +135,7 @@
         "name": "listen to guest mode on action notification answer event ",
         "info": "",
         "x": 240,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -175,7 +175,7 @@
         ],
         "event_type": "",
         "x": 110,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "9fc1160da24a5102"
@@ -204,7 +204,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 310,
-        "y": 440,
+        "y": 420,
         "wires": [
             []
         ]
@@ -265,7 +265,7 @@
             }
         ],
         "x": 130,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "39691718b80b4105"
@@ -290,7 +290,7 @@
         "repair": false,
         "outputs": 1,
         "x": 790,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "1ec3bf6ac9ee7791"
@@ -328,7 +328,7 @@
         "to": "",
         "reg": false,
         "x": 960,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "0c62bc9a0d9a194f"
@@ -362,7 +362,7 @@
         "to": "",
         "reg": false,
         "x": 1140,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "c59198334458c906",
@@ -390,7 +390,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1370,
-        "y": 220,
+        "y": 200,
         "wires": [
             []
         ]
@@ -432,7 +432,7 @@
         ],
         "event_type": "",
         "x": 130,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "59a9a1e67b92890a"
@@ -476,7 +476,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 350,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "4c5e48409ce3be8d"
@@ -521,7 +521,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 580,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "88e2c415c85c433e"
@@ -536,7 +536,7 @@
         "name": "if shelly click event where fired and nobody is home and guest mode is off, ask if the guest mode needs to be turned on.",
         "info": "",
         "x": 440,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
@@ -576,7 +576,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 580,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "739f5c7d5d53c7e8"
@@ -621,7 +621,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 350,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "072df3e380eea942"
@@ -656,7 +656,7 @@
         "to": "",
         "reg": false,
         "x": 800,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "0915111c33b047ff",
@@ -684,7 +684,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1030,
-        "y": 340,
+        "y": 320,
         "wires": [
             []
         ]
@@ -709,7 +709,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1030,
-        "y": 400,
+        "y": 380,
         "wires": [
             []
         ]
@@ -734,7 +734,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1370,
-        "y": 280,
+        "y": 260,
         "wires": [
             []
         ]

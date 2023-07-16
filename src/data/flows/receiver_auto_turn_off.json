@@ -74,9 +74,9 @@
         "id": "e0879954dcf1d35b",
         "type": "comment",
         "z": "9a69a535b1203724",
-        "name": "automaticly turn off receiver when nothing else is on or playing",
+        "name": "Receiver automatically turn off when nothing else is on or playing",
         "info": "",
-        "x": 240,
+        "x": 250,
         "y": 40,
         "wires": []
     },

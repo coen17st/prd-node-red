@@ -62,7 +62,7 @@
             }
         ],
         "x": 120,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "f98986e3.e78848",
@@ -101,7 +101,7 @@
             }
         ],
         "x": 900,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "45dfd14d.84864"
@@ -123,7 +123,7 @@
         "template": "Er is aangebeld maar de voordeur is niet open gedaan. ",
         "output": "str",
         "x": 1100,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "32209a51.6b6536"
@@ -142,7 +142,7 @@
         "template": "Er is aangebeld, de voordeur is open gedaan. ",
         "output": "str",
         "x": 1100,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "32209a51.6b6536",
@@ -170,7 +170,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1310,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "aa2e94ac.c75bf8"
@@ -209,7 +209,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 900,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "63738500.aace1c"
@@ -239,7 +239,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1070,
-        "y": 320,
+        "y": 300,
         "wires": [
             [],
             [
@@ -279,7 +279,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1530,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "d0000832.eafa28"
@@ -307,7 +307,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1750,
-        "y": 260,
+        "y": 240,
         "wires": [
             []
         ]
@@ -368,7 +368,7 @@
             }
         ],
         "x": 120,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "59bbde6d.37f02"
@@ -408,7 +408,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 320,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "d1c2946f.425ad8"
@@ -438,7 +438,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 520,
-        "y": 100,
+        "y": 80,
         "wires": [
             []
         ]
@@ -475,7 +475,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 330,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "c1191c26.764cf"
@@ -505,7 +505,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 750,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "74b0f721.d079c8"
@@ -532,7 +532,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1040,
-        "y": 380,
+        "y": 360,
         "wires": [
             []
         ]
@@ -549,7 +549,7 @@
         "template": "Er is aangebeld. ",
         "output": "str",
         "x": 900,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "cdd2f7dd.b79268"
@@ -588,7 +588,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 330,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "d6c8ef4a.6f6e9"
@@ -618,7 +618,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 780,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "f39e3558.7e0a48"
@@ -657,7 +657,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 550,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "c63cd5dd.2969b8"
@@ -685,7 +685,7 @@
         "to": "",
         "reg": false,
         "x": 630,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "fa85ecea.e1cdd"
@@ -709,7 +709,7 @@
         "drop": false,
         "outputs": 1,
         "x": 440,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "26977249.cf194e"
@@ -736,7 +736,7 @@
         "to": "",
         "reg": false,
         "x": 630,
-        "y": 280,
+        "y": 260,
         "wires": [
             [
                 "fa85ecea.e1cdd"
@@ -775,7 +775,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 540,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "c3f4b74d.a01278"
@@ -805,7 +805,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1180,
-        "y": 440,
+        "y": 420,
         "wires": [
             []
         ]
@@ -828,7 +828,7 @@
         "default_start": true,
         "differ": false,
         "x": 630,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "896e21b5.a4b9e",
@@ -847,7 +847,7 @@
         "payloadval": "0",
         "name": "",
         "x": 980,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "4566a0c1.1b69e"
@@ -877,7 +877,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1710,
-        "y": 320,
+        "y": 300,
         "wires": [
             []
         ]
@@ -894,7 +894,7 @@
         "template": "Er is aangebeld.",
         "output": "str",
         "x": 1200,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "30224e76c039750b"
@@ -934,7 +934,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 1450,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "211ffb19.e76354"
@@ -961,7 +961,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1300,
-        "y": 220,
+        "y": 180,
         "wires": [
             []
         ]

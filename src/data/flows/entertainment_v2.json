@@ -201,46 +201,6 @@
         ]
     },
     {
-        "id": "e324372da3a76b29",
-        "type": "ha-wait-until",
-        "z": "ae0491bb.4f1eb",
-        "name": "wait until lg webos tv mediaplayer is on",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "media_player.lg_webos_smart_tv",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is",
-        "value": "on",
-        "valueType": "str",
-        "timeout": "0",
-        "timeoutType": "num",
-        "timeoutUnits": "seconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 270,
-        "y": 100,
-        "wires": [
-            [
-                "0cb67556a76c3eb6"
-            ]
-        ]
-    },
-    {
-        "id": "54d7a449b5482909",
-        "type": "comment",
-        "z": "ae0491bb.4f1eb",
-        "name": "turn on receiver, tv and turn off screen for low energy usage",
-        "info": "",
-        "x": 230,
-        "y": 40,
-        "wires": []
-    },
-    {
         "id": "0cb67556a76c3eb6",
         "type": "api-call-service",
         "z": "ae0491bb.4f1eb",
@@ -261,11 +221,51 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 520,
+        "x": 460,
         "y": 100,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "e324372da3a76b29",
+        "type": "ha-wait-until",
+        "z": "ae0491bb.4f1eb",
+        "name": "wait until tv mediaplayer is on",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 1,
+        "entityId": "media_player.lg_webos_smart_tv",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "on",
+        "valueType": "str",
+        "timeout": "0",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "0cb67556a76c3eb6"
+            ]
+        ]
+    },
+    {
+        "id": "54d7a449b5482909",
+        "type": "comment",
+        "z": "ae0491bb.4f1eb",
+        "name": "turn on tv and turn off screen for low energy usage",
+        "info": "",
+        "x": 210,
+        "y": 40,
+        "wires": []
     },
     {
         "id": "0f710598d50e0596",
@@ -562,7 +562,9 @@
         "areaId": [
             "living_room"
         ],
-        "deviceId": [],
+        "deviceId": [
+            "34a73fe47cda5c964dcb946e48f8a307"
+        ],
         "entityId": [
             "remote.harmony_hub_01"
         ],
@@ -890,7 +892,7 @@
             }
         ],
         "x": 150,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "9c3fb5b7a33f4cfe"
@@ -925,7 +927,7 @@
         "repair": false,
         "outputs": 3,
         "x": 430,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "c0e461ba205d827d"
@@ -946,7 +948,7 @@
         "name": "frontend activity input select",
         "info": "",
         "x": 160,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -982,7 +984,7 @@
         "repair": false,
         "outputs": 4,
         "x": 330,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "11141d51e1cc0a89"
@@ -1054,7 +1056,7 @@
             }
         ],
         "x": 130,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "e16e36f693cd77e6"
@@ -1083,7 +1085,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 880,
-        "y": 360,
+        "y": 340,
         "wires": [
             []
         ]
@@ -1120,7 +1122,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 610,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "90aa7330b7dcb647"
@@ -1160,7 +1162,7 @@
         "forType": "num",
         "forUnits": "seconds",
         "x": 610,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "0b032a7e9e924f5e"
@@ -1205,7 +1207,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 370,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "47159d792a448631"
@@ -1250,7 +1252,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 650,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "057c6a119a6a4e2e",
@@ -1296,7 +1298,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 370,
-        "y": 1140,
+        "y": 1120,
         "wires": [
             [
                 "47159d792a448631"
@@ -1324,7 +1326,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1040,
-        "y": 1120,
+        "y": 1100,
         "wires": [
             []
         ]
@@ -1341,7 +1343,7 @@
         "template": "TV gepauseerd i.v.m. telefoongesprek.",
         "output": "str",
         "x": 880,
-        "y": 1140,
+        "y": 1120,
         "wires": [
             [
                 "c1521a93f4823d6a",
@@ -1371,7 +1373,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 890,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             []
         ]
@@ -1432,7 +1434,7 @@
             }
         ],
         "x": 130,
-        "y": 1080,
+        "y": 1060,
         "wires": [
             [
                 "91ad59d63c5a49f3"
@@ -1496,7 +1498,7 @@
             }
         ],
         "x": 130,
-        "y": 1140,
+        "y": 1120,
         "wires": [
             [
                 "cd21f3c2a8ff9e38"
@@ -1511,7 +1513,7 @@
         "name": "pause when phone is off hook",
         "info": "",
         "x": 160,
-        "y": 1040,
+        "y": 1020,
         "wires": []
     },
     {
@@ -1523,7 +1525,7 @@
             "ebf4860d.603538"
         ],
         "x": 995,
-        "y": 1180,
+        "y": 1160,
         "wires": []
     },
     {
@@ -1582,7 +1584,7 @@
             }
         ],
         "x": 140,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "848c101e0f43b693"
@@ -1677,7 +1679,7 @@
         "repair": false,
         "outputs": 15,
         "x": 370,
-        "y": 640,
+        "y": 620,
         "wires": [
             [
                 "e514c36156bd0e38"
@@ -1733,7 +1735,7 @@
         "name": "action when selecting radio station",
         "info": "",
         "x": 180,
-        "y": 500,
+        "y": 480,
         "wires": []
     },
     {
@@ -1756,7 +1758,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1783,7 +1785,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 570,
+        "y": 550,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1810,7 +1812,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 600,
+        "y": 580,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1837,7 +1839,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 630,
+        "y": 610,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1864,7 +1866,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 660,
+        "y": 640,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1891,7 +1893,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 690,
+        "y": 670,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1918,7 +1920,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 720,
+        "y": 700,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1945,7 +1947,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 750,
+        "y": 730,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1972,7 +1974,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 780,
+        "y": 760,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -1999,7 +2001,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 810,
+        "y": 790,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2026,7 +2028,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 840,
+        "y": 820,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2053,7 +2055,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 870,
+        "y": 850,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2080,7 +2082,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 900,
+        "y": 880,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2107,7 +2109,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 930,
+        "y": 910,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2134,7 +2136,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 960,
+        "y": 940,
         "wires": [
             [
                 "d7f77e56d6127dc7"
@@ -2147,7 +2149,7 @@
         "z": "79866c45b34ebc3c",
         "name": "",
         "x": 670,
-        "y": 180,
+        "y": 160,
         "wires": []
     },
     {
@@ -2156,7 +2158,7 @@
         "z": "79866c45b34ebc3c",
         "name": "",
         "x": 670,
-        "y": 140,
+        "y": 120,
         "wires": []
     },
     {
@@ -2181,7 +2183,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1040,
-        "y": 540,
+        "y": 520,
         "wires": [
             []
         ]
@@ -2209,7 +2211,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 810,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "dd9f2d1024f98824",
@@ -2224,7 +2226,7 @@
         "name": "action based on content",
         "info": "",
         "x": 140,
-        "y": 320,
+        "y": 300,
         "wires": []
     },
     {
@@ -2233,7 +2235,7 @@
         "z": "79866c45b34ebc3c",
         "name": "",
         "x": 710,
-        "y": 220,
+        "y": 200,
         "wires": []
     },
     {
@@ -2242,7 +2244,7 @@
         "z": "79866c45b34ebc3c",
         "name": "",
         "x": 930,
-        "y": 420,
+        "y": 400,
         "wires": []
     },
     {
@@ -2268,7 +2270,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 760,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "edaa3a9645cc28fa"
@@ -2298,7 +2300,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1320,
-        "y": 260,
+        "y": 240,
         "wires": [
             []
         ]
@@ -2316,7 +2318,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 1050,
-        "y": 600,
+        "y": 580,
         "wires": [
             []
         ]
@@ -2352,7 +2354,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 1060,
-        "y": 260,
+        "y": 240,
         "wires": [
             [
                 "28a8a84a3423603e"
