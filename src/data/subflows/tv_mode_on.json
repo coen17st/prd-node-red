@@ -21,6 +21,9 @@
                     },
                     {
                         "id": "71594be305815ee3"
+                    },
+                    {
+                        "id": "f03069dd7ff849fa"
                     }
                 ]
             }
@@ -205,7 +208,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 200,
-        "y": 200,
+        "y": 220,
         "wires": [
             []
         ]
@@ -232,7 +235,34 @@
         "outputProperties": [],
         "queue": "none",
         "x": 200,
-        "y": 240,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f03069dd7ff849fa",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "input select radio uit",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_select",
+        "service": "select_option",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_select.radio_station"
+        ],
+        "data": "{\"option\":\"Radio Uit\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 220,
+        "y": 180,
         "wires": [
             []
         ]
