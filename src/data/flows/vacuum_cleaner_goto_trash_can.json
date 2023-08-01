@@ -43,14 +43,14 @@
         "name": "vacuum is idle",
         "server": "4ba92433.2478cc",
         "version": 2,
-        "outputs": 1,
+        "outputs": 2,
         "entityId": "vacuum.roborock_s6_pure",
         "entityIdFilterType": "exact",
         "property": "state",
         "comparator": "is",
         "value": "idle",
         "valueType": "str",
-        "timeout": "0",
+        "timeout": "1",
         "timeoutType": "num",
         "timeoutUnits": "minutes",
         "checkCurrentState": true,
@@ -62,9 +62,22 @@
         "y": 100,
         "wires": [
             [
-                "d1271eec3942fa45"
+                "0b5c9ff7f6f1c802"
+            ],
+            [
+                "0b5c9ff7f6f1c802"
             ]
         ]
+    },
+    {
+        "id": "c724e1ce3b75fdca",
+        "type": "comment",
+        "z": "d75716f30ab50f51",
+        "name": "vacuum go to trash can every monday morning",
+        "info": "",
+        "x": 200,
+        "y": 40,
+        "wires": []
     },
     {
         "id": "d1271eec3942fa45",
@@ -87,21 +100,42 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 440,
+        "x": 640,
         "y": 100,
         "wires": [
             []
         ]
     },
     {
-        "id": "c724e1ce3b75fdca",
-        "type": "comment",
+        "id": "0b5c9ff7f6f1c802",
+        "type": "ha-wait-until",
         "z": "d75716f30ab50f51",
-        "name": "vacuum go to trash can every monday morning",
-        "info": "",
-        "x": 200,
-        "y": 40,
-        "wires": []
+        "name": "vacuum is docked",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "vacuum.roborock_s6_pure",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "docked",
+        "valueType": "str",
+        "timeout": "1",
+        "timeoutType": "num",
+        "timeoutUnits": "minutes",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "d1271eec3942fa45"
+            ],
+            []
+        ]
     },
     {
         "id": "4ba92433.2478cc",

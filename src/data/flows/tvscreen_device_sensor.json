@@ -1,0 +1,244 @@
+[
+    {
+        "id": "b1c954404ea39706",
+        "type": "tab",
+        "label": "tvscreen_device_sensor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2a258b8e5d5f02c1",
+        "type": "change",
+        "z": "b1c954404ea39706",
+        "name": "off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 60,
+        "wires": [
+            [
+                "e03eed5bed2f57e7"
+            ]
+        ]
+    },
+    {
+        "id": "bb325460c43b1166",
+        "type": "change",
+        "z": "b1c954404ea39706",
+        "name": "on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "e03eed5bed2f57e7"
+            ]
+        ]
+    },
+    {
+        "id": "edb38616cd8dda04",
+        "type": "server-state-changed",
+        "z": "b1c954404ea39706",
+        "name": "tv device power",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.shellyplug_tv_power",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "5620508d3ec7e20a"
+            ]
+        ]
+    },
+    {
+        "id": "5620508d3ec7e20a",
+        "type": "switch",
+        "z": "b1c954404ea39706",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "53",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "53",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 60,
+        "wires": [
+            [
+                "2a258b8e5d5f02c1"
+            ],
+            [
+                "bb325460c43b1166"
+            ]
+        ]
+    },
+    {
+        "id": "bee1f110f6601d1b",
+        "type": "comment",
+        "z": "b1c954404ea39706",
+        "name": "turn on or off binary sensor tvscreen device base on tv power usage",
+        "info": "",
+        "x": 260,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e03eed5bed2f57e7",
+        "type": "ha-binary-sensor",
+        "z": "b1c954404ea39706",
+        "name": "tvscreen_device",
+        "entityConfig": "bb28b274f3ceaae8",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 520,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "bb28b274f3ceaae8",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "tvscreen_device",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "tvscreen_device"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]

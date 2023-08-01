@@ -1,17 +1,17 @@
 [
     {
-        "id": "9a69a535b1203724",
+        "id": "39f5e6336137f4b2",
         "type": "tab",
-        "label": "receiver_auto_turn_off",
+        "label": "tvscreen_auto_turn_on-off",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "f91fa138a7f2abc1",
+        "id": "a50b36c508ee1125",
         "type": "server-state-changed",
-        "z": "9a69a535b1203724",
-        "name": "receiver power",
+        "z": "39f5e6336137f4b2",
+        "name": "mediaplayer shield is not playing",
         "server": "4ba92433.2478cc",
         "version": 4,
         "exposeToHomeAssistant": false,
@@ -25,7 +25,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "sensor.shellyplug_reciever_power",
+        "entityidfilter": "media_player.shield",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
@@ -34,14 +34,14 @@
         "halt_if_compare": "is",
         "outputs": 1,
         "output_only_on_state_change": true,
-        "for": "0",
+        "for": "",
         "forType": "num",
         "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
             {
                 "property": "payload",
@@ -62,36 +62,36 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 100,
-        "y": 80,
+        "x": 150,
+        "y": 60,
         "wires": [
             [
-                "8777a418e97e0ad5"
+                "b17acb7df0bb2bd2"
             ]
         ]
     },
     {
-        "id": "e0879954dcf1d35b",
+        "id": "2a804e94931f7201",
         "type": "comment",
-        "z": "9a69a535b1203724",
-        "name": "Receiver automatically turn off when nothing else is on or playing",
+        "z": "39f5e6336137f4b2",
+        "name": "turn off tvscreen when nothing is playing and turn back on when mediaplayer start playing",
         "info": "",
-        "x": 250,
-        "y": 40,
+        "x": 330,
+        "y": 20,
         "wires": []
     },
     {
-        "id": "8777a418e97e0ad5",
+        "id": "4627b4f17833a9c1",
         "type": "api-current-state",
-        "z": "9a69a535b1203724",
-        "name": "harmony activity is uitschakelen",
+        "z": "39f5e6336137f4b2",
+        "name": "tvscreen is off",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "Uitschakelen",
+        "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "input_select.entertainment_activity",
+        "entity_id": "binary_sensor.tvscreen_device",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -116,27 +116,79 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 330,
-        "y": 80,
+        "x": 520,
+        "y": 160,
         "wires": [
             [
-                "9d45a39ca5257c50"
+                "bbc211bb39309e9a"
             ],
             []
         ]
     },
     {
-        "id": "9d45a39ca5257c50",
+        "id": "b17acb7df0bb2bd2",
+        "type": "switch",
+        "z": "39f5e6336137f4b2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "paused",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "playing",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 60,
+        "wires": [
+            [
+                "e7db7dd82d8ece7e"
+            ],
+            [
+                "4627b4f17833a9c1",
+                "d9540c933a60aec7"
+            ]
+        ]
+    },
+    {
+        "id": "e7db7dd82d8ece7e",
+        "type": "stoptimer",
+        "z": "39f5e6336137f4b2",
+        "duration": "1",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 720,
+        "y": 60,
+        "wires": [
+            [
+                "e1bd6c5c2a6f6233"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e1bd6c5c2a6f6233",
         "type": "api-current-state",
-        "z": "9a69a535b1203724",
-        "name": "shield is not playing",
+        "z": "39f5e6336137f4b2",
+        "name": "tvscreen is on",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "playing",
+        "halt_if": "on",
         "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "media_player.shield",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.tvscreen_device",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -161,60 +213,94 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 570,
-        "y": 80,
+        "x": 900,
+        "y": 60,
         "wires": [
             [
-                "ee2913f0963879b4"
+                "e909b6acc3cb8b7e"
             ],
             []
         ]
     },
     {
-        "id": "78ba731d3c889a39",
+        "id": "e909b6acc3cb8b7e",
         "type": "api-call-service",
-        "z": "9a69a535b1203724",
-        "name": "turn off reciever",
+        "z": "39f5e6336137f4b2",
+        "name": "turn off tvscreen",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "button",
+        "service": "press",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "remote.harmony_hub_01"
+            "button.beeldscherm"
         ],
-        "data": "{\"device\":\"53126254\",\"command\":\"PowerOff\"}",
-        "dataType": "json",
+        "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 880,
-        "y": 80,
+        "x": 1080,
+        "y": 60,
         "wires": [
             []
         ]
     },
     {
-        "id": "ee2913f0963879b4",
-        "type": "rbe",
-        "z": "9a69a535b1203724",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 730,
-        "y": 80,
+        "id": "d9540c933a60aec7",
+        "type": "change",
+        "z": "39f5e6336137f4b2",
+        "name": "set payload stop",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "stop",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 120,
         "wires": [
             [
-                "78ba731d3c889a39"
+                "e7db7dd82d8ece7e"
             ]
+        ]
+    },
+    {
+        "id": "bbc211bb39309e9a",
+        "type": "api-call-service",
+        "z": "39f5e6336137f4b2",
+        "name": "turn on tvscreen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "button",
+        "service": "press",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "button.beeldscherm"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 160,
+        "wires": [
+            []
         ]
     },
     {
