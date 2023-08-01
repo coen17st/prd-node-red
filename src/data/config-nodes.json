@@ -130,39 +130,6 @@
     "debugEnabled": false
   },
   {
-    "id": "c0f2ea3e778823b7",
-    "type": "ha-entity-config",
-    "server": "4ba92433.2478cc",
-    "deviceConfig": "",
-    "name": "receiver",
-    "version": "6",
-    "entityType": "binary_sensor",
-    "haConfig": [
-      {
-        "property": "name",
-        "value": "receiver"
-      },
-      {
-        "property": "icon",
-        "value": ""
-      },
-      {
-        "property": "entity_category",
-        "value": ""
-      },
-      {
-        "property": "entity_picture",
-        "value": ""
-      },
-      {
-        "property": "device_class",
-        "value": ""
-      }
-    ],
-    "resend": true,
-    "debugEnabled": false
-  },
-  {
     "id": "334728918669134a",
     "type": "ha-entity-config",
     "server": "4ba92433.2478cc",
