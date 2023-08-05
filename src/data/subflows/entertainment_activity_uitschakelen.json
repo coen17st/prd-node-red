@@ -1,29 +1,29 @@
 [
     {
-        "id": "9ed9ce7ce8f74ca0",
+        "id": "0f710598d50e0596",
         "type": "subflow",
-        "name": "tv_mode_on",
+        "name": "entertainment_activity_uitschakelen",
         "info": "",
         "category": "",
         "in": [
             {
                 "x": 40,
-                "y": 100,
+                "y": 60,
                 "wires": [
                     {
-                        "id": "cbffe613f7b4d2cd"
+                        "id": "19c16b81a65ce03d"
                     },
                     {
-                        "id": "ab941695962a49ca"
+                        "id": "7d78624dbc489f07"
                     },
                     {
-                        "id": "39676675d41d2349"
+                        "id": "f0aeb0277f95eebd"
                     },
                     {
-                        "id": "71594be305815ee3"
+                        "id": "6a12c49028cb62b2"
                     },
                     {
-                        "id": "f03069dd7ff849fa"
+                        "id": "e8245e0ecd2f1f05"
                     }
                 ]
             }
@@ -34,66 +34,19 @@
         "color": "#DDAA99"
     },
     {
-        "id": "cbffe613f7b4d2cd",
-        "type": "api-current-state",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "state shield is not on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "media_player.shield",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 220,
-        "y": 100,
-        "wires": [
-            [
-                "210448aceed6c74e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "210448aceed6c74e",
+        "id": "19c16b81a65ce03d",
         "type": "api-call-service",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "turn on shield",
+        "z": "0f710598d50e0596",
+        "name": "turn off TV media players",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "media_player",
-        "service": "turn_on",
+        "service": "turn_off",
         "areaId": [],
-        "deviceId": [
-            "aa1a5fa6d13fc3224345d871874f8619"
-        ],
+        "deviceId": [],
         "entityId": [
-            "media_player.shield"
+            "group.tv_media_players"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -101,31 +54,21 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 460,
-        "y": 100,
+        "x": 230,
+        "y": 60,
         "wires": [
             []
         ]
     },
     {
-        "id": "e5c0ae3969af85fb",
-        "type": "comment",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "turn on tv, shield mediaplayer and receiver",
-        "info": "",
-        "x": 180,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "ab941695962a49ca",
+        "id": "7d78624dbc489f07",
         "type": "api-current-state",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "state input boolean tv is off",
+        "z": "0f710598d50e0596",
+        "name": "state input boolean tv is on",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "off",
+        "halt_if": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "input_boolean.tv",
@@ -149,24 +92,24 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 240,
-        "y": 140,
+        "y": 180,
         "wires": [
             [
-                "c5696bd905d5d0b2"
+                "ed81a86bf1f06d72"
             ],
             []
         ]
     },
     {
-        "id": "c5696bd905d5d0b2",
+        "id": "ed81a86bf1f06d72",
         "type": "api-call-service",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "turn on input boolean tv",
+        "z": "0f710598d50e0596",
+        "name": "turn off input boolean tv",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "input_boolean",
-        "service": "turn_on",
+        "service": "turn_off",
         "areaId": [],
         "deviceId": [],
         "entityId": [
@@ -178,46 +121,84 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 490,
-        "y": 140,
+        "x": 510,
+        "y": 180,
         "wires": [
             []
         ]
     },
     {
-        "id": "39676675d41d2349",
+        "id": "f0aeb0277f95eebd",
+        "type": "api-current-state",
+        "z": "0f710598d50e0596",
+        "name": "state input boolean music is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.music",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "7df266f8e004a08d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7df266f8e004a08d",
         "type": "api-call-service",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "turn on receiver",
+        "z": "0f710598d50e0596",
+        "name": "turn off input boolean music",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "remote",
-        "service": "send_command",
+        "domain": "input_boolean",
+        "service": "turn_off",
         "areaId": [],
-        "deviceId": [
-            "34a73fe47cda5c964dcb946e48f8a307"
-        ],
+        "deviceId": [],
         "entityId": [
-            "remote.harmony_hub_01"
+            "input_boolean.music"
         ],
-        "data": "{\"device\":\"53126254\",\"command\":\"PowerOn\"}",
+        "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 200,
+        "x": 520,
         "y": 220,
         "wires": [
             []
         ]
     },
     {
-        "id": "71594be305815ee3",
+        "id": "6a12c49028cb62b2",
         "type": "api-call-service",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "turn on screen",
+        "z": "0f710598d50e0596",
+        "name": "turn off tv",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -228,41 +209,51 @@
         "entityId": [
             "media_player.lg_webos_smart_tv"
         ],
-        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
+        "data": "{\"command\":\"system/turnOff\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 200,
-        "y": 260,
+        "x": 180,
+        "y": 100,
         "wires": [
             []
         ]
     },
     {
-        "id": "f03069dd7ff849fa",
+        "id": "01023f008e958a2c",
+        "type": "comment",
+        "z": "0f710598d50e0596",
+        "name": "All actions when choose entertainment activity: Uitschakelen",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e8245e0ecd2f1f05",
         "type": "api-call-service",
-        "z": "9ed9ce7ce8f74ca0",
-        "name": "input select radio uit",
+        "z": "0f710598d50e0596",
+        "name": "stop bluesound powernode",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "input_select",
-        "service": "select_option",
+        "domain": "media_player",
+        "service": "media_stop",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "input_select.radio_station"
+            "media_player.powernode_2i_ea48"
         ],
-        "data": "{\"option\":\"Radio Uit\"}",
+        "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 220,
-        "y": 180,
+        "x": 240,
+        "y": 140,
         "wires": [
             []
         ]
@@ -279,9 +270,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
