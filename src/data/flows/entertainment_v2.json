@@ -270,13 +270,13 @@
     {
         "id": "0f710598d50e0596",
         "type": "subflow",
-        "name": "tv_mode_off",
+        "name": "entertainment_activity_uitschakelen",
         "info": "",
         "category": "",
         "in": [
             {
                 "x": 40,
-                "y": 40,
+                "y": 60,
                 "wires": [
                     {
                         "id": "19c16b81a65ce03d"
@@ -288,13 +288,10 @@
                         "id": "f0aeb0277f95eebd"
                     },
                     {
-                        "id": "f69679ab2ccbee4f"
+                        "id": "6a12c49028cb62b2"
                     },
                     {
-                        "id": "1f164f2207e30219"
-                    },
-                    {
-                        "id": "46e45a22c53e320a"
+                        "id": "e8245e0ecd2f1f05"
                     }
                 ]
             }
@@ -581,15 +578,52 @@
         ]
     },
     {
+        "id": "01023f008e958a2c",
+        "type": "comment",
+        "z": "0f710598d50e0596",
+        "name": "All actions when choose entertainment activity: Uitschakelen",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e8245e0ecd2f1f05",
+        "type": "api-call-service",
+        "z": "0f710598d50e0596",
+        "name": "stop bluesound powernode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "media_stop",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.powernode_2i_ea48"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 240,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "9ed9ce7ce8f74ca0",
         "type": "subflow",
-        "name": "tv_mode_on",
+        "name": "entertainment_activity_tv",
         "info": "",
         "category": "",
         "in": [
             {
                 "x": 40,
-                "y": 100,
+                "y": 60,
                 "wires": [
                     {
                         "id": "cbffe613f7b4d2cd"
@@ -598,13 +632,10 @@
                         "id": "ab941695962a49ca"
                     },
                     {
-                        "id": "39676675d41d2349"
-                    },
-                    {
                         "id": "71594be305815ee3"
                     },
                     {
-                        "id": "f03069dd7ff849fa"
+                        "id": "2072915838e89250"
                     }
                 ]
             }
@@ -789,7 +820,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 200,
-        "y": 220,
+        "y": 200,
         "wires": [
             []
         ]
@@ -816,7 +847,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 200,
-        "y": 260,
+        "y": 240,
         "wires": [
             []
         ]
@@ -849,10 +880,37 @@
         ]
     },
     {
+        "id": "2072915838e89250",
+        "type": "api-call-service",
+        "z": "9ed9ce7ce8f74ca0",
+        "name": "select source optical input on bluesound powernode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "select_source",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.powernode_2i_ea48"
+        ],
+        "data": "{\"source\":\"Optical Input 1\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 310,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "79866c45b34ebc3c",
         "type": "tab",
         "label": "entertainment_v2",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -2411,9 +2469,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
