@@ -62,20 +62,6 @@ spec:
         app: node-red
 
 ---
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: node-red-flows-credentials
-  namespace: home-automation
-  labels:
-    app: node-red
-data:
-  flows_cred.json: |-
-    {
-        "$": "4f7aac9fd29ea66e64ea08593192d4cfZs12lSGPZGkAEJPL/OZR4opDLPTUJjtpkNgPUso3Ym72f1ZaK06Vr9Ry/Dhcg4hNOdiEMpLD3L0ldOpXyodLQJbxSTzOOpaWiXTLO89ug1Pjfj4o8uVwo8JtSHLJbY1ndTWrywAqzDDdL/g93uuPetSnTMckjd/pM5+4Na+u5jE4dvHeIGdXxQxssWEWmZxomk4PbFvEWKUWzedkRtkmXNV5tH75zXPCRhB1xjDk5E1zGUXX3h84LtJz0v/Ilvz4X8CUnFJUW+UBvY/XS37ym7KmkQPAHAKxk3Y5j3o+H+PsDStvgfJNUYyj+CWmvUZ7Mg7P+PI0uJfy2dhvvzh3QQFHvvvLPHD56IJ1bTCyI/lBx94="
-    }
-
----
 kind: Deployment
 apiVersion: apps/v1
 metadata:
@@ -112,16 +98,10 @@ spec:
             - name: settings
               mountPath: /data/settings.js
               subPath: settings.js
-            - name: flow-cred
-              mountPath: /data/flows_cred.json
-              subPath: flows_cred.json
       volumes:
         - name: settings
           secret:
             secretName: settings
-        - name: flow-cred
-          configMap:
-            name: node-red-flows-credentials
       imagePullSecrets:
         - name: harbor-registry-creds
 
