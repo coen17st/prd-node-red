@@ -19,5 +19,4 @@ RUN npm install \
     node-red-contrib-time-range-switch \
     node-red-contrib-traffic \
     node-red-contrib-flow-manager \
-    node-red-node-random \
-    node-red-contrib-spotify
+    node-red-node-random
