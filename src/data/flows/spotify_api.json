@@ -1,0 +1,320 @@
+[
+    {
+        "id": "53a5f07742283c4c",
+        "type": "tab",
+        "label": "spotify_api",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2ba64b7b96f9fcb4",
+        "type": "http request",
+        "z": "53a5f07742283c4c",
+        "name": "get token",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://accounts.spotify.com/api/token",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/x-www-form-urlencoded"
+            }
+        ],
+        "x": 680,
+        "y": 120,
+        "wires": [
+            [
+                "743d58e81b2bc746"
+            ]
+        ]
+    },
+    {
+        "id": "c2135e1864cfd9e7",
+        "type": "change",
+        "z": "53a5f07742283c4c",
+        "name": "client id and client secret",
+        "rules": [
+            {
+                "t": "set",
+                "p": "client_id",
+                "pt": "msg",
+                "to": "3220aaebce6b497d8ecfb8455b47a249",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "client_secret",
+                "pt": "msg",
+                "to": "REDACTED",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "924b2a4b7bccd021"
+            ]
+        ]
+    },
+    {
+        "id": "924b2a4b7bccd021",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "body for get token",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "grant_type=client_credentials&client_id={{{client_id}}}&client_secret={{{client_secret}}}",
+        "output": "str",
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "2ba64b7b96f9fcb4"
+            ]
+        ]
+    },
+    {
+        "id": "d549ae06b796a2a9",
+        "type": "inject",
+        "z": "53a5f07742283c4c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "c2135e1864cfd9e7"
+            ]
+        ]
+    },
+    {
+        "id": "743d58e81b2bc746",
+        "type": "change",
+        "z": "53a5f07742283c4c",
+        "name": "save access token to flow variable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "access_token",
+                "pt": "flow",
+                "to": "payload.access_token",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd375d61ba0a188f",
+        "type": "inject",
+        "z": "53a5f07742283c4c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "50dd1df3d057525e"
+            ]
+        ]
+    },
+    {
+        "id": "50dd1df3d057525e",
+        "type": "change",
+        "z": "53a5f07742283c4c",
+        "name": "userid",
+        "rules": [
+            {
+                "t": "set",
+                "p": "userid",
+                "pt": "flow",
+                "to": "coen.s-nl",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "5b5550b55913708a"
+            ]
+        ]
+    },
+    {
+        "id": "5b5550b55913708a",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "url",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.spotify.com/v1/users/{{flow.userid}}/playlists",
+        "output": "str",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "9bee98e3c1ca5078"
+            ]
+        ]
+    },
+    {
+        "id": "9bee98e3c1ca5078",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "authorization value",
+        "field": "authorization",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{{flow.access_token}}}",
+        "output": "str",
+        "x": 510,
+        "y": 220,
+        "wires": [
+            [
+                "746a4d6c560b9b29"
+            ]
+        ]
+    },
+    {
+        "id": "746a4d6c560b9b29",
+        "type": "http request",
+        "z": "53a5f07742283c4c",
+        "name": "get users/{user_id}/playlists",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "msg",
+                "valueValue": "authorization"
+            }
+        ],
+        "x": 740,
+        "y": 220,
+        "wires": [
+            [
+                "e2623b4f572ecba6"
+            ]
+        ]
+    },
+    {
+        "id": "e2623b4f572ecba6",
+        "type": "debug",
+        "z": "53a5f07742283c4c",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c450a51ea918b745",
+        "type": "comment",
+        "z": "53a5f07742283c4c",
+        "name": "API calls to spotify",
+        "info": "",
+        "x": 110,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "89aa9bdbc6b3e1a9",
+        "type": "comment",
+        "z": "53a5f07742283c4c",
+        "name": "Get access token and save to flow variable. Getting user ID and User secret from ENV variable",
+        "info": "",
+        "x": 360,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "611b1ce15c3ce743",
+        "type": "comment",
+        "z": "53a5f07742283c4c",
+        "name": "Get users playlists",
+        "info": "",
+        "x": 130,
+        "y": 180,
+        "wires": []
+    }
+]

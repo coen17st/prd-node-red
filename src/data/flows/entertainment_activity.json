@@ -909,7 +909,7 @@
     {
         "id": "fd9cd80f14f860fe",
         "type": "tab",
-        "label": "entertainment_v3",
+        "label": "entertainment_activity",
         "disabled": false,
         "info": "",
         "env": []
@@ -1651,7 +1651,7 @@
         "id": "dde533dbc0010c4b",
         "type": "server-state-changed",
         "z": "fd9cd80f14f860fe",
-        "name": "",
+        "name": "powernode is playing",
         "server": "4ba92433.2478cc",
         "version": 4,
         "exposeToHomeAssistant": false,
@@ -1702,7 +1702,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 210,
+        "x": 120,
         "y": 500,
         "wires": [
             [
@@ -1736,7 +1736,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 580,
+        "x": 400,
         "y": 500,
         "wires": [
             [
@@ -1764,7 +1764,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
+        "x": 710,
         "y": 500,
         "wires": [
             []
