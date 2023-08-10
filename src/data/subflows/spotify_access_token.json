@@ -1,0 +1,144 @@
+[
+    {
+        "id": "0a4e0762f5261024",
+        "type": "subflow",
+        "name": "spotify_access_token",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "c2135e1864cfd9e7"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 980,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "743d58e81b2bc746",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "2ba64b7b96f9fcb4",
+        "type": "http request",
+        "z": "0a4e0762f5261024",
+        "name": "get token",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://accounts.spotify.com/api/token",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/x-www-form-urlencoded"
+            }
+        ],
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "743d58e81b2bc746"
+            ]
+        ]
+    },
+    {
+        "id": "c2135e1864cfd9e7",
+        "type": "change",
+        "z": "0a4e0762f5261024",
+        "name": "client id and client secret",
+        "rules": [
+            {
+                "t": "set",
+                "p": "client_id",
+                "pt": "msg",
+                "to": "SPOTIFY_API_CLIENT_ID",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "client_secret",
+                "pt": "msg",
+                "to": "SPOTIFY_API_CLIENT_SECRET",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "924b2a4b7bccd021"
+            ]
+        ]
+    },
+    {
+        "id": "924b2a4b7bccd021",
+        "type": "template",
+        "z": "0a4e0762f5261024",
+        "name": "body for get token",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "grant_type=client_credentials&client_id={{{client_id}}}&client_secret={{{client_secret}}}",
+        "output": "str",
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "2ba64b7b96f9fcb4"
+            ]
+        ]
+    },
+    {
+        "id": "743d58e81b2bc746",
+        "type": "change",
+        "z": "0a4e0762f5261024",
+        "name": "save access token to flow variable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "spotify_access_token",
+                "pt": "global",
+                "to": "payload.access_token",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    }
+]
