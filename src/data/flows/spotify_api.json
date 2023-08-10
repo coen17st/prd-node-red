@@ -48,15 +48,15 @@
                 "t": "set",
                 "p": "client_id",
                 "pt": "msg",
-                "to": "3220aaebce6b497d8ecfb8455b47a249",
-                "tot": "str"
+                "to": "SPOTIFY_API_CLIENT_ID",
+                "tot": "env"
             },
             {
                 "t": "set",
                 "p": "client_secret",
                 "pt": "msg",
-                "to": "REDACTED",
-                "tot": "str"
+                "to": "SPOTIFY_API_CLIENT_SECRET",
+                "tot": "env"
             }
         ],
         "action": "",
@@ -142,7 +142,9 @@
         "x": 900,
         "y": 120,
         "wires": [
-            []
+            [
+                "e2623b4f572ecba6"
+            ]
         ]
     },
     {
@@ -243,7 +245,7 @@
         "id": "746a4d6c560b9b29",
         "type": "http request",
         "z": "53a5f07742283c4c",
-        "name": "get users/{user_id}/playlists",
+        "name": "",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -262,7 +264,7 @@
                 "valueValue": "authorization"
             }
         ],
-        "x": 740,
+        "x": 690,
         "y": 220,
         "wires": [
             [
@@ -283,7 +285,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
+        "x": 980,
         "y": 220,
         "wires": []
     },
@@ -316,5 +318,425 @@
         "x": 130,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "061e70e85acdfbd9",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "Lise",
+        "entityConfig": "4b316ff3c1e1244f",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[1].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "playlist_id",
+                "value": "playlist_id",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "merge",
+        "outputProperties": [],
+        "x": 1110,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6de7c606c864483c",
+        "type": "inject",
+        "z": "53a5f07742283c4c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "playlist_ids",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "3d31c6d443ad7576",
+                "60b97d6c27fca342"
+            ]
+        ]
+    },
+    {
+        "id": "7a298aa2cf27f18c",
+        "type": "comment",
+        "z": "53a5f07742283c4c",
+        "name": "Get playlist",
+        "info": "",
+        "x": 100,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3d31c6d443ad7576",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Lise",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "3ORKq4U4Pv5gMrYdsaT6hw",
+        "output": "str",
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "b20ef33659df0d8c"
+            ]
+        ]
+    },
+    {
+        "id": "b20ef33659df0d8c",
+        "type": "change",
+        "z": "53a5f07742283c4c",
+        "name": "userid",
+        "rules": [
+            {
+                "t": "set",
+                "p": "userid",
+                "pt": "flow",
+                "to": "coen.s-nl",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 320,
+        "wires": [
+            [
+                "2784c97a7471c5c6"
+            ]
+        ]
+    },
+    {
+        "id": "60b97d6c27fca342",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_My Shazam Tracks",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "7gHGifRLJgiahSNrugxIoa",
+        "output": "str",
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "b20ef33659df0d8c"
+            ]
+        ]
+    },
+    {
+        "id": "d4790e62c5ab1ad3",
+        "type": "debug",
+        "z": "53a5f07742283c4c",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d3ccca54e33751cd",
+        "type": "join",
+        "z": "53a5f07742283c4c",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "2",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1210,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2784c97a7471c5c6",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "url",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.spotify.com/v1/playlists/{{{playlist_id}}}",
+        "output": "str",
+        "x": 730,
+        "y": 320,
+        "wires": [
+            [
+                "12d835100c9d80f4"
+            ]
+        ]
+    },
+    {
+        "id": "12d835100c9d80f4",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "authorization value",
+        "field": "authorization",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Bearer {{{flow.access_token}}}",
+        "output": "str",
+        "x": 890,
+        "y": 320,
+        "wires": [
+            [
+                "9e1f9216a2efc6ec"
+            ]
+        ]
+    },
+    {
+        "id": "9e1f9216a2efc6ec",
+        "type": "http request",
+        "z": "53a5f07742283c4c",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Authorization",
+                "valueType": "msg",
+                "valueValue": "authorization"
+            }
+        ],
+        "x": 1070,
+        "y": 320,
+        "wires": [
+            [
+                "d4790e62c5ab1ad3",
+                "1d4f8e3d81b60ffc"
+            ]
+        ]
+    },
+    {
+        "id": "1d4f8e3d81b60ffc",
+        "type": "switch",
+        "z": "53a5f07742283c4c",
+        "name": "",
+        "property": "payload.id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "3ORKq4U4Pv5gMrYdsaT6hw",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "7gHGifRLJgiahSNrugxIoa",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 970,
+        "y": 520,
+        "wires": [
+            [
+                "061e70e85acdfbd9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f2276c7718adf41d",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_01",
+        "entityConfig": "31ca04c9ad491503",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 730,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b316ff3c1e1244f",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "spotify_playlist_01",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "31ca04c9ad491503",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_01",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_01"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "de1b475263d9e68f",
+        "type": "ha-device-config",
+        "name": "spotify_api",
+        "hwVersion": "",
+        "manufacturer": "Node-RED",
+        "model": "",
+        "swVersion": ""
     }
 ]

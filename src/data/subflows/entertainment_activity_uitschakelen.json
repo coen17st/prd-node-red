@@ -37,7 +37,7 @@
         "id": "19c16b81a65ce03d",
         "type": "api-call-service",
         "z": "0f710598d50e0596",
-        "name": "turn off TV media players",
+        "name": "turn off media players",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -54,7 +54,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 230,
+        "x": 220,
         "y": 60,
         "wires": [
             []

@@ -8,6 +8,18 @@
         "env": []
     },
     {
+        "id": "4539dbe872caf169",
+        "type": "junction",
+        "z": "39f5e6336137f4b2",
+        "x": 980,
+        "y": 120,
+        "wires": [
+            [
+                "e7db7dd82d8ece7e"
+            ]
+        ]
+    },
+    {
         "id": "a50b36c508ee1125",
         "type": "server-state-changed",
         "z": "39f5e6336137f4b2",
@@ -81,51 +93,6 @@
         "wires": []
     },
     {
-        "id": "4627b4f17833a9c1",
-        "type": "api-current-state",
-        "z": "39f5e6336137f4b2",
-        "name": "tvscreen is off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.tvscreen_device",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 520,
-        "y": 160,
-        "wires": [
-            [
-                "bbc211bb39309e9a"
-            ],
-            []
-        ]
-    },
-    {
         "id": "b17acb7df0bb2bd2",
         "type": "switch",
         "z": "39f5e6336137f4b2",
@@ -151,102 +118,12 @@
         "y": 60,
         "wires": [
             [
-                "e7db7dd82d8ece7e"
+                "a773a1b90b438e7b"
             ],
             [
-                "4627b4f17833a9c1",
-                "d9540c933a60aec7"
+                "d9540c933a60aec7",
+                "42cb99108eba09c0"
             ]
-        ]
-    },
-    {
-        "id": "e7db7dd82d8ece7e",
-        "type": "stoptimer",
-        "z": "39f5e6336137f4b2",
-        "duration": "1",
-        "units": "Minute",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 720,
-        "y": 60,
-        "wires": [
-            [
-                "e1bd6c5c2a6f6233"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e1bd6c5c2a6f6233",
-        "type": "api-current-state",
-        "z": "39f5e6336137f4b2",
-        "name": "tvscreen is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.tvscreen_device",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 900,
-        "y": 60,
-        "wires": [
-            [
-                "e909b6acc3cb8b7e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e909b6acc3cb8b7e",
-        "type": "api-call-service",
-        "z": "39f5e6336137f4b2",
-        "name": "turn off tvscreen",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "button",
-        "service": "press",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "button.beeldscherm"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1080,
-        "y": 60,
-        "wires": [
-            []
         ]
     },
     {
@@ -272,33 +149,124 @@
         "y": 120,
         "wires": [
             [
+                "a773a1b90b438e7b",
+                "4539dbe872caf169"
+            ]
+        ]
+    },
+    {
+        "id": "42cb99108eba09c0",
+        "type": "api-call-service",
+        "z": "39f5e6336137f4b2",
+        "name": "tvscreen turn on",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 520,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9227561e7f66936",
+        "type": "api-call-service",
+        "z": "39f5e6336137f4b2",
+        "name": "notify tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "lg_webos_smart_tv",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"TV scherm gaat over 10 seconde automatisch op zwart. \",\"title\":\"TV scherm\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 900,
+        "y": 60,
+        "wires": [
+            [
                 "e7db7dd82d8ece7e"
             ]
         ]
     },
     {
-        "id": "bbc211bb39309e9a",
+        "id": "a773a1b90b438e7b",
+        "type": "stoptimer",
+        "z": "39f5e6336137f4b2",
+        "duration": "50",
+        "units": "Second",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 730,
+        "y": 60,
+        "wires": [
+            [
+                "a9227561e7f66936"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e7db7dd82d8ece7e",
+        "type": "stoptimer",
+        "z": "39f5e6336137f4b2",
+        "duration": "10",
+        "units": "Second",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 1090,
+        "y": 60,
+        "wires": [
+            [
+                "19e1804740908598"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "19e1804740908598",
         "type": "api-call-service",
         "z": "39f5e6336137f4b2",
-        "name": "turn on tvscreen",
+        "name": "tvscreen turn on",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "button",
-        "service": "press",
+        "domain": "webostv",
+        "service": "command",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "button.beeldscherm"
+            "media_player.lg_webos_smart_tv"
         ],
-        "data": "",
-        "dataType": "jsonata",
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOffScreen\"}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 700,
-        "y": 160,
+        "x": 1280,
+        "y": 60,
         "wires": [
             []
         ]
@@ -315,9 +283,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
