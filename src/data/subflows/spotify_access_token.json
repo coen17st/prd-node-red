@@ -18,7 +18,7 @@
         ],
         "out": [
             {
-                "x": 980,
+                "x": 1000,
                 "y": 80,
                 "wires": [
                     {
@@ -120,7 +120,7 @@
         "id": "743d58e81b2bc746",
         "type": "change",
         "z": "0a4e0762f5261024",
-        "name": "save access token to flow variable",
+        "name": "save access token to global variable",
         "rules": [
             {
                 "t": "set",
@@ -135,7 +135,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 800,
+        "x": 810,
         "y": 80,
         "wires": [
             []
