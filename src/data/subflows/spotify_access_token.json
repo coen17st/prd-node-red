@@ -18,7 +18,7 @@
         ],
         "out": [
             {
-                "x": 1000,
+                "x": 1100,
                 "y": 80,
                 "wires": [
                     {
@@ -40,7 +40,7 @@
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "https://accounts.spotify.com/api/token",
+        "url": "",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -55,7 +55,7 @@
                 "valueValue": "application/x-www-form-urlencoded"
             }
         ],
-        "x": 580,
+        "x": 700,
         "y": 80,
         "wires": [
             [
@@ -112,7 +112,7 @@
         "y": 80,
         "wires": [
             [
-                "2ba64b7b96f9fcb4"
+                "b91d31206ecca063"
             ]
         ]
     },
@@ -120,7 +120,7 @@
         "id": "743d58e81b2bc746",
         "type": "change",
         "z": "0a4e0762f5261024",
-        "name": "save access token to global variable",
+        "name": "save access token to flow variable",
         "rules": [
             {
                 "t": "set",
@@ -135,10 +135,29 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 810,
+        "x": 920,
         "y": 80,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "b91d31206ecca063",
+        "type": "template",
+        "z": "0a4e0762f5261024",
+        "name": "url",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://accounts.spotify.com/api/token",
+        "output": "str",
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "2ba64b7b96f9fcb4"
+            ]
         ]
     }
 ]

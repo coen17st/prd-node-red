@@ -18,7 +18,7 @@
         ],
         "out": [
             {
-                "x": 980,
+                "x": 1000,
                 "y": 80,
                 "wires": [
                     {
@@ -153,12 +153,53 @@
         "id": "706151681f0ece6f",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 480,
-        "y": 360,
+        "x": 540,
+        "y": 200,
         "wires": [
             [
                 "3d31c6d443ad7576",
-                "60b97d6c27fca342"
+                "60b97d6c27fca342",
+                "b808134920bf4e34",
+                "e39b8ed1586ec144",
+                "61b5309de555834f",
+                "8215ee5b32a90c48",
+                "de1675c8792b80d3"
+            ]
+        ]
+    },
+    {
+        "id": "992b450b0425b3a4",
+        "type": "junction",
+        "z": "53a5f07742283c4c",
+        "x": 1960,
+        "y": 440,
+        "wires": [
+            [
+                "e9ad5083802cc9a3"
+            ]
+        ]
+    },
+    {
+        "id": "06ca84ceb3f727e3",
+        "type": "junction",
+        "z": "53a5f07742283c4c",
+        "x": 1160,
+        "y": 200,
+        "wires": [
+            [
+                "b20ef33659df0d8c"
+            ]
+        ]
+    },
+    {
+        "id": "e9ad5083802cc9a3",
+        "type": "junction",
+        "z": "53a5f07742283c4c",
+        "x": 40,
+        "y": 480,
+        "wires": [
+            [
+                "1d4f8e3d81b60ffc"
             ]
         ]
     },
@@ -186,15 +227,15 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "21600",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "playlist_ids",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 320,
+        "x": 150,
+        "y": 100,
         "wires": [
             [
                 "ddc2e044d88310c8"
@@ -208,7 +249,7 @@
         "name": "Get playlist",
         "info": "",
         "x": 100,
-        "y": 280,
+        "y": 60,
         "wires": []
     },
     {
@@ -222,11 +263,11 @@
         "syntax": "mustache",
         "template": "3ORKq4U4Pv5gMrYdsaT6hw",
         "output": "str",
-        "x": 840,
-        "y": 360,
+        "x": 880,
+        "y": 180,
         "wires": [
             [
-                "b20ef33659df0d8c"
+                "06ca84ceb3f727e3"
             ]
         ]
     },
@@ -249,8 +290,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
-        "y": 340,
+        "x": 1230,
+        "y": 160,
         "wires": [
             [
                 "2784c97a7471c5c6"
@@ -268,11 +309,11 @@
         "syntax": "mustache",
         "template": "7gHGifRLJgiahSNrugxIoa",
         "output": "str",
-        "x": 890,
-        "y": 400,
+        "x": 930,
+        "y": 220,
         "wires": [
             [
-                "b20ef33659df0d8c"
+                "06ca84ceb3f727e3"
             ]
         ]
     },
@@ -287,8 +328,8 @@
         "syntax": "mustache",
         "template": "https://api.spotify.com/v1/playlists/{{{playlist_id}}}",
         "output": "str",
-        "x": 1230,
-        "y": 340,
+        "x": 1350,
+        "y": 160,
         "wires": [
             [
                 "12d835100c9d80f4"
@@ -306,8 +347,8 @@
         "syntax": "mustache",
         "template": "Bearer {{{global.spotify_access_token}}}",
         "output": "str",
-        "x": 1390,
-        "y": 340,
+        "x": 1510,
+        "y": 160,
         "wires": [
             [
                 "9e1f9216a2efc6ec"
@@ -337,8 +378,8 @@
                 "valueValue": "authorization"
             }
         ],
-        "x": 1570,
-        "y": 340,
+        "x": 1690,
+        "y": 160,
         "wires": [
             [
                 "5c51b3e9d158410f"
@@ -350,7 +391,7 @@
         "type": "switch",
         "z": "53a5f07742283c4c",
         "name": "",
-        "property": "payload.id",
+        "property": "playlist_id",
         "propertyType": "msg",
         "rules": [
             {
@@ -362,18 +403,60 @@
                 "t": "eq",
                 "v": "7gHGifRLJgiahSNrugxIoa",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6pfSVtSuceWnHRMRRv2CSP",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3nyfO2R6MxbP67wxYVo1nR",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0avSSq7Hv1KtLC8dQB4xVE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "77FZT9MGc3p7RMBUr5m50r",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "7E6QXGrtUyYl1kTyvnluTr",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
-        "x": 110,
-        "y": 520,
+        "outputs": 7,
+        "x": 170,
+        "y": 580,
         "wires": [
             [
                 "a0e90487537504f6"
             ],
-            []
+            [
+                "bcfbf0d78f7269b4"
+            ],
+            [
+                "5f32f52321717137"
+            ],
+            [
+                "1418b6341448cd5b"
+            ],
+            [
+                "86569d577185f81d"
+            ],
+            [
+                "5356153d50ea0eb6"
+            ],
+            [
+                "745d5fcc3f936573"
+            ]
         ]
     },
     {
@@ -393,7 +476,7 @@
             },
             {
                 "property": "image",
-                "value": "payload.images[1].url",
+                "value": "payload.images[0].url",
                 "valueType": "msg"
             },
             {
@@ -407,17 +490,19 @@
                 "valueType": "msg"
             },
             {
-                "property": "uri",
-                "value": "payload.uri",
+                "property": "url",
+                "value": "payload.external_urls.spotify",
                 "valueType": "msg"
             }
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 270,
-        "y": 500,
+        "x": 370,
+        "y": 560,
         "wires": [
-            []
+            [
+                "4c0330d00dcfa0ba"
+            ]
         ]
     },
     {
@@ -442,14 +527,14 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1730,
-        "y": 340,
+        "x": 1870,
+        "y": 220,
         "wires": [
             [
                 "bf0844c6b66ef3d3"
             ],
             [
-                "1d4f8e3d81b60ffc"
+                "992b450b0425b3a4"
             ]
         ]
     },
@@ -458,8 +543,8 @@
         "type": "switch",
         "z": "53a5f07742283c4c",
         "name": "access_token is null",
-        "property": "global.spotify_access_token",
-        "propertyType": "msg",
+        "property": "spotify_access_token",
+        "propertyType": "global",
         "rules": [
             {
                 "t": "null"
@@ -471,8 +556,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 360,
-        "y": 320,
+        "x": 380,
+        "y": 100,
         "wires": [
             [
                 "6d1f4e7cd3a2ee36"
@@ -503,8 +588,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 1120,
+        "x": 100,
+        "y": 1080,
         "wires": [
             [
                 "50dd1df3d057525e"
@@ -530,8 +615,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 250,
-        "y": 1120,
+        "x": 230,
+        "y": 1080,
         "wires": [
             [
                 "5b5550b55913708a"
@@ -549,8 +634,8 @@
         "syntax": "mustache",
         "template": "https://api.spotify.com/v1/users/{{flow.userid}}/playlists",
         "output": "str",
-        "x": 370,
-        "y": 1120,
+        "x": 350,
+        "y": 1080,
         "wires": [
             [
                 "9bee98e3c1ca5078"
@@ -568,8 +653,8 @@
         "syntax": "mustache",
         "template": "Bearer {{{global.spotify_access_token}}}",
         "output": "str",
-        "x": 530,
-        "y": 1120,
+        "x": 510,
+        "y": 1080,
         "wires": [
             [
                 "746a4d6c560b9b29"
@@ -599,8 +684,8 @@
                 "valueValue": "authorization"
             }
         ],
-        "x": 710,
-        "y": 1120,
+        "x": 690,
+        "y": 1080,
         "wires": [
             [
                 "361939a150ad5ac1"
@@ -613,8 +698,8 @@
         "z": "53a5f07742283c4c",
         "name": "Get users playlists",
         "info": "",
-        "x": 150,
-        "y": 1080,
+        "x": 130,
+        "y": 1040,
         "wires": []
     },
     {
@@ -622,12 +707,11 @@
         "type": "subflow:0a4e0762f5261024",
         "z": "53a5f07742283c4c",
         "name": "spotify_access_token",
-        "x": 640,
-        "y": 280,
+        "x": 660,
+        "y": 100,
         "wires": [
             [
-                "3d31c6d443ad7576",
-                "60b97d6c27fca342"
+                "706151681f0ece6f"
             ]
         ]
     },
@@ -643,12 +727,11 @@
         "septopics": true,
         "property": "statusCode",
         "topi": "topic",
-        "x": 1910,
-        "y": 340,
+        "x": 2030,
+        "y": 160,
         "wires": [
             [
-                "6d1f4e7cd3a2ee36",
-                "d590fe49e0b7580c"
+                "6d1f4e7cd3a2ee36"
             ]
         ]
     },
@@ -664,12 +747,371 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 1120,
+        "x": 860,
+        "y": 1080,
         "wires": []
     },
     {
-        "id": "d590fe49e0b7580c",
+        "id": "bcfbf0d78f7269b4",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_02",
+        "entityConfig": "739416ac098c217a",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f32f52321717137",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_03",
+        "entityConfig": "a0921245c4bf57f4",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b808134920bf4e34",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Nederlandstalig",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "6pfSVtSuceWnHRMRRv2CSP",
+        "output": "str",
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "1418b6341448cd5b",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_04",
+        "entityConfig": "80964bcc6dc1a6e4",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e39b8ed1586ec144",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Audiophile",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "3nyfO2R6MxbP67wxYVo1nR",
+        "output": "str",
+        "x": 900,
+        "y": 300,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "86569d577185f81d",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_05",
+        "entityConfig": "6a1feec96440fb83",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61b5309de555834f",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Dance",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "0avSSq7Hv1KtLC8dQB4xVE",
+        "output": "str",
+        "x": 890,
+        "y": 340,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "8215ee5b32a90c48",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Alle Nijntje liedjes",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "77FZT9MGc3p7RMBUr5m50r",
+        "output": "str",
+        "x": 920,
+        "y": 380,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "de1675c8792b80d3",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_The War On Drugs - Complete Collection",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "7E6QXGrtUyYl1kTyvnluTr",
+        "output": "str",
+        "x": 1000,
+        "y": 420,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "5356153d50ea0eb6",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_06",
+        "entityConfig": "5998cbfbc54f204b",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "745d5fcc3f936573",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_07",
+        "entityConfig": "f8cd4d84e50137d3",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c0330d00dcfa0ba",
         "type": "debug",
         "z": "53a5f07742283c4c",
         "name": "debug 4",
@@ -681,8 +1123,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1850,
-        "y": 180,
+        "x": 560,
+        "y": 560,
         "wires": []
     },
     {
@@ -697,6 +1139,252 @@
             {
                 "property": "name",
                 "value": "playlist_01"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "739416ac098c217a",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_02",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_02"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "a0921245c4bf57f4",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_03",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_03"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "80964bcc6dc1a6e4",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_04",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_04"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "6a1feec96440fb83",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_05",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_05"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "5998cbfbc54f204b",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_06",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_06"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "f8cd4d84e50137d3",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_07",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_07"
             },
             {
                 "property": "icon",
