@@ -63,7 +63,7 @@
             }
         ],
         "x": 110,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "0f3dc42604681b90",
@@ -80,7 +80,7 @@
         "name": "When it is dark outside trigger",
         "info": "",
         "x": 140,
-        "y": 40,
+        "y": 20,
         "wires": []
     },
     {
@@ -115,10 +115,11 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 330,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
-                "2c30ad2ca4736996"
+                "2c30ad2ca4736996",
+                "ca09a185945f2f32"
             ],
             []
         ]
@@ -155,10 +156,11 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 340,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
-                "ca09a185945f2f32"
+                "ca09a185945f2f32",
+                "2c30ad2ca4736996"
             ],
             []
         ]
@@ -185,7 +187,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 780,
-        "y": 160,
+        "y": 120,
         "wires": [
             []
         ]
@@ -212,7 +214,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 780,
-        "y": 100,
+        "y": 60,
         "wires": [
             []
         ]
@@ -249,7 +251,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 540,
-        "y": 160,
+        "y": 120,
         "wires": [
             [
                 "00a486a129a5e2de"
@@ -289,7 +291,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 540,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "a2d788c6d0d9ee38"
@@ -316,7 +318,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 310,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "5b84363f59f0f83f"
@@ -356,7 +358,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 550,
-        "y": 240,
+        "y": 200,
         "wires": [
             [
                 "b3e1e74beacdf568"
@@ -386,7 +388,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 780,
-        "y": 240,
+        "y": 200,
         "wires": [
             []
         ]
@@ -403,9 +405,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
