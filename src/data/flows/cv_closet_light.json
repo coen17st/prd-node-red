@@ -1,17 +1,17 @@
 [
     {
-        "id": "03ed0365a1543556",
+        "id": "3c0c3dbf7e0deda4",
         "type": "tab",
-        "label": "wall_tablet_charge",
+        "label": "cv_closet_light",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "13ac101837378eb8",
+        "id": "dc280cdc1392d82f",
         "type": "server-state-changed",
-        "z": "03ed0365a1543556",
-        "name": "wall tablet battery level",
+        "z": "3c0c3dbf7e0deda4",
+        "name": "cv closet illuminance",
         "server": "4ba92433.2478cc",
         "version": 4,
         "exposeToHomeAssistant": false,
@@ -25,7 +25,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "sensor.galaxy_tab_a8_battery",
+        "entityidfilter": "sensor.cv_closet_illuminance",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
@@ -62,71 +62,53 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 120,
+        "x": 110,
         "y": 60,
         "wires": [
             [
-                "b9298a615e99a23f"
+                "9f36d3e61c728cef"
             ]
         ]
     },
     {
-        "id": "1cc93bcf43cdbf60",
-        "type": "comment",
-        "z": "03ed0365a1543556",
-        "name": "Turn on or off tablet charging based on battery level",
-        "info": "",
-        "x": 210,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "b9298a615e99a23f",
+        "id": "9f36d3e61c728cef",
         "type": "switch",
-        "z": "03ed0365a1543556",
-        "name": "battery level",
+        "z": "3c0c3dbf7e0deda4",
+        "name": "",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "gte",
-                "v": "80",
-                "vt": "str"
-            },
-            {
-                "t": "lt",
-                "v": "30",
+                "v": "0.6",
                 "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
-        "x": 310,
+        "outputs": 1,
+        "x": 270,
         "y": 60,
         "wires": [
             [
-                "e68e31631f7ada56"
-            ],
-            [
-                "d21e435e29262990"
+                "1cb66b263d93899d"
             ]
         ]
     },
     {
-        "id": "077067e28d6d59b4",
+        "id": "c4c1f1df01f62f8b",
         "type": "api-call-service",
-        "z": "03ed0365a1543556",
-        "name": "turn on wall tablet charger",
+        "z": "3c0c3dbf7e0deda4",
+        "name": "turn on light cv closet",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "switch",
+        "domain": "light",
         "service": "turn_on",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.cv_closet_walltablet_charger"
+            "light.cv_closet"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -134,96 +116,26 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 670,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0b118ac6e884fc56",
-        "type": "api-call-service",
-        "z": "03ed0365a1543556",
-        "name": "turn off wall tablet charger",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.cv_closet_walltablet_charger"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 670,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e68e31631f7ada56",
-        "type": "api-current-state",
-        "z": "03ed0365a1543556",
-        "name": "switch is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.cv_closet_walltablet_charger",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 470,
+        "x": 640,
         "y": 60,
         "wires": [
             [
-                "0b118ac6e884fc56"
-            ],
-            []
+                "b3374e522faf5a76"
+            ]
         ]
     },
     {
-        "id": "d21e435e29262990",
+        "id": "1cb66b263d93899d",
         "type": "api-current-state",
-        "z": "03ed0365a1543556",
-        "name": "switch is off",
+        "z": "3c0c3dbf7e0deda4",
+        "name": "cv closet light is off",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "switch.cv_closet_walltablet_charger",
+        "entity_id": "light.cv_closet",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -248,14 +160,69 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 470,
-        "y": 120,
+        "x": 430,
+        "y": 60,
         "wires": [
             [
-                "077067e28d6d59b4"
+                "c4c1f1df01f62f8b"
             ],
             []
         ]
+    },
+    {
+        "id": "b3374e522faf5a76",
+        "type": "stoptimer",
+        "z": "3c0c3dbf7e0deda4",
+        "duration": "2",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 840,
+        "y": 60,
+        "wires": [
+            [
+                "cf27894048b6ef06"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cf27894048b6ef06",
+        "type": "api-call-service",
+        "z": "3c0c3dbf7e0deda4",
+        "name": "turn off light cv closet",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.cv_closet"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1040,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6301628ce8a13ca3",
+        "type": "comment",
+        "z": "3c0c3dbf7e0deda4",
+        "name": "Turn on and off cv closet light. If illuminance raise then the door is open, then if the light is off turn in on for 2 minutes",
+        "info": "",
+        "x": 410,
+        "y": 20,
+        "wires": []
     },
     {
         "id": "4ba92433.2478cc",

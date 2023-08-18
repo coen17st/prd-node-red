@@ -75,8 +75,7 @@
         "y": 200,
         "wires": [
             [
-                "c431f228.97084",
-                "d5067f8020b74efa"
+                "c431f228.97084"
             ],
             [
                 "6692dae9.7caa84"
@@ -875,23 +874,6 @@
         ]
     },
     {
-        "id": "d5067f8020b74efa",
-        "type": "debug",
-        "z": "b1a9214c.4c71c",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 890,
-        "y": 240,
-        "wires": []
-    },
-    {
         "id": "d52f067ae45b546a",
         "type": "rbe",
         "z": "b1a9214c.4c71c",
@@ -923,9 +905,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
