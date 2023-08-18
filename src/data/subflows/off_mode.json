@@ -59,6 +59,55 @@
         "wires": []
     },
     {
+        "id": "79544bf2.1ff3a4",
+        "type": "subflow",
+        "name": "off_mode",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "83808dcd.70439"
+                    },
+                    {
+                        "id": "5644cdae.e32cc4"
+                    },
+                    {
+                        "id": "f9028094.57a62"
+                    },
+                    {
+                        "id": "db8cc8f4bb9386ab"
+                    },
+                    {
+                        "id": "70042c68d7934e2a"
+                    },
+                    {
+                        "id": "3fc0dbaa106c85b8"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "c860c0ff802edef8",
+        "type": "junction",
+        "z": "79544bf2.1ff3a4",
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "49bc3a7a927254a2"
+            ]
+        ]
+    },
+    {
         "id": "3b9a1fc1.aafd9",
         "type": "api-call-service",
         "z": "79544bf2.1ff3a4",
@@ -107,7 +156,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 470,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -135,7 +184,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 730,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -154,73 +203,10 @@
         "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
         "x": 860,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "ad7f00b7b2b0e671"
-            ]
-        ]
-    },
-    {
-        "id": "e0b2428a.a371b",
-        "type": "ha-get-entities",
-        "z": "79544bf2.1ff3a4",
-        "name": "lookup lights on",
-        "server": "4ba92433.2478cc",
-        "version": 0,
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "light.",
-                "valueType": "str"
-            },
-            {
-                "property": "state",
-                "logic": "is",
-                "value": "on",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 200,
-        "y": 180,
-        "wires": [
-            [
-                "9eb23897.6d9b38"
-            ]
-        ]
-    },
-    {
-        "id": "9eb23897.6d9b38",
-        "type": "api-call-service",
-        "z": "79544bf2.1ff3a4",
-        "name": "turn off lights",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "{{payload.entity_id}}"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 370,
-        "y": 180,
-        "wires": [
-            [
-                "fda4eae176ed738e"
             ]
         ]
     },
@@ -308,97 +294,6 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1010,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fda4eae176ed738e",
-        "type": "template",
-        "z": "79544bf2.1ff3a4",
-        "name": "format friendly name",
-        "field": "friendly_name",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{payload.attributes.friendly_name}}}",
-        "output": "str",
-        "x": 560,
-        "y": 180,
-        "wires": [
-            [
-                "58d0a2479b16b408"
-            ]
-        ]
-    },
-    {
-        "id": "58d0a2479b16b408",
-        "type": "join",
-        "z": "79544bf2.1ff3a4",
-        "name": "",
-        "mode": "custom",
-        "build": "string",
-        "property": "friendly_name",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": ", ",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 730,
-        "y": 180,
-        "wires": [
-            [
-                "89625810ae98a2fc"
-            ]
-        ]
-    },
-    {
-        "id": "89625810ae98a2fc",
-        "type": "template",
-        "z": "79544bf2.1ff3a4",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
-        "output": "str",
-        "x": 860,
-        "y": 180,
-        "wires": [
-            [
-                "a8dadd67cf109c6d"
-            ]
-        ]
-    },
-    {
-        "id": "a8dadd67cf109c6d",
-        "type": "api-call-service",
-        "z": "79544bf2.1ff3a4",
-        "name": "In APP Notify",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"Verlichting\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1010,
         "y": 180,
         "wires": [
             []
@@ -471,7 +366,7 @@
         "output_location": "payload",
         "output_results_count": 1,
         "x": 230,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "397bbd3d.0bb3f2"
@@ -486,6 +381,244 @@
         "x": 260,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "cffcc601228bd54a",
+        "type": "switch",
+        "z": "79544bf2.1ff3a4",
+        "name": "is not upstairs hall light",
+        "property": "payload.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "light.shelly1_upstairs_hall",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "1fa1246c6848fd5c"
+            ]
+        ]
+    },
+    {
+        "id": "f8293a288e844f8f",
+        "type": "api-current-state",
+        "z": "79544bf2.1ff3a4",
+        "name": "sleepmode is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.sleep_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "cffcc601228bd54a"
+            ],
+            [
+                "c860c0ff802edef8"
+            ]
+        ]
+    },
+    {
+        "id": "3fc0dbaa106c85b8",
+        "type": "ha-get-entities",
+        "z": "79544bf2.1ff3a4",
+        "name": "lookup lights on",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "light.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "on",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 200,
+        "y": 220,
+        "wires": [
+            [
+                "f8293a288e844f8f"
+            ]
+        ]
+    },
+    {
+        "id": "49bc3a7a927254a2",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "turn off lights",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "fda4eae176ed738e"
+            ]
+        ]
+    },
+    {
+        "id": "1fa1246c6848fd5c",
+        "type": "switch",
+        "z": "79544bf2.1ff3a4",
+        "name": "is not kitchen light",
+        "property": "payload.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "light.shellydimmer_kitchen",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 220,
+        "wires": [
+            [
+                "49bc3a7a927254a2"
+            ]
+        ]
+    },
+    {
+        "id": "a8dadd67cf109c6d",
+        "type": "api-call-service",
+        "z": "79544bf2.1ff3a4",
+        "name": "In APP Notify",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "persistent_notification",
+        "service": "create",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{message}}\",\"title\":\"Verlichting\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1630,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89625810ae98a2fc",
+        "type": "template",
+        "z": "79544bf2.1ff3a4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
+        "output": "str",
+        "x": 1480,
+        "y": 260,
+        "wires": [
+            [
+                "a8dadd67cf109c6d"
+            ]
+        ]
+    },
+    {
+        "id": "58d0a2479b16b408",
+        "type": "join",
+        "z": "79544bf2.1ff3a4",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "friendly_name",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1350,
+        "y": 260,
+        "wires": [
+            [
+                "89625810ae98a2fc"
+            ]
+        ]
+    },
+    {
+        "id": "fda4eae176ed738e",
+        "type": "template",
+        "z": "79544bf2.1ff3a4",
+        "name": "format friendly name",
+        "field": "friendly_name",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{payload.attributes.friendly_name}}}",
+        "output": "str",
+        "x": 1180,
+        "y": 260,
+        "wires": [
+            [
+                "58d0a2479b16b408"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
