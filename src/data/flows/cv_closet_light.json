@@ -34,9 +34,9 @@
         "halt_if_compare": "is",
         "outputs": 1,
         "output_only_on_state_change": true,
-        "for": "0",
+        "for": "10",
         "forType": "num",
-        "forUnits": "minutes",
+        "forUnits": "milliseconds",
         "ignorePrevStateNull": false,
         "ignorePrevStateUnknown": true,
         "ignorePrevStateUnavailable": true,
@@ -80,7 +80,7 @@
         "rules": [
             {
                 "t": "gte",
-                "v": "0.6",
+                "v": "0.7",
                 "vt": "str"
             }
         ],
@@ -173,7 +173,7 @@
         "id": "b3374e522faf5a76",
         "type": "stoptimer",
         "z": "3c0c3dbf7e0deda4",
-        "duration": "2",
+        "duration": "5",
         "units": "Minute",
         "payloadtype": "num",
         "payloadval": "0",
