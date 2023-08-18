@@ -1,5 +1,64 @@
 [
     {
+        "id": "b93cc1561f32248d",
+        "type": "subflow",
+        "name": "temp_frontyard_powersocket_off",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "441696546b08b299"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "441696546b08b299",
+        "type": "api-call-service",
+        "z": "b93cc1561f32248d",
+        "name": "turn off frontyard powersocket",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly1_frontyard_powersocket"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 210,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce4fb69f6baf8bae",
+        "type": "comment",
+        "z": "b93cc1561f32248d",
+        "name": "temporary subflow to turn off powersocket christmas lights",
+        "info": "",
+        "x": 230,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "79544bf2.1ff3a4",
         "type": "subflow",
         "name": "off_mode",
@@ -7,8 +66,8 @@
         "category": "",
         "in": [
             {
-                "x": 40,
-                "y": 60,
+                "x": 52,
+                "y": 104,
                 "wires": [
                     {
                         "id": "e0b2428a.a371b"
@@ -24,6 +83,9 @@
                     },
                     {
                         "id": "db8cc8f4bb9386ab"
+                    },
+                    {
+                        "id": "70042c68d7934e2a"
                     }
                 ]
             }
@@ -383,7 +445,7 @@
         "id": "db8cc8f4bb9386ab",
         "type": "api-current-state",
         "z": "79544bf2.1ff3a4",
-        "name": "entertainment activity is not UItschakelen",
+        "name": "entertainment activity is not uitschakelen",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
@@ -461,6 +523,15 @@
         "links": [],
         "x": 1965,
         "y": 420,
+        "wires": []
+    },
+    {
+        "id": "70042c68d7934e2a",
+        "type": "subflow:b93cc1561f32248d",
+        "z": "79544bf2.1ff3a4",
+        "name": "",
+        "x": 260,
+        "y": 260,
         "wires": []
     },
     {
