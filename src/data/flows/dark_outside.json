@@ -68,7 +68,8 @@
             [
                 "0f3dc42604681b90",
                 "20a9a8dc7b5339a8",
-                "2de9785e45507235"
+                "2de9785e45507235",
+                "b28f768263057783"
             ],
             []
         ]
@@ -155,7 +156,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 340,
+        "x": 320,
         "y": 120,
         "wires": [
             [
@@ -318,7 +319,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 350,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "5b84363f59f0f83f"
@@ -358,7 +359,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 590,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "b3e1e74beacdf568"
@@ -388,7 +389,32 @@
         "outputProperties": [],
         "queue": "none",
         "x": 820,
-        "y": 200,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b28f768263057783",
+        "type": "api-call-service",
+        "z": "3087db0b32ceb4d4",
+        "name": "set theme dark",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "frontend",
+        "service": "set_theme",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"name\":\"google_dark_theme\",\"mode\":\"dark\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 320,
+        "y": 240,
         "wires": [
             []
         ]
