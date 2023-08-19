@@ -8,7 +8,7 @@
         "env": []
     },
     {
-        "id": "2ff8dfb43d1ba6a3",
+        "id": "fc9a0630f16ecdaf",
         "type": "group",
         "z": "fd9cd80f14f860fe",
         "style": {
@@ -21,42 +21,19 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "da2286d94f0884ba",
-            "8ecce933c7cf8c5c",
-            "5a22e75177f6656a",
-            "eab9993ce7699f6b"
+            "e020d358e653c079",
+            "d08f285d67e6fc1c",
+            "33f7961ae7010284",
+            "496e9f6b60f7e763",
+            "ae3e3c86c7a641ae",
+            "afc206d613ea28f4",
+            "aa0c955739836a72",
+            "38e2ec5bd89aa669"
         ],
         "x": 674,
-        "y": 719,
-        "w": 812,
-        "h": 149.5
-    },
-    {
-        "id": "cd256ec259a611f4",
-        "type": "group",
-        "z": "fd9cd80f14f860fe",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "1852cb62226e78b0",
-            "f47b4545239299ad",
-            "cbfc90e6e5368c5d",
-            "2799232b4b346c51",
-            "64218c054bcb7baf",
-            "54b7f080b2edea10",
-            "1e7eae419a9ec64f"
-        ],
-        "x": 674,
-        "y": 399,
-        "w": 532,
-        "h": 302
+        "y": 879,
+        "w": 602,
+        "h": 182
     },
     {
         "id": "d3868dc5f4aa2d65",
@@ -87,7 +64,7 @@
         "h": 362
     },
     {
-        "id": "fc9a0630f16ecdaf",
+        "id": "cd256ec259a611f4",
         "type": "group",
         "z": "fd9cd80f14f860fe",
         "style": {
@@ -100,19 +77,42 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "e020d358e653c079",
-            "d08f285d67e6fc1c",
-            "33f7961ae7010284",
-            "496e9f6b60f7e763",
-            "ae3e3c86c7a641ae",
-            "afc206d613ea28f4",
-            "aa0c955739836a72",
-            "38e2ec5bd89aa669"
+            "1852cb62226e78b0",
+            "f47b4545239299ad",
+            "cbfc90e6e5368c5d",
+            "2799232b4b346c51",
+            "64218c054bcb7baf",
+            "54b7f080b2edea10",
+            "1e7eae419a9ec64f"
         ],
         "x": 674,
-        "y": 879,
-        "w": 602,
-        "h": 182
+        "y": 399,
+        "w": 532,
+        "h": 302
+    },
+    {
+        "id": "2ff8dfb43d1ba6a3",
+        "type": "group",
+        "z": "fd9cd80f14f860fe",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "da2286d94f0884ba",
+            "8ecce933c7cf8c5c",
+            "5a22e75177f6656a",
+            "eab9993ce7699f6b"
+        ],
+        "x": 674,
+        "y": 719,
+        "w": 812,
+        "h": 149.5
     },
     {
         "id": "b564e25effcfc627",
@@ -159,88 +159,145 @@
         ]
     },
     {
-        "id": "eab9993ce7699f6b",
-        "type": "comment",
+        "id": "0e86c16e42286a1a",
+        "type": "junction",
         "z": "fd9cd80f14f860fe",
-        "g": "2ff8dfb43d1ba6a3",
-        "name": "turn on a radio station, activity: Radio",
-        "info": "",
-        "x": 840,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "5a22e75177f6656a",
-        "type": "change",
-        "z": "fd9cd80f14f860fe",
-        "g": "2ff8dfb43d1ba6a3",
-        "name": "set last played radio station",
-        "rules": [
-            {
-                "t": "set",
-                "p": "last_played_radio_station",
-                "pt": "flow",
-                "to": "NPO Radio 2",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 800,
+        "x": 620,
+        "y": 980,
         "wires": [
             [
-                "da2286d94f0884ba"
+                "33f7961ae7010284",
+                "e020d358e653c079"
             ]
         ]
     },
     {
-        "id": "8ecce933c7cf8c5c",
+        "id": "38e2ec5bd89aa669",
+        "type": "comment",
+        "z": "fd9cd80f14f860fe",
+        "g": "fc9a0630f16ecdaf",
+        "name": "turn on activity: Spotify",
+        "info": "",
+        "x": 800,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "aa0c955739836a72",
+        "type": "link out",
+        "z": "fd9cd80f14f860fe",
+        "g": "fc9a0630f16ecdaf",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "7264146e613f154c"
+        ],
+        "x": 1235,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "afc206d613ea28f4",
+        "type": "rbe",
+        "z": "fd9cd80f14f860fe",
+        "g": "fc9a0630f16ecdaf",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload.state",
+        "topi": "topic",
+        "x": 1150,
+        "y": 1020,
+        "wires": [
+            [
+                "aa0c955739836a72"
+            ]
+        ]
+    },
+    {
+        "id": "ae3e3c86c7a641ae",
         "type": "switch",
         "z": "fd9cd80f14f860fe",
-        "g": "2ff8dfb43d1ba6a3",
+        "g": "fc9a0630f16ecdaf",
         "name": "",
-        "property": "last_played_radio_station",
-        "propertyType": "flow",
+        "property": "payload.state",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "TuneIn",
+                "v": "unknown",
                 "vt": "str"
-            },
-            {
-                "t": "empty"
-            },
-            {
-                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
-        "x": 750,
-        "y": 820,
+        "outputs": 1,
+        "x": 1030,
+        "y": 1020,
         "wires": [
             [
-                "5a22e75177f6656a"
-            ],
-            [
-                "da2286d94f0884ba"
-            ],
-            [
-                "da2286d94f0884ba"
+                "afc206d613ea28f4"
             ]
         ]
     },
     {
-        "id": "da2286d94f0884ba",
+        "id": "496e9f6b60f7e763",
+        "type": "split",
+        "z": "fd9cd80f14f860fe",
+        "g": "fc9a0630f16ecdaf",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 910,
+        "y": 1020,
+        "wires": [
+            [
+                "ae3e3c86c7a641ae"
+            ]
+        ]
+    },
+    {
+        "id": "33f7961ae7010284",
+        "type": "ha-get-entities",
+        "z": "fd9cd80f14f860fe",
+        "g": "fc9a0630f16ecdaf",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "sensor.playlist_",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "array",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 770,
+        "y": 1020,
+        "wires": [
+            [
+                "496e9f6b60f7e763"
+            ]
+        ]
+    },
+    {
+        "id": "d08f285d67e6fc1c",
         "type": "api-call-service",
         "z": "fd9cd80f14f860fe",
-        "g": "2ff8dfb43d1ba6a3",
-        "name": "play last played radio station from flow variable",
+        "g": "fc9a0630f16ecdaf",
+        "name": "play spotify",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -251,58 +308,164 @@
         "entityId": [
             "media_player.powernode_2i_ea48"
         ],
-        "data": "{\"source\":\"{{flow.last_played_radio_station}}\"}",
+        "data": "{\"source\":\"Spotify: Liked Songs\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1280,
-        "y": 820,
+        "x": 1070,
+        "y": 960,
         "wires": [
             []
         ]
     },
     {
-        "id": "c222a13cfa8609af",
+        "id": "e020d358e653c079",
         "type": "api-call-service",
         "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "turn off media players",
+        "g": "fc9a0630f16ecdaf",
+        "name": "select powernode in spotify",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "media_player",
-        "service": "turn_off",
+        "service": "select_source",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.home_speaker",
-            "media_player.lg_webos_smart_tv",
-            "media_player.shield"
+            "media_player.spotify_coen_s_nl"
         ],
-        "data": "",
-        "dataType": "jsonata",
+        "data": "{\"source\":\"POWERNODE 2i-EA48\"}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 800,
-        "y": 100,
+        "x": 820,
+        "y": 960,
+        "wires": [
+            [
+                "d08f285d67e6fc1c"
+            ]
+        ]
+    },
+    {
+        "id": "1f82b6c0e5dbebf0",
+        "type": "comment",
+        "z": "fd9cd80f14f860fe",
+        "g": "d3868dc5f4aa2d65",
+        "name": "All actions when choose entertainment activity: Uitschakelen",
+        "info": "",
+        "x": 920,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1e7eae419a9ec64f",
+        "type": "comment",
+        "z": "fd9cd80f14f860fe",
+        "g": "cd256ec259a611f4",
+        "name": "turn on tv, shield mediaplayer and receiver activity: Uitschakelen",
+        "info": "",
+        "x": 930,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "54b7f080b2edea10",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "g": "cd256ec259a611f4",
+        "name": "select source optical input on bluesound powernode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "select_source",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.powernode_2i_ea48"
+        ],
+        "data": "{\"source\":\"Optical Input 1\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 890,
+        "y": 660,
         "wires": [
             []
         ]
     },
     {
-        "id": "4a25ba1ed70574f1",
+        "id": "64218c054bcb7baf",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "g": "cd256ec259a611f4",
+        "name": "turn on screen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 780,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2799232b4b346c51",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "g": "cd256ec259a611f4",
+        "name": "turn on input boolean tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.tv"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1070,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbfc90e6e5368c5d",
         "type": "api-current-state",
         "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "state input boolean tv is on",
+        "g": "cd256ec259a611f4",
+        "name": "state input boolean tv is off",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "on",
+        "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "input_boolean.tv",
@@ -326,163 +489,40 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 820,
-        "y": 280,
+        "y": 540,
         "wires": [
             [
-                "3f247e6d9480542a"
+                "2799232b4b346c51"
             ],
             []
         ]
     },
     {
-        "id": "3f247e6d9480542a",
+        "id": "f47b4545239299ad",
         "type": "api-call-service",
         "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "turn off input boolean tv",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_boolean.tv"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1090,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0f78726aa8d18ced",
-        "type": "api-current-state",
-        "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "state input boolean music is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.music",
-        "state_type": "str",
-        "blockInputOverrides": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 830,
-        "y": 340,
-        "wires": [
-            [
-                "88aeefa87a0d1bde"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "88aeefa87a0d1bde",
-        "type": "api-call-service",
-        "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "turn off input boolean music",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_boolean.music"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1100,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cae37222d5922c33",
-        "type": "api-call-service",
-        "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "turn off tv",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"command\":\"system/turnOff\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 760,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f9e486866e6d65f1",
-        "type": "api-call-service",
-        "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "stop bluesound powernode",
+        "g": "cd256ec259a611f4",
+        "name": "turn on shield",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "media_player",
-        "service": "media_stop",
+        "service": "turn_on",
         "areaId": [],
-        "deviceId": [],
+        "deviceId": [
+            "aa1a5fa6d13fc3224345d871874f8619"
+        ],
         "entityId": [
-            "media_player.powernode_2i_ea48"
+            "media_player.shield"
         ],
         "data": "",
-        "dataType": "json",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 820,
-        "y": 220,
+        "x": 1040,
+        "y": 480,
         "wires": [
             []
         ]
@@ -534,45 +574,168 @@
         ]
     },
     {
-        "id": "f47b4545239299ad",
+        "id": "f9e486866e6d65f1",
         "type": "api-call-service",
         "z": "fd9cd80f14f860fe",
-        "g": "cd256ec259a611f4",
-        "name": "turn on shield",
+        "g": "d3868dc5f4aa2d65",
+        "name": "stop bluesound powernode",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
         "domain": "media_player",
-        "service": "turn_on",
+        "service": "media_stop",
         "areaId": [],
-        "deviceId": [
-            "aa1a5fa6d13fc3224345d871874f8619"
-        ],
+        "deviceId": [],
         "entityId": [
-            "media_player.shield"
+            "media_player.powernode_2i_ea48"
         ],
         "data": "",
-        "dataType": "jsonata",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1040,
-        "y": 480,
+        "x": 820,
+        "y": 220,
         "wires": [
             []
         ]
     },
     {
-        "id": "cbfc90e6e5368c5d",
+        "id": "cae37222d5922c33",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "g": "d3868dc5f4aa2d65",
+        "name": "turn off tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"system/turnOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 760,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88aeefa87a0d1bde",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "g": "d3868dc5f4aa2d65",
+        "name": "turn off input boolean music",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.music"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1100,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f78726aa8d18ced",
         "type": "api-current-state",
         "z": "fd9cd80f14f860fe",
-        "g": "cd256ec259a611f4",
-        "name": "state input boolean tv is off",
+        "g": "d3868dc5f4aa2d65",
+        "name": "state input boolean music is on",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "off",
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.music",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 830,
+        "y": 340,
+        "wires": [
+            [
+                "88aeefa87a0d1bde"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3f247e6d9480542a",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "g": "d3868dc5f4aa2d65",
+        "name": "turn off input boolean tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.tv"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1090,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a25ba1ed70574f1",
+        "type": "api-current-state",
+        "z": "fd9cd80f14f860fe",
+        "g": "d3868dc5f4aa2d65",
+        "name": "state input boolean tv is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "input_boolean.tv",
@@ -596,76 +759,50 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 820,
-        "y": 540,
+        "y": 280,
         "wires": [
             [
-                "2799232b4b346c51"
+                "3f247e6d9480542a"
             ],
             []
         ]
     },
     {
-        "id": "2799232b4b346c51",
+        "id": "c222a13cfa8609af",
         "type": "api-call-service",
         "z": "fd9cd80f14f860fe",
-        "g": "cd256ec259a611f4",
-        "name": "turn on input boolean tv",
+        "g": "d3868dc5f4aa2d65",
+        "name": "turn off media players",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_on",
+        "domain": "media_player",
+        "service": "turn_off",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "input_boolean.tv"
+            "media_player.home_speaker",
+            "media_player.lg_webos_smart_tv",
+            "media_player.shield"
         ],
         "data": "",
-        "dataType": "json",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1070,
-        "y": 540,
+        "x": 800,
+        "y": 100,
         "wires": [
             []
         ]
     },
     {
-        "id": "64218c054bcb7baf",
+        "id": "da2286d94f0884ba",
         "type": "api-call-service",
         "z": "fd9cd80f14f860fe",
-        "g": "cd256ec259a611f4",
-        "name": "turn on screen",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "webostv",
-        "service": "command",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.lg_webos_smart_tv"
-        ],
-        "data": "{\"command\":\"com.webos.service.tvpower/power/turnOnScreen\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 780,
-        "y": 600,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "54b7f080b2edea10",
-        "type": "api-call-service",
-        "z": "fd9cd80f14f860fe",
-        "g": "cd256ec259a611f4",
-        "name": "select source optical input on bluesound powernode",
+        "g": "2ff8dfb43d1ba6a3",
+        "name": "play last played radio station from flow variable",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -676,38 +813,93 @@
         "entityId": [
             "media_player.powernode_2i_ea48"
         ],
-        "data": "{\"source\":\"Optical Input 1\"}",
+        "data": "{\"source\":\"{{flow.last_played_radio_station}}\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 890,
-        "y": 660,
+        "x": 1280,
+        "y": 820,
         "wires": [
             []
         ]
     },
     {
-        "id": "1e7eae419a9ec64f",
-        "type": "comment",
+        "id": "8ecce933c7cf8c5c",
+        "type": "switch",
         "z": "fd9cd80f14f860fe",
-        "g": "cd256ec259a611f4",
-        "name": "turn on tv, shield mediaplayer and receiver activity: Uitschakelen",
-        "info": "",
-        "x": 930,
-        "y": 440,
-        "wires": []
+        "g": "2ff8dfb43d1ba6a3",
+        "name": "",
+        "property": "last_played_radio_station",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "TuneIn",
+                "vt": "str"
+            },
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 750,
+        "y": 820,
+        "wires": [
+            [
+                "5a22e75177f6656a"
+            ],
+            [
+                "5a22e75177f6656a"
+            ],
+            [
+                "da2286d94f0884ba"
+            ]
+        ]
     },
     {
-        "id": "1f82b6c0e5dbebf0",
+        "id": "5a22e75177f6656a",
+        "type": "change",
+        "z": "fd9cd80f14f860fe",
+        "g": "2ff8dfb43d1ba6a3",
+        "name": "set last played radio station",
+        "rules": [
+            {
+                "t": "set",
+                "p": "last_played_radio_station",
+                "pt": "flow",
+                "to": "NPO Radio 2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 800,
+        "wires": [
+            [
+                "da2286d94f0884ba"
+            ]
+        ]
+    },
+    {
+        "id": "eab9993ce7699f6b",
         "type": "comment",
         "z": "fd9cd80f14f860fe",
-        "g": "d3868dc5f4aa2d65",
-        "name": "All actions when choose entertainment activity: Uitschakelen",
+        "g": "2ff8dfb43d1ba6a3",
+        "name": "turn on a radio station, activity: Radio",
         "info": "",
-        "x": 920,
-        "y": 60,
+        "x": 840,
+        "y": 760,
         "wires": []
     },
     {
@@ -829,9 +1021,8 @@
                 "8fbff3c6c9c3303c"
             ],
             [
-                "e020d358e653c079",
                 "8fbff3c6c9c3303c",
-                "33f7961ae7010284"
+                "0e86c16e42286a1a"
             ]
         ]
     },
@@ -1020,7 +1211,7 @@
         "id": "a7ae16757970717f",
         "type": "api-current-state",
         "z": "fd9cd80f14f860fe",
-        "name": "state person coen home",
+        "name": "state person coen is home",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
@@ -1052,8 +1243,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 370,
-        "y": 1420,
+        "x": 520,
+        "y": 1400,
         "wires": [
             [
                 "fdca445a404c15cc"
@@ -1097,57 +1288,12 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 670,
+        "x": 810,
         "y": 1420,
         "wires": [
             [
                 "f06607d23ea600e0",
                 "7c90580485197cda"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "34904c7210980bac",
-        "type": "api-current-state",
-        "z": "fd9cd80f14f860fe",
-        "name": "state person anne home",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "person.anne",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 370,
-        "y": 1480,
-        "wires": [
-            [
-                "fdca445a404c15cc"
             ],
             []
         ]
@@ -1171,7 +1317,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1080,
+        "x": 1200,
         "y": 1460,
         "wires": [
             []
@@ -1188,8 +1334,8 @@
         "syntax": "mustache",
         "template": "TV gepauseerd i.v.m. telefoongesprek.",
         "output": "str",
-        "x": 920,
-        "y": 1480,
+        "x": 1060,
+        "y": 1460,
         "wires": [
             [
                 "b9e865489ef34cee",
@@ -1218,7 +1364,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 990,
+        "x": 1130,
         "y": 1420,
         "wires": [
             []
@@ -1228,7 +1374,7 @@
         "id": "94ebde6817becd16",
         "type": "server-state-changed",
         "z": "fd9cd80f14f860fe",
-        "name": "state phone coen offhook",
+        "name": "state phone is offhook",
         "server": "4ba92433.2478cc",
         "version": 4,
         "exposeToHomeAssistant": false,
@@ -1242,8 +1388,8 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "sensor.phone_coen_phone_state",
-        "entityidfiltertype": "exact",
+        "entityidfilter": "^(?!.*battery).*sensor\\.phone_(.*?)_state.*$",
+        "entityidfiltertype": "regex",
         "outputinitially": true,
         "state_type": "str",
         "haltifstate": "offhook",
@@ -1279,75 +1425,11 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
+        "x": 120,
         "y": 1420,
         "wires": [
             [
-                "a7ae16757970717f"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "578c617053355a5a",
-        "type": "server-state-changed",
-        "z": "fd9cd80f14f860fe",
-        "name": "state phone anne offhook",
-        "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.phone_anne_phone_state_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "offhook",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": true,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 130,
-        "y": 1480,
-        "wires": [
-            [
-                "34904c7210980bac"
+                "4f9dcb4526aa6e68"
             ],
             []
         ]
@@ -1367,11 +1449,10 @@
         "type": "link out",
         "z": "fd9cd80f14f860fe",
         "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 1035,
-        "y": 1520,
+        "mode": "link",
+        "links": [],
+        "x": 1155,
+        "y": 1500,
         "wires": []
     },
     {
@@ -1517,183 +1598,82 @@
         ]
     },
     {
-        "id": "e020d358e653c079",
-        "type": "api-call-service",
-        "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "select powernode in spotify",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "media_player",
-        "service": "select_source",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.spotify_coen_s_nl"
-        ],
-        "data": "{\"source\":\"POWERNODE 2i-EA48\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 820,
-        "y": 960,
-        "wires": [
-            [
-                "d08f285d67e6fc1c"
-            ]
-        ]
-    },
-    {
-        "id": "d08f285d67e6fc1c",
-        "type": "api-call-service",
-        "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "play spotify",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "media_player",
-        "service": "select_source",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.powernode_2i_ea48"
-        ],
-        "data": "{\"source\":\"Spotify: Liked Songs\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1070,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "33f7961ae7010284",
-        "type": "ha-get-entities",
-        "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 0,
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "sensor.playlist_",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "array",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 770,
-        "y": 1020,
-        "wires": [
-            [
-                "496e9f6b60f7e763"
-            ]
-        ]
-    },
-    {
-        "id": "496e9f6b60f7e763",
-        "type": "split",
-        "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 910,
-        "y": 1020,
-        "wires": [
-            [
-                "ae3e3c86c7a641ae"
-            ]
-        ]
-    },
-    {
-        "id": "ae3e3c86c7a641ae",
+        "id": "4f9dcb4526aa6e68",
         "type": "switch",
         "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "",
-        "property": "payload.state",
+        "name": "who's phone",
+        "property": "data.entity_id",
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "unknown",
+                "t": "cont",
+                "v": "coen",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "anne",
                 "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 1030,
-        "y": 1020,
+        "outputs": 2,
+        "x": 310,
+        "y": 1420,
         "wires": [
             [
-                "afc206d613ea28f4"
+                "a7ae16757970717f"
+            ],
+            [
+                "951e80123d5d1350"
             ]
         ]
     },
     {
-        "id": "afc206d613ea28f4",
-        "type": "rbe",
+        "id": "951e80123d5d1350",
+        "type": "api-current-state",
         "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload.state",
-        "topi": "topic",
-        "x": 1150,
-        "y": 1020,
-        "wires": [
-            [
-                "aa0c955739836a72"
-            ]
-        ]
-    },
-    {
-        "id": "aa0c955739836a72",
-        "type": "link out",
-        "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "link out 1",
-        "mode": "link",
-        "links": [
-            "7264146e613f154c"
+        "name": "state person anne is home",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.anne",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
         ],
-        "x": 1235,
-        "y": 1020,
-        "wires": []
-    },
-    {
-        "id": "38e2ec5bd89aa669",
-        "type": "comment",
-        "z": "fd9cd80f14f860fe",
-        "g": "fc9a0630f16ecdaf",
-        "name": "turn on activity: Spotify",
-        "info": "",
-        "x": 800,
-        "y": 920,
-        "wires": []
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 520,
+        "y": 1440,
+        "wires": [
+            [
+                "fdca445a404c15cc"
+            ],
+            []
+        ]
     },
     {
         "id": "4ba92433.2478cc",
