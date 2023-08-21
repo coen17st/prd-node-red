@@ -8,6 +8,18 @@
         "env": []
     },
     {
+        "id": "82f23159ba39a88e",
+        "type": "junction",
+        "z": "42b354a7f0284779",
+        "x": 820,
+        "y": 280,
+        "wires": [
+            [
+                "53872c679773f631"
+            ]
+        ]
+    },
+    {
         "id": "a9361605716a10d3",
         "type": "server-state-changed",
         "z": "42b354a7f0284779",
@@ -29,10 +41,10 @@
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
-        "haltifstate": "",
+        "haltifstate": "Geen",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 1,
+        "halt_if_compare": "is_not",
+        "outputs": 2,
         "output_only_on_state_change": false,
         "for": "0",
         "forType": "num",
@@ -63,102 +75,775 @@
             }
         ],
         "x": 110,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
                 "fc015c3acdd57ee4"
-            ]
-        ]
-    },
-    {
-        "id": "29018d58938f73c4",
-        "type": "debug",
-        "z": "42b354a7f0284779",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "e20625fa90e6011f",
-        "type": "ha-binary-sensor",
-        "z": "42b354a7f0284779",
-        "name": "wall_dashboard_notification",
-        "entityConfig": "c9d4a71c9ef10ab5",
-        "version": 0,
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [
-            {
-                "property": "text",
-                "value": "text",
-                "valueType": "msg"
-            },
-            {
-                "property": "icon",
-                "value": "icon",
-                "valueType": "msg"
-            }
-        ],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 460,
-        "y": 40,
-        "wires": [
-            [
-                "5641c28ac758c454"
-            ]
+            ],
+            []
         ]
     },
     {
         "id": "fc015c3acdd57ee4",
         "type": "template",
         "z": "42b354a7f0284779",
-        "name": "text",
-        "field": "text",
+        "name": "secondary information",
+        "field": "secondary_information",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Morgen wordt de {{payload}} container opgehaald.",
+        "template": "Morgen wordt de {{payload}} container opgehaald",
         "output": "str",
-        "x": 270,
-        "y": 40,
+        "x": 460,
+        "y": 100,
         "wires": [
             [
-                "e20625fa90e6011f"
+                "da7f4a15f876a544"
             ]
         ]
     },
     {
-        "id": "5641c28ac758c454",
-        "type": "switch",
+        "id": "dea57fef9095da9f",
+        "type": "template",
         "z": "42b354a7f0284779",
         "name": "icon",
-        "property": "icon",
+        "field": "icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{data.new_state.attributes.icon}}",
+        "output": "str",
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [
+                "040d71ac086fd35b"
+            ]
+        ]
+    },
+    {
+        "id": "d278a06e2c150fbc",
+        "type": "change",
+        "z": "42b354a7f0284779",
+        "name": "turn on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 100,
+        "wires": [
+            [
+                "8a00a0f6a1a0bf80"
+            ]
+        ]
+    },
+    {
+        "id": "0cd33e0ae4f8e1ac",
+        "type": "server-state-changed",
+        "z": "42b354a7f0284779",
+        "name": "garbage today",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.afval_vandaag",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "Geen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "4d45fc9537848008"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4d45fc9537848008",
+        "type": "time-range-switch",
+        "z": "42b354a7f0284779",
+        "name": "",
+        "lat": "52.0434",
+        "lon": "5.6773",
+        "startTime": "05:00",
+        "endTime": "00:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "fc015c3acdd57ee4"
+            ],
+            [
+                "6d32a564bcd340a4"
+            ]
+        ]
+    },
+    {
+        "id": "6d32a564bcd340a4",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vandaag wordt de {{payload}} container opgehaald",
+        "output": "str",
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "da7f4a15f876a544"
+            ]
+        ]
+    },
+    {
+        "id": "040d71ac086fd35b",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Afval",
+        "output": "str",
+        "x": 970,
+        "y": 100,
+        "wires": [
+            [
+                "d278a06e2c150fbc"
+            ]
+        ]
+    },
+    {
+        "id": "2b0fe30521803418",
+        "type": "inject",
+        "z": "42b354a7f0284779",
+        "name": "00:15",
+        "props": [],
+        "repeat": "",
+        "crontab": "15 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "db50076959d8bd63"
+            ]
+        ]
+    },
+    {
+        "id": "db50076959d8bd63",
+        "type": "api-current-state",
+        "z": "42b354a7f0284779",
+        "name": "garbage tomorrow is Geen",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Geen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.afval_morgen",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "29d7a30a7dbc9c88"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "29d7a30a7dbc9c88",
+        "type": "api-current-state",
+        "z": "42b354a7f0284779",
+        "name": "garbage today is Geen",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Geen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.afval_vandaag",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 560,
+        "y": 220,
+        "wires": [
+            [
+                "53872c679773f631"
+            ],
+            [
+                "dd8c51096afea232"
+            ]
+        ]
+    },
+    {
+        "id": "53872c679773f631",
+        "type": "change",
+        "z": "42b354a7f0284779",
+        "name": "turn off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 160,
+        "wires": [
+            [
+                "8a00a0f6a1a0bf80"
+            ]
+        ]
+    },
+    {
+        "id": "da7f4a15f876a544",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Let op, de container moet aan de weg",
+        "output": "str",
+        "x": 690,
+        "y": 100,
+        "wires": [
+            [
+                "dea57fef9095da9f"
+            ]
+        ]
+    },
+    {
+        "id": "dd8c51096afea232",
+        "type": "time-range-switch",
+        "z": "42b354a7f0284779",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "startTime": "00:00",
+        "endTime": "09:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 790,
+        "y": 240,
+        "wires": [
+            [],
+            [
+                "53872c679773f631"
+            ]
+        ]
+    },
+    {
+        "id": "7532cf3b862598fc",
+        "type": "comment",
+        "z": "42b354a7f0284779",
+        "name": "Notifications on the wall tablet display",
+        "info": "",
+        "x": 170,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "183a5991d27d2b04",
+        "type": "comment",
+        "z": "42b354a7f0284779",
+        "name": "ACV garbage",
+        "info": "",
+        "x": 110,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "08c71b7711856e9c",
+        "type": "comment",
+        "z": "42b354a7f0284779",
+        "name": "Solar inverter",
+        "info": "",
+        "x": 110,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "30c6a811cbe1ee11",
+        "type": "server-state-changed",
+        "z": "42b354a7f0284779",
+        "name": "inverter status code",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.solaredge_modbus_status",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            }
+        ],
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "ef4c50873027b4b3"
+            ]
+        ]
+    },
+    {
+        "id": "1f0d99891d6c6d3f",
+        "type": "ha-binary-sensor",
+        "z": "42b354a7f0284779",
+        "name": "wall_display_notifications_inverter",
+        "entityConfig": "322100ba3b776a51",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "primary_information",
+                "value": "primary_information",
+                "valueType": "msg"
+            },
+            {
+                "property": "secondary_information",
+                "value": "secondary_information",
+                "valueType": "msg"
+            },
+            {
+                "property": "topic",
+                "value": "solar_inverter",
+                "valueType": "str"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:alert",
+                "valueType": "str"
+            },
+            {
+                "property": "icon_color",
+                "value": "red",
+                "valueType": "str"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 1320,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a00a0f6a1a0bf80",
+        "type": "ha-binary-sensor",
+        "z": "42b354a7f0284779",
+        "name": "wall_display_notifications_garbage",
+        "entityConfig": "34f98f9730d30acf",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "primary_information",
+                "value": "primary_information",
+                "valueType": "msg"
+            },
+            {
+                "property": "secondary_information",
+                "value": "secondary_information",
+                "valueType": "msg"
+            },
+            {
+                "property": "topic",
+                "value": "garbage",
+                "valueType": "str"
+            },
+            {
+                "property": "icon",
+                "value": "mdi:trash-can-outline",
+                "valueType": "str"
+            },
+            {
+                "property": "icon_color",
+                "value": "green",
+                "valueType": "str"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 1320,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c79af48f7d7ed9a",
+        "type": "switch",
+        "z": "42b354a7f0284779",
+        "name": "status",
+        "property": "data.new_state.state",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "data.new_state.attributes.icon",
-                "vt": "msg"
+                "v": "7",
+                "vt": "num"
             }
         ],
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 650,
-        "y": 40,
+        "x": 430,
+        "y": 380,
         "wires": [
             [
-                "29018d58938f73c4"
+                "2bcc033320eee7c1"
+            ]
+        ]
+    },
+    {
+        "id": "2bcc033320eee7c1",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De omvormer gaf op {{{myymd}}} om {{{mytime}}} status {{payload}}, {{{data.new_state.attributes.status_description}}}",
+        "output": "str",
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "117aca7da78c92fe"
+            ]
+        ]
+    },
+    {
+        "id": "117aca7da78c92fe",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is een probleem met de omvormer",
+        "output": "str",
+        "x": 810,
+        "y": 380,
+        "wires": [
+            [
+                "b8bd5a9c0d68065a"
+            ]
+        ]
+    },
+    {
+        "id": "b8bd5a9c0d68065a",
+        "type": "change",
+        "z": "42b354a7f0284779",
+        "name": "turn on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 380,
+        "wires": [
+            [
+                "1f0d99891d6c6d3f"
+            ]
+        ]
+    },
+    {
+        "id": "ef4c50873027b4b3",
+        "type": "simpletime",
+        "z": "42b354a7f0284779",
+        "name": "",
+        "mydate": false,
+        "myymd": true,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": true,
+        "mytimes": false,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "3c79af48f7d7ed9a"
+            ]
+        ]
+    },
+    {
+        "id": "ef2c325db53680d8",
+        "type": "change",
+        "z": "42b354a7f0284779",
+        "name": "turn off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 440,
+        "wires": [
+            [
+                "1f0d99891d6c6d3f"
+            ]
+        ]
+    },
+    {
+        "id": "ee59cbdfbdc02b73",
+        "type": "ha-button",
+        "z": "42b354a7f0284779",
+        "name": "wall_display_notifications_inverter_turn_off",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "fe573be8c52571bd",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 180,
+        "y": 440,
+        "wires": [
+            [
+                "ef2c325db53680d8"
+            ]
+        ]
+    },
+    {
+        "id": "b1af4f64284ab7ec",
+        "type": "ha-button",
+        "z": "42b354a7f0284779",
+        "name": "wall_display_notifications_garbage_turn_off",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "14322b90680ba1da",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "82f23159ba39a88e"
             ]
         ]
     },
@@ -186,17 +871,17 @@
         "enableGlobalContextStore": true
     },
     {
-        "id": "c9d4a71c9ef10ab5",
+        "id": "322100ba3b776a51",
         "type": "ha-entity-config",
         "server": "4ba92433.2478cc",
-        "deviceConfig": "",
-        "name": "wall_dashboard_notification",
+        "deviceConfig": "31e78a9307e3adfa",
+        "name": "wall_display_notifications_inverter",
         "version": "6",
         "entityType": "binary_sensor",
         "haConfig": [
             {
                 "property": "name",
-                "value": "wall_dashboard_notification"
+                "value": "wall_display_notifications_inverter"
             },
             {
                 "property": "icon",
@@ -217,5 +902,113 @@
         ],
         "resend": false,
         "debugEnabled": false
+    },
+    {
+        "id": "34f98f9730d30acf",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "31e78a9307e3adfa",
+        "name": "wall_display_notifications_garbage",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "wall_display_notifications_garbage"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
+        "debugEnabled": false
+    },
+    {
+        "id": "fe573be8c52571bd",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "31e78a9307e3adfa",
+        "name": "wall_display_notifications_inverter_turn_off",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "wall_display_notifications_inverter_turn_off"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "14322b90680ba1da",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "31e78a9307e3adfa",
+        "name": "wall_display_notifications_garbage_turn_off",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "wall_display_notifications_garbage_turn_off"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "31e78a9307e3adfa",
+        "type": "ha-device-config",
+        "name": "Wall display notifications",
+        "hwVersion": "",
+        "manufacturer": "Node-RED",
+        "model": "",
+        "swVersion": ""
     }
 ]

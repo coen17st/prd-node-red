@@ -63,7 +63,7 @@
             }
         ],
         "x": 100,
-        "y": 40,
+        "y": 60,
         "wires": [
             [
                 "ec90fab1c8567df8"
@@ -93,7 +93,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 330,
-        "y": 40,
+        "y": 60,
         "wires": [
             []
         ]
@@ -154,7 +154,7 @@
             }
         ],
         "x": 100,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "ec90fab1c8567df8"
@@ -218,13 +218,23 @@
             }
         ],
         "x": 100,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "ec90fab1c8567df8"
             ],
             []
         ]
+    },
+    {
+        "id": "248ad183c4c0db5a",
+        "type": "comment",
+        "z": "9f9f94838a3fcd77",
+        "name": "Triggers to turn on the wall tablet display",
+        "info": "",
+        "x": 180,
+        "y": 20,
+        "wires": []
     },
     {
         "id": "4ba92433.2478cc",
@@ -238,9 +248,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
