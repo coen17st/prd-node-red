@@ -140,7 +140,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1100,
+        "x": 1160,
         "y": 100,
         "wires": [
             [
@@ -402,7 +402,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
+        "x": 1170,
         "y": 160,
         "wires": [
             [
@@ -568,13 +568,13 @@
             },
             {
                 "property": "icon_color",
-                "value": "red",
-                "valueType": "str"
+                "value": "icon_color",
+                "valueType": "msg"
             }
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1320,
+        "x": 1380,
         "y": 420,
         "wires": [
             []
@@ -618,35 +618,10 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1320,
+        "x": 1380,
         "y": 140,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "3c79af48f7d7ed9a",
-        "type": "switch",
-        "z": "42b354a7f0284779",
-        "name": "status",
-        "property": "data.new_state.state",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "7",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 430,
-        "y": 380,
-        "wires": [
-            [
-                "2bcc033320eee7c1"
-            ]
         ]
     },
     {
@@ -660,7 +635,7 @@
         "syntax": "mustache",
         "template": "De omvormer gaf op {{{myymd}}} om {{{mytime}}} status {{payload}}, {{{data.new_state.attributes.status_description}}}",
         "output": "str",
-        "x": 600,
+        "x": 480,
         "y": 380,
         "wires": [
             [
@@ -679,11 +654,11 @@
         "syntax": "mustache",
         "template": "Er is een probleem met de omvormer",
         "output": "str",
-        "x": 810,
+        "x": 690,
         "y": 380,
         "wires": [
             [
-                "b8bd5a9c0d68065a"
+                "3c79af48f7d7ed9a"
             ]
         ]
     },
@@ -706,7 +681,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1100,
+        "x": 1160,
         "y": 380,
         "wires": [
             [
@@ -742,7 +717,7 @@
         "y": 380,
         "wires": [
             [
-                "3c79af48f7d7ed9a"
+                "2bcc033320eee7c1"
             ]
         ]
     },
@@ -765,7 +740,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
+        "x": 1170,
         "y": 440,
         "wires": [
             [
@@ -844,6 +819,77 @@
         "wires": [
             [
                 "82f23159ba39a88e"
+            ]
+        ]
+    },
+    {
+        "id": "3c79af48f7d7ed9a",
+        "type": "switch",
+        "z": "42b354a7f0284779",
+        "name": "status",
+        "property": "data.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 400,
+        "wires": [
+            [
+                "a35b8234748dfac6"
+            ],
+            [
+                "0ad21fed4f1d0208"
+            ]
+        ]
+    },
+    {
+        "id": "a35b8234748dfac6",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "icon_color",
+        "field": "icon_color",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "red",
+        "output": "str",
+        "x": 990,
+        "y": 380,
+        "wires": [
+            [
+                "b8bd5a9c0d68065a"
+            ]
+        ]
+    },
+    {
+        "id": "0ad21fed4f1d0208",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "name": "icon_color",
+        "field": "icon_color",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "orange",
+        "output": "str",
+        "x": 990,
+        "y": 420,
+        "wires": [
+            [
+                "b8bd5a9c0d68065a"
             ]
         ]
     },
