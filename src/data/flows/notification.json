@@ -8,23 +8,11 @@
         "env": []
     },
     {
-        "id": "d929298a3e7dc1e5",
-        "type": "junction",
-        "z": "535c98d1d92579b6",
-        "x": 920,
-        "y": 160,
-        "wires": [
-            [
-                "60dd6681f0c203d8"
-            ]
-        ]
-    },
-    {
         "id": "12ab222ef785d504",
         "type": "junction",
         "z": "535c98d1d92579b6",
-        "x": 920,
-        "y": 220,
+        "x": 960,
+        "y": 860,
         "wires": [
             [
                 "528f1050a96e3ee8"
@@ -35,8 +23,8 @@
         "id": "f90e9adef545cbb0",
         "type": "junction",
         "z": "535c98d1d92579b6",
-        "x": 920,
-        "y": 280,
+        "x": 960,
+        "y": 920,
         "wires": [
             [
                 "888146b5bc3de9b0"
@@ -52,112 +40,6 @@
         "x": 110,
         "y": 20,
         "wires": []
-    },
-    {
-        "id": "4db25e8d0289c57b",
-        "type": "link in",
-        "z": "535c98d1d92579b6",
-        "name": "notification_sensors_turn_on",
-        "links": [
-            "9fd7a6afaf90435a"
-        ],
-        "x": 35,
-        "y": 60,
-        "wires": [
-            [
-                "e13adef0f1bd6aea"
-            ]
-        ]
-    },
-    {
-        "id": "c911871c234d6a8e",
-        "type": "switch",
-        "z": "535c98d1d92579b6",
-        "name": "",
-        "property": "notification_level",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "info",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "warning",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "error",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 630,
-        "y": 60,
-        "wires": [
-            [
-                "4f661232083706f4"
-            ],
-            [
-                "49c8cba31a1ed6eb"
-            ],
-            [
-                "e9db94326e0edf23"
-            ]
-        ]
-    },
-    {
-        "id": "60dd6681f0c203d8",
-        "type": "ha-binary-sensor",
-        "z": "535c98d1d92579b6",
-        "name": "notification_level_info",
-        "entityConfig": "cab73c1a38f001be",
-        "version": 0,
-        "state": "payload",
-        "stateType": "msg",
-        "attributes": [
-            {
-                "property": "primary_information",
-                "value": "primary_information",
-                "valueType": "msg"
-            },
-            {
-                "property": "secondary_information",
-                "value": "secondary_information",
-                "valueType": "msg"
-            },
-            {
-                "property": "topic",
-                "value": "topic",
-                "valueType": "msg"
-            },
-            {
-                "property": "icon",
-                "value": "mdi:information-outline",
-                "valueType": "str"
-            },
-            {
-                "property": "icon_color",
-                "value": "yellow",
-                "valueType": "str"
-            },
-            {
-                "property": "notification_level",
-                "value": "notification_level",
-                "valueType": "msg"
-            }
-        ],
-        "inputOverride": "allow",
-        "outputProperties": [],
-        "x": 1080,
-        "y": 140,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "528f1050a96e3ee8",
@@ -202,8 +84,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1090,
-        "y": 200,
+        "x": 1130,
+        "y": 840,
         "wires": [
             []
         ]
@@ -251,8 +133,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1080,
-        "y": 260,
+        "x": 1120,
+        "y": 900,
         "wires": [
             []
         ]
@@ -264,11 +146,12 @@
         "name": "",
         "firstMessageBypass": true,
         "bypassInterval": "0",
-        "x": 850,
-        "y": 120,
+        "x": 610,
+        "y": 160,
         "wires": [
             [
-                "60dd6681f0c203d8"
+                "88f82f16d0ecc697",
+                "c7424ac5390d672f"
             ]
         ]
     },
@@ -279,8 +162,8 @@
         "name": "",
         "firstMessageBypass": true,
         "bypassInterval": "0",
-        "x": 850,
-        "y": 180,
+        "x": 890,
+        "y": 820,
         "wires": [
             [
                 "528f1050a96e3ee8"
@@ -294,8 +177,8 @@
         "name": "",
         "firstMessageBypass": true,
         "bypassInterval": "0",
-        "x": 850,
-        "y": 240,
+        "x": 890,
+        "y": 880,
         "wires": [
             [
                 "888146b5bc3de9b0"
@@ -311,47 +194,12 @@
         "debugenabled": false,
         "outputs": 1,
         "entityConfig": "61b96249023198be",
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "off",
-                "valueType": "str"
-            }
-        ],
-        "x": 140,
-        "y": 160,
+        "outputProperties": [],
+        "x": 160,
+        "y": 280,
         "wires": [
             [
-                "4b960c26c82aa47a",
-                "d929298a3e7dc1e5"
-            ]
-        ]
-    },
-    {
-        "id": "e13adef0f1bd6aea",
-        "type": "change",
-        "z": "535c98d1d92579b6",
-        "name": "turn on",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 60,
-        "wires": [
-            [
-                "c911871c234d6a8e"
+                "e190582e7eecb772"
             ]
         ]
     },
@@ -372,8 +220,8 @@
                 "valueType": "str"
             }
         ],
-        "x": 160,
-        "y": 220,
+        "x": 200,
+        "y": 860,
         "wires": [
             [
                 "47e4b19ee4b83c2a",
@@ -398,39 +246,12 @@
                 "valueType": "str"
             }
         ],
-        "x": 150,
-        "y": 280,
+        "x": 190,
+        "y": 920,
         "wires": [
             [
                 "807c3819e8e2d285",
                 "f90e9adef545cbb0"
-            ]
-        ]
-    },
-    {
-        "id": "09d0e940dc5f6082",
-        "type": "change",
-        "z": "535c98d1d92579b6",
-        "name": "trigger next notification",
-        "rules": [
-            {
-                "t": "set",
-                "p": "trigger",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 120,
-        "wires": [
-            [
-                "4f661232083706f4"
             ]
         ]
     },
@@ -453,8 +274,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 180,
+        "x": 620,
+        "y": 820,
         "wires": [
             [
                 "49c8cba31a1ed6eb"
@@ -480,8 +301,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 240,
+        "x": 620,
+        "y": 880,
         "wires": [
             [
                 "e9db94326e0edf23"
@@ -524,8 +345,8 @@
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [],
-        "x": 150,
-        "y": 400,
+        "x": 190,
+        "y": 1040,
         "wires": [
             [
                 "aa61681fa4979690"
@@ -558,41 +379,11 @@
         "output_location_type": "msg",
         "output_location": "payload",
         "output_results_count": 1,
-        "x": 450,
-        "y": 400,
+        "x": 490,
+        "y": 1040,
         "wires": [
             [
                 "abef639bc64e5cab"
-            ]
-        ]
-    },
-    {
-        "id": "4b960c26c82aa47a",
-        "type": "ha-wait-until",
-        "z": "535c98d1d92579b6",
-        "name": "wait to be off",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "binary_sensor.notification_level_info",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is",
-        "value": "off",
-        "valueType": "str",
-        "timeout": "0",
-        "timeoutType": "num",
-        "timeoutUnits": "milliseconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 390,
-        "y": 120,
-        "wires": [
-            [
-                "09d0e940dc5f6082"
             ]
         ]
     },
@@ -618,8 +409,8 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 390,
-        "y": 180,
+        "x": 430,
+        "y": 820,
         "wires": [
             [
                 "1dc9185b96eacbcc"
@@ -648,8 +439,8 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 390,
-        "y": 240,
+        "x": 430,
+        "y": 880,
         "wires": [
             [
                 "dea1b7454c3d51a5"
@@ -668,8 +459,8 @@
         "attributes": [],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 730,
-        "y": 400,
+        "x": 770,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -680,42 +471,364 @@
         "z": "535c98d1d92579b6",
         "name": "Notification sensor on counter",
         "info": "",
-        "x": 140,
-        "y": 360,
+        "x": 180,
+        "y": 1000,
         "wires": []
     },
     {
-        "id": "cab73c1a38f001be",
-        "type": "ha-entity-config",
-        "server": "4ba92433.2478cc",
-        "deviceConfig": "b18cdca463823daa",
-        "name": "notification_level_info",
-        "version": "6",
-        "entityType": "binary_sensor",
-        "haConfig": [
+        "id": "cc0d4a602f96a3d7",
+        "type": "inject",
+        "z": "535c98d1d92579b6",
+        "name": "message",
+        "props": [
             {
-                "property": "name",
-                "value": "notification_level_info"
+                "p": "primary_information",
+                "v": "test1",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test1",
+        "payloadType": "str",
+        "x": 220,
+        "y": 80,
+        "wires": [
+            [
+                "4f661232083706f4"
+            ]
+        ]
+    },
+    {
+        "id": "04c59436593249a0",
+        "type": "inject",
+        "z": "535c98d1d92579b6",
+        "name": "dismiss",
+        "props": [
+            {
+                "p": "null",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 240,
+        "wires": [
+            [
+                "e190582e7eecb772"
+            ]
+        ]
+    },
+    {
+        "id": "60dd6681f0c203d8",
+        "type": "ha-binary-sensor",
+        "z": "535c98d1d92579b6",
+        "name": "notification_level_info",
+        "entityConfig": "cab73c1a38f001be",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "primary_information",
+                "value": "primary_information",
+                "valueType": "msg"
+            },
+            {
+                "property": "secondary_information",
+                "value": "secondary_information",
+                "valueType": "msg"
+            },
+            {
+                "property": "topic",
+                "value": "topic",
+                "valueType": "msg"
             },
             {
                 "property": "icon",
-                "value": ""
+                "value": "mdi:information-outline",
+                "valueType": "str"
             },
             {
-                "property": "entity_category",
-                "value": ""
+                "property": "icon_color",
+                "value": "yellow",
+                "valueType": "str"
             },
             {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
+                "property": "notification_level",
+                "value": "notification_level",
+                "valueType": "msg"
             }
         ],
-        "resend": true,
-        "debugEnabled": false
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 1420,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d284fbdad343c385",
+        "type": "change",
+        "z": "535c98d1d92579b6",
+        "name": "change queueCount to prevent loop",
+        "rules": [
+            {
+                "t": "set",
+                "p": "queueCount",
+                "pt": "msg",
+                "to": "queueCount-disabled",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 220,
+        "wires": [
+            [
+                "4f661232083706f4"
+            ]
+        ]
+    },
+    {
+        "id": "88f82f16d0ecc697",
+        "type": "switch",
+        "z": "535c98d1d92579b6",
+        "name": "queueCount is manual",
+        "property": "queueCount",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "manual",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "08621321cbd341f3"
+            ]
+        ]
+    },
+    {
+        "id": "cf3dcb6dddbc3023",
+        "type": "switch",
+        "z": "535c98d1d92579b6",
+        "name": "queueCount = 0",
+        "property": "_queueCount",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 140,
+        "wires": [
+            [
+                "eb4339876a876c95"
+            ]
+        ]
+    },
+    {
+        "id": "eb4339876a876c95",
+        "type": "change",
+        "z": "535c98d1d92579b6",
+        "name": "turn off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1210,
+        "y": 140,
+        "wires": [
+            [
+                "60dd6681f0c203d8"
+            ]
+        ]
+    },
+    {
+        "id": "e190582e7eecb772",
+        "type": "change",
+        "z": "535c98d1d92579b6",
+        "name": "send queueCount",
+        "rules": [
+            {
+                "t": "set",
+                "p": "queueCount",
+                "pt": "msg",
+                "to": "manual",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "4f661232083706f4"
+            ]
+        ]
+    },
+    {
+        "id": "08621321cbd341f3",
+        "type": "change",
+        "z": "535c98d1d92579b6",
+        "name": "trigger next notification",
+        "rules": [
+            {
+                "t": "set",
+                "p": "trigger",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 220,
+        "wires": [
+            [
+                "d284fbdad343c385"
+            ]
+        ]
+    },
+    {
+        "id": "c7424ac5390d672f",
+        "type": "switch",
+        "z": "535c98d1d92579b6",
+        "name": "queueCount manual or not",
+        "property": "queueCount",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "manual",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "manual",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 840,
+        "y": 160,
+        "wires": [
+            [
+                "cf3dcb6dddbc3023"
+            ],
+            [
+                "60dd6681f0c203d8"
+            ]
+        ]
+    },
+    {
+        "id": "e0fc8ff4c01996f9",
+        "type": "inject",
+        "z": "535c98d1d92579b6",
+        "name": "message",
+        "props": [
+            {
+                "p": "primary_information",
+                "v": "test2",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test2",
+        "payloadType": "str",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "4f661232083706f4"
+            ]
+        ]
+    },
+    {
+        "id": "298fbe13921ca1fa",
+        "type": "inject",
+        "z": "535c98d1d92579b6",
+        "name": "message",
+        "props": [
+            {
+                "p": "primary_information",
+                "v": "test3",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test3",
+        "payloadType": "str",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "4f661232083706f4"
+            ]
+        ]
     },
     {
         "id": "fed106bf198ad2ea",
@@ -944,6 +1057,39 @@
             }
         ],
         "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "cab73c1a38f001be",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "b18cdca463823daa",
+        "name": "notification_level_info",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "notification_level_info"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
         "debugEnabled": false
     },
     {

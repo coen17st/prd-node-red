@@ -172,69 +172,6 @@
         ]
     },
     {
-        "id": "ef2c325db53680d8",
-        "type": "change",
-        "z": "42b354a7f0284779",
-        "name": "turn off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1230,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ee59cbdfbdc02b73",
-        "type": "ha-button",
-        "z": "42b354a7f0284779",
-        "name": "wall_display_notifications_inverter_turn_off",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "fe573be8c52571bd",
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "x": 200,
-        "y": 180,
-        "wires": [
-            [
-                "ef2c325db53680d8",
-                "b60cfb20c1cfaccb"
-            ]
-        ]
-    },
-    {
         "id": "3c79af48f7d7ed9a",
         "type": "switch",
         "z": "42b354a7f0284779",
@@ -523,6 +460,26 @@
         "wires": []
     },
     {
+        "id": "7532cf3b862598fc",
+        "type": "comment",
+        "z": "42b354a7f0284779",
+        "name": "Notifications on the wall tablet display",
+        "info": "",
+        "x": 170,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "f9e74387eb71a421",
+        "type": "comment",
+        "z": "42b354a7f0284779",
+        "name": "Info notifications",
+        "info": "",
+        "x": 120,
+        "y": 60,
+        "wires": []
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -544,47 +501,5 @@
         "statusHourCycle": "h23",
         "statusTimeFormat": "h:m",
         "enableGlobalContextStore": true
-    },
-    {
-        "id": "fe573be8c52571bd",
-        "type": "ha-entity-config",
-        "server": "4ba92433.2478cc",
-        "deviceConfig": "31e78a9307e3adfa",
-        "name": "wall_display_notifications_inverter_turn_off",
-        "version": "6",
-        "entityType": "button",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": "wall_display_notifications_inverter_turn_off"
-            },
-            {
-                "property": "icon",
-                "value": ""
-            },
-            {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
-            }
-        ],
-        "resend": false,
-        "debugEnabled": false
-    },
-    {
-        "id": "31e78a9307e3adfa",
-        "type": "ha-device-config",
-        "name": "Wall display notifications",
-        "hwVersion": "",
-        "manufacturer": "Node-RED",
-        "model": "",
-        "swVersion": ""
     }
 ]
