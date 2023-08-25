@@ -322,7 +322,8 @@
         "links": [
             "9fd7a6afaf90435a",
             "f964605ee893d59d",
-            "178e42db86a628e8"
+            "178e42db86a628e8",
+            "8474d1caa427cb1a"
         ],
         "x": 35,
         "y": 60,
@@ -1169,7 +1170,7 @@
                 "t": "set",
                 "p": "icon_color",
                 "pt": "msg",
-                "to": "red",
+                "to": "orange",
                 "tot": "str"
             }
         ],

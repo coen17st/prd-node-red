@@ -1,0 +1,236 @@
+[
+    {
+        "id": "b1b994b3d43d6aad",
+        "type": "tab",
+        "label": "notification_stookalert",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "277a8323827b9390",
+        "type": "comment",
+        "z": "b1b994b3d43d6aad",
+        "name": "send notification when stookalert is on",
+        "info": "",
+        "x": 170,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e7b37a2bf7a7f071",
+        "type": "server-state-changed",
+        "z": "b1b994b3d43d6aad",
+        "name": "stookalert is on",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.stookalert_gelderland",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "015fa374fab07308"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4706c9b9c33456ec",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Op {{{myymd}}} om {{{mytime}}} heeft het RIVM een stookalert afgegeven, het is raadzaam niet de houtkachel te gebruiken",
+        "output": "str",
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "f04dc28db48fa2c4"
+            ]
+        ]
+    },
+    {
+        "id": "f04dc28db48fa2c4",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Let op, stookalert!",
+        "output": "str",
+        "x": 670,
+        "y": 60,
+        "wires": [
+            [
+                "84c20f3447f449ed"
+            ]
+        ]
+    },
+    {
+        "id": "84c20f3447f449ed",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "safety",
+        "output": "str",
+        "x": 830,
+        "y": 60,
+        "wires": [
+            [
+                "96a9d68a091fc4a5"
+            ]
+        ]
+    },
+    {
+        "id": "96a9d68a091fc4a5",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "name": "notification_level",
+        "field": "notification_level",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "warning",
+        "output": "str",
+        "x": 990,
+        "y": 60,
+        "wires": [
+            [
+                "731568e6adddd397"
+            ]
+        ]
+    },
+    {
+        "id": "8474d1caa427cb1a",
+        "type": "link out",
+        "z": "b1b994b3d43d6aad",
+        "name": "notification",
+        "mode": "link",
+        "links": [
+            "60e14e33a793f50d"
+        ],
+        "x": 1255,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "015fa374fab07308",
+        "type": "simpletime",
+        "z": "b1b994b3d43d6aad",
+        "name": "",
+        "mydate": false,
+        "myymd": true,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": true,
+        "mytimes": false,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "4706c9b9c33456ec"
+            ]
+        ]
+    },
+    {
+        "id": "731568e6adddd397",
+        "type": "change",
+        "z": "b1b994b3d43d6aad",
+        "name": "set icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "icon",
+                "pt": "msg",
+                "to": "mdi:fireplace",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 60,
+        "wires": [
+            [
+                "8474d1caa427cb1a"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
