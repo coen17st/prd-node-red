@@ -164,7 +164,8 @@
         "name": "notification",
         "mode": "link",
         "links": [
-            "4db25e8d0289c57b"
+            "4db25e8d0289c57b",
+            "60e14e33a793f50d"
         ],
         "x": 1285,
         "y": 60,
@@ -399,28 +400,10 @@
         "y": 120,
         "wires": [
             [
-                "6d32a564bcd340a4",
-                "a19ad7503a643b16"
+                "6d32a564bcd340a4"
             ],
             []
         ]
-    },
-    {
-        "id": "a19ad7503a643b16",
-        "type": "debug",
-        "z": "72f3a564e626ff9a",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "4ba92433.2478cc",
