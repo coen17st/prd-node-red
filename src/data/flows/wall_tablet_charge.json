@@ -33,13 +33,13 @@
         "halt_if_type": "num",
         "halt_if_compare": "is",
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "output_only_on_state_change": false,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": false,
         "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
@@ -91,19 +91,27 @@
                 "t": "lt",
                 "v": "30",
                 "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "unknown",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
+        "outputs": 3,
         "x": 310,
         "y": 60,
         "wires": [
             [
-                "e68e31631f7ada56"
+                "0b118ac6e884fc56"
             ],
             [
-                "d21e435e29262990"
+                "077067e28d6d59b4"
+            ],
+            [
+                "077067e28d6d59b4"
             ]
         ]
     },
@@ -128,7 +136,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 670,
+        "x": 530,
         "y": 120,
         "wires": [
             []
@@ -155,73 +163,9 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 670,
+        "x": 530,
         "y": 60,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e68e31631f7ada56",
-        "type": "api-current-state",
-        "z": "03ed0365a1543556",
-        "name": "switch is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.cv_closet_walltablet_charger",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 470,
-        "y": 60,
-        "wires": [
-            [
-                "0b118ac6e884fc56"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "d21e435e29262990",
-        "type": "api-current-state",
-        "z": "03ed0365a1543556",
-        "name": "switch is off",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "switch.cv_closet_walltablet_charger",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 470,
-        "y": 120,
-        "wires": [
-            [
-                "077067e28d6d59b4"
-            ],
             []
         ]
     },
