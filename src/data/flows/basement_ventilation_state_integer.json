@@ -1,0 +1,390 @@
+[
+    {
+        "id": "46ac97ef616beb82",
+        "type": "tab",
+        "label": "ventilation_state_integer",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c9f038deb7a6ee66",
+        "type": "comment",
+        "z": "46ac97ef616beb82",
+        "name": "",
+        "info": "",
+        "x": 80,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "da2b5bdd457f5ddd",
+        "type": "ha-sensor",
+        "z": "46ac97ef616beb82",
+        "name": "ventilation_state_integer",
+        "entityConfig": "7e3a964e42c281e3",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 590,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa6642c93fdb149f",
+        "type": "change",
+        "z": "46ac97ef616beb82",
+        "name": "0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 60,
+        "wires": [
+            [
+                "da2b5bdd457f5ddd"
+            ]
+        ]
+    },
+    {
+        "id": "67b91a6c28779651",
+        "type": "change",
+        "z": "46ac97ef616beb82",
+        "name": "33",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "33",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "da2b5bdd457f5ddd"
+            ]
+        ]
+    },
+    {
+        "id": "f67ae0ab241378de",
+        "type": "server-state-changed",
+        "z": "46ac97ef616beb82",
+        "name": "mechanical_ventilation_position_0",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_0",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 160,
+        "y": 60,
+        "wires": [
+            [
+                "aa6642c93fdb149f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "73b81148fac3a5c8",
+        "type": "server-state-changed",
+        "z": "46ac97ef616beb82",
+        "name": "mechanical_ventilation_position_1",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "67b91a6c28779651"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "440953120871344e",
+        "type": "server-state-changed",
+        "z": "46ac97ef616beb82",
+        "name": "mechanical_ventilation_position_2",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 160,
+        "y": 180,
+        "wires": [
+            [
+                "4802ce690d9cb031"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dad475b0babc64ce",
+        "type": "server-state-changed",
+        "z": "46ac97ef616beb82",
+        "name": "mechanical_ventilation_position_3",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.mechanical_ventilation_position_3",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 160,
+        "y": 240,
+        "wires": [
+            [
+                "7501c10bcd903fa4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4802ce690d9cb031",
+        "type": "change",
+        "z": "46ac97ef616beb82",
+        "name": "66",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "66",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "da2b5bdd457f5ddd"
+            ]
+        ]
+    },
+    {
+        "id": "7501c10bcd903fa4",
+        "type": "change",
+        "z": "46ac97ef616beb82",
+        "name": "99",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "99",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "da2b5bdd457f5ddd"
+            ]
+        ]
+    },
+    {
+        "id": "7e3a964e42c281e3",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "ventilation_state_integer",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "ventilation_state_integer"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": "%"
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": true,
+        "debugEnabled": false
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
