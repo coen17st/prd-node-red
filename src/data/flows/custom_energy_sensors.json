@@ -362,7 +362,7 @@
         "type": "function",
         "z": "46d98b35c2eee05b",
         "name": "calculation",
-        "func": "// Sum two values\nmsg.payload = (parseFloat(msg.returned) + -parseFloat(msg.delivered) - parseFloat(msg.producing) / 1000) * 1000;\nreturn msg;",
+        "func": "// Sum two values\nmsg.payload = ((parseFloat(msg.returned) - parseFloat(msg.delivered)) - parseFloat(msg.producing) / 1000) * 1000;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -390,23 +390,6 @@
         "outputProperties": [],
         "x": 1020,
         "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b21d09630d4b623e",
-        "type": "function",
-        "z": "46d98b35c2eee05b",
-        "name": "make decimal string",
-        "func": "// Make a string with 3 decimals\nmsg.producing \nmsg.producing = (parseFloat(msg.producing) / 1000).toFixed(3);\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 420,
         "wires": [
             []
         ]
