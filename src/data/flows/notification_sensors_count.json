@@ -171,10 +171,10 @@
             },
             {
                 "property": "state_class",
-                "value": ""
+                "value": "total"
             }
         ],
-        "resend": false,
+        "resend": true,
         "debugEnabled": false
     },
     {
