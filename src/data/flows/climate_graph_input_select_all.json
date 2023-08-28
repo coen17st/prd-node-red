@@ -1,0 +1,156 @@
+[
+    {
+        "id": "1adcdebcdc8e5c39",
+        "type": "tab",
+        "label": "climate_graph_input_select_all",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bb87dec7896e25a8",
+        "type": "ha-button",
+        "z": "1adcdebcdc8e5c39",
+        "name": "climate_graph_input_select_all_temperature",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "4149472952a8d9c6",
+        "outputProperties": [
+            {
+                "property": "option",
+                "propertyType": "msg",
+                "value": "Temperature",
+                "valueType": "str"
+            }
+        ],
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "6c70289470244d20"
+            ]
+        ]
+    },
+    {
+        "id": "6c70289470244d20",
+        "type": "ha-get-entities",
+        "z": "1adcdebcdc8e5c39",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "input_select.climate_graph_*",
+                "valueType": "re"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 450,
+        "y": 60,
+        "wires": [
+            [
+                "caa9c954adc5c425"
+            ]
+        ]
+    },
+    {
+        "id": "caa9c954adc5c425",
+        "type": "api-call-service",
+        "z": "1adcdebcdc8e5c39",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_select",
+        "service": "select_option",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "{\"option\":\"{{option}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 650,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e3d7d7dc062d5f4",
+        "type": "comment",
+        "z": "1adcdebcdc8e5c39",
+        "name": "Set all climate graph input selects to certain input",
+        "info": "",
+        "x": 200,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4149472952a8d9c6",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "climate_graph_input_select_all_absolute_humidity",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "climate_graph_input_select_all_absolute_humidity"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
