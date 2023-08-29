@@ -362,7 +362,7 @@
         "type": "function",
         "z": "46d98b35c2eee05b",
         "name": "calculation",
-        "func": "// Sum two values\nmsg.payload = ((parseFloat(msg.returned) - parseFloat(msg.delivered)) - parseFloat(msg.producing) / 1000) * 1000;\nreturn msg;",
+        "func": "// Sum two values\nmsg.payload = (((parseFloat(msg.returned) - parseFloat(msg.delivered)) - parseFloat(msg.producing) / 1000) * 1000).toFixed(0);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
