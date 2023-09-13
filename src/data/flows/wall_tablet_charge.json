@@ -56,11 +56,12 @@
                 "valueType": "eventData"
             }
         ],
-        "x": 120,
+        "x": 100,
         "y": 60,
         "wires": [
             [
-                "b9298a615e99a23f"
+                "b9298a615e99a23f",
+                "3217ced2069523e7"
             ]
         ]
     },
@@ -96,16 +97,22 @@
                 "t": "eq",
                 "v": "unknown",
                 "vt": "str"
+            },
+            {
+                "t": "null"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
+        "outputs": 4,
         "x": 310,
-        "y": 60,
+        "y": 80,
         "wires": [
             [
                 "0b118ac6e884fc56"
+            ],
+            [
+                "077067e28d6d59b4"
             ],
             [
                 "077067e28d6d59b4"
@@ -136,7 +143,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 530,
+        "x": 550,
         "y": 120,
         "wires": [
             []
@@ -163,9 +170,27 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 530,
+        "x": 550,
         "y": 60,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3217ced2069523e7",
+        "type": "stoptimer",
+        "z": "03ed0365a1543556",
+        "duration": "1",
+        "units": "Hour",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "077067e28d6d59b4"
+            ],
             []
         ]
     },
