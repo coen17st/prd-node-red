@@ -1,0 +1,622 @@
+[
+    {
+        "id": "eb1939ba1b7e9b73",
+        "type": "tab",
+        "label": "off_mode",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c860c0ff802edef8",
+        "type": "junction",
+        "z": "eb1939ba1b7e9b73",
+        "x": 660,
+        "y": 300,
+        "wires": [
+            [
+                "49bc3a7a927254a2"
+            ]
+        ]
+    },
+    {
+        "id": "3b9a1fc1.aafd9",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "input select entertainment_activity uitschakelen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_select",
+        "service": "select_option",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_select.entertainment_activity"
+        ],
+        "data": "{\"option\":\"Uitschakelen\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "397bbd3d.0bb3f2",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "turn on climate auto mode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "climate",
+        "service": "set_hvac_mode",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "{\"hvac_mode\":\"auto\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 650,
+        "y": 420,
+        "wires": [
+            [
+                "477c8f0e.c4289"
+            ]
+        ]
+    },
+    {
+        "id": "477c8f0e.c4289",
+        "type": "join",
+        "z": "eb1939ba1b7e9b73",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload.attributes.friendly_name",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 850,
+        "y": 420,
+        "wires": [
+            [
+                "b85d118c.fbdc4"
+            ]
+        ]
+    },
+    {
+        "id": "b85d118c.fbdc4",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
+        "output": "str",
+        "x": 980,
+        "y": 420,
+        "wires": [
+            [
+                "ad7f00b7b2b0e671"
+            ]
+        ]
+    },
+    {
+        "id": "83808dcd.70439",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "turn off water heater",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "water_heater",
+        "service": "set_operation_mode",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "water_heater.warm_water"
+        ],
+        "data": "{\"operation_mode\":\"off\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 360,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5644cdae.e32cc4",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "turn off childlock kitchen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.childlock_kitchen_switch"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 370,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad7f00b7b2b0e671",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "In APP Notify",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "persistent_notification",
+        "service": "create",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{message}}\",\"title\":\"Verwarming\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1130,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fda4eae176ed738e",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "name": "format friendly name",
+        "field": "friendly_name",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{payload.attributes.friendly_name}}}",
+        "output": "str",
+        "x": 1360,
+        "y": 300,
+        "wires": [
+            [
+                "58d0a2479b16b408"
+            ]
+        ]
+    },
+    {
+        "id": "58d0a2479b16b408",
+        "type": "join",
+        "z": "eb1939ba1b7e9b73",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "friendly_name",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1530,
+        "y": 300,
+        "wires": [
+            [
+                "89625810ae98a2fc"
+            ]
+        ]
+    },
+    {
+        "id": "89625810ae98a2fc",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
+        "output": "str",
+        "x": 1660,
+        "y": 300,
+        "wires": [
+            [
+                "a8dadd67cf109c6d"
+            ]
+        ]
+    },
+    {
+        "id": "a8dadd67cf109c6d",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "In APP Notify",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "persistent_notification",
+        "service": "create",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{message}}\",\"title\":\"Verlichting\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1810,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db8cc8f4bb9386ab",
+        "type": "api-current-state",
+        "z": "eb1939ba1b7e9b73",
+        "name": "state input select is all off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Uitschakelen",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.entertainment_activity",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "3b9a1fc1.aafd9"
+            ]
+        ]
+    },
+    {
+        "id": "f9028094.57a62",
+        "type": "ha-get-entities",
+        "z": "eb1939ba1b7e9b73",
+        "name": "lookup climate is not auto",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "climate.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is_not",
+                "value": "auto",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "397bbd3d.0bb3f2"
+            ]
+        ]
+    },
+    {
+        "id": "cffcc601228bd54a",
+        "type": "switch",
+        "z": "eb1939ba1b7e9b73",
+        "name": "is not upstairs hall light",
+        "property": "payload.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "light.shelly1_upstairs_hall",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 260,
+        "wires": [
+            [
+                "1fa1246c6848fd5c"
+            ]
+        ]
+    },
+    {
+        "id": "f8293a288e844f8f",
+        "type": "api-current-state",
+        "z": "eb1939ba1b7e9b73",
+        "name": "sleepmode is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.sleep_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "cffcc601228bd54a"
+            ],
+            [
+                "c860c0ff802edef8"
+            ]
+        ]
+    },
+    {
+        "id": "3fc0dbaa106c85b8",
+        "type": "ha-get-entities",
+        "z": "eb1939ba1b7e9b73",
+        "name": "lookup lights on",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "light.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "on",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "f8293a288e844f8f"
+            ]
+        ]
+    },
+    {
+        "id": "49bc3a7a927254a2",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "turn off lights",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1170,
+        "y": 300,
+        "wires": [
+            [
+                "fda4eae176ed738e"
+            ]
+        ]
+    },
+    {
+        "id": "1fa1246c6848fd5c",
+        "type": "switch",
+        "z": "eb1939ba1b7e9b73",
+        "name": "is not kitchen light",
+        "property": "payload.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "light.shellydimmer_kitchen",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "49bc3a7a927254a2"
+            ]
+        ]
+    },
+    {
+        "id": "f827a95998de6720",
+        "type": "ha-get-entities",
+        "z": "eb1939ba1b7e9b73",
+        "name": "lookup media_player is not off",
+        "server": "4ba92433.2478cc",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "media_player.",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is_not",
+                "value": "off",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "675c7734fcb84621"
+            ]
+        ]
+    },
+    {
+        "id": "675c7734fcb84621",
+        "type": "api-call-service",
+        "z": "eb1939ba1b7e9b73",
+        "name": "turn off media_player",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 640,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51f8fd5354fac718",
+        "type": "link in",
+        "z": "eb1939ba1b7e9b73",
+        "name": "link in off_mode",
+        "links": [
+            "1c92170cf2ff6d63",
+            "78bedeb65fca6d0f"
+        ],
+        "x": 175,
+        "y": 80,
+        "wires": [
+            [
+                "5644cdae.e32cc4",
+                "83808dcd.70439",
+                "db8cc8f4bb9386ab",
+                "3fc0dbaa106c85b8",
+                "f827a95998de6720",
+                "f9028094.57a62"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
