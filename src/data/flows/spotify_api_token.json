@@ -1,46 +1,21 @@
 [
     {
-        "id": "0a4e0762f5261024",
-        "type": "subflow",
-        "name": "spotify_access_token",
+        "id": "584b31926baad02b",
+        "type": "tab",
+        "label": "spotify_api_token",
+        "disabled": false,
         "info": "",
-        "category": "",
-        "in": [
-            {
-                "x": 40,
-                "y": 80,
-                "wires": [
-                    {
-                        "id": "c2135e1864cfd9e7"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 1100,
-                "y": 80,
-                "wires": [
-                    {
-                        "id": "743d58e81b2bc746",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99"
+        "env": []
     },
     {
-        "id": "2ba64b7b96f9fcb4",
+        "id": "fb24a0eedc88b4da",
         "type": "http request",
-        "z": "0a4e0762f5261024",
+        "z": "584b31926baad02b",
         "name": "get token",
         "method": "POST",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "",
+        "url": "https://accounts.spotify.com/api/token",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -55,18 +30,18 @@
                 "valueValue": "application/x-www-form-urlencoded"
             }
         ],
-        "x": 700,
-        "y": 80,
+        "x": 740,
+        "y": 60,
         "wires": [
             [
-                "743d58e81b2bc746"
+                "f691e43bf48e100a"
             ]
         ]
     },
     {
-        "id": "c2135e1864cfd9e7",
+        "id": "e320588ed50c77d5",
         "type": "change",
-        "z": "0a4e0762f5261024",
+        "z": "584b31926baad02b",
         "name": "client id and client secret",
         "rules": [
             {
@@ -89,18 +64,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 190,
-        "y": 80,
+        "x": 230,
+        "y": 60,
         "wires": [
             [
-                "924b2a4b7bccd021"
+                "84d72d4e3a05e1bc"
             ]
         ]
     },
     {
-        "id": "924b2a4b7bccd021",
+        "id": "84d72d4e3a05e1bc",
         "type": "template",
-        "z": "0a4e0762f5261024",
+        "z": "584b31926baad02b",
         "name": "body for get token",
         "field": "payload",
         "fieldType": "msg",
@@ -108,19 +83,19 @@
         "syntax": "mustache",
         "template": "grant_type=client_credentials&client_id={{{client_id}}}&client_secret={{{client_secret}}}",
         "output": "str",
-        "x": 410,
-        "y": 80,
+        "x": 450,
+        "y": 60,
         "wires": [
             [
-                "b91d31206ecca063"
+                "dc56b78107516298"
             ]
         ]
     },
     {
-        "id": "743d58e81b2bc746",
+        "id": "f691e43bf48e100a",
         "type": "change",
-        "z": "0a4e0762f5261024",
-        "name": "save access token to flow variable",
+        "z": "584b31926baad02b",
+        "name": "save access token to global variable",
         "rules": [
             {
                 "t": "set",
@@ -135,16 +110,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 80,
+        "x": 970,
+        "y": 60,
         "wires": [
             []
         ]
     },
     {
-        "id": "b91d31206ecca063",
+        "id": "dc56b78107516298",
         "type": "template",
-        "z": "0a4e0762f5261024",
+        "z": "584b31926baad02b",
         "name": "url",
         "field": "url",
         "fieldType": "msg",
@@ -152,11 +127,25 @@
         "syntax": "mustache",
         "template": "https://accounts.spotify.com/api/token",
         "output": "str",
-        "x": 570,
-        "y": 80,
+        "x": 610,
+        "y": 60,
         "wires": [
             [
-                "2ba64b7b96f9fcb4"
+                "fb24a0eedc88b4da"
+            ]
+        ]
+    },
+    {
+        "id": "1dd634541306cba1",
+        "type": "link in",
+        "z": "584b31926baad02b",
+        "name": "link in 1",
+        "links": [],
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "e320588ed50c77d5"
             ]
         ]
     }
