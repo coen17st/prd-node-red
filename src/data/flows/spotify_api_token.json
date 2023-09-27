@@ -30,7 +30,7 @@
                 "valueValue": "application/x-www-form-urlencoded"
             }
         ],
-        "x": 740,
+        "x": 820,
         "y": 60,
         "wires": [
             [
@@ -64,7 +64,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 230,
+        "x": 310,
         "y": 60,
         "wires": [
             [
@@ -83,7 +83,7 @@
         "syntax": "mustache",
         "template": "grant_type=client_credentials&client_id={{{client_id}}}&client_secret={{{client_secret}}}",
         "output": "str",
-        "x": 450,
+        "x": 530,
         "y": 60,
         "wires": [
             [
@@ -110,7 +110,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
+        "x": 1050,
         "y": 60,
         "wires": [
             []
@@ -127,7 +127,7 @@
         "syntax": "mustache",
         "template": "https://accounts.spotify.com/api/token",
         "output": "str",
-        "x": 610,
+        "x": 690,
         "y": 60,
         "wires": [
             [
@@ -139,14 +139,26 @@
         "id": "1dd634541306cba1",
         "type": "link in",
         "z": "584b31926baad02b",
-        "name": "link in 1",
-        "links": [],
-        "x": 65,
+        "name": "link in to spotify_api_token",
+        "links": [
+            "ce9243b0f1f12355"
+        ],
+        "x": 165,
         "y": 60,
         "wires": [
             [
                 "e320588ed50c77d5"
             ]
         ]
+    },
+    {
+        "id": "7bc7fae2839a6cd6",
+        "type": "comment",
+        "z": "584b31926baad02b",
+        "name": "Get new api token if it not exists or existing one is expired",
+        "info": "",
+        "x": 230,
+        "y": 20,
+        "wires": []
     }
 ]
