@@ -1029,7 +1029,8 @@
             ],
             [
                 "61e6d10bbacb84be",
-                "4177ac6360bee34e"
+                "4177ac6360bee34e",
+                "f9e486866e6d65f1"
             ],
             [
                 "8fbff3c6c9c3303c",
@@ -1078,7 +1079,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 580,
+        "x": 680,
         "y": 1180,
         "wires": [
             [
@@ -1148,7 +1149,7 @@
             }
         ],
         "x": 140,
-        "y": 1160,
+        "y": 1220,
         "wires": [
             [
                 "fff0aa0341f4ae9e"
@@ -1176,7 +1177,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1150,
+        "x": 1570,
         "y": 1180,
         "wires": [
             []
@@ -1213,11 +1214,11 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 850,
+        "x": 930,
         "y": 1180,
         "wires": [
             [
-                "f5f41857318bb062"
+                "68faf123c53273fa"
             ],
             []
         ]
@@ -1259,7 +1260,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 520,
-        "y": 1420,
+        "y": 1520,
         "wires": [
             [
                 "fdca445a404c15cc"
@@ -1304,7 +1305,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 810,
-        "y": 1440,
+        "y": 1540,
         "wires": [
             [
                 "f06607d23ea600e0",
@@ -1333,7 +1334,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1200,
-        "y": 1480,
+        "y": 1580,
         "wires": [
             []
         ]
@@ -1350,7 +1351,7 @@
         "template": "TV gepauseerd i.v.m. telefoongesprek.",
         "output": "str",
         "x": 1060,
-        "y": 1480,
+        "y": 1580,
         "wires": [
             [
                 "b9e865489ef34cee",
@@ -1380,7 +1381,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1130,
-        "y": 1440,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -1441,7 +1442,7 @@
             }
         ],
         "x": 120,
-        "y": 1440,
+        "y": 1540,
         "wires": [
             [
                 "4f9dcb4526aa6e68"
@@ -1456,7 +1457,7 @@
         "name": "pause when phone is off hook",
         "info": "",
         "x": 160,
-        "y": 1400,
+        "y": 1500,
         "wires": []
     },
     {
@@ -1467,7 +1468,7 @@
         "mode": "link",
         "links": [],
         "x": 1155,
-        "y": 1520,
+        "y": 1620,
         "wires": []
     },
     {
@@ -1503,7 +1504,7 @@
         "repair": false,
         "outputs": 2,
         "x": 310,
-        "y": 1440,
+        "y": 1540,
         "wires": [
             [
                 "a7ae16757970717f"
@@ -1550,7 +1551,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 520,
-        "y": 1460,
+        "y": 1560,
         "wires": [
             [
                 "fdca445a404c15cc"
@@ -1562,7 +1563,7 @@
         "id": "fff0aa0341f4ae9e",
         "type": "switch",
         "z": "fd9cd80f14f860fe",
-        "name": "",
+        "name": "time change threshold",
         "property": "data.new_state.timeSinceChangedMs",
         "propertyType": "msg",
         "rules": [
@@ -1575,8 +1576,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 330,
-        "y": 1160,
+        "x": 380,
+        "y": 1180,
         "wires": [
             [
                 "6200553045b75bfd"
@@ -1595,8 +1596,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 450,
-        "y": 1160,
+        "x": 550,
+        "y": 1180,
         "wires": [
             [
                 "952456911c2c70ae"
@@ -1610,7 +1611,7 @@
         "name": "select entertainment activity based on powernode content",
         "info": "",
         "x": 250,
-        "y": 1240,
+        "y": 1360,
         "wires": []
     },
     {
@@ -1669,7 +1670,7 @@
             }
         ],
         "x": 140,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             [
                 "d2469e552aa559a3"
@@ -1695,7 +1696,7 @@
         "repair": false,
         "outputs": 1,
         "x": 330,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             [
                 "0a97895675822841"
@@ -1723,7 +1724,7 @@
         "repair": false,
         "outputs": 2,
         "x": 730,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             [
                 "167fb4439eb061eb"
@@ -1765,7 +1766,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 950,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             [
                 "44ccff64331a48d4"
@@ -1795,7 +1796,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1260,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             []
         ]
@@ -1818,7 +1819,7 @@
         "repair": false,
         "outputs": 1,
         "x": 590,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             [
                 "cbfb0a5eb7b1a139"
@@ -1847,7 +1848,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1260,
-        "y": 1340,
+        "y": 1460,
         "wires": [
             []
         ]
@@ -1884,7 +1885,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 950,
-        "y": 1340,
+        "y": 1460,
         "wires": [
             [
                 "a15012036420563f"
@@ -1905,10 +1906,338 @@
         "property": "payload",
         "topi": "topic",
         "x": 450,
-        "y": 1280,
+        "y": 1400,
         "wires": [
             [
                 "37a61d11bf9ce0ab"
+            ]
+        ]
+    },
+    {
+        "id": "bf653332c73c8f01",
+        "type": "server-state-changed",
+        "z": "fd9cd80f14f860fe",
+        "name": "state media player shield",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "media_player.shield",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": "",
+        "forType": "num",
+        "forUnits": "milliseconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 1160,
+        "wires": [
+            [
+                "fff0aa0341f4ae9e"
+            ]
+        ]
+    },
+    {
+        "id": "a39ce2d3dcb2fa52",
+        "type": "server-state-changed",
+        "z": "fd9cd80f14f860fe",
+        "name": "state media player bluesound",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "media_player.powernode_2i_ea48",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": false,
+        "for": "",
+        "forType": "num",
+        "forUnits": "milliseconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 140,
+        "y": 1280,
+        "wires": [
+            [
+                "607fbdf5b40786a0"
+            ]
+        ]
+    },
+    {
+        "id": "210f99cc3d429b16",
+        "type": "switch",
+        "z": "fd9cd80f14f860fe",
+        "name": "source",
+        "property": "data.new_state.attributes.source",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Spotify",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 1280,
+        "wires": [
+            [
+                "0e05b01a3088ebe6"
+            ]
+        ]
+    },
+    {
+        "id": "0e05b01a3088ebe6",
+        "type": "api-current-state",
+        "z": "fd9cd80f14f860fe",
+        "name": "input select media source livingroom tv",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Woonkamer TV",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_select.mediaplayer_destination",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "input_select.mediaplayer_destination",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 930,
+        "y": 1280,
+        "wires": [
+            [
+                "6739b21acd1ca7bf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e6b09e369fa79397",
+        "type": "api-call-service",
+        "z": "fd9cd80f14f860fe",
+        "name": "select entertainment activity Spotify",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_select",
+        "service": "select_option",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_select.entertainment_activity"
+        ],
+        "data": "{\"option\":\"Spotify\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6739b21acd1ca7bf",
+        "type": "api-current-state",
+        "z": "fd9cd80f14f860fe",
+        "name": "select entertainment activity is not Spotify",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "Spotify",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "input_select.entertainment_activity",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1260,
+        "y": 1280,
+        "wires": [
+            [
+                "e6b09e369fa79397"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "68faf123c53273fa",
+        "type": "api-current-state",
+        "z": "fd9cd80f14f860fe",
+        "name": "select entertainment activity is not TV",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "TV",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "input_select.entertainment_activity",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1250,
+        "y": 1180,
+        "wires": [
+            [
+                "f5f41857318bb062"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "607fbdf5b40786a0",
+        "type": "rbe",
+        "z": "fd9cd80f14f860fe",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 550,
+        "y": 1280,
+        "wires": [
+            [
+                "210f99cc3d429b16"
             ]
         ]
     },
