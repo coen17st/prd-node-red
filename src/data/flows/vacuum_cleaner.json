@@ -1189,7 +1189,7 @@
         "version": 5,
         "debugenabled": false,
         "domain": "notify",
-        "service": "mobile_app_phone_coen",
+        "service": "mobile_app_phone_coen_pixel7",
         "areaId": [],
         "deviceId": [],
         "entityId": [],

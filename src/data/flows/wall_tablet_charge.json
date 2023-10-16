@@ -13,27 +13,17 @@
         "z": "03ed0365a1543556",
         "name": "wall tablet battery level",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.galaxy_tab_a8_battery",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "num",
-        "haltifstate": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": false,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.galaxy_tab_a8_battery",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "num",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -94,8 +84,13 @@
                 "vt": "num"
             },
             {
+                "t": "lt",
+                "v": "20",
+                "vt": "num"
+            },
+            {
                 "t": "eq",
-                "v": "unknown",
+                "v": "NaN",
                 "vt": "str"
             },
             {
@@ -104,8 +99,8 @@
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 4,
-        "x": 310,
+        "outputs": 5,
+        "x": 330,
         "y": 80,
         "wires": [
             [
@@ -113,6 +108,9 @@
             ],
             [
                 "077067e28d6d59b4"
+            ],
+            [
+                "c55acb1486d56163"
             ],
             [
                 "077067e28d6d59b4"
@@ -143,8 +141,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 550,
-        "y": 120,
+        "x": 570,
+        "y": 180,
         "wires": [
             []
         ]
@@ -170,7 +168,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 550,
+        "x": 570,
         "y": 60,
         "wires": [
             []
@@ -185,13 +183,57 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 310,
-        "y": 140,
+        "x": 330,
+        "y": 180,
         "wires": [
             [
                 "077067e28d6d59b4"
             ],
             []
+        ]
+    },
+    {
+        "id": "30b5e775d2659181",
+        "type": "api-call-service",
+        "z": "03ed0365a1543556",
+        "name": "slack message",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"Battery\",\"target\":\"#home-assistant\",\"title\":\"Battery\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Tablet :battery:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"{{{message}}}\"}]}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c55acb1486d56163",
+        "type": "template",
+        "z": "03ed0365a1543556",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{data.new_state.attributes.friendly_name}} is {{payload}}%",
+        "output": "str",
+        "x": 520,
+        "y": 120,
+        "wires": [
+            [
+                "30b5e775d2659181"
+            ]
         ]
     },
     {
