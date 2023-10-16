@@ -573,7 +573,9 @@
         "x": 2030,
         "y": 160,
         "wires": [
-            []
+            [
+                "36c55dbdfffe6d33"
+            ]
         ]
     },
     {
@@ -958,7 +960,8 @@
         "z": "53a5f07742283c4c",
         "name": "get playlist api call",
         "links": [
-            "aa0c955739836a72"
+            "aa0c955739836a72",
+            "e388914ef9ab9574"
         ],
         "x": 245,
         "y": 160,
@@ -979,6 +982,19 @@
         ],
         "x": 665,
         "y": 80,
+        "wires": []
+    },
+    {
+        "id": "36c55dbdfffe6d33",
+        "type": "link out",
+        "z": "53a5f07742283c4c",
+        "name": "link out spotify_api ",
+        "mode": "link",
+        "links": [
+            "1dd634541306cba1"
+        ],
+        "x": 2125,
+        "y": 160,
         "wires": []
     },
     {
