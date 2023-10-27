@@ -307,7 +307,7 @@
                 "t": "change",
                 "p": "topic",
                 "pt": "msg",
-                "from": "binary_sensor.backdoor_window_door_is_open",
+                "from": "binary_sensor.backdoor",
                 "fromt": "str",
                 "to": "achterdeur",
                 "tot": "str"

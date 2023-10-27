@@ -180,7 +180,7 @@
                 "value": ""
             }
         ],
-        "entityidfilter": "binary_sensor.backdoor_window_door_is_open",
+        "entityidfilter": "binary_sensor.backdoor",
         "entityidfiltertype": "exact",
         "outputinitially": true,
         "state_type": "str",
