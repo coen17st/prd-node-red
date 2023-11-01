@@ -7,32 +7,34 @@
         "info": ""
     },
     {
+        "id": "f7475f5813ba030e",
+        "type": "junction",
+        "z": "3637eeb0.d96232",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "fa85ecea.e1cdd"
+            ]
+        ]
+    },
+    {
         "id": "aa8eb1c4.30d7e",
         "type": "server-state-changed",
         "z": "3637eeb0.d96232",
         "name": "state doorbell button on",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.doorbell_button",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.doorbell_button",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -62,13 +64,14 @@
             }
         ],
         "x": 120,
-        "y": 200,
+        "y": 140,
         "wires": [
             [
                 "f98986e3.e78848",
                 "11f67152.16638f",
                 "a97cf09e.3c5d8",
-                "fa85ecea.e1cdd"
+                "f7475f5813ba030e",
+                "33523b3034a879da"
             ],
             []
         ]
@@ -100,7 +103,7 @@
                 "valueType": "entity"
             }
         ],
-        "x": 900,
+        "x": 1020,
         "y": 220,
         "wires": [
             [
@@ -120,10 +123,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is aangebeld maar de voordeur is niet open gedaan. ",
+        "template": "de voordeur is niet open gedaan. ",
         "output": "str",
-        "x": 1100,
-        "y": 240,
+        "x": 1220,
+        "y": 220,
         "wires": [
             [
                 "32209a51.6b6536"
@@ -139,9 +142,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is aangebeld, de voordeur is open gedaan. ",
+        "template": "de voordeur is open gedaan. ",
         "output": "str",
-        "x": 1100,
+        "x": 1220,
         "y": 180,
         "wires": [
             [
@@ -169,12 +172,10 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1310,
-        "y": 240,
+        "x": 1430,
+        "y": 100,
         "wires": [
-            [
-                "aa2e94ac.c75bf8"
-            ]
+            []
         ]
     },
     {
@@ -208,8 +209,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 900,
-        "y": 300,
+        "x": 1020,
+        "y": 280,
         "wires": [
             [
                 "63738500.aace1c"
@@ -238,8 +239,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1070,
-        "y": 300,
+        "x": 1190,
+        "y": 280,
         "wires": [
             [],
             [
@@ -248,97 +249,22 @@
         ]
     },
     {
-        "id": "aa2e94ac.c75bf8",
-        "type": "api-current-state",
-        "z": "3637eeb0.d96232",
-        "name": "state persons not home",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "not_home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "group.persons",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1530,
-        "y": 240,
-        "wires": [
-            [
-                "d0000832.eafa28"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "d0000832.eafa28",
-        "type": "api-call-service",
-        "z": "3637eeb0.d96232",
-        "name": "notify phone anne",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_anne",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1750,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "bff3378b.fb3928",
         "type": "server-state-changed",
         "z": "3637eeb0.d96232",
         "name": "state persons not home",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "group.persons",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "not_home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "group.persons",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "not_home",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -368,7 +294,7 @@
             }
         ],
         "x": 120,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "59bbde6d.37f02"
@@ -407,8 +333,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 320,
-        "y": 80,
+        "x": 340,
+        "y": 60,
         "wires": [
             [
                 "d1c2946f.425ad8"
@@ -437,8 +363,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 520,
-        "y": 80,
+        "x": 540,
+        "y": 60,
         "wires": [
             []
         ]
@@ -474,7 +400,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 330,
+        "x": 370,
         "y": 360,
         "wires": [
             [
@@ -504,7 +430,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 750,
+        "x": 790,
         "y": 360,
         "wires": [
             [
@@ -531,7 +457,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1040,
+        "x": 1080,
         "y": 360,
         "wires": [
             []
@@ -548,7 +474,7 @@
         "syntax": "mustache",
         "template": "Er is aangebeld. ",
         "output": "str",
-        "x": 900,
+        "x": 940,
         "y": 360,
         "wires": [
             [
@@ -587,7 +513,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 330,
+        "x": 370,
         "y": 420,
         "wires": [
             [
@@ -617,7 +543,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 780,
+        "x": 820,
         "y": 420,
         "wires": [
             [
@@ -656,7 +582,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 550,
+        "x": 590,
         "y": 360,
         "wires": [
             [
@@ -684,8 +610,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
-        "y": 140,
+        "x": 510,
+        "y": 240,
         "wires": [
             [
                 "fa85ecea.e1cdd"
@@ -708,8 +634,8 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 440,
-        "y": 140,
+        "x": 340,
+        "y": 240,
         "wires": [
             [
                 "26977249.cf194e"
@@ -735,8 +661,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
-        "y": 260,
+        "x": 750,
+        "y": 180,
         "wires": [
             [
                 "fa85ecea.e1cdd"
@@ -774,7 +700,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 540,
+        "x": 580,
         "y": 420,
         "wires": [
             [
@@ -804,7 +730,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1180,
+        "x": 1220,
         "y": 420,
         "wires": [
             []
@@ -827,8 +753,8 @@
         "send_stop": false,
         "default_start": true,
         "differ": false,
-        "x": 630,
-        "y": 200,
+        "x": 750,
+        "y": 240,
         "wires": [
             [
                 "896e21b5.a4b9e",
@@ -846,7 +772,7 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 980,
+        "x": 1020,
         "y": 420,
         "wires": [
             [
@@ -876,8 +802,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1710,
-        "y": 300,
+        "x": 1830,
+        "y": 280,
         "wires": [
             []
         ]
@@ -893,8 +819,8 @@
         "syntax": "mustache",
         "template": "Er is aangebeld.",
         "output": "str",
-        "x": 1200,
-        "y": 300,
+        "x": 1320,
+        "y": 280,
         "wires": [
             [
                 "30224e76c039750b"
@@ -908,7 +834,7 @@
         "name": "doorbell automation",
         "info": "doorbell automation",
         "x": 110,
-        "y": 40,
+        "y": 20,
         "wires": []
     },
     {
@@ -933,8 +859,8 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 1450,
-        "y": 300,
+        "x": 1570,
+        "y": 280,
         "wires": [
             [
                 "211ffb19.e76354"
@@ -960,8 +886,54 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1300,
-        "y": 180,
+        "x": 1420,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33523b3034a879da",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is aangebeld",
+        "output": "str",
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "b250cddf400e573e",
+                "32209a51.6b6536",
+                "d0000832.eafa28"
+            ]
+        ]
+    },
+    {
+        "id": "d0000832.eafa28",
+        "type": "api-call-service",
+        "z": "3637eeb0.d96232",
+        "name": "notify phone anne",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_anne",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{message}}\",\"title\":\"Deurbel\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1430,
+        "y": 40,
         "wires": [
             []
         ]
@@ -978,9 +950,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
