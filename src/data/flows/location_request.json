@@ -66,7 +66,7 @@
         "version": 5,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.frontdoor_window_door_is_open",
+        "entityId": "binary_sensor.frontdoor",
         "entityIdType": "exact",
         "outputInitially": true,
         "stateType": "str",

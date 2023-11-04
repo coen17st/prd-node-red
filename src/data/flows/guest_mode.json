@@ -286,7 +286,7 @@
                 "t": "change",
                 "p": "topic",
                 "pt": "msg",
-                "from": "binary_sensor.frontdoor_window_door_is_open",
+                "from": "binary_sensor.frontdoor",
                 "fromt": "str",
                 "to": "voordeur",
                 "tot": "str"
