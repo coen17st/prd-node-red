@@ -24,27 +24,17 @@
         "z": "55da1471.fda0fc",
         "name": "state group persons",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "group.persons",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "group.persons",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -87,27 +77,17 @@
         "z": "55da1471.fda0fc",
         "name": "state guest ",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.guest",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.guest",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -578,27 +558,17 @@
         "z": "55da1471.fda0fc",
         "name": "Vacuum State is error",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "vacuum.roborock_s6_pure",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "error",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "vacuum.roborock_s6_pure",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "error",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -667,27 +637,17 @@
         "z": "55da1471.fda0fc",
         "name": "sleep mode is on",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.sleep_mode",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.sleep_mode",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -915,27 +875,17 @@
         "z": "55da1471.fda0fc",
         "name": "vacuum state is cleaning",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "vacuum.roborock_s6_pure",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "cleaning",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "vacuum.roborock_s6_pure",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "cleaning",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
@@ -1260,20 +1210,10 @@
         "z": "55da1471.fda0fc",
         "name": "",
         "server": "4ba92433.2478cc",
-        "version": 2,
+        "version": 3,
+        "exposeAsEntityConfig": "",
         "eventType": "mobile_app_notification_action",
-        "exposeToHomeAssistant": false,
         "eventData": "{\"action\":\"VACUUM_AUTOCLEANING_OFF\"}",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -1355,9 +1295,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",

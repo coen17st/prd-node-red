@@ -1,253 +1,243 @@
 [
-  {
-      "id": "5a8d7bb1.6263b4",
-      "type": "tab",
-      "label": "notification_update_hacs",
-      "disabled": false,
-      "info": ""
-  },
-  {
-      "id": "c053e3f3.16b41",
-      "type": "comment",
-      "z": "5a8d7bb1.6263b4",
-      "name": "hacs update notification",
-      "info": "",
-      "x": 120,
-      "y": 40,
-      "wires": []
-  },
-  {
-      "id": "96cdd263.e5c85",
-      "type": "server-state-changed",
-      "z": "5a8d7bb1.6263b4",
-      "name": "HACS update",
-      "server": "4ba92433.2478cc",
-      "version": 4,
-      "exposeToHomeAssistant": false,
-      "haConfig": [
-          {
-              "property": "name",
-              "value": ""
-          },
-          {
-              "property": "icon",
-              "value": ""
-          }
-      ],
-      "entityidfilter": "sensor.hacs",
-      "entityidfiltertype": "exact",
-      "outputinitially": true,
-      "state_type": "str",
-      "haltifstate": "unknown",
-      "halt_if_type": "str",
-      "halt_if_compare": "is_not",
-      "outputs": 2,
-      "output_only_on_state_change": true,
-      "for": "",
-      "forType": "num",
-      "forUnits": "minutes",
-      "ignorePrevStateNull": false,
-      "ignorePrevStateUnknown": false,
-      "ignorePrevStateUnavailable": false,
-      "ignoreCurrentStateUnknown": false,
-      "ignoreCurrentStateUnavailable": false,
-      "outputProperties": [
-          {
-              "property": "payload",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "entityState"
-          },
-          {
-              "property": "data",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "eventData"
-          },
-          {
-              "property": "topic",
-              "propertyType": "msg",
-              "value": "",
-              "valueType": "triggerId"
-          }
-      ],
-      "x": 90,
-      "y": 80,
-      "wires": [
-          [
-              "1afb9699.b01d29"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "1afb9699.b01d29",
-      "type": "switch",
-      "z": "5a8d7bb1.6263b4",
-      "name": "",
-      "property": "payload",
-      "propertyType": "msg",
-      "rules": [
-          {
-              "t": "neq",
-              "v": "0",
-              "vt": "num"
-          },
-          {
-              "t": "eq",
-              "v": "0",
-              "vt": "str"
-          }
-      ],
-      "checkall": "true",
-      "repair": false,
-      "outputs": 2,
-      "x": 250,
-      "y": 80,
-      "wires": [
-          [
-              "a5f6fc79.327cf"
-          ],
-          [
-              "ef200ec6.3cf83"
-          ]
-      ]
-  },
-  {
-      "id": "ef200ec6.3cf83",
-      "type": "api-call-service",
-      "z": "5a8d7bb1.6263b4",
-      "name": "In APP Notify Dismiss",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "persistent_notification",
-      "service": "dismiss",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [],
-      "data": "{\"notification_id\":\"updateHACS\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 440,
-      "y": 120,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "67e38125.08e3d",
-      "type": "template",
-      "z": "5a8d7bb1.6263b4",
-      "name": "message",
-      "field": "message",
-      "fieldType": "msg",
-      "format": "handlebars",
-      "syntax": "mustache",
-      "template": "{{payload}} update(s) beschikbaar in de Home Assistant Community Store (hacs) \\n[Link](https://homeassistant.theautomation.nl/hacs)",
-      "output": "str",
-      "x": 580,
-      "y": 80,
-      "wires": [
-          [
-              "d9df32a2.60134"
-          ]
-      ]
-  },
-  {
-      "id": "d9df32a2.60134",
-      "type": "change",
-      "z": "5a8d7bb1.6263b4",
-      "name": "",
-      "rules": [
-          {
-              "t": "set",
-              "p": "topic",
-              "pt": "msg",
-              "to": "Update",
-              "tot": "str"
-          }
-      ],
-      "action": "",
-      "property": "",
-      "from": "",
-      "to": "",
-      "reg": false,
-      "x": 730,
-      "y": 80,
-      "wires": [
-          [
-              "4045bbfd.b268e4"
-          ]
-      ]
-  },
-  {
-      "id": "4045bbfd.b268e4",
-      "type": "api-call-service",
-      "z": "5a8d7bb1.6263b4",
-      "name": "In APP Notify",
-      "server": "4ba92433.2478cc",
-      "version": 5,
-      "debugenabled": false,
-      "domain": "notify",
-      "service": "notify",
-      "areaId": [],
-      "deviceId": [],
-      "entityId": [],
-      "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-      "dataType": "json",
-      "mergeContext": "",
-      "mustacheAltTags": false,
-      "outputProperties": [],
-      "queue": "none",
-      "x": 890,
-      "y": 80,
-      "wires": [
-          []
-      ]
-  },
-  {
-      "id": "a5f6fc79.327cf",
-      "type": "stoptimer",
-      "z": "5a8d7bb1.6263b4",
-      "duration": "10",
-      "units": "Minute",
-      "payloadtype": "num",
-      "payloadval": "0",
-      "name": "",
-      "x": 420,
-      "y": 80,
-      "wires": [
-          [
-              "67e38125.08e3d"
-          ],
-          []
-      ]
-  },
-  {
-      "id": "4ba92433.2478cc",
-      "type": "server",
-      "name": "Home Assistant",
-      "version": 5,
-      "addon": false,
-      "rejectUnauthorizedCerts": false,
-      "ha_boolean": "y|yes|true|on|home|open",
-      "connectionDelay": true,
-      "cacheJson": true,
-      "heartbeat": true,
-      "heartbeatInterval": "30",
-      "areaSelector": "friendlyName",
-      "deviceSelector": "friendlyName",
-      "entitySelector": "friendlyName",
-      "statusSeparator": "at: ",
-      "statusYear": "hidden",
-      "statusMonth": "short",
-      "statusDay": "numeric",
-      "statusHourCycle": "h23",
-      "statusTimeFormat": "h:m",
-      "enableGlobalContextStore": true
-  }
+    {
+        "id": "5a8d7bb1.6263b4",
+        "type": "tab",
+        "label": "notification_update_hacs",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c053e3f3.16b41",
+        "type": "comment",
+        "z": "5a8d7bb1.6263b4",
+        "name": "hacs update notification",
+        "info": "",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "96cdd263.e5c85",
+        "type": "server-state-changed",
+        "z": "5a8d7bb1.6263b4",
+        "name": "HACS update",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.hacs",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "unknown",
+        "ifStateType": "str",
+        "ifStateOperator": "is_not",
+        "outputOnlyOnStateChange": true,
+        "for": "",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "1afb9699.b01d29"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1afb9699.b01d29",
+        "type": "switch",
+        "z": "5a8d7bb1.6263b4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "a5f6fc79.327cf"
+            ],
+            [
+                "ef200ec6.3cf83"
+            ]
+        ]
+    },
+    {
+        "id": "ef200ec6.3cf83",
+        "type": "api-call-service",
+        "z": "5a8d7bb1.6263b4",
+        "name": "In APP Notify Dismiss",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "persistent_notification",
+        "service": "dismiss",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"notification_id\":\"updateHACS\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67e38125.08e3d",
+        "type": "template",
+        "z": "5a8d7bb1.6263b4",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload}} update(s) beschikbaar in de Home Assistant Community Store (hacs) \\n[Link](https://homeassistant.theautomation.nl/hacs)",
+        "output": "str",
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "d9df32a2.60134"
+            ]
+        ]
+    },
+    {
+        "id": "d9df32a2.60134",
+        "type": "change",
+        "z": "5a8d7bb1.6263b4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Update",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 80,
+        "wires": [
+            [
+                "4045bbfd.b268e4"
+            ]
+        ]
+    },
+    {
+        "id": "4045bbfd.b268e4",
+        "type": "api-call-service",
+        "z": "5a8d7bb1.6263b4",
+        "name": "In APP Notify",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "notify",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 890,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5f6fc79.327cf",
+        "type": "stoptimer",
+        "z": "5a8d7bb1.6263b4",
+        "duration": "10",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 420,
+        "y": 80,
+        "wires": [
+            [
+                "67e38125.08e3d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
 ]

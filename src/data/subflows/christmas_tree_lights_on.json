@@ -1,111 +1,134 @@
 [
   {
-    "id": "67a1c55d.b4b94c",
-    "type": "subflow",
-    "name": "christmas_tree_lights_on",
-    "info": "",
-    "category": "",
-    "in": [
-      {
-        "x": 40,
-        "y": 100,
-        "wires": [
+      "id": "67a1c55d.b4b94c",
+      "type": "subflow",
+      "name": "christmas_tree_lights_on",
+      "info": "",
+      "category": "",
+      "in": [
           {
-            "id": "acbe7857.d6ebf8"
+              "x": 40,
+              "y": 100,
+              "wires": [
+                  {
+                      "id": "acbe7857.d6ebf8"
+                  }
+              ]
           }
-        ]
-      }
-    ],
-    "out": [
-      {
-        "x": 620,
-        "y": 100,
-        "wires": [
-          {
-            "id": "ee31ef8.f2bc11",
-            "port": 0
-          }
-        ]
-      }
-    ],
-    "env": [],
-    "color": "#DDAA99"
-  },
-  {
-    "id": "ee31ef8.f2bc11",
-    "type": "api-call-service",
-    "z": "67a1c55d.b4b94c",
-    "name": "turn on light christmas tree",
-    "server": "4ba92433.2478cc",
-    "version": 5,
-    "debugenabled": false,
-    "domain": "light",
-    "service": "turn_on",
-    "areaId": [],
-    "deviceId": [],
-    "entityId": [
-      "light.christmas_tree"
-    ],
-    "data": "",
-    "dataType": "json",
-    "mergeContext": "",
-    "mustacheAltTags": false,
-    "outputProperties": [],
-    "queue": "none",
-    "x": 460,
-    "y": 100,
-    "wires": [
-      []
-    ]
-  },
-  {
-    "id": "acbe7857.d6ebf8",
-    "type": "api-current-state",
-    "z": "67a1c55d.b4b94c",
-    "name": "state christmas tree light off",
-    "server": "4ba92433.2478cc",
-    "version": 3,
-    "outputs": 2,
-    "halt_if": "off",
-    "halt_if_type": "str",
-    "halt_if_compare": "is",
-    "entity_id": "light.christmas_tree",
-    "state_type": "str",
-    "blockInputOverrides": false,
-    "outputProperties": [
-      {
-        "property": "payload",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entityState"
-      },
-      {
-        "property": "data",
-        "propertyType": "msg",
-        "value": "",
-        "valueType": "entity"
-      }
-    ],
-    "for": 0,
-    "forType": "num",
-    "forUnits": "minutes",
-    "x": 200,
-    "y": 100,
-    "wires": [
-      [
-        "ee31ef8.f2bc11"
       ],
-      []
-    ]
+      "out": [
+          {
+              "x": 620,
+              "y": 100,
+              "wires": [
+                  {
+                      "id": "ee31ef8.f2bc11",
+                      "port": 0
+                  }
+              ]
+          }
+      ],
+      "env": [],
+      "color": "#DDAA99"
   },
   {
-    "id": "a4ceb3e9.e8677",
-    "type": "comment",
-    "z": "67a1c55d.b4b94c",
-    "name": "turn on christmas tree lights",
-    "info": "",
-    "x": 140,
-    "y": 40,
-    "wires": []
+      "id": "ee31ef8.f2bc11",
+      "type": "api-call-service",
+      "z": "67a1c55d.b4b94c",
+      "name": "turn on light christmas tree",
+      "server": "4ba92433.2478cc",
+      "version": 5,
+      "debugenabled": false,
+      "domain": "light",
+      "service": "turn_on",
+      "areaId": [],
+      "deviceId": [],
+      "entityId": [
+          "light.christmas_tree"
+      ],
+      "data": "",
+      "dataType": "json",
+      "mergeContext": "",
+      "mustacheAltTags": false,
+      "outputProperties": [],
+      "queue": "none",
+      "x": 460,
+      "y": 100,
+      "wires": [
+          []
+      ]
+  },
+  {
+      "id": "acbe7857.d6ebf8",
+      "type": "api-current-state",
+      "z": "67a1c55d.b4b94c",
+      "name": "state christmas tree light off",
+      "server": "4ba92433.2478cc",
+      "version": 3,
+      "outputs": 2,
+      "halt_if": "off",
+      "halt_if_type": "str",
+      "halt_if_compare": "is",
+      "entity_id": "light.christmas_tree",
+      "state_type": "str",
+      "blockInputOverrides": false,
+      "outputProperties": [
+          {
+              "property": "payload",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entityState"
+          },
+          {
+              "property": "data",
+              "propertyType": "msg",
+              "value": "",
+              "valueType": "entity"
+          }
+      ],
+      "for": 0,
+      "forType": "num",
+      "forUnits": "minutes",
+      "x": 200,
+      "y": 100,
+      "wires": [
+          [
+              "ee31ef8.f2bc11"
+          ],
+          []
+      ]
+  },
+  {
+      "id": "a4ceb3e9.e8677",
+      "type": "comment",
+      "z": "67a1c55d.b4b94c",
+      "name": "turn on christmas tree lights",
+      "info": "",
+      "x": 140,
+      "y": 40,
+      "wires": []
+  },
+  {
+      "id": "4ba92433.2478cc",
+      "type": "server",
+      "name": "Home Assistant",
+      "version": 5,
+      "addon": false,
+      "rejectUnauthorizedCerts": false,
+      "ha_boolean": "y|yes|true|on|home|open",
+      "connectionDelay": true,
+      "cacheJson": true,
+      "heartbeat": true,
+      "heartbeatInterval": "30",
+      "areaSelector": "id",
+      "deviceSelector": "id",
+      "entitySelector": "id",
+      "statusSeparator": "at: ",
+      "statusYear": "hidden",
+      "statusMonth": "short",
+      "statusDay": "numeric",
+      "statusHourCycle": "h23",
+      "statusTimeFormat": "h:m",
+      "enableGlobalContextStore": true
   }
 ]

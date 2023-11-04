@@ -196,9 +196,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
@@ -212,13 +212,13 @@
         "type": "ha-entity-config",
         "server": "4ba92433.2478cc",
         "deviceConfig": "",
-        "name": "tv_button",
+        "name": "tv_device",
         "version": "6",
         "entityType": "button",
         "haConfig": [
             {
                 "property": "name",
-                "value": "tv_button"
+                "value": "tv_device"
             },
             {
                 "property": "icon",

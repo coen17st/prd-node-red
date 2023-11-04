@@ -23,27 +23,17 @@
         "z": "42b354a7f0284779",
         "name": "inverter status code",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "sensor.solaredge_modbus_status",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "num",
-        "haltifstate": "",
-        "halt_if_type": "num",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.solaredge_modbus_status",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "num",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",

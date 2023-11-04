@@ -13,27 +13,17 @@
         "z": "a7a34028d045deee",
         "name": "babysitter calendar event ",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "calendar.lise_babysitter",
-        "entityidfiltertype": "exact",
-        "outputinitially": true,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "calendar.lise_babysitter",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -144,20 +134,10 @@
         "z": "a7a34028d045deee",
         "name": "mobile event listner",
         "server": "4ba92433.2478cc",
-        "version": 2,
+        "version": 3,
+        "exposeAsEntityConfig": "",
         "eventType": "mobile_app_notification_action",
-        "exposeToHomeAssistant": false,
         "eventData": "{\"action\":\"GUEST_MODE_ON\"}",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -215,27 +195,17 @@
         "z": "a7a34028d045deee",
         "name": "state change for all doors",
         "server": "4ba92433.2478cc",
-        "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.*door_window",
-        "entityidfiltertype": "regex",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 1,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.*door_window",
+        "entityIdType": "regex",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -401,20 +371,10 @@
         "z": "a7a34028d045deee",
         "name": "listen to shelly click events",
         "server": "4ba92433.2478cc",
-        "version": 2,
+        "version": 3,
+        "exposeAsEntityConfig": "",
         "eventType": "shelly.click",
-        "exposeToHomeAssistant": false,
         "eventData": "",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -751,9 +711,9 @@
         "cacheJson": true,
         "heartbeat": true,
         "heartbeatInterval": "30",
-        "areaSelector": "friendlyName",
-        "deviceSelector": "friendlyName",
-        "entitySelector": "friendlyName",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
         "statusSeparator": "at: ",
         "statusYear": "hidden",
         "statusMonth": "short",
