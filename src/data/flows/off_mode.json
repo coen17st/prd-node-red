@@ -40,7 +40,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 680,
+        "x": 860,
         "y": 200,
         "wires": [
             []
@@ -296,13 +296,13 @@
         "id": "db8cc8f4bb9386ab",
         "type": "api-current-state",
         "z": "eb1939ba1b7e9b73",
-        "name": "state input select is all off",
+        "name": "input select entertainment_activity is not uitschakelen",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
         "halt_if": "Uitschakelen",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "input_select.entertainment_activity",
         "state_type": "str",
         "blockInputOverrides": true,
@@ -323,7 +323,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 370,
+        "x": 460,
         "y": 200,
         "wires": [
             [],
@@ -584,7 +584,7 @@
             "1c92170cf2ff6d63",
             "78bedeb65fca6d0f"
         ],
-        "x": 155,
+        "x": 165,
         "y": 80,
         "wires": [
             [
