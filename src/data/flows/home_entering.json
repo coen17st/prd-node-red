@@ -526,7 +526,7 @@
         "z": "c0da8379.b0dd3",
         "name": "lookup person home",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -541,11 +541,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 660,
         "y": 80,
         "wires": [
@@ -607,7 +607,7 @@
         "z": "c0da8379.b0dd3",
         "name": "lookup light on",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -622,11 +622,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 1340,
         "y": 80,
         "wires": [
@@ -1082,7 +1082,7 @@
         "z": "c0da8379.b0dd3",
         "name": "lookup climate preset mode is not home",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -1097,11 +1097,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 720,
         "y": 140,
         "wires": [

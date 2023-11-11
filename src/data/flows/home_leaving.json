@@ -377,7 +377,7 @@
         "z": "8aa6edec.5a013",
         "name": "lookup climate preset mode is not away",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -392,11 +392,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 1060,
         "y": 240,
         "wires": [

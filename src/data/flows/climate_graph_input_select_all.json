@@ -38,7 +38,7 @@
         "z": "1adcdebcdc8e5c39",
         "name": "",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -47,11 +47,11 @@
                 "valueType": "re"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 450,
         "y": 60,
         "wires": [

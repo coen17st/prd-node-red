@@ -83,7 +83,7 @@
         "z": "e98ae3c9db1bd6c3",
         "name": "",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -98,11 +98,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "random",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "random",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 670,
         "y": 440,
         "wires": [
@@ -488,7 +488,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 830,
+        "x": 870,
         "y": 140,
         "wires": [
             []
@@ -725,7 +725,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 830,
+        "x": 870,
         "y": 200,
         "wires": [
             []
