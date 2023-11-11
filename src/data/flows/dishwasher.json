@@ -183,7 +183,7 @@
         "inputs": 1,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.wall_plug_switch_electric_consumption_w",
+        "entityId": "sensor.shellyplugplus_dishwasher_power",
         "entityIdType": "exact",
         "debugEnabled": false,
         "constraints": [],
