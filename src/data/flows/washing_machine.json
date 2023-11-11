@@ -49,7 +49,7 @@
         "inputs": 1,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.metered_wall_plug_switch_power",
+        "entityId": "sensor.shellyplug_washing_machine_power",
         "entityIdType": "exact",
         "debugEnabled": false,
         "constraints": [],
