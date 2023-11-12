@@ -57,7 +57,7 @@
         "z": "1dfb7e055134adc8",
         "name": "find binary_sensor.notification_level_ with state on",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -72,11 +72,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "count",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "count",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 530,
         "y": 60,
         "wires": [
