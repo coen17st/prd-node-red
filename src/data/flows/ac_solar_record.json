@@ -211,7 +211,7 @@
         "wires": [
             [
                 "122d704723bc1cb0",
-                "5a87b491154f020a"
+                "7bc64c62736a89da"
             ]
         ]
     },
@@ -234,11 +234,125 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1420,
-        "y": 120,
+        "x": 1720,
+        "y": 140,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "7bc64c62736a89da",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "message",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert mogelijk tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is: {{sensor.living_room_thermal_comfort_dew_point}} ℃",
+        "output": "str",
+        "x": 1400,
+        "y": 140,
+        "wires": [
+            [
+                "5a87b491154f020a"
+            ]
+        ]
+    },
+    {
+        "id": "e6a9cdb94d745bb3",
+        "type": "inject",
+        "z": "99c1372046e45da7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "123",
+        "payloadType": "num",
+        "x": 330,
+        "y": 580,
+        "wires": [
+            [
+                "d4bfbade0455b8c1"
+            ]
+        ]
+    },
+    {
+        "id": "9cf1bd411e49b1dd",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "message",
+        "field": "notify_message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert mogelijk tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is: {{sensor.living_room_thermal_comfort_dew_point}} ℃",
+        "output": "str",
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "5ee989c977e1663c"
+            ]
+        ]
+    },
+    {
+        "id": "5ee989c977e1663c",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "icon",
+        "field": "notify_icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "11137c6e85e51697"
+            ]
+        ]
+    },
+    {
+        "id": "d4bfbade0455b8c1",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "title",
+        "field": "notify_title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Deurbell",
+        "output": "str",
+        "x": 450,
+        "y": 580,
+        "wires": [
+            [
+                "9cf1bd411e49b1dd"
+            ]
+        ]
+    },
+    {
+        "id": "11137c6e85e51697",
+        "type": "link out",
+        "z": "99c1372046e45da7",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 805,
+        "y": 580,
+        "wires": []
     },
     {
         "id": "4ba92433.2478cc",

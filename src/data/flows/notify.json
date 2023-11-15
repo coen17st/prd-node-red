@@ -1,0 +1,498 @@
+[
+    {
+        "id": "343515a5528e14f0",
+        "type": "tab",
+        "label": "notify",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e2a23f3dd8786141",
+        "type": "api-call-service",
+        "z": "343515a5528e14f0",
+        "name": "slack message",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "theautomation",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{title}}\",\"target\":\"#home-assistant\",\"title\":\"{{title}}\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"{{title}} {{slack_icon}}\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"{{{message}}}\"}]}]}}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 820,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6203d5446a620e52",
+        "type": "link in",
+        "z": "343515a5528e14f0",
+        "name": "notify_all",
+        "links": [],
+        "x": 195,
+        "y": 140,
+        "wires": [
+            [
+                "e2a23f3dd8786141"
+            ]
+        ]
+    },
+    {
+        "id": "81fb95917c5f1d1f",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "name": "message",
+        "field": "notify",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify_message}}",
+        "output": "str",
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "9ac77fe32596e4c1"
+            ]
+        ]
+    },
+    {
+        "id": "e0595786568bceef",
+        "type": "join",
+        "z": "343515a5528e14f0",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "b92773ff0b01fade"
+            ]
+        ]
+    },
+    {
+        "id": "9ac77fe32596e4c1",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "message topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "e0595786568bceef"
+            ]
+        ]
+    },
+    {
+        "id": "a7ccaaf7d695e26c",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "name": "icon",
+        "field": "notify",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify_icon}}",
+        "output": "str",
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "4cfbdd80c26870c9"
+            ]
+        ]
+    },
+    {
+        "id": "4cfbdd80c26870c9",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "icon topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "icon",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "e0595786568bceef"
+            ]
+        ]
+    },
+    {
+        "id": "8b3c7173b32be64a",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "name": "title",
+        "field": "notify",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify_title}}",
+        "output": "str",
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "951c5148cb45923d"
+            ]
+        ]
+    },
+    {
+        "id": "951c5148cb45923d",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "title topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "title",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "e0595786568bceef"
+            ]
+        ]
+    },
+    {
+        "id": "b92773ff0b01fade",
+        "type": "api-call-service",
+        "z": "343515a5528e14f0",
+        "name": "notify phone coen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_coen_pixel7",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 830,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ed3b0974336e55b",
+        "type": "link in",
+        "z": "343515a5528e14f0",
+        "name": "notify_coen",
+        "links": [
+            "11137c6e85e51697"
+        ],
+        "x": 195,
+        "y": 260,
+        "wires": [
+            [
+                "8b3c7173b32be64a",
+                "81fb95917c5f1d1f",
+                "a7ccaaf7d695e26c"
+            ]
+        ]
+    },
+    {
+        "id": "96742c0e6fc400e0",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "name": "message",
+        "field": "notify",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify_message}}",
+        "output": "str",
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "9fe9c5c8b336bfb6"
+            ]
+        ]
+    },
+    {
+        "id": "e6ec347141caf7d2",
+        "type": "join",
+        "z": "343515a5528e14f0",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "9e59215267d27fc0"
+            ]
+        ]
+    },
+    {
+        "id": "9fe9c5c8b336bfb6",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "message topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "e6ec347141caf7d2"
+            ]
+        ]
+    },
+    {
+        "id": "9f9a9d97edbbd43f",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "name": "icon",
+        "field": "notify",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify_icon}}",
+        "output": "str",
+        "x": 330,
+        "y": 440,
+        "wires": [
+            [
+                "95e77d241186091c"
+            ]
+        ]
+    },
+    {
+        "id": "95e77d241186091c",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "icon topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "icon",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "e6ec347141caf7d2"
+            ]
+        ]
+    },
+    {
+        "id": "88c40aad8c4af953",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "name": "title",
+        "field": "notify",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify_title}}",
+        "output": "str",
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "2508834e67d52976"
+            ]
+        ]
+    },
+    {
+        "id": "2508834e67d52976",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "title topic",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "title",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 360,
+        "wires": [
+            [
+                "e6ec347141caf7d2"
+            ]
+        ]
+    },
+    {
+        "id": "9e59215267d27fc0",
+        "type": "api-call-service",
+        "z": "343515a5528e14f0",
+        "name": "notify phone anne",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "mobile_app_phone_anne",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 830,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aeee8468f3d1b7ad",
+        "type": "link in",
+        "z": "343515a5528e14f0",
+        "name": "notify_anne",
+        "links": [],
+        "x": 195,
+        "y": 400,
+        "wires": [
+            [
+                "88c40aad8c4af953",
+                "96742c0e6fc400e0",
+                "9f9a9d97edbbd43f"
+            ]
+        ]
+    },
+    {
+        "id": "76e9e8e982a2fef6",
+        "type": "comment",
+        "z": "343515a5528e14f0",
+        "name": "notifications",
+        "info": "",
+        "x": 90,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]

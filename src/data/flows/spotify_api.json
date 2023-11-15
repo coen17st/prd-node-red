@@ -11,8 +11,8 @@
         "id": "706151681f0ece6f",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 740,
-        "y": 180,
+        "x": 520,
+        "y": 160,
         "wires": [
             [
                 "3d31c6d443ad7576",
@@ -29,8 +29,8 @@
         "id": "992b450b0425b3a4",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 1960,
-        "y": 440,
+        "x": 1740,
+        "y": 420,
         "wires": [
             [
                 "e9ad5083802cc9a3"
@@ -41,8 +41,8 @@
         "id": "06ca84ceb3f727e3",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 1160,
-        "y": 200,
+        "x": 940,
+        "y": 180,
         "wires": [
             [
                 "b20ef33659df0d8c"
@@ -85,7 +85,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "21600",
+        "repeat": "3600",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -121,8 +121,8 @@
         "syntax": "mustache",
         "template": "3ORKq4U4Pv5gMrYdsaT6hw",
         "output": "str",
-        "x": 880,
-        "y": 180,
+        "x": 660,
+        "y": 160,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -148,8 +148,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1230,
-        "y": 160,
+        "x": 1010,
+        "y": 140,
         "wires": [
             [
                 "2784c97a7471c5c6"
@@ -167,8 +167,8 @@
         "syntax": "mustache",
         "template": "7gHGifRLJgiahSNrugxIoa",
         "output": "str",
-        "x": 930,
-        "y": 220,
+        "x": 710,
+        "y": 200,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -186,8 +186,8 @@
         "syntax": "mustache",
         "template": "https://api.spotify.com/v1/playlists/{{{playlist_id}}}",
         "output": "str",
-        "x": 1350,
-        "y": 160,
+        "x": 1130,
+        "y": 140,
         "wires": [
             [
                 "12d835100c9d80f4"
@@ -205,8 +205,8 @@
         "syntax": "mustache",
         "template": "Bearer {{{global.spotify_access_token}}}",
         "output": "str",
-        "x": 1510,
-        "y": 160,
+        "x": 1290,
+        "y": 140,
         "wires": [
             [
                 "9e1f9216a2efc6ec"
@@ -236,8 +236,8 @@
                 "valueValue": "authorization"
             }
         ],
-        "x": 1690,
-        "y": 160,
+        "x": 1470,
+        "y": 140,
         "wires": [
             [
                 "5c51b3e9d158410f"
@@ -383,8 +383,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1870,
-        "y": 220,
+        "x": 1630,
+        "y": 140,
         "wires": [
             [
                 "bf0844c6b66ef3d3"
@@ -412,11 +412,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 520,
+        "x": 420,
         "y": 100,
         "wires": [
             [
-                "ce9243b0f1f12355"
+                "36c55dbdfffe6d33"
             ],
             [
                 "706151681f0ece6f"
@@ -570,8 +570,8 @@
         "septopics": true,
         "property": "statusCode",
         "topi": "topic",
-        "x": 2030,
-        "y": 160,
+        "x": 1790,
+        "y": 140,
         "wires": [
             [
                 "36c55dbdfffe6d33"
@@ -677,8 +677,8 @@
         "syntax": "mustache",
         "template": "6pfSVtSuceWnHRMRRv2CSP",
         "output": "str",
-        "x": 920,
-        "y": 260,
+        "x": 700,
+        "y": 240,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -740,8 +740,8 @@
         "syntax": "mustache",
         "template": "3nyfO2R6MxbP67wxYVo1nR",
         "output": "str",
-        "x": 900,
-        "y": 300,
+        "x": 680,
+        "y": 280,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -803,8 +803,8 @@
         "syntax": "mustache",
         "template": "0avSSq7Hv1KtLC8dQB4xVE",
         "output": "str",
-        "x": 890,
-        "y": 340,
+        "x": 670,
+        "y": 320,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -822,8 +822,8 @@
         "syntax": "mustache",
         "template": "77FZT9MGc3p7RMBUr5m50r",
         "output": "str",
-        "x": 920,
-        "y": 380,
+        "x": 700,
+        "y": 360,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -841,8 +841,8 @@
         "syntax": "mustache",
         "template": "7E6QXGrtUyYl1kTyvnluTr",
         "output": "str",
-        "x": 1000,
-        "y": 420,
+        "x": 780,
+        "y": 400,
         "wires": [
             [
                 "06ca84ceb3f727e3"
@@ -972,19 +972,6 @@
         ]
     },
     {
-        "id": "ce9243b0f1f12355",
-        "type": "link out",
-        "z": "53a5f07742283c4c",
-        "name": "link out spotify_api ",
-        "mode": "link",
-        "links": [
-            "1dd634541306cba1"
-        ],
-        "x": 665,
-        "y": 80,
-        "wires": []
-    },
-    {
         "id": "36c55dbdfffe6d33",
         "type": "link out",
         "z": "53a5f07742283c4c",
@@ -993,8 +980,8 @@
         "links": [
             "1dd634541306cba1"
         ],
-        "x": 2125,
-        "y": 160,
+        "x": 1915,
+        "y": 80,
         "wires": []
     },
     {
