@@ -7,6 +7,42 @@
         "info": ""
     },
     {
+        "id": "3bf0bc8959f8a48e",
+        "type": "group",
+        "z": "2437e768.8e34d8",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "71f13b6b1744cf6b",
+            "64614e79bcb09872",
+            "2a35d2abfb0850da",
+            "2c0a57bd6ee87009",
+            "08bca5ce6d389d48",
+            "ec34cd6ea57b0b7f"
+        ],
+        "x": 1274,
+        "y": 79,
+        "w": 412,
+        "h": 162
+    },
+    {
+        "id": "ec34cd6ea57b0b7f",
+        "type": "junction",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "x": 1300,
+        "y": 160,
+        "wires": [
+            [
+                "64614e79bcb09872",
+                "2a35d2abfb0850da",
+                "71f13b6b1744cf6b"
+            ]
+        ]
+    },
+    {
         "id": "a204cf33.7f292",
         "type": "switch",
         "z": "2437e768.8e34d8",
@@ -232,7 +268,7 @@
         "y": 80,
         "wires": [
             [
-                "2a923ba7f294667c"
+                "ec34cd6ea57b0b7f"
             ]
         ]
     },
@@ -267,31 +303,6 @@
         "wires": []
     },
     {
-        "id": "2a923ba7f294667c",
-        "type": "api-call-service",
-        "z": "2437e768.8e34d8",
-        "name": "slack message",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "theautomation",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"Vaatwasser\",\"target\":\"#home-assistant\",\"title\":\"Vaatwasser\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Vaatwasser :knife_fork_plate:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"De Vaatwasser is klaar\"}]}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1300,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "376373ce.b5758c",
         "type": "stoptimer",
         "z": "2437e768.8e34d8",
@@ -307,6 +318,110 @@
                 "ce869786.78dec8"
             ],
             []
+        ]
+    },
+    {
+        "id": "71f13b6b1744cf6b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1390,
+        "y": 200,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "64614e79bcb09872",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vaatwasser",
+        "output": "str",
+        "x": 1390,
+        "y": 120,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "2a35d2abfb0850da",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De Vaatwasser is klaar",
+        "output": "str",
+        "x": 1400,
+        "y": 160,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "2c0a57bd6ee87009",
+        "type": "link out",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1645,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "08bca5ce6d389d48",
+        "type": "join",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1550,
+        "y": 160,
+        "wires": [
+            [
+                "2c0a57bd6ee87009"
+            ]
         ]
     },
     {

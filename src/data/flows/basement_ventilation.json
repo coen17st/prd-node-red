@@ -1347,6 +1347,26 @@
         "info": ""
     },
     {
+        "id": "0a1a2a6df765a339",
+        "type": "group",
+        "z": "4e909abe.0b62e4",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "febf6f9eab6e868d",
+            "6502d163268904d4",
+            "ac04035c1896218b",
+            "a1c0156c06d58e91",
+            "f6654a628999616b"
+        ],
+        "x": 2154,
+        "y": 739,
+        "w": 432,
+        "h": 122
+    },
+    {
         "id": "06680ce4a549dadf",
         "type": "junction",
         "z": "4e909abe.0b62e4",
@@ -1391,6 +1411,20 @@
         "wires": [
             [
                 "46771664.f639e8"
+            ]
+        ]
+    },
+    {
+        "id": "f6654a628999616b",
+        "type": "junction",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "x": 2180,
+        "y": 800,
+        "wires": [
+            [
+                "6502d163268904d4",
+                "febf6f9eab6e868d"
             ]
         ]
     },
@@ -2680,7 +2714,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -2690,7 +2724,7 @@
         "y": 780,
         "wires": [
             [
-                "8373567d.35b008"
+                "f6654a628999616b"
             ]
         ]
     },
@@ -2699,7 +2733,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -2709,7 +2743,7 @@
         "y": 920,
         "wires": [
             [
-                "8373567d.35b008"
+                "f6654a628999616b"
             ]
         ]
     },
@@ -2742,9 +2776,7 @@
         "x": 1980,
         "y": 1140,
         "wires": [
-            [
-                "1c8856d3.d19249"
-            ]
+            []
         ]
     },
     {
@@ -3141,7 +3173,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3160,7 +3192,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3179,7 +3211,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3198,7 +3230,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3243,11 +3275,11 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1030,
+        "x": 1210,
         "y": 1140,
         "wires": [
             [
-                "8373567d.35b008"
+                "f6654a628999616b"
             ],
             []
         ]
@@ -3262,7 +3294,7 @@
         "y": 200,
         "wires": [
             [
-                "8373567d.35b008"
+                "f6654a628999616b"
             ]
         ]
     },
@@ -3553,40 +3585,11 @@
         ]
     },
     {
-        "id": "1c8856d3.d19249",
-        "type": "change",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "rules": [
-            {
-                "t": "change",
-                "p": "message",
-                "pt": "msg",
-                "from": "\\n",
-                "fromt": "str",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2180,
-        "y": 1140,
-        "wires": [
-            [
-                "2f76b3aeaadfacce"
-            ]
-        ]
-    },
-    {
         "id": "f58250ec.e0fa1",
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3605,7 +3608,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3638,7 +3641,8 @@
         "y": 700,
         "wires": [
             [
-                "8373567d.35b008"
+                "8373567d.35b008",
+                "f6654a628999616b"
             ]
         ]
     },
@@ -3647,7 +3651,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3666,7 +3670,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3685,7 +3689,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3704,7 +3708,7 @@
         "type": "template",
         "z": "4e909abe.0b62e4",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -3719,47 +3723,86 @@
         ]
     },
     {
-        "id": "8afd566d75b90320",
-        "type": "api-call-service",
+        "id": "febf6f9eab6e868d",
+        "type": "template",
         "z": "4e909abe.0b62e4",
-        "name": "slack message",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "theautomation",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"Ventilatie\",\"target\":\"#home-assistant\",\"title\":\"Ventilatie\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Ventilatie :dash:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"{{{message}}}\"}]}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 2500,
-        "y": 1140,
+        "g": "0a1a2a6df765a339",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 2290,
+        "y": 820,
         "wires": [
-            []
+            [
+                "a1c0156c06d58e91"
+            ]
         ]
     },
     {
-        "id": "2f76b3aeaadfacce",
-        "type": "rbe",
+        "id": "6502d163268904d4",
+        "type": "template",
         "z": "4e909abe.0b62e4",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 2350,
-        "y": 1140,
+        "g": "0a1a2a6df765a339",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zonne-energie",
+        "output": "str",
+        "x": 2290,
+        "y": 780,
         "wires": [
             [
-                "8afd566d75b90320"
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "ac04035c1896218b",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "link_out_notify_basement_ventilation",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 2545,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "a1c0156c06d58e91",
+        "type": "join",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2450,
+        "y": 800,
+        "wires": [
+            [
+                "ac04035c1896218b"
             ]
         ]
     },

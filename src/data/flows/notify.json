@@ -8,215 +8,10 @@
         "env": []
     },
     {
-        "id": "e2a23f3dd8786141",
-        "type": "api-call-service",
-        "z": "343515a5528e14f0",
-        "name": "slack message",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "theautomation",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{title}}\",\"target\":\"#home-assistant\",\"title\":\"{{title}}\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"{{title}} {{slack_icon}}\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"{{{message}}}\"}]}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 820,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6203d5446a620e52",
-        "type": "link in",
-        "z": "343515a5528e14f0",
-        "name": "notify_all",
-        "links": [],
-        "x": 195,
-        "y": 140,
-        "wires": [
-            [
-                "e2a23f3dd8786141"
-            ]
-        ]
-    },
-    {
-        "id": "81fb95917c5f1d1f",
-        "type": "template",
-        "z": "343515a5528e14f0",
-        "name": "message",
-        "field": "notify",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{notify_message}}",
-        "output": "str",
-        "x": 340,
-        "y": 260,
-        "wires": [
-            [
-                "9ac77fe32596e4c1"
-            ]
-        ]
-    },
-    {
-        "id": "e0595786568bceef",
-        "type": "join",
-        "z": "343515a5528e14f0",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 670,
-        "y": 260,
-        "wires": [
-            [
-                "b92773ff0b01fade"
-            ]
-        ]
-    },
-    {
-        "id": "9ac77fe32596e4c1",
-        "type": "change",
-        "z": "343515a5528e14f0",
-        "name": "message topic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "message",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 260,
-        "wires": [
-            [
-                "e0595786568bceef"
-            ]
-        ]
-    },
-    {
-        "id": "a7ccaaf7d695e26c",
-        "type": "template",
-        "z": "343515a5528e14f0",
-        "name": "icon",
-        "field": "notify",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{notify_icon}}",
-        "output": "str",
-        "x": 330,
-        "y": 300,
-        "wires": [
-            [
-                "4cfbdd80c26870c9"
-            ]
-        ]
-    },
-    {
-        "id": "4cfbdd80c26870c9",
-        "type": "change",
-        "z": "343515a5528e14f0",
-        "name": "icon topic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "icon",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 300,
-        "wires": [
-            [
-                "e0595786568bceef"
-            ]
-        ]
-    },
-    {
-        "id": "8b3c7173b32be64a",
-        "type": "template",
-        "z": "343515a5528e14f0",
-        "name": "title",
-        "field": "notify",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{notify_title}}",
-        "output": "str",
-        "x": 330,
-        "y": 220,
-        "wires": [
-            [
-                "951c5148cb45923d"
-            ]
-        ]
-    },
-    {
-        "id": "951c5148cb45923d",
-        "type": "change",
-        "z": "343515a5528e14f0",
-        "name": "title topic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "title",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 220,
-        "wires": [
-            [
-                "e0595786568bceef"
-            ]
-        ]
-    },
-    {
         "id": "b92773ff0b01fade",
         "type": "api-call-service",
         "z": "343515a5528e14f0",
-        "name": "notify phone coen",
+        "name": "notify coen",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -231,8 +26,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 830,
-        "y": 260,
+        "x": 310,
+        "y": 140,
         "wires": [
             []
         ]
@@ -243,189 +38,54 @@
         "z": "343515a5528e14f0",
         "name": "notify_coen",
         "links": [
-            "11137c6e85e51697"
+            "11137c6e85e51697",
+            "8c93b438701888a6",
+            "ac04035c1896218b",
+            "73e546f49b2e02e1",
+            "2c0a57bd6ee87009",
+            "a2cfbe3c173fce64",
+            "2e42c93c307e8cec",
+            "68e61dcfb6db1de4"
         ],
         "x": 195,
-        "y": 260,
+        "y": 140,
         "wires": [
             [
-                "8b3c7173b32be64a",
-                "81fb95917c5f1d1f",
-                "a7ccaaf7d695e26c"
+                "b92773ff0b01fade"
             ]
         ]
     },
     {
-        "id": "96742c0e6fc400e0",
-        "type": "template",
+        "id": "aeee8468f3d1b7ad",
+        "type": "link in",
         "z": "343515a5528e14f0",
-        "name": "message",
-        "field": "notify",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{notify_message}}",
-        "output": "str",
-        "x": 340,
-        "y": 400,
-        "wires": [
-            [
-                "9fe9c5c8b336bfb6"
-            ]
-        ]
-    },
-    {
-        "id": "e6ec347141caf7d2",
-        "type": "join",
-        "z": "343515a5528e14f0",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 670,
-        "y": 400,
-        "wires": [
-            [
-                "9e59215267d27fc0"
-            ]
-        ]
-    },
-    {
-        "id": "9fe9c5c8b336bfb6",
-        "type": "change",
-        "z": "343515a5528e14f0",
-        "name": "message topic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "message",
-                "tot": "str"
-            }
+        "name": "notify_anne",
+        "links": [
+            "68e61dcfb6db1de4"
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 400,
+        "x": 195,
+        "y": 200,
         "wires": [
             [
-                "e6ec347141caf7d2"
+                "05c72cc515d6ee8d"
             ]
         ]
     },
     {
-        "id": "9f9a9d97edbbd43f",
-        "type": "template",
+        "id": "76e9e8e982a2fef6",
+        "type": "comment",
         "z": "343515a5528e14f0",
-        "name": "icon",
-        "field": "notify",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{notify_icon}}",
-        "output": "str",
-        "x": 330,
-        "y": 440,
-        "wires": [
-            [
-                "95e77d241186091c"
-            ]
-        ]
+        "name": "notifications",
+        "info": "",
+        "x": 90,
+        "y": 20,
+        "wires": []
     },
     {
-        "id": "95e77d241186091c",
-        "type": "change",
-        "z": "343515a5528e14f0",
-        "name": "icon topic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "icon",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 440,
-        "wires": [
-            [
-                "e6ec347141caf7d2"
-            ]
-        ]
-    },
-    {
-        "id": "88c40aad8c4af953",
-        "type": "template",
-        "z": "343515a5528e14f0",
-        "name": "title",
-        "field": "notify",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{notify_title}}",
-        "output": "str",
-        "x": 330,
-        "y": 360,
-        "wires": [
-            [
-                "2508834e67d52976"
-            ]
-        ]
-    },
-    {
-        "id": "2508834e67d52976",
-        "type": "change",
-        "z": "343515a5528e14f0",
-        "name": "title topic",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "title",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 360,
-        "wires": [
-            [
-                "e6ec347141caf7d2"
-            ]
-        ]
-    },
-    {
-        "id": "9e59215267d27fc0",
+        "id": "05c72cc515d6ee8d",
         "type": "api-call-service",
         "z": "343515a5528e14f0",
-        "name": "notify phone anne",
+        "name": "notify anne",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -440,37 +100,242 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 830,
-        "y": 400,
+        "x": 310,
+        "y": 200,
         "wires": [
             []
         ]
     },
     {
-        "id": "aeee8468f3d1b7ad",
+        "id": "0d4dd5184c1b0c50",
+        "type": "api-call-service",
+        "z": "343515a5528e14f0",
+        "name": "notify in app",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "persistent_notification",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 310,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a97f87cfab413716",
         "type": "link in",
         "z": "343515a5528e14f0",
-        "name": "notify_anne",
-        "links": [],
+        "name": "notify_in_app",
+        "links": [
+            "11137c6e85e51697",
+            "8c93b438701888a6",
+            "ac04035c1896218b",
+            "73e546f49b2e02e1",
+            "2c0a57bd6ee87009",
+            "2e42c93c307e8cec"
+        ],
         "x": 195,
-        "y": 400,
+        "y": 260,
         "wires": [
             [
-                "88c40aad8c4af953",
-                "96742c0e6fc400e0",
-                "9f9a9d97edbbd43f"
+                "0d4dd5184c1b0c50"
             ]
         ]
     },
     {
-        "id": "76e9e8e982a2fef6",
-        "type": "comment",
+        "id": "cfaf92063b478bdc",
+        "type": "api-call-service",
         "z": "343515a5528e14f0",
-        "name": "notifications",
-        "info": "",
-        "x": 90,
-        "y": 20,
-        "wires": []
+        "name": "text to speech",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "tts",
+        "service": "google_say",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.home_speaker"
+        ],
+        "data": "{\"message\":\"{{notify.message}}\",\"language\":\"nl\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 640,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf256ece81c0faee",
+        "type": "ha-wait-until",
+        "z": "343515a5528e14f0",
+        "name": "wait until media player is not playing",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 1,
+        "entityId": "media_player.home_speaker",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is_not",
+        "value": "playing",
+        "valueType": "str",
+        "timeout": "",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "cfaf92063b478bdc"
+            ]
+        ]
+    },
+    {
+        "id": "170690c80fc5131f",
+        "type": "link in",
+        "z": "343515a5528e14f0",
+        "name": "notify_in_tts_google_home_speaker",
+        "links": [],
+        "x": 195,
+        "y": 320,
+        "wires": [
+            [
+                "cf256ece81c0faee"
+            ]
+        ]
+    },
+    {
+        "id": "d94b50aeaba952d1",
+        "type": "ha-wait-until",
+        "z": "343515a5528e14f0",
+        "name": "wait until media player is not playing",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 1,
+        "entityId": "media_player.home_speaker",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is_not",
+        "value": "playing",
+        "valueType": "str",
+        "timeout": "",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 390,
+        "y": 380,
+        "wires": [
+            [
+                "f11dc3e3682ce836"
+            ]
+        ]
+    },
+    {
+        "id": "f11dc3e3682ce836",
+        "type": "api-call-service",
+        "z": "343515a5528e14f0",
+        "name": "text to speech",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "tts",
+        "service": "google_say",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.galaxy_tab_a8"
+        ],
+        "data": "{\"message\":\"{{notify.message}}\",\"language\":\"nl\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 640,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4660dc11fb0e5b8",
+        "type": "link in",
+        "z": "343515a5528e14f0",
+        "name": "notify_in_tts_wall_tablet",
+        "links": [
+            "849b0848c1cfdceb"
+        ],
+        "x": 195,
+        "y": 380,
+        "wires": [
+            [
+                "d94b50aeaba952d1"
+            ]
+        ]
+    },
+    {
+        "id": "04792e2be9d492bd",
+        "type": "api-call-service",
+        "z": "343515a5528e14f0",
+        "name": "notify tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "notify",
+        "service": "lg_webos_smart_tv",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 300,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c13b2b4d87067c17",
+        "type": "link in",
+        "z": "343515a5528e14f0",
+        "name": "notify_tv",
+        "links": [
+            "68e61dcfb6db1de4"
+        ],
+        "x": 195,
+        "y": 80,
+        "wires": [
+            [
+                "04792e2be9d492bd"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
