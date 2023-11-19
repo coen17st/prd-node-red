@@ -348,7 +348,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 590,
+        "x": 630,
         "y": 180,
         "wires": [
             [
@@ -378,7 +378,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 820,
+        "x": 860,
         "y": 180,
         "wires": [
             []

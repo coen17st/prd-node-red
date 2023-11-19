@@ -19,7 +19,8 @@
             "232a01493b9307b0",
             "73e546f49b2e02e1",
             "11d068d3ad86d2dd",
-            "97afb37521efba77"
+            "97afb37521efba77",
+            "a22e2a028512634f"
         ],
         "x": 1494,
         "y": 59,
@@ -36,7 +37,92 @@
         "wires": [
             [
                 "232a01493b9307b0",
-                "db7934b4b14446da"
+                "db7934b4b14446da",
+                "a22e2a028512634f"
+            ]
+        ]
+    },
+    {
+        "id": "11d068d3ad86d2dd",
+        "type": "join",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1770,
+        "y": 140,
+        "wires": [
+            [
+                "73e546f49b2e02e1"
+            ]
+        ]
+    },
+    {
+        "id": "73e546f49b2e02e1",
+        "type": "link out",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "link_out_notify_basement_window",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1865,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "232a01493b9307b0",
+        "type": "template",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 1610,
+        "y": 100,
+        "wires": [
+            [
+                "11d068d3ad86d2dd"
+            ]
+        ]
+    },
+    {
+        "id": "db7934b4b14446da",
+        "type": "template",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1610,
+        "y": 140,
+        "wires": [
+            [
+                "11d068d3ad86d2dd"
             ]
         ]
     },
@@ -180,7 +266,7 @@
         "y": 360,
         "wires": [
             [
-                "98a47a1b.d6fcc8"
+                "b7e01c5b3e5b9bc9"
             ],
             [
                 "fef0521b.1d64e"
@@ -247,7 +333,7 @@
         "y": 600,
         "wires": [
             [
-                "1991431c.890dcd"
+                "d6c27b122483f09e"
             ],
             [
                 "6f49345.883a1cc"
@@ -421,7 +507,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1440,
+        "x": 1660,
         "y": 640,
         "wires": [
             [
@@ -458,7 +544,7 @@
             }
         ],
         "queue": "none",
-        "x": 1690,
+        "x": 1910,
         "y": 640,
         "wires": [
             []
@@ -495,7 +581,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1440,
+        "x": 1660,
         "y": 360,
         "wires": [
             [
@@ -532,7 +618,7 @@
             }
         ],
         "queue": "none",
-        "x": 1690,
+        "x": 1910,
         "y": 360,
         "wires": [
             []
@@ -573,7 +659,7 @@
         "y": 660,
         "wires": [
             [
-                "1991431c.890dcd"
+                "d6c27b122483f09e"
             ],
             []
         ]
@@ -801,7 +887,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Sluit de ramen, de verwarming in de kelder staat aan. \\n \\nKelder Heating Power is {{sensor.basement_heating}} %",
+        "template": "Sluit de ramen, de verwarming in de kelder staat aan.\\nKelder Heating Power is {{sensor.basement_heating}}%",
         "output": "str",
         "x": 1200,
         "y": 80,
@@ -821,9 +907,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Open de ramen in de kelder, buiten is de vochtinhoud:droplet: lager en de temperatuur:thermometer: hoger. \\n\\n*Buiten* \\nTemperatuur: {{sensor.buienradar_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.outdoor_thermal_comfort_absolute_humidity}} g/m³ \\n\\n*Kelder* \\nTemperatuur: {{sensor.basement_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
+        "template": "Open de ramen in de kelder, buiten is de vochtinhoud lager en de temperatuur hoger. \\n\\nBuiten\\nTemperatuur: {{sensor.buienradar_temperature}} °C\\nAbsolute vochtinhoud: {{sensor.outdoor_thermal_comfort_absolute_humidity}} g/m³\\n\\nKelder\\nTemperatuur: {{sensor.basement_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
         "output": "str",
-        "x": 1200,
+        "x": 1420,
         "y": 640,
         "wires": [
             [
@@ -841,9 +927,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Sluit de ramen in de kelder, buiten is de vochtinhoud:droplet: hoger of de temperatuur:thermometer: lager. \\n\\n*Buiten* \\nTemperatuur: {{sensor.buienradar_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.outdoor_thermal_comfort_absolute_humidity}} g/m³ \\n\\n*Kelder* \\nTemperatuur: {{sensor.basement_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
+        "template": "Sluit de ramen in de kelder, buiten is de vochtinhoud hoger of de temperatuur lager.\\n\\nBuiten: \\nTemperatuur: {{sensor.buienradar_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.outdoor_thermal_comfort_absolute_humidity}} g/m³ \\n\\nKelder\\nTemperatuur: {{sensor.basement_temperature}} °C \\nAbsolute vochtinhoud: {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
         "output": "str",
-        "x": 1200,
+        "x": 1420,
         "y": 360,
         "wires": [
             [
@@ -873,86 +959,62 @@
         ]
     },
     {
-        "id": "db7934b4b14446da",
+        "id": "b7e01c5b3e5b9bc9",
+        "type": "function",
+        "z": "b1a9214c.4c71c",
+        "name": "round to two decimals",
+        "func": "msg.sensor.basement_thermal_comfort_absolute_humidity = msg.sensor.basement_thermal_comfort_absolute_humidity.toFixed(2);\nmsg.sensor.outdoor_thermal_comfort_absolute_humidity = msg.sensor.outdoor_thermal_comfort_absolute_humidity.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 360,
+        "wires": [
+            [
+                "98a47a1b.d6fcc8"
+            ]
+        ]
+    },
+    {
+        "id": "d6c27b122483f09e",
+        "type": "function",
+        "z": "b1a9214c.4c71c",
+        "name": "round to two decimals",
+        "func": "msg.sensor.basement_thermal_comfort_absolute_humidity = msg.sensor.basement_thermal_comfort_absolute_humidity.toFixed(2);\nmsg.sensor.outdoor_thermal_comfort_absolute_humidity = msg.sensor.outdoor_thermal_comfort_absolute_humidity.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 640,
+        "wires": [
+            [
+                "1991431c.890dcd"
+            ]
+        ]
+    },
+    {
+        "id": "a22e2a028512634f",
         "type": "template",
         "z": "b1a9214c.4c71c",
         "g": "6b44c062cbc05f0a",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": ":door:",
+        "template": "natural_basement_ventilation",
         "output": "str",
-        "x": 1610,
+        "x": 1630,
         "y": 180,
         "wires": [
             [
                 "11d068d3ad86d2dd"
-            ]
-        ]
-    },
-    {
-        "id": "232a01493b9307b0",
-        "type": "template",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Zonne-energie",
-        "output": "str",
-        "x": 1610,
-        "y": 100,
-        "wires": [
-            [
-                "11d068d3ad86d2dd"
-            ]
-        ]
-    },
-    {
-        "id": "73e546f49b2e02e1",
-        "type": "link out",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "link_out_notify_basement_window",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1865,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "11d068d3ad86d2dd",
-        "type": "join",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1770,
-        "y": 140,
-        "wires": [
-            [
-                "73e546f49b2e02e1"
             ]
         ]
     },

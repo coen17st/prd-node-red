@@ -8,6 +8,42 @@
         "env": []
     },
     {
+        "id": "392300741f68f312",
+        "type": "group",
+        "z": "42b354a7f0284779",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59327076bed18754",
+            "c6941b34f3402196",
+            "17c484a9c9a917ac",
+            "4dd6478ac62b8c2f",
+            "9b93ac7b58399751",
+            "cdbb5b48e71b5866"
+        ],
+        "x": 1294,
+        "y": 119,
+        "w": 452,
+        "h": 162
+    },
+    {
+        "id": "9b93ac7b58399751",
+        "type": "junction",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "x": 1320,
+        "y": 200,
+        "wires": [
+            [
+                "c6941b34f3402196",
+                "59327076bed18754",
+                "cdbb5b48e71b5866"
+            ]
+        ]
+    },
+    {
         "id": "08c71b7711856e9c",
         "type": "comment",
         "z": "42b354a7f0284779",
@@ -176,7 +212,7 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 1285,
+        "x": 1705,
         "y": 60,
         "wires": []
     },
@@ -195,7 +231,8 @@
         "y": 60,
         "wires": [
             [
-                "178e42db86a628e8"
+                "178e42db86a628e8",
+                "9b93ac7b58399751"
             ]
         ]
     },
@@ -215,6 +252,109 @@
         "wires": [
             [
                 "3c79af48f7d7ed9a"
+            ]
+        ]
+    },
+    {
+        "id": "59327076bed18754",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1450,
+        "y": 240,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
+            ]
+        ]
+    },
+    {
+        "id": "c6941b34f3402196",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zonne-energie",
+        "output": "str",
+        "x": 1450,
+        "y": 160,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
+            ]
+        ]
+    },
+    {
+        "id": "17c484a9c9a917ac",
+        "type": "link out",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1705,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4dd6478ac62b8c2f",
+        "type": "join",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1610,
+        "y": 200,
+        "wires": [
+            [
+                "17c484a9c9a917ac"
+            ]
+        ]
+    },
+    {
+        "id": "cdbb5b48e71b5866",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{primary_information}}.\\n{{secondary_information}}",
+        "output": "str",
+        "x": 1460,
+        "y": 200,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
             ]
         ]
     },

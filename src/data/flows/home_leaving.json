@@ -7,6 +7,74 @@
         "info": ""
     },
     {
+        "id": "9c946ef945c199e5",
+        "type": "group",
+        "z": "8aa6edec.5a013",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "60a9200995b666e2",
+            "254201c717321a67",
+            "37c73ac2e71d9a61",
+            "f7c20be07a75c04e",
+            "662879feb30cc5fa"
+        ],
+        "x": 1554,
+        "y": 39,
+        "w": 412,
+        "h": 162
+    },
+    {
+        "id": "cc3f4f06d9ee1050",
+        "type": "group",
+        "z": "8aa6edec.5a013",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "8bd431aac8edba25",
+            "1d9212ada487b166",
+            "2d9c5a51a0d3d65a",
+            "934778f06d5ff810",
+            "11441b9d4ec597d9"
+        ],
+        "x": 1554,
+        "y": 279,
+        "w": 412,
+        "h": 162
+    },
+    {
+        "id": "662879feb30cc5fa",
+        "type": "junction",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "x": 1580,
+        "y": 120,
+        "wires": [
+            [
+                "254201c717321a67",
+                "60a9200995b666e2"
+            ]
+        ]
+    },
+    {
+        "id": "11441b9d4ec597d9",
+        "type": "junction",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "x": 1580,
+        "y": 360,
+        "wires": [
+            [
+                "1d9212ada487b166",
+                "8bd431aac8edba25"
+            ]
+        ]
+    },
+    {
         "id": "a8b7af48.25638",
         "type": "server-state-changed",
         "z": "8aa6edec.5a013",
@@ -106,13 +174,13 @@
             }
         ],
         "x": 90,
-        "y": 140,
+        "y": 180,
         "wires": [
             [
                 "86e3be2e.bc7b4"
             ],
             [
-                "49509f9ed6939729"
+                "20ea56701637694a"
             ]
         ]
     },
@@ -191,7 +259,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 670,
-        "y": 140,
+        "y": 180,
         "wires": [
             [],
             [
@@ -290,7 +358,7 @@
         "y": 120,
         "wires": [
             [
-                "d1bc843790834774"
+                "10249eab85b11e9f"
             ]
         ]
     },
@@ -547,7 +615,7 @@
             }
         ],
         "x": 120,
-        "y": 240,
+        "y": 120,
         "wires": [
             [
                 "418ec65b2ffc66b5"
@@ -587,61 +655,11 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 320,
-        "y": 240,
+        "y": 120,
         "wires": [
             [
                 "86e3be2e.bc7b4"
             ],
-            []
-        ]
-    },
-    {
-        "id": "49509f9ed6939729",
-        "type": "api-call-service",
-        "z": "8aa6edec.5a013",
-        "name": "slack message",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "theautomation",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"Gastmodus\",\"target\":\"#home-assistant\",\"title\":\"Gastmodus\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Gastmodus :person_in_tuxedo:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"Gastmodus is ingeschakeld :white_check_mark:\"}]}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 280,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d1bc843790834774",
-        "type": "api-call-service",
-        "z": "8aa6edec.5a013",
-        "name": "slack message",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "theautomation",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"Huisbeveiliging\",\"target\":\"#home-assistant\",\"title\":\"Huisbeveiliging\",\"data\":{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"Huisbeveiliging :closed_lock_with_key:\"}},{\"type\":\"section\",\"fields\":[{\"type\":\"mrkdwn\",\"text\":\"Huisbeveiliging is ingeschakeld :white_check_mark:\"}]}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1440,
-        "y": 120,
-        "wires": [
             []
         ]
     },
@@ -657,6 +675,210 @@
         "x": 1065,
         "y": 60,
         "wires": []
+    },
+    {
+        "id": "60a9200995b666e2",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1670,
+        "y": 160,
+        "wires": [
+            [
+                "f7c20be07a75c04e"
+            ]
+        ]
+    },
+    {
+        "id": "254201c717321a67",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beveiliging",
+        "output": "str",
+        "x": 1670,
+        "y": 80,
+        "wires": [
+            [
+                "f7c20be07a75c04e"
+            ]
+        ]
+    },
+    {
+        "id": "37c73ac2e71d9a61",
+        "type": "link out",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "link_out_notify_home_leaving_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1925,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f7c20be07a75c04e",
+        "type": "join",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1830,
+        "y": 120,
+        "wires": [
+            [
+                "37c73ac2e71d9a61"
+            ]
+        ]
+    },
+    {
+        "id": "10249eab85b11e9f",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beveiliging is ingeschakeld ",
+        "output": "str",
+        "x": 1440,
+        "y": 120,
+        "wires": [
+            [
+                "662879feb30cc5fa"
+            ]
+        ]
+    },
+    {
+        "id": "20ea56701637694a",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beveiliging is ingeschakeld ",
+        "output": "str",
+        "x": 1440,
+        "y": 360,
+        "wires": [
+            [
+                "11441b9d4ec597d9"
+            ]
+        ]
+    },
+    {
+        "id": "8bd431aac8edba25",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1670,
+        "y": 400,
+        "wires": [
+            [
+                "934778f06d5ff810"
+            ]
+        ]
+    },
+    {
+        "id": "1d9212ada487b166",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Gastmodus",
+        "output": "str",
+        "x": 1670,
+        "y": 320,
+        "wires": [
+            [
+                "934778f06d5ff810"
+            ]
+        ]
+    },
+    {
+        "id": "2d9c5a51a0d3d65a",
+        "type": "link out",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "link_out_notify_home_leaving_2",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1925,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "934778f06d5ff810",
+        "type": "join",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1830,
+        "y": 360,
+        "wires": [
+            [
+                "2d9c5a51a0d3d65a"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",

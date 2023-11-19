@@ -7,6 +7,44 @@
         "info": ""
     },
     {
+        "id": "7b3e33afc7e5d51f",
+        "type": "group",
+        "z": "98a989e.d6bca78",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "253b2fc1dbf20ad4",
+            "bdce8718917c4dcb",
+            "b9f5925e88c3b14b",
+            "5db5047bb3f69eb7",
+            "4fc08434e069652b",
+            "496caddb.5ba724",
+            "fdc4c2eef34c0a15"
+        ],
+        "x": 854,
+        "y": 59,
+        "w": 452,
+        "h": 202
+    },
+    {
+        "id": "4fc08434e069652b",
+        "type": "junction",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "x": 880,
+        "y": 140,
+        "wires": [
+            [
+                "bdce8718917c4dcb",
+                "253b2fc1dbf20ad4",
+                "496caddb.5ba724",
+                "fdc4c2eef34c0a15"
+            ]
+        ]
+    },
+    {
         "id": "6429429b.d1375c",
         "type": "server-state-changed",
         "z": "98a989e.d6bca78",
@@ -88,7 +126,7 @@
         "id": "d99c251f.40c1c8",
         "type": "api-current-state",
         "z": "98a989e.d6bca78",
-        "name": "group persons is not home",
+        "name": "group persons is not home for 15 minutes",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
@@ -112,10 +150,10 @@
                 "valueType": "entity"
             }
         ],
-        "for": 0,
+        "for": "15",
         "forType": "num",
         "forUnits": "minutes",
-        "x": 440,
+        "x": 480,
         "y": 80,
         "wires": [
             [
@@ -155,11 +193,11 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 660,
+        "x": 740,
         "y": 80,
         "wires": [
             [
-                "496caddb.5ba724"
+                "4fc08434e069652b"
             ],
             []
         ]
@@ -168,18 +206,19 @@
         "id": "496caddb.5ba724",
         "type": "template",
         "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is {{payload}}m³ gas gemeten en niemand is aanwezig, controleer of het gas is uitgezet.",
+        "template": "Er is {{payload}}m³ gas gemeten en niemand is aanwezig, controleer of het gas of verwarming is uitgezet.",
         "output": "str",
-        "x": 820,
-        "y": 80,
+        "x": 1020,
+        "y": 140,
         "wires": [
             [
-                "121441a.65b76be"
+                "5db5047bb3f69eb7"
             ]
         ]
     },
@@ -194,16 +233,107 @@
         "wires": []
     },
     {
-        "id": "121441a.65b76be",
+        "id": "253b2fc1dbf20ad4",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1010,
+        "y": 180,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
+    },
+    {
+        "id": "bdce8718917c4dcb",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Gas",
+        "output": "str",
+        "x": 1010,
+        "y": 100,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
+    },
+    {
+        "id": "b9f5925e88c3b14b",
         "type": "link out",
         "z": "98a989e.d6bca78",
-        "name": "",
+        "g": "7b3e33afc7e5d51f",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
         "links": [
-            "ebf4860d.603538"
+            "8ed3b0974336e55b"
         ],
-        "x": 935,
-        "y": 80,
+        "x": 1265,
+        "y": 140,
         "wires": []
+    },
+    {
+        "id": "5db5047bb3f69eb7",
+        "type": "join",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1170,
+        "y": 140,
+        "wires": [
+            [
+                "b9f5925e88c3b14b"
+            ]
+        ]
+    },
+    {
+        "id": "fdc4c2eef34c0a15",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "gas",
+        "output": "str",
+        "x": 1030,
+        "y": 220,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",

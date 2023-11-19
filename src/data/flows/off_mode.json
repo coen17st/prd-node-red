@@ -68,7 +68,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 650,
-        "y": 420,
+        "y": 340,
         "wires": [
             [
                 "477c8f0e.c4289"
@@ -96,7 +96,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 850,
-        "y": 420,
+        "y": 340,
         "wires": [
             [
                 "b85d118c.fbdc4"
@@ -115,7 +115,7 @@
         "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
         "output": "str",
         "x": 980,
-        "y": 420,
+        "y": 340,
         "wires": [
             [
                 "ad7f00b7b2b0e671"
@@ -196,7 +196,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1130,
-        "y": 420,
+        "y": 340,
         "wires": [
             []
         ]
@@ -338,7 +338,7 @@
         "z": "eb1939ba1b7e9b73",
         "name": "lookup climate is not auto",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -353,13 +353,13 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 370,
-        "y": 420,
+        "y": 340,
         "wires": [
             [
                 "397bbd3d.0bb3f2"
@@ -431,7 +431,7 @@
         "z": "eb1939ba1b7e9b73",
         "name": "lookup lights on",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -446,11 +446,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 340,
         "y": 260,
         "wires": [
@@ -514,67 +514,6 @@
         ]
     },
     {
-        "id": "f827a95998de6720",
-        "type": "ha-get-entities",
-        "z": "eb1939ba1b7e9b73",
-        "name": "lookup media_player is not off",
-        "server": "4ba92433.2478cc",
-        "version": 0,
-        "rules": [
-            {
-                "property": "entity_id",
-                "logic": "starts_with",
-                "value": "media_player.",
-                "valueType": "str"
-            },
-            {
-                "property": "state",
-                "logic": "is_not",
-                "value": "off",
-                "valueType": "str"
-            }
-        ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
-        "x": 390,
-        "y": 360,
-        "wires": [
-            [
-                "675c7734fcb84621"
-            ]
-        ]
-    },
-    {
-        "id": "675c7734fcb84621",
-        "type": "api-call-service",
-        "z": "eb1939ba1b7e9b73",
-        "name": "turn off media_player",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "media_player",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "{{payload.entity_id}}"
-        ],
-        "data": "",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 640,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "51f8fd5354fac718",
         "type": "link in",
         "z": "eb1939ba1b7e9b73",
@@ -592,7 +531,6 @@
                 "83808dcd.70439",
                 "db8cc8f4bb9386ab",
                 "3fc0dbaa106c85b8",
-                "f827a95998de6720",
                 "f9028094.57a62"
             ]
         ]

@@ -7,6 +7,40 @@
         "info": ""
     },
     {
+        "id": "47af9932f18884cc",
+        "type": "group",
+        "z": "c0da8379.b0dd3",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4d43c0c59596c396",
+            "7063678cde99b775",
+            "5e72b91e3ad4066d",
+            "52f21d3060c57706",
+            "71156279d6ca8920"
+        ],
+        "x": 1954,
+        "y": 219,
+        "w": 412,
+        "h": 162
+    },
+    {
+        "id": "71156279d6ca8920",
+        "type": "junction",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "x": 1980,
+        "y": 300,
+        "wires": [
+            [
+                "7063678cde99b775",
+                "4d43c0c59596c396"
+            ]
+        ]
+    },
+    {
         "id": "9e995be6.7976b8",
         "type": "api-call-service",
         "z": "c0da8379.b0dd3",
@@ -27,8 +61,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1280,
-        "y": 480,
+        "x": 1340,
+        "y": 380,
         "wires": [
             [
                 "13ca8b62.27a4a5"
@@ -56,8 +90,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1280,
-        "y": 540,
+        "x": 1340,
+        "y": 440,
         "wires": [
             [
                 "13ca8b62.27a4a5"
@@ -81,7 +115,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 250,
+        "x": 410,
         "y": 80,
         "wires": [
             [
@@ -176,8 +210,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1040,
-        "y": 480,
+        "x": 1100,
+        "y": 380,
         "wires": [
             [
                 "9e995be6.7976b8"
@@ -216,8 +250,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1040,
-        "y": 540,
+        "x": 1100,
+        "y": 440,
         "wires": [
             [
                 "e137297f.088698"
@@ -271,7 +305,7 @@
             }
         ],
         "x": 80,
-        "y": 180,
+        "y": 140,
         "wires": [
             [
                 "9b83ef6.7af1c1"
@@ -300,8 +334,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 270,
-        "y": 180,
+        "x": 390,
+        "y": 140,
         "wires": [
             [
                 "ed71f712.b69338",
@@ -357,7 +391,7 @@
             }
         ],
         "x": 120,
-        "y": 360,
+        "y": 200,
         "wires": [
             [
                 "c0a73100.b726e"
@@ -411,7 +445,7 @@
             }
         ],
         "x": 130,
-        "y": 420,
+        "y": 260,
         "wires": [
             [
                 "b53f891b.1feb08"
@@ -451,7 +485,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 360,
+        "y": 200,
         "wires": [
             [
                 "5f497d57.150f44",
@@ -493,7 +527,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 420,
+        "y": 260,
         "wires": [
             [
                 "aab516c6.d5acf8",
@@ -508,16 +542,18 @@
         "type": "template",
         "z": "c0da8379.b0dd3",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
         "template": "Het is donker en er is iemand aanwezig. {{{data.attributes.friendly_name}}} verlichting is ingeschakeld.",
         "output": "str",
-        "x": 1620,
-        "y": 520,
+        "x": 1880,
+        "y": 340,
         "wires": [
-            []
+            [
+                "71156279d6ca8920"
+            ]
         ]
     },
     {
@@ -546,7 +582,7 @@
         "outputLocationType": "msg",
         "outputLocation": "payload",
         "outputResultsCount": 1,
-        "x": 660,
+        "x": 720,
         "y": 80,
         "wires": [
             [
@@ -574,7 +610,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1050,
+        "x": 1110,
         "y": 80,
         "wires": [
             [
@@ -593,7 +629,7 @@
         "syntax": "mustache",
         "template": "{{payload.attributes.friendly_name}}",
         "output": "str",
-        "x": 880,
+        "x": 940,
         "y": 80,
         "wires": [
             [
@@ -627,7 +663,7 @@
         "outputLocationType": "msg",
         "outputLocation": "payload",
         "outputResultsCount": 1,
-        "x": 1340,
+        "x": 1400,
         "y": 80,
         "wires": [
             [
@@ -646,7 +682,7 @@
         "syntax": "mustache",
         "template": "{{payload.attributes.friendly_name}}",
         "output": "str",
-        "x": 1540,
+        "x": 1600,
         "y": 80,
         "wires": [
             [
@@ -674,8 +710,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1710,
-        "y": 80,
+        "x": 1750,
+        "y": 280,
         "wires": [
             [
                 "d129b86a.aa0f58"
@@ -687,16 +723,18 @@
         "type": "template",
         "z": "c0da8379.b0dd3",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{friendly_name_person}} is thuis gekomen en het is donker. {{friendly_name_lampen}} verlichting is ingeschakeld",
+        "template": "{{friendly_name_person}} is thuis gekomen en het is donker. {{friendly_name_lampen}} verlichting staat aan.",
         "output": "str",
-        "x": 1840,
-        "y": 80,
+        "x": 1880,
+        "y": 280,
         "wires": [
-            []
+            [
+                "71156279d6ca8920"
+            ]
         ]
     },
     {
@@ -730,8 +768,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 660,
-        "y": 380,
+        "x": 720,
+        "y": 320,
         "wires": [
             [
                 "f86b599d.352918"
@@ -760,8 +798,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 890,
-        "y": 380,
+        "x": 950,
+        "y": 320,
         "wires": [
             []
         ]
@@ -797,7 +835,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 670,
+        "x": 730,
         "y": 260,
         "wires": [
             [
@@ -827,7 +865,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 900,
+        "x": 960,
         "y": 260,
         "wires": [
             []
@@ -864,11 +902,13 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 650,
-        "y": 480,
+        "x": 710,
+        "y": 380,
         "wires": [
             [
-                "bfdc7b40.f9a528"
+                "d08ebe33.48973",
+                "cc18abb3.ae2a18",
+                "a8a31543.6e54b8"
             ],
             []
         ]
@@ -889,7 +929,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "outputs": 1,
-        "x": 1180,
+        "x": 1240,
         "y": 80,
         "wires": [
             [
@@ -917,8 +957,8 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1470,
-        "y": 520,
+        "x": 1750,
+        "y": 340,
         "wires": [
             [
                 "cea43bad.d11358"
@@ -956,8 +996,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1050,
-        "y": 600,
+        "x": 1110,
+        "y": 500,
         "wires": [
             [
                 "fd5eca9e.417048"
@@ -986,37 +1026,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1280,
-        "y": 600,
+        "x": 1340,
+        "y": 500,
         "wires": [
             [
                 "13ca8b62.27a4a5"
-            ]
-        ]
-    },
-    {
-        "id": "bfdc7b40.f9a528",
-        "type": "delay",
-        "z": "c0da8379.b0dd3",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "15",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 840,
-        "y": 480,
-        "wires": [
-            [
-                "d08ebe33.48973",
-                "cc18abb3.ae2a18",
-                "a8a31543.6e54b8"
             ]
         ]
     },
@@ -1041,7 +1055,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 660,
+        "x": 720,
         "y": 200,
         "wires": [
             []
@@ -1068,7 +1082,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1030,
+        "x": 1090,
         "y": 140,
         "wires": [
             [
@@ -1102,7 +1116,7 @@
         "outputLocationType": "msg",
         "outputLocation": "payload",
         "outputResultsCount": 1,
-        "x": 720,
+        "x": 780,
         "y": 140,
         "wires": [
             [
@@ -1131,7 +1145,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1290,
+        "x": 1350,
         "y": 140,
         "wires": [
             []
@@ -1141,11 +1155,94 @@
         "id": "68768e1136ebca84",
         "type": "comment",
         "z": "c0da8379.b0dd3",
-        "name": "Flow that is triggered when someone comes home or guest mode is turned on",
+        "name": "Flow that will be triggerd when someone comes home or guest mode is turned on",
         "info": "",
-        "x": 290,
+        "x": 300,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "4d43c0c59596c396",
+        "type": "template",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 2070,
+        "y": 340,
+        "wires": [
+            [
+                "52f21d3060c57706"
+            ]
+        ]
+    },
+    {
+        "id": "7063678cde99b775",
+        "type": "template",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Verlichting",
+        "output": "str",
+        "x": 2070,
+        "y": 260,
+        "wires": [
+            [
+                "52f21d3060c57706"
+            ]
+        ]
+    },
+    {
+        "id": "5e72b91e3ad4066d",
+        "type": "link out",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "link_out_notify_home_entering",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 2325,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "52f21d3060c57706",
+        "type": "join",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2230,
+        "y": 300,
+        "wires": [
+            [
+                "5e72b91e3ad4066d"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",

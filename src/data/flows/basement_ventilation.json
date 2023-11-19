@@ -1359,12 +1359,28 @@
             "6502d163268904d4",
             "ac04035c1896218b",
             "a1c0156c06d58e91",
-            "f6654a628999616b"
+            "f6654a628999616b",
+            "d6d0b5735ad8f20a"
         ],
         "x": 2154,
         "y": 739,
         "w": 432,
-        "h": 122
+        "h": 162
+    },
+    {
+        "id": "f6654a628999616b",
+        "type": "junction",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "x": 2180,
+        "y": 800,
+        "wires": [
+            [
+                "6502d163268904d4",
+                "febf6f9eab6e868d",
+                "d6d0b5735ad8f20a"
+            ]
+        ]
     },
     {
         "id": "06680ce4a549dadf",
@@ -1415,16 +1431,86 @@
         ]
     },
     {
-        "id": "f6654a628999616b",
-        "type": "junction",
+        "id": "a1c0156c06d58e91",
+        "type": "join",
         "z": "4e909abe.0b62e4",
         "g": "0a1a2a6df765a339",
-        "x": 2180,
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2450,
         "y": 800,
         "wires": [
             [
-                "6502d163268904d4",
-                "febf6f9eab6e868d"
+                "ac04035c1896218b"
+            ]
+        ]
+    },
+    {
+        "id": "ac04035c1896218b",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "link_out_notify_basement_ventilation",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 2545,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "6502d163268904d4",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 2290,
+        "y": 780,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "febf6f9eab6e868d",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 2290,
+        "y": 820,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
             ]
         ]
     },
@@ -1517,7 +1603,7 @@
         "y": 120,
         "wires": [
             [
-                "a104a83026f8fd84"
+                "a443801a148e31b6"
             ],
             []
         ]
@@ -1557,7 +1643,7 @@
         "y": 180,
         "wires": [
             [
-                "528b70bf555994d2"
+                "3efec0d271c18678"
             ],
             []
         ]
@@ -1597,7 +1683,7 @@
         "y": 240,
         "wires": [
             [
-                "eb7fc4be79c0effe"
+                "f75b2db2c30eabf9"
             ],
             []
         ]
@@ -1862,7 +1948,7 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "entity_id": "sensor.living_room_thermal_comfort_absolute_humidity",
-        "state_type": "str",
+        "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
             {
@@ -2957,7 +3043,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1380,
+        "x": 1620,
         "y": 200,
         "wires": [
             [
@@ -2997,7 +3083,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1690,
+        "x": 1930,
         "y": 200,
         "wires": [
             [
@@ -3290,7 +3376,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "env": [],
-        "x": 2010,
+        "x": 2250,
         "y": 200,
         "wires": [
             [
@@ -3655,9 +3741,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert mogelijk tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de woonkamer is: {{sensor.living_room_thermal_comfort_dew_point}} ℃",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht van boven condenseert mogelijk tegen de koudste oppervlakte in de kelder.\\nDe temperatuur van het koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nHet dauwpunt van de lucht in de woonkamer is: {{sensor.living_room_thermal_comfort_dew_point}} ℃",
         "output": "str",
-        "x": 1120,
+        "x": 1360,
         "y": 120,
         "wires": [
             [
@@ -3674,9 +3760,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert mogelijk tegen de koudste oppervlakte in de kelder. \\n \\nTemperatuur koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nDauwpunt van de lucht in de slaapkamer is: {{sensor.master_bedroom_thermal_comfort_dew_point}} ℃",
+        "template": "Mechanische ventilatie is uitgeschakeld, lucht uit de slaapkamer condenseert mogelijk tegen de koudste oppervlakte in de kelder.\\nDe temperatuur van het koudste oppervlakte in de kelder is: {{sensor.basement_wall_temperature_offset}} ℃ \\nHet dauwpunt van de lucht in de slaapkamer is: {{sensor.master_bedroom_thermal_comfort_dew_point}} ℃",
         "output": "str",
-        "x": 1120,
+        "x": 1360,
         "y": 180,
         "wires": [
             [
@@ -3695,7 +3781,7 @@
         "syntax": "mustache",
         "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ en is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
         "output": "str",
-        "x": 1120,
+        "x": 1360,
         "y": 240,
         "wires": [
             [
@@ -3714,7 +3800,7 @@
         "syntax": "mustache",
         "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n\\nKelder Heating Power is {{payload}}%",
         "output": "str",
-        "x": 1120,
+        "x": 1360,
         "y": 300,
         "wires": [
             [
@@ -3723,86 +3809,111 @@
         ]
     },
     {
-        "id": "febf6f9eab6e868d",
-        "type": "template",
+        "id": "f75b2db2c30eabf9",
+        "type": "function",
         "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": ":door:",
-        "output": "str",
-        "x": 2290,
-        "y": 820,
+        "name": "round to two decimals",
+        "func": "msg.sensor.living_room_thermal_comfort_absolute_humidity = msg.sensor.living_room_thermal_comfort_absolute_humidity.toFixed(2);\nmsg.sensor.basement_thermal_comfort_absolute_humidity = msg.sensor.basement_thermal_comfort_absolute_humidity.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 240,
         "wires": [
             [
-                "a1c0156c06d58e91"
+                "eb7fc4be79c0effe"
             ]
         ]
     },
     {
-        "id": "6502d163268904d4",
-        "type": "template",
+        "id": "6935112b5f85614c",
+        "type": "inject",
         "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Zonne-energie",
-        "output": "str",
-        "x": 2290,
-        "y": 780,
-        "wires": [
-            [
-                "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "ac04035c1896218b",
-        "type": "link out",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 2545,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "a1c0156c06d58e91",
-        "type": "join",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
         "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 2450,
-        "y": 800,
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 440,
         "wires": [
             [
-                "ac04035c1896218b"
+                "4abb03cf.8c49ec"
+            ]
+        ]
+    },
+    {
+        "id": "a443801a148e31b6",
+        "type": "function",
+        "z": "4e909abe.0b62e4",
+        "name": "round to two decimals",
+        "func": "sensor.living_room_thermal_comfort_dew_point = sensor.living_room_thermal_comfort_dew_point.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 120,
+        "wires": [
+            [
+                "a104a83026f8fd84"
+            ]
+        ]
+    },
+    {
+        "id": "3efec0d271c18678",
+        "type": "function",
+        "z": "4e909abe.0b62e4",
+        "name": "round to two decimals",
+        "func": "msg.sensor.master_bedroom_thermal_comfort_dew_point = msg.sensor.master_bedroom_thermal_comfort_dew_point.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 180,
+        "wires": [
+            [
+                "528b70bf555994d2"
+            ]
+        ]
+    },
+    {
+        "id": "d6d0b5735ad8f20a",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mechanical_ventilation",
+        "output": "str",
+        "x": 2310,
+        "y": 860,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
             ]
         ]
     },

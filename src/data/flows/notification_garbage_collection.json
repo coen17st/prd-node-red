@@ -8,6 +8,70 @@
         "env": []
     },
     {
+        "id": "3b89d483d3628b14",
+        "type": "group",
+        "z": "72f3a564e626ff9a",
+        "name": "notify two actions",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3a3b8fdb9d6f4ab0",
+            "dcc306682fd0ffa8",
+            "0af5a06e405527e9",
+            "d0d3f913b8c035f3",
+            "b1b1be8e46f91cca",
+            "dd3030c9ae0f7a07",
+            "46d50645e39da463",
+            "ebcb50cdabc72f91"
+        ],
+        "x": 1154,
+        "y": 119,
+        "w": 442,
+        "h": 242
+    },
+    {
+        "id": "b1b1be8e46f91cca",
+        "type": "junction",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "x": 1180,
+        "y": 200,
+        "wires": [
+            [
+                "dcc306682fd0ffa8",
+                "3a3b8fdb9d6f4ab0",
+                "dd3030c9ae0f7a07",
+                "46d50645e39da463",
+                "ebcb50cdabc72f91"
+            ]
+        ]
+    },
+    {
+        "id": "223d859dcac9107a",
+        "type": "junction",
+        "z": "72f3a564e626ff9a",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "6a481279c5298533"
+            ]
+        ]
+    },
+    {
+        "id": "4b77d397e442cac9",
+        "type": "junction",
+        "z": "72f3a564e626ff9a",
+        "x": 940,
+        "y": 140,
+        "wires": [
+            [
+                "b1b1be8e46f91cca"
+            ]
+        ]
+    },
+    {
         "id": "fc015c3acdd57ee4",
         "type": "template",
         "z": "72f3a564e626ff9a",
@@ -79,7 +143,8 @@
         "y": 60,
         "wires": [
             [
-                "040d71ac086fd35b"
+                "040d71ac086fd35b",
+                "4b77d397e442cac9"
             ]
         ]
     },
@@ -167,7 +232,7 @@
             "4db25e8d0289c57b",
             "60e14e33a793f50d"
         ],
-        "x": 1285,
+        "x": 1555,
         "y": 60,
         "wires": []
     },
@@ -215,7 +280,7 @@
         "z": "72f3a564e626ff9a",
         "name": "Turn info notification sensor off if it still shows garbage collection after 09:00 when the collection is today",
         "info": "",
-        "x": 370,
+        "x": 390,
         "y": 180,
         "wires": []
     },
@@ -335,7 +400,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 940,
+        "x": 960,
         "y": 220,
         "wires": [
             []
@@ -403,6 +468,223 @@
                 "6d32a564bcd340a4"
             ],
             []
+        ]
+    },
+    {
+        "id": "3a3b8fdb9d6f4ab0",
+        "type": "template",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1270,
+        "y": 240,
+        "wires": [
+            [
+                "d0d3f913b8c035f3"
+            ]
+        ]
+    },
+    {
+        "id": "dcc306682fd0ffa8",
+        "type": "template",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Afval",
+        "output": "str",
+        "x": 1270,
+        "y": 160,
+        "wires": [
+            [
+                "d0d3f913b8c035f3"
+            ]
+        ]
+    },
+    {
+        "id": "0af5a06e405527e9",
+        "type": "link out",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "link_out_notify_guest_mode",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 1555,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d0d3f913b8c035f3",
+        "type": "join",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1470,
+        "y": 200,
+        "wires": [
+            [
+                "0af5a06e405527e9"
+            ]
+        ]
+    },
+    {
+        "id": "dd3030c9ae0f7a07",
+        "type": "change",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "action titles",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notify.action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_1",
+                "pt": "msg",
+                "to": "GARBAGE_ON",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2",
+                "pt": "msg",
+                "to": "IGNORE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1290,
+        "y": 200,
+        "wires": [
+            [
+                "d0d3f913b8c035f3"
+            ]
+        ]
+    },
+    {
+        "id": "3bbeb5287f1c9e72",
+        "type": "comment",
+        "z": "72f3a564e626ff9a",
+        "name": "listen to garbage yes action notification answer event ",
+        "info": "",
+        "x": 230,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5fc3b5118b42d3ec",
+        "type": "server-events",
+        "z": "72f3a564e626ff9a",
+        "name": "mobile event listner",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeAsEntityConfig": "",
+        "eventType": "mobile_app_notification_action",
+        "eventData": "{\"action\":\"GARBAGE_ON\"}",
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "223d859dcac9107a"
+            ]
+        ]
+    },
+    {
+        "id": "46d50645e39da463",
+        "type": "template",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{secondary_information}}.\\nStaat de container al aan de weg?",
+        "output": "str",
+        "x": 1280,
+        "y": 280,
+        "wires": [
+            [
+                "d0d3f913b8c035f3"
+            ]
+        ]
+    },
+    {
+        "id": "ebcb50cdabc72f91",
+        "type": "template",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "garbage",
+        "output": "str",
+        "x": 1290,
+        "y": 320,
+        "wires": [
+            [
+                "d0d3f913b8c035f3"
+            ]
         ]
     },
     {
