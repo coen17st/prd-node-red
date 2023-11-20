@@ -8,6 +8,47 @@
         "env": []
     },
     {
+        "id": "725af18957967e99",
+        "type": "group",
+        "z": "eb1939ba1b7e9b73",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "72ef2fc0d180fcea",
+            "343f37d7fe9484fd",
+            "30a8a878728a6a2b",
+            "8a1366db3f33e113",
+            "0fd94c312d822e91"
+        ],
+        "x": 1754,
+        "y": 399,
+        "w": 412,
+        "h": 122
+    },
+    {
+        "id": "bbadfc9e4b7a4c6f",
+        "type": "group",
+        "z": "eb1939ba1b7e9b73",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a886339db3ab3c2c",
+            "49c29fed4504aa48",
+            "a9644b22cbb88c3d",
+            "5ffb1c4b55bebe49",
+            "a4084d2b75ad5686",
+            "8931cf28fdf65053"
+        ],
+        "x": 1754,
+        "y": 219,
+        "w": 412,
+        "h": 162
+    },
+    {
         "id": "c860c0ff802edef8",
         "type": "junction",
         "z": "eb1939ba1b7e9b73",
@@ -16,6 +57,35 @@
         "wires": [
             [
                 "49bc3a7a927254a2"
+            ]
+        ]
+    },
+    {
+        "id": "0fd94c312d822e91",
+        "type": "junction",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "x": 1780,
+        "y": 480,
+        "wires": [
+            [
+                "343f37d7fe9484fd",
+                "72ef2fc0d180fcea"
+            ]
+        ]
+    },
+    {
+        "id": "a4084d2b75ad5686",
+        "type": "junction",
+        "z": "eb1939ba1b7e9b73",
+        "g": "bbadfc9e4b7a4c6f",
+        "x": 1780,
+        "y": 300,
+        "wires": [
+            [
+                "49c29fed4504aa48",
+                "a886339db3ab3c2c",
+                "8931cf28fdf65053"
             ]
         ]
     },
@@ -67,7 +137,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 650,
+        "x": 610,
         "y": 340,
         "wires": [
             [
@@ -95,30 +165,11 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 850,
+        "x": 790,
         "y": 340,
         "wires": [
             [
                 "b85d118c.fbdc4"
-            ]
-        ]
-    },
-    {
-        "id": "b85d118c.fbdc4",
-        "type": "template",
-        "z": "eb1939ba1b7e9b73",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
-        "output": "str",
-        "x": 980,
-        "y": 340,
-        "wires": [
-            [
-                "ad7f00b7b2b0e671"
             ]
         ]
     },
@@ -177,31 +228,6 @@
         ]
     },
     {
-        "id": "ad7f00b7b2b0e671",
-        "type": "api-call-service",
-        "z": "eb1939ba1b7e9b73",
-        "name": "In APP Notify",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"Verwarming\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1130,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "fda4eae176ed738e",
         "type": "template",
         "z": "eb1939ba1b7e9b73",
@@ -249,50 +275,6 @@
         ]
     },
     {
-        "id": "89625810ae98a2fc",
-        "type": "template",
-        "z": "eb1939ba1b7e9b73",
-        "name": "message",
-        "field": "message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
-        "output": "str",
-        "x": 1660,
-        "y": 300,
-        "wires": [
-            [
-                "a8dadd67cf109c6d"
-            ]
-        ]
-    },
-    {
-        "id": "a8dadd67cf109c6d",
-        "type": "api-call-service",
-        "z": "eb1939ba1b7e9b73",
-        "name": "In APP Notify",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"Verlichting\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1810,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "db8cc8f4bb9386ab",
         "type": "api-current-state",
         "z": "eb1939ba1b7e9b73",
@@ -326,10 +308,10 @@
         "x": 460,
         "y": 200,
         "wires": [
-            [],
             [
                 "3b9a1fc1.aafd9"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -532,6 +514,230 @@
                 "db8cc8f4bb9386ab",
                 "3fc0dbaa106c85b8",
                 "f9028094.57a62"
+            ]
+        ]
+    },
+    {
+        "id": "72ef2fc0d180fcea",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1870,
+        "y": 480,
+        "wires": [
+            [
+                "8a1366db3f33e113"
+            ]
+        ]
+    },
+    {
+        "id": "343f37d7fe9484fd",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Verwarming",
+        "output": "str",
+        "x": 1870,
+        "y": 440,
+        "wires": [
+            [
+                "8a1366db3f33e113"
+            ]
+        ]
+    },
+    {
+        "id": "30a8a878728a6a2b",
+        "type": "link out",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 2125,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "8a1366db3f33e113",
+        "type": "join",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2030,
+        "y": 480,
+        "wires": [
+            [
+                "30a8a878728a6a2b"
+            ]
+        ]
+    },
+    {
+        "id": "a886339db3ab3c2c",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "bbadfc9e4b7a4c6f",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1870,
+        "y": 300,
+        "wires": [
+            [
+                "5ffb1c4b55bebe49"
+            ]
+        ]
+    },
+    {
+        "id": "49c29fed4504aa48",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "bbadfc9e4b7a4c6f",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Verlichting",
+        "output": "str",
+        "x": 1870,
+        "y": 260,
+        "wires": [
+            [
+                "5ffb1c4b55bebe49"
+            ]
+        ]
+    },
+    {
+        "id": "a9644b22cbb88c3d",
+        "type": "link out",
+        "z": "eb1939ba1b7e9b73",
+        "g": "bbadfc9e4b7a4c6f",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 2125,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "5ffb1c4b55bebe49",
+        "type": "join",
+        "z": "eb1939ba1b7e9b73",
+        "g": "bbadfc9e4b7a4c6f",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2030,
+        "y": 300,
+        "wires": [
+            [
+                "a9644b22cbb88c3d"
+            ]
+        ]
+    },
+    {
+        "id": "8931cf28fdf65053",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "bbadfc9e4b7a4c6f",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "lights",
+        "output": "str",
+        "x": 1890,
+        "y": 340,
+        "wires": [
+            [
+                "5ffb1c4b55bebe49"
+            ]
+        ]
+    },
+    {
+        "id": "89625810ae98a2fc",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
+        "output": "str",
+        "x": 1660,
+        "y": 300,
+        "wires": [
+            [
+                "a4084d2b75ad5686"
+            ]
+        ]
+    },
+    {
+        "id": "b85d118c.fbdc4",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De verwarming in {{{payload.attributes.friendly_name}}} is van handmatig naar automatische stand geschakeld.",
+        "output": "str",
+        "x": 1660,
+        "y": 340,
+        "wires": [
+            [
+                "0fd94c312d822e91"
             ]
         ]
     },

@@ -45,6 +45,101 @@
         ]
     },
     {
+        "id": "80b3c96f004d6f8b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "dishwasher",
+        "output": "str",
+        "x": 1410,
+        "y": 240,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "71f13b6b1744cf6b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1390,
+        "y": 200,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "64614e79bcb09872",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vaatwasser",
+        "output": "str",
+        "x": 1390,
+        "y": 120,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "2a35d2abfb0850da",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De Vaatwasser is klaar",
+        "output": "str",
+        "x": 1400,
+        "y": 160,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "2c0a57bd6ee87009",
+        "type": "link out",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1645,
+        "y": 160,
+        "wires": []
+    },
+    {
         "id": "08bca5ce6d389d48",
         "type": "join",
         "z": "2437e768.8e34d8",
@@ -74,81 +169,6 @@
         ]
     },
     {
-        "id": "2c0a57bd6ee87009",
-        "type": "link out",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1645,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "2a35d2abfb0850da",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "De Vaatwasser is klaar",
-        "output": "str",
-        "x": 1400,
-        "y": 160,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "64614e79bcb09872",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Vaatwasser",
-        "output": "str",
-        "x": 1390,
-        "y": 120,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "71f13b6b1744cf6b",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1390,
-        "y": 200,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
         "id": "a204cf33.7f292",
         "type": "switch",
         "z": "2437e768.8e34d8",
@@ -158,12 +178,12 @@
         "rules": [
             {
                 "t": "gt",
-                "v": "2",
+                "v": "3",
                 "vt": "num"
             },
             {
                 "t": "lte",
-                "v": "1.5",
+                "v": "3",
                 "vt": "num"
             }
         ],
@@ -424,26 +444,6 @@
                 "ce869786.78dec8"
             ],
             []
-        ]
-    },
-    {
-        "id": "80b3c96f004d6f8b",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "dishwasher",
-        "output": "str",
-        "x": 1410,
-        "y": 240,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
         ]
     },
     {

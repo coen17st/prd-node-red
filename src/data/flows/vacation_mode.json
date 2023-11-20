@@ -8,6 +8,44 @@
         "env": []
     },
     {
+        "id": "bd6a21379a46d377",
+        "type": "group",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "notify two actions",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "994e86eeb88c5f08",
+            "65114fbadc1625ff",
+            "b53dc3ab1408794a",
+            "dc2683f08bbcdd2e",
+            "36246e33e6162b5a",
+            "c6805d02b9eb3b45",
+            "e3fe28933ad4f9bd"
+        ],
+        "x": 674,
+        "y": 79,
+        "w": 442,
+        "h": 202
+    },
+    {
+        "id": "36246e33e6162b5a",
+        "type": "junction",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "x": 700,
+        "y": 160,
+        "wires": [
+            [
+                "65114fbadc1625ff",
+                "994e86eeb88c5f08",
+                "c6805d02b9eb3b45",
+                "e3fe28933ad4f9bd"
+            ]
+        ]
+    },
+    {
         "id": "505fd0b6095e5990",
         "type": "inject",
         "z": "e98ae3c9db1bd6c3",
@@ -433,7 +471,7 @@
         "z": "e98ae3c9db1bd6c3",
         "name": "random dim level",
         "low": "20",
-        "high": "60",
+        "high": "50",
         "inte": "true",
         "property": "dimlevel",
         "x": 1030,
@@ -467,31 +505,6 @@
             [
                 "68fb6d09797ade29"
             ]
-        ]
-    },
-    {
-        "id": "5e8342333f16177a",
-        "type": "api-call-service",
-        "z": "e98ae3c9db1bd6c3",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_coen_pixel7",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{{custom_message}}}\",\"data\":{\"actions\":[{\"action\":\"VACATION_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 870,
-        "y": 140,
-        "wires": [
-            []
         ]
     },
     {
@@ -622,51 +635,9 @@
         "y": 140,
         "wires": [
             [
-                "17ba99eecd06d428"
+                "0b9c6bc899fa2c87"
             ],
             []
-        ]
-    },
-    {
-        "id": "17ba99eecd06d428",
-        "type": "change",
-        "z": "e98ae3c9db1bd6c3",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "custom_message",
-                "pt": "msg",
-                "to": "Er is niemand thuis, wil je de vakantie stand thuis aanzetten?",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "custom_action_1_title",
-                "pt": "msg",
-                "to": "JA",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "custom_action_2_title",
-                "pt": "msg",
-                "to": "NEE",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 600,
-        "y": 140,
-        "wires": [
-            [
-                "5e8342333f16177a",
-                "8f3b898136f18dc9"
-            ]
         ]
     },
     {
@@ -707,28 +678,175 @@
         ]
     },
     {
-        "id": "8f3b898136f18dc9",
-        "type": "api-call-service",
+        "id": "994e86eeb88c5f08",
+        "type": "template",
         "z": "e98ae3c9db1bd6c3",
-        "name": "",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_anne",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{{custom_message}}}\",\"data\":{\"actions\":[{\"action\":\"VACATION_MODE_ON\",\"title\":\"{{custom_action_1_title}}\",\"icon\":\"account-lock\"},{\"action\":\"IGNORE\",\"title\":\"{{custom_action_2_title}}\",\"icon\":\"account-lock\"}]}}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 870,
+        "g": "bd6a21379a46d377",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 790,
         "y": 200,
         "wires": [
-            []
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "65114fbadc1625ff",
+        "type": "template",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vakantiemodus",
+        "output": "str",
+        "x": 790,
+        "y": 120,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "b53dc3ab1408794a",
+        "type": "link out",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "link_out_notify_guest_mode",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 1075,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "dc2683f08bbcdd2e",
+        "type": "join",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 990,
+        "y": 160,
+        "wires": [
+            [
+                "b53dc3ab1408794a"
+            ]
+        ]
+    },
+    {
+        "id": "c6805d02b9eb3b45",
+        "type": "change",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "action titles",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notify.action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_1",
+                "pt": "msg",
+                "to": "VACATION_MODE_ON",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2",
+                "pt": "msg",
+                "to": "IGNORE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "e3fe28933ad4f9bd",
+        "type": "template",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "vacation_mode",
+        "output": "str",
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "0b9c6bc899fa2c87",
+        "type": "template",
+        "z": "e98ae3c9db1bd6c3",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is niemand thuis, wil je de vakantiemodus aanzetten?",
+        "output": "str",
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "36246e33e6162b5a"
+            ]
         ]
     },
     {

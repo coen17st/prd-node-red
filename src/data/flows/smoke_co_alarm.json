@@ -53,7 +53,7 @@
         "z": "99804b5f.9adb6",
         "name": "get all lights",
         "server": "4ba92433.2478cc",
-        "version": 0,
+        "version": 1,
         "rules": [
             {
                 "property": "entity_id",
@@ -62,11 +62,11 @@
                 "valueType": "str"
             }
         ],
-        "output_type": "split",
-        "output_empty_results": false,
-        "output_location_type": "msg",
-        "output_location": "payload",
-        "output_results_count": 1,
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
         "x": 330,
         "y": 100,
         "wires": [
@@ -368,6 +368,42 @@
         "info": ""
     },
     {
+        "id": "60a8ffbec987c377",
+        "type": "group",
+        "z": "cde79c08.e4f488",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "af6a4d51c1e99b4e",
+            "8bda876328e49e67",
+            "fdba7cd037a9da5a",
+            "9a02e08c1760e584",
+            "ef17b4eb0dc0871b",
+            "c7b88c5f533c105b"
+        ],
+        "x": 954,
+        "y": 139,
+        "w": 432,
+        "h": 162
+    },
+    {
+        "id": "ef17b4eb0dc0871b",
+        "type": "junction",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "x": 980,
+        "y": 200,
+        "wires": [
+            [
+                "8bda876328e49e67",
+                "af6a4d51c1e99b4e",
+                "c7b88c5f533c105b"
+            ]
+        ]
+    },
+    {
         "id": "dc93ddfe.5bd4a",
         "type": "comment",
         "z": "cde79c08.e4f488",
@@ -488,17 +524,18 @@
         "type": "template",
         "z": "cde79c08.e4f488",
         "name": "message",
-        "field": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is rook gedecteerd in de {{location}}",
+        "template": "Alarm! {{msg.test_message}}Er is rook gedecteerd in de {{location}}",
         "output": "str",
         "x": 800,
         "y": 320,
         "wires": [
             [
-                "8f9a86a6.9ca938"
+                "8f9a86a6.9ca938",
+                "ef17b4eb0dc0871b"
             ]
         ]
     },
@@ -506,15 +543,8 @@
         "id": "acaf455.81dc638",
         "type": "change",
         "z": "cde79c08.e4f488",
-        "name": "",
+        "name": "set msg.alarm on",
         "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "Alarm",
-                "tot": "str"
-            },
             {
                 "t": "set",
                 "p": "alarm",
@@ -528,15 +558,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1100,
-        "y": 280,
+        "x": 1110,
+        "y": 340,
         "wires": [
             [
-                "8b811e89.d8907",
-                "64dbfd97.f3e984",
-                "b64a8e86.d9fa8",
-                "3f462a6b.94f916",
-                "4aac0f4e8e54cbe0"
+                "b64a8e86.d9fa8"
             ]
         ]
     },
@@ -704,63 +730,13 @@
         ]
     },
     {
-        "id": "8b811e89.d8907",
-        "type": "api-call-service",
-        "z": "cde79c08.e4f488",
-        "name": "app notification",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1380,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "64dbfd97.f3e984",
-        "type": "api-call-service",
-        "z": "cde79c08.e4f488",
-        "name": "push notification",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "notify",
-        "service": "notify",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [],
-        "data": "{\"message\":\"{{message}}\",\"title\":\"{{topic}}\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1380,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "b64a8e86.d9fa8",
         "type": "subflow:99804b5f.9adb6",
         "z": "cde79c08.e4f488",
         "name": "",
         "env": [],
-        "x": 1370,
-        "y": 460,
+        "x": 1330,
+        "y": 360,
         "wires": []
     },
     {
@@ -786,7 +762,7 @@
         "repair": false,
         "outputs": 2,
         "x": 930,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "acaf455.81dc638"
@@ -800,7 +776,7 @@
         "id": "56c87bdc.b016ac",
         "type": "change",
         "z": "cde79c08.e4f488",
-        "name": "",
+        "name": "set msg.alarm off",
         "rules": [
             {
                 "t": "set",
@@ -815,51 +791,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1100,
-        "y": 340,
+        "x": 1110,
+        "y": 380,
         "wires": [
             [
                 "b64a8e86.d9fa8"
             ]
-        ]
-    },
-    {
-        "id": "3f462a6b.94f916",
-        "type": "link out",
-        "z": "cde79c08.e4f488",
-        "name": "",
-        "links": [
-            "ebf4860d.603538"
-        ],
-        "x": 1315,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "4c1d6e3911c44200",
-        "type": "api-call-service",
-        "z": "cde79c08.e4f488",
-        "name": "google say",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "tts",
-        "service": "google_say",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.home_speaker"
-        ],
-        "data": "{\"message\":\"{{message}}\",\"language\":\"nl\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "all",
-        "x": 1730,
-        "y": 280,
-        "wires": [
-            []
         ]
     },
     {
@@ -913,33 +850,6 @@
             [
                 "091db6919a07bcbc"
             ]
-        ]
-    },
-    {
-        "id": "59e16a632268c9e7",
-        "type": "api-call-service",
-        "z": "cde79c08.e4f488",
-        "name": "google say",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "tts",
-        "service": "google_say",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "media_player.home_speaker"
-        ],
-        "data": "{\"message\":\"{{extra_message}}\",\"language\":\"nl\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "all",
-        "x": 1370,
-        "y": 160,
-        "wires": [
-            []
         ]
     },
     {
@@ -1010,8 +920,7 @@
         "y": 100,
         "wires": [
             [
-                "3c51dd96d91e1bc6",
-                "3fdbb752.798ec8"
+                "3c51dd96d91e1bc6"
             ]
         ]
     },
@@ -1030,7 +939,6 @@
         "y": 140,
         "wires": [
             [
-                "3fdbb752.798ec8",
                 "3c51dd96d91e1bc6"
             ]
         ]
@@ -1050,7 +958,6 @@
         "y": 180,
         "wires": [
             [
-                "3fdbb752.798ec8",
                 "3c51dd96d91e1bc6"
             ]
         ]
@@ -1060,7 +967,7 @@
         "type": "template",
         "z": "cde79c08.e4f488",
         "name": "test message",
-        "field": "extra_message",
+        "field": "test_message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
@@ -1070,93 +977,141 @@
         "y": 160,
         "wires": [
             [
-                "67d33dcce29b9ba2",
-                "a408c42cb6da0d58"
-            ]
-        ]
-    },
-    {
-        "id": "67d33dcce29b9ba2",
-        "type": "delay",
-        "z": "cde79c08.e4f488",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 800,
-        "y": 240,
-        "wires": [
-            [
                 "3fdbb752.798ec8"
             ]
         ]
     },
     {
-        "id": "4aac0f4e8e54cbe0",
-        "type": "ha-wait-until",
+        "id": "af6a4d51c1e99b4e",
+        "type": "template",
         "z": "cde79c08.e4f488",
-        "name": "wait until google home speaker is not playing",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "media_player.home_speaker",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is_not",
-        "value": "playing",
-        "valueType": "str",
-        "timeout": "",
-        "timeoutType": "num",
-        "timeoutUnits": "seconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 1470,
-        "y": 280,
+        "g": "60a8ffbec987c377",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1090,
+        "y": 220,
         "wires": [
             [
-                "4c1d6e3911c44200"
+                "9a02e08c1760e584"
             ]
         ]
     },
     {
-        "id": "a408c42cb6da0d58",
-        "type": "ha-wait-until",
+        "id": "8bda876328e49e67",
+        "type": "template",
         "z": "cde79c08.e4f488",
-        "name": "wait until google home speaker is not playing",
-        "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "media_player.home_speaker",
-        "entityIdFilterType": "exact",
-        "property": "state",
-        "comparator": "is_not",
-        "value": "playing",
-        "valueType": "str",
-        "timeout": "",
-        "timeoutType": "num",
-        "timeoutUnits": "seconds",
-        "checkCurrentState": true,
-        "blockInputOverrides": true,
-        "outputProperties": [],
-        "entityLocation": "data",
-        "entityLocationType": "none",
-        "x": 1110,
-        "y": 160,
+        "g": "60a8ffbec987c377",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alarm",
+        "output": "str",
+        "x": 1090,
+        "y": 180,
         "wires": [
             [
-                "59e16a632268c9e7"
+                "9a02e08c1760e584"
+            ]
+        ]
+    },
+    {
+        "id": "fdba7cd037a9da5a",
+        "type": "link out",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "name": "link_out_notify_basement_ventilation",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad",
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1345,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9a02e08c1760e584",
+        "type": "join",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1250,
+        "y": 200,
+        "wires": [
+            [
+                "fdba7cd037a9da5a"
+            ]
+        ]
+    },
+    {
+        "id": "c7b88c5f533c105b",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "firealarm",
+        "output": "str",
+        "x": 1110,
+        "y": 260,
+        "wires": [
+            [
+                "9a02e08c1760e584"
+            ]
+        ]
+    },
+    {
+        "id": "afa62df0a6831ee2",
+        "type": "inject",
+        "z": "cde79c08.e4f488",
+        "name": "",
+        "props": [
+            {
+                "p": "location",
+                "v": "woonkamer",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [
+                "3c51dd96d91e1bc6"
             ]
         ]
     },
