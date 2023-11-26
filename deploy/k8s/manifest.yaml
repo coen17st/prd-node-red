@@ -102,7 +102,7 @@ spec:
     spec:
       containers:
         - name: node-red
-          image: "harbor.k8s.lan/k8s/node-red:394"
+          image: "harbor.lan.theautomation.nl/k8s/node-red:394"
           imagePullPolicy: Always
           resources: {}
           ports:
@@ -161,7 +161,7 @@ metadata:
 spec:
   ingressClassName: nginx-private
   rules:
-    - host: node-red.k8s.lan
+    - host: node-red.lan.theautomation.nl
       http:
         paths:
           - path: "/"

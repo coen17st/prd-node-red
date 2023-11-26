@@ -167,7 +167,7 @@
         "type": "comment",
         "z": "f180ab88.925788",
         "name": "shelly i3 actions channel 1 is the right button channel 2 is the left button",
-        "info": "[shellyi3.lan](http://shellyi3.lan)",
+        "info": "[shellyi3.lan.theautomation.nl](http://shellyi3.lan.theautomation.nl)",
         "x": 270,
         "y": 20,
         "wires": []
