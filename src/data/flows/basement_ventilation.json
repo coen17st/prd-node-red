@@ -1431,6 +1431,81 @@
         ]
     },
     {
+        "id": "d6d0b5735ad8f20a",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mechanical_ventilation",
+        "output": "str",
+        "x": 2310,
+        "y": 860,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "febf6f9eab6e868d",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 2290,
+        "y": 820,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "6502d163268904d4",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie",
+        "output": "str",
+        "x": 2290,
+        "y": 780,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "ac04035c1896218b",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "link_out_notify_basement_ventilation",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 2545,
+        "y": 800,
+        "wires": []
+    },
+    {
         "id": "a1c0156c06d58e91",
         "type": "join",
         "z": "4e909abe.0b62e4",
@@ -1456,61 +1531,6 @@
         "wires": [
             [
                 "ac04035c1896218b"
-            ]
-        ]
-    },
-    {
-        "id": "ac04035c1896218b",
-        "type": "link out",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 2545,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "6502d163268904d4",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 2290,
-        "y": 780,
-        "wires": [
-            [
-                "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "febf6f9eab6e868d",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": ":door:",
-        "output": "str",
-        "x": 2290,
-        "y": 820,
-        "wires": [
-            [
-                "a1c0156c06d58e91"
             ]
         ]
     },
@@ -2791,7 +2811,7 @@
         "y": 600,
         "wires": [
             [
-                "a037b96e.97bc58"
+                "4c661c8e515f8df3"
             ]
         ]
     },
@@ -2804,7 +2824,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 2 is automatisch ingeschakeld.",
+        "template": "De middelste stand is automatisch ingeschakeld.",
         "output": "str",
         "x": 1740,
         "y": 780,
@@ -2823,7 +2843,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 3 is automatisch ingeschakeld.",
+        "template": "De hoogste stand is automatisch ingeschakeld.",
         "output": "str",
         "x": 1740,
         "y": 920,
@@ -2884,7 +2904,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1450,
+        "x": 1770,
         "y": 600,
         "wires": [
             [
@@ -3263,7 +3283,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische Ventilatie stand 1 is handmatig ingeschakeld.",
+        "template": "De laagste stand van de mechanische ventilatie is handmatig ingeschakeld.",
         "output": "str",
         "x": 680,
         "y": 1040,
@@ -3282,7 +3302,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische Ventilatie stand 2 is handmatig ingeschakeld.",
+        "template": "De middelste stand van de mechanische ventilatie is handmatig ingeschakeld.",
         "output": "str",
         "x": 680,
         "y": 1100,
@@ -3301,7 +3321,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische Ventilatie stand 3 is handmatig ingeschakeld.",
+        "template": "De hoge stand van de mechanische ventilatie is handmatig ingeschakeld.",
         "output": "str",
         "x": 680,
         "y": 1160,
@@ -3679,7 +3699,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De temperatuur buiten is: {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
+        "template": "Stand laag is ingeschakeld. De temperatuur buiten is {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
         "y": 720,
@@ -3698,7 +3718,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{topic}} stand 1 is automatisch ingeschakeld. De relative luchtvochtigheid in de kelder is: {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
+        "template": "Stand laag is ingeschakeld. De relative luchtvochtigheid in de souterrain is {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
         "y": 680,
@@ -3779,7 +3799,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer {{sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ en is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
+        "template": "Mechanische ventilatie is uitgeschakeld, de absolute vochtinhoud in de woonkamer is {{sensor.living_room_thermal_comfort_absolute_humidity}} g/m³ en is hoger dan in de kelder {{sensor.basement_thermal_comfort_absolute_humidity}} g/m³",
         "output": "str",
         "x": 1360,
         "y": 240,
@@ -3798,7 +3818,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\n\\nKelder Heating Power is {{payload}}%",
+        "template": "Mechanische ventilatie is uitgeschakeld, de verwarming in de kelder staat aan. \\nKelder Heating Power is {{payload}}%",
         "output": "str",
         "x": 1360,
         "y": 300,
@@ -3825,35 +3845,6 @@
         "wires": [
             [
                 "eb7fc4be79c0effe"
-            ]
-        ]
-    },
-    {
-        "id": "6935112b5f85614c",
-        "type": "inject",
-        "z": "4e909abe.0b62e4",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 440,
-        "wires": [
-            [
-                "4abb03cf.8c49ec"
             ]
         ]
     },
@@ -3898,23 +3889,43 @@
         ]
     },
     {
-        "id": "d6d0b5735ad8f20a",
-        "type": "template",
+        "id": "4c661c8e515f8df3",
+        "type": "api-current-state",
         "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "mechanical_ventilation",
-        "output": "str",
-        "x": 2310,
-        "y": 860,
+        "name": "state heating power living room <= 0%",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "0",
+        "halt_if_type": "num",
+        "halt_if_compare": "lte",
+        "entity_id": "sensor.living_room_heating",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "sensor.basement_heating",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1530,
+        "y": 600,
         "wires": [
             [
-                "a1c0156c06d58e91"
-            ]
+                "a037b96e.97bc58"
+            ],
+            []
         ]
     },
     {
