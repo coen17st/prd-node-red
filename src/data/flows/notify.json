@@ -279,7 +279,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.galaxy_tab_a8"
+            "media_player.c3f1b2b7_9fabb740"
         ],
         "data": "{\"message\":\"{{notify.message}}\",\"language\":\"nl\"}",
         "dataType": "json",
