@@ -21,7 +21,9 @@
                 "e39b8ed1586ec144",
                 "61b5309de555834f",
                 "8215ee5b32a90c48",
-                "de1675c8792b80d3"
+                "de1675c8792b80d3",
+                "8975dba1409df05c",
+                "fa2d02d4ee1cb23c"
             ]
         ]
     },
@@ -41,8 +43,8 @@
         "id": "06ca84ceb3f727e3",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 940,
-        "y": 180,
+        "x": 980,
+        "y": 220,
         "wires": [
             [
                 "b20ef33659df0d8c"
@@ -54,7 +56,7 @@
         "type": "junction",
         "z": "53a5f07742283c4c",
         "x": 40,
-        "y": 480,
+        "y": 560,
         "wires": [
             [
                 "1d4f8e3d81b60ffc"
@@ -286,13 +288,23 @@
                 "t": "eq",
                 "v": "7E6QXGrtUyYl1kTyvnluTr",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "37i9dQZEVXcDO6enaQNKLz",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "37i9dQZEVXbqqpGQ1yV2nx",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 7,
+        "outputs": 9,
         "x": 170,
-        "y": 580,
+        "y": 740,
         "wires": [
             [
                 "a0e90487537504f6"
@@ -314,6 +326,12 @@
             ],
             [
                 "745d5fcc3f936573"
+            ],
+            [
+                "d5f6f85bb84832b8"
+            ],
+            [
+                "1645d155fcea7efd"
             ]
         ]
     },
@@ -445,7 +463,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "50dd1df3d057525e"
@@ -472,10 +490,11 @@
         "to": "",
         "reg": false,
         "x": 230,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
-                "5b5550b55913708a"
+                "5b5550b55913708a",
+                "679a6af14a8f7183"
             ]
         ]
     },
@@ -483,6 +502,7 @@
         "id": "5b5550b55913708a",
         "type": "template",
         "z": "53a5f07742283c4c",
+        "d": true,
         "name": "url",
         "field": "url",
         "fieldType": "msg",
@@ -491,7 +511,7 @@
         "template": "https://api.spotify.com/v1/users/{{flow.userid}}/playlists",
         "output": "str",
         "x": 350,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "9bee98e3c1ca5078"
@@ -510,7 +530,7 @@
         "template": "Bearer {{{global.spotify_access_token}}}",
         "output": "str",
         "x": 510,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "746a4d6c560b9b29"
@@ -541,7 +561,7 @@
             }
         ],
         "x": 690,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "5054f4ca804d199d"
@@ -555,7 +575,7 @@
         "name": "Get users playlists",
         "info": "",
         "x": 130,
-        "y": 1040,
+        "y": 1100,
         "wires": []
     },
     {
@@ -951,7 +971,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 840,
-        "y": 1080,
+        "y": 1160,
         "wires": []
     },
     {
@@ -983,6 +1003,151 @@
         "x": 1915,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "679a6af14a8f7183",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "url",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://api.spotify.com/v1/browse/new-releases",
+        "output": "str",
+        "x": 350,
+        "y": 1180,
+        "wires": [
+            [
+                "9bee98e3c1ca5078"
+            ]
+        ]
+    },
+    {
+        "id": "d5f6f85bb84832b8",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_08",
+        "entityConfig": "c3a46b62ea6a96f3",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8975dba1409df05c",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Discover Weekly",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "37i9dQZEVXcDO6enaQNKLz",
+        "output": "str",
+        "x": 700,
+        "y": 440,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "1645d155fcea7efd",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_09",
+        "entityConfig": "949130faf5e0a8e3",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 370,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa2d02d4ee1cb23c",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Release Radar",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "37i9dQZEVXbqqpGQ1yV2nx",
+        "output": "str",
+        "x": 690,
+        "y": 480,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
     },
     {
         "id": "43f0157d8de58e65",
@@ -1248,11 +1413,93 @@
                 "value": ""
             },
             {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
                 "property": "entity_category",
                 "value": ""
             },
             {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "c3a46b62ea6a96f3",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_08",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_08"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
                 "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "949130faf5e0a8e3",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_09",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_09"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
                 "value": ""
             },
             {
