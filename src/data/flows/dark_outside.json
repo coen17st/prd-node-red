@@ -198,7 +198,7 @@
         "entityId": [
             "light.shellydimmer_backyard_string_l"
         ],
-        "data": "",
+        "data": "{\"brightness_pct\":\"25\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,

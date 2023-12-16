@@ -250,7 +250,7 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "{\"brightness\":\"180\"}",
+        "data": "{\"brightness_pct\":\"65\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
