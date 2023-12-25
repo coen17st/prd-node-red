@@ -93,7 +93,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1260,
-        "y": 220,
+        "y": 240,
         "wires": [
             []
         ]
@@ -232,7 +232,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1260,
-        "y": 280,
+        "y": 300,
         "wires": [
             []
         ]
@@ -260,7 +260,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1060,
-        "y": 220,
+        "y": 240,
         "wires": [
             [
                 "cb79ad658e0d60be"
@@ -354,8 +354,8 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 920,
-        "y": 80,
+        "x": 900,
+        "y": 100,
         "wires": [
             [
                 "7e6adf38f6c380e0"
@@ -383,7 +383,7 @@
         "to": "",
         "reg": false,
         "x": 1130,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "70551e6e8535b007"
@@ -409,8 +409,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 950,
-        "y": 40,
+        "x": 930,
+        "y": 60,
         "wires": [
             []
         ]
@@ -460,7 +460,7 @@
         "to": "",
         "reg": false,
         "x": 1160,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "1619e55123d467c3"
