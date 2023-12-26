@@ -8,6 +8,18 @@
         "env": []
     },
     {
+        "id": "e4bf08d78259044e",
+        "type": "junction",
+        "z": "7d6b81e430d394e4",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "abe676215b8d0bd6"
+            ]
+        ]
+    },
+    {
         "id": "7b7d0b92749effd8",
         "type": "server-state-changed",
         "z": "7d6b81e430d394e4",
@@ -18,7 +30,7 @@
         "exposeAsEntityConfig": "",
         "entityId": "binary_sensor.backdoor",
         "entityIdType": "exact",
-        "outputInitially": false,
+        "outputInitially": true,
         "stateType": "str",
         "ifState": "on",
         "ifStateType": "str",
@@ -58,7 +70,9 @@
             [
                 "53dc95a129d76281"
             ],
-            []
+            [
+                "e4bf08d78259044e"
+            ]
         ]
     },
     {
@@ -305,7 +319,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 280,
+        "x": 300,
         "y": 60,
         "wires": [
             [
