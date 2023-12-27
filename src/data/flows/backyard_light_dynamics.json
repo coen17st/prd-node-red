@@ -8,18 +8,6 @@
         "env": []
     },
     {
-        "id": "e4bf08d78259044e",
-        "type": "junction",
-        "z": "7d6b81e430d394e4",
-        "x": 200,
-        "y": 260,
-        "wires": [
-            [
-                "abe676215b8d0bd6"
-            ]
-        ]
-    },
-    {
         "id": "7b7d0b92749effd8",
         "type": "server-state-changed",
         "z": "7d6b81e430d394e4",
@@ -70,9 +58,7 @@
             [
                 "53dc95a129d76281"
             ],
-            [
-                "e4bf08d78259044e"
-            ]
+            []
         ]
     },
     {

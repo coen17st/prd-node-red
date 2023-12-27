@@ -39,7 +39,9 @@
             [
                 "19e3c39a7481e04b"
             ],
-            []
+            [
+                "123a8dfe28431656"
+            ]
         ]
     },
     {
@@ -88,7 +90,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 350,
+        "x": 550,
         "y": 60,
         "wires": [
             [
@@ -118,29 +120,9 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 600,
+        "x": 1060,
         "y": 60,
         "wires": [
-            [
-                "123a8dfe28431656"
-            ]
-        ]
-    },
-    {
-        "id": "123a8dfe28431656",
-        "type": "stoptimer",
-        "z": "2863cbc8bee70856",
-        "duration": "2",
-        "units": "Minute",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 820,
-        "y": 60,
-        "wires": [
-            [
-                "0b64f5a2e27c31f0"
-            ],
             []
         ]
     },
@@ -165,9 +147,119 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1040,
-        "y": 60,
+        "x": 1060,
+        "y": 120,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "123a8dfe28431656",
+        "type": "stoptimer",
+        "z": "2863cbc8bee70856",
+        "duration": "10",
+        "units": "Second",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 330,
+        "y": 120,
+        "wires": [
+            [
+                "b13ee71e7f09ace4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b13ee71e7f09ace4",
+        "type": "api-current-state",
+        "z": "2863cbc8bee70856",
+        "name": "basement door is closed",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.basement_door",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "a5689ff4c9a82d8e"
+            ],
+            [
+                "123a8dfe28431656"
+            ]
+        ]
+    },
+    {
+        "id": "a5689ff4c9a82d8e",
+        "type": "api-current-state",
+        "z": "2863cbc8bee70856",
+        "name": "basement stairs light is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "light.shellydimmer_basement_stairs",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 810,
+        "y": 120,
+        "wires": [
+            [
+                "0b64f5a2e27c31f0"
+            ],
             []
         ]
     },
