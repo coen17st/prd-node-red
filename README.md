@@ -1,6 +1,6 @@
 # Node-RED
 
-[![Build Status](https://drone.theautomation.nl/api/badges/theautomation/node-red/status.svg)](https://drone.theautomation.nl/theautomation/node-red)
+[![Continuous integration](https://github.com/theautomation/node-red/actions/workflows/ci.yaml/badge.svg)](https://github.com/theautomation/node-red/actions/workflows/ci.yaml)
 ![GitHub repo size](https://img.shields.io/github/repo-size/theautomation/node-red?logo=Github)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/theautomation/node-red?logo=github)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/theautomation/node-red/main?logo=github)
