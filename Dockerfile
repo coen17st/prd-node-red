@@ -6,7 +6,6 @@ RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 
 COPY ./src/data/ /data/
 
-# INSTALL PACKAGES
 RUN npm install \
     node-red-contrib-calc \
     node-red-contrib-cron-plus \
