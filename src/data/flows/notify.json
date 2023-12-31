@@ -124,8 +124,8 @@
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "notify",
-        "service": "persistent_notification",
+        "domain": "persistent_notification",
+        "service": "create",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
@@ -155,7 +155,9 @@
             "2e42c93c307e8cec",
             "68e61dcfb6db1de4",
             "17c484a9c9a917ac",
-            "0b0c89810da47741"
+            "0b0c89810da47741",
+            "3bdaf73ce37b7397",
+            "467b119592a914a3"
         ],
         "x": 195,
         "y": 260,
