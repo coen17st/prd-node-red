@@ -1,29 +1,39 @@
 [
     {
-        "id": "2863cbc8bee70856",
+        "id": "7d6b81e430d394e4",
         "type": "tab",
-        "label": "basement_light_dynamics",
+        "label": "backyard_light_dynamics",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "ec0a3cf53f08df55",
+        "id": "e64aa211bd3e11d0",
+        "type": "comment",
+        "z": "7d6b81e430d394e4",
+        "name": "change light based on actions",
+        "info": "",
+        "x": 140,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "60ae26bd4450db01",
         "type": "server-state-changed",
-        "z": "2863cbc8bee70856",
-        "name": "basement door is open",
+        "z": "7d6b81e430d394e4",
+        "name": "backdoor state",
         "server": "4ba92433.2478cc",
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.basement_door",
+        "entityId": "binary_sensor.backdoor",
         "entityIdType": "exact",
         "outputInitially": true,
         "stateType": "str",
         "ifState": "on",
         "ifStateType": "str",
         "ifStateOperator": "is",
-        "outputOnlyOnStateChange": false,
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -32,40 +42,47 @@
         "ignorePrevStateUnavailable": true,
         "ignoreCurrentStateUnknown": true,
         "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [],
-        "x": 120,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
         "y": 60,
         "wires": [
             [
-                "19e3c39a7481e04b"
+                "b5664fac5cd21703"
             ],
-            [
-                "123a8dfe28431656"
-            ]
+            []
         ]
     },
     {
-        "id": "63f2e5de506021ab",
-        "type": "comment",
-        "z": "2863cbc8bee70856",
-        "name": "change light based on actions",
-        "info": "",
-        "x": 140,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "19e3c39a7481e04b",
+        "id": "b5664fac5cd21703",
         "type": "api-current-state",
-        "z": "2863cbc8bee70856",
-        "name": "basement stairs light is off",
+        "z": "7d6b81e430d394e4",
+        "name": "is dark outside",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "off",
+        "halt_if": "dark",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "light.shellydimmer_basement_stairs",
+        "entity_id": "sensor.outdoor_light_dark",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -90,20 +107,115 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 550,
+        "x": 280,
         "y": 60,
         "wires": [
             [
-                "db49a00d5adc0cb7"
+                "882e0da55f267980",
+                "c2bd9d198f1277b7"
             ],
             []
         ]
     },
     {
-        "id": "db49a00d5adc0cb7",
+        "id": "c2bd9d198f1277b7",
+        "type": "ha-get-entities",
+        "z": "7d6b81e430d394e4",
+        "name": "get lights",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "light.shellydimmer_backyard_string_l",
+                "valueType": "str"
+            }
+        ],
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "454b9848aa8f3696"
+            ]
+        ]
+    },
+    {
+        "id": "882e0da55f267980",
+        "type": "ha-get-entities",
+        "z": "7d6b81e430d394e4",
+        "name": "get lights",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "light.shellydimmer_barn_hanging_lam",
+                "valueType": "str"
+            }
+        ],
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
+        "x": 460,
+        "y": 60,
+        "wires": [
+            [
+                "454b9848aa8f3696"
+            ]
+        ]
+    },
+    {
+        "id": "454b9848aa8f3696",
+        "type": "function",
+        "z": "7d6b81e430d394e4",
+        "name": "store light brightness",
+        "func": "var object = \"history.\" + msg.payload.entity_id + \".attributes\"\nvar brightness = object + \".brightness\"\nvar state = object + \".state\"\nflow.set(brightness, msg.payload.attributes.brightness)\nflow.set(state, msg.payload.state)\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 60,
+        "wires": [
+            [
+                "1aba261dc1ccb954"
+            ]
+        ]
+    },
+    {
+        "id": "58e32e542c88ba36",
+        "type": "stoptimer",
+        "z": "7d6b81e430d394e4",
+        "duration": "1",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 1060,
+        "y": 60,
+        "wires": [
+            [
+                "e9ce4a60b586b4cf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1aba261dc1ccb954",
         "type": "api-call-service",
-        "z": "2863cbc8bee70856",
-        "name": "turn on basement stairs light",
+        "z": "7d6b81e430d394e4",
+        "name": "turn up brightness",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -112,25 +224,100 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "{{data.entity_id}}"
+            "{{payload.entity_id}}"
         ],
-        "data": "",
-        "dataType": "jsonata",
+        "data": "{\"brightness_pct\":\"65\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "all",
+        "x": 870,
+        "y": 60,
+        "wires": [
+            [
+                "58e32e542c88ba36"
+            ]
+        ]
+    },
+    {
+        "id": "7e46c865043e73a3",
+        "type": "split",
+        "z": "7d6b81e430d394e4",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1390,
+        "y": 60,
+        "wires": [
+            [
+                "242507462ab59e0a"
+            ]
+        ]
+    },
+    {
+        "id": "e9ce4a60b586b4cf",
+        "type": "change",
+        "z": "7d6b81e430d394e4",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "history.light",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 60,
+        "wires": [
+            [
+                "7e46c865043e73a3"
+            ]
+        ]
+    },
+    {
+        "id": "e218cc8b97a80918",
+        "type": "api-call-service",
+        "z": "7d6b81e430d394e4",
+        "name": "restore light on state",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.{{parts.key}}"
+        ],
+        "data": "{\"brightness\":\"{{payload.attributes.brightness}}\"}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1060,
+        "x": 1700,
         "y": 60,
         "wires": [
             []
         ]
     },
     {
-        "id": "0b64f5a2e27c31f0",
+        "id": "cb67858d32a16295",
         "type": "api-call-service",
-        "z": "2863cbc8bee70856",
-        "name": "turn off basement stairs light",
+        "z": "7d6b81e430d394e4",
+        "name": "restore light off state",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -139,128 +326,51 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "{{data.entity_id}}"
+            "light.{{parts.key}}"
         ],
         "data": "",
-        "dataType": "jsonata",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1060,
+        "x": 1700,
         "y": 120,
         "wires": [
             []
         ]
     },
     {
-        "id": "123a8dfe28431656",
-        "type": "stoptimer",
-        "z": "2863cbc8bee70856",
-        "duration": "10",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
+        "id": "242507462ab59e0a",
+        "type": "switch",
+        "z": "7d6b81e430d394e4",
         "name": "",
-        "x": 330,
-        "y": 120,
-        "wires": [
-            [
-                "b13ee71e7f09ace4"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "b13ee71e7f09ace4",
-        "type": "api-current-state",
-        "z": "2863cbc8bee70856",
-        "name": "basement door is closed",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.basement_door",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
+        "property": "payload.attributes.state",
+        "propertyType": "msg",
+        "rules": [
             {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
             },
             {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
             }
         ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 550,
-        "y": 120,
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1510,
+        "y": 60,
         "wires": [
             [
-                "a5689ff4c9a82d8e"
+                "e218cc8b97a80918"
             ],
             [
-                "123a8dfe28431656"
+                "cb67858d32a16295"
             ]
-        ]
-    },
-    {
-        "id": "a5689ff4c9a82d8e",
-        "type": "api-current-state",
-        "z": "2863cbc8bee70856",
-        "name": "basement stairs light is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "light.shellydimmer_basement_stairs",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 810,
-        "y": 120,
-        "wires": [
-            [
-                "0b64f5a2e27c31f0"
-            ],
-            []
         ]
     },
     {
