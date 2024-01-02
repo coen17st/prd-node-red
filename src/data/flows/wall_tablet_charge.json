@@ -3,7 +3,7 @@
         "id": "03ed0365a1543556",
         "type": "tab",
         "label": "wall_tablet_charge",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -46,7 +46,7 @@
                 "valueType": "eventData"
             }
         ],
-        "x": 100,
+        "x": 120,
         "y": 60,
         "wires": [
             [
