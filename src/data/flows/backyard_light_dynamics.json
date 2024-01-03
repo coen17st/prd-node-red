@@ -390,7 +390,7 @@
                 "p": "active",
                 "pt": "flow",
                 "to": "false",
-                "tot": "bool"
+                "tot": "str"
             }
         ],
         "action": "",
@@ -413,7 +413,9 @@
         "propertyType": "flow",
         "rules": [
             {
-                "t": "false"
+                "t": "neq",
+                "v": "true",
+                "vt": "str"
             }
         ],
         "checkall": "true",
@@ -438,7 +440,7 @@
                 "p": "active",
                 "pt": "flow",
                 "to": "true",
-                "tot": "bool"
+                "tot": "str"
             }
         ],
         "action": "",
