@@ -1431,19 +1431,63 @@
         ]
     },
     {
-        "id": "d6d0b5735ad8f20a",
+        "id": "a1c0156c06d58e91",
+        "type": "join",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2450,
+        "y": 800,
+        "wires": [
+            [
+                "ac04035c1896218b"
+            ]
+        ]
+    },
+    {
+        "id": "ac04035c1896218b",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "link_out_notify_basement_ventilation",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 2545,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "6502d163268904d4",
         "type": "template",
         "z": "4e909abe.0b62e4",
         "g": "0a1a2a6df765a339",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "mechanical_ventilation",
+        "template": "Mechanische ventilatie",
         "output": "str",
-        "x": 2310,
-        "y": 860,
+        "x": 2290,
+        "y": 780,
         "wires": [
             [
                 "a1c0156c06d58e91"
@@ -1471,66 +1515,22 @@
         ]
     },
     {
-        "id": "6502d163268904d4",
+        "id": "d6d0b5735ad8f20a",
         "type": "template",
         "z": "4e909abe.0b62e4",
         "g": "0a1a2a6df765a339",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie",
+        "template": "mechanical_ventilation",
         "output": "str",
-        "x": 2290,
-        "y": 780,
+        "x": 2310,
+        "y": 860,
         "wires": [
             [
                 "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "ac04035c1896218b",
-        "type": "link out",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 2545,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "a1c0156c06d58e91",
-        "type": "join",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 2450,
-        "y": 800,
-        "wires": [
-            [
-                "ac04035c1896218b"
             ]
         ]
     },
@@ -3925,6 +3925,377 @@
             [
                 "a037b96e.97bc58"
             ],
+            []
+        ]
+    },
+    {
+        "id": "54696fbd78ed3819",
+        "type": "comment",
+        "z": "4e909abe.0b62e4",
+        "name": "MECHANICAL VENTILATION POSITION MANUAL FRONTEND",
+        "info": "",
+        "x": 490,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "cb917aa518896f3a",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn off mechanical ventilation autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 1740,
+        "wires": [
+            [
+                "fec6bd8d1440b36a"
+            ]
+        ]
+    },
+    {
+        "id": "9073f4d6575f634e",
+        "type": "server-state-changed",
+        "z": "4e909abe.0b62e4",
+        "name": "input select mechenical ventialtion position",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_select.mechanical_ventilation_position",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 420,
+        "y": 1620,
+        "wires": [
+            [
+                "4a4e04ddf8350706"
+            ]
+        ]
+    },
+    {
+        "id": "4a4e04ddf8350706",
+        "type": "switch",
+        "z": "4e909abe.0b62e4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Uit",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Laag",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Midden",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Hoog",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Autonoom",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 650,
+        "y": 1640,
+        "wires": [
+            [
+                "6756525186f8169e"
+            ],
+            [
+                "9788a503135ae44e"
+            ],
+            [
+                "cb917aa518896f3a"
+            ],
+            [
+                "16000567cbeaf3df"
+            ],
+            [
+                "dfffac879d63354b"
+            ]
+        ]
+    },
+    {
+        "id": "dfffac879d63354b",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn on mechanical ventilation autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6756525186f8169e",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn off mechanical ventilation autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 1620,
+        "wires": [
+            [
+                "57486f510a59fd65"
+            ]
+        ]
+    },
+    {
+        "id": "9788a503135ae44e",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn off mechanical ventilation autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 1680,
+        "wires": [
+            [
+                "60bfbb8510eb0ddf"
+            ]
+        ]
+    },
+    {
+        "id": "16000567cbeaf3df",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn off mechanical ventilation autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 1800,
+        "wires": [
+            [
+                "3bbc2d79dae1d733"
+            ]
+        ]
+    },
+    {
+        "id": "57486f510a59fd65",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn on mechanical ventilation position 0",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60bfbb8510eb0ddf",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn on mechanical ventilation position 1",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_1"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fec6bd8d1440b36a",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn on mechanical ventilation position 2",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_2"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 1740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3bbc2d79dae1d733",
+        "type": "api-call-service",
+        "z": "4e909abe.0b62e4",
+        "name": "turn on mechanical ventilation position 3",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_3"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1300,
+        "y": 1800,
+        "wires": [
             []
         ]
     },
