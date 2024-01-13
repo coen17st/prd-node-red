@@ -1,0 +1,176 @@
+[
+    {
+        "id": "b4aa7b8dbc1c80dc",
+        "type": "tab",
+        "label": "notification_knmi",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dbd6c4b98cdaf5bf",
+        "type": "link out",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "notification",
+        "mode": "link",
+        "links": [
+            "60e14e33a793f50d"
+        ],
+        "x": 935,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ee5f0821374570e5",
+        "type": "template",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "notification_level",
+        "field": "notification_level",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "warning",
+        "output": "str",
+        "x": 810,
+        "y": 40,
+        "wires": [
+            [
+                "dbd6c4b98cdaf5bf"
+            ]
+        ]
+    },
+    {
+        "id": "4ee9eb9f9dfecd39",
+        "type": "template",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "weather",
+        "output": "str",
+        "x": 650,
+        "y": 40,
+        "wires": [
+            [
+                "ee5f0821374570e5"
+            ]
+        ]
+    },
+    {
+        "id": "1842ef7b5cb665a1",
+        "type": "template",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "KNMI Waarschuwing",
+        "output": "str",
+        "x": 490,
+        "y": 40,
+        "wires": [
+            [
+                "4ee9eb9f9dfecd39"
+            ]
+        ]
+    },
+    {
+        "id": "73149a51d0ddd36e",
+        "type": "template",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload}}",
+        "output": "str",
+        "x": 280,
+        "y": 40,
+        "wires": [
+            [
+                "1842ef7b5cb665a1"
+            ]
+        ]
+    },
+    {
+        "id": "5a5946eca79911d5",
+        "type": "server-state-changed",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "knmi warning",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.knmi_home_waarschuwing",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is_not",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "73149a51d0ddd36e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
