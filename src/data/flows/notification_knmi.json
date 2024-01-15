@@ -16,7 +16,7 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 935,
+        "x": 1275,
         "y": 40,
         "wires": []
     },
@@ -31,7 +31,7 @@
         "syntax": "mustache",
         "template": "warning",
         "output": "str",
-        "x": 810,
+        "x": 1150,
         "y": 40,
         "wires": [
             [
@@ -50,7 +50,7 @@
         "syntax": "mustache",
         "template": "weather",
         "output": "str",
-        "x": 650,
+        "x": 990,
         "y": 40,
         "wires": [
             [
@@ -69,11 +69,11 @@
         "syntax": "mustache",
         "template": "KNMI Waarschuwing",
         "output": "str",
-        "x": 490,
+        "x": 710,
         "y": 40,
         "wires": [
             [
-                "4ee9eb9f9dfecd39"
+                "1c560aa028e1bd79"
             ]
         ]
     },
@@ -86,9 +86,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{payload}}",
+        "template": "{{short_message}}...",
         "output": "str",
-        "x": 280,
+        "x": 500,
         "y": 40,
         "wires": [
             [
@@ -109,16 +109,16 @@
         "entityIdType": "exact",
         "outputInitially": true,
         "stateType": "str",
-        "ifState": "off",
+        "ifState": "on",
         "ifStateType": "str",
-        "ifStateOperator": "is_not",
-        "outputOnlyOnStateChange": true,
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": true,
         "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
@@ -141,13 +141,52 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 90,
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "f8a17203b85ebfc6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f8a17203b85ebfc6",
+        "type": "function",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "shorten message",
+        "func": "msg.short_message = msg.data.new_state.attributes.Waarschuwing.substr(0, 408);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
         "y": 40,
         "wires": [
             [
                 "73149a51d0ddd36e"
-            ],
-            []
+            ]
+        ]
+    },
+    {
+        "id": "1c560aa028e1bd79",
+        "type": "template",
+        "z": "b4aa7b8dbc1c80dc",
+        "name": "icon",
+        "field": "icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mdi:weather-cloudy-alert",
+        "output": "str",
+        "x": 870,
+        "y": 40,
+        "wires": [
+            [
+                "4ee9eb9f9dfecd39"
+            ]
         ]
     },
     {
