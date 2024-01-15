@@ -1,0 +1,369 @@
+[
+    {
+        "id": "75537afd17de5117",
+        "type": "tab",
+        "label": "notification_picnic",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "77d3e073983d7d6a",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "safety",
+        "output": "str",
+        "x": 1130,
+        "y": 120,
+        "wires": [
+            [
+                "85ec3596d3fd73bd"
+            ]
+        ]
+    },
+    {
+        "id": "c33491808b978b24",
+        "type": "server-state-changed",
+        "z": "75537afd17de5117",
+        "name": "picnic expected start delivery",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.picnic_next_delivery_eta_start",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 180,
+        "y": 40,
+        "wires": [
+            [
+                "8e2c34c43ecb3a50"
+            ]
+        ]
+    },
+    {
+        "id": "7aeb43777dcee38b",
+        "type": "simpletime",
+        "z": "75537afd17de5117",
+        "name": "",
+        "mydate": false,
+        "myymd": true,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": true,
+        "mytimes": false,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 910,
+        "y": 160,
+        "wires": [
+            [
+                "14470f4c11802ac6"
+            ]
+        ]
+    },
+    {
+        "id": "14470f4c11802ac6",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Op {{{myymd}}} om {{{mytime}}} heeft het RIVM een stookalert afgegeven, het is raadzaam niet de houtkachel te gebruiken",
+        "output": "str",
+        "x": 1200,
+        "y": 220,
+        "wires": [
+            [
+                "41d0860dc5097d38"
+            ]
+        ]
+    },
+    {
+        "id": "41d0860dc5097d38",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Let op, stookalert!",
+        "output": "str",
+        "x": 1330,
+        "y": 400,
+        "wires": [
+            [
+                "77d3e073983d7d6a"
+            ]
+        ]
+    },
+    {
+        "id": "85ec3596d3fd73bd",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "name": "notification_level",
+        "field": "notification_level",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "warning",
+        "output": "str",
+        "x": 1350,
+        "y": 140,
+        "wires": [
+            [
+                "2dbb9134617a5402"
+            ]
+        ]
+    },
+    {
+        "id": "2dbb9134617a5402",
+        "type": "change",
+        "z": "75537afd17de5117",
+        "name": "set icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "icon",
+                "pt": "msg",
+                "to": "mdi:fireplace",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1340,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e2c34c43ecb3a50",
+        "type": "api-current-state",
+        "z": "75537afd17de5117",
+        "name": "picnic expected end delivery",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.picnic_next_delivery_eta_end",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "picnic_next_delivery_eta_end",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 480,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "682d99537fcd6af8",
+        "type": "function",
+        "z": "75537afd17de5117",
+        "name": "function 1",
+        "func": "// Convert the timestamp to a Date object\nconst date = new Date(msg.data.state);\n\n// Specify your own timezone\nconst timeZone = \"Europe/Amsterdam\"; // Replace with your timezone\n\n// Format the date with the specified timezone\nmsg.formattedDate = new Intl.DateTimeFormat('en-US', { timeZone: timeZone }).format(date);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "036d91a3ecb8a440"
+            ]
+        ]
+    },
+    {
+        "id": "a61c1e4ae878b9b5",
+        "type": "api-current-state",
+        "z": "75537afd17de5117",
+        "name": "picnic expected end delivery",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.picnic_next_delivery_eta_end",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "picnic_next_delivery_eta_end",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "682d99537fcd6af8"
+            ]
+        ]
+    },
+    {
+        "id": "b5b49d82751a6493",
+        "type": "inject",
+        "z": "75537afd17de5117",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "a61c1e4ae878b9b5"
+            ]
+        ]
+    },
+    {
+        "id": "036d91a3ecb8a440",
+        "type": "debug",
+        "z": "75537afd17de5117",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "df30f345e68ae43d",
+        "type": "debug",
+        "z": "75537afd17de5117",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
