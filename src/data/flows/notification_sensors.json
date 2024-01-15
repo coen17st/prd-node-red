@@ -320,12 +320,14 @@
         "z": "535c98d1d92579b6",
         "name": "notification_sensors",
         "links": [
-            "9fd7a6afaf90435a",
-            "f964605ee893d59d",
             "178e42db86a628e8",
-            "8474d1caa427cb1a"
+            "4705f09e38185adf",
+            "8474d1caa427cb1a",
+            "9fd7a6afaf90435a",
+            "afc68deb5ab5e4be",
+            "dbd6c4b98cdaf5bf"
         ],
-        "x": 245,
+        "x": 225,
         "y": 140,
         "wires": [
             [
