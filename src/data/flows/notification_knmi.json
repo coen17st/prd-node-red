@@ -155,7 +155,7 @@
         "type": "function",
         "z": "b4aa7b8dbc1c80dc",
         "name": "shorten message",
-        "func": "msg.short_message = msg.data.new_state.attributes.Waarschuwing.substr(0, 408);\nreturn msg;",
+        "func": "msg.short_message = msg.data.new_state.attributes.Waarschuwing.substr(0, 400);\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
