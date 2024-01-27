@@ -44,6 +44,111 @@
         ]
     },
     {
+        "id": "b560dfc6f3c2aec1",
+        "type": "template",
+        "z": "8d2de69b4c0fd2b9",
+        "g": "bb1cc6878bf6f696",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "vacuum",
+        "output": "str",
+        "x": 1450,
+        "y": 140,
+        "wires": [
+            [
+                "344ad3f982a92730"
+            ]
+        ]
+    },
+    {
+        "id": "344ad3f982a92730",
+        "type": "join",
+        "z": "8d2de69b4c0fd2b9",
+        "g": "bb1cc6878bf6f696",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1630,
+        "y": 120,
+        "wires": [
+            [
+                "372e878f27b4b2b2"
+            ]
+        ]
+    },
+    {
+        "id": "372e878f27b4b2b2",
+        "type": "link out",
+        "z": "8d2de69b4c0fd2b9",
+        "g": "bb1cc6878bf6f696",
+        "name": "link_out_notify_basement_ventilation",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad",
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1725,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c0d0c36d39f527e2",
+        "type": "template",
+        "z": "8d2de69b4c0fd2b9",
+        "g": "bb1cc6878bf6f696",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Stofzuiger",
+        "output": "str",
+        "x": 1430,
+        "y": 60,
+        "wires": [
+            [
+                "344ad3f982a92730"
+            ]
+        ]
+    },
+    {
+        "id": "db50c5b6f4f302b4",
+        "type": "template",
+        "z": "8d2de69b4c0fd2b9",
+        "g": "bb1cc6878bf6f696",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1430,
+        "y": 100,
+        "wires": [
+            [
+                "344ad3f982a92730"
+            ]
+        ]
+    },
+    {
         "id": "bb86ef9c9939267f",
         "type": "template",
         "z": "8d2de69b4c0fd2b9",
@@ -199,7 +304,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "KNMI Waarschuwing",
+        "template": "Stofzuiger",
         "output": "str",
         "x": 1030,
         "y": 240,
@@ -218,7 +323,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "weather",
+        "template": "vacuum",
         "output": "str",
         "x": 1190,
         "y": 240,
@@ -259,111 +364,6 @@
         "x": 1475,
         "y": 240,
         "wires": []
-    },
-    {
-        "id": "db50c5b6f4f302b4",
-        "type": "template",
-        "z": "8d2de69b4c0fd2b9",
-        "g": "bb1cc6878bf6f696",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1430,
-        "y": 100,
-        "wires": [
-            [
-                "344ad3f982a92730"
-            ]
-        ]
-    },
-    {
-        "id": "c0d0c36d39f527e2",
-        "type": "template",
-        "z": "8d2de69b4c0fd2b9",
-        "g": "bb1cc6878bf6f696",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Stofzuiger",
-        "output": "str",
-        "x": 1430,
-        "y": 60,
-        "wires": [
-            [
-                "344ad3f982a92730"
-            ]
-        ]
-    },
-    {
-        "id": "372e878f27b4b2b2",
-        "type": "link out",
-        "z": "8d2de69b4c0fd2b9",
-        "g": "bb1cc6878bf6f696",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad",
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 1725,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "344ad3f982a92730",
-        "type": "join",
-        "z": "8d2de69b4c0fd2b9",
-        "g": "bb1cc6878bf6f696",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1630,
-        "y": 120,
-        "wires": [
-            [
-                "372e878f27b4b2b2"
-            ]
-        ]
-    },
-    {
-        "id": "b560dfc6f3c2aec1",
-        "type": "template",
-        "z": "8d2de69b4c0fd2b9",
-        "g": "bb1cc6878bf6f696",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "vacuum",
-        "output": "str",
-        "x": 1450,
-        "y": 140,
-        "wires": [
-            [
-                "344ad3f982a92730"
-            ]
-        ]
     },
     {
         "id": "9920356dd5442dce",
