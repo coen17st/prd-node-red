@@ -281,7 +281,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.c3f1b2b7_9fabb740"
+            "media_player.galaxy_tab_a8"
         ],
         "data": "{\"message\":\"{{notify.message}}\",\"language\":\"nl\"}",
         "dataType": "json",
@@ -301,7 +301,15 @@
         "z": "343515a5528e14f0",
         "name": "notify_in_tts_wall_tablet",
         "links": [
-            "849b0848c1cfdceb"
+            "0993d50e3c03d798",
+            "1e0f934a3493b12f",
+            "372e878f27b4b2b2",
+            "57488cc36dcd2d00",
+            "849b0848c1cfdceb",
+            "ac254d4235d71700",
+            "c5f04c8242157305",
+            "f5a1c4dd087e0795",
+            "fdba7cd037a9da5a"
         ],
         "x": 195,
         "y": 380,
