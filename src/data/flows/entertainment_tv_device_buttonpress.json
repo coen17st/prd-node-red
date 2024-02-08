@@ -1,0 +1,243 @@
+[
+    {
+        "id": "a4fbdd1c0456c1af",
+        "type": "tab",
+        "label": "entertainment_tv_device_buttonpress",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fff03108c5f1ce08",
+        "type": "api-current-state",
+        "z": "a4fbdd1c0456c1af",
+        "name": "tv state is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "media_player.lg_webos_smart_tv",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 210,
+        "y": 60,
+        "wires": [
+            [
+                "38a89a2645866f0c"
+            ],
+            [
+                "3724f1550b7ce891"
+            ]
+        ]
+    },
+    {
+        "id": "9b76c1a2318387ea",
+        "type": "ha-button",
+        "z": "a4fbdd1c0456c1af",
+        "name": "",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "334728918669134a",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 70,
+        "y": 60,
+        "wires": [
+            [
+                "fff03108c5f1ce08"
+            ]
+        ]
+    },
+    {
+        "id": "3724f1550b7ce891",
+        "type": "api-call-service",
+        "z": "a4fbdd1c0456c1af",
+        "name": "turn off tv",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "webostv",
+        "service": "command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.lg_webos_smart_tv"
+        ],
+        "data": "{\"command\":\"system/turnOff\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "69b6c54a1cabe45b"
+            ]
+        ]
+    },
+    {
+        "id": "994b4caf94c3451c",
+        "type": "comment",
+        "z": "a4fbdd1c0456c1af",
+        "name": "button to toggle tv device on/off",
+        "info": "",
+        "x": 150,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "38a89a2645866f0c",
+        "type": "api-call-service",
+        "z": "a4fbdd1c0456c1af",
+        "name": "turn on shield mediaplayer",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 420,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69b6c54a1cabe45b",
+        "type": "api-call-service",
+        "z": "a4fbdd1c0456c1af",
+        "name": "turn off shield mediaplayer",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "media_player.shield"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 560,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "334728918669134a",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "tv_device",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "tv_device"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]

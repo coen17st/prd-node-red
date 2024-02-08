@@ -1,0 +1,545 @@
+[
+    {
+        "id": "99c1372046e45da7",
+        "type": "tab",
+        "label": "energy_solar_record",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b268fa78a872617d",
+        "type": "group",
+        "z": "99c1372046e45da7",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "148de36202032274",
+            "5a8f575633614c07",
+            "781d3a645a5e3130",
+            "8c93b438701888a6",
+            "7b9d796ac83c32bf",
+            "9655b1065753069f",
+            "451f25b73596ddf8"
+        ],
+        "x": 1354,
+        "y": 119,
+        "w": 412,
+        "h": 202
+    },
+    {
+        "id": "a51faa8090a268f4",
+        "type": "group",
+        "z": "99c1372046e45da7",
+        "name": "notification_sensors",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59d4d6719e262bbb",
+            "e8714993e53c2d5e",
+            "0561341e4ea54205",
+            "29ad6bfc437abec2",
+            "afc68deb5ab5e4be"
+        ],
+        "x": 1354,
+        "y": 339,
+        "w": 872,
+        "h": 82
+    },
+    {
+        "id": "9655b1065753069f",
+        "type": "junction",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "x": 1380,
+        "y": 200,
+        "wires": [
+            [
+                "5a8f575633614c07",
+                "781d3a645a5e3130",
+                "148de36202032274",
+                "451f25b73596ddf8"
+            ]
+        ]
+    },
+    {
+        "id": "7b9d796ac83c32bf",
+        "type": "join",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1630,
+        "y": 200,
+        "wires": [
+            [
+                "8c93b438701888a6"
+            ]
+        ]
+    },
+    {
+        "id": "8c93b438701888a6",
+        "type": "link out",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1725,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "781d3a645a5e3130",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is een nieuw zonne-energie dagrecord gemeten vandaag.\\n\\nOud: {{data.state}} {{data.attributes.unit_of_measurement}} op {{data.attributes.date}}\\nNieuw: {{payload.value}} {{data.attributes.unit_of_measurement}} op {{date}}",
+        "output": "str",
+        "x": 1480,
+        "y": 200,
+        "wires": [
+            [
+                "7b9d796ac83c32bf"
+            ]
+        ]
+    },
+    {
+        "id": "5a8f575633614c07",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zonne-energie",
+        "output": "str",
+        "x": 1470,
+        "y": 160,
+        "wires": [
+            [
+                "7b9d796ac83c32bf"
+            ]
+        ]
+    },
+    {
+        "id": "148de36202032274",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1470,
+        "y": 240,
+        "wires": [
+            [
+                "7b9d796ac83c32bf"
+            ]
+        ]
+    },
+    {
+        "id": "80dc13087104d323",
+        "type": "server-state-changed",
+        "z": "99c1372046e45da7",
+        "name": "solaredge kwh today",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.solaredge_modbus_ac_energy_kwh_today",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "10",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "74cc10441231f8f2"
+            ]
+        ]
+    },
+    {
+        "id": "aab1bbee72f90c90",
+        "type": "api-current-state",
+        "z": "99c1372046e45da7",
+        "name": "highest_ac_solar_day  < solaredge kwh yoday ",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "payload",
+        "halt_if_type": "msg",
+        "halt_if_compare": "lt",
+        "entity_id": "sensor.mqtt_ac_solar_record",
+        "state_type": "str",
+        "blockInputOverrides": true,
+        "outputProperties": [
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 680,
+        "y": 60,
+        "wires": [
+            [
+                "27b51aa55e598e0f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a0300d7bafb66f44",
+        "type": "comment",
+        "z": "99c1372046e45da7",
+        "name": "A sensor that stores the value and date when there is a new produced solar power daily record",
+        "info": "",
+        "x": 340,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "74cc10441231f8f2",
+        "type": "function",
+        "z": "99c1372046e45da7",
+        "name": "change string into float number",
+        "func": "msg.payload = parseFloat(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 60,
+        "wires": [
+            [
+                "aab1bbee72f90c90"
+            ]
+        ]
+    },
+    {
+        "id": "27b51aa55e598e0f",
+        "type": "function",
+        "z": "99c1372046e45da7",
+        "name": "create string kwh payload and date",
+        "func": "// Set payload to a 3 decimal number as string\nmsg.payload = parseFloat(msg.payload).toFixed(3);\n\n// Create YYYY-MM-DD value from datetime string\nvar datetime = msg.data.last_updated;\nmsg.date = datetime.split('T')[0];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 60,
+        "wires": [
+            [
+                "3cceba91547a7d4e"
+            ]
+        ]
+    },
+    {
+        "id": "6a870ac713200910",
+        "type": "inject",
+        "z": "99c1372046e45da7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "date",
+                "v": "2023-05-26",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "34.080",
+        "payloadType": "str",
+        "x": 1110,
+        "y": 100,
+        "wires": [
+            [
+                "3cceba91547a7d4e"
+            ]
+        ]
+    },
+    {
+        "id": "122d704723bc1cb0",
+        "type": "mqtt out",
+        "z": "99c1372046e45da7",
+        "name": "",
+        "topic": "/homeassistant/solar/ac_solar_record",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "36dee637778341ba",
+        "x": 1510,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3cceba91547a7d4e",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"value\": \"{{payload}}\",\n    \"date\": \"{{date}}\"\n}",
+        "output": "json",
+        "x": 1240,
+        "y": 60,
+        "wires": [
+            [
+                "122d704723bc1cb0",
+                "9655b1065753069f",
+                "59d4d6719e262bbb"
+            ]
+        ]
+    },
+    {
+        "id": "59d4d6719e262bbb",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Oud: {{data.state}} {{data.attributes.unit_of_measurement}} op {{data.attributes.date}}\nNieuw: {{payload.value}} {{data.attributes.unit_of_measurement}} op {{date}}",
+        "output": "str",
+        "x": 1480,
+        "y": 380,
+        "wires": [
+            [
+                "e8714993e53c2d5e"
+            ]
+        ]
+    },
+    {
+        "id": "e8714993e53c2d5e",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is een nieuw zonne-energie dagrecord gemeten vandaag",
+        "output": "str",
+        "x": 1710,
+        "y": 380,
+        "wires": [
+            [
+                "0561341e4ea54205"
+            ]
+        ]
+    },
+    {
+        "id": "0561341e4ea54205",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "garbage",
+        "output": "str",
+        "x": 1890,
+        "y": 380,
+        "wires": [
+            [
+                "29ad6bfc437abec2"
+            ]
+        ]
+    },
+    {
+        "id": "29ad6bfc437abec2",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "notification_level",
+        "field": "notification_level",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "info",
+        "output": "str",
+        "x": 2050,
+        "y": 380,
+        "wires": [
+            [
+                "afc68deb5ab5e4be"
+            ]
+        ]
+    },
+    {
+        "id": "afc68deb5ab5e4be",
+        "type": "link out",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "notification",
+        "mode": "link",
+        "links": [
+            "60e14e33a793f50d"
+        ],
+        "x": 2185,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "451f25b73596ddf8",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "solar_record",
+        "output": "str",
+        "x": 1490,
+        "y": 280,
+        "wires": [
+            [
+                "7b9d796ac83c32bf"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "36dee637778341ba",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]

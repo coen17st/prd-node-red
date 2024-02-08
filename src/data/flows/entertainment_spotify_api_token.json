@@ -1,0 +1,180 @@
+[
+    {
+        "id": "584b31926baad02b",
+        "type": "tab",
+        "label": "entertainment_spotify_api_token",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fb24a0eedc88b4da",
+        "type": "http request",
+        "z": "584b31926baad02b",
+        "name": "get token",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://accounts.spotify.com/api/token",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-Type",
+                "valueType": "other",
+                "valueValue": "application/x-www-form-urlencoded"
+            }
+        ],
+        "x": 820,
+        "y": 60,
+        "wires": [
+            [
+                "f691e43bf48e100a"
+            ]
+        ]
+    },
+    {
+        "id": "e320588ed50c77d5",
+        "type": "change",
+        "z": "584b31926baad02b",
+        "name": "client id and client secret",
+        "rules": [
+            {
+                "t": "set",
+                "p": "client_id",
+                "pt": "msg",
+                "to": "SPOTIFY_API_CLIENT_ID",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "client_secret",
+                "pt": "msg",
+                "to": "SPOTIFY_API_CLIENT_SECRET",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "84d72d4e3a05e1bc"
+            ]
+        ]
+    },
+    {
+        "id": "84d72d4e3a05e1bc",
+        "type": "template",
+        "z": "584b31926baad02b",
+        "name": "body for get token",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "grant_type=client_credentials&client_id={{{client_id}}}&client_secret={{{client_secret}}}",
+        "output": "str",
+        "x": 530,
+        "y": 60,
+        "wires": [
+            [
+                "dc56b78107516298"
+            ]
+        ]
+    },
+    {
+        "id": "f691e43bf48e100a",
+        "type": "change",
+        "z": "584b31926baad02b",
+        "name": "save access token to global variable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "spotify_access_token",
+                "pt": "global",
+                "to": "payload.access_token",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1050,
+        "y": 60,
+        "wires": [
+            [
+                "e388914ef9ab9574"
+            ]
+        ]
+    },
+    {
+        "id": "dc56b78107516298",
+        "type": "template",
+        "z": "584b31926baad02b",
+        "name": "url",
+        "field": "url",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "https://accounts.spotify.com/api/token",
+        "output": "str",
+        "x": 690,
+        "y": 60,
+        "wires": [
+            [
+                "fb24a0eedc88b4da"
+            ]
+        ]
+    },
+    {
+        "id": "1dd634541306cba1",
+        "type": "link in",
+        "z": "584b31926baad02b",
+        "name": "link in to spotify_api_token",
+        "links": [
+            "ce9243b0f1f12355",
+            "36c55dbdfffe6d33"
+        ],
+        "x": 165,
+        "y": 60,
+        "wires": [
+            [
+                "e320588ed50c77d5"
+            ]
+        ]
+    },
+    {
+        "id": "7bc7fae2839a6cd6",
+        "type": "comment",
+        "z": "584b31926baad02b",
+        "name": "Get new api token if it not exists or existing one is expired",
+        "info": "",
+        "x": 230,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e388914ef9ab9574",
+        "type": "link out",
+        "z": "584b31926baad02b",
+        "name": "link out from spotify_api_token",
+        "mode": "link",
+        "links": [
+            "7264146e613f154c"
+        ],
+        "x": 1245,
+        "y": 60,
+        "wires": []
+    }
+]

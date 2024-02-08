@@ -1,0 +1,290 @@
+[
+    {
+        "id": "67a16d037f1a73fc",
+        "type": "tab",
+        "label": "entertainment_tv_device_sensor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3ad861c67030f3f1",
+        "type": "server-state-changed",
+        "z": "67a16d037f1a73fc",
+        "name": "lg tv mediaplayer is off",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "media_player.lg_webos_smart_tv",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "4a35bcbba9fd8659"
+            ],
+            [
+                "cc3caee8d4e6c43d"
+            ]
+        ]
+    },
+    {
+        "id": "dec82ecde28afe10",
+        "type": "ha-binary-sensor",
+        "z": "67a16d037f1a73fc",
+        "name": "tv_device",
+        "entityConfig": "03547137a16812fd",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 540,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a35bcbba9fd8659",
+        "type": "change",
+        "z": "67a16d037f1a73fc",
+        "name": "off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 60,
+        "wires": [
+            [
+                "dec82ecde28afe10"
+            ]
+        ]
+    },
+    {
+        "id": "cc3caee8d4e6c43d",
+        "type": "change",
+        "z": "67a16d037f1a73fc",
+        "name": "on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "dec82ecde28afe10"
+            ]
+        ]
+    },
+    {
+        "id": "8211130b5d730cd2",
+        "type": "server-state-changed",
+        "z": "67a16d037f1a73fc",
+        "name": "tv device power",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.shellyplug_tv_power",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "ed5d49dfd967e4eb"
+            ]
+        ]
+    },
+    {
+        "id": "ed5d49dfd967e4eb",
+        "type": "switch",
+        "z": "67a16d037f1a73fc",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "0.1",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "0.1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "4a35bcbba9fd8659"
+            ],
+            [
+                "cc3caee8d4e6c43d"
+            ]
+        ]
+    },
+    {
+        "id": "1ca6cd4f788d2e7e",
+        "type": "comment",
+        "z": "67a16d037f1a73fc",
+        "name": "turn on or off binary sensor tv device base on power usage or mediaplayer state",
+        "info": "",
+        "x": 300,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "03547137a16812fd",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "tv_device",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "tv_device"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]

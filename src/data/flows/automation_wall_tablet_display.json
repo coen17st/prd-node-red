@@ -1,0 +1,232 @@
+[
+    {
+        "id": "9f9f94838a3fcd77",
+        "type": "tab",
+        "label": "automation_wall_tablet_display",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a99bad1a6477a029",
+        "type": "server-state-changed",
+        "z": "9f9f94838a3fcd77",
+        "name": "sleepmode is on",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.sleep_mode",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "ec90fab1c8567df8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ec90fab1c8567df8",
+        "type": "api-call-service",
+        "z": "9f9f94838a3fcd77",
+        "name": "turn on wall tablet screen",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.galaxy_tab_a8_screen"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 330,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1019cc23f3f1b9f9",
+        "type": "server-state-changed",
+        "z": "9f9f94838a3fcd77",
+        "name": "frontdoor is open",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.frontdoor",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "ec90fab1c8567df8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0ff82d5f689f9542",
+        "type": "server-state-changed",
+        "z": "9f9f94838a3fcd77",
+        "name": "backdoor is open",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.backdoor",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 180,
+        "wires": [
+            [
+                "ec90fab1c8567df8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "248ad183c4c0db5a",
+        "type": "comment",
+        "z": "9f9f94838a3fcd77",
+        "name": "Triggers to turn on the wall tablet display",
+        "info": "",
+        "x": 180,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]

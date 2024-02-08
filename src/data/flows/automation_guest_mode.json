@@ -1,0 +1,784 @@
+[
+    {
+        "id": "a7a34028d045deee",
+        "type": "tab",
+        "label": "automation_guest_mode",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "022e7feb1e4ea3ae",
+        "type": "group",
+        "z": "a7a34028d045deee",
+        "name": "notify two actions",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3564790484706ae2",
+            "d5d46cfd65fffc12",
+            "ba0bdc1db6e4e011",
+            "a3cf07381c3dba65",
+            "f7038caa7a76e6f3",
+            "88a668a5509178e0",
+            "b2e6817cd694ba28"
+        ],
+        "x": 1174,
+        "y": 199,
+        "w": 442,
+        "h": 202
+    },
+    {
+        "id": "f7038caa7a76e6f3",
+        "type": "junction",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "x": 1200,
+        "y": 280,
+        "wires": [
+            [
+                "d5d46cfd65fffc12",
+                "3564790484706ae2",
+                "88a668a5509178e0",
+                "b2e6817cd694ba28"
+            ]
+        ]
+    },
+    {
+        "id": "d2c560378b1b926b",
+        "type": "server-state-changed",
+        "z": "a7a34028d045deee",
+        "name": "babysitter calendar event ",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "calendar.lise_babysitter",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "0f8b5cf3541d59c4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4fd065fd91ad5c32",
+        "type": "comment",
+        "z": "a7a34028d045deee",
+        "name": "turn on guest mode if calendar event with words \"past\" is found in Lise calendar",
+        "info": "",
+        "x": 320,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0f8b5cf3541d59c4",
+        "type": "api-call-service",
+        "z": "a7a34028d045deee",
+        "name": "turn on guest mode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.guest"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "880a3593d9f19b8c",
+        "type": "comment",
+        "z": "a7a34028d045deee",
+        "name": "flow to turn on or off guest most based on certain events",
+        "info": "",
+        "x": 220,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6a89a7042f3cf8ed",
+        "type": "comment",
+        "z": "a7a34028d045deee",
+        "name": "If persons are not at home and a door has been opened, ask if the guest mode needs to be turned on.",
+        "info": "",
+        "x": 390,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a8d73cbf04664678",
+        "type": "comment",
+        "z": "a7a34028d045deee",
+        "name": "listen to guest mode on action notification answer event ",
+        "info": "",
+        "x": 240,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "555fa53e220c24b1",
+        "type": "server-events",
+        "z": "a7a34028d045deee",
+        "name": "mobile event listner",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeAsEntityConfig": "",
+        "eventType": "mobile_app_notification_action",
+        "eventData": "{\"action\":\"GUEST_MODE_ON\"}",
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "9fc1160da24a5102"
+            ]
+        ]
+    },
+    {
+        "id": "9fc1160da24a5102",
+        "type": "api-call-service",
+        "z": "a7a34028d045deee",
+        "name": "turn on guest mode",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.guest"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 350,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eabe11216373d312",
+        "type": "server-state-changed",
+        "z": "a7a34028d045deee",
+        "name": "state change for all doors",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.*door_window",
+        "entityIdType": "regex",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "39691718b80b4105"
+            ]
+        ]
+    },
+    {
+        "id": "88e2c415c85c433e",
+        "type": "switch",
+        "z": "a7a34028d045deee",
+        "name": "door is open",
+        "property": "data.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "1ec3bf6ac9ee7791"
+            ]
+        ]
+    },
+    {
+        "id": "1ec3bf6ac9ee7791",
+        "type": "change",
+        "z": "a7a34028d045deee",
+        "name": "set topic",
+        "rules": [
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "binary_sensor.backdoor",
+                "fromt": "str",
+                "to": "achterdeur",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "topic",
+                "pt": "msg",
+                "from": "binary_sensor.frontdoor",
+                "fromt": "str",
+                "to": "voordeur",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 220,
+        "wires": [
+            [
+                "b02f456b71574261"
+            ]
+        ]
+    },
+    {
+        "id": "66cf63b03080aadb",
+        "type": "server-events",
+        "z": "a7a34028d045deee",
+        "name": "listen to shelly click events",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "exposeAsEntityConfig": "",
+        "eventType": "shelly.click",
+        "eventData": "",
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "event_type": "",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "59a9a1e67b92890a"
+            ]
+        ]
+    },
+    {
+        "id": "39691718b80b4105",
+        "type": "api-current-state",
+        "z": "a7a34028d045deee",
+        "name": "guest mode is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.guest",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "4c5e48409ce3be8d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4c5e48409ce3be8d",
+        "type": "api-current-state",
+        "z": "a7a34028d045deee",
+        "name": "group persons is not home",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "group.persons",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "88e2c415c85c433e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "89a4b058eca2d620",
+        "type": "comment",
+        "z": "a7a34028d045deee",
+        "name": "if shelly click event where fired and nobody is home and guest mode is off, ask if the guest mode needs to be turned on.",
+        "info": "",
+        "x": 440,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "072df3e380eea942",
+        "type": "api-current-state",
+        "z": "a7a34028d045deee",
+        "name": "group persons is not home",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "not_home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "group.persons",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "6f1338fff56e9176"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "59a9a1e67b92890a",
+        "type": "api-current-state",
+        "z": "a7a34028d045deee",
+        "name": "guest mode is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.guest",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "072df3e380eea942"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b02f456b71574261",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De {{topic}} is geopend en gastmodus is uitgeschakeld. Wil je gastmodus inschakelen?",
+        "output": "str",
+        "x": 1080,
+        "y": 220,
+        "wires": [
+            [
+                "f7038caa7a76e6f3"
+            ]
+        ]
+    },
+    {
+        "id": "3564790484706ae2",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1290,
+        "y": 320,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "d5d46cfd65fffc12",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Gastmodus",
+        "output": "str",
+        "x": 1290,
+        "y": 240,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "ba0bdc1db6e4e011",
+        "type": "link out",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "link_out_notify_guest_mode",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 1575,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a3cf07381c3dba65",
+        "type": "join",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1490,
+        "y": 280,
+        "wires": [
+            [
+                "ba0bdc1db6e4e011"
+            ]
+        ]
+    },
+    {
+        "id": "6f1338fff56e9176",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er lijkt iemand in huis te zijn omdat er lampen zijn in- of uitgeschakeld, gastmodus is uitgeschakeld.\\nWil je de gastmodus inschakelen?",
+        "output": "str",
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            [
+                "f7038caa7a76e6f3"
+            ]
+        ]
+    },
+    {
+        "id": "88a668a5509178e0",
+        "type": "change",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "action titles",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notify.action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_1",
+                "pt": "msg",
+                "to": "GUEST_MODE_ON",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2",
+                "pt": "msg",
+                "to": "IGNORE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1310,
+        "y": 280,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "b2e6817cd694ba28",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "guest_mode",
+        "output": "str",
+        "x": 1310,
+        "y": 360,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
