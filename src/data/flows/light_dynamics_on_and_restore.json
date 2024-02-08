@@ -2,7 +2,7 @@
     {
         "id": "9a7094e42d673dc4",
         "type": "tab",
-        "label": "lights_on_and_restore",
+        "label": "light_dynamics_on_and_restore",
         "disabled": false,
         "info": "",
         "env": []

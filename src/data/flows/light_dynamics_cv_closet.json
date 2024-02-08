@@ -2,7 +2,7 @@
     {
         "id": "3c0c3dbf7e0deda4",
         "type": "tab",
-        "label": "cv_closet_light",
+        "label": "light_dynamics_cv_closet_light",
         "disabled": false,
         "info": "",
         "env": []
