@@ -24,10 +24,26 @@
             "b41a40c1e135e55c",
             "ed20a5d29a5eb136"
         ],
-        "x": 714,
+        "x": 754,
         "y": 39,
         "w": 422,
         "h": 202
+    },
+    {
+        "id": "be68c8baf380f74e",
+        "type": "junction",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "x": 780,
+        "y": 80,
+        "wires": [
+            [
+                "6011ff5a330d5f46",
+                "2e62b582b5ace0b2",
+                "dfebcb371c6d37c4",
+                "ed20a5d29a5eb136"
+            ]
+        ]
     },
     {
         "id": "abca9d489cb39d05",
@@ -42,18 +58,125 @@
         ]
     },
     {
-        "id": "be68c8baf380f74e",
-        "type": "junction",
+        "id": "ed20a5d29a5eb136",
+        "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "x": 740,
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beweging in de achtertuin gedetecteerd!",
+        "output": "str",
+        "x": 900,
+        "y": 200,
+        "wires": [
+            [
+                "b151676bc37a1e90"
+            ]
+        ]
+    },
+    {
+        "id": "b41a40c1e135e55c",
+        "type": "link out",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "backyard_motion_to_notify",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1135,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dfebcb371c6d37c4",
+        "type": "template",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "backyard_alarm",
+        "output": "str",
+        "x": 910,
+        "y": 160,
+        "wires": [
+            [
+                "b151676bc37a1e90"
+            ]
+        ]
+    },
+    {
+        "id": "b151676bc37a1e90",
+        "type": "join",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1050,
+        "y": 100,
+        "wires": [
+            [
+                "b41a40c1e135e55c"
+            ]
+        ]
+    },
+    {
+        "id": "6011ff5a330d5f46",
+        "type": "template",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Alarm",
+        "output": "str",
+        "x": 890,
         "y": 80,
         "wires": [
             [
-                "6011ff5a330d5f46",
-                "2e62b582b5ace0b2",
-                "dfebcb371c6d37c4",
-                "ed20a5d29a5eb136"
+                "b151676bc37a1e90"
+            ]
+        ]
+    },
+    {
+        "id": "2e62b582b5ace0b2",
+        "type": "template",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 890,
+        "y": 120,
+        "wires": [
+            [
+                "b151676bc37a1e90"
             ]
         ]
     },
@@ -165,7 +288,9 @@
             [
                 "1117f663f7ece955"
             ],
-            []
+            [
+                "fc028de8398c35cd"
+            ]
         ]
     },
     {
@@ -187,7 +312,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 570,
+        "x": 590,
         "y": 60,
         "wires": [
             [
@@ -215,7 +340,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 570,
+        "x": 590,
         "y": 100,
         "wires": [
             [
@@ -232,131 +357,127 @@
         "links": [
             "164322a018845856"
         ],
-        "x": 735,
-        "y": 300,
+        "x": 765,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "2e62b582b5ace0b2",
-        "type": "template",
+        "id": "f3661c593b291998",
+        "type": "api-call-service",
         "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 850,
-        "y": 120,
-        "wires": [
-            [
-                "b151676bc37a1e90"
-            ]
-        ]
-    },
-    {
-        "id": "6011ff5a330d5f46",
-        "type": "template",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Alarm",
-        "output": "str",
-        "x": 850,
-        "y": 80,
-        "wires": [
-            [
-                "b151676bc37a1e90"
-            ]
-        ]
-    },
-    {
-        "id": "b151676bc37a1e90",
-        "type": "join",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1010,
-        "y": 100,
-        "wires": [
-            [
-                "b41a40c1e135e55c"
-            ]
-        ]
-    },
-    {
-        "id": "dfebcb371c6d37c4",
-        "type": "template",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "backyard_alarm",
-        "output": "str",
-        "x": 870,
-        "y": 160,
-        "wires": [
-            [
-                "b151676bc37a1e90"
-            ]
-        ]
-    },
-    {
-        "id": "b41a40c1e135e55c",
-        "type": "link out",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "backyard_motion_to_notify",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
+        "name": "turn on light",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.shelly1_barn_door"
         ],
-        "x": 1095,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "ed20a5d29a5eb136",
-        "type": "template",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Beweging in de achtertuin gedetecteerd!",
-        "output": "str",
-        "x": 860,
-        "y": 200,
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 750,
+        "y": 340,
         "wires": [
             [
-                "b151676bc37a1e90"
+                "1a622c0b1aadf203"
             ]
+        ]
+    },
+    {
+        "id": "fc028de8398c35cd",
+        "type": "api-current-state",
+        "z": "645478ab1138fd33",
+        "name": "is dark outside",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "dark",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.outdoor_light_dark",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 580,
+        "y": 340,
+        "wires": [
+            [
+                "f3661c593b291998"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1a622c0b1aadf203",
+        "type": "stoptimer",
+        "z": "645478ab1138fd33",
+        "duration": "20",
+        "units": "Second",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 930,
+        "y": 340,
+        "wires": [
+            [
+                "0361aab005f490ca"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0361aab005f490ca",
+        "type": "api-call-service",
+        "z": "645478ab1138fd33",
+        "name": "turn on light",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.shelly1_barn_door"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1110,
+        "y": 340,
+        "wires": [
+            []
         ]
     },
     {
