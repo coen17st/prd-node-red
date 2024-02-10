@@ -28,7 +28,7 @@
         "exposeAsEntityConfig": "",
         "entityId": "binary_sensor.backdoor",
         "entityIdType": "exact",
-        "outputInitially": false,
+        "outputInitially": true,
         "stateType": "str",
         "ifState": "on",
         "ifStateType": "str",
@@ -109,7 +109,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 700,
+        "x": 480,
         "y": 60,
         "wires": [
             [
@@ -139,7 +139,7 @@
         "outputLocationType": "msg",
         "outputLocation": "payload",
         "outputResultsCount": 1,
-        "x": 880,
+        "x": 660,
         "y": 120,
         "wires": [
             [
@@ -167,7 +167,7 @@
         "outputLocationType": "msg",
         "outputLocation": "payload",
         "outputResultsCount": 1,
-        "x": 880,
+        "x": 660,
         "y": 60,
         "wires": [
             [
@@ -187,7 +187,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1080,
+        "x": 860,
         "y": 60,
         "wires": [
             [
@@ -204,7 +204,7 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 1480,
+        "x": 1280,
         "y": 60,
         "wires": [
             [
@@ -235,11 +235,12 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "all",
-        "x": 1290,
+        "x": 1070,
         "y": 60,
         "wires": [
             [
-                "8f4a7b8ae2cc4f22"
+                "8f4a7b8ae2cc4f22",
+                "cfb9524c088b31a3"
             ]
         ]
     },
@@ -254,7 +255,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 1810,
+        "x": 1690,
         "y": 60,
         "wires": [
             [
@@ -281,7 +282,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
+        "x": 1540,
         "y": 60,
         "wires": [
             [
@@ -310,7 +311,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 2120,
+        "x": 1980,
         "y": 60,
         "wires": [
             []
@@ -337,7 +338,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 2120,
+        "x": 1980,
         "y": 120,
         "wires": [
             []
@@ -365,7 +366,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1930,
+        "x": 1810,
         "y": 60,
         "wires": [
             [
@@ -397,33 +398,6 @@
         "y": 60,
         "wires": [
             [
-                "cfb9524c088b31a3"
-            ]
-        ]
-    },
-    {
-        "id": "cfb9524c088b31a3",
-        "type": "change",
-        "z": "4b48188ca7b303d7",
-        "name": "set flow active to true",
-        "rules": [
-            {
-                "t": "set",
-                "p": "active",
-                "pt": "flow",
-                "to": "true",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 60,
-        "wires": [
-            [
                 "62d81c701468e19d"
             ]
         ]
@@ -447,8 +421,33 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1680,
-        "y": 100,
+        "x": 1560,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cfb9524c088b31a3",
+        "type": "change",
+        "z": "4b48188ca7b303d7",
+        "name": "set flow active to true",
+        "rules": [
+            {
+                "t": "set",
+                "p": "active",
+                "pt": "flow",
+                "to": "true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 120,
         "wires": [
             []
         ]
