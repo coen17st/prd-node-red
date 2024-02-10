@@ -24,7 +24,7 @@
             "87b3630fa6681255",
             "b334886da3d39e67"
         ],
-        "x": 1254,
+        "x": 1194,
         "y": 19,
         "w": 452,
         "h": 202
@@ -34,7 +34,7 @@
         "type": "junction",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "x": 1280,
+        "x": 1220,
         "y": 60,
         "wires": [
             [
@@ -46,19 +46,19 @@
         ]
     },
     {
-        "id": "b334886da3d39e67",
+        "id": "8f7ef08c7aea9511",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Het Infrarood paneel in de souterrain stond nog aan en is nu automatisch uitgeschakeld",
+        "template": "",
         "output": "str",
-        "x": 1380,
-        "y": 180,
+        "x": 1310,
+        "y": 100,
         "wires": [
             [
                 "98c964aa61c96938"
@@ -66,24 +66,38 @@
         ]
     },
     {
-        "id": "87b3630fa6681255",
+        "id": "51bb0a67f9282d5f",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "infrared_panel",
+        "template": "Infrarood paneel",
         "output": "str",
-        "x": 1390,
-        "y": 140,
+        "x": 1310,
+        "y": 60,
         "wires": [
             [
                 "98c964aa61c96938"
             ]
         ]
+    },
+    {
+        "id": "dfe89d053727bf74",
+        "type": "link out",
+        "z": "d7c35c04cc0c5b68",
+        "g": "36dc1da28ea112aa",
+        "name": "link_out_notify_infrared_panel",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1605,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "98c964aa61c96938",
@@ -106,7 +120,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1570,
+        "x": 1510,
         "y": 120,
         "wires": [
             [
@@ -115,33 +129,19 @@
         ]
     },
     {
-        "id": "dfe89d053727bf74",
-        "type": "link out",
-        "z": "d7c35c04cc0c5b68",
-        "g": "36dc1da28ea112aa",
-        "name": "link_out_notify_infrared_panel",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1665,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "51bb0a67f9282d5f",
+        "id": "87b3630fa6681255",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Infrarood paneel",
+        "template": "infrared_panel",
         "output": "str",
-        "x": 1370,
-        "y": 60,
+        "x": 1330,
+        "y": 140,
         "wires": [
             [
                 "98c964aa61c96938"
@@ -149,56 +149,22 @@
         ]
     },
     {
-        "id": "8f7ef08c7aea9511",
+        "id": "b334886da3d39e67",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "Het Infrarood paneel in de souterrain stond nog aan en is nu automatisch uitgeschakeld",
         "output": "str",
-        "x": 1370,
-        "y": 100,
+        "x": 1320,
+        "y": 180,
         "wires": [
             [
                 "98c964aa61c96938"
-            ]
-        ]
-    },
-    {
-        "id": "0eb4e43996470004",
-        "type": "cronplus",
-        "z": "d7c35c04cc0c5b68",
-        "name": "Trigger at 19:00",
-        "outputField": "payload",
-        "timeZone": "",
-        "storeName": "",
-        "commandResponseMsgOutput": "output1",
-        "defaultLocation": "",
-        "defaultLocationType": "default",
-        "outputs": 1,
-        "options": [
-            {
-                "name": "schedule1",
-                "topic": "topic1",
-                "payloadType": "default",
-                "payload": "",
-                "expressionType": "cron",
-                "expression": "0 19 * * *",
-                "location": "",
-                "offset": "0",
-                "solarType": "all",
-                "solarEvents": "sunrise,sunset"
-            }
-        ],
-        "x": 120,
-        "y": 60,
-        "wires": [
-            [
-                "4c51a48e529813e3"
             ]
         ]
     },
@@ -211,51 +177,6 @@
         "x": 270,
         "y": 20,
         "wires": []
-    },
-    {
-        "id": "4c51a48e529813e3",
-        "type": "api-current-state",
-        "z": "d7c35c04cc0c5b68",
-        "name": "shellyplug infrared panel energy is > 0",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "0",
-        "halt_if_type": "num",
-        "halt_if_compare": "gt",
-        "entity_id": "sensor.shellyplugplus_infraredpanel_switch_0_power",
-        "state_type": "num",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 370,
-        "y": 60,
-        "wires": [
-            [
-                "27cd8b7d93b39f6b"
-            ],
-            []
-        ]
     },
     {
         "id": "27cd8b7d93b39f6b",
@@ -278,7 +199,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 670,
+        "x": 630,
         "y": 60,
         "wires": [
             [
@@ -303,7 +224,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 880,
+        "x": 840,
         "y": 60,
         "wires": [
             [
@@ -332,12 +253,86 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1090,
+        "x": 1050,
         "y": 60,
         "wires": [
             [
                 "5959cdf78bae2b4a"
             ]
+        ]
+    },
+    {
+        "id": "cc46cdcd6e426cc8",
+        "type": "time-range-switch",
+        "z": "d7c35c04cc0c5b68",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "startTime": "17:30",
+        "endTime": "08:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "27cd8b7d93b39f6b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6b08dd8ac6cfbb88",
+        "type": "server-state-changed",
+        "z": "d7c35c04cc0c5b68",
+        "name": "shellyplug infrared panel energy is > 0",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.shellyplugplus_infraredpanel_switch_0_power",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "0",
+        "ifStateType": "num",
+        "ifStateOperator": "gt",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "cc46cdcd6e426cc8"
+            ],
+            []
         ]
     },
     {
