@@ -45,6 +45,101 @@
         ]
     },
     {
+        "id": "80b3c96f004d6f8b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "dishwasher",
+        "output": "str",
+        "x": 1370,
+        "y": 220,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "71f13b6b1744cf6b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1350,
+        "y": 180,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "64614e79bcb09872",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vaatwasser",
+        "output": "str",
+        "x": 1350,
+        "y": 100,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "2a35d2abfb0850da",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De Vaatwasser is klaar",
+        "output": "str",
+        "x": 1360,
+        "y": 140,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "2c0a57bd6ee87009",
+        "type": "link out",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1605,
+        "y": 140,
+        "wires": []
+    },
+    {
         "id": "08bca5ce6d389d48",
         "type": "join",
         "z": "2437e768.8e34d8",
@@ -74,101 +169,6 @@
         ]
     },
     {
-        "id": "2c0a57bd6ee87009",
-        "type": "link out",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1605,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "2a35d2abfb0850da",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "De Vaatwasser is klaar",
-        "output": "str",
-        "x": 1360,
-        "y": 140,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "64614e79bcb09872",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Vaatwasser",
-        "output": "str",
-        "x": 1350,
-        "y": 100,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "71f13b6b1744cf6b",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1350,
-        "y": 180,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "80b3c96f004d6f8b",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "dishwasher",
-        "output": "str",
-        "x": 1370,
-        "y": 220,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
         "id": "a204cf33.7f292",
         "type": "switch",
         "z": "2437e768.8e34d8",
@@ -182,7 +182,7 @@
                 "vt": "num"
             },
             {
-                "t": "lte",
+                "t": "lt",
                 "v": "1",
                 "vt": "num"
             }
@@ -336,44 +336,6 @@
         ]
     },
     {
-        "id": "726bf3cc.81938c",
-        "type": "trigger-state",
-        "z": "2437e768.8e34d8",
-        "name": "state dishwasher watt",
-        "server": "4ba92433.2478cc",
-        "version": 4,
-        "inputs": 1,
-        "outputs": 2,
-        "exposeAsEntityConfig": "",
-        "entityId": "sensor.shellyplugplus_dishwasher_power",
-        "entityIdType": "exact",
-        "debugEnabled": false,
-        "constraints": [],
-        "customOutputs": [],
-        "outputInitially": true,
-        "stateType": "num",
-        "enableInput": true,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "x": 120,
-        "y": 80,
-        "wires": [
-            [
-                "a204cf33.7f292"
-            ],
-            []
-        ]
-    },
-    {
         "id": "ef6b748.eeaf388",
         "type": "switch",
         "z": "2437e768.8e34d8",
@@ -444,6 +406,59 @@
                 "ce869786.78dec8"
             ],
             []
+        ]
+    },
+    {
+        "id": "95f21a2884f73b9b",
+        "type": "server-state-changed",
+        "z": "2437e768.8e34d8",
+        "name": "state dishwasher watt",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.shellyplugplus_dishwasher_power",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "a204cf33.7f292"
+            ]
         ]
     },
     {
