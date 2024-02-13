@@ -581,7 +581,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.doorbell_chime_active"
+            "switch.smart-doorbell_active"
         ],
         "data": "",
         "dataType": "json",
@@ -606,7 +606,7 @@
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "switch.doorbell_chime_active",
+        "entity_id": "switch.smart-doorbell_active",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
