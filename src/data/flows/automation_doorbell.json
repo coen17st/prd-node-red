@@ -7,23 +7,23 @@
         "info": ""
     },
     {
-        "id": "07c18b5759c9d9cc",
+        "id": "f9393a59e792dd16",
         "type": "group",
         "z": "3637eeb0.d96232",
-        "name": "notify tts",
+        "name": "notify",
         "style": {
             "label": true
         },
         "nodes": [
-            "fcdc7ebb75e48ca6",
-            "2783264578fb402f",
-            "849b0848c1cfdceb",
-            "f355c8ecb91dbdcc",
-            "ac79c956f000331d",
-            "752f03e2805c8ca5"
+            "fcea9d7c3451b9d2",
+            "f51721063ea2c363",
+            "a2cfbe3c173fce64",
+            "461637b747fd187e",
+            "e3e3b04c06473832",
+            "9732e1196c40a631"
         ],
         "x": 1614,
-        "y": 399,
+        "y": 219,
         "w": 412,
         "h": 162
     },
@@ -49,38 +49,38 @@
         "h": 162
     },
     {
-        "id": "f9393a59e792dd16",
+        "id": "07c18b5759c9d9cc",
         "type": "group",
         "z": "3637eeb0.d96232",
-        "name": "notify",
+        "name": "notify tts",
         "style": {
             "label": true
         },
         "nodes": [
-            "fcea9d7c3451b9d2",
-            "f51721063ea2c363",
-            "a2cfbe3c173fce64",
-            "461637b747fd187e",
-            "e3e3b04c06473832",
-            "9732e1196c40a631"
+            "fcdc7ebb75e48ca6",
+            "2783264578fb402f",
+            "849b0848c1cfdceb",
+            "f355c8ecb91dbdcc",
+            "ac79c956f000331d",
+            "752f03e2805c8ca5"
         ],
         "x": 1614,
-        "y": 219,
+        "y": 399,
         "w": 412,
         "h": 162
     },
     {
-        "id": "ac79c956f000331d",
+        "id": "e3e3b04c06473832",
         "type": "junction",
         "z": "3637eeb0.d96232",
-        "g": "07c18b5759c9d9cc",
+        "g": "f9393a59e792dd16",
         "x": 1640,
-        "y": 480,
+        "y": 300,
         "wires": [
             [
-                "2783264578fb402f",
-                "fcdc7ebb75e48ca6",
-                "752f03e2805c8ca5"
+                "f51721063ea2c363",
+                "fcea9d7c3451b9d2",
+                "9732e1196c40a631"
             ]
         ]
     },
@@ -100,17 +100,17 @@
         ]
     },
     {
-        "id": "e3e3b04c06473832",
+        "id": "ac79c956f000331d",
         "type": "junction",
         "z": "3637eeb0.d96232",
-        "g": "f9393a59e792dd16",
+        "g": "07c18b5759c9d9cc",
         "x": 1640,
-        "y": 300,
+        "y": 480,
         "wires": [
             [
-                "f51721063ea2c363",
-                "fcea9d7c3451b9d2",
-                "9732e1196c40a631"
+                "2783264578fb402f",
+                "fcdc7ebb75e48ca6",
+                "752f03e2805c8ca5"
             ]
         ]
     },
@@ -139,173 +139,118 @@
         ]
     },
     {
-        "id": "f355c8ecb91dbdcc",
-        "type": "join",
+        "id": "752f03e2805c8ca5",
+        "type": "template",
         "z": "3637eeb0.d96232",
         "g": "07c18b5759c9d9cc",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1890,
-        "y": 480,
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "doorbell_rings",
+        "output": "str",
+        "x": 1750,
+        "y": 520,
         "wires": [
             [
-                "849b0848c1cfdceb"
+                "f355c8ecb91dbdcc"
             ]
         ]
     },
     {
-        "id": "849b0848c1cfdceb",
+        "id": "9732e1196c40a631",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "f9393a59e792dd16",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "door_openend",
+        "output": "str",
+        "x": 1750,
+        "y": 340,
+        "wires": [
+            [
+                "461637b747fd187e"
+            ]
+        ]
+    },
+    {
+        "id": "903fb95c9b8fd4db",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "6a49852c474c3c78",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "doorbell_rings",
+        "output": "str",
+        "x": 1750,
+        "y": 160,
+        "wires": [
+            [
+                "6cf829e06aed396f"
+            ]
+        ]
+    },
+    {
+        "id": "fcea9d7c3451b9d2",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "f9393a59e792dd16",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1730,
+        "y": 300,
+        "wires": [
+            [
+                "461637b747fd187e"
+            ]
+        ]
+    },
+    {
+        "id": "f51721063ea2c363",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "f9393a59e792dd16",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Deurbel",
+        "output": "str",
+        "x": 1730,
+        "y": 260,
+        "wires": [
+            [
+                "461637b747fd187e"
+            ]
+        ]
+    },
+    {
+        "id": "a2cfbe3c173fce64",
         "type": "link out",
         "z": "3637eeb0.d96232",
-        "g": "07c18b5759c9d9cc",
+        "g": "f9393a59e792dd16",
         "name": "link_out_notify_ac_solar_record",
         "mode": "link",
         "links": [
-            "c4660dc11fb0e5b8"
+            "8ed3b0974336e55b"
         ],
         "x": 1985,
-        "y": 480,
+        "y": 300,
         "wires": []
-    },
-    {
-        "id": "2783264578fb402f",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "07c18b5759c9d9cc",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Deurbel",
-        "output": "str",
-        "x": 1730,
-        "y": 440,
-        "wires": [
-            [
-                "f355c8ecb91dbdcc"
-            ]
-        ]
-    },
-    {
-        "id": "fcdc7ebb75e48ca6",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "07c18b5759c9d9cc",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1730,
-        "y": 480,
-        "wires": [
-            [
-                "f355c8ecb91dbdcc"
-            ]
-        ]
-    },
-    {
-        "id": "6cf829e06aed396f",
-        "type": "join",
-        "z": "3637eeb0.d96232",
-        "g": "6a49852c474c3c78",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1890,
-        "y": 120,
-        "wires": [
-            [
-                "68e61dcfb6db1de4"
-            ]
-        ]
-    },
-    {
-        "id": "68e61dcfb6db1de4",
-        "type": "link out",
-        "z": "3637eeb0.d96232",
-        "g": "6a49852c474c3c78",
-        "name": "link_out_notify_doorbell",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716",
-            "aeee8468f3d1b7ad",
-            "c13b2b4d87067c17"
-        ],
-        "x": 1985,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "1cd13aab2c910336",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "6a49852c474c3c78",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Deurbel",
-        "output": "str",
-        "x": 1730,
-        "y": 80,
-        "wires": [
-            [
-                "6cf829e06aed396f"
-            ]
-        ]
-    },
-    {
-        "id": "b90f6aa7cea0d232",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "6a49852c474c3c78",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1730,
-        "y": 120,
-        "wires": [
-            [
-                "6cf829e06aed396f"
-            ]
-        ]
     },
     {
         "id": "461637b747fd187e",
@@ -337,44 +282,10 @@
         ]
     },
     {
-        "id": "a2cfbe3c173fce64",
-        "type": "link out",
-        "z": "3637eeb0.d96232",
-        "g": "f9393a59e792dd16",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1985,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "f51721063ea2c363",
+        "id": "b90f6aa7cea0d232",
         "type": "template",
         "z": "3637eeb0.d96232",
-        "g": "f9393a59e792dd16",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Deurbel",
-        "output": "str",
-        "x": 1730,
-        "y": 260,
-        "wires": [
-            [
-                "461637b747fd187e"
-            ]
-        ]
-    },
-    {
-        "id": "fcea9d7c3451b9d2",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "f9393a59e792dd16",
+        "g": "6a49852c474c3c78",
         "name": "icon",
         "field": "notify.icon",
         "fieldType": "msg",
@@ -383,10 +294,159 @@
         "template": "",
         "output": "str",
         "x": 1730,
-        "y": 300,
+        "y": 120,
         "wires": [
             [
-                "461637b747fd187e"
+                "6cf829e06aed396f"
+            ]
+        ]
+    },
+    {
+        "id": "1cd13aab2c910336",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "6a49852c474c3c78",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Deurbel",
+        "output": "str",
+        "x": 1730,
+        "y": 80,
+        "wires": [
+            [
+                "6cf829e06aed396f"
+            ]
+        ]
+    },
+    {
+        "id": "68e61dcfb6db1de4",
+        "type": "link out",
+        "z": "3637eeb0.d96232",
+        "g": "6a49852c474c3c78",
+        "name": "link_out_notify_doorbell",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716",
+            "aeee8468f3d1b7ad",
+            "c13b2b4d87067c17"
+        ],
+        "x": 1985,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6cf829e06aed396f",
+        "type": "join",
+        "z": "3637eeb0.d96232",
+        "g": "6a49852c474c3c78",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1890,
+        "y": 120,
+        "wires": [
+            [
+                "68e61dcfb6db1de4"
+            ]
+        ]
+    },
+    {
+        "id": "fcdc7ebb75e48ca6",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "07c18b5759c9d9cc",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1730,
+        "y": 480,
+        "wires": [
+            [
+                "f355c8ecb91dbdcc"
+            ]
+        ]
+    },
+    {
+        "id": "2783264578fb402f",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "07c18b5759c9d9cc",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Deurbel",
+        "output": "str",
+        "x": 1730,
+        "y": 440,
+        "wires": [
+            [
+                "f355c8ecb91dbdcc"
+            ]
+        ]
+    },
+    {
+        "id": "849b0848c1cfdceb",
+        "type": "link out",
+        "z": "3637eeb0.d96232",
+        "g": "07c18b5759c9d9cc",
+        "name": "link_out_notify_ac_solar_record",
+        "mode": "link",
+        "links": [
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1985,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f355c8ecb91dbdcc",
+        "type": "join",
+        "z": "3637eeb0.d96232",
+        "g": "07c18b5759c9d9cc",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1890,
+        "y": 480,
+        "wires": [
+            [
+                "849b0848c1cfdceb"
             ]
         ]
     },
@@ -399,7 +459,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.smart-doorbell_button",
+        "entityId": "binary_sensor.smart_doorbell_button",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
@@ -535,7 +595,7 @@
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "switch.smart-doorbell_active",
+        "entity_id": "switch.smart_doorbell_active",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -629,7 +689,7 @@
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "switch.smart-doorbell_active",
+        "entity_id": "switch.smart_doorbell_active",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -671,7 +731,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.smart-doorbell_active"
+            "switch.smart_doorbell_active"
         ],
         "data": "",
         "dataType": "json",
@@ -1098,66 +1158,6 @@
         "wires": [
             [
                 "3e3ba820c0bd1509"
-            ]
-        ]
-    },
-    {
-        "id": "903fb95c9b8fd4db",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "6a49852c474c3c78",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "doorbell_rings",
-        "output": "str",
-        "x": 1750,
-        "y": 160,
-        "wires": [
-            [
-                "6cf829e06aed396f"
-            ]
-        ]
-    },
-    {
-        "id": "9732e1196c40a631",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "f9393a59e792dd16",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "door_openend",
-        "output": "str",
-        "x": 1750,
-        "y": 340,
-        "wires": [
-            [
-                "461637b747fd187e"
-            ]
-        ]
-    },
-    {
-        "id": "752f03e2805c8ca5",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "07c18b5759c9d9cc",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "doorbell_rings",
-        "output": "str",
-        "x": 1750,
-        "y": 520,
-        "wires": [
-            [
-                "f355c8ecb91dbdcc"
             ]
         ]
     },
