@@ -229,7 +229,7 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "{\"brightness_pct\":\"65\"}",
+        "data": "{\"brightness_pct\":\"65\",\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -305,7 +305,7 @@
         "entityId": [
             "light.{{parts.key}}"
         ],
-        "data": "{\"brightness\":\"{{payload.attributes.brightness}}\"}",
+        "data": "{\"brightness\":\"{{payload.attributes.brightness}}\",\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -332,7 +332,7 @@
         "entityId": [
             "light.{{parts.key}}"
         ],
-        "data": "",
+        "data": "{\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
