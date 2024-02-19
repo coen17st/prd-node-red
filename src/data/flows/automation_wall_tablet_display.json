@@ -207,6 +207,41 @@
         "wires": []
     },
     {
+        "id": "5b129927408ed4a8",
+        "type": "server-state-changed",
+        "z": "9f9f94838a3fcd77",
+        "name": "motion in backyard",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.backyard_motion_sensor_01_motion",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [],
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "ec90fab1c8567df8"
+            ],
+            []
+        ]
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
