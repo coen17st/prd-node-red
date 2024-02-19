@@ -46,6 +46,159 @@
         ]
     },
     {
+        "id": "e3fe28933ad4f9bd",
+        "type": "template",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "vacation_mode",
+        "output": "str",
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "c6805d02b9eb3b45",
+        "type": "change",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "action titles",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notify.action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_1",
+                "pt": "msg",
+                "to": "VACATION_MODE_ON",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2",
+                "pt": "msg",
+                "to": "IGNORE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "dc2683f08bbcdd2e",
+        "type": "join",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 990,
+        "y": 160,
+        "wires": [
+            [
+                "b53dc3ab1408794a"
+            ]
+        ]
+    },
+    {
+        "id": "b53dc3ab1408794a",
+        "type": "link out",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "link_out_notify_guest_mode",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 1075,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "65114fbadc1625ff",
+        "type": "template",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vakantiemodus",
+        "output": "str",
+        "x": 790,
+        "y": 120,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
+        "id": "994e86eeb88c5f08",
+        "type": "template",
+        "z": "e98ae3c9db1bd6c3",
+        "g": "bd6a21379a46d377",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 790,
+        "y": 200,
+        "wires": [
+            [
+                "dc2683f08bbcdd2e"
+            ]
+        ]
+    },
+    {
         "id": "505fd0b6095e5990",
         "type": "inject",
         "z": "e98ae3c9db1bd6c3",
@@ -56,7 +209,7 @@
             }
         ],
         "repeat": "",
-        "crontab": "*/6 16-23 * * *",
+        "crontab": "*/10 16-23 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -424,7 +577,7 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "{\"brightness_pct\":\"{{dimlevel}}\"}",
+        "data": "{\"brightness_pct\":\"{{dimlevel}}\",\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -453,7 +606,7 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "",
+        "data": "{\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -675,159 +828,6 @@
         "y": 240,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "994e86eeb88c5f08",
-        "type": "template",
-        "z": "e98ae3c9db1bd6c3",
-        "g": "bd6a21379a46d377",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 790,
-        "y": 200,
-        "wires": [
-            [
-                "dc2683f08bbcdd2e"
-            ]
-        ]
-    },
-    {
-        "id": "65114fbadc1625ff",
-        "type": "template",
-        "z": "e98ae3c9db1bd6c3",
-        "g": "bd6a21379a46d377",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Vakantiemodus",
-        "output": "str",
-        "x": 790,
-        "y": 120,
-        "wires": [
-            [
-                "dc2683f08bbcdd2e"
-            ]
-        ]
-    },
-    {
-        "id": "b53dc3ab1408794a",
-        "type": "link out",
-        "z": "e98ae3c9db1bd6c3",
-        "g": "bd6a21379a46d377",
-        "name": "link_out_notify_guest_mode",
-        "mode": "link",
-        "links": [
-            "c76d311bb4b6991b",
-            "d1753081ba6b4004"
-        ],
-        "x": 1075,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "dc2683f08bbcdd2e",
-        "type": "join",
-        "z": "e98ae3c9db1bd6c3",
-        "g": "bd6a21379a46d377",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "8",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 990,
-        "y": 160,
-        "wires": [
-            [
-                "b53dc3ab1408794a"
-            ]
-        ]
-    },
-    {
-        "id": "c6805d02b9eb3b45",
-        "type": "change",
-        "z": "e98ae3c9db1bd6c3",
-        "g": "bd6a21379a46d377",
-        "name": "action titles",
-        "rules": [
-            {
-                "t": "set",
-                "p": "notify.action_1_title",
-                "pt": "msg",
-                "to": "JA",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "notify.action_2_title",
-                "pt": "msg",
-                "to": "NEE",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "notify.action_1",
-                "pt": "msg",
-                "to": "VACATION_MODE_ON",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "notify.action_2",
-                "pt": "msg",
-                "to": "IGNORE",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 810,
-        "y": 160,
-        "wires": [
-            [
-                "dc2683f08bbcdd2e"
-            ]
-        ]
-    },
-    {
-        "id": "e3fe28933ad4f9bd",
-        "type": "template",
-        "z": "e98ae3c9db1bd6c3",
-        "g": "bd6a21379a46d377",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "vacation_mode",
-        "output": "str",
-        "x": 810,
-        "y": 240,
-        "wires": [
-            [
-                "dc2683f08bbcdd2e"
-            ]
         ]
     },
     {
