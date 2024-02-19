@@ -46,6 +46,159 @@
         ]
     },
     {
+        "id": "b2e6817cd694ba28",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "guest_mode",
+        "output": "str",
+        "x": 1310,
+        "y": 360,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "88a668a5509178e0",
+        "type": "change",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "action titles",
+        "rules": [
+            {
+                "t": "set",
+                "p": "notify.action_1_title",
+                "pt": "msg",
+                "to": "JA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2_title",
+                "pt": "msg",
+                "to": "NEE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_1",
+                "pt": "msg",
+                "to": "GUEST_MODE_ON",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "notify.action_2",
+                "pt": "msg",
+                "to": "IGNORE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1310,
+        "y": 280,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "a3cf07381c3dba65",
+        "type": "join",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1490,
+        "y": 280,
+        "wires": [
+            [
+                "ba0bdc1db6e4e011"
+            ]
+        ]
+    },
+    {
+        "id": "ba0bdc1db6e4e011",
+        "type": "link out",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "link_out_notify_guest_mode",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 1575,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d5d46cfd65fffc12",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Gastmodus",
+        "output": "str",
+        "x": 1290,
+        "y": 240,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
+        "id": "3564790484706ae2",
+        "type": "template",
+        "z": "a7a34028d045deee",
+        "g": "022e7feb1e4ea3ae",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1290,
+        "y": 320,
+        "wires": [
+            [
+                "a3cf07381c3dba65"
+            ]
+        ]
+    },
+    {
         "id": "d2c560378b1b926b",
         "type": "server-state-changed",
         "z": "a7a34028d045deee",
@@ -221,7 +374,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 350,
+        "x": 310,
         "y": 420,
         "wires": [
             []
@@ -587,90 +740,6 @@
         ]
     },
     {
-        "id": "3564790484706ae2",
-        "type": "template",
-        "z": "a7a34028d045deee",
-        "g": "022e7feb1e4ea3ae",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1290,
-        "y": 320,
-        "wires": [
-            [
-                "a3cf07381c3dba65"
-            ]
-        ]
-    },
-    {
-        "id": "d5d46cfd65fffc12",
-        "type": "template",
-        "z": "a7a34028d045deee",
-        "g": "022e7feb1e4ea3ae",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Gastmodus",
-        "output": "str",
-        "x": 1290,
-        "y": 240,
-        "wires": [
-            [
-                "a3cf07381c3dba65"
-            ]
-        ]
-    },
-    {
-        "id": "ba0bdc1db6e4e011",
-        "type": "link out",
-        "z": "a7a34028d045deee",
-        "g": "022e7feb1e4ea3ae",
-        "name": "link_out_notify_guest_mode",
-        "mode": "link",
-        "links": [
-            "c76d311bb4b6991b",
-            "d1753081ba6b4004"
-        ],
-        "x": 1575,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "a3cf07381c3dba65",
-        "type": "join",
-        "z": "a7a34028d045deee",
-        "g": "022e7feb1e4ea3ae",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "8",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1490,
-        "y": 280,
-        "wires": [
-            [
-                "ba0bdc1db6e4e011"
-            ]
-        ]
-    },
-    {
         "id": "6f1338fff56e9176",
         "type": "template",
         "z": "a7a34028d045deee",
@@ -686,75 +755,6 @@
         "wires": [
             [
                 "f7038caa7a76e6f3"
-            ]
-        ]
-    },
-    {
-        "id": "88a668a5509178e0",
-        "type": "change",
-        "z": "a7a34028d045deee",
-        "g": "022e7feb1e4ea3ae",
-        "name": "action titles",
-        "rules": [
-            {
-                "t": "set",
-                "p": "notify.action_1_title",
-                "pt": "msg",
-                "to": "JA",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "notify.action_2_title",
-                "pt": "msg",
-                "to": "NEE",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "notify.action_1",
-                "pt": "msg",
-                "to": "GUEST_MODE_ON",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "notify.action_2",
-                "pt": "msg",
-                "to": "IGNORE",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1310,
-        "y": 280,
-        "wires": [
-            [
-                "a3cf07381c3dba65"
-            ]
-        ]
-    },
-    {
-        "id": "b2e6817cd694ba28",
-        "type": "template",
-        "z": "a7a34028d045deee",
-        "g": "022e7feb1e4ea3ae",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "guest_mode",
-        "output": "str",
-        "x": 1310,
-        "y": 360,
-        "wires": [
-            [
-                "a3cf07381c3dba65"
             ]
         ]
     },
