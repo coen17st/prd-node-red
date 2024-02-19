@@ -114,8 +114,8 @@
         "entityId": [
             "{{data.entity_id}}"
         ],
-        "data": "",
-        "dataType": "jsonata",
+        "data": "{\"transition\":5000}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -141,8 +141,8 @@
         "entityId": [
             "{{data.entity_id}}"
         ],
-        "data": "",
-        "dataType": "jsonata",
+        "data": "{\"transition\":5000}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
