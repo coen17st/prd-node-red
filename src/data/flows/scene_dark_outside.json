@@ -198,7 +198,7 @@
         "entityId": [
             "light.shellydimmer_backyard_string_l"
         ],
-        "data": "{\"brightness_pct\":\"25\"}",
+        "data": "{\"brightness_pct\":\"25\",\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -372,7 +372,7 @@
         "entityId": [
             "light.shellydimmer_living_room"
         ],
-        "data": "",
+        "data": "{\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,

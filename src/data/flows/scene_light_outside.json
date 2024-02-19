@@ -117,7 +117,7 @@
         "entityId": [
             "light.shellydimmer_backyard_string_l"
         ],
-        "data": "",
+        "data": "{\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,

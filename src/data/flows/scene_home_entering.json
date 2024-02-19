@@ -41,6 +41,60 @@
         ]
     },
     {
+        "id": "4d43c0c59596c396",
+        "type": "template",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 2070,
+        "y": 340,
+        "wires": [
+            [
+                "52f21d3060c57706"
+            ]
+        ]
+    },
+    {
+        "id": "7063678cde99b775",
+        "type": "template",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Verlichting",
+        "output": "str",
+        "x": 2070,
+        "y": 260,
+        "wires": [
+            [
+                "52f21d3060c57706"
+            ]
+        ]
+    },
+    {
+        "id": "5e72b91e3ad4066d",
+        "type": "link out",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "link_out_notify_home_entering",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 2325,
+        "y": 300,
+        "wires": []
+    },
+    {
         "id": "52f21d3060c57706",
         "type": "join",
         "z": "c0da8379.b0dd3",
@@ -70,60 +124,6 @@
         ]
     },
     {
-        "id": "5e72b91e3ad4066d",
-        "type": "link out",
-        "z": "c0da8379.b0dd3",
-        "g": "47af9932f18884cc",
-        "name": "link_out_notify_home_entering",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 2325,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "7063678cde99b775",
-        "type": "template",
-        "z": "c0da8379.b0dd3",
-        "g": "47af9932f18884cc",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Verlichting",
-        "output": "str",
-        "x": 2070,
-        "y": 260,
-        "wires": [
-            [
-                "52f21d3060c57706"
-            ]
-        ]
-    },
-    {
-        "id": "4d43c0c59596c396",
-        "type": "template",
-        "z": "c0da8379.b0dd3",
-        "g": "47af9932f18884cc",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 2070,
-        "y": 340,
-        "wires": [
-            [
-                "52f21d3060c57706"
-            ]
-        ]
-    },
-    {
         "id": "9e995be6.7976b8",
         "type": "api-call-service",
         "z": "c0da8379.b0dd3",
@@ -138,7 +138,7 @@
         "entityId": [
             "light.shellydimmer_backyard_string_l"
         ],
-        "data": "{\"brightness_pct\":25}",
+        "data": "{\"brightness_pct\":25,\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -1103,7 +1103,7 @@
         "entityId": [
             "light.shellydimmer_living_room"
         ],
-        "data": "{\"brightness\":80}",
+        "data": "{\"brightness\":80,\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
