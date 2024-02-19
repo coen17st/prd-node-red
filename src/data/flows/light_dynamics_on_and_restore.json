@@ -34,7 +34,7 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "{\"brightness\":\"{{payload.attributes.brightness}}\"}",
+        "data": "{\"brightness\":\"{{payload.attributes.brightness}}\",\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -94,7 +94,7 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "",
+        "data": "{\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -258,7 +258,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"entity_id\":\"{{payload.entity_id}}\",\"brightness\":255}",
+        "data": "{\"entity_id\":\"{{payload.entity_id}}\",\"brightness_pct\":100,\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
