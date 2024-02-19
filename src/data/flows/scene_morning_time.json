@@ -21,7 +21,7 @@
         "id": "88db02dd685950d0",
         "type": "api-call-service",
         "z": "6af65daafa363be0",
-        "name": "turn off light front door ",
+        "name": "turn off light frontdoor ",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -59,7 +59,7 @@
         "entityId": [
             "light.shellydimmer_backyard_string_l"
         ],
-        "data": "",
+        "data": "{\"transition\":5000}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
