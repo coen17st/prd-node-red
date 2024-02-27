@@ -105,7 +105,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.knmi_home_waarschuwing",
+        "entityId": "binary_sensor.knmi_warning",
         "entityIdType": "exact",
         "outputInitially": true,
         "stateType": "str",
