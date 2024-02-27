@@ -46,19 +46,19 @@
         ]
     },
     {
-        "id": "b334886da3d39e67",
+        "id": "8f7ef08c7aea9511",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Het Infrarood paneel in de souterrain stond nog aan en is nu automatisch uitgeschakeld",
+        "template": "",
         "output": "str",
-        "x": 1320,
-        "y": 180,
+        "x": 1310,
+        "y": 100,
         "wires": [
             [
                 "98c964aa61c96938"
@@ -66,24 +66,38 @@
         ]
     },
     {
-        "id": "87b3630fa6681255",
+        "id": "51bb0a67f9282d5f",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "infrared_panel",
+        "template": "Infrarood paneel",
         "output": "str",
-        "x": 1330,
-        "y": 140,
+        "x": 1310,
+        "y": 60,
         "wires": [
             [
                 "98c964aa61c96938"
             ]
         ]
+    },
+    {
+        "id": "dfe89d053727bf74",
+        "type": "link out",
+        "z": "d7c35c04cc0c5b68",
+        "g": "36dc1da28ea112aa",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1605,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "98c964aa61c96938",
@@ -115,33 +129,19 @@
         ]
     },
     {
-        "id": "dfe89d053727bf74",
-        "type": "link out",
-        "z": "d7c35c04cc0c5b68",
-        "g": "36dc1da28ea112aa",
-        "name": "link_out_notify_infrared_panel",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1605,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "51bb0a67f9282d5f",
+        "id": "87b3630fa6681255",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Infrarood paneel",
+        "template": "infrared_panel",
         "output": "str",
-        "x": 1310,
-        "y": 60,
+        "x": 1330,
+        "y": 140,
         "wires": [
             [
                 "98c964aa61c96938"
@@ -149,19 +149,19 @@
         ]
     },
     {
-        "id": "8f7ef08c7aea9511",
+        "id": "b334886da3d39e67",
         "type": "template",
         "z": "d7c35c04cc0c5b68",
         "g": "36dc1da28ea112aa",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "Het Infrarood paneel in de souterrain stond nog aan en is nu automatisch uitgeschakeld",
         "output": "str",
-        "x": 1310,
-        "y": 100,
+        "x": 1320,
+        "y": 180,
         "wires": [
             [
                 "98c964aa61c96938"

@@ -20,12 +20,13 @@
             "fdba7cd037a9da5a",
             "9a02e08c1760e584",
             "ef17b4eb0dc0871b",
-            "c7b88c5f533c105b"
+            "c7b88c5f533c105b",
+            "8ca7529cee95086c"
         ],
         "x": 814,
         "y": 139,
         "w": 432,
-        "h": 162
+        "h": 202
     },
     {
         "id": "ef17b4eb0dc0871b",
@@ -38,29 +39,75 @@
             [
                 "8bda876328e49e67",
                 "af6a4d51c1e99b4e",
-                "c7b88c5f533c105b"
+                "c7b88c5f533c105b",
+                "8ca7529cee95086c"
             ]
         ]
     },
     {
-        "id": "af6a4d51c1e99b4e",
+        "id": "c7b88c5f533c105b",
         "type": "template",
         "z": "cde79c08.e4f488",
         "g": "60a8ffbec987c377",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "firealarm",
         "output": "str",
-        "x": 950,
-        "y": 220,
+        "x": 970,
+        "y": 260,
         "wires": [
             [
                 "9a02e08c1760e584"
             ]
         ]
+    },
+    {
+        "id": "9a02e08c1760e584",
+        "type": "join",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1110,
+        "y": 200,
+        "wires": [
+            [
+                "fdba7cd037a9da5a"
+            ]
+        ]
+    },
+    {
+        "id": "fdba7cd037a9da5a",
+        "type": "link out",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad",
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1205,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "8bda876328e49e67",
@@ -83,64 +130,19 @@
         ]
     },
     {
-        "id": "fdba7cd037a9da5a",
-        "type": "link out",
-        "z": "cde79c08.e4f488",
-        "g": "60a8ffbec987c377",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad",
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 1205,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "9a02e08c1760e584",
-        "type": "join",
-        "z": "cde79c08.e4f488",
-        "g": "60a8ffbec987c377",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1110,
-        "y": 200,
-        "wires": [
-            [
-                "fdba7cd037a9da5a"
-            ]
-        ]
-    },
-    {
-        "id": "c7b88c5f533c105b",
+        "id": "af6a4d51c1e99b4e",
         "type": "template",
         "z": "cde79c08.e4f488",
         "g": "60a8ffbec987c377",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "firealarm",
+        "template": "",
         "output": "str",
-        "x": 970,
-        "y": 260,
+        "x": 950,
+        "y": 220,
         "wires": [
             [
                 "9a02e08c1760e584"
@@ -954,12 +956,34 @@
         "id": "e426c9cc0865f723",
         "type": "link out",
         "z": "cde79c08.e4f488",
-        "name": "smoke_co_alarm",
+        "name": "link_out_light_dynamics_1",
         "mode": "link",
-        "links": [],
+        "links": [
+            "43cbfb522e72cbe5"
+        ],
         "x": 1125,
         "y": 440,
         "wires": []
+    },
+    {
+        "id": "8ca7529cee95086c",
+        "type": "template",
+        "z": "cde79c08.e4f488",
+        "g": "60a8ffbec987c377",
+        "name": "notification channel",
+        "field": "notify.channel",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Warning",
+        "output": "str",
+        "x": 990,
+        "y": 300,
+        "wires": [
+            [
+                "9a02e08c1760e584"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",

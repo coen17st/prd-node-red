@@ -42,6 +42,60 @@
         ]
     },
     {
+        "id": "72ef2fc0d180fcea",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1230,
+        "y": 280,
+        "wires": [
+            [
+                "8a1366db3f33e113"
+            ]
+        ]
+    },
+    {
+        "id": "343f37d7fe9484fd",
+        "type": "template",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Verwarming",
+        "output": "str",
+        "x": 1230,
+        "y": 240,
+        "wires": [
+            [
+                "8a1366db3f33e113"
+            ]
+        ]
+    },
+    {
+        "id": "30a8a878728a6a2b",
+        "type": "link out",
+        "z": "eb1939ba1b7e9b73",
+        "g": "725af18957967e99",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 1445,
+        "y": 260,
+        "wires": []
+    },
+    {
         "id": "8a1366db3f33e113",
         "type": "join",
         "z": "eb1939ba1b7e9b73",
@@ -67,60 +121,6 @@
         "wires": [
             [
                 "30a8a878728a6a2b"
-            ]
-        ]
-    },
-    {
-        "id": "30a8a878728a6a2b",
-        "type": "link out",
-        "z": "eb1939ba1b7e9b73",
-        "g": "725af18957967e99",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "a97f87cfab413716"
-        ],
-        "x": 1445,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "343f37d7fe9484fd",
-        "type": "template",
-        "z": "eb1939ba1b7e9b73",
-        "g": "725af18957967e99",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Verwarming",
-        "output": "str",
-        "x": 1230,
-        "y": 240,
-        "wires": [
-            [
-                "8a1366db3f33e113"
-            ]
-        ]
-    },
-    {
-        "id": "72ef2fc0d180fcea",
-        "type": "template",
-        "z": "eb1939ba1b7e9b73",
-        "g": "725af18957967e99",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": ":door:",
-        "output": "str",
-        "x": 1230,
-        "y": 280,
-        "wires": [
-            [
-                "8a1366db3f33e113"
             ]
         ]
     },

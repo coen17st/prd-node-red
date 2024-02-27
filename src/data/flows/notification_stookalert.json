@@ -46,6 +46,130 @@
         ]
     },
     {
+        "id": "ad8e3a3f408efd86",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "g": "9d6561fb99238a4d",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "stookalert",
+        "output": "str",
+        "x": 1330,
+        "y": 280,
+        "wires": [
+            [
+                "6cdaa7e9c55994da"
+            ]
+        ]
+    },
+    {
+        "id": "48b102061eef4776",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "g": "9d6561fb99238a4d",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{secondary_information}}",
+        "output": "str",
+        "x": 1320,
+        "y": 200,
+        "wires": [
+            [
+                "6cdaa7e9c55994da"
+            ]
+        ]
+    },
+    {
+        "id": "6cdaa7e9c55994da",
+        "type": "join",
+        "z": "b1b994b3d43d6aad",
+        "g": "9d6561fb99238a4d",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1470,
+        "y": 200,
+        "wires": [
+            [
+                "c6bc1abd0ea4d3e7"
+            ]
+        ]
+    },
+    {
+        "id": "c6bc1abd0ea4d3e7",
+        "type": "link out",
+        "z": "b1b994b3d43d6aad",
+        "g": "9d6561fb99238a4d",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 1565,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "194df75621104155",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "g": "9d6561fb99238a4d",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Stookalert",
+        "output": "str",
+        "x": 1310,
+        "y": 160,
+        "wires": [
+            [
+                "6cdaa7e9c55994da"
+            ]
+        ]
+    },
+    {
+        "id": "5273660ff2a42a63",
+        "type": "template",
+        "z": "b1b994b3d43d6aad",
+        "g": "9d6561fb99238a4d",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1310,
+        "y": 240,
+        "wires": [
+            [
+                "6cdaa7e9c55994da"
+            ]
+        ]
+    },
+    {
         "id": "277a8323827b9390",
         "type": "comment",
         "z": "b1b994b3d43d6aad",
@@ -238,130 +362,6 @@
             [
                 "8474d1caa427cb1a",
                 "a087dd5873c41eaf"
-            ]
-        ]
-    },
-    {
-        "id": "5273660ff2a42a63",
-        "type": "template",
-        "z": "b1b994b3d43d6aad",
-        "g": "9d6561fb99238a4d",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1310,
-        "y": 240,
-        "wires": [
-            [
-                "6cdaa7e9c55994da"
-            ]
-        ]
-    },
-    {
-        "id": "194df75621104155",
-        "type": "template",
-        "z": "b1b994b3d43d6aad",
-        "g": "9d6561fb99238a4d",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Stookalert",
-        "output": "str",
-        "x": 1310,
-        "y": 160,
-        "wires": [
-            [
-                "6cdaa7e9c55994da"
-            ]
-        ]
-    },
-    {
-        "id": "c6bc1abd0ea4d3e7",
-        "type": "link out",
-        "z": "b1b994b3d43d6aad",
-        "g": "9d6561fb99238a4d",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad"
-        ],
-        "x": 1565,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "6cdaa7e9c55994da",
-        "type": "join",
-        "z": "b1b994b3d43d6aad",
-        "g": "9d6561fb99238a4d",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1470,
-        "y": 200,
-        "wires": [
-            [
-                "c6bc1abd0ea4d3e7"
-            ]
-        ]
-    },
-    {
-        "id": "48b102061eef4776",
-        "type": "template",
-        "z": "b1b994b3d43d6aad",
-        "g": "9d6561fb99238a4d",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{secondary_information}}",
-        "output": "str",
-        "x": 1320,
-        "y": 200,
-        "wires": [
-            [
-                "6cdaa7e9c55994da"
-            ]
-        ]
-    },
-    {
-        "id": "ad8e3a3f408efd86",
-        "type": "template",
-        "z": "b1b994b3d43d6aad",
-        "g": "9d6561fb99238a4d",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "stookalert",
-        "output": "str",
-        "x": 1330,
-        "y": 280,
-        "wires": [
-            [
-                "6cdaa7e9c55994da"
             ]
         ]
     },

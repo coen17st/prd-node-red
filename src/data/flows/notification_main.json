@@ -20,7 +20,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -57,7 +57,8 @@
             "dfe89d053727bf74",
             "59c627d5f35a1bc2",
             "d43e56b2e0de8b6e",
-            "b41a40c1e135e55c"
+            "b41a40c1e135e55c",
+            "ac254d4235d71700"
         ],
         "x": 195,
         "y": 140,
@@ -76,7 +77,8 @@
             "68e61dcfb6db1de4",
             "ef18c5c2564a7e77",
             "c6bc1abd0ea4d3e7",
-            "d43e56b2e0de8b6e"
+            "d43e56b2e0de8b6e",
+            "ac254d4235d71700"
         ],
         "x": 195,
         "y": 200,
@@ -109,7 +111,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,

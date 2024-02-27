@@ -78,7 +78,7 @@
         "type": "link out",
         "z": "2437e768.8e34d8",
         "g": "3bf0bc8959f8a48e",
-        "name": "link_out_notify_ac_solar_record",
+        "name": "link_out_notify_1",
         "mode": "link",
         "links": [
             "8ed3b0974336e55b",

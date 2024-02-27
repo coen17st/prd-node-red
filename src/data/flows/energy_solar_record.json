@@ -8,6 +8,26 @@
         "env": []
     },
     {
+        "id": "a51faa8090a268f4",
+        "type": "group",
+        "z": "99c1372046e45da7",
+        "name": "notification_sensors",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59d4d6719e262bbb",
+            "e8714993e53c2d5e",
+            "0561341e4ea54205",
+            "29ad6bfc437abec2",
+            "afc68deb5ab5e4be"
+        ],
+        "x": 1354,
+        "y": 339,
+        "w": 872,
+        "h": 82
+    },
+    {
         "id": "b268fa78a872617d",
         "type": "group",
         "z": "99c1372046e45da7",
@@ -30,26 +50,6 @@
         "h": 202
     },
     {
-        "id": "a51faa8090a268f4",
-        "type": "group",
-        "z": "99c1372046e45da7",
-        "name": "notification_sensors",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "59d4d6719e262bbb",
-            "e8714993e53c2d5e",
-            "0561341e4ea54205",
-            "29ad6bfc437abec2",
-            "afc68deb5ab5e4be"
-        ],
-        "x": 1354,
-        "y": 339,
-        "w": 872,
-        "h": 82
-    },
-    {
         "id": "9655b1065753069f",
         "type": "junction",
         "z": "99c1372046e45da7",
@@ -66,63 +66,133 @@
         ]
     },
     {
-        "id": "7b9d796ac83c32bf",
-        "type": "join",
+        "id": "451f25b73596ddf8",
+        "type": "template",
         "z": "99c1372046e45da7",
         "g": "b268fa78a872617d",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1630,
-        "y": 200,
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "solar_record",
+        "output": "str",
+        "x": 1490,
+        "y": 280,
         "wires": [
             [
-                "8c93b438701888a6"
+                "7b9d796ac83c32bf"
             ]
         ]
     },
     {
-        "id": "8c93b438701888a6",
+        "id": "afc68deb5ab5e4be",
         "type": "link out",
         "z": "99c1372046e45da7",
-        "g": "b268fa78a872617d",
-        "name": "link_out_notify_ac_solar_record",
+        "g": "a51faa8090a268f4",
+        "name": "notification",
         "mode": "link",
         "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
+            "60e14e33a793f50d"
         ],
-        "x": 1725,
-        "y": 200,
+        "x": 2185,
+        "y": 380,
         "wires": []
     },
     {
-        "id": "781d3a645a5e3130",
+        "id": "29ad6bfc437abec2",
         "type": "template",
         "z": "99c1372046e45da7",
-        "g": "b268fa78a872617d",
-        "name": "message",
-        "field": "notify.message",
+        "g": "a51faa8090a268f4",
+        "name": "notification_level",
+        "field": "notification_level",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Er is een nieuw zonne-energie dagrecord gemeten vandaag.\\n\\nOud: {{data.state}} {{data.attributes.unit_of_measurement}} op {{data.attributes.date}}\\nNieuw: {{payload.value}} {{data.attributes.unit_of_measurement}} op {{date}}",
+        "template": "info",
+        "output": "str",
+        "x": 2050,
+        "y": 380,
+        "wires": [
+            [
+                "afc68deb5ab5e4be"
+            ]
+        ]
+    },
+    {
+        "id": "0561341e4ea54205",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "garbage",
+        "output": "str",
+        "x": 1890,
+        "y": 380,
+        "wires": [
+            [
+                "29ad6bfc437abec2"
+            ]
+        ]
+    },
+    {
+        "id": "e8714993e53c2d5e",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is een nieuw zonne-energie dagrecord gemeten vandaag",
+        "output": "str",
+        "x": 1710,
+        "y": 380,
+        "wires": [
+            [
+                "0561341e4ea54205"
+            ]
+        ]
+    },
+    {
+        "id": "59d4d6719e262bbb",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "a51faa8090a268f4",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Oud: {{data.state}} {{data.attributes.unit_of_measurement}} op {{data.attributes.date}}\nNieuw: {{payload.value}} {{data.attributes.unit_of_measurement}} op {{date}}",
         "output": "str",
         "x": 1480,
-        "y": 200,
+        "y": 380,
+        "wires": [
+            [
+                "e8714993e53c2d5e"
+            ]
+        ]
+    },
+    {
+        "id": "148de36202032274",
+        "type": "template",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1470,
+        "y": 240,
         "wires": [
             [
                 "7b9d796ac83c32bf"
@@ -150,22 +220,66 @@
         ]
     },
     {
-        "id": "148de36202032274",
+        "id": "781d3a645a5e3130",
         "type": "template",
         "z": "99c1372046e45da7",
         "g": "b268fa78a872617d",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": ":door:",
+        "template": "Er is een nieuw zonne-energie dagrecord gemeten vandaag.\\n\\nOud: {{data.state}} {{data.attributes.unit_of_measurement}} op {{data.attributes.date}}\\nNieuw: {{payload.value}} {{data.attributes.unit_of_measurement}} op {{date}}",
         "output": "str",
-        "x": 1470,
-        "y": 240,
+        "x": 1480,
+        "y": 200,
         "wires": [
             [
                 "7b9d796ac83c32bf"
+            ]
+        ]
+    },
+    {
+        "id": "8c93b438701888a6",
+        "type": "link out",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1725,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7b9d796ac83c32bf",
+        "type": "join",
+        "z": "99c1372046e45da7",
+        "g": "b268fa78a872617d",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1630,
+        "y": 200,
+        "wires": [
+            [
+                "8c93b438701888a6"
             ]
         ]
     },
@@ -375,120 +489,6 @@
                 "122d704723bc1cb0",
                 "9655b1065753069f",
                 "59d4d6719e262bbb"
-            ]
-        ]
-    },
-    {
-        "id": "59d4d6719e262bbb",
-        "type": "template",
-        "z": "99c1372046e45da7",
-        "g": "a51faa8090a268f4",
-        "name": "secondary information",
-        "field": "secondary_information",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Oud: {{data.state}} {{data.attributes.unit_of_measurement}} op {{data.attributes.date}}\nNieuw: {{payload.value}} {{data.attributes.unit_of_measurement}} op {{date}}",
-        "output": "str",
-        "x": 1480,
-        "y": 380,
-        "wires": [
-            [
-                "e8714993e53c2d5e"
-            ]
-        ]
-    },
-    {
-        "id": "e8714993e53c2d5e",
-        "type": "template",
-        "z": "99c1372046e45da7",
-        "g": "a51faa8090a268f4",
-        "name": "primary information",
-        "field": "primary_information",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Er is een nieuw zonne-energie dagrecord gemeten vandaag",
-        "output": "str",
-        "x": 1710,
-        "y": 380,
-        "wires": [
-            [
-                "0561341e4ea54205"
-            ]
-        ]
-    },
-    {
-        "id": "0561341e4ea54205",
-        "type": "template",
-        "z": "99c1372046e45da7",
-        "g": "a51faa8090a268f4",
-        "name": "topic",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "garbage",
-        "output": "str",
-        "x": 1890,
-        "y": 380,
-        "wires": [
-            [
-                "29ad6bfc437abec2"
-            ]
-        ]
-    },
-    {
-        "id": "29ad6bfc437abec2",
-        "type": "template",
-        "z": "99c1372046e45da7",
-        "g": "a51faa8090a268f4",
-        "name": "notification_level",
-        "field": "notification_level",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "info",
-        "output": "str",
-        "x": 2050,
-        "y": 380,
-        "wires": [
-            [
-                "afc68deb5ab5e4be"
-            ]
-        ]
-    },
-    {
-        "id": "afc68deb5ab5e4be",
-        "type": "link out",
-        "z": "99c1372046e45da7",
-        "g": "a51faa8090a268f4",
-        "name": "notification",
-        "mode": "link",
-        "links": [
-            "60e14e33a793f50d"
-        ],
-        "x": 2185,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "451f25b73596ddf8",
-        "type": "template",
-        "z": "99c1372046e45da7",
-        "g": "b268fa78a872617d",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "solar_record",
-        "output": "str",
-        "x": 1490,
-        "y": 280,
-        "wires": [
-            [
-                "7b9d796ac83c32bf"
             ]
         ]
     },

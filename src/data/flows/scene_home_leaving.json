@@ -7,46 +7,6 @@
         "info": ""
     },
     {
-        "id": "cc3f4f06d9ee1050",
-        "type": "group",
-        "z": "8aa6edec.5a013",
-        "name": "notify",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "8bd431aac8edba25",
-            "1d9212ada487b166",
-            "2d9c5a51a0d3d65a",
-            "934778f06d5ff810",
-            "11441b9d4ec597d9"
-        ],
-        "x": 1594,
-        "y": 459,
-        "w": 412,
-        "h": 162
-    },
-    {
-        "id": "9c946ef945c199e5",
-        "type": "group",
-        "z": "8aa6edec.5a013",
-        "name": "notify",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "60a9200995b666e2",
-            "254201c717321a67",
-            "37c73ac2e71d9a61",
-            "f7c20be07a75c04e",
-            "662879feb30cc5fa"
-        ],
-        "x": 1594,
-        "y": 39,
-        "w": 412,
-        "h": 162
-    },
-    {
         "id": "14187342a7b09482",
         "type": "group",
         "z": "8aa6edec.5a013",
@@ -69,32 +29,44 @@
         "h": 202
     },
     {
-        "id": "11441b9d4ec597d9",
-        "type": "junction",
+        "id": "9c946ef945c199e5",
+        "type": "group",
         "z": "8aa6edec.5a013",
-        "g": "cc3f4f06d9ee1050",
-        "x": 1620,
-        "y": 540,
-        "wires": [
-            [
-                "1d9212ada487b166",
-                "8bd431aac8edba25"
-            ]
-        ]
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "60a9200995b666e2",
+            "254201c717321a67",
+            "37c73ac2e71d9a61",
+            "f7c20be07a75c04e",
+            "662879feb30cc5fa"
+        ],
+        "x": 1594,
+        "y": 39,
+        "w": 412,
+        "h": 162
     },
     {
-        "id": "662879feb30cc5fa",
-        "type": "junction",
+        "id": "cc3f4f06d9ee1050",
+        "type": "group",
         "z": "8aa6edec.5a013",
-        "g": "9c946ef945c199e5",
-        "x": 1620,
-        "y": 120,
-        "wires": [
-            [
-                "254201c717321a67",
-                "60a9200995b666e2"
-            ]
-        ]
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "8bd431aac8edba25",
+            "1d9212ada487b166",
+            "2d9c5a51a0d3d65a",
+            "934778f06d5ff810",
+            "11441b9d4ec597d9"
+        ],
+        "x": 1594,
+        "y": 459,
+        "w": 412,
+        "h": 162
     },
     {
         "id": "83e460c17170065f",
@@ -113,224 +85,72 @@
         ]
     },
     {
-        "id": "934778f06d5ff810",
-        "type": "join",
-        "z": "8aa6edec.5a013",
-        "g": "cc3f4f06d9ee1050",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1870,
-        "y": 540,
-        "wires": [
-            [
-                "2d9c5a51a0d3d65a"
-            ]
-        ]
-    },
-    {
-        "id": "2d9c5a51a0d3d65a",
-        "type": "link out",
-        "z": "8aa6edec.5a013",
-        "g": "cc3f4f06d9ee1050",
-        "name": "link_out_notify_home_leaving_2",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1965,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "1d9212ada487b166",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "g": "cc3f4f06d9ee1050",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Gastmodus",
-        "output": "str",
-        "x": 1710,
-        "y": 500,
-        "wires": [
-            [
-                "934778f06d5ff810"
-            ]
-        ]
-    },
-    {
-        "id": "8bd431aac8edba25",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "g": "cc3f4f06d9ee1050",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1710,
-        "y": 580,
-        "wires": [
-            [
-                "934778f06d5ff810"
-            ]
-        ]
-    },
-    {
-        "id": "f7c20be07a75c04e",
-        "type": "join",
+        "id": "662879feb30cc5fa",
+        "type": "junction",
         "z": "8aa6edec.5a013",
         "g": "9c946ef945c199e5",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1870,
+        "x": 1620,
         "y": 120,
         "wires": [
             [
-                "37c73ac2e71d9a61"
+                "254201c717321a67",
+                "60a9200995b666e2"
             ]
         ]
     },
     {
-        "id": "37c73ac2e71d9a61",
-        "type": "link out",
+        "id": "11441b9d4ec597d9",
+        "type": "junction",
         "z": "8aa6edec.5a013",
-        "g": "9c946ef945c199e5",
-        "name": "link_out_notify_home_leaving_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1965,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "254201c717321a67",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "g": "9c946ef945c199e5",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Beveiliging",
-        "output": "str",
-        "x": 1710,
-        "y": 80,
+        "g": "cc3f4f06d9ee1050",
+        "x": 1620,
+        "y": 540,
         "wires": [
             [
-                "f7c20be07a75c04e"
+                "1d9212ada487b166",
+                "8bd431aac8edba25"
             ]
         ]
     },
     {
-        "id": "60a9200995b666e2",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "g": "9c946ef945c199e5",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1710,
-        "y": 160,
-        "wires": [
-            [
-                "f7c20be07a75c04e"
-            ]
-        ]
-    },
-    {
-        "id": "19cfd22b49a2e356",
+        "id": "c8db6380b138fd4e",
         "type": "template",
         "z": "8aa6edec.5a013",
         "g": "14187342a7b09482",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
         "output": "str",
-        "x": 1710,
-        "y": 400,
-        "wires": [
-            [
-                "d512fe1ba0adbf42"
-            ]
-        ]
-    },
-    {
-        "id": "8aa74b4cb48558f8",
-        "type": "template",
-        "z": "8aa6edec.5a013",
-        "g": "14187342a7b09482",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Verlichting",
-        "output": "str",
-        "x": 1710,
-        "y": 280,
-        "wires": [
-            [
-                "d512fe1ba0adbf42"
-            ]
-        ]
-    },
-    {
-        "id": "3bdaf73ce37b7397",
-        "type": "link out",
-        "z": "8aa6edec.5a013",
-        "g": "14187342a7b09482",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "a97f87cfab413716"
-        ],
-        "x": 1965,
+        "x": 1720,
         "y": 320,
-        "wires": []
+        "wires": [
+            [
+                "d512fe1ba0adbf42"
+            ]
+        ]
+    },
+    {
+        "id": "1b8772493fd3aa94",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "14187342a7b09482",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "lights",
+        "output": "str",
+        "x": 1730,
+        "y": 360,
+        "wires": [
+            [
+                "d512fe1ba0adbf42"
+            ]
+        ]
     },
     {
         "id": "d512fe1ba0adbf42",
@@ -362,19 +182,33 @@
         ]
     },
     {
-        "id": "1b8772493fd3aa94",
+        "id": "3bdaf73ce37b7397",
+        "type": "link out",
+        "z": "8aa6edec.5a013",
+        "g": "14187342a7b09482",
+        "name": "link_out_notify_2",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 1965,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "8aa74b4cb48558f8",
         "type": "template",
         "z": "8aa6edec.5a013",
         "g": "14187342a7b09482",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "lights",
+        "template": "Verlichting",
         "output": "str",
-        "x": 1730,
-        "y": 360,
+        "x": 1710,
+        "y": 280,
         "wires": [
             [
                 "d512fe1ba0adbf42"
@@ -382,22 +216,188 @@
         ]
     },
     {
-        "id": "c8db6380b138fd4e",
+        "id": "19cfd22b49a2e356",
         "type": "template",
         "z": "8aa6edec.5a013",
         "g": "14187342a7b09482",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{{friendly_name}}} verlichting stond nog aan en is nu automatisch uitgeschakeld.",
+        "template": "",
         "output": "str",
-        "x": 1720,
-        "y": 320,
+        "x": 1710,
+        "y": 400,
         "wires": [
             [
                 "d512fe1ba0adbf42"
+            ]
+        ]
+    },
+    {
+        "id": "60a9200995b666e2",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1710,
+        "y": 160,
+        "wires": [
+            [
+                "f7c20be07a75c04e"
+            ]
+        ]
+    },
+    {
+        "id": "254201c717321a67",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beveiliging",
+        "output": "str",
+        "x": 1710,
+        "y": 80,
+        "wires": [
+            [
+                "f7c20be07a75c04e"
+            ]
+        ]
+    },
+    {
+        "id": "37c73ac2e71d9a61",
+        "type": "link out",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1965,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f7c20be07a75c04e",
+        "type": "join",
+        "z": "8aa6edec.5a013",
+        "g": "9c946ef945c199e5",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1870,
+        "y": 120,
+        "wires": [
+            [
+                "37c73ac2e71d9a61"
+            ]
+        ]
+    },
+    {
+        "id": "8bd431aac8edba25",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1710,
+        "y": 580,
+        "wires": [
+            [
+                "934778f06d5ff810"
+            ]
+        ]
+    },
+    {
+        "id": "1d9212ada487b166",
+        "type": "template",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Gastmodus",
+        "output": "str",
+        "x": 1710,
+        "y": 500,
+        "wires": [
+            [
+                "934778f06d5ff810"
+            ]
+        ]
+    },
+    {
+        "id": "2d9c5a51a0d3d65a",
+        "type": "link out",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "link_out_notify_3",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1965,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "934778f06d5ff810",
+        "type": "join",
+        "z": "8aa6edec.5a013",
+        "g": "cc3f4f06d9ee1050",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1870,
+        "y": 540,
+        "wires": [
+            [
+                "2d9c5a51a0d3d65a"
             ]
         ]
     },

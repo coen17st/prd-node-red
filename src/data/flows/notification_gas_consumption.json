@@ -45,6 +45,129 @@
         ]
     },
     {
+        "id": "fdc4c2eef34c0a15",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "gas",
+        "output": "str",
+        "x": 1030,
+        "y": 220,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
+    },
+    {
+        "id": "5db5047bb3f69eb7",
+        "type": "join",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1170,
+        "y": 140,
+        "wires": [
+            [
+                "b9f5925e88c3b14b"
+            ]
+        ]
+    },
+    {
+        "id": "b9f5925e88c3b14b",
+        "type": "link out",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1265,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "bdce8718917c4dcb",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Gas",
+        "output": "str",
+        "x": 1010,
+        "y": 100,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
+    },
+    {
+        "id": "253b2fc1dbf20ad4",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1010,
+        "y": 180,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
+    },
+    {
+        "id": "496caddb.5ba724",
+        "type": "template",
+        "z": "98a989e.d6bca78",
+        "g": "7b3e33afc7e5d51f",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is {{payload}}m³ gas gemeten en niemand is aanwezig, controleer of het gas of verwarming is uitgezet.",
+        "output": "str",
+        "x": 1020,
+        "y": 140,
+        "wires": [
+            [
+                "5db5047bb3f69eb7"
+            ]
+        ]
+    },
+    {
         "id": "6429429b.d1375c",
         "type": "server-state-changed",
         "z": "98a989e.d6bca78",
@@ -203,26 +326,6 @@
         ]
     },
     {
-        "id": "496caddb.5ba724",
-        "type": "template",
-        "z": "98a989e.d6bca78",
-        "g": "7b3e33afc7e5d51f",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Er is {{payload}}m³ gas gemeten en niemand is aanwezig, controleer of het gas of verwarming is uitgezet.",
-        "output": "str",
-        "x": 1020,
-        "y": 140,
-        "wires": [
-            [
-                "5db5047bb3f69eb7"
-            ]
-        ]
-    },
-    {
         "id": "fac5f99c.1b7438",
         "type": "comment",
         "z": "98a989e.d6bca78",
@@ -231,109 +334,6 @@
         "x": 190,
         "y": 40,
         "wires": []
-    },
-    {
-        "id": "253b2fc1dbf20ad4",
-        "type": "template",
-        "z": "98a989e.d6bca78",
-        "g": "7b3e33afc7e5d51f",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1010,
-        "y": 180,
-        "wires": [
-            [
-                "5db5047bb3f69eb7"
-            ]
-        ]
-    },
-    {
-        "id": "bdce8718917c4dcb",
-        "type": "template",
-        "z": "98a989e.d6bca78",
-        "g": "7b3e33afc7e5d51f",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Gas",
-        "output": "str",
-        "x": 1010,
-        "y": 100,
-        "wires": [
-            [
-                "5db5047bb3f69eb7"
-            ]
-        ]
-    },
-    {
-        "id": "b9f5925e88c3b14b",
-        "type": "link out",
-        "z": "98a989e.d6bca78",
-        "g": "7b3e33afc7e5d51f",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1265,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "5db5047bb3f69eb7",
-        "type": "join",
-        "z": "98a989e.d6bca78",
-        "g": "7b3e33afc7e5d51f",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1170,
-        "y": 140,
-        "wires": [
-            [
-                "b9f5925e88c3b14b"
-            ]
-        ]
-    },
-    {
-        "id": "fdc4c2eef34c0a15",
-        "type": "template",
-        "z": "98a989e.d6bca78",
-        "g": "7b3e33afc7e5d51f",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "gas",
-        "output": "str",
-        "x": 1030,
-        "y": 220,
-        "wires": [
-            [
-                "5db5047bb3f69eb7"
-            ]
-        ]
     },
     {
         "id": "4ba92433.2478cc",

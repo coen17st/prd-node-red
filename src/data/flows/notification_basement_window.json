@@ -43,6 +43,81 @@
         ]
     },
     {
+        "id": "a22e2a028512634f",
+        "type": "template",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "natural_basement_ventilation",
+        "output": "str",
+        "x": 1630,
+        "y": 180,
+        "wires": [
+            [
+                "11d068d3ad86d2dd"
+            ]
+        ]
+    },
+    {
+        "id": "db7934b4b14446da",
+        "type": "template",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": ":door:",
+        "output": "str",
+        "x": 1610,
+        "y": 140,
+        "wires": [
+            [
+                "11d068d3ad86d2dd"
+            ]
+        ]
+    },
+    {
+        "id": "232a01493b9307b0",
+        "type": "template",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 1610,
+        "y": 100,
+        "wires": [
+            [
+                "11d068d3ad86d2dd"
+            ]
+        ]
+    },
+    {
+        "id": "73e546f49b2e02e1",
+        "type": "link out",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1865,
+        "y": 140,
+        "wires": []
+    },
+    {
         "id": "11d068d3ad86d2dd",
         "type": "join",
         "z": "b1a9214c.4c71c",
@@ -68,61 +143,6 @@
         "wires": [
             [
                 "73e546f49b2e02e1"
-            ]
-        ]
-    },
-    {
-        "id": "73e546f49b2e02e1",
-        "type": "link out",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "link_out_notify_basement_window",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1865,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "232a01493b9307b0",
-        "type": "template",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 1610,
-        "y": 100,
-        "wires": [
-            [
-                "11d068d3ad86d2dd"
-            ]
-        ]
-    },
-    {
-        "id": "db7934b4b14446da",
-        "type": "template",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": ":door:",
-        "output": "str",
-        "x": 1610,
-        "y": 140,
-        "wires": [
-            [
-                "11d068d3ad86d2dd"
             ]
         ]
     },
@@ -995,26 +1015,6 @@
         "wires": [
             [
                 "1991431c.890dcd"
-            ]
-        ]
-    },
-    {
-        "id": "a22e2a028512634f",
-        "type": "template",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "natural_basement_ventilation",
-        "output": "str",
-        "x": 1630,
-        "y": 180,
-        "wires": [
-            [
-                "11d068d3ad86d2dd"
             ]
         ]
     },

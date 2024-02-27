@@ -44,6 +44,110 @@
         ]
     },
     {
+        "id": "cdbb5b48e71b5866",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{primary_information}}.\\n{{secondary_information}}",
+        "output": "str",
+        "x": 1460,
+        "y": 200,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
+            ]
+        ]
+    },
+    {
+        "id": "4dd6478ac62b8c2f",
+        "type": "join",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1610,
+        "y": 200,
+        "wires": [
+            [
+                "17c484a9c9a917ac"
+            ]
+        ]
+    },
+    {
+        "id": "17c484a9c9a917ac",
+        "type": "link out",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1705,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c6941b34f3402196",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zonne-energie",
+        "output": "str",
+        "x": 1450,
+        "y": 160,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
+            ]
+        ]
+    },
+    {
+        "id": "59327076bed18754",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1450,
+        "y": 240,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
+            ]
+        ]
+    },
+    {
         "id": "08c71b7711856e9c",
         "type": "comment",
         "z": "42b354a7f0284779",
@@ -252,109 +356,6 @@
         "wires": [
             [
                 "3c79af48f7d7ed9a"
-            ]
-        ]
-    },
-    {
-        "id": "59327076bed18754",
-        "type": "template",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1450,
-        "y": 240,
-        "wires": [
-            [
-                "4dd6478ac62b8c2f"
-            ]
-        ]
-    },
-    {
-        "id": "c6941b34f3402196",
-        "type": "template",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Zonne-energie",
-        "output": "str",
-        "x": 1450,
-        "y": 160,
-        "wires": [
-            [
-                "4dd6478ac62b8c2f"
-            ]
-        ]
-    },
-    {
-        "id": "17c484a9c9a917ac",
-        "type": "link out",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1705,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "4dd6478ac62b8c2f",
-        "type": "join",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1610,
-        "y": 200,
-        "wires": [
-            [
-                "17c484a9c9a917ac"
-            ]
-        ]
-    },
-    {
-        "id": "cdbb5b48e71b5866",
-        "type": "template",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{primary_information}}.\\n{{secondary_information}}",
-        "output": "str",
-        "x": 1460,
-        "y": 200,
-        "wires": [
-            [
-                "4dd6478ac62b8c2f"
             ]
         ]
     },

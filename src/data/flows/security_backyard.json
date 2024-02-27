@@ -22,12 +22,13 @@
             "be68c8baf380f74e",
             "dfebcb371c6d37c4",
             "b41a40c1e135e55c",
-            "ed20a5d29a5eb136"
+            "ed20a5d29a5eb136",
+            "29504140078fb34c"
         ],
         "x": 754,
         "y": 39,
         "w": 422,
-        "h": 202
+        "h": 242
     },
     {
         "id": "be68c8baf380f74e",
@@ -41,7 +42,8 @@
                 "6011ff5a330d5f46",
                 "2e62b582b5ace0b2",
                 "dfebcb371c6d37c4",
-                "ed20a5d29a5eb136"
+                "ed20a5d29a5eb136",
+                "29504140078fb34c"
             ]
         ]
     },
@@ -58,85 +60,22 @@
         ]
     },
     {
-        "id": "ed20a5d29a5eb136",
+        "id": "2e62b582b5ace0b2",
         "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Beweging in de achtertuin gedetecteerd!",
+        "template": "",
         "output": "str",
-        "x": 900,
-        "y": 200,
+        "x": 890,
+        "y": 120,
         "wires": [
             [
                 "b151676bc37a1e90"
-            ]
-        ]
-    },
-    {
-        "id": "b41a40c1e135e55c",
-        "type": "link out",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "backyard_motion_to_notify",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1135,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "dfebcb371c6d37c4",
-        "type": "template",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "backyard_alarm",
-        "output": "str",
-        "x": 910,
-        "y": 160,
-        "wires": [
-            [
-                "b151676bc37a1e90"
-            ]
-        ]
-    },
-    {
-        "id": "b151676bc37a1e90",
-        "type": "join",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1050,
-        "y": 100,
-        "wires": [
-            [
-                "b41a40c1e135e55c"
             ]
         ]
     },
@@ -161,19 +100,82 @@
         ]
     },
     {
-        "id": "2e62b582b5ace0b2",
+        "id": "b151676bc37a1e90",
+        "type": "join",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1050,
+        "y": 100,
+        "wires": [
+            [
+                "b41a40c1e135e55c"
+            ]
+        ]
+    },
+    {
+        "id": "dfebcb371c6d37c4",
         "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "backyard_alarm",
         "output": "str",
-        "x": 890,
-        "y": 120,
+        "x": 910,
+        "y": 160,
+        "wires": [
+            [
+                "b151676bc37a1e90"
+            ]
+        ]
+    },
+    {
+        "id": "b41a40c1e135e55c",
+        "type": "link out",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1135,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ed20a5d29a5eb136",
+        "type": "template",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Beweging in de achtertuin gedetecteerd!",
+        "output": "str",
+        "x": 900,
+        "y": 200,
         "wires": [
             [
                 "b151676bc37a1e90"
@@ -352,13 +354,13 @@
         "id": "133af224fc73de70",
         "type": "link out",
         "z": "645478ab1138fd33",
-        "name": "backyard_motion_to_lights_restore",
+        "name": "link_out_light_dynamics_1",
         "mode": "link",
         "links": [
             "164322a018845856"
         ],
-        "x": 765,
-        "y": 280,
+        "x": 775,
+        "y": 320,
         "wires": []
     },
     {
@@ -382,8 +384,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 750,
-        "y": 340,
+        "x": 760,
+        "y": 380,
         "wires": [
             [
                 "1a622c0b1aadf203"
@@ -426,8 +428,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 580,
-        "y": 340,
+        "x": 590,
+        "y": 380,
         "wires": [
             [
                 "f3661c593b291998"
@@ -444,8 +446,8 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 930,
-        "y": 340,
+        "x": 940,
+        "y": 380,
         "wires": [
             [
                 "0361aab005f490ca"
@@ -474,10 +476,30 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1110,
-        "y": 340,
+        "x": 1120,
+        "y": 380,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "29504140078fb34c",
+        "type": "template",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "notification channel",
+        "field": "notify.channel",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Warning",
+        "output": "str",
+        "x": 930,
+        "y": 240,
+        "wires": [
+            [
+                "b151676bc37a1e90"
+            ]
         ]
     },
     {

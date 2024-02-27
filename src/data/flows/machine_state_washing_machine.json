@@ -45,6 +45,131 @@
         ]
     },
     {
+        "id": "96679db36a4a3636",
+        "type": "template",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De wasmachine is klaar.",
+        "output": "str",
+        "x": 1480,
+        "y": 220,
+        "wires": [
+            [
+                "beedc605a0a3cbac"
+            ]
+        ]
+    },
+    {
+        "id": "61f9d42e4c070321",
+        "type": "template",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "washing_machine",
+        "output": "str",
+        "x": 1490,
+        "y": 180,
+        "wires": [
+            [
+                "beedc605a0a3cbac"
+            ]
+        ]
+    },
+    {
+        "id": "beedc605a0a3cbac",
+        "type": "join",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1670,
+        "y": 160,
+        "wires": [
+            [
+                "1e0f934a3493b12f"
+            ]
+        ]
+    },
+    {
+        "id": "1e0f934a3493b12f",
+        "type": "link out",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad",
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1765,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d93bd58ac5ac0363",
+        "type": "template",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Wasmachine",
+        "output": "str",
+        "x": 1470,
+        "y": 100,
+        "wires": [
+            [
+                "beedc605a0a3cbac"
+            ]
+        ]
+    },
+    {
+        "id": "96e077260be2f7fb",
+        "type": "template",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1470,
+        "y": 140,
+        "wires": [
+            [
+                "beedc605a0a3cbac"
+            ]
+        ]
+    },
+    {
         "id": "3e4cd67e.efae1a",
         "type": "switch",
         "z": "c23003c7.1c978",
@@ -319,131 +444,6 @@
         "wires": [
             [
                 "48fe7380.0c049c"
-            ]
-        ]
-    },
-    {
-        "id": "96e077260be2f7fb",
-        "type": "template",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1470,
-        "y": 140,
-        "wires": [
-            [
-                "beedc605a0a3cbac"
-            ]
-        ]
-    },
-    {
-        "id": "d93bd58ac5ac0363",
-        "type": "template",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Wasmachine",
-        "output": "str",
-        "x": 1470,
-        "y": 100,
-        "wires": [
-            [
-                "beedc605a0a3cbac"
-            ]
-        ]
-    },
-    {
-        "id": "1e0f934a3493b12f",
-        "type": "link out",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad",
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 1765,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "beedc605a0a3cbac",
-        "type": "join",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1670,
-        "y": 160,
-        "wires": [
-            [
-                "1e0f934a3493b12f"
-            ]
-        ]
-    },
-    {
-        "id": "61f9d42e4c070321",
-        "type": "template",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "washing_machine",
-        "output": "str",
-        "x": 1490,
-        "y": 180,
-        "wires": [
-            [
-                "beedc605a0a3cbac"
-            ]
-        ]
-    },
-    {
-        "id": "96679db36a4a3636",
-        "type": "template",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "De wasmachine is klaar.",
-        "output": "str",
-        "x": 1480,
-        "y": 220,
-        "wires": [
-            [
-                "beedc605a0a3cbac"
             ]
         ]
     },

@@ -43,6 +43,110 @@
         ]
     },
     {
+        "id": "1414f6788bc8c787",
+        "type": "template",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Open ramen en deuren om het in huis af te laten koelen, binnen is de gemiddelde temperatuur {{payload}} Buiten is de temperatuur {{buiten_temp}}.",
+        "output": "str",
+        "x": 1660,
+        "y": 140,
+        "wires": [
+            [
+                "6858101eee61155a"
+            ]
+        ]
+    },
+    {
+        "id": "6858101eee61155a",
+        "type": "join",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1810,
+        "y": 140,
+        "wires": [
+            [
+                "ef18c5c2564a7e77"
+            ]
+        ]
+    },
+    {
+        "id": "ef18c5c2564a7e77",
+        "type": "link out",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 1905,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4b276bf7ef0c3217",
+        "type": "template",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 1650,
+        "y": 100,
+        "wires": [
+            [
+                "6858101eee61155a"
+            ]
+        ]
+    },
+    {
+        "id": "0db5f8033b5c9adf",
+        "type": "template",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1650,
+        "y": 180,
+        "wires": [
+            [
+                "6858101eee61155a"
+            ]
+        ]
+    },
+    {
         "id": "317fcdab.4c33d2",
         "type": "ha-get-entities",
         "z": "d5421f8d.f7208",
@@ -304,110 +408,6 @@
                 "317fcdab.4c33d2"
             ],
             []
-        ]
-    },
-    {
-        "id": "0db5f8033b5c9adf",
-        "type": "template",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1650,
-        "y": 180,
-        "wires": [
-            [
-                "6858101eee61155a"
-            ]
-        ]
-    },
-    {
-        "id": "4b276bf7ef0c3217",
-        "type": "template",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 1650,
-        "y": 100,
-        "wires": [
-            [
-                "6858101eee61155a"
-            ]
-        ]
-    },
-    {
-        "id": "ef18c5c2564a7e77",
-        "type": "link out",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad"
-        ],
-        "x": 1905,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "6858101eee61155a",
-        "type": "join",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1810,
-        "y": 140,
-        "wires": [
-            [
-                "ef18c5c2564a7e77"
-            ]
-        ]
-    },
-    {
-        "id": "1414f6788bc8c787",
-        "type": "template",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Open ramen en deuren om het in huis af te laten koelen, binnen is de gemiddelde temperatuur {{payload}} Buiten is de temperatuur {{buiten_temp}}.",
-        "output": "str",
-        "x": 1660,
-        "y": 140,
-        "wires": [
-            [
-                "6858101eee61155a"
-            ]
         ]
     },
     {

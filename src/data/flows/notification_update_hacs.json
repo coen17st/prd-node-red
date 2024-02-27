@@ -45,6 +45,130 @@
         ]
     },
     {
+        "id": "729f7d37f7551233",
+        "type": "template",
+        "z": "5a8d7bb1.6263b4",
+        "g": "17572ea875148733",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "hacs_update",
+        "output": "str",
+        "x": 1010,
+        "y": 220,
+        "wires": [
+            [
+                "ad08a3376d632cdc"
+            ]
+        ]
+    },
+    {
+        "id": "c2cde99283db35e2",
+        "type": "template",
+        "z": "5a8d7bb1.6263b4",
+        "g": "17572ea875148733",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{msg.payload}} {{msg.update}} beschikbaar in de Home Assistant Community Store (hacs) \\n[Link](https://home-assistant.theautomation.nl/hacs)",
+        "output": "str",
+        "x": 1000,
+        "y": 140,
+        "wires": [
+            [
+                "ad08a3376d632cdc"
+            ]
+        ]
+    },
+    {
+        "id": "ad08a3376d632cdc",
+        "type": "join",
+        "z": "5a8d7bb1.6263b4",
+        "g": "17572ea875148733",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1150,
+        "y": 140,
+        "wires": [
+            [
+                "0b0c89810da47741"
+            ]
+        ]
+    },
+    {
+        "id": "0b0c89810da47741",
+        "type": "link out",
+        "z": "5a8d7bb1.6263b4",
+        "g": "17572ea875148733",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1245,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f84f54b2de24abeb",
+        "type": "template",
+        "z": "5a8d7bb1.6263b4",
+        "g": "17572ea875148733",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Update",
+        "output": "str",
+        "x": 990,
+        "y": 100,
+        "wires": [
+            [
+                "ad08a3376d632cdc"
+            ]
+        ]
+    },
+    {
+        "id": "ecf579456bbf27a1",
+        "type": "template",
+        "z": "5a8d7bb1.6263b4",
+        "g": "17572ea875148733",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 990,
+        "y": 180,
+        "wires": [
+            [
+                "ad08a3376d632cdc"
+            ]
+        ]
+    },
+    {
         "id": "c053e3f3.16b41",
         "type": "comment",
         "z": "5a8d7bb1.6263b4",
@@ -182,130 +306,6 @@
                 "a988e8aa7acf6902"
             ],
             []
-        ]
-    },
-    {
-        "id": "ecf579456bbf27a1",
-        "type": "template",
-        "z": "5a8d7bb1.6263b4",
-        "g": "17572ea875148733",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 990,
-        "y": 180,
-        "wires": [
-            [
-                "ad08a3376d632cdc"
-            ]
-        ]
-    },
-    {
-        "id": "f84f54b2de24abeb",
-        "type": "template",
-        "z": "5a8d7bb1.6263b4",
-        "g": "17572ea875148733",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Update",
-        "output": "str",
-        "x": 990,
-        "y": 100,
-        "wires": [
-            [
-                "ad08a3376d632cdc"
-            ]
-        ]
-    },
-    {
-        "id": "0b0c89810da47741",
-        "type": "link out",
-        "z": "5a8d7bb1.6263b4",
-        "g": "17572ea875148733",
-        "name": "link_out_notify_ac_solar_record",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1245,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "ad08a3376d632cdc",
-        "type": "join",
-        "z": "5a8d7bb1.6263b4",
-        "g": "17572ea875148733",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1150,
-        "y": 140,
-        "wires": [
-            [
-                "0b0c89810da47741"
-            ]
-        ]
-    },
-    {
-        "id": "c2cde99283db35e2",
-        "type": "template",
-        "z": "5a8d7bb1.6263b4",
-        "g": "17572ea875148733",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{msg.payload}} {{msg.update}} beschikbaar in de Home Assistant Community Store (hacs) \\n[Link](https://home-assistant.theautomation.nl/hacs)",
-        "output": "str",
-        "x": 1000,
-        "y": 140,
-        "wires": [
-            [
-                "ad08a3376d632cdc"
-            ]
-        ]
-    },
-    {
-        "id": "729f7d37f7551233",
-        "type": "template",
-        "z": "5a8d7bb1.6263b4",
-        "g": "17572ea875148733",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "hacs_update",
-        "output": "str",
-        "x": 1010,
-        "y": 220,
-        "wires": [
-            [
-                "ad08a3376d632cdc"
-            ]
         ]
     },
     {
