@@ -1363,7 +1363,7 @@
             "d6d0b5735ad8f20a"
         ],
         "x": 2154,
-        "y": 739,
+        "y": 779,
         "w": 432,
         "h": 162
     },
@@ -1373,7 +1373,7 @@
         "z": "4e909abe.0b62e4",
         "g": "0a1a2a6df765a339",
         "x": 2180,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "6502d163268904d4",
@@ -1387,7 +1387,7 @@
         "type": "junction",
         "z": "4e909abe.0b62e4",
         "x": 700,
-        "y": 680,
+        "y": 720,
         "wires": [
             [
                 "4b24c6f.ecf9538"
@@ -1399,7 +1399,7 @@
         "type": "junction",
         "z": "4e909abe.0b62e4",
         "x": 1040,
-        "y": 880,
+        "y": 920,
         "wires": [
             [
                 "46771664.f639e8"
@@ -1411,7 +1411,7 @@
         "type": "junction",
         "z": "4e909abe.0b62e4",
         "x": 820,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
                 "5468cbac60f12182"
@@ -1423,87 +1423,12 @@
         "type": "junction",
         "z": "4e909abe.0b62e4",
         "x": 1080,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
                 "46771664.f639e8"
             ]
         ]
-    },
-    {
-        "id": "d6d0b5735ad8f20a",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "mechanical_ventilation",
-        "output": "str",
-        "x": 2310,
-        "y": 860,
-        "wires": [
-            [
-                "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "febf6f9eab6e868d",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 2290,
-        "y": 820,
-        "wires": [
-            [
-                "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "6502d163268904d4",
-        "type": "template",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Mechanische ventilatie",
-        "output": "str",
-        "x": 2290,
-        "y": 780,
-        "wires": [
-            [
-                "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "ac04035c1896218b",
-        "type": "link out",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "link_out_notify_basement_ventilation",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 2545,
-        "y": 800,
-        "wires": []
     },
     {
         "id": "a1c0156c06d58e91",
@@ -1527,10 +1452,85 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 2450,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "ac04035c1896218b"
+            ]
+        ]
+    },
+    {
+        "id": "ac04035c1896218b",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 2545,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "6502d163268904d4",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Mechanische ventilatie",
+        "output": "str",
+        "x": 2290,
+        "y": 820,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "febf6f9eab6e868d",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 2290,
+        "y": 860,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
+            ]
+        ]
+    },
+    {
+        "id": "d6d0b5735ad8f20a",
+        "type": "template",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mechanical_ventilation",
+        "output": "str",
+        "x": 2310,
+        "y": 900,
+        "wires": [
+            [
+                "a1c0156c06d58e91"
             ]
         ]
     },
@@ -1740,7 +1740,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1260,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "9bf4aa10d1402099"
@@ -1765,7 +1765,7 @@
         "name": "CONDITIONS & DATA",
         "info": "",
         "x": 360,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
@@ -1792,7 +1792,7 @@
                 "eaba4c18.04007",
                 "476a9b5a.95d894",
                 "4abb03cf.8c49ec",
-                "599646a9.361b38"
+                "4e1d6c0e.bd6b44"
             ]
         ]
     },
@@ -1828,7 +1828,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 390,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "f58250ec.e0fa1"
@@ -1870,10 +1870,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1210,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
-                "4e1d6c0e.bd6b44"
+                "52a3b09f.ae48"
             ],
             []
         ]
@@ -2027,7 +2027,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "87cfa72a.3e07e8"
@@ -2065,8 +2065,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 770,
-        "y": 420,
+        "x": 710,
+        "y": 460,
         "wires": [
             [
                 "e07eea7c.6e4af8"
@@ -2106,7 +2106,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 390,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
                 "a028c18f.9355b"
@@ -2144,8 +2144,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 780,
-        "y": 480,
+        "x": 760,
+        "y": 520,
         "wires": [
             [
                 "4bc7b417.d7b80c"
@@ -2185,7 +2185,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 400,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
                 "56b3697b.621e98"
@@ -2224,7 +2224,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 800,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
                 "13e032a.2acbbcd"
@@ -2239,7 +2239,7 @@
         "name": "MECHANICAL VENTILATION POSITION 2",
         "info": "",
         "x": 420,
-        "y": 760,
+        "y": 800,
         "wires": []
     },
     {
@@ -2274,7 +2274,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "610ee8e1.0e94b8"
@@ -2316,7 +2316,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1260,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "54922ba7.31ebb4"
@@ -2331,7 +2331,7 @@
         "name": "MECHANICAL VENTILATION POSITION 3",
         "info": "",
         "x": 420,
-        "y": 880,
+        "y": 920,
         "wires": []
     },
     {
@@ -2366,7 +2366,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1260,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "320c3cf2.5620d4"
@@ -2426,7 +2426,7 @@
                 "eaba4c18.04007",
                 "476a9b5a.95d894",
                 "4abb03cf.8c49ec",
-                "599646a9.361b38"
+                "4e1d6c0e.bd6b44"
             ]
         ]
     },
@@ -2482,7 +2482,7 @@
                 "eaba4c18.04007",
                 "476a9b5a.95d894",
                 "4abb03cf.8c49ec",
-                "599646a9.361b38"
+                "4e1d6c0e.bd6b44"
             ]
         ]
     },
@@ -2493,7 +2493,7 @@
         "name": "MECHANICAL VENTILATION POSITION MANUAL",
         "info": "",
         "x": 450,
-        "y": 1000,
+        "y": 1040,
         "wires": []
     },
     {
@@ -2542,7 +2542,7 @@
             }
         ],
         "x": 420,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "9e8a7cf7.88d51"
@@ -2602,7 +2602,7 @@
                 "eaba4c18.04007",
                 "476a9b5a.95d894",
                 "4abb03cf.8c49ec",
-                "599646a9.361b38"
+                "4e1d6c0e.bd6b44"
             ]
         ]
     },
@@ -2613,48 +2613,8 @@
         "name": "MECHANICAL VENTILATION POSITION 1",
         "info": "",
         "x": 420,
-        "y": 660,
+        "y": 700,
         "wires": []
-    },
-    {
-        "id": "4e1d6c0e.bd6b44",
-        "type": "api-current-state",
-        "z": "4e909abe.0b62e4",
-        "name": "state autonomous on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_boolean.mechanical_ventilation_autonomous",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "input_boolean.mechanische_ventilatie_autonoom",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1480,
-        "y": 540,
-        "wires": [
-            [
-                "52a3b09f.ae48"
-            ],
-            []
-        ]
     },
     {
         "id": "52a3b09f.ae48",
@@ -2688,7 +2648,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 400,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "e21c63fd.6345e"
@@ -2730,7 +2690,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 740,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "d21542c5.837e4"
@@ -2769,7 +2729,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1000,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "ea92ebb5.4d1288"
@@ -2808,7 +2768,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1250,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "4c661c8e515f8df3"
@@ -2827,7 +2787,7 @@
         "template": "De middelste stand is automatisch ingeschakeld.",
         "output": "str",
         "x": 1740,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "f6654a628999616b"
@@ -2846,7 +2806,7 @@
         "template": "De hoogste stand is automatisch ingeschakeld.",
         "output": "str",
         "x": 1740,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "f6654a628999616b"
@@ -2880,7 +2840,7 @@
         "to": "",
         "reg": false,
         "x": 1980,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -2905,7 +2865,7 @@
         "to": "",
         "reg": false,
         "x": 1770,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "e07362ff.ad189"
@@ -2944,7 +2904,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 670,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "3d016b4671a45b4a"
@@ -2986,7 +2946,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 950,
-        "y": 800,
+        "y": 840,
         "wires": [
             [
                 "65f41c8.8e8cde4"
@@ -3008,7 +2968,7 @@
         "startOffset": 0,
         "endOffset": 0,
         "x": 330,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "b5d8b43d.943a18"
@@ -3025,7 +2985,7 @@
         "name": "",
         "env": [],
         "x": 1530,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "5ce9303e.d40b8"
@@ -3158,7 +3118,7 @@
             }
         ],
         "x": 420,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "5fba04f5.3847ac"
@@ -3212,7 +3172,7 @@
             }
         ],
         "x": 420,
-        "y": 1160,
+        "y": 1200,
         "wires": [
             [
                 "cbdc5416.0cbcd8"
@@ -3266,7 +3226,7 @@
             }
         ],
         "x": 420,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             [
                 "91b0640c.1b4d68"
@@ -3286,7 +3246,7 @@
         "template": "De laagste stand van de mechanische ventilatie is handmatig ingeschakeld.",
         "output": "str",
         "x": 680,
-        "y": 1040,
+        "y": 1080,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -3305,7 +3265,7 @@
         "template": "De middelste stand van de mechanische ventilatie is handmatig ingeschakeld.",
         "output": "str",
         "x": 680,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -3324,7 +3284,7 @@
         "template": "De hoge stand van de mechanische ventilatie is handmatig ingeschakeld.",
         "output": "str",
         "x": 680,
-        "y": 1160,
+        "y": 1200,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -3343,7 +3303,7 @@
         "template": "Mechanische Ventilatie is handmatig uitgeschakeld.",
         "output": "str",
         "x": 680,
-        "y": 1220,
+        "y": 1260,
         "wires": [
             [
                 "46d491e1.18c83"
@@ -3382,7 +3342,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1210,
-        "y": 1140,
+        "y": 1180,
         "wires": [
             [
                 "f6654a628999616b"
@@ -3410,7 +3370,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "x": 1530,
-        "y": 780,
+        "y": 820,
         "wires": [
             [
                 "c7b58913.752ad8"
@@ -3424,7 +3384,7 @@
         "name": "INPUT BOOLEAN MECHANICAL VENTILATION",
         "info": "",
         "x": 440,
-        "y": 1280,
+        "y": 1320,
         "wires": []
     },
     {
@@ -3473,7 +3433,7 @@
             }
         ],
         "x": 420,
-        "y": 1320,
+        "y": 1360,
         "wires": [
             [
                 "1bd4cbe8.185c54"
@@ -3527,7 +3487,7 @@
             }
         ],
         "x": 420,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             [
                 "234dfa41.bd6986"
@@ -3581,7 +3541,7 @@
             }
         ],
         "x": 420,
-        "y": 1440,
+        "y": 1480,
         "wires": [
             [
                 "66f4c227.6b8aac"
@@ -3635,7 +3595,7 @@
             }
         ],
         "x": 420,
-        "y": 1500,
+        "y": 1540,
         "wires": [
             [
                 "6e490cae.31f974"
@@ -3650,7 +3610,7 @@
         "name": "",
         "env": [],
         "x": 750,
-        "y": 1380,
+        "y": 1420,
         "wires": [
             []
         ]
@@ -3662,7 +3622,7 @@
         "name": "",
         "env": [],
         "x": 750,
-        "y": 1320,
+        "y": 1360,
         "wires": [
             []
         ]
@@ -3674,7 +3634,7 @@
         "name": "",
         "env": [],
         "x": 750,
-        "y": 1500,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -3685,7 +3645,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "x": 750,
-        "y": 1440,
+        "y": 1480,
         "wires": [
             []
         ]
@@ -3702,7 +3662,7 @@
         "template": "Stand laag is ingeschakeld. De temperatuur buiten is {{{sensor.buienradar_temperature}}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
-        "y": 720,
+        "y": 760,
         "wires": [
             [
                 "bfdcba16.625018"
@@ -3721,7 +3681,7 @@
         "template": "Stand laag is ingeschakeld. De relative luchtvochtigheid in de souterrain is {{sensor.basement_humidity}} {{data.attributes.unit_of_measurement}}",
         "output": "str",
         "x": 980,
-        "y": 680,
+        "y": 720,
         "wires": [
             [
                 "bfdcba16.625018"
@@ -3744,7 +3704,7 @@
         "z": "4e909abe.0b62e4",
         "name": "",
         "x": 1530,
-        "y": 700,
+        "y": 740,
         "wires": [
             [
                 "8373567d.35b008",
@@ -3920,7 +3880,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1530,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "a037b96e.97bc58"
@@ -3935,7 +3895,7 @@
         "name": "MECHANICAL VENTILATION POSITION MANUAL FRONTEND",
         "info": "",
         "x": 490,
-        "y": 1560,
+        "y": 1600,
         "wires": []
     },
     {
@@ -3960,7 +3920,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 950,
-        "y": 1740,
+        "y": 1780,
         "wires": [
             [
                 "fec6bd8d1440b36a"
@@ -4013,7 +3973,7 @@
             }
         ],
         "x": 420,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "4a4e04ddf8350706"
@@ -4058,7 +4018,7 @@
         "repair": false,
         "outputs": 5,
         "x": 650,
-        "y": 1640,
+        "y": 1680,
         "wires": [
             [
                 "6756525186f8169e"
@@ -4099,7 +4059,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 950,
-        "y": 1860,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -4126,7 +4086,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 950,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             [
                 "57486f510a59fd65"
@@ -4155,7 +4115,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 950,
-        "y": 1680,
+        "y": 1720,
         "wires": [
             [
                 "60bfbb8510eb0ddf"
@@ -4184,7 +4144,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 950,
-        "y": 1800,
+        "y": 1840,
         "wires": [
             [
                 "3bbc2d79dae1d733"
@@ -4213,7 +4173,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1300,
-        "y": 1620,
+        "y": 1660,
         "wires": [
             []
         ]
@@ -4240,7 +4200,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1300,
-        "y": 1680,
+        "y": 1720,
         "wires": [
             []
         ]
@@ -4267,7 +4227,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1300,
-        "y": 1740,
+        "y": 1780,
         "wires": [
             []
         ]
@@ -4294,8 +4254,48 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1300,
-        "y": 1800,
+        "y": 1840,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e1d6c0e.bd6b44",
+        "type": "api-current-state",
+        "z": "4e909abe.0b62e4",
+        "name": "state autonomous on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.mechanical_ventilation_autonomous",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "input_boolean.mechanische_ventilatie_autonoom",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "599646a9.361b38"
+            ],
             []
         ]
     },
