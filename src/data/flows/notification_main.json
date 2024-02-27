@@ -251,7 +251,7 @@
         "server": "4ba92433.2478cc",
         "version": 2,
         "outputs": 1,
-        "entityId": "media_player.home_speaker",
+        "entityId": "media_player.galaxy_tab_a8",
         "entityIdFilterType": "exact",
         "property": "state",
         "comparator": "is_not",
