@@ -3,9 +3,33 @@
         "id": "3d30857f5165e137",
         "type": "tab",
         "label": "automation_mechanical_ventilation_toilet",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "1bcfdae4fb034efd",
+        "type": "junction",
+        "z": "3d30857f5165e137",
+        "x": 1040,
+        "y": 140,
+        "wires": [
+            [
+                "59e4a09ae6f431cd"
+            ]
+        ]
+    },
+    {
+        "id": "e40aff179bd30a9b",
+        "type": "junction",
+        "z": "3d30857f5165e137",
+        "x": 1040,
+        "y": 60,
+        "wires": [
+            [
+                "59e4a09ae6f431cd"
+            ]
+        ]
     },
     {
         "id": "effdb4f47bd11771",
@@ -26,7 +50,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "light.shelly1_hallway",
+        "entityId": "light.shelly1pm_toilet_light_switch_0",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
@@ -66,11 +90,10 @@
         "y": 60,
         "wires": [
             [
-                "684f758427ddfc3e"
+                "25d79c8787fd1812",
+                "b5dd79a9ecc0d1c8"
             ],
-            [
-                "6433045b1f3b4f8e"
-            ]
+            []
         ]
     },
     {
@@ -81,38 +104,22 @@
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "",
-        "service": "",
+        "domain": "fan",
+        "service": "turn_on",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
+        "entityId": [
+            "fan.shelly1pm_toilet_fan_switch_0"
+        ],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 660,
+        "x": 320,
         "y": 60,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6433045b1f3b4f8e",
-        "type": "stoptimer",
-        "z": "3d30857f5165e137",
-        "duration": "20",
-        "units": "Minute",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 300,
-        "y": 120,
-        "wires": [
-            [
-                "59e4a09ae6f431cd"
-            ],
             []
         ]
     },
@@ -124,84 +131,107 @@
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
-        "domain": "",
-        "service": "",
+        "domain": "fan",
+        "service": "turn_off",
         "areaId": [],
         "deviceId": [],
-        "entityId": [],
+        "entityId": [
+            "fan.shelly1pm_toilet_fan_switch_0"
+        ],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 480,
-        "y": 120,
+        "x": 1180,
+        "y": 60,
         "wires": [
             []
         ]
     },
     {
-        "id": "684f758427ddfc3e",
+        "id": "b5dd79a9ecc0d1c8",
+        "type": "ha-wait-until",
+        "z": "3d30857f5165e137",
+        "name": "wait until toilet light goes off with 10 sec timeout",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "light.shelly1pm_toilet_light_switch_0",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "off",
+        "valueType": "str",
+        "timeout": "10",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "e40aff179bd30a9b"
+            ],
+            [
+                "8a928f6874ea03c8"
+            ]
+        ]
+    },
+    {
+        "id": "6433045b1f3b4f8e",
         "type": "stoptimer",
         "z": "3d30857f5165e137",
-        "duration": "5",
-        "units": "Second",
+        "duration": "20",
+        "units": "Minute",
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 300,
-        "y": 60,
+        "x": 960,
+        "y": 100,
         "wires": [
             [
-                "364ff62a9a133ead"
+                "59e4a09ae6f431cd"
             ],
             []
         ]
     },
     {
-        "id": "364ff62a9a133ead",
-        "type": "api-current-state",
+        "id": "8a928f6874ea03c8",
+        "type": "ha-wait-until",
         "z": "3d30857f5165e137",
-        "name": "toilet light still on",
+        "name": "wait until toilet light goes off ",
         "server": "4ba92433.2478cc",
-        "version": 3,
+        "version": 2,
         "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "light.shelly1_hallway",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 480,
-        "y": 60,
+        "entityId": "light.shelly1pm_toilet_light_switch_0",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "off",
+        "valueType": "str",
+        "timeout": "1",
+        "timeoutType": "num",
+        "timeoutUnits": "hours",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 740,
+        "y": 140,
         "wires": [
             [
-                "25d79c8787fd1812"
+                "6433045b1f3b4f8e"
             ],
-            []
+            [
+                "1bcfdae4fb034efd"
+            ]
         ]
     },
     {
