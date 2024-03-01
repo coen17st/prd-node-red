@@ -23,8 +23,8 @@
             "61f9d42e4c070321",
             "96679db36a4a3636"
         ],
-        "x": 1334,
-        "y": 59,
+        "x": 1314,
+        "y": 39,
         "w": 472,
         "h": 202
     },
@@ -33,8 +33,8 @@
         "type": "junction",
         "z": "c23003c7.1c978",
         "g": "283f88d61789c306",
-        "x": 1360,
-        "y": 120,
+        "x": 1340,
+        "y": 100,
         "wires": [
             [
                 "d93bd58ac5ac0363",
@@ -45,19 +45,19 @@
         ]
     },
     {
-        "id": "96679db36a4a3636",
+        "id": "96e077260be2f7fb",
         "type": "template",
         "z": "c23003c7.1c978",
         "g": "283f88d61789c306",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "De wasmachine is klaar.",
+        "template": "",
         "output": "str",
-        "x": 1480,
-        "y": 220,
+        "x": 1450,
+        "y": 120,
         "wires": [
             [
                 "beedc605a0a3cbac"
@@ -65,24 +65,40 @@
         ]
     },
     {
-        "id": "61f9d42e4c070321",
+        "id": "d93bd58ac5ac0363",
         "type": "template",
         "z": "c23003c7.1c978",
         "g": "283f88d61789c306",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "washing_machine",
+        "template": "Wasmachine",
         "output": "str",
-        "x": 1490,
-        "y": 180,
+        "x": 1450,
+        "y": 80,
         "wires": [
             [
                 "beedc605a0a3cbac"
             ]
         ]
+    },
+    {
+        "id": "1e0f934a3493b12f",
+        "type": "link out",
+        "z": "c23003c7.1c978",
+        "g": "283f88d61789c306",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad",
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1745,
+        "y": 140,
+        "wires": []
     },
     {
         "id": "beedc605a0a3cbac",
@@ -105,8 +121,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1670,
-        "y": 160,
+        "x": 1650,
+        "y": 140,
         "wires": [
             [
                 "1e0f934a3493b12f"
@@ -114,35 +130,19 @@
         ]
     },
     {
-        "id": "1e0f934a3493b12f",
-        "type": "link out",
-        "z": "c23003c7.1c978",
-        "g": "283f88d61789c306",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad",
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 1765,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "d93bd58ac5ac0363",
+        "id": "61f9d42e4c070321",
         "type": "template",
         "z": "c23003c7.1c978",
         "g": "283f88d61789c306",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Wasmachine",
+        "template": "washing_machine",
         "output": "str",
         "x": 1470,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "beedc605a0a3cbac"
@@ -150,19 +150,19 @@
         ]
     },
     {
-        "id": "96e077260be2f7fb",
+        "id": "96679db36a4a3636",
         "type": "template",
         "z": "c23003c7.1c978",
         "g": "283f88d61789c306",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "De wasmachine is klaar.",
         "output": "str",
-        "x": 1470,
-        "y": 140,
+        "x": 1460,
+        "y": 200,
         "wires": [
             [
                 "beedc605a0a3cbac"
