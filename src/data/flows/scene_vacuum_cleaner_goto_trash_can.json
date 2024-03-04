@@ -8,6 +8,18 @@
         "env": []
     },
     {
+        "id": "d83a61d4c1fcbc34",
+        "type": "junction",
+        "z": "d75716f30ab50f51",
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "d1271eec3942fa45"
+            ]
+        ]
+    },
+    {
         "id": "0a557caa506ed5ba",
         "type": "inject",
         "z": "d75716f30ab50f51",
@@ -94,13 +106,13 @@
         "entityId": [
             "vacuum.roborock_s6_pure"
         ],
-        "data": "{\"x_coord\":29235,\"y_coord\":26134}",
+        "data": "{\"x_coord\":29235,\"y_coord\":26534}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 640,
+        "x": 660,
         "y": 100,
         "wires": [
             []
@@ -138,6 +150,43 @@
         ]
     },
     {
+        "id": "0d644c89b4079f86",
+        "type": "ha-button",
+        "z": "d75716f30ab50f51",
+        "name": "vacuum_goto_trash_can",
+        "version": 0,
+        "debugenabled": false,
+        "outputs": 1,
+        "entityConfig": "0171b37ae30b230d",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "d83a61d4c1fcbc34"
+            ]
+        ]
+    },
+    {
         "id": "4ba92433.2478cc",
         "type": "server",
         "name": "Home Assistant",
@@ -159,5 +208,38 @@
         "statusHourCycle": "h23",
         "statusTimeFormat": "h:m",
         "enableGlobalContextStore": true
+    },
+    {
+        "id": "0171b37ae30b230d",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "vacuum_goto_trash_can",
+        "version": "6",
+        "entityType": "button",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "vacuum_goto_trash_can"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
     }
 ]
