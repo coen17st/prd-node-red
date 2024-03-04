@@ -11,8 +11,8 @@
         "id": "a5e476b7342dd2fc",
         "type": "junction",
         "z": "9a7094e42d673dc4",
-        "x": 1150,
-        "y": 160,
+        "x": 1120,
+        "y": 260,
         "wires": [
             [
                 "53a47bf861d4d73c"
@@ -41,7 +41,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 960,
-        "y": 360,
+        "y": 420,
         "wires": [
             []
         ]
@@ -69,7 +69,7 @@
         "repair": false,
         "outputs": 2,
         "x": 790,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "8954d811f3cec46a"
@@ -101,7 +101,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 960,
-        "y": 420,
+        "y": 480,
         "wires": [
             []
         ]
@@ -123,7 +123,7 @@
         "drop": false,
         "outputs": 1,
         "x": 520,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "4410039256c7c052"
@@ -150,7 +150,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "7c96404bfb58afe2"
@@ -177,7 +177,7 @@
         "to": "",
         "reg": false,
         "x": 350,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "7c96404bfb58afe2"
@@ -204,7 +204,7 @@
         "to": "",
         "reg": false,
         "x": 350,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "7c96404bfb58afe2"
@@ -234,7 +234,7 @@
         "repair": false,
         "outputs": 2,
         "x": 130,
-        "y": 300,
+        "y": 360,
         "wires": [
             [
                 "48f6f035713adfb1",
@@ -265,7 +265,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 990,
-        "y": 300,
+        "y": 360,
         "wires": [
             []
         ]
@@ -288,7 +288,7 @@
         "default_start": false,
         "differ": true,
         "x": 610,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "387fd151e9a8e19c",
@@ -466,6 +466,50 @@
         "wires": [
             [
                 "8def04e9d2da1e31"
+            ]
+        ]
+    },
+    {
+        "id": "5d17a23a9ac5fe01",
+        "type": "link in",
+        "z": "9a7094e42d673dc4",
+        "name": "lights_on_and_restore_kitchen",
+        "links": [
+            "411c3c903ef0bd56"
+        ],
+        "x": 215,
+        "y": 220,
+        "wires": [
+            [
+                "2b88f3d631cb6beb"
+            ]
+        ]
+    },
+    {
+        "id": "2b88f3d631cb6beb",
+        "type": "ha-get-entities",
+        "z": "9a7094e42d673dc4",
+        "name": "get kitchen light",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "is",
+                "value": "light.shellydimmer_kitchen",
+                "valueType": "str"
+            }
+        ],
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
+        "x": 980,
+        "y": 220,
+        "wires": [
+            [
+                "a5e476b7342dd2fc"
             ]
         ]
     },
