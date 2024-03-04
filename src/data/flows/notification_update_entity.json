@@ -1,0 +1,435 @@
+[
+    {
+        "id": "a8d8484165225699",
+        "type": "tab",
+        "label": "notification_update_entity",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "537179d37e7389e5",
+        "type": "group",
+        "z": "a8d8484165225699",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2e707984219ae3a9",
+            "e142bb411f990e05",
+            "58ce3486fc8107bd",
+            "deeacc0728909577",
+            "f55e9b8b5462e4d2",
+            "daef6aa88b93b329",
+            "e16a49a555dc3139"
+        ],
+        "x": 1194,
+        "y": 119,
+        "w": 452,
+        "h": 202
+    },
+    {
+        "id": "f55e9b8b5462e4d2",
+        "type": "junction",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "x": 1220,
+        "y": 200,
+        "wires": [
+            [
+                "e142bb411f990e05",
+                "2e707984219ae3a9",
+                "daef6aa88b93b329",
+                "e16a49a555dc3139"
+            ]
+        ]
+    },
+    {
+        "id": "dd30d4cd216c0f2b",
+        "type": "comment",
+        "z": "a8d8484165225699",
+        "name": "send notification when a update is available",
+        "info": "",
+        "x": 180,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "160088fd48d5a361",
+        "type": "server-state-changed",
+        "z": "a8d8484165225699",
+        "name": "update counter is not 0",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.update_on_counter",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "0",
+        "ifStateType": "num",
+        "ifStateOperator": "is_not",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [],
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "141308461dbf40c7"
+            ],
+            [
+                "0e19a744ae210f9f"
+            ]
+        ]
+    },
+    {
+        "id": "ca77f18341a43806",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er is {{payload}} beschikbaar, check updates onder de settings tab om deze entiteit te updaten. ",
+        "output": "str",
+        "x": 460,
+        "y": 80,
+        "wires": [
+            [
+                "9f54688e36518032"
+            ]
+        ]
+    },
+    {
+        "id": "9f54688e36518032",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Update entiteit beschikbaar",
+        "output": "str",
+        "x": 670,
+        "y": 60,
+        "wires": [
+            [
+                "baa41c19eb148fa4"
+            ]
+        ]
+    },
+    {
+        "id": "baa41c19eb148fa4",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "updates",
+        "output": "str",
+        "x": 830,
+        "y": 60,
+        "wires": [
+            [
+                "54e3c63ed7fe6043"
+            ]
+        ]
+    },
+    {
+        "id": "54e3c63ed7fe6043",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "name": "notification_level",
+        "field": "notification_level",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "info",
+        "output": "str",
+        "x": 990,
+        "y": 60,
+        "wires": [
+            [
+                "c260ecf67a15a923"
+            ]
+        ]
+    },
+    {
+        "id": "b120549fa5ec47de",
+        "type": "link out",
+        "z": "a8d8484165225699",
+        "name": "notification",
+        "mode": "link",
+        "links": [
+            "60e14e33a793f50d"
+        ],
+        "x": 1565,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c260ecf67a15a923",
+        "type": "change",
+        "z": "a8d8484165225699",
+        "name": "set icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "icon",
+                "pt": "msg",
+                "to": "mdi:update",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 60,
+        "wires": [
+            [
+                "b120549fa5ec47de",
+                "f55e9b8b5462e4d2"
+            ]
+        ]
+    },
+    {
+        "id": "0e19a744ae210f9f",
+        "type": "api-call-service",
+        "z": "a8d8484165225699",
+        "name": " dismiss in app notification",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "persistent_notification",
+        "service": "dismiss",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [],
+        "data": "{\"notification_id\":\"update_entity\"}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e707984219ae3a9",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{notify.icon}}",
+        "output": "str",
+        "x": 1350,
+        "y": 240,
+        "wires": [
+            [
+                "deeacc0728909577"
+            ]
+        ]
+    },
+    {
+        "id": "e142bb411f990e05",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Update",
+        "output": "str",
+        "x": 1350,
+        "y": 160,
+        "wires": [
+            [
+                "deeacc0728909577"
+            ]
+        ]
+    },
+    {
+        "id": "58ce3486fc8107bd",
+        "type": "link out",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1605,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "deeacc0728909577",
+        "type": "join",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1510,
+        "y": 200,
+        "wires": [
+            [
+                "58ce3486fc8107bd"
+            ]
+        ]
+    },
+    {
+        "id": "daef6aa88b93b329",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{secondary_information}}",
+        "output": "str",
+        "x": 1360,
+        "y": 200,
+        "wires": [
+            [
+                "deeacc0728909577"
+            ]
+        ]
+    },
+    {
+        "id": "e16a49a555dc3139",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "g": "537179d37e7389e5",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "updates",
+        "output": "str",
+        "x": 1370,
+        "y": 280,
+        "wires": [
+            [
+                "deeacc0728909577"
+            ]
+        ]
+    },
+    {
+        "id": "141308461dbf40c7",
+        "type": "switch",
+        "z": "a8d8484165225699",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "bf97ba934d4ba8e3"
+            ],
+            [
+                "ca77f18341a43806"
+            ]
+        ]
+    },
+    {
+        "id": "bf97ba934d4ba8e3",
+        "type": "template",
+        "z": "a8d8484165225699",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Er zijn {{payload}} updates beschikbaar, check updates onder de settings tab om deze entiteit te updaten. ",
+        "output": "str",
+        "x": 460,
+        "y": 40,
+        "wires": [
+            [
+                "9f54688e36518032"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
