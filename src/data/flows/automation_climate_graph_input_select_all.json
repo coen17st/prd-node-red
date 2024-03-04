@@ -8,31 +8,6 @@
         "env": []
     },
     {
-        "id": "bb87dec7896e25a8",
-        "type": "ha-button",
-        "z": "1adcdebcdc8e5c39",
-        "name": "climate_graph_input_select_all_temperature",
-        "version": 0,
-        "debugenabled": false,
-        "outputs": 1,
-        "entityConfig": "4149472952a8d9c6",
-        "outputProperties": [
-            {
-                "property": "option",
-                "propertyType": "msg",
-                "value": "Temperature",
-                "valueType": "str"
-            }
-        ],
-        "x": 190,
-        "y": 60,
-        "wires": [
-            [
-                "6c70289470244d20"
-            ]
-        ]
-    },
-    {
         "id": "6c70289470244d20",
         "type": "ha-get-entities",
         "z": "1adcdebcdc8e5c39",
@@ -52,7 +27,7 @@
         "outputLocationType": "msg",
         "outputLocation": "payload",
         "outputResultsCount": 1,
-        "x": 450,
+        "x": 430,
         "y": 60,
         "wires": [
             [
@@ -75,13 +50,13 @@
         "entityId": [
             "{{payload.entity_id}}"
         ],
-        "data": "{\"option\":\"{{option}}\"}",
+        "data": "{\"option\":\"{{data.new_state.attributes.friendly_name}}\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 650,
+        "x": 630,
         "y": 60,
         "wires": [
             []
@@ -98,37 +73,57 @@
         "wires": []
     },
     {
-        "id": "4149472952a8d9c6",
-        "type": "ha-entity-config",
+        "id": "a06f052e713de33d",
+        "type": "server-state-changed",
+        "z": "1adcdebcdc8e5c39",
+        "name": "",
         "server": "4ba92433.2478cc",
-        "deviceConfig": "",
-        "name": "climate_graph_input_select_all_absolute_humidity",
-        "version": "6",
-        "entityType": "button",
-        "haConfig": [
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_button.climate_graph",
+        "entityIdType": "regex",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
             {
-                "property": "name",
-                "value": "climate_graph_input_select_all_absolute_humidity"
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
             },
             {
-                "property": "icon",
-                "value": ""
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
             },
             {
-                "property": "entity_category",
-                "value": ""
-            },
-            {
-                "property": "entity_picture",
-                "value": ""
-            },
-            {
-                "property": "device_class",
-                "value": ""
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
             }
         ],
-        "resend": false,
-        "debugEnabled": false
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "6c70289470244d20"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
