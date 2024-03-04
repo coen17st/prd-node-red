@@ -2,7 +2,7 @@
     {
         "id": "e98ae3c9db1bd6c3",
         "type": "tab",
-        "label": "scene_vacation_mode",
+        "label": "automation_vacation_mode",
         "disabled": false,
         "info": "",
         "env": []
