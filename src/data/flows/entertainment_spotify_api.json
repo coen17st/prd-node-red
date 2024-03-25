@@ -11,8 +11,8 @@
         "id": "706151681f0ece6f",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 520,
-        "y": 160,
+        "x": 460,
+        "y": 360,
         "wires": [
             [
                 "3d31c6d443ad7576",
@@ -24,19 +24,8 @@
                 "de1675c8792b80d3",
                 "8975dba1409df05c",
                 "fa2d02d4ee1cb23c",
-                "7c7ba2d9bdb1a2a7"
-            ]
-        ]
-    },
-    {
-        "id": "992b450b0425b3a4",
-        "type": "junction",
-        "z": "53a5f07742283c4c",
-        "x": 1740,
-        "y": 420,
-        "wires": [
-            [
-                "e9ad5083802cc9a3"
+                "7c7ba2d9bdb1a2a7",
+                "1ab78ae444020e91"
             ]
         ]
     },
@@ -44,23 +33,11 @@
         "id": "06ca84ceb3f727e3",
         "type": "junction",
         "z": "53a5f07742283c4c",
-        "x": 1000,
-        "y": 280,
+        "x": 1180,
+        "y": 400,
         "wires": [
             [
                 "b20ef33659df0d8c"
-            ]
-        ]
-    },
-    {
-        "id": "e9ad5083802cc9a3",
-        "type": "junction",
-        "z": "53a5f07742283c4c",
-        "x": 1340,
-        "y": 600,
-        "wires": [
-            [
-                "1d4f8e3d81b60ffc"
             ]
         ]
     },
@@ -302,15 +279,20 @@
             },
             {
                 "t": "eq",
-                "v": "KjgrZE92TkKiLoamYumF4g",
+                "v": "37i9dQZF1E4x6tDrzQfNsN",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1FmlUPRCZaU7QkusYhibAB",
                 "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 10,
-        "x": 1410,
-        "y": 780,
+        "outputs": 11,
+        "x": 1530,
+        "y": 440,
         "wires": [
             [
                 "a0e90487537504f6"
@@ -341,6 +323,9 @@
             ],
             [
                 "f2b7f6dae0fc54c7"
+            ],
+            [
+                "b59c37953c7293d7"
             ]
         ]
     },
@@ -382,8 +367,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 600,
+        "x": 1750,
+        "y": 260,
         "wires": [
             []
         ]
@@ -417,8 +402,8 @@
                 "bf0844c6b66ef3d3"
             ],
             [
-                "992b450b0425b3a4",
-                "2370f3e4e207f6ba"
+                "331d4612c80eeb57",
+                "bd5ab8dbd0c19012"
             ]
         ]
     },
@@ -599,8 +584,8 @@
         "septopics": true,
         "property": "statusCode",
         "topi": "topic",
-        "x": 1790,
-        "y": 140,
+        "x": 1950,
+        "y": 120,
         "wires": [
             [
                 "36c55dbdfffe6d33"
@@ -645,8 +630,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 660,
+        "x": 1750,
+        "y": 320,
         "wires": [
             []
         ]
@@ -689,8 +674,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 720,
+        "x": 1750,
+        "y": 380,
         "wires": [
             []
         ]
@@ -752,8 +737,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 780,
+        "x": 1750,
+        "y": 440,
         "wires": [
             []
         ]
@@ -815,8 +800,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 840,
+        "x": 1750,
+        "y": 500,
         "wires": [
             []
         ]
@@ -916,8 +901,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 900,
+        "x": 1750,
+        "y": 560,
         "wires": [
             []
         ]
@@ -960,8 +945,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 960,
+        "x": 1750,
+        "y": 620,
         "wires": [
             []
         ]
@@ -1009,8 +994,8 @@
         "links": [
             "1dd634541306cba1"
         ],
-        "x": 1915,
-        "y": 80,
+        "x": 2075,
+        "y": 60,
         "wires": []
     },
     {
@@ -1071,8 +1056,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 1020,
+        "x": 1750,
+        "y": 680,
         "wires": [
             []
         ]
@@ -1134,8 +1119,8 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 1080,
+        "x": 1750,
+        "y": 740,
         "wires": [
             []
         ]
@@ -1160,23 +1145,6 @@
         ]
     },
     {
-        "id": "2370f3e4e207f6ba",
-        "type": "debug",
-        "z": "53a5f07742283c4c",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1820,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "7c7ba2d9bdb1a2a7",
         "type": "template",
         "z": "53a5f07742283c4c",
@@ -1185,7 +1153,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "KjgrZE92TkKiLoamYumF4g",
+        "template": "37i9dQZF1E4x6tDrzQfNsN",
         "output": "str",
         "x": 710,
         "y": 520,
@@ -1207,7 +1175,7 @@
         "attributes": [
             {
                 "property": "name",
-                "value": "payload.payload.name",
+                "value": "payload.name",
                 "valueType": "msg"
             },
             {
@@ -1233,11 +1201,110 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1630,
-        "y": 1140,
+        "x": 1750,
+        "y": 800,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "1ab78ae444020e91",
+        "type": "template",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_id_Baby Sleep Music",
+        "field": "playlist_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "1FmlUPRCZaU7QkusYhibAB",
+        "output": "str",
+        "x": 700,
+        "y": 560,
+        "wires": [
+            [
+                "06ca84ceb3f727e3"
+            ]
+        ]
+    },
+    {
+        "id": "b59c37953c7293d7",
+        "type": "ha-sensor",
+        "z": "53a5f07742283c4c",
+        "name": "playlist_11",
+        "entityConfig": "4ae2ea66b5fed8a9",
+        "version": 0,
+        "state": "payload.name",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "name",
+                "value": "payload.name",
+                "valueType": "msg"
+            },
+            {
+                "property": "image",
+                "value": "payload.images[0].url",
+                "valueType": "msg"
+            },
+            {
+                "property": "type",
+                "value": "payload.type",
+                "valueType": "msg"
+            },
+            {
+                "property": "id",
+                "value": "payload.id",
+                "valueType": "msg"
+            },
+            {
+                "property": "url",
+                "value": "payload.external_urls.spotify",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 1750,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "331d4612c80eeb57",
+        "type": "function",
+        "z": "53a5f07742283c4c",
+        "name": "remove non alpha numeric",
+        "func": "msg.payload.name = msg.payload.name.replace(/[^0-9a-z ]/gi, '')\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 200,
+        "wires": [
+            [
+                "1d4f8e3d81b60ffc"
+            ]
+        ]
+    },
+    {
+        "id": "bd5ab8dbd0c19012",
+        "type": "debug",
+        "z": "53a5f07742283c4c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2070,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "43f0157d8de58e65",
@@ -1620,6 +1687,47 @@
             {
                 "property": "name",
                 "value": "playlist_10"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "4ae2ea66b5fed8a9",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "de1b475263d9e68f",
+        "name": "playlist_11",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "playlist_11"
             },
             {
                 "property": "icon",
