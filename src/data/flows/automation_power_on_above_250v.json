@@ -1,0 +1,518 @@
+[
+    {
+        "id": "7d5d30e3.483af",
+        "type": "subflow",
+        "name": "mechanical ventilation position 3",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "54b5ba76.827954"
+                    },
+                    {
+                        "id": "ff1ccbdb.9906b8"
+                    },
+                    {
+                        "id": "76af25f8.0585fc"
+                    },
+                    {
+                        "id": "18f13f23.6c3a51"
+                    },
+                    {
+                        "id": "30d47f9.e06228"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 540,
+                "y": 320,
+                "wires": [
+                    {
+                        "id": "16dea36a.4cb2cd",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "c54b81c6.cf925",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off basement ventilation sw 03",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.basement_ventilation_sw_03"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 320,
+        "y": 280,
+        "wires": [
+            [
+                "60dd6167.2f76a"
+            ]
+        ]
+    },
+    {
+        "id": "16dea36a.4cb2cd",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn on basement ventilation sw 04",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.basement_ventilation_sw_04"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60dd6167.2f76a",
+        "type": "delay",
+        "z": "7d5d30e3.483af",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "16dea36a.4cb2cd"
+            ]
+        ]
+    },
+    {
+        "id": "720db208.aa887c",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn on mechanical ventilation position 3",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_3"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 680,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff1ccbdb.9906b8",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off mechanical ventilation position 1",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_1"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 340,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76af25f8.0585fc",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off mechanical ventilation position 2",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_2"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18f13f23.6c3a51",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn off mechanical ventilation position 0",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_position_0"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54b5ba76.827954",
+        "type": "api-current-state",
+        "z": "7d5d30e3.483af",
+        "name": "state mechanical ventilation position 3 off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.mechanical_ventilation_position_3",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "720db208.aa887c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2e60ec0b.ebbaf4",
+        "type": "delay",
+        "z": "7d5d30e3.483af",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "c54b81c6.cf925"
+            ]
+        ]
+    },
+    {
+        "id": "c8c40934.304388",
+        "type": "comment",
+        "z": "7d5d30e3.483af",
+        "name": "TURN ON MECHANICAL VENTILATION POSITION 3",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "30d47f9.e06228",
+        "type": "api-call-service",
+        "z": "7d5d30e3.483af",
+        "name": "turn on basement ventilation sw 01",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.basement_ventilation_sw_01"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "2e60ec0b.ebbaf4"
+            ]
+        ]
+    },
+    {
+        "id": "ed339dc5d3d1e898",
+        "type": "tab",
+        "label": "automation_power_on_above_250v",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "aa7d6916929d212a",
+        "type": "comment",
+        "z": "ed339dc5d3d1e898",
+        "name": "A flow that turns on devices when the ac voltage is above 250v",
+        "info": "",
+        "x": 240,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "39a6ce373518dc3d",
+        "type": "server-state-changed",
+        "z": "ed339dc5d3d1e898",
+        "name": "current ac voltage",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.dsmr_reading_phase_voltage_l1",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "250",
+        "ifStateType": "num",
+        "ifStateOperator": "gt",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "508cb0db5eab815c",
+                "75f034a0ecbe430b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "508cb0db5eab815c",
+        "type": "subflow:7d5d30e3.483af",
+        "z": "ed339dc5d3d1e898",
+        "name": "",
+        "x": 410,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75f034a0ecbe430b",
+        "type": "api-call-service",
+        "z": "ed339dc5d3d1e898",
+        "name": "turn on toilet fan",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "fan",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "fan.shelly1pm_toilet_fan_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "74db217f411e8c3d"
+            ]
+        ]
+    },
+    {
+        "id": "74db217f411e8c3d",
+        "type": "stoptimer",
+        "z": "ed339dc5d3d1e898",
+        "duration": "10",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 540,
+        "y": 100,
+        "wires": [
+            [
+                "c8259874f465a49e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c8259874f465a49e",
+        "type": "api-call-service",
+        "z": "ed339dc5d3d1e898",
+        "name": "turn off toilet fan",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "fan",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "fan.shelly1pm_toilet_fan_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 720,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
