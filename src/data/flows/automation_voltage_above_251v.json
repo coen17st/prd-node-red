@@ -337,7 +337,7 @@
     {
         "id": "ed339dc5d3d1e898",
         "type": "tab",
-        "label": "automation_power_on_above_250v",
+        "label": "automation_voltage_above_251v",
         "disabled": false,
         "info": "",
         "env": []
@@ -365,7 +365,7 @@
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
-        "ifState": "250",
+        "ifState": "251",
         "ifStateType": "num",
         "ifStateOperator": "gt",
         "outputOnlyOnStateChange": true,
