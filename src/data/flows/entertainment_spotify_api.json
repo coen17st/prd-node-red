@@ -402,8 +402,7 @@
                 "bf0844c6b66ef3d3"
             ],
             [
-                "331d4612c80eeb57",
-                "bd5ab8dbd0c19012"
+                "331d4612c80eeb57"
             ]
         ]
     },
@@ -411,7 +410,7 @@
         "id": "ddc2e044d88310c8",
         "type": "switch",
         "z": "53a5f07742283c4c",
-        "name": "access_token is null",
+        "name": "spotify_access_token is null",
         "property": "spotify_access_token",
         "propertyType": "global",
         "rules": [
@@ -425,7 +424,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 420,
+        "x": 440,
         "y": 100,
         "wires": [
             [
@@ -1289,22 +1288,6 @@
                 "1d4f8e3d81b60ffc"
             ]
         ]
-    },
-    {
-        "id": "bd5ab8dbd0c19012",
-        "type": "debug",
-        "z": "53a5f07742283c4c",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2070,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "43f0157d8de58e65",
