@@ -1,0 +1,299 @@
+[
+    {
+        "id": "1a02f7122bccea54",
+        "type": "tab",
+        "label": "notification_vacuum_s6_low_battery",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "201f66d22f70b0c6",
+        "type": "trigger-state",
+        "z": "1a02f7122bccea54",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 4,
+        "inputs": 0,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "vacuum.roborock_s6_pure",
+        "entityIdType": "exact",
+        "debugEnabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "property",
+                "propertyValue": "new_state.attributes.battery_level",
+                "comparatorType": "<",
+                "comparatorValueDatatype": "num",
+                "comparatorValue": "10"
+            }
+        ],
+        "customOutputs": [],
+        "outputInitially": true,
+        "stateType": "str",
+        "enableInput": false,
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "b17eea1ca567cf8f",
+                "5abaa598dd8f6b46"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8bc6e753948c3d58",
+        "type": "change",
+        "z": "1a02f7122bccea54",
+        "name": "set flow active to true",
+        "rules": [
+            {
+                "t": "set",
+                "p": "active",
+                "pt": "flow",
+                "to": "true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 60,
+        "wires": [
+            [
+                "8829c6ceb62c309b"
+            ]
+        ]
+    },
+    {
+        "id": "b17eea1ca567cf8f",
+        "type": "switch",
+        "z": "1a02f7122bccea54",
+        "name": "flow not active",
+        "property": "active",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "true",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "8bc6e753948c3d58"
+            ]
+        ]
+    },
+    {
+        "id": "d09575b6183b7a6f",
+        "type": "change",
+        "z": "1a02f7122bccea54",
+        "name": "set flow active to false",
+        "rules": [
+            {
+                "t": "set",
+                "p": "active",
+                "pt": "flow",
+                "to": "false",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5abaa598dd8f6b46",
+        "type": "switch",
+        "z": "1a02f7122bccea54",
+        "name": "if charging",
+        "property": "data.event.old_state.attributes.battery_level",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "data.event.new_state.attributes.battery_level",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "d09575b6183b7a6f"
+            ]
+        ]
+    },
+    {
+        "id": "9dffff38900ffc04",
+        "type": "comment",
+        "z": "1a02f7122bccea54",
+        "name": "Send notification when battery is below 10%",
+        "info": "",
+        "x": 190,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "2e88c1891e5e9732",
+        "type": "link out",
+        "z": "1a02f7122bccea54",
+        "name": "notification",
+        "mode": "link",
+        "links": [
+            "60e14e33a793f50d"
+        ],
+        "x": 1655,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "792ccaf49b60f39a",
+        "type": "change",
+        "z": "1a02f7122bccea54",
+        "name": "set icon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "icon",
+                "pt": "msg",
+                "to": "mdi:battery-alert-variant-outline",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1560,
+        "y": 60,
+        "wires": [
+            [
+                "2e88c1891e5e9732"
+            ]
+        ]
+    },
+    {
+        "id": "2a916b1b6ce64ef2",
+        "type": "template",
+        "z": "1a02f7122bccea54",
+        "name": "notification_level",
+        "field": "notification_level",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "warning",
+        "output": "str",
+        "x": 1390,
+        "y": 60,
+        "wires": [
+            [
+                "792ccaf49b60f39a"
+            ]
+        ]
+    },
+    {
+        "id": "5999e01524198e1d",
+        "type": "template",
+        "z": "1a02f7122bccea54",
+        "name": "topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "battery",
+        "output": "str",
+        "x": 1230,
+        "y": 60,
+        "wires": [
+            [
+                "2a916b1b6ce64ef2"
+            ]
+        ]
+    },
+    {
+        "id": "adbf11725729eebf",
+        "type": "template",
+        "z": "1a02f7122bccea54",
+        "name": "primary information",
+        "field": "primary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Batterij",
+        "output": "str",
+        "x": 1070,
+        "y": 60,
+        "wires": [
+            [
+                "5999e01524198e1d"
+            ]
+        ]
+    },
+    {
+        "id": "8829c6ceb62c309b",
+        "type": "template",
+        "z": "1a02f7122bccea54",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Let op, Stofzuiger {{data.event.new_state.attributes.friendly_name}} heeft een batterij niveau van {{data.event.new_state.attributes.battery_level}} controleer de docking station.",
+        "output": "str",
+        "x": 860,
+        "y": 60,
+        "wires": [
+            [
+                "adbf11725729eebf"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
