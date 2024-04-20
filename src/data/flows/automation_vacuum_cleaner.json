@@ -7,25 +7,26 @@
         "info": ""
     },
     {
-        "id": "faf17088fd1a6b16",
+        "id": "33fea7faee8e1f82",
         "type": "group",
         "z": "55da1471.fda0fc",
-        "name": "notify",
+        "name": "notify two actions",
         "style": {
             "label": true
         },
         "nodes": [
-            "c8bc013c45f3ae72",
-            "035b931bd0cea26e",
-            "57488cc36dcd2d00",
-            "051f31139e799468",
-            "07d3b997feaf3f7b",
-            "8205d58f610c05d0"
+            "8f3e39fd9d879f86",
+            "d5ae8df68946471a",
+            "d7f92782a71d3837",
+            "b5cc0d26cf3e7ab2",
+            "237a19020921825d",
+            "09d4cdb039e852de",
+            "0e83125ead481334"
         ],
-        "x": 1654,
-        "y": 639,
+        "x": 1834,
+        "y": 459,
         "w": 472,
-        "h": 162
+        "h": 202
     },
     {
         "id": "deb17c414e79ec63",
@@ -43,45 +44,45 @@
             "60b0a5eab5b0a9d6",
             "0fa8b59e2735c07d"
         ],
-        "x": 1654,
-        "y": 239,
+        "x": 1834,
+        "y": 279,
         "w": 472,
         "h": 162
     },
     {
-        "id": "33fea7faee8e1f82",
+        "id": "faf17088fd1a6b16",
         "type": "group",
         "z": "55da1471.fda0fc",
-        "name": "notify two actions",
+        "name": "notify",
         "style": {
             "label": true
         },
         "nodes": [
-            "8f3e39fd9d879f86",
-            "d5ae8df68946471a",
-            "d7f92782a71d3837",
-            "b5cc0d26cf3e7ab2",
-            "237a19020921825d",
-            "09d4cdb039e852de",
-            "0e83125ead481334"
+            "c8bc013c45f3ae72",
+            "035b931bd0cea26e",
+            "57488cc36dcd2d00",
+            "051f31139e799468",
+            "07d3b997feaf3f7b",
+            "8205d58f610c05d0"
         ],
-        "x": 1654,
-        "y": 419,
+        "x": 1834,
+        "y": 679,
         "w": 472,
-        "h": 202
+        "h": 162
     },
     {
-        "id": "07d3b997feaf3f7b",
+        "id": "237a19020921825d",
         "type": "junction",
         "z": "55da1471.fda0fc",
-        "g": "faf17088fd1a6b16",
-        "x": 1680,
-        "y": 700,
+        "g": "33fea7faee8e1f82",
+        "x": 1860,
+        "y": 540,
         "wires": [
             [
-                "035b931bd0cea26e",
-                "c8bc013c45f3ae72",
-                "8205d58f610c05d0"
+                "d5ae8df68946471a",
+                "8f3e39fd9d879f86",
+                "09d4cdb039e852de",
+                "0e83125ead481334"
             ]
         ]
     },
@@ -90,8 +91,8 @@
         "type": "junction",
         "z": "55da1471.fda0fc",
         "g": "deb17c414e79ec63",
-        "x": 1680,
-        "y": 300,
+        "x": 1860,
+        "y": 340,
         "wires": [
             [
                 "dec04d7f3b819fb2",
@@ -101,18 +102,17 @@
         ]
     },
     {
-        "id": "237a19020921825d",
+        "id": "07d3b997feaf3f7b",
         "type": "junction",
         "z": "55da1471.fda0fc",
-        "g": "33fea7faee8e1f82",
-        "x": 1680,
-        "y": 500,
+        "g": "faf17088fd1a6b16",
+        "x": 1860,
+        "y": 740,
         "wires": [
             [
-                "d5ae8df68946471a",
-                "8f3e39fd9d879f86",
-                "09d4cdb039e852de",
-                "0e83125ead481334"
+                "035b931bd0cea26e",
+                "c8bc013c45f3ae72",
+                "8205d58f610c05d0"
             ]
         ]
     },
@@ -129,230 +129,86 @@
         ]
     },
     {
-        "id": "8205d58f610c05d0",
-        "type": "template",
-        "z": "55da1471.fda0fc",
-        "g": "faf17088fd1a6b16",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "vacuum",
-        "output": "str",
-        "x": 1810,
-        "y": 760,
-        "wires": [
-            [
-                "051f31139e799468"
-            ]
-        ]
-    },
-    {
-        "id": "051f31139e799468",
-        "type": "join",
-        "z": "55da1471.fda0fc",
-        "g": "faf17088fd1a6b16",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1990,
-        "y": 720,
-        "wires": [
-            [
-                "57488cc36dcd2d00"
-            ]
-        ]
-    },
-    {
-        "id": "57488cc36dcd2d00",
-        "type": "link out",
-        "z": "55da1471.fda0fc",
-        "g": "faf17088fd1a6b16",
-        "name": "link_out_notify_3",
-        "mode": "link",
-        "links": [
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 2085,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "035b931bd0cea26e",
-        "type": "template",
-        "z": "55da1471.fda0fc",
-        "g": "faf17088fd1a6b16",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Stofzuiger",
-        "output": "str",
-        "x": 1790,
-        "y": 680,
-        "wires": [
-            [
-                "051f31139e799468"
-            ]
-        ]
-    },
-    {
-        "id": "c8bc013c45f3ae72",
-        "type": "template",
-        "z": "55da1471.fda0fc",
-        "g": "faf17088fd1a6b16",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1790,
-        "y": 720,
-        "wires": [
-            [
-                "051f31139e799468"
-            ]
-        ]
-    },
-    {
-        "id": "0fa8b59e2735c07d",
-        "type": "template",
-        "z": "55da1471.fda0fc",
-        "g": "deb17c414e79ec63",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "vacuum",
-        "output": "str",
-        "x": 1810,
-        "y": 360,
-        "wires": [
-            [
-                "ba409d3499824364"
-            ]
-        ]
-    },
-    {
-        "id": "ba409d3499824364",
-        "type": "join",
-        "z": "55da1471.fda0fc",
-        "g": "deb17c414e79ec63",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1990,
-        "y": 340,
-        "wires": [
-            [
-                "c5f04c8242157305"
-            ]
-        ]
-    },
-    {
-        "id": "c5f04c8242157305",
-        "type": "link out",
-        "z": "55da1471.fda0fc",
-        "g": "deb17c414e79ec63",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad",
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 2085,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "dec04d7f3b819fb2",
-        "type": "template",
-        "z": "55da1471.fda0fc",
-        "g": "deb17c414e79ec63",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Stofzuiger",
-        "output": "str",
-        "x": 1790,
-        "y": 280,
-        "wires": [
-            [
-                "ba409d3499824364"
-            ]
-        ]
-    },
-    {
-        "id": "f60ecb3be0ebc2af",
-        "type": "template",
-        "z": "55da1471.fda0fc",
-        "g": "deb17c414e79ec63",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1790,
-        "y": 320,
-        "wires": [
-            [
-                "ba409d3499824364"
-            ]
-        ]
-    },
-    {
-        "id": "0e83125ead481334",
+        "id": "8f3e39fd9d879f86",
         "type": "template",
         "z": "55da1471.fda0fc",
         "g": "33fea7faee8e1f82",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "vacuum",
+        "template": "",
         "output": "str",
-        "x": 1790,
+        "x": 1950,
         "y": 580,
         "wires": [
             [
                 "b5cc0d26cf3e7ab2"
+            ]
+        ]
+    },
+    {
+        "id": "d5ae8df68946471a",
+        "type": "template",
+        "z": "55da1471.fda0fc",
+        "g": "33fea7faee8e1f82",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Stofzuiger",
+        "output": "str",
+        "x": 1950,
+        "y": 500,
+        "wires": [
+            [
+                "b5cc0d26cf3e7ab2"
+            ]
+        ]
+    },
+    {
+        "id": "d7f92782a71d3837",
+        "type": "link out",
+        "z": "55da1471.fda0fc",
+        "g": "33fea7faee8e1f82",
+        "name": "link_out_notify_2",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 2265,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b5cc0d26cf3e7ab2",
+        "type": "join",
+        "z": "55da1471.fda0fc",
+        "g": "33fea7faee8e1f82",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2170,
+        "y": 540,
+        "wires": [
+            [
+                "d7f92782a71d3837"
             ]
         ]
     },
@@ -397,8 +253,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1790,
-        "y": 500,
+        "x": 1970,
+        "y": 540,
         "wires": [
             [
                 "b5cc0d26cf3e7ab2"
@@ -406,10 +262,85 @@
         ]
     },
     {
-        "id": "b5cc0d26cf3e7ab2",
-        "type": "join",
+        "id": "0e83125ead481334",
+        "type": "template",
         "z": "55da1471.fda0fc",
         "g": "33fea7faee8e1f82",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "vacuum",
+        "output": "str",
+        "x": 1970,
+        "y": 620,
+        "wires": [
+            [
+                "b5cc0d26cf3e7ab2"
+            ]
+        ]
+    },
+    {
+        "id": "f60ecb3be0ebc2af",
+        "type": "template",
+        "z": "55da1471.fda0fc",
+        "g": "deb17c414e79ec63",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1970,
+        "y": 360,
+        "wires": [
+            [
+                "ba409d3499824364"
+            ]
+        ]
+    },
+    {
+        "id": "dec04d7f3b819fb2",
+        "type": "template",
+        "z": "55da1471.fda0fc",
+        "g": "deb17c414e79ec63",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Stofzuiger",
+        "output": "str",
+        "x": 1970,
+        "y": 320,
+        "wires": [
+            [
+                "ba409d3499824364"
+            ]
+        ]
+    },
+    {
+        "id": "c5f04c8242157305",
+        "type": "link out",
+        "z": "55da1471.fda0fc",
+        "g": "deb17c414e79ec63",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 2265,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ba409d3499824364",
+        "type": "join",
+        "z": "55da1471.fda0fc",
+        "g": "deb17c414e79ec63",
         "name": "",
         "mode": "custom",
         "build": "merged",
@@ -420,60 +351,45 @@
         "joinerType": "str",
         "accumulate": false,
         "timeout": "",
-        "count": "8",
+        "count": "4",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1990,
-        "y": 500,
+        "x": 2170,
+        "y": 380,
         "wires": [
             [
-                "d7f92782a71d3837"
+                "c5f04c8242157305"
             ]
         ]
     },
     {
-        "id": "d7f92782a71d3837",
-        "type": "link out",
-        "z": "55da1471.fda0fc",
-        "g": "33fea7faee8e1f82",
-        "name": "link_out_notify_2",
-        "mode": "link",
-        "links": [
-            "c76d311bb4b6991b",
-            "d1753081ba6b4004"
-        ],
-        "x": 2085,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "d5ae8df68946471a",
+        "id": "0fa8b59e2735c07d",
         "type": "template",
         "z": "55da1471.fda0fc",
-        "g": "33fea7faee8e1f82",
-        "name": "title",
-        "field": "notify.title",
+        "g": "deb17c414e79ec63",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Stofzuiger",
+        "template": "vacuum",
         "output": "str",
-        "x": 1770,
-        "y": 460,
+        "x": 1990,
+        "y": 400,
         "wires": [
             [
-                "b5cc0d26cf3e7ab2"
+                "ba409d3499824364"
             ]
         ]
     },
     {
-        "id": "8f3e39fd9d879f86",
+        "id": "c8bc013c45f3ae72",
         "type": "template",
         "z": "55da1471.fda0fc",
-        "g": "33fea7faee8e1f82",
+        "g": "faf17088fd1a6b16",
         "name": "icon",
         "field": "notify.icon",
         "fieldType": "msg",
@@ -481,11 +397,94 @@
         "syntax": "mustache",
         "template": "",
         "output": "str",
-        "x": 1770,
-        "y": 540,
+        "x": 1970,
+        "y": 760,
         "wires": [
             [
-                "b5cc0d26cf3e7ab2"
+                "051f31139e799468"
+            ]
+        ]
+    },
+    {
+        "id": "035b931bd0cea26e",
+        "type": "template",
+        "z": "55da1471.fda0fc",
+        "g": "faf17088fd1a6b16",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Stofzuiger",
+        "output": "str",
+        "x": 1970,
+        "y": 720,
+        "wires": [
+            [
+                "051f31139e799468"
+            ]
+        ]
+    },
+    {
+        "id": "57488cc36dcd2d00",
+        "type": "link out",
+        "z": "55da1471.fda0fc",
+        "g": "faf17088fd1a6b16",
+        "name": "link_out_notify_3",
+        "mode": "link",
+        "links": [
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 2265,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "051f31139e799468",
+        "type": "join",
+        "z": "55da1471.fda0fc",
+        "g": "faf17088fd1a6b16",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2170,
+        "y": 760,
+        "wires": [
+            [
+                "57488cc36dcd2d00"
+            ]
+        ]
+    },
+    {
+        "id": "8205d58f610c05d0",
+        "type": "template",
+        "z": "55da1471.fda0fc",
+        "g": "faf17088fd1a6b16",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "vacuum",
+        "output": "str",
+        "x": 1990,
+        "y": 800,
+        "wires": [
+            [
+                "051f31139e799468"
             ]
         ]
     },
@@ -692,11 +691,12 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 950,
-        "y": 340,
+        "x": 910,
+        "y": 360,
         "wires": [
             [
-                "eccced83.41688"
+                "eccced83.41688",
+                "564da01f0c297b52"
             ],
             []
         ]
@@ -778,11 +778,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1350,
-        "y": 340,
+        "x": 1330,
+        "y": 320,
         "wires": [
             [
-                "c643d4d4.2baf98"
+                "700ffa065a57643e"
             ]
         ]
     },
@@ -964,8 +964,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1160,
-        "y": 340,
+        "x": 1140,
+        "y": 320,
         "wires": [
             [
                 "a52152b0.f593b"
@@ -1126,10 +1126,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "De stofzuiger is gestart.",
+        "template": "Stofzuiger {{data.attributes.friendly_name}} is gestart.",
         "output": "str",
-        "x": 1520,
-        "y": 340,
+        "x": 1700,
+        "y": 320,
         "wires": [
             [
                 "60b0a5eab5b0a9d6"
@@ -1498,8 +1498,8 @@
         "syntax": "mustache",
         "template": "Moet over 10 minuten de stofzuiger starten?",
         "output": "str",
-        "x": 1260,
-        "y": 460,
+        "x": 1700,
+        "y": 540,
         "wires": [
             [
                 "237a19020921825d"
@@ -1517,11 +1517,165 @@
         "syntax": "mustache",
         "template": "Over tien minuten start de stofzuiger.",
         "output": "str",
-        "x": 1260,
-        "y": 540,
+        "x": 1700,
+        "y": 740,
         "wires": [
             [
                 "07d3b997feaf3f7b"
+            ]
+        ]
+    },
+    {
+        "id": "700ffa065a57643e",
+        "type": "ha-wait-until",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "vacuum.roborock_s6_pure",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "cleaning",
+        "valueType": "str",
+        "timeout": "2",
+        "timeoutType": "num",
+        "timeoutUnits": "minutes",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 1500,
+        "y": 320,
+        "wires": [
+            [
+                "c643d4d4.2baf98"
+            ],
+            [
+                "64e882fa1c38e011"
+            ]
+        ]
+    },
+    {
+        "id": "64e882fa1c38e011",
+        "type": "template",
+        "z": "55da1471.fda0fc",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Stofzuiger {{data.attributes.friendly_name}} kon niet worden gestart.",
+        "output": "str",
+        "x": 1700,
+        "y": 360,
+        "wires": [
+            [
+                "60b0a5eab5b0a9d6"
+            ]
+        ]
+    },
+    {
+        "id": "564da01f0c297b52",
+        "type": "api-current-state",
+        "z": "55da1471.fda0fc",
+        "name": "vacuum is not cleaning",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "cleaning",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "vacuum.robot_vacuum",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1140,
+        "y": 380,
+        "wires": [
+            [
+                "65eac4d0c7d4907d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "65eac4d0c7d4907d",
+        "type": "api-call-service",
+        "z": "55da1471.fda0fc",
+        "name": "start vacuum",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "vacuum",
+        "service": "start",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "vacuum.robot_vacuum"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1330,
+        "y": 380,
+        "wires": [
+            [
+                "12b21cf1b9684b45"
+            ]
+        ]
+    },
+    {
+        "id": "12b21cf1b9684b45",
+        "type": "ha-wait-until",
+        "z": "55da1471.fda0fc",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "vacuum.robot_vacuum",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "cleaning",
+        "valueType": "str",
+        "timeout": "2",
+        "timeoutType": "num",
+        "timeoutUnits": "minutes",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 1500,
+        "y": 380,
+        "wires": [
+            [
+                "c643d4d4.2baf98"
+            ],
+            [
+                "64e882fa1c38e011"
             ]
         ]
     },
