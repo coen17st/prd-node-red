@@ -1,0 +1,456 @@
+[
+    {
+        "id": "d7c35c04cc0c5b68",
+        "type": "tab",
+        "label": "automation_electrical_heather",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2fdc370fce5756c2",
+        "type": "comment",
+        "z": "d7c35c04cc0c5b68",
+        "name": "Flow that turns on and off the electrical heater if voltage rise or drop",
+        "info": "",
+        "x": 260,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "5038e1ae7ce7eb09",
+        "type": "server-state-changed",
+        "z": "d7c35c04cc0c5b68",
+        "name": "voltage",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "39f868aa97a1088e",
+        "entityId": "sensor.dsmr_reading_phase_voltage_l1",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "num",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "423bfb3fe34e59d4"
+            ]
+        ]
+    },
+    {
+        "id": "423bfb3fe34e59d4",
+        "type": "switch",
+        "z": "d7c35c04cc0c5b68",
+        "name": "voltage",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "251.5",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "247",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "191dd3b34fd152a8"
+            ],
+            [
+                "916f461a6f7da6d3"
+            ]
+        ]
+    },
+    {
+        "id": "191dd3b34fd152a8",
+        "type": "api-current-state",
+        "z": "d7c35c04cc0c5b68",
+        "name": "persons home",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "group.persons",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "ed73ef123074e011"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ed73ef123074e011",
+        "type": "api-current-state",
+        "z": "d7c35c04cc0c5b68",
+        "name": "sleepmode is off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.sleep_mode",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 540,
+        "y": 60,
+        "wires": [
+            [
+                "59263b75863fd017"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "207c2f6e26d0c669",
+        "type": "delay",
+        "z": "d7c35c04cc0c5b68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 60,
+        "wires": [
+            [
+                "7e334b8861b9df2a"
+            ]
+        ]
+    },
+    {
+        "id": "e8ce7b12402d8e51",
+        "type": "api-call-service",
+        "z": "d7c35c04cc0c5b68",
+        "name": "turn on heater",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shellyplugplus_heather_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 900,
+        "y": 60,
+        "wires": [
+            [
+                "207c2f6e26d0c669"
+            ]
+        ]
+    },
+    {
+        "id": "4ed1d7ce9b4786d9",
+        "type": "api-call-service",
+        "z": "d7c35c04cc0c5b68",
+        "name": "turn off heater",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shellyplugplus_heather_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1640,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59263b75863fd017",
+        "type": "api-current-state",
+        "z": "d7c35c04cc0c5b68",
+        "name": "heater is not on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "switch.shellyplugplus_heather_switch_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 720,
+        "y": 60,
+        "wires": [
+            [
+                "e8ce7b12402d8e51"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "916f461a6f7da6d3",
+        "type": "api-current-state",
+        "z": "d7c35c04cc0c5b68",
+        "name": "heater is not off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "switch.shellyplugplus_heather_switch_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 1460,
+        "y": 100,
+        "wires": [
+            [
+                "4ed1d7ce9b4786d9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7e334b8861b9df2a",
+        "type": "ha-wait-until",
+        "z": "d7c35c04cc0c5b68",
+        "name": "wait until voltage drop",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "sensor.dsmr_reading_phase_voltage_l1",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "lt",
+        "value": "248",
+        "valueType": "num",
+        "timeout": "30",
+        "timeoutType": "num",
+        "timeoutUnits": "minutes",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 1240,
+        "y": 60,
+        "wires": [
+            [
+                "916f461a6f7da6d3"
+            ],
+            [
+                "916f461a6f7da6d3"
+            ]
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "39f868aa97a1088e",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "automation_electric_heater_high_voltage",
+        "version": "6",
+        "entityType": "switch",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "automation_electric_heater_high_voltage"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]
