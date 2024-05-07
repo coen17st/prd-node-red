@@ -1,0 +1,430 @@
+[
+    {
+        "id": "29a2e1dd05ecbf80",
+        "type": "tab",
+        "label": "automation_vacuum_room_cleaning",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5e54a79bee442082",
+        "type": "server-state-changed",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.vacuum_living_room",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "b2c339808d70314e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "99e87b3ea10b9d72",
+        "type": "server-state-changed",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.vacuum_dining_room",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "6941d4c7a8ddd6a8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "166aed82cb630d1d",
+        "type": "server-state-changed",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.vacuum_kitchen",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fe5af48684a1956a",
+        "type": "server-state-changed",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_boolean.vacuum_hall",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "22b9cfa19585ad14",
+        "type": "json",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2c339808d70314e",
+        "type": "template",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "field": "segment",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "17",
+        "output": "str",
+        "x": 560,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6941d4c7a8ddd6a8",
+        "type": "template",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "field": "segment",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "18",
+        "output": "str",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e961853fa02442fb",
+        "type": "template",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "field": "segment.1",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "17",
+        "output": "str",
+        "x": 380,
+        "y": 600,
+        "wires": [
+            [
+                "cb01c08b1d846fb9"
+            ]
+        ]
+    },
+    {
+        "id": "adc5924792502368",
+        "type": "template",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "field": "segment.2",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "18",
+        "output": "str",
+        "x": 380,
+        "y": 640,
+        "wires": [
+            [
+                "cb01c08b1d846fb9"
+            ]
+        ]
+    },
+    {
+        "id": "92e46cfbf879811f",
+        "type": "inject",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "test",
+        "payloadType": "str",
+        "x": 190,
+        "y": 620,
+        "wires": [
+            [
+                "e961853fa02442fb",
+                "adc5924792502368"
+            ]
+        ]
+    },
+    {
+        "id": "81163dc47a77e98a",
+        "type": "debug",
+        "z": "29a2e1dd05ecbf80",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "cb01c08b1d846fb9",
+        "type": "join",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "segment",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "2",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 570,
+        "y": 600,
+        "wires": [
+            [
+                "81163dc47a77e98a",
+                "3fafda2161e955ca"
+            ]
+        ]
+    },
+    {
+        "id": "3fafda2161e955ca",
+        "type": "api-call-service",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "vacuum",
+        "service": "send_command",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "vacuum.roborock_s6_pure"
+        ],
+        "data": "{\"command\":\"app_segment_clean\",\"params\":[{\"segments\":[\"{{segment}}\"]}]}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 890,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    }
+]
