@@ -21,12 +21,12 @@
         "id": "5038e1ae7ce7eb09",
         "type": "server-state-changed",
         "z": "d7c35c04cc0c5b68",
-        "name": "voltage",
+        "name": "voltage inverter",
         "server": "4ba92433.2478cc",
         "version": 5,
         "outputs": 1,
         "exposeAsEntityConfig": "39f868aa97a1088e",
-        "entityId": "sensor.dsmr_reading_phase_voltage_l1",
+        "entityId": "sensor.solaredge_modbus_ac_voltage_ab",
         "entityIdType": "exact",
         "outputInitially": true,
         "stateType": "str",
@@ -62,7 +62,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 70,
+        "x": 100,
         "y": 100,
         "wires": [
             [
@@ -80,7 +80,7 @@
         "rules": [
             {
                 "t": "gte",
-                "v": "251.5",
+                "v": "252",
                 "vt": "num"
             },
             {
@@ -92,7 +92,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 200,
+        "x": 260,
         "y": 100,
         "wires": [
             [
@@ -139,7 +139,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 360,
+        "x": 420,
         "y": 60,
         "wires": [
             [
@@ -184,7 +184,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 540,
+        "x": 600,
         "y": 60,
         "wires": [
             [
@@ -210,7 +210,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1060,
+        "x": 1120,
         "y": 60,
         "wires": [
             [
@@ -239,7 +239,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 900,
+        "x": 960,
         "y": 60,
         "wires": [
             [
@@ -268,7 +268,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1640,
+        "x": 1680,
         "y": 100,
         "wires": [
             []
@@ -310,7 +310,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 720,
+        "x": 780,
         "y": 60,
         "wires": [
             [
@@ -355,7 +355,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1460,
+        "x": 1500,
         "y": 100,
         "wires": [
             [
@@ -372,11 +372,11 @@
         "server": "4ba92433.2478cc",
         "version": 2,
         "outputs": 2,
-        "entityId": "sensor.dsmr_reading_phase_voltage_l1",
+        "entityId": "sensor.solaredge_modbus_ac_voltage_ab",
         "entityIdFilterType": "exact",
         "property": "state",
         "comparator": "lt",
-        "value": "247.5",
+        "value": "249",
         "valueType": "num",
         "timeout": "30",
         "timeoutType": "num",
@@ -386,7 +386,7 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 1240,
+        "x": 1300,
         "y": 60,
         "wires": [
             [
