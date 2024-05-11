@@ -376,7 +376,7 @@
         "entityIdFilterType": "exact",
         "property": "state",
         "comparator": "lt",
-        "value": "248",
+        "value": "247.5",
         "valueType": "num",
         "timeout": "30",
         "timeoutType": "num",
