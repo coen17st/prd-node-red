@@ -8,29 +8,6 @@
         "env": []
     },
     {
-        "id": "f996c8c39a821463",
-        "type": "group",
-        "z": "b4963274903ed2a9",
-        "name": "notify",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "e3529fbb904fdec4",
-            "fd550a15c38de409",
-            "e8ef0f1a758279b8",
-            "ccc4c0392c0f8a5b",
-            "6db0cb66f53abe2a",
-            "f58814ef1bd587ad",
-            "e4a28823fe038a62",
-            "b5babbdd85ee5d4b"
-        ],
-        "x": 714,
-        "y": 19,
-        "w": 422,
-        "h": 242
-    },
-    {
         "id": "70b9d3433e540010",
         "type": "group",
         "z": "b4963274903ed2a9",
@@ -48,18 +25,58 @@
             "48367c24995b7a71",
             "01112a435413374c"
         ],
-        "x": 714,
-        "y": 279,
+        "x": 1254,
+        "y": 359,
         "w": 422,
         "h": 242
+    },
+    {
+        "id": "f996c8c39a821463",
+        "type": "group",
+        "z": "b4963274903ed2a9",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e3529fbb904fdec4",
+            "fd550a15c38de409",
+            "e8ef0f1a758279b8",
+            "ccc4c0392c0f8a5b",
+            "6db0cb66f53abe2a",
+            "f58814ef1bd587ad",
+            "e4a28823fe038a62",
+            "b5babbdd85ee5d4b"
+        ],
+        "x": 1254,
+        "y": 59,
+        "w": 422,
+        "h": 242
+    },
+    {
+        "id": "c6f3f4b2b46ffb4e",
+        "type": "junction",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "x": 1280,
+        "y": 400,
+        "wires": [
+            [
+                "ddcda02e8d44e679",
+                "40cce72d78ddf2ba",
+                "976de9be5916cb4b",
+                "48367c24995b7a71",
+                "01112a435413374c"
+            ]
+        ]
     },
     {
         "id": "ccc4c0392c0f8a5b",
         "type": "junction",
         "z": "b4963274903ed2a9",
         "g": "f996c8c39a821463",
-        "x": 740,
-        "y": 60,
+        "x": 1280,
+        "y": 100,
         "wires": [
             [
                 "fd550a15c38de409",
@@ -71,19 +88,288 @@
         ]
     },
     {
-        "id": "c6f3f4b2b46ffb4e",
-        "type": "junction",
+        "id": "01112a435413374c",
+        "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "x": 740,
-        "y": 320,
+        "name": "notification channel",
+        "field": "notify.channel",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1430,
+        "y": 560,
         "wires": [
             [
-                "ddcda02e8d44e679",
-                "40cce72d78ddf2ba",
-                "976de9be5916cb4b",
-                "48367c24995b7a71",
-                "01112a435413374c"
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "48367c24995b7a71",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Badkamer ventilatie is uitgeschakeld",
+        "output": "str",
+        "x": 1400,
+        "y": 520,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "b36f1d0dfd83653c",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1635,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "976de9be5916cb4b",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "fan",
+        "output": "str",
+        "x": 1410,
+        "y": 480,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "017eba9ce6de6486",
+        "type": "join",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1550,
+        "y": 420,
+        "wires": [
+            [
+                "b36f1d0dfd83653c"
+            ]
+        ]
+    },
+    {
+        "id": "ddcda02e8d44e679",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 1390,
+        "y": 400,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "40cce72d78ddf2ba",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1390,
+        "y": 440,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "b5babbdd85ee5d4b",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "notification channel",
+        "field": "notify.channel",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1430,
+        "y": 260,
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
+            ]
+        ]
+    },
+    {
+        "id": "e4a28823fe038a62",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Badkamer ventilatie is ingeschakeld.",
+        "output": "str",
+        "x": 1400,
+        "y": 220,
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
+            ]
+        ]
+    },
+    {
+        "id": "f58814ef1bd587ad",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1635,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "6db0cb66f53abe2a",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "fan",
+        "output": "str",
+        "x": 1410,
+        "y": 180,
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
+            ]
+        ]
+    },
+    {
+        "id": "e8ef0f1a758279b8",
+        "type": "join",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1550,
+        "y": 120,
+        "wires": [
+            [
+                "f58814ef1bd587ad"
+            ]
+        ]
+    },
+    {
+        "id": "fd550a15c38de409",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 1390,
+        "y": 100,
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
+            ]
+        ]
+    },
+    {
+        "id": "e3529fbb904fdec4",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1390,
+        "y": 140,
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
             ]
         ]
     },
@@ -143,10 +429,11 @@
             }
         ],
         "x": 110,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
-                "860a72a08f111ab7"
+                "860a72a08f111ab7",
+                "e9c932d56036f13b"
             ]
         ]
     },
@@ -163,7 +450,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "ed8cadbe2f5f5074"
@@ -174,13 +461,13 @@
         "id": "ed8cadbe2f5f5074",
         "type": "switch",
         "z": "b4963274903ed2a9",
-        "name": "diferrence more than 5",
+        "name": "diferrence more than x",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "gte",
-                "v": "5",
+                "v": "4",
                 "vt": "num"
             },
             {
@@ -193,316 +480,249 @@
         "repair": false,
         "outputs": 2,
         "x": 580,
-        "y": 60,
-        "wires": [
-            [
-                "ccc4c0392c0f8a5b",
-                "0f8226660ccd1f4a"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e3529fbb904fdec4",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 850,
         "y": 100,
         "wires": [
             [
-                "e8ef0f1a758279b8"
-            ]
-        ]
-    },
-    {
-        "id": "fd550a15c38de409",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 850,
-        "y": 60,
-        "wires": [
-            [
-                "e8ef0f1a758279b8"
-            ]
-        ]
-    },
-    {
-        "id": "e8ef0f1a758279b8",
-        "type": "join",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "5",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1010,
-        "y": 80,
-        "wires": [
-            [
-                "f58814ef1bd587ad"
-            ]
-        ]
-    },
-    {
-        "id": "6db0cb66f53abe2a",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "fan",
-        "output": "str",
-        "x": 870,
-        "y": 140,
-        "wires": [
-            [
-                "e8ef0f1a758279b8"
-            ]
-        ]
-    },
-    {
-        "id": "f58814ef1bd587ad",
-        "type": "link out",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1095,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "e4a28823fe038a62",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Badkamer ventilatie is ingeschakeld.",
-        "output": "str",
-        "x": 860,
-        "y": 180,
-        "wires": [
-            [
-                "e8ef0f1a758279b8"
-            ]
-        ]
-    },
-    {
-        "id": "b5babbdd85ee5d4b",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "notification channel",
-        "field": "notify.channel",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 890,
-        "y": 220,
-        "wires": [
-            [
-                "e8ef0f1a758279b8"
-            ]
+                "bbfc944671edd2e3"
+            ],
+            []
         ]
     },
     {
         "id": "0f8226660ccd1f4a",
         "type": "stoptimer",
         "z": "b4963274903ed2a9",
-        "duration": "60",
+        "duration": "120",
         "units": "Minute",
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 600,
-        "y": 320,
+        "x": 330,
+        "y": 280,
         "wires": [
             [
-                "c6f3f4b2b46ffb4e"
+                "48e88711b7ff8b55"
             ],
             []
         ]
     },
     {
-        "id": "40cce72d78ddf2ba",
-        "type": "template",
+        "id": "76a8a1ea0af30f4a",
+        "type": "api-call-service",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 850,
-        "y": 360,
+        "name": "turn on bathroom fan",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly1pm_bathroom_fan_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1040,
+        "y": 100,
         "wires": [
             [
-                "017eba9ce6de6486"
+                "ccc4c0392c0f8a5b",
+                "0f8226660ccd1f4a"
             ]
         ]
     },
     {
-        "id": "ddcda02e8d44e679",
-        "type": "template",
+        "id": "bbfc944671edd2e3",
+        "type": "api-current-state",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 850,
-        "y": 320,
+        "name": "bathroom fan is not on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "switch.shelly1pm_bathroom_fan_switch_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 800,
+        "y": 100,
         "wires": [
             [
-                "017eba9ce6de6486"
-            ]
+                "76a8a1ea0af30f4a",
+                "d8a0b2f19f9a0e65"
+            ],
+            []
         ]
     },
     {
-        "id": "017eba9ce6de6486",
-        "type": "join",
+        "id": "d8a0b2f19f9a0e65",
+        "type": "change",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
         "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "5",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1010,
-        "y": 340,
+        "rules": [
+            {
+                "t": "set",
+                "p": "old_state_humidity",
+                "pt": "flow",
+                "to": "data.old_state.state",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 60,
         "wires": [
-            [
-                "b36f1d0dfd83653c"
-            ]
+            []
         ]
     },
     {
-        "id": "976de9be5916cb4b",
-        "type": "template",
+        "id": "48e88711b7ff8b55",
+        "type": "api-current-state",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "fan",
-        "output": "str",
-        "x": 870,
+        "name": "bathroom fan is not off",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "switch.shelly1pm_bathroom_fan_switch_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 800,
         "y": 400,
         "wires": [
             [
-                "017eba9ce6de6486"
-            ]
+                "715c5c011eeebe21"
+            ],
+            []
         ]
     },
     {
-        "id": "b36f1d0dfd83653c",
-        "type": "link out",
+        "id": "63a8c616e04072af",
+        "type": "comment",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1095,
-        "y": 340,
+        "name": "turn off the bathroom fan when the old humidity value is reached",
+        "info": "",
+        "x": 470,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "48367c24995b7a71",
-        "type": "template",
+        "id": "715c5c011eeebe21",
+        "type": "api-call-service",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Badkamer ventilatie is uitgeschakeld",
-        "output": "str",
-        "x": 860,
-        "y": 440,
+        "name": "turn off bathroom fan",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly1pm_bathroom_fan_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1040,
+        "y": 400,
         "wires": [
             [
-                "017eba9ce6de6486"
+                "c6f3f4b2b46ffb4e"
             ]
         ]
     },
     {
-        "id": "01112a435413374c",
-        "type": "template",
+        "id": "af15e90fccd8959d",
+        "type": "comment",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "notification channel",
-        "field": "notify.channel",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 890,
-        "y": 480,
+        "name": "turn off the bathroom fan after x minutes",
+        "info": "",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e9c932d56036f13b",
+        "type": "switch",
+        "z": "b4963274903ed2a9",
+        "name": "new value <= old value",
+        "property": "old_state_humidity",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "data.new_state.state",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 400,
         "wires": [
             [
-                "017eba9ce6de6486"
+                "48e88711b7ff8b55"
             ]
         ]
     },
@@ -529,4 +749,4 @@
         "statusTimeFormat": "h:m",
         "enableGlobalContextStore": true
     }
-]   
+]
