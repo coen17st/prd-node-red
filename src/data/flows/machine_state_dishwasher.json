@@ -57,101 +57,6 @@
         ]
     },
     {
-        "id": "80b3c96f004d6f8b",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "dishwasher",
-        "output": "str",
-        "x": 1390,
-        "y": 220,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "71f13b6b1744cf6b",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1370,
-        "y": 180,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "64614e79bcb09872",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Vaatwasser",
-        "output": "str",
-        "x": 1370,
-        "y": 100,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "2a35d2abfb0850da",
-        "type": "template",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "De Vaatwasser is klaar",
-        "output": "str",
-        "x": 1380,
-        "y": 140,
-        "wires": [
-            [
-                "08bca5ce6d389d48"
-            ]
-        ]
-    },
-    {
-        "id": "2c0a57bd6ee87009",
-        "type": "link out",
-        "z": "2437e768.8e34d8",
-        "g": "3bf0bc8959f8a48e",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1665,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "08bca5ce6d389d48",
         "type": "join",
         "z": "2437e768.8e34d8",
@@ -181,6 +86,101 @@
         ]
     },
     {
+        "id": "2c0a57bd6ee87009",
+        "type": "link out",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1665,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2a35d2abfb0850da",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De Vaatwasser is klaar",
+        "output": "str",
+        "x": 1380,
+        "y": 140,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "64614e79bcb09872",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Vaatwasser",
+        "output": "str",
+        "x": 1370,
+        "y": 100,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "71f13b6b1744cf6b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1370,
+        "y": 180,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
+        "id": "80b3c96f004d6f8b",
+        "type": "template",
+        "z": "2437e768.8e34d8",
+        "g": "3bf0bc8959f8a48e",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "dishwasher",
+        "output": "str",
+        "x": 1390,
+        "y": 220,
+        "wires": [
+            [
+                "08bca5ce6d389d48"
+            ]
+        ]
+    },
+    {
         "id": "36f24fd5.59924",
         "type": "change",
         "z": "2437e768.8e34d8",
@@ -199,7 +199,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
+        "x": 840,
         "y": 80,
         "wires": [
             [
@@ -226,7 +226,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
+        "x": 840,
         "y": 140,
         "wires": [
             [
@@ -265,7 +265,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 640,
+        "x": 660,
         "y": 80,
         "wires": [
             [
@@ -305,7 +305,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 640,
+        "x": 660,
         "y": 140,
         "wires": [
             [
@@ -426,12 +426,12 @@
         "id": "036d5a464421fc1b",
         "type": "stoptimer",
         "z": "2437e768.8e34d8",
-        "duration": "5",
-        "units": "Minute",
+        "duration": "10",
+        "units": "Second",
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 460,
+        "x": 470,
         "y": 80,
         "wires": [
             [
@@ -450,7 +450,7 @@
         "rules": [
             {
                 "t": "gt",
-                "v": "10",
+                "v": "3.5",
                 "vt": "num"
             },
             {
