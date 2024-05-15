@@ -8,29 +8,6 @@
         "env": []
     },
     {
-        "id": "70b9d3433e540010",
-        "type": "group",
-        "z": "b4963274903ed2a9",
-        "name": "notify",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "40cce72d78ddf2ba",
-            "ddcda02e8d44e679",
-            "017eba9ce6de6486",
-            "c6f3f4b2b46ffb4e",
-            "976de9be5916cb4b",
-            "b36f1d0dfd83653c",
-            "48367c24995b7a71",
-            "01112a435413374c"
-        ],
-        "x": 1254,
-        "y": 359,
-        "w": 422,
-        "h": 242
-    },
-    {
         "id": "f996c8c39a821463",
         "type": "group",
         "z": "b4963274903ed2a9",
@@ -45,176 +22,72 @@
             "ccc4c0392c0f8a5b",
             "6db0cb66f53abe2a",
             "f58814ef1bd587ad",
-            "e4a28823fe038a62",
             "b5babbdd85ee5d4b"
         ],
-        "x": 1254,
-        "y": 59,
+        "x": 1214,
+        "y": 39,
         "w": 422,
-        "h": 242
+        "h": 202
     },
     {
-        "id": "c6f3f4b2b46ffb4e",
-        "type": "junction",
+        "id": "70b9d3433e540010",
+        "type": "group",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "x": 1280,
-        "y": 400,
-        "wires": [
-            [
-                "ddcda02e8d44e679",
-                "40cce72d78ddf2ba",
-                "976de9be5916cb4b",
-                "48367c24995b7a71",
-                "01112a435413374c"
-            ]
-        ]
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "40cce72d78ddf2ba",
+            "ddcda02e8d44e679",
+            "017eba9ce6de6486",
+            "c6f3f4b2b46ffb4e",
+            "976de9be5916cb4b",
+            "b36f1d0dfd83653c",
+            "01112a435413374c"
+        ],
+        "x": 1214,
+        "y": 259,
+        "w": 422,
+        "h": 202
     },
     {
         "id": "ccc4c0392c0f8a5b",
         "type": "junction",
         "z": "b4963274903ed2a9",
         "g": "f996c8c39a821463",
-        "x": 1280,
-        "y": 100,
+        "x": 1240,
+        "y": 80,
         "wires": [
             [
                 "fd550a15c38de409",
                 "e3529fbb904fdec4",
                 "6db0cb66f53abe2a",
-                "e4a28823fe038a62",
                 "b5babbdd85ee5d4b"
             ]
         ]
     },
     {
-        "id": "01112a435413374c",
-        "type": "template",
+        "id": "c6f3f4b2b46ffb4e",
+        "type": "junction",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "notification channel",
-        "field": "notify.channel",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1430,
-        "y": 560,
+        "x": 1240,
+        "y": 300,
         "wires": [
             [
-                "017eba9ce6de6486"
+                "ddcda02e8d44e679",
+                "40cce72d78ddf2ba",
+                "976de9be5916cb4b",
+                "01112a435413374c"
             ]
         ]
     },
     {
-        "id": "48367c24995b7a71",
+        "id": "e3529fbb904fdec4",
         "type": "template",
         "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Badkamer ventilatie is uitgeschakeld",
-        "output": "str",
-        "x": 1400,
-        "y": 520,
-        "wires": [
-            [
-                "017eba9ce6de6486"
-            ]
-        ]
-    },
-    {
-        "id": "b36f1d0dfd83653c",
-        "type": "link out",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1635,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "976de9be5916cb4b",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "notification id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "fan",
-        "output": "str",
-        "x": 1410,
-        "y": 480,
-        "wires": [
-            [
-                "017eba9ce6de6486"
-            ]
-        ]
-    },
-    {
-        "id": "017eba9ce6de6486",
-        "type": "join",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "5",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1550,
-        "y": 420,
-        "wires": [
-            [
-                "b36f1d0dfd83653c"
-            ]
-        ]
-    },
-    {
-        "id": "ddcda02e8d44e679",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 1390,
-        "y": 400,
-        "wires": [
-            [
-                "017eba9ce6de6486"
-            ]
-        ]
-    },
-    {
-        "id": "40cce72d78ddf2ba",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
+        "g": "f996c8c39a821463",
         "name": "icon",
         "field": "notify.icon",
         "fieldType": "msg",
@@ -222,82 +95,28 @@
         "syntax": "mustache",
         "template": "",
         "output": "str",
-        "x": 1390,
-        "y": 440,
-        "wires": [
-            [
-                "017eba9ce6de6486"
-            ]
-        ]
-    },
-    {
-        "id": "b5babbdd85ee5d4b",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "notification channel",
-        "field": "notify.channel",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1430,
-        "y": 260,
-        "wires": [
-            [
-                "e8ef0f1a758279b8"
-            ]
-        ]
-    },
-    {
-        "id": "e4a28823fe038a62",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "message",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Badkamer ventilatie is ingeschakeld.",
-        "output": "str",
-        "x": 1400,
-        "y": 220,
-        "wires": [
-            [
-                "e8ef0f1a758279b8"
-            ]
-        ]
-    },
-    {
-        "id": "f58814ef1bd587ad",
-        "type": "link out",
-        "z": "b4963274903ed2a9",
-        "g": "f996c8c39a821463",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1635,
+        "x": 1350,
         "y": 120,
-        "wires": []
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
+            ]
+        ]
     },
     {
-        "id": "6db0cb66f53abe2a",
+        "id": "fd550a15c38de409",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "f996c8c39a821463",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "fan",
+        "template": "Ventilatie",
         "output": "str",
-        "x": 1410,
-        "y": 180,
+        "x": 1350,
+        "y": 80,
         "wires": [
             [
                 "e8ef0f1a758279b8"
@@ -325,8 +144,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1550,
-        "y": 120,
+        "x": 1510,
+        "y": 100,
         "wires": [
             [
                 "f58814ef1bd587ad"
@@ -334,19 +153,19 @@
         ]
     },
     {
-        "id": "fd550a15c38de409",
+        "id": "6db0cb66f53abe2a",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "f996c8c39a821463",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Ventilatie",
+        "template": "bathroom_fan",
         "output": "str",
-        "x": 1390,
-        "y": 100,
+        "x": 1370,
+        "y": 160,
         "wires": [
             [
                 "e8ef0f1a758279b8"
@@ -354,10 +173,44 @@
         ]
     },
     {
-        "id": "e3529fbb904fdec4",
+        "id": "f58814ef1bd587ad",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "f996c8c39a821463",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1595,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b5babbdd85ee5d4b",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "f996c8c39a821463",
+        "name": "notification channel",
+        "field": "notify.channel",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "bathroom_fan",
+        "output": "str",
+        "x": 1390,
+        "y": 200,
+        "wires": [
+            [
+                "e8ef0f1a758279b8"
+            ]
+        ]
+    },
+    {
+        "id": "40cce72d78ddf2ba",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
         "name": "icon",
         "field": "notify.icon",
         "fieldType": "msg",
@@ -365,11 +218,114 @@
         "syntax": "mustache",
         "template": "",
         "output": "str",
-        "x": 1390,
-        "y": 140,
+        "x": 1350,
+        "y": 340,
         "wires": [
             [
-                "e8ef0f1a758279b8"
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "ddcda02e8d44e679",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Ventilatie",
+        "output": "str",
+        "x": 1350,
+        "y": 300,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "017eba9ce6de6486",
+        "type": "join",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1510,
+        "y": 320,
+        "wires": [
+            [
+                "b36f1d0dfd83653c"
+            ]
+        ]
+    },
+    {
+        "id": "976de9be5916cb4b",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "bathroom_fan",
+        "output": "str",
+        "x": 1370,
+        "y": 380,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "b36f1d0dfd83653c",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1595,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "01112a435413374c",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "notification channel",
+        "field": "notify.channel",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "bathroom_fan",
+        "output": "str",
+        "x": 1390,
+        "y": 420,
+        "wires": [
+            [
+                "017eba9ce6de6486"
             ]
         ]
     },
@@ -429,7 +385,7 @@
             }
         ],
         "x": 110,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "860a72a08f111ab7",
@@ -450,7 +406,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "ed8cadbe2f5f5074"
@@ -469,23 +425,17 @@
                 "t": "gte",
                 "v": "4",
                 "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "num"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
+        "outputs": 1,
         "x": 580,
-        "y": 100,
+        "y": 60,
         "wires": [
             [
                 "bbfc944671edd2e3"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -497,11 +447,11 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 330,
-        "y": 280,
+        "x": 150,
+        "y": 220,
         "wires": [
             [
-                "48e88711b7ff8b55"
+                "61f4e53bdbca1c16"
             ],
             []
         ]
@@ -556,12 +506,6 @@
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
             }
         ],
         "for": "0",
@@ -572,8 +516,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 800,
-        "y": 100,
+        "x": 780,
+        "y": 60,
         "wires": [
             [
                 "76a8a1ea0af30f4a",
@@ -644,7 +588,7 @@
         "entity_location": "data",
         "override_data": "msg",
         "x": 800,
-        "y": 400,
+        "y": 280,
         "wires": [
             [
                 "715c5c011eeebe21"
@@ -658,8 +602,8 @@
         "z": "b4963274903ed2a9",
         "name": "turn off the bathroom fan when the old humidity value is reached",
         "info": "",
-        "x": 470,
-        "y": 360,
+        "x": 270,
+        "y": 320,
         "wires": []
     },
     {
@@ -684,7 +628,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1040,
-        "y": 400,
+        "y": 280,
         "wires": [
             [
                 "c6f3f4b2b46ffb4e"
@@ -697,8 +641,8 @@
         "z": "b4963274903ed2a9",
         "name": "turn off the bathroom fan after x minutes",
         "info": "",
-        "x": 390,
-        "y": 240,
+        "x": 190,
+        "y": 180,
         "wires": []
     },
     {
@@ -718,11 +662,105 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 340,
-        "y": 400,
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "1da06a5e8bc95932"
+            ]
+        ]
+    },
+    {
+        "id": "1da06a5e8bc95932",
+        "type": "switch",
+        "z": "b4963274903ed2a9",
+        "name": "humidity is below 70%",
+        "property": "data.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "70",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "3c42e6f768e9f4a8"
+            ]
+        ]
+    },
+    {
+        "id": "48367c24995b7a71",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De badkamer ventilatie is uitgeschakeld na 120 minuten. De luchtvochtigheid is {{data.new_state.state}}%.",
+        "output": "str",
+        "x": 560,
+        "y": 220,
         "wires": [
             [
                 "48e88711b7ff8b55"
+            ]
+        ]
+    },
+    {
+        "id": "3c42e6f768e9f4a8",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De badkamer ventilatie is uitgeschakeld, de luchtvochtigheid is op de oude waarde van {{data.new_state.state}}%.",
+        "output": "str",
+        "x": 560,
+        "y": 360,
+        "wires": [
+            [
+                "48e88711b7ff8b55"
+            ]
+        ]
+    },
+    {
+        "id": "61f4e53bdbca1c16",
+        "type": "switch",
+        "z": "b4963274903ed2a9",
+        "name": "humidity is below 70%",
+        "property": "data.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "70",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "48367c24995b7a71"
+            ],
+            [
+                "0f8226660ccd1f4a"
             ]
         ]
     },
