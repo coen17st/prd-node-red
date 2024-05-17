@@ -41,7 +41,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 960,
-        "y": 420,
+        "y": 440,
         "wires": [
             []
         ]
@@ -69,7 +69,7 @@
         "repair": false,
         "outputs": 2,
         "x": 790,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "8954d811f3cec46a"
@@ -101,7 +101,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 960,
-        "y": 480,
+        "y": 500,
         "wires": [
             []
         ]
@@ -123,7 +123,7 @@
         "drop": false,
         "outputs": 1,
         "x": 520,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "4410039256c7c052"
@@ -150,7 +150,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "7c96404bfb58afe2"
@@ -288,7 +288,7 @@
         "default_start": false,
         "differ": true,
         "x": 610,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "387fd151e9a8e19c",
