@@ -25,7 +25,7 @@
             "ed20a5d29a5eb136",
             "29504140078fb34c"
         ],
-        "x": 754,
+        "x": 794,
         "y": 39,
         "w": 422,
         "h": 242
@@ -35,7 +35,7 @@
         "type": "junction",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "x": 780,
+        "x": 820,
         "y": 80,
         "wires": [
             [
@@ -51,7 +51,7 @@
         "id": "abca9d489cb39d05",
         "type": "junction",
         "z": "645478ab1138fd33",
-        "x": 280,
+        "x": 320,
         "y": 100,
         "wires": [
             [
@@ -60,19 +60,19 @@
         ]
     },
     {
-        "id": "2e62b582b5ace0b2",
+        "id": "29504140078fb34c",
         "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification channel",
+        "field": "notify.channel",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "Warning",
         "output": "str",
-        "x": 890,
-        "y": 120,
+        "x": 970,
+        "y": 240,
         "wires": [
             [
                 "b151676bc37a1e90"
@@ -80,19 +80,53 @@
         ]
     },
     {
-        "id": "6011ff5a330d5f46",
+        "id": "ed20a5d29a5eb136",
         "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "name": "title",
-        "field": "notify.title",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Alarm",
+        "template": "Beweging in de achtertuin gedetecteerd!",
         "output": "str",
-        "x": 890,
-        "y": 80,
+        "x": 940,
+        "y": 200,
+        "wires": [
+            [
+                "b151676bc37a1e90"
+            ]
+        ]
+    },
+    {
+        "id": "b41a40c1e135e55c",
+        "type": "link out",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 1175,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dfebcb371c6d37c4",
+        "type": "template",
+        "z": "645478ab1138fd33",
+        "g": "f2952a0e7861984f",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "backyard_alarm",
+        "output": "str",
+        "x": 950,
+        "y": 160,
         "wires": [
             [
                 "b151676bc37a1e90"
@@ -120,7 +154,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1050,
+        "x": 1090,
         "y": 100,
         "wires": [
             [
@@ -129,19 +163,19 @@
         ]
     },
     {
-        "id": "dfebcb371c6d37c4",
+        "id": "6011ff5a330d5f46",
         "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "backyard_alarm",
+        "template": "Alarm",
         "output": "str",
-        "x": 910,
-        "y": 160,
+        "x": 930,
+        "y": 80,
         "wires": [
             [
                 "b151676bc37a1e90"
@@ -149,33 +183,19 @@
         ]
     },
     {
-        "id": "b41a40c1e135e55c",
-        "type": "link out",
-        "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1135,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "ed20a5d29a5eb136",
+        "id": "2e62b582b5ace0b2",
         "type": "template",
         "z": "645478ab1138fd33",
         "g": "f2952a0e7861984f",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Beweging in de achtertuin gedetecteerd!",
+        "template": "",
         "output": "str",
-        "x": 900,
-        "y": 200,
+        "x": 930,
+        "y": 120,
         "wires": [
             [
                 "b151676bc37a1e90"
@@ -196,7 +216,7 @@
         "id": "4f5603c50cf3e3f1",
         "type": "server-state-changed",
         "z": "645478ab1138fd33",
-        "name": "backyard motion sensor 01",
+        "name": "backyard motion sensor 01 is on",
         "server": "4ba92433.2478cc",
         "version": 5,
         "outputs": 2,
@@ -237,7 +257,7 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 130,
+        "x": 150,
         "y": 60,
         "wires": [
             [
@@ -284,7 +304,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 370,
+        "x": 410,
         "y": 60,
         "wires": [
             [
@@ -314,7 +334,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 630,
         "y": 60,
         "wires": [
             [
@@ -342,7 +362,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 590,
+        "x": 630,
         "y": 100,
         "wires": [
             [
@@ -359,7 +379,7 @@
         "links": [
             "164322a018845856"
         ],
-        "x": 775,
+        "x": 815,
         "y": 320,
         "wires": []
     },
@@ -384,11 +404,11 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 760,
+        "x": 790,
         "y": 380,
         "wires": [
             [
-                "1a622c0b1aadf203"
+                "f75dd0a2cc5c194e"
             ]
         ]
     },
@@ -428,7 +448,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 590,
+        "x": 620,
         "y": 380,
         "wires": [
             [
@@ -438,28 +458,10 @@
         ]
     },
     {
-        "id": "1a622c0b1aadf203",
-        "type": "stoptimer",
-        "z": "645478ab1138fd33",
-        "duration": "20",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 940,
-        "y": 380,
-        "wires": [
-            [
-                "0361aab005f490ca"
-            ],
-            []
-        ]
-    },
-    {
         "id": "0361aab005f490ca",
         "type": "api-call-service",
         "z": "645478ab1138fd33",
-        "name": "turn on light",
+        "name": "turn off light",
         "server": "4ba92433.2478cc",
         "version": 5,
         "debugenabled": false,
@@ -476,29 +478,42 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1120,
+        "x": 1090,
         "y": 380,
         "wires": [
             []
         ]
     },
     {
-        "id": "29504140078fb34c",
-        "type": "template",
+        "id": "f75dd0a2cc5c194e",
+        "type": "ha-wait-until",
         "z": "645478ab1138fd33",
-        "g": "f2952a0e7861984f",
-        "name": "notification channel",
-        "field": "notify.channel",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Warning",
-        "output": "str",
-        "x": 930,
-        "y": 240,
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 2,
+        "entityId": "binary_sensor.backyard_motion_sensor_01_motion",
+        "entityIdFilterType": "exact",
+        "property": "state",
+        "comparator": "is",
+        "value": "off",
+        "valueType": "str",
+        "timeout": "5",
+        "timeoutType": "num",
+        "timeoutUnits": "minutes",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 940,
+        "y": 380,
         "wires": [
             [
-                "b151676bc37a1e90"
+                "0361aab005f490ca"
+            ],
+            [
+                "0361aab005f490ca"
             ]
         ]
     },
