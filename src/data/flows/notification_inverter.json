@@ -44,24 +44,59 @@
         ]
     },
     {
-        "id": "cdbb5b48e71b5866",
+        "id": "59327076bed18754",
         "type": "template",
         "z": "42b354a7f0284779",
         "g": "392300741f68f312",
-        "name": "message",
-        "field": "notify.message",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{primary_information}}.\\n{{secondary_information}}",
+        "template": "",
         "output": "str",
-        "x": 1460,
-        "y": 200,
+        "x": 1450,
+        "y": 240,
         "wires": [
             [
                 "4dd6478ac62b8c2f"
             ]
         ]
+    },
+    {
+        "id": "c6941b34f3402196",
+        "type": "template",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Zonne-energie",
+        "output": "str",
+        "x": 1450,
+        "y": 160,
+        "wires": [
+            [
+                "4dd6478ac62b8c2f"
+            ]
+        ]
+    },
+    {
+        "id": "17c484a9c9a917ac",
+        "type": "link out",
+        "z": "42b354a7f0284779",
+        "g": "392300741f68f312",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1705,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "4dd6478ac62b8c2f",
@@ -93,54 +128,19 @@
         ]
     },
     {
-        "id": "17c484a9c9a917ac",
-        "type": "link out",
+        "id": "cdbb5b48e71b5866",
+        "type": "template",
         "z": "42b354a7f0284779",
         "g": "392300741f68f312",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1705,
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{primary_information}}.\\n{{secondary_information}}",
+        "output": "str",
+        "x": 1460,
         "y": 200,
-        "wires": []
-    },
-    {
-        "id": "c6941b34f3402196",
-        "type": "template",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Zonne-energie",
-        "output": "str",
-        "x": 1450,
-        "y": 160,
-        "wires": [
-            [
-                "4dd6478ac62b8c2f"
-            ]
-        ]
-    },
-    {
-        "id": "59327076bed18754",
-        "type": "template",
-        "z": "42b354a7f0284779",
-        "g": "392300741f68f312",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1450,
-        "y": 240,
         "wires": [
             [
                 "4dd6478ac62b8c2f"
@@ -213,9 +213,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "De omvormer gaf op {{{myymd}}} om {{{mytime}}} status {{payload}}, {{{data.new_state.attributes.status_description}}}",
+        "template": "De omvormer is op {{{myymd}}} om {{{mytime}}} status {{payload}}, {{{data.new_state.attributes.status_description}}}",
         "output": "str",
-        "x": 480,
+        "x": 600,
         "y": 60,
         "wires": [
             [
@@ -234,7 +234,7 @@
         "syntax": "mustache",
         "template": "Er is een probleem met de omvormer",
         "output": "str",
-        "x": 690,
+        "x": 810,
         "y": 60,
         "wires": [
             [
@@ -270,40 +270,7 @@
         "y": 60,
         "wires": [
             [
-                "2bcc033320eee7c1"
-            ]
-        ]
-    },
-    {
-        "id": "3c79af48f7d7ed9a",
-        "type": "switch",
-        "z": "42b354a7f0284779",
-        "name": "status",
-        "property": "data.new_state.state",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "7",
-                "vt": "num"
-            },
-            {
-                "t": "eq",
-                "v": "8",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 970,
-        "y": 60,
-        "wires": [
-            [
-                "ffc8288b4ad5eee4"
-            ],
-            [
-                "ffc8288b4ad5eee4"
+                "7dbf7c37a565252a"
             ]
         ]
     },
@@ -331,7 +298,7 @@
         "syntax": "mustache",
         "template": "error",
         "output": "str",
-        "x": 1150,
+        "x": 1130,
         "y": 60,
         "wires": [
             [
@@ -351,11 +318,52 @@
         "syntax": "mustache",
         "template": "garbage",
         "output": "str",
-        "x": 850,
+        "x": 970,
         "y": 60,
         "wires": [
             [
-                "3c79af48f7d7ed9a"
+                "ffc8288b4ad5eee4"
+            ]
+        ]
+    },
+    {
+        "id": "7dbf7c37a565252a",
+        "type": "switch",
+        "z": "42b354a7f0284779",
+        "name": "status",
+        "property": "data.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "2bcc033320eee7c1"
+            ],
+            [
+                "2bcc033320eee7c1"
+            ],
+            [
+                "2bcc033320eee7c1"
             ]
         ]
     },
