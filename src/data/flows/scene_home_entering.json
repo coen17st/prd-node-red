@@ -41,6 +41,60 @@
         ]
     },
     {
+        "id": "4d43c0c59596c396",
+        "type": "template",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 2070,
+        "y": 340,
+        "wires": [
+            [
+                "52f21d3060c57706"
+            ]
+        ]
+    },
+    {
+        "id": "7063678cde99b775",
+        "type": "template",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Verlichting",
+        "output": "str",
+        "x": 2070,
+        "y": 260,
+        "wires": [
+            [
+                "52f21d3060c57706"
+            ]
+        ]
+    },
+    {
+        "id": "5e72b91e3ad4066d",
+        "type": "link out",
+        "z": "c0da8379.b0dd3",
+        "g": "47af9932f18884cc",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 2325,
+        "y": 300,
+        "wires": []
+    },
+    {
         "id": "52f21d3060c57706",
         "type": "join",
         "z": "c0da8379.b0dd3",
@@ -70,60 +124,6 @@
         ]
     },
     {
-        "id": "5e72b91e3ad4066d",
-        "type": "link out",
-        "z": "c0da8379.b0dd3",
-        "g": "47af9932f18884cc",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 2325,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "7063678cde99b775",
-        "type": "template",
-        "z": "c0da8379.b0dd3",
-        "g": "47af9932f18884cc",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Verlichting",
-        "output": "str",
-        "x": 2070,
-        "y": 260,
-        "wires": [
-            [
-                "52f21d3060c57706"
-            ]
-        ]
-    },
-    {
-        "id": "4d43c0c59596c396",
-        "type": "template",
-        "z": "c0da8379.b0dd3",
-        "g": "47af9932f18884cc",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 2070,
-        "y": 340,
-        "wires": [
-            [
-                "52f21d3060c57706"
-            ]
-        ]
-    },
-    {
         "id": "9e995be6.7976b8",
         "type": "api-call-service",
         "z": "c0da8379.b0dd3",
@@ -145,7 +145,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1340,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "13ca8b62.27a4a5"
@@ -174,7 +174,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1340,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "13ca8b62.27a4a5"
@@ -205,7 +205,8 @@
                 "ed71f712.b69338",
                 "60ffd46b.e9534c",
                 "227abad75eeb983d",
-                "9f66d88d.57dad8"
+                "9f66d88d.57dad8",
+                "22b0b8d3f01237a7"
             ]
         ]
     },
@@ -294,7 +295,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1100,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "9e995be6.7976b8"
@@ -334,7 +335,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1100,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "e137297f.088698"
@@ -423,7 +424,8 @@
             [
                 "ed71f712.b69338",
                 "227abad75eeb983d",
-                "9f66d88d.57dad8"
+                "9f66d88d.57dad8",
+                "22b0b8d3f01237a7"
             ],
             []
         ]
@@ -474,7 +476,7 @@
             }
         ],
         "x": 120,
-        "y": 200,
+        "y": 320,
         "wires": [
             [
                 "c0a73100.b726e"
@@ -528,7 +530,7 @@
             }
         ],
         "x": 130,
-        "y": 260,
+        "y": 380,
         "wires": [
             [
                 "b53f891b.1feb08"
@@ -568,7 +570,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 200,
+        "y": 320,
         "wires": [
             [
                 "5f497d57.150f44",
@@ -610,7 +612,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 370,
-        "y": 260,
+        "y": 380,
         "wires": [
             [
                 "aab516c6.d5acf8",
@@ -852,7 +854,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 720,
-        "y": 320,
+        "y": 380,
         "wires": [
             [
                 "f86b599d.352918"
@@ -881,8 +883,8 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 950,
-        "y": 320,
+        "x": 930,
+        "y": 380,
         "wires": [
             []
         ]
@@ -919,7 +921,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 730,
-        "y": 260,
+        "y": 320,
         "wires": [
             [
                 "1902dc19.17ed64"
@@ -949,7 +951,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 960,
-        "y": 260,
+        "y": 320,
         "wires": [
             []
         ]
@@ -986,7 +988,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 710,
-        "y": 380,
+        "y": 440,
         "wires": [
             [
                 "d08ebe33.48973",
@@ -1080,7 +1082,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 1110,
-        "y": 500,
+        "y": 560,
         "wires": [
             [
                 "fd5eca9e.417048"
@@ -1110,7 +1112,7 @@
         "outputProperties": [],
         "queue": "none",
         "x": 1340,
-        "y": 500,
+        "y": 560,
         "wires": [
             [
                 "13ca8b62.27a4a5"
@@ -1243,6 +1245,73 @@
         "x": 300,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "22b0b8d3f01237a7",
+        "type": "api-current-state",
+        "z": "c0da8379.b0dd3",
+        "name": "state quooker not on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "switch.shellyplug_quooker",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 720,
+        "y": 260,
+        "wires": [
+            [
+                "4545fccab838a1ae"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4545fccab838a1ae",
+        "type": "api-call-service",
+        "z": "c0da8379.b0dd3",
+        "name": "turn on quooker",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shellyplug_quooker"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 920,
+        "y": 260,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4ba92433.2478cc",

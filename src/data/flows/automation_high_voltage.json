@@ -289,7 +289,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1700,
+        "x": 1920,
         "y": 180,
         "wires": [
             []
@@ -376,7 +376,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1520,
+        "x": 1720,
         "y": 180,
         "wires": [
             [
@@ -532,23 +532,50 @@
         "y": 240,
         "wires": [
             [
-                "26acdd0f05ec9fd1"
+                "b01e740bd456520e"
             ],
             []
         ]
     },
     {
-        "id": "26acdd0f05ec9fd1",
+        "id": "f47c7540f5a691a3",
+        "type": "api-call-service",
+        "z": "d7c35c04cc0c5b68",
+        "name": "turn off quooker",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shellyplug_quooker"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1920,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b01e740bd456520e",
         "type": "api-current-state",
         "z": "d7c35c04cc0c5b68",
-        "name": "guest not on",
+        "name": "quooker is not off",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "on",
+        "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is_not",
-        "entity_id": "input_boolean.guest",
+        "entity_id": "switch.shellyplug_quooker",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -573,39 +600,12 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1710,
+        "x": 1730,
         "y": 240,
         "wires": [
             [
                 "f47c7540f5a691a3"
             ],
-            []
-        ]
-    },
-    {
-        "id": "f47c7540f5a691a3",
-        "type": "api-call-service",
-        "z": "d7c35c04cc0c5b68",
-        "name": "turn on quooker",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.shellyplug_quooker"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1880,
-        "y": 240,
-        "wires": [
             []
         ]
     },
