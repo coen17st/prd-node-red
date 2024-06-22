@@ -9,7 +9,6 @@ COPY ./src/data/ /data/
 RUN npm install \
     node-red-contrib-calc \
     node-red-contrib-cron-plus \
-    node-red-contrib-cast \
     node-red-contrib-home-assistant-websocket \
     node-red-contrib-schedex \
     node-red-contrib-simpletime \
@@ -19,4 +18,5 @@ RUN npm install \
     node-red-contrib-traffic \
     node-red-contrib-flow-manager \
     node-red-node-random \
-    node-red-contrib-simple-message-queue
+    node-red-contrib-simple-message-queue \
+    node-red-contrib-google-translate-fixed
