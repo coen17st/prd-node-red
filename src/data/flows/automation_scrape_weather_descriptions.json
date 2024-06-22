@@ -1,0 +1,311 @@
+[
+    {
+        "id": "51ad1e79edd47f04",
+        "type": "tab",
+        "label": "automation_scrape_weather_descriptions",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b24ed907e866091c",
+        "type": "inject",
+        "z": "51ad1e79edd47f04",
+        "name": "",
+        "props": [
+            {
+                "p": "time",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "",
+        "crontab": "0 6-23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "7a932d0e4a844f60",
+                "e3a9679048f08b95"
+            ]
+        ]
+    },
+    {
+        "id": "d475de4d462cdd95",
+        "type": "http request",
+        "z": "51ad1e79edd47f04",
+        "name": "http request to weeronline.nl",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.weeronline.nl/weerbericht-nederland",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "8c6ea330522a9b56"
+            ]
+        ]
+    },
+    {
+        "id": "8c6ea330522a9b56",
+        "type": "html",
+        "z": "51ad1e79edd47f04",
+        "name": "",
+        "property": "payload",
+        "outproperty": "messages",
+        "tag": "p,h2",
+        "ret": "text",
+        "as": "single",
+        "x": 630,
+        "y": 60,
+        "wires": [
+            [
+                "8c926842f5902705"
+            ]
+        ]
+    },
+    {
+        "id": "8c926842f5902705",
+        "type": "ha-sensor",
+        "z": "51ad1e79edd47f04",
+        "name": "custom_weather_description_01",
+        "entityConfig": "dd558d37ebd87d72",
+        "version": 0,
+        "state": "responseUrl",
+        "stateType": "msg",
+        "attributes": [
+            {
+                "property": "header_01",
+                "value": "messages[0]",
+                "valueType": "msg"
+            },
+            {
+                "property": "msg_01",
+                "value": "messages[1]",
+                "valueType": "msg"
+            },
+            {
+                "property": "header_02",
+                "value": "messages[2]",
+                "valueType": "msg"
+            },
+            {
+                "property": "msg_02",
+                "value": "messages[3]",
+                "valueType": "msg"
+            },
+            {
+                "property": "header_03",
+                "value": "messages[4]",
+                "valueType": "msg"
+            },
+            {
+                "property": "msg_03",
+                "value": "messages[5]",
+                "valueType": "msg"
+            },
+            {
+                "property": "header_04",
+                "value": "messages[6]",
+                "valueType": "msg"
+            },
+            {
+                "property": "msg_04",
+                "value": "messages[7]",
+                "valueType": "msg"
+            },
+            {
+                "property": "header_05",
+                "value": "messages[8]",
+                "valueType": "msg"
+            },
+            {
+                "property": "msg_05",
+                "value": "messages[9]",
+                "valueType": "msg"
+            },
+            {
+                "property": "time",
+                "value": "mytime",
+                "valueType": "msg"
+            }
+        ],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 830,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a944de957019b5d",
+        "type": "comment",
+        "z": "51ad1e79edd47f04",
+        "name": "scrape weeronline.nl and put text in a custom sensor",
+        "info": "",
+        "x": 210,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "7a932d0e4a844f60",
+        "type": "simpletime",
+        "z": "51ad1e79edd47f04",
+        "name": "",
+        "mydate": false,
+        "myymd": false,
+        "myyear": false,
+        "mymonth": false,
+        "mymonthn": false,
+        "mymonthf": false,
+        "mydom": false,
+        "mydoy": false,
+        "myday": false,
+        "mydayf": false,
+        "myhourpm": false,
+        "myhour": false,
+        "mytime": true,
+        "mytimes": false,
+        "myminute": false,
+        "myminutes": false,
+        "mysecond": false,
+        "mymillis": false,
+        "myepoch": false,
+        "myrawdate": false,
+        "mypm": false,
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "d475de4d462cdd95"
+            ]
+        ]
+    },
+    {
+        "id": "e3a9679048f08b95",
+        "type": "api-current-state",
+        "z": "51ad1e79edd47f04",
+        "name": "weather code",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.knmi_weather_code",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 240,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd558d37ebd87d72",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "c46c944e0555f590",
+        "name": "custom_weather_description_01",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "custom_weather_description_01"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "c46c944e0555f590",
+        "type": "ha-device-config",
+        "name": "weather_descriptions",
+        "hwVersion": "",
+        "manufacturer": "Node-RED",
+        "model": "",
+        "swVersion": ""
+    }
+]
