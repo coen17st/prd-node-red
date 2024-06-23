@@ -103,7 +103,7 @@
             },
             {
                 "t": "lte",
-                "v": "250",
+                "v": "248",
                 "vt": "num"
             }
         ],
@@ -114,7 +114,7 @@
         "y": 120,
         "wires": [
             [
-                "191dd3b34fd152a8"
+                "ed73ef123074e011"
             ],
             [
                 "05e534e21684525d"
@@ -122,51 +122,6 @@
             [
                 "fd9636d9d6afe3b7"
             ]
-        ]
-    },
-    {
-        "id": "191dd3b34fd152a8",
-        "type": "api-current-state",
-        "z": "d7c35c04cc0c5b68",
-        "name": "persons home",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "group.persons",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 420,
-        "y": 60,
-        "wires": [
-            [
-                "ed73ef123074e011"
-            ],
-            []
         ]
     },
     {
@@ -205,7 +160,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 600,
+        "x": 420,
         "y": 60,
         "wires": [
             [
@@ -219,19 +174,19 @@
         "type": "delay",
         "z": "d7c35c04cc0c5b68",
         "name": "",
-        "pauseType": "delay",
+        "pauseType": "rate",
         "timeout": "30",
         "timeoutUnits": "seconds",
         "rate": "1",
-        "nbRateUnits": "1",
+        "nbRateUnits": "5",
         "rateUnits": "second",
         "randomFirst": "1",
         "randomLast": "5",
         "randomUnits": "seconds",
-        "drop": false,
+        "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 1120,
+        "x": 960,
         "y": 60,
         "wires": [
             [
@@ -260,7 +215,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 960,
+        "x": 780,
         "y": 60,
         "wires": [
             [
@@ -289,7 +244,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1920,
+        "x": 1600,
         "y": 180,
         "wires": [
             []
@@ -331,7 +286,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 780,
+        "x": 600,
         "y": 60,
         "wires": [
             [
@@ -376,7 +331,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1720,
+        "x": 1400,
         "y": 180,
         "wires": [
             [
@@ -407,8 +362,8 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 1320,
-        "y": 120,
+        "x": 1160,
+        "y": 60,
         "wires": [
             [
                 "916f461a6f7da6d3"
@@ -422,6 +377,7 @@
         "id": "05e534e21684525d",
         "type": "api-current-state",
         "z": "d7c35c04cc0c5b68",
+        "d": true,
         "name": "quooker is not on",
         "server": "4ba92433.2478cc",
         "version": 3,
@@ -467,6 +423,7 @@
         "id": "709e2d4d3b3f037d",
         "type": "api-call-service",
         "z": "d7c35c04cc0c5b68",
+        "d": true,
         "name": "turn on quooker",
         "server": "4ba92433.2478cc",
         "version": 5,
@@ -487,9 +444,7 @@
         "x": 620,
         "y": 120,
         "wires": [
-            [
-                "7e334b8861b9df2a"
-            ]
+            []
         ]
     },
     {
@@ -528,7 +483,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1530,
+        "x": 1210,
         "y": 240,
         "wires": [
             [
@@ -558,7 +513,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1920,
+        "x": 1600,
         "y": 240,
         "wires": [
             []
@@ -600,7 +555,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1730,
+        "x": 1410,
         "y": 240,
         "wires": [
             [
