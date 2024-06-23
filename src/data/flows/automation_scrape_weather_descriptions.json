@@ -8,32 +8,6 @@
         "env": []
     },
     {
-        "id": "b24ed907e866091c",
-        "type": "inject",
-        "z": "51ad1e79edd47f04",
-        "name": "",
-        "props": [
-            {
-                "p": "time",
-                "v": "",
-                "vt": "date"
-            }
-        ],
-        "repeat": "",
-        "crontab": "0 6-23 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 90,
-        "y": 60,
-        "wires": [
-            [
-                "7a932d0e4a844f60",
-                "e3a9679048f08b95"
-            ]
-        ]
-    },
-    {
         "id": "d475de4d462cdd95",
         "type": "http request",
         "z": "51ad1e79edd47f04",
@@ -49,7 +23,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 440,
+        "x": 620,
         "y": 60,
         "wires": [
             [
@@ -67,7 +41,7 @@
         "tag": "p,h2",
         "ret": "text",
         "as": "single",
-        "x": 630,
+        "x": 810,
         "y": 60,
         "wires": [
             [
@@ -143,7 +117,7 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 830,
+        "x": 1010,
         "y": 60,
         "wires": [
             []
@@ -185,7 +159,7 @@
         "myepoch": false,
         "myrawdate": false,
         "mypm": false,
-        "x": 230,
+        "x": 410,
         "y": 60,
         "wires": [
             [
@@ -229,10 +203,45 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 240,
+        "x": 420,
         "y": 120,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "79caca1b2ef5e576",
+        "type": "cronplus",
+        "z": "51ad1e79edd47f04",
+        "name": "",
+        "outputField": "payload",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [
+            {
+                "name": "schedule1",
+                "topic": "topic1",
+                "payloadType": "default",
+                "payload": "",
+                "expressionType": "cron",
+                "expression": "0 */15 * * * *",
+                "location": "",
+                "offset": "0",
+                "solarType": "all",
+                "solarEvents": "sunrise,sunset"
+            }
+        ],
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "7a932d0e4a844f60",
+                "e3a9679048f08b95"
+            ]
         ]
     },
     {
