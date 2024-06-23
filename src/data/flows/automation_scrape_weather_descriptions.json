@@ -45,7 +45,7 @@
         "y": 60,
         "wires": [
             [
-                "8c926842f5902705"
+                "e067f2c286459268"
             ]
         ]
     },
@@ -117,7 +117,7 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1010,
+        "x": 1230,
         "y": 60,
         "wires": [
             []
@@ -241,6 +241,26 @@
             [
                 "7a932d0e4a844f60",
                 "e3a9679048f08b95"
+            ]
+        ]
+    },
+    {
+        "id": "e067f2c286459268",
+        "type": "function",
+        "z": "51ad1e79edd47f04",
+        "name": "combine text en titles",
+        "func": "// The provided JSON array\nlet jsonArray = msg.messages\n\n// Function to count words\n/**\n* @param {string} s\n*/\nfunction countWords(s) {\n    return s.split(/\\s+/).length;\n}\n\n// Processing the JSON array\nlet resultArray = [];\nlet title = null;\nlet text = \"\";\n\nfor (let i = 0; i < jsonArray.length; i++) {\n    let item = jsonArray[i];\n    if (countWords(item) < 10) {\n        if (title) {\n            resultArray.push(title);\n            if (text) {\n                resultArray.push(text.trim());\n                text = \"\";\n            }\n        }\n        title = item;\n    } else {\n        text += item + \" \";\n    }\n}\n\n// If there is a dangling title or text\nif (title) {\n    resultArray.push(title);\n    if (text) {\n        resultArray.push(text.trim());\n    }\n}\n\nmsg.messages = resultArray;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 60,
+        "wires": [
+            [
+                "8c926842f5902705"
             ]
         ]
     },
