@@ -24,8 +24,8 @@
             "b36f1d0dfd83653c",
             "01112a435413374c"
         ],
-        "x": 1534,
-        "y": 139,
+        "x": 1854,
+        "y": 39,
         "w": 422,
         "h": 202
     },
@@ -34,8 +34,8 @@
         "type": "junction",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "x": 1560,
-        "y": 180,
+        "x": 1880,
+        "y": 80,
         "wires": [
             [
                 "ddcda02e8d44e679",
@@ -46,19 +46,19 @@
         ]
     },
     {
-        "id": "40cce72d78ddf2ba",
+        "id": "01112a435413374c",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification channel",
+        "field": "notify.channel",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "bathroom_fan",
         "output": "str",
-        "x": 1670,
-        "y": 220,
+        "x": 2030,
+        "y": 200,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -66,19 +66,33 @@
         ]
     },
     {
-        "id": "ddcda02e8d44e679",
+        "id": "b36f1d0dfd83653c",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 2235,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "976de9be5916cb4b",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Ventilatie",
+        "template": "bathroom_fan",
         "output": "str",
-        "x": 1670,
-        "y": 180,
+        "x": 2010,
+        "y": 160,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -106,8 +120,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1830,
-        "y": 200,
+        "x": 2150,
+        "y": 100,
         "wires": [
             [
                 "b36f1d0dfd83653c"
@@ -115,19 +129,19 @@
         ]
     },
     {
-        "id": "976de9be5916cb4b",
+        "id": "ddcda02e8d44e679",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "bathroom_fan",
+        "template": "Ventilatie",
         "output": "str",
-        "x": 1690,
-        "y": 260,
+        "x": 1990,
+        "y": 80,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -135,33 +149,19 @@
         ]
     },
     {
-        "id": "b36f1d0dfd83653c",
-        "type": "link out",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 1915,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "01112a435413374c",
+        "id": "40cce72d78ddf2ba",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "notification channel",
-        "field": "notify.channel",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "bathroom_fan",
+        "template": "",
         "output": "str",
-        "x": 1710,
-        "y": 300,
+        "x": 1990,
+        "y": 120,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -227,8 +227,7 @@
         "y": 60,
         "wires": [
             [
-                "860a72a08f111ab7",
-                "e9c932d56036f13b"
+                "a793a6b052cc2eee"
             ]
         ]
     },
@@ -244,7 +243,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 680,
         "y": 60,
         "wires": [
             [
@@ -269,7 +268,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 620,
+        "x": 920,
         "y": 60,
         "wires": [
             [
@@ -287,7 +286,7 @@
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 350,
+        "x": 650,
         "y": 180,
         "wires": [
             [
@@ -317,7 +316,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1280,
+        "x": 1580,
         "y": 60,
         "wires": [
             [
@@ -355,7 +354,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1040,
+        "x": 1340,
         "y": 60,
         "wires": [
             [
@@ -384,7 +383,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1300,
+        "x": 1600,
         "y": 120,
         "wires": [
             []
@@ -426,7 +425,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1040,
+        "x": 1340,
         "y": 240,
         "wires": [
             [
@@ -441,7 +440,7 @@
         "z": "b4963274903ed2a9",
         "name": "turn off the bathroom fan when the old humidity value is reached",
         "info": "",
-        "x": 490,
+        "x": 790,
         "y": 280,
         "wires": []
     },
@@ -466,7 +465,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1280,
+        "x": 1580,
         "y": 240,
         "wires": [
             [
@@ -480,7 +479,7 @@
         "z": "b4963274903ed2a9",
         "name": "turn off the bathroom fan after x minutes",
         "info": "",
-        "x": 410,
+        "x": 710,
         "y": 140,
         "wires": []
     },
@@ -501,7 +500,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 360,
+        "x": 660,
         "y": 320,
         "wires": [
             [
@@ -526,7 +525,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 580,
+        "x": 880,
         "y": 320,
         "wires": [
             [
@@ -545,7 +544,7 @@
         "syntax": "mustache",
         "template": "De badkamerventilator is uitgeschakeld, na 120 minuten is de oude luchtvochtigheid van voor het douchen niet bereikt maar is wel gezakt onder de 65%. De luchtvochtigheid is {{state.state}}%.",
         "output": "str",
-        "x": 820,
+        "x": 1120,
         "y": 180,
         "wires": [
             [
@@ -564,7 +563,7 @@
         "syntax": "mustache",
         "template": "De badkamerventilator is uitgeschakeld, de luchtvochtigheid heeft de oude waarde ({{data.new_state.state}}%) van voor het douchen bereikt.",
         "output": "str",
-        "x": 820,
+        "x": 1120,
         "y": 320,
         "wires": [
             [
@@ -583,7 +582,7 @@
         "syntax": "mustache",
         "template": "De badkamer ventilatie is ingeschakeld, de luchtvochtigheid is gestegen van {{data.old_state.state}}% naar {{data.new_state.state}}%.",
         "output": "str",
-        "x": 1460,
+        "x": 1760,
         "y": 60,
         "wires": [
             [
@@ -620,12 +619,303 @@
         ],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 610,
+        "x": 910,
         "y": 180,
         "wires": [
             [
                 "48367c24995b7a71"
             ]
+        ]
+    },
+    {
+        "id": "b0839079b191916a",
+        "type": "comment",
+        "z": "b4963274903ed2a9",
+        "name": "fan position frontend",
+        "info": "",
+        "x": 110,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "1d48142c32068673",
+        "type": "server-state-changed",
+        "z": "b4963274903ed2a9",
+        "name": "input select fan position",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_select.mechanical_ventilation_bathroom_position",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "3037226717dc7a91"
+            ]
+        ]
+    },
+    {
+        "id": "3037226717dc7a91",
+        "type": "switch",
+        "z": "b4963274903ed2a9",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Aan",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Uit",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Autonoom",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 290,
+        "y": 520,
+        "wires": [
+            [
+                "7169704a811f5f12"
+            ],
+            [
+                "780e710a1ee1b22e"
+            ],
+            [
+                "0e8f7ec6b9d58557"
+            ]
+        ]
+    },
+    {
+        "id": "25e06b253767b85b",
+        "type": "api-call-service",
+        "z": "b4963274903ed2a9",
+        "name": "turn on fan",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "fan",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "fan.shelly1pm_bathroom_fan_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 730,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7169704a811f5f12",
+        "type": "api-call-service",
+        "z": "b4963274903ed2a9",
+        "name": "turn off fan autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_bathroom_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 490,
+        "y": 520,
+        "wires": [
+            [
+                "25e06b253767b85b"
+            ]
+        ]
+    },
+    {
+        "id": "40a633604b4dfe95",
+        "type": "api-call-service",
+        "z": "b4963274903ed2a9",
+        "name": "turn off fan",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "fan",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "fan.shelly1pm_bathroom_fan_switch_0"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 730,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "780e710a1ee1b22e",
+        "type": "api-call-service",
+        "z": "b4963274903ed2a9",
+        "name": "turn off fan autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_bathroom_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "40a633604b4dfe95"
+            ]
+        ]
+    },
+    {
+        "id": "0e8f7ec6b9d58557",
+        "type": "api-call-service",
+        "z": "b4963274903ed2a9",
+        "name": "turn on fan autonomous",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "input_boolean.mechanical_ventilation_bathroom_autonomous"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 490,
+        "y": 640,
+        "wires": [
+            [
+                "40a633604b4dfe95"
+            ]
+        ]
+    },
+    {
+        "id": "a793a6b052cc2eee",
+        "type": "api-current-state",
+        "z": "b4963274903ed2a9",
+        "name": "bathroom fan autonomous is on",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.mechanical_ventilation_bathroom_autonomous",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 350,
+        "y": 60,
+        "wires": [
+            [
+                "e9c932d56036f13b",
+                "860a72a08f111ab7"
+            ],
+            []
         ]
     },
     {
