@@ -45,7 +45,8 @@
         "y": 60,
         "wires": [
             [
-                "e067f2c286459268"
+                "e067f2c286459268",
+                "515e9f714ecc6ca1"
             ]
         ]
     },
@@ -113,11 +114,16 @@
                 "property": "time",
                 "value": "mytime",
                 "valueType": "msg"
+            },
+            {
+                "property": "msg_01_short",
+                "value": "messages_short",
+                "valueType": "msg"
             }
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1230,
+        "x": 1270,
         "y": 60,
         "wires": [
             []
@@ -256,8 +262,28 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
+        "x": 1000,
         "y": 60,
+        "wires": [
+            [
+                "8c926842f5902705"
+            ]
+        ]
+    },
+    {
+        "id": "515e9f714ecc6ca1",
+        "type": "function",
+        "z": "51ad1e79edd47f04",
+        "name": "create short message",
+        "func": "var text = msg.messages[1];\nvar maxLength = 160;\nvar suffix = \"...\";\n\nif (text.length > maxLength) {\n    msg.messages_short = text.substring(0, maxLength - suffix.length) + suffix;\n} else {\n    msg.messages_short = text;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 120,
         "wires": [
             [
                 "8c926842f5902705"
