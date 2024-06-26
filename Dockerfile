@@ -13,10 +13,8 @@ RUN npm install \
     node-red-contrib-schedex \
     node-red-contrib-simpletime \
     node-red-contrib-stoptimer \
-    node-red-contrib-string \
     node-red-contrib-time-range-switch \
     node-red-contrib-traffic \
     node-red-contrib-flow-manager \
     node-red-node-random \
-    node-red-contrib-simple-message-queue \
-    node-red-contrib-google-translate-fixed
+    node-red-contrib-simple-message-queue
