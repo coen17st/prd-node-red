@@ -46,19 +46,19 @@
         ]
     },
     {
-        "id": "01112a435413374c",
+        "id": "40cce72d78ddf2ba",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "notification channel",
-        "field": "notify.channel",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "bathroom_fan",
+        "template": "",
         "output": "str",
-        "x": 2030,
-        "y": 200,
+        "x": 1990,
+        "y": 120,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -66,33 +66,19 @@
         ]
     },
     {
-        "id": "b36f1d0dfd83653c",
-        "type": "link out",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 2235,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "976de9be5916cb4b",
+        "id": "ddcda02e8d44e679",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "bathroom_fan",
+        "template": "Ventilatie",
         "output": "str",
-        "x": 2010,
-        "y": 160,
+        "x": 1990,
+        "y": 80,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -129,19 +115,19 @@
         ]
     },
     {
-        "id": "ddcda02e8d44e679",
+        "id": "976de9be5916cb4b",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Ventilatie",
+        "template": "bathroom_fan",
         "output": "str",
-        "x": 1990,
-        "y": 80,
+        "x": 2010,
+        "y": 160,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -149,19 +135,33 @@
         ]
     },
     {
-        "id": "40cce72d78ddf2ba",
+        "id": "b36f1d0dfd83653c",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 2235,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "01112a435413374c",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification channel",
+        "field": "notify.channel",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "bathroom_fan",
         "output": "str",
-        "x": 1990,
-        "y": 120,
+        "x": 2030,
+        "y": 200,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -886,20 +886,7 @@
         "entity_id": "input_boolean.mechanical_ventilation_bathroom_autonomous",
         "state_type": "str",
         "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
+        "outputProperties": [],
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
