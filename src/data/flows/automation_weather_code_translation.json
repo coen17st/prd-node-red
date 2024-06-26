@@ -1,0 +1,202 @@
+[
+    {
+        "id": "39bdcb9ed819fc87",
+        "type": "tab",
+        "label": "automation_weather_code_translation",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3783939d485f6ea8",
+        "type": "server-state-changed",
+        "z": "39bdcb9ed819fc87",
+        "name": "knmi weather code",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.knmi_weather_code",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            }
+        ],
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "4226161bbc5e814e"
+            ]
+        ]
+    },
+    {
+        "id": "6a245f91bfd4669f",
+        "type": "comment",
+        "z": "39bdcb9ed819fc87",
+        "name": "custom sensor that translate weather code dutch to english so the color can be used to set icon color in frontend",
+        "info": "",
+        "x": 400,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "4226161bbc5e814e",
+        "type": "function",
+        "z": "39bdcb9ed819fc87",
+        "name": "setup translation request",
+        "func": "var text = msg.payload;\nvar source = \"nl\";\nvar target = \"en\";\n\nmsg.url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${source}|${target}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "60a83f3d93926307"
+            ]
+        ]
+    },
+    {
+        "id": "60a83f3d93926307",
+        "type": "http request",
+        "z": "39bdcb9ed819fc87",
+        "name": "api call",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 520,
+        "y": 60,
+        "wires": [
+            [
+                "e2249f97e8ed5340"
+            ]
+        ]
+    },
+    {
+        "id": "e2249f97e8ed5340",
+        "type": "ha-sensor",
+        "z": "39bdcb9ed819fc87",
+        "name": "weather code translated",
+        "entityConfig": "60731eead34cfb6b",
+        "version": 0,
+        "state": "payload.responseData.translatedText",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 710,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "60731eead34cfb6b",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "c46c944e0555f590",
+        "name": "weather_code_translated",
+        "version": "6",
+        "entityType": "sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "weather_code_translated"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": ""
+            },
+            {
+                "property": "unit_of_measurement",
+                "value": ""
+            },
+            {
+                "property": "state_class",
+                "value": ""
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    },
+    {
+        "id": "c46c944e0555f590",
+        "type": "ha-device-config",
+        "name": "weather_descriptions",
+        "hwVersion": "",
+        "manufacturer": "Node-RED",
+        "model": "",
+        "swVersion": ""
+    }
+]
