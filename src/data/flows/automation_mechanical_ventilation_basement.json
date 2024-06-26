@@ -1431,19 +1431,63 @@
         ]
     },
     {
-        "id": "d6d0b5735ad8f20a",
+        "id": "a1c0156c06d58e91",
+        "type": "join",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2450,
+        "y": 840,
+        "wires": [
+            [
+                "ac04035c1896218b"
+            ]
+        ]
+    },
+    {
+        "id": "ac04035c1896218b",
+        "type": "link out",
+        "z": "4e909abe.0b62e4",
+        "g": "0a1a2a6df765a339",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 2545,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "6502d163268904d4",
         "type": "template",
         "z": "4e909abe.0b62e4",
         "g": "0a1a2a6df765a339",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "mechanical_ventilation",
+        "template": "Mechanische ventilatie",
         "output": "str",
-        "x": 2310,
-        "y": 900,
+        "x": 2290,
+        "y": 820,
         "wires": [
             [
                 "a1c0156c06d58e91"
@@ -1471,66 +1515,22 @@
         ]
     },
     {
-        "id": "6502d163268904d4",
+        "id": "d6d0b5735ad8f20a",
         "type": "template",
         "z": "4e909abe.0b62e4",
         "g": "0a1a2a6df765a339",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Mechanische ventilatie",
+        "template": "mechanical_ventilation",
         "output": "str",
-        "x": 2290,
-        "y": 820,
+        "x": 2310,
+        "y": 900,
         "wires": [
             [
                 "a1c0156c06d58e91"
-            ]
-        ]
-    },
-    {
-        "id": "ac04035c1896218b",
-        "type": "link out",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 2545,
-        "y": 840,
-        "wires": []
-    },
-    {
-        "id": "a1c0156c06d58e91",
-        "type": "join",
-        "z": "4e909abe.0b62e4",
-        "g": "0a1a2a6df765a339",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 2450,
-        "y": 840,
-        "wires": [
-            [
-                "ac04035c1896218b"
             ]
         ]
     },
@@ -3813,7 +3813,7 @@
         "type": "function",
         "z": "4e909abe.0b62e4",
         "name": "round to two decimals",
-        "func": "sensor.living_room_thermal_comfort_dew_point = sensor.living_room_thermal_comfort_dew_point.toFixed(2);\nreturn msg;",
+        "func": "msg.sensor.living_room_thermal_comfort_dew_point = msg.sensor.living_room_thermal_comfort_dew_point.toFixed(2);\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
