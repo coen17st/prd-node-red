@@ -23,7 +23,7 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 620,
+        "x": 460,
         "y": 60,
         "wires": [
             [
@@ -41,7 +41,7 @@
         "tag": "p,h2",
         "ret": "text",
         "as": "single",
-        "x": 810,
+        "x": 650,
         "y": 60,
         "wires": [
             [
@@ -122,7 +122,7 @@
         ],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 1470,
+        "x": 1290,
         "y": 60,
         "wires": [
             []
@@ -164,54 +164,12 @@
         "myepoch": false,
         "myrawdate": false,
         "mypm": false,
-        "x": 410,
+        "x": 250,
         "y": 60,
         "wires": [
             [
                 "d475de4d462cdd95"
             ]
-        ]
-    },
-    {
-        "id": "e3a9679048f08b95",
-        "type": "api-current-state",
-        "z": "51ad1e79edd47f04",
-        "name": "weather code",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.knmi_weather_code",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 420,
-        "y": 120,
-        "wires": [
-            []
         ]
     },
     {
@@ -244,8 +202,7 @@
         "y": 60,
         "wires": [
             [
-                "7a932d0e4a844f60",
-                "e3a9679048f08b95"
+                "7a932d0e4a844f60"
             ]
         ]
     },
@@ -261,7 +218,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
+        "x": 820,
         "y": 60,
         "wires": [
             [
@@ -281,7 +238,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1220,
+        "x": 1040,
         "y": 60,
         "wires": [
             [
