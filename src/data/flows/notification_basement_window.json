@@ -43,19 +43,63 @@
         ]
     },
     {
-        "id": "a22e2a028512634f",
+        "id": "11d068d3ad86d2dd",
+        "type": "join",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1770,
+        "y": 140,
+        "wires": [
+            [
+                "73e546f49b2e02e1"
+            ]
+        ]
+    },
+    {
+        "id": "73e546f49b2e02e1",
+        "type": "link out",
+        "z": "b1a9214c.4c71c",
+        "g": "6b44c062cbc05f0a",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716"
+        ],
+        "x": 1865,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "232a01493b9307b0",
         "type": "template",
         "z": "b1a9214c.4c71c",
         "g": "6b44c062cbc05f0a",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "natural_basement_ventilation",
+        "template": "Ventilatie",
         "output": "str",
-        "x": 1630,
-        "y": 180,
+        "x": 1610,
+        "y": 100,
         "wires": [
             [
                 "11d068d3ad86d2dd"
@@ -83,66 +127,22 @@
         ]
     },
     {
-        "id": "232a01493b9307b0",
+        "id": "a22e2a028512634f",
         "type": "template",
         "z": "b1a9214c.4c71c",
         "g": "6b44c062cbc05f0a",
-        "name": "title",
-        "field": "notify.title",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Ventilatie",
+        "template": "natural_basement_ventilation",
         "output": "str",
-        "x": 1610,
-        "y": 100,
+        "x": 1630,
+        "y": 180,
         "wires": [
             [
                 "11d068d3ad86d2dd"
-            ]
-        ]
-    },
-    {
-        "id": "73e546f49b2e02e1",
-        "type": "link out",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716"
-        ],
-        "x": 1865,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "11d068d3ad86d2dd",
-        "type": "join",
-        "z": "b1a9214c.4c71c",
-        "g": "6b44c062cbc05f0a",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1770,
-        "y": 140,
-        "wires": [
-            [
-                "73e546f49b2e02e1"
             ]
         ]
     },
@@ -224,7 +224,7 @@
         "halt_if_type": "num",
         "halt_if_compare": "is",
         "entity_id": "sensor.basement_thermal_comfort_absolute_humidity",
-        "state_type": "str",
+        "state_type": "num",
         "blockInputOverrides": false,
         "outputProperties": [
             {
@@ -648,11 +648,11 @@
         "id": "6f49345.883a1cc",
         "type": "api-current-state",
         "z": "b1a9214c.4c71c",
-        "name": "state temperature outdoor > 18",
+        "name": "state temperature outdoor > 17",
         "server": "4ba92433.2478cc",
         "version": 3,
         "outputs": 2,
-        "halt_if": "18",
+        "halt_if": "17",
         "halt_if_type": "num",
         "halt_if_compare": "gt",
         "entity_id": "sensor.buienradar_temperature",
@@ -934,7 +934,7 @@
         "wires": [
             [
                 "ee13c1d1.9b3f2",
-                "d52f067ae45b546a"
+                "97afb37521efba77"
             ]
         ]
     },
