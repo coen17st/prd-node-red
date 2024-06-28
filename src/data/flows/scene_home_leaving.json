@@ -1390,7 +1390,7 @@
         "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is_not",
-        "entity_id": "switch.shellyplug_quooker",
+        "entity_id": "switch.shellyplugplus_quooker_switch_0",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -1432,7 +1432,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.shellyplug_quooker"
+            "switch.shellyplugplus_quooker_switch_0"
         ],
         "data": "",
         "dataType": "json",
