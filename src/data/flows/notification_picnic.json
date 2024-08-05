@@ -8,6 +8,42 @@
         "env": []
     },
     {
+        "id": "ef69ec82c772cad9",
+        "type": "group",
+        "z": "75537afd17de5117",
+        "name": "notify",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "644d8e4f0164cfb2",
+            "4b6f2391d1d4dfb7",
+            "c32738f7b2c8ece5",
+            "64fb1dffb9145f24",
+            "5cb88a741e06d0c9",
+            "8683cd8b3d71eca3"
+        ],
+        "x": 994,
+        "y": 279,
+        "w": 452,
+        "h": 162
+    },
+    {
+        "id": "5cb88a741e06d0c9",
+        "type": "junction",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "x": 1020,
+        "y": 360,
+        "wires": [
+            [
+                "4b6f2391d1d4dfb7",
+                "644d8e4f0164cfb2",
+                "8683cd8b3d71eca3"
+            ]
+        ]
+    },
+    {
         "id": "77d3e073983d7d6a",
         "type": "template",
         "z": "75537afd17de5117",
@@ -16,79 +52,13 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "safety",
+        "template": "picnic",
         "output": "str",
-        "x": 1130,
-        "y": 120,
-        "wires": [
-            [
-                "85ec3596d3fd73bd"
-            ]
-        ]
-    },
-    {
-        "id": "c33491808b978b24",
-        "type": "server-state-changed",
-        "z": "75537afd17de5117",
-        "name": "picnic expected start delivery",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "outputs": 1,
-        "exposeAsEntityConfig": "",
-        "entityId": "sensor.picnic_next_delivery_eta_start",
-        "entityIdType": "exact",
-        "outputInitially": true,
-        "stateType": "str",
-        "ifState": "",
-        "ifStateType": "str",
-        "ifStateOperator": "is",
-        "outputOnlyOnStateChange": false,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
-        "outputProperties": [],
-        "x": 180,
-        "y": 40,
-        "wires": [
-            [
-                "8e2c34c43ecb3a50"
-            ]
-        ]
-    },
-    {
-        "id": "7aeb43777dcee38b",
-        "type": "simpletime",
-        "z": "75537afd17de5117",
-        "name": "",
-        "mydate": false,
-        "myymd": true,
-        "myyear": false,
-        "mymonth": false,
-        "mymonthn": false,
-        "mydom": false,
-        "mydoy": false,
-        "myday": false,
-        "myhourpm": false,
-        "myhour": false,
-        "mytime": true,
-        "mytimes": false,
-        "myminute": false,
-        "myminutes": false,
-        "mysecond": false,
-        "mymillis": false,
-        "myepoch": false,
-        "myrawdate": false,
-        "mypm": false,
-        "x": 910,
+        "x": 1050,
         "y": 160,
         "wires": [
             [
-                "14470f4c11802ac6"
+                "85ec3596d3fd73bd"
             ]
         ]
     },
@@ -101,10 +71,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Op {{{myymd}}} om {{{mytime}}} heeft het RIVM een stookalert afgegeven, het is raadzaam niet de houtkachel te gebruiken",
+        "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1200,
-        "y": 220,
+        "x": 1100,
+        "y": 80,
         "wires": [
             [
                 "41d0860dc5097d38"
@@ -120,10 +90,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Let op, stookalert!",
+        "template": "Picnic",
         "output": "str",
-        "x": 1330,
-        "y": 400,
+        "x": 1090,
+        "y": 120,
         "wires": [
             [
                 "77d3e073983d7d6a"
@@ -139,10 +109,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "warning",
+        "template": "info",
         "output": "str",
-        "x": 1350,
-        "y": 140,
+        "x": 1090,
+        "y": 200,
         "wires": [
             [
                 "2dbb9134617a5402"
@@ -159,7 +129,7 @@
                 "t": "set",
                 "p": "icon",
                 "pt": "msg",
-                "to": "mdi:fireplace",
+                "to": "mdi:cart-variant",
                 "tot": "str"
             }
         ],
@@ -168,14 +138,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1340,
-        "y": 20,
+        "x": 1060,
+        "y": 240,
         "wires": [
-            []
+            [
+                "44a15e4a3bd02612"
+            ]
         ]
     },
     {
-        "id": "8e2c34c43ecb3a50",
+        "id": "967b0029e044c941",
         "type": "api-current-state",
         "z": "75537afd17de5117",
         "name": "picnic expected end delivery",
@@ -185,7 +157,7 @@
         "halt_if": "",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "sensor.picnic_next_delivery_eta_end",
+        "entity_id": "sensor.picnic_last_order_max_order_time",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -194,12 +166,6 @@
                 "propertyType": "msg",
                 "value": "",
                 "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
             }
         ],
         "for": "0",
@@ -210,138 +176,374 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 480,
-        "y": 40,
+        "x": 160,
+        "y": 140,
         "wires": [
-            []
+            [
+                "20a55376db0798a4"
+            ]
         ]
     },
     {
-        "id": "682d99537fcd6af8",
+        "id": "a80e12ba7e06011c",
+        "type": "simpletime",
+        "z": "75537afd17de5117",
+        "name": "",
+        "mydate": true,
+        "myymd": true,
+        "myyear": true,
+        "mymonth": true,
+        "mymonthn": true,
+        "mymonthf": true,
+        "mydom": true,
+        "mydoy": true,
+        "myday": true,
+        "mydayf": true,
+        "myhourpm": true,
+        "myhour": true,
+        "mytime": true,
+        "mytimes": true,
+        "myminute": true,
+        "myminutes": true,
+        "mysecond": true,
+        "mymillis": true,
+        "myepoch": true,
+        "myrawdate": true,
+        "mypm": true,
+        "x": 510,
+        "y": 80,
+        "wires": [
+            [
+                "2c31a96255251568"
+            ]
+        ]
+    },
+    {
+        "id": "b6a5a8fb06e323fe",
+        "type": "change",
+        "z": "75537afd17de5117",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "date",
+                "pt": "msg",
+                "to": "picnic_next_delivery_eta_start",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "a80e12ba7e06011c"
+            ]
+        ]
+    },
+    {
+        "id": "20a55376db0798a4",
+        "type": "change",
+        "z": "75537afd17de5117",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "date",
+                "pt": "msg",
+                "to": "picnic_next_delivery_eta_end",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "fbfa1f7bfdf77af6"
+            ]
+        ]
+    },
+    {
+        "id": "0c7a8318641234b3",
+        "type": "join",
+        "z": "75537afd17de5117",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 930,
+        "y": 80,
+        "wires": [
+            [
+                "14470f4c11802ac6",
+                "5cb88a741e06d0c9"
+            ]
+        ]
+    },
+    {
+        "id": "2c31a96255251568",
         "type": "function",
         "z": "75537afd17de5117",
-        "name": "function 1",
-        "func": "// Convert the timestamp to a Date object\nconst date = new Date(msg.data.state);\n\n// Specify your own timezone\nconst timeZone = \"Europe/Amsterdam\"; // Replace with your timezone\n\n// Format the date with the specified timezone\nmsg.formattedDate = new Intl.DateTimeFormat('en-US', { timeZone: timeZone }).format(date);\n\nreturn msg;",
+        "name": "Add time objects to payload",
+        "func": "msg.payload = {}\nmsg.payload.start = {}\n\nmsg.payload.start.mytime = msg.mytime\nmsg.payload.start.myymd = msg.myymd\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 240,
+        "x": 720,
+        "y": 80,
         "wires": [
             [
-                "036d91a3ecb8a440"
+                "0c7a8318641234b3"
             ]
         ]
     },
     {
-        "id": "a61c1e4ae878b9b5",
-        "type": "api-current-state",
+        "id": "fbfa1f7bfdf77af6",
+        "type": "simpletime",
         "z": "75537afd17de5117",
-        "name": "picnic expected end delivery",
-        "server": "4ba92433.2478cc",
-        "version": 3,
+        "name": "",
+        "mydate": true,
+        "myymd": true,
+        "myyear": true,
+        "mymonth": true,
+        "mymonthn": true,
+        "mymonthf": true,
+        "mydom": true,
+        "mydoy": true,
+        "myday": true,
+        "mydayf": true,
+        "myhourpm": true,
+        "myhour": true,
+        "mytime": true,
+        "mytimes": true,
+        "myminute": true,
+        "myminutes": true,
+        "mysecond": true,
+        "mymillis": true,
+        "myepoch": true,
+        "myrawdate": true,
+        "mypm": true,
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "e184490a36dc09a0"
+            ]
+        ]
+    },
+    {
+        "id": "e184490a36dc09a0",
+        "type": "function",
+        "z": "75537afd17de5117",
+        "name": "Add time objects to payload",
+        "func": "msg.payload = {}\nmsg.payload.end = {}\n\nmsg.payload.end.mytime = msg.mytime\nmsg.payload.end.myymd = msg.myymd\n\nreturn msg;",
         "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.picnic_next_delivery_eta_end",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "picnic_next_delivery_eta_end",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 140,
+        "wires": [
+            [
+                "0c7a8318641234b3"
+            ]
+        ]
+    },
+    {
+        "id": "c894705717c745bf",
+        "type": "server-state-changed",
+        "z": "75537afd17de5117",
+        "name": "start datetime next delivery",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.picnic_next_delivery_eta_start",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 300,
-        "y": 240,
-        "wires": [
-            [
-                "682d99537fcd6af8"
-            ]
-        ]
-    },
-    {
-        "id": "b5b49d82751a6493",
-        "type": "inject",
-        "z": "75537afd17de5117",
-        "name": "",
-        "props": [
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "property": "picnic_next_delivery_eta_start",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 190,
-        "y": 180,
+        "x": 130,
+        "y": 80,
         "wires": [
             [
-                "a61c1e4ae878b9b5"
+                "b6a5a8fb06e323fe",
+                "967b0029e044c941"
             ]
         ]
     },
     {
-        "id": "036d91a3ecb8a440",
-        "type": "debug",
+        "id": "c13d90e2be19e58b",
+        "type": "comment",
         "z": "75537afd17de5117",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
+        "name": "picnic delivery notification",
+        "info": "",
+        "x": 130,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "44a15e4a3bd02612",
+        "type": "link out",
+        "z": "75537afd17de5117",
+        "name": "notification",
+        "mode": "link",
+        "links": [
+            "60e14e33a793f50d"
+        ],
+        "x": 1305,
         "y": 240,
         "wires": []
     },
     {
-        "id": "df30f345e68ae43d",
-        "type": "debug",
+        "id": "644d8e4f0164cfb2",
+        "type": "template",
         "z": "75537afd17de5117",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 340,
+        "g": "ef69ec82c772cad9",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mdi:cart-variant",
+        "output": "str",
+        "x": 1150,
+        "y": 400,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
+            ]
+        ]
+    },
+    {
+        "id": "4b6f2391d1d4dfb7",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Picnic",
+        "output": "str",
+        "x": 1150,
+        "y": 320,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
+            ]
+        ]
+    },
+    {
+        "id": "c32738f7b2c8ece5",
+        "type": "link out",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 1405,
+        "y": 360,
         "wires": []
+    },
+    {
+        "id": "64fb1dffb9145f24",
+        "type": "join",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1310,
+        "y": 360,
+        "wires": [
+            [
+                "c32738f7b2c8ece5"
+            ]
+        ]
+    },
+    {
+        "id": "8683cd8b3d71eca3",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
+        "output": "str",
+        "x": 1160,
+        "y": 360,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
