@@ -22,8 +22,8 @@
             "64fb1dffb9145f24",
             "5cb88a741e06d0c9"
         ],
-        "x": 1754,
-        "y": 239,
+        "x": 1874,
+        "y": 259,
         "w": 442,
         "h": 162
     },
@@ -32,8 +32,8 @@
         "type": "junction",
         "z": "75537afd17de5117",
         "g": "ef69ec82c772cad9",
-        "x": 1780,
-        "y": 320,
+        "x": 1900,
+        "y": 340,
         "wires": [
             [
                 "4b6f2391d1d4dfb7",
@@ -53,8 +53,8 @@
         "syntax": "mustache",
         "template": "mdi:cart-variant",
         "output": "str",
-        "x": 1910,
-        "y": 360,
+        "x": 2030,
+        "y": 380,
         "wires": [
             [
                 "64fb1dffb9145f24"
@@ -73,8 +73,8 @@
         "syntax": "mustache",
         "template": "Picnic",
         "output": "str",
-        "x": 1910,
-        "y": 280,
+        "x": 2030,
+        "y": 300,
         "wires": [
             [
                 "64fb1dffb9145f24"
@@ -93,8 +93,8 @@
             "a97f87cfab413716",
             "aeee8468f3d1b7ad"
         ],
-        "x": 2155,
-        "y": 320,
+        "x": 2275,
+        "y": 340,
         "wires": []
     },
     {
@@ -118,8 +118,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 2070,
-        "y": 320,
+        "x": 2190,
+        "y": 340,
         "wires": [
             [
                 "c32738f7b2c8ece5"
@@ -137,8 +137,8 @@
         "syntax": "mustache",
         "template": "picnic",
         "output": "str",
-        "x": 1810,
-        "y": 120,
+        "x": 1930,
+        "y": 140,
         "wires": [
             [
                 "85ec3596d3fd73bd"
@@ -156,8 +156,8 @@
         "syntax": "mustache",
         "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1540,
-        "y": 120,
+        "x": 1740,
+        "y": 100,
         "wires": [
             [
                 "41d0860dc5097d38"
@@ -175,8 +175,8 @@
         "syntax": "mustache",
         "template": "Picnic",
         "output": "str",
-        "x": 1850,
-        "y": 80,
+        "x": 1970,
+        "y": 100,
         "wires": [
             [
                 "77d3e073983d7d6a"
@@ -194,8 +194,8 @@
         "syntax": "mustache",
         "template": "info",
         "output": "str",
-        "x": 1850,
-        "y": 160,
+        "x": 1970,
+        "y": 180,
         "wires": [
             [
                 "2dbb9134617a5402"
@@ -221,8 +221,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1820,
-        "y": 200,
+        "x": 1940,
+        "y": 220,
         "wires": [
             [
                 "44a15e4a3bd02612"
@@ -259,7 +259,7 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 140,
+        "x": 160,
         "y": 160,
         "wires": [
             [
@@ -294,7 +294,7 @@
         "myrawdate": true,
         "mypm": true,
         "x": 650,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "2c31a96255251568"
@@ -321,7 +321,7 @@
         "to": "",
         "reg": false,
         "x": 490,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "a80e12ba7e06011c"
@@ -348,7 +348,7 @@
         "to": "",
         "reg": false,
         "x": 490,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "fbfa1f7bfdf77af6"
@@ -376,7 +376,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 1070,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "14470f4c11802ac6",
@@ -397,7 +397,7 @@
         "finalize": "",
         "libs": [],
         "x": 860,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "0c7a8318641234b3"
@@ -431,7 +431,7 @@
         "myrawdate": true,
         "mypm": true,
         "x": 650,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "e184490a36dc09a0"
@@ -451,7 +451,7 @@
         "finalize": "",
         "libs": [],
         "x": 860,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "0c7a8318641234b3"
@@ -491,7 +491,7 @@
                 "valueType": "entityState"
             }
         ],
-        "x": 130,
+        "x": 150,
         "y": 100,
         "wires": [
             [
@@ -519,8 +519,8 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 2065,
-        "y": 200,
+        "x": 2185,
+        "y": 220,
         "wires": []
     },
     {
@@ -868,8 +868,7 @@
         "y": 300,
         "wires": [
             [
-                "b3a5d188e65ecafd",
-                "a6ef62b554d3aac7"
+                "3352acb0665c956a"
             ]
         ]
     },
@@ -884,8 +883,8 @@
         "syntax": "mustache",
         "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1580,
-        "y": 160,
+        "x": 1780,
+        "y": 140,
         "wires": [
             [
                 "5cb88a741e06d0c9"
@@ -903,7 +902,7 @@
         "syntax": "mustache",
         "template": "Picnic staat bijna voor de deur. Tussen {{payload.start.mytime}} en {{payload.end.mytime}}.",
         "output": "str",
-        "x": 1540,
+        "x": 1740,
         "y": 300,
         "wires": [
             [
@@ -922,7 +921,7 @@
         "syntax": "mustache",
         "template": "Picnic staat bijna voor de deur. Tussen {{payload.start.mytime}} en {{payload.end.mytime}}.",
         "output": "str",
-        "x": 1580,
+        "x": 1780,
         "y": 340,
         "wires": [
             [
@@ -949,6 +948,84 @@
         "x": 250,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "01f8127293ba029c",
+        "type": "stoptimer",
+        "z": "75537afd17de5117",
+        "duration": "5",
+        "units": "Second",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "",
+        "x": 520,
+        "y": 680,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b2eb7cb2cfe33949",
+        "type": "time-range-switch",
+        "z": "75537afd17de5117",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "startTime": "07:28",
+        "endTime": "goldenHour",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b65a770bfcdf6c7d",
+        "type": "rbe",
+        "z": "75537afd17de5117",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 610,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3352acb0665c956a",
+        "type": "delay",
+        "z": "75537afd17de5117",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1460,
+        "y": 300,
+        "wires": [
+            [
+                "a6ef62b554d3aac7",
+                "b3a5d188e65ecafd"
+            ]
+        ]
     },
     {
         "id": "4ba92433.2478cc",
