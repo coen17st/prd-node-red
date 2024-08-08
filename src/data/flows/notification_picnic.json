@@ -20,12 +20,11 @@
             "4b6f2391d1d4dfb7",
             "c32738f7b2c8ece5",
             "64fb1dffb9145f24",
-            "5cb88a741e06d0c9",
-            "8683cd8b3d71eca3"
+            "5cb88a741e06d0c9"
         ],
-        "x": 994,
-        "y": 279,
-        "w": 452,
+        "x": 1754,
+        "y": 239,
+        "w": 442,
         "h": 162
     },
     {
@@ -33,13 +32,97 @@
         "type": "junction",
         "z": "75537afd17de5117",
         "g": "ef69ec82c772cad9",
-        "x": 1020,
-        "y": 360,
+        "x": 1780,
+        "y": 320,
         "wires": [
             [
                 "4b6f2391d1d4dfb7",
-                "644d8e4f0164cfb2",
-                "8683cd8b3d71eca3"
+                "644d8e4f0164cfb2"
+            ]
+        ]
+    },
+    {
+        "id": "64fb1dffb9145f24",
+        "type": "join",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2070,
+        "y": 320,
+        "wires": [
+            [
+                "c32738f7b2c8ece5"
+            ]
+        ]
+    },
+    {
+        "id": "c32738f7b2c8ece5",
+        "type": "link out",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 2155,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "4b6f2391d1d4dfb7",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Picnic",
+        "output": "str",
+        "x": 1910,
+        "y": 280,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
+            ]
+        ]
+    },
+    {
+        "id": "644d8e4f0164cfb2",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mdi:cart-variant",
+        "output": "str",
+        "x": 1910,
+        "y": 360,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
             ]
         ]
     },
@@ -54,8 +137,8 @@
         "syntax": "mustache",
         "template": "picnic",
         "output": "str",
-        "x": 1050,
-        "y": 160,
+        "x": 1810,
+        "y": 120,
         "wires": [
             [
                 "85ec3596d3fd73bd"
@@ -73,8 +156,8 @@
         "syntax": "mustache",
         "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1100,
-        "y": 80,
+        "x": 1540,
+        "y": 120,
         "wires": [
             [
                 "41d0860dc5097d38"
@@ -92,8 +175,8 @@
         "syntax": "mustache",
         "template": "Picnic",
         "output": "str",
-        "x": 1090,
-        "y": 120,
+        "x": 1850,
+        "y": 80,
         "wires": [
             [
                 "77d3e073983d7d6a"
@@ -111,8 +194,8 @@
         "syntax": "mustache",
         "template": "info",
         "output": "str",
-        "x": 1090,
-        "y": 200,
+        "x": 1850,
+        "y": 160,
         "wires": [
             [
                 "2dbb9134617a5402"
@@ -138,8 +221,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1060,
-        "y": 240,
+        "x": 1820,
+        "y": 200,
         "wires": [
             [
                 "44a15e4a3bd02612"
@@ -157,7 +240,7 @@
         "halt_if": "",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "sensor.picnic_last_order_max_order_time",
+        "entity_id": "sensor.picnic_next_delivery_eta_end",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -176,8 +259,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 160,
-        "y": 140,
+        "x": 140,
+        "y": 160,
         "wires": [
             [
                 "20a55376db0798a4"
@@ -210,8 +293,8 @@
         "myepoch": true,
         "myrawdate": true,
         "mypm": true,
-        "x": 510,
-        "y": 80,
+        "x": 650,
+        "y": 120,
         "wires": [
             [
                 "2c31a96255251568"
@@ -237,8 +320,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
-        "y": 80,
+        "x": 490,
+        "y": 120,
         "wires": [
             [
                 "a80e12ba7e06011c"
@@ -264,8 +347,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
-        "y": 140,
+        "x": 490,
+        "y": 180,
         "wires": [
             [
                 "fbfa1f7bfdf77af6"
@@ -292,12 +375,12 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 930,
-        "y": 80,
+        "x": 1070,
+        "y": 120,
         "wires": [
             [
                 "14470f4c11802ac6",
-                "5cb88a741e06d0c9"
+                "7d1ac466c12890de"
             ]
         ]
     },
@@ -313,8 +396,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
-        "y": 80,
+        "x": 860,
+        "y": 120,
         "wires": [
             [
                 "0c7a8318641234b3"
@@ -347,8 +430,8 @@
         "myepoch": true,
         "myrawdate": true,
         "mypm": true,
-        "x": 530,
-        "y": 140,
+        "x": 650,
+        "y": 180,
         "wires": [
             [
                 "e184490a36dc09a0"
@@ -367,8 +450,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 140,
+        "x": 860,
+        "y": 180,
         "wires": [
             [
                 "0c7a8318641234b3"
@@ -409,7 +492,7 @@
             }
         ],
         "x": 130,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "b6a5a8fb06e323fe",
@@ -436,100 +519,364 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 1305,
-        "y": 240,
+        "x": 2065,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "644d8e4f0164cfb2",
-        "type": "template",
+        "id": "d30994bbcaef5d1d",
+        "type": "inject",
         "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "mdi:cart-variant",
-        "output": "str",
-        "x": 1150,
-        "y": 400,
-        "wires": [
-            [
-                "64fb1dffb9145f24"
-            ]
-        ]
-    },
-    {
-        "id": "4b6f2391d1d4dfb7",
-        "type": "template",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Picnic",
-        "output": "str",
-        "x": 1150,
-        "y": 320,
-        "wires": [
-            [
-                "64fb1dffb9145f24"
-            ]
-        ]
-    },
-    {
-        "id": "c32738f7b2c8ece5",
-        "type": "link out",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716",
-            "aeee8468f3d1b7ad"
+        "name": "",
+        "props": [
+            {
+                "p": "current_time",
+                "v": "",
+                "vt": "date"
+            }
         ],
-        "x": 1405,
-        "y": 360,
-        "wires": []
+        "repeat": "120",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "c0aa77e2e5285d4b",
+                "8aa5f383b3e9b3bf"
+            ]
+        ]
     },
     {
-        "id": "64fb1dffb9145f24",
+        "id": "c0aa77e2e5285d4b",
+        "type": "api-current-state",
+        "z": "75537afd17de5117",
+        "name": "start datetime next delivery",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.picnic_next_delivery_eta_start",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "picnic_next_delivery_eta_start",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [
+                "f25a03c4b847f93d"
+            ]
+        ]
+    },
+    {
+        "id": "8aa5f383b3e9b3bf",
+        "type": "api-current-state",
+        "z": "75537afd17de5117",
+        "name": "start datetime next delivery",
+        "server": "4ba92433.2478cc",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.picnic_next_delivery_eta_end",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "picnic_next_delivery_eta_end",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            [
+                "fdbf3117f80f9c85"
+            ]
+        ]
+    },
+    {
+        "id": "251cb434406b8b6e",
+        "type": "simpletime",
+        "z": "75537afd17de5117",
+        "name": "",
+        "mydate": true,
+        "myymd": true,
+        "myyear": true,
+        "mymonth": true,
+        "mymonthn": true,
+        "mymonthf": true,
+        "mydom": true,
+        "mydoy": true,
+        "myday": true,
+        "mydayf": true,
+        "myhourpm": true,
+        "myhour": true,
+        "mytime": true,
+        "mytimes": true,
+        "myminute": true,
+        "myminutes": true,
+        "mysecond": true,
+        "mymillis": true,
+        "myepoch": true,
+        "myrawdate": true,
+        "mypm": true,
+        "x": 650,
+        "y": 300,
+        "wires": [
+            [
+                "e86d6d6bfba6bc21"
+            ]
+        ]
+    },
+    {
+        "id": "f25a03c4b847f93d",
+        "type": "change",
+        "z": "75537afd17de5117",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "date",
+                "pt": "msg",
+                "to": "picnic_next_delivery_eta_start",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "251cb434406b8b6e"
+            ]
+        ]
+    },
+    {
+        "id": "fdbf3117f80f9c85",
+        "type": "change",
+        "z": "75537afd17de5117",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "date",
+                "pt": "msg",
+                "to": "picnic_next_delivery_eta_end",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "07d9505862e9b884"
+            ]
+        ]
+    },
+    {
+        "id": "e86d6d6bfba6bc21",
+        "type": "function",
+        "z": "75537afd17de5117",
+        "name": "Add time objects to payload",
+        "func": "msg.payload = {}\nmsg.payload.start = {}\n\nmsg.payload.start.mytime = msg.mytime\nmsg.payload.start.myymd = msg.myymd\nmsg.payload.start.myepoch = msg.myepoch\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 300,
+        "wires": [
+            [
+                "42cffd05b63d3293"
+            ]
+        ]
+    },
+    {
+        "id": "07d9505862e9b884",
+        "type": "simpletime",
+        "z": "75537afd17de5117",
+        "name": "",
+        "mydate": true,
+        "myymd": true,
+        "myyear": true,
+        "mymonth": true,
+        "mymonthn": true,
+        "mymonthf": true,
+        "mydom": true,
+        "mydoy": true,
+        "myday": true,
+        "mydayf": true,
+        "myhourpm": true,
+        "myhour": true,
+        "mytime": true,
+        "mytimes": true,
+        "myminute": true,
+        "myminutes": true,
+        "mysecond": true,
+        "mymillis": true,
+        "myepoch": true,
+        "myrawdate": true,
+        "mypm": true,
+        "x": 650,
+        "y": 360,
+        "wires": [
+            [
+                "5739b7e57c824256"
+            ]
+        ]
+    },
+    {
+        "id": "5739b7e57c824256",
+        "type": "function",
+        "z": "75537afd17de5117",
+        "name": "Add time objects to payload",
+        "func": "msg.payload = {}\nmsg.payload.end = {}\n\nmsg.payload.end.mytime = msg.mytime\nmsg.payload.end.myymd = msg.myymd\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 360,
+        "wires": [
+            [
+                "42cffd05b63d3293"
+            ]
+        ]
+    },
+    {
+        "id": "42cffd05b63d3293",
         "type": "join",
         "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
         "name": "",
         "mode": "custom",
         "build": "merged",
-        "property": "notify",
+        "property": "payload",
         "propertyType": "msg",
         "key": "topic",
         "joiner": "\\n",
         "joinerType": "str",
-        "accumulate": false,
+        "accumulate": true,
         "timeout": "",
-        "count": "3",
+        "count": "2",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1310,
-        "y": 360,
+        "x": 1070,
+        "y": 300,
         "wires": [
             [
-                "c32738f7b2c8ece5"
+                "4448bf9259b57d76"
             ]
         ]
     },
     {
-        "id": "8683cd8b3d71eca3",
+        "id": "4448bf9259b57d76",
+        "type": "switch",
+        "z": "75537afd17de5117",
+        "name": "",
+        "property": "current_time",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "myepoch",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 300,
+        "wires": [
+            [
+                "ee81f033c7bc9f0f"
+            ]
+        ]
+    },
+    {
+        "id": "ee81f033c7bc9f0f",
+        "type": "rbe",
+        "z": "75537afd17de5117",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1310,
+        "y": 300,
+        "wires": [
+            [
+                "b3a5d188e65ecafd",
+                "a6ef62b554d3aac7"
+            ]
+        ]
+    },
+    {
+        "id": "7d1ac466c12890de",
         "type": "template",
         "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
         "name": "message",
         "field": "notify.message",
         "fieldType": "msg",
@@ -537,13 +884,71 @@
         "syntax": "mustache",
         "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1160,
-        "y": 360,
+        "x": 1580,
+        "y": 160,
         "wires": [
             [
-                "64fb1dffb9145f24"
+                "5cb88a741e06d0c9"
             ]
         ]
+    },
+    {
+        "id": "b3a5d188e65ecafd",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "name": "secondary information",
+        "field": "secondary_information",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Picnic staat bijna voor de deur. Tussen {{payload.start.mytime}} en {{payload.end.mytime}}.",
+        "output": "str",
+        "x": 1540,
+        "y": 300,
+        "wires": [
+            [
+                "41d0860dc5097d38"
+            ]
+        ]
+    },
+    {
+        "id": "a6ef62b554d3aac7",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Picnic staat bijna voor de deur. Tussen {{payload.start.mytime}} en {{payload.end.mytime}}.",
+        "output": "str",
+        "x": 1580,
+        "y": 340,
+        "wires": [
+            [
+                "5cb88a741e06d0c9"
+            ]
+        ]
+    },
+    {
+        "id": "0f24449fc1a8bc78",
+        "type": "comment",
+        "z": "75537afd17de5117",
+        "name": "Send a message once the start time has been known",
+        "info": "",
+        "x": 230,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "e9481b54b8db081c",
+        "type": "comment",
+        "z": "75537afd17de5117",
+        "name": "Send a message once the start time is above current time",
+        "info": "",
+        "x": 250,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "4ba92433.2478cc",
