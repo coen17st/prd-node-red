@@ -22,9 +22,9 @@
             "64fb1dffb9145f24",
             "5cb88a741e06d0c9"
         ],
-        "x": 1874,
+        "x": 1954,
         "y": 259,
-        "w": 442,
+        "w": 402,
         "h": 162
     },
     {
@@ -32,7 +32,7 @@
         "type": "junction",
         "z": "75537afd17de5117",
         "g": "ef69ec82c772cad9",
-        "x": 1900,
+        "x": 1980,
         "y": 340,
         "wires": [
             [
@@ -53,7 +53,7 @@
         "syntax": "mustache",
         "template": "mdi:cart-variant",
         "output": "str",
-        "x": 2030,
+        "x": 2070,
         "y": 380,
         "wires": [
             [
@@ -73,7 +73,7 @@
         "syntax": "mustache",
         "template": "Picnic",
         "output": "str",
-        "x": 2030,
+        "x": 2070,
         "y": 300,
         "wires": [
             [
@@ -93,7 +93,7 @@
             "a97f87cfab413716",
             "aeee8468f3d1b7ad"
         ],
-        "x": 2275,
+        "x": 2315,
         "y": 340,
         "wires": []
     },
@@ -118,7 +118,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 2190,
+        "x": 2230,
         "y": 340,
         "wires": [
             [
@@ -137,7 +137,7 @@
         "syntax": "mustache",
         "template": "picnic",
         "output": "str",
-        "x": 1930,
+        "x": 2030,
         "y": 140,
         "wires": [
             [
@@ -175,7 +175,7 @@
         "syntax": "mustache",
         "template": "Picnic",
         "output": "str",
-        "x": 1970,
+        "x": 2070,
         "y": 100,
         "wires": [
             [
@@ -194,7 +194,7 @@
         "syntax": "mustache",
         "template": "info",
         "output": "str",
-        "x": 1970,
+        "x": 2070,
         "y": 180,
         "wires": [
             [
@@ -221,7 +221,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1940,
+        "x": 2040,
         "y": 220,
         "wires": [
             [
@@ -519,7 +519,7 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 2185,
+        "x": 2285,
         "y": 220,
         "wires": []
     },
