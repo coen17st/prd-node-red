@@ -254,7 +254,9 @@
         "x": 1190,
         "y": 60,
         "wires": [
-            []
+            [
+                "336d51b627dd3548"
+            ]
         ]
     },
     {
@@ -337,6 +339,97 @@
             [
                 "1b709ceb0d69c831"
             ]
+        ]
+    },
+    {
+        "id": "336d51b627dd3548",
+        "type": "ha-wait-until",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 2,
+        "outputs": 1,
+        "entityId": "^vacuum.",
+        "entityIdFilterType": "regex",
+        "property": "state",
+        "comparator": "is",
+        "value": "cleaning",
+        "valueType": "str",
+        "timeout": "0",
+        "timeoutType": "num",
+        "timeoutUnits": "seconds",
+        "checkCurrentState": true,
+        "blockInputOverrides": true,
+        "outputProperties": [],
+        "entityLocation": "data",
+        "entityLocationType": "none",
+        "x": 1340,
+        "y": 60,
+        "wires": [
+            [
+                "11adb81ae9e6f5e7"
+            ]
+        ]
+    },
+    {
+        "id": "11adb81ae9e6f5e7",
+        "type": "ha-get-entities",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 1,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "starts_with",
+                "value": "input_boolean.vacuum",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "is",
+                "value": "on",
+                "valueType": "str"
+            }
+        ],
+        "outputType": "split",
+        "outputEmptyResults": false,
+        "outputLocationType": "msg",
+        "outputLocation": "payload",
+        "outputResultsCount": 1,
+        "x": 1490,
+        "y": 60,
+        "wires": [
+            [
+                "28a3562272f5e8bd"
+            ]
+        ]
+    },
+    {
+        "id": "28a3562272f5e8bd",
+        "type": "api-call-service",
+        "z": "29a2e1dd05ecbf80",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "input_boolean",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "{{payload.entity_id}}"
+        ],
+        "data": "",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1680,
+        "y": 60,
+        "wires": [
+            []
         ]
     },
     {
