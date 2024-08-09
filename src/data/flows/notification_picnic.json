@@ -556,10 +556,10 @@
         "name": "start datetime next delivery",
         "server": "4ba92433.2478cc",
         "version": 3,
-        "outputs": 1,
-        "halt_if": "",
+        "outputs": 2,
+        "halt_if": "unknown",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "sensor.picnic_next_delivery_eta_start",
         "state_type": "str",
         "blockInputOverrides": false,
@@ -590,7 +590,8 @@
         "wires": [
             [
                 "f25a03c4b847f93d"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -600,10 +601,10 @@
         "name": "start datetime next delivery",
         "server": "4ba92433.2478cc",
         "version": 3,
-        "outputs": 1,
-        "halt_if": "",
+        "outputs": 2,
+        "halt_if": "unknown",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "sensor.picnic_next_delivery_eta_end",
         "state_type": "str",
         "blockInputOverrides": false,
@@ -634,7 +635,8 @@
         "wires": [
             [
                 "fdbf3117f80f9c85"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -966,7 +968,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1460,
+        "x": 1600,
         "y": 300,
         "wires": [
             [
