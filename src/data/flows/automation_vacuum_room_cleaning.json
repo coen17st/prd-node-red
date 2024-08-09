@@ -322,7 +322,7 @@
                 "pt": "msg",
                 "from": "input_boolean.vacuum_souterrain",
                 "fromt": "str",
-                "to": "17",
+                "to": "1",
                 "tot": "num"
             }
         ],
