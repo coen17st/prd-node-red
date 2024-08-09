@@ -236,10 +236,10 @@
         "name": "picnic expected end delivery",
         "server": "4ba92433.2478cc",
         "version": 3,
-        "outputs": 1,
-        "halt_if": "",
+        "outputs": 2,
+        "halt_if": "unknown",
         "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "halt_if_compare": "is_not",
         "entity_id": "sensor.picnic_next_delivery_eta_end",
         "state_type": "str",
         "blockInputOverrides": false,
@@ -264,7 +264,8 @@
         "wires": [
             [
                 "20a55376db0798a4"
-            ]
+            ],
+            []
         ]
     },
     {
