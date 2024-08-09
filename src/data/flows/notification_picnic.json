@@ -42,62 +42,6 @@
         ]
     },
     {
-        "id": "644d8e4f0164cfb2",
-        "type": "template",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "mdi:cart-variant",
-        "output": "str",
-        "x": 2070,
-        "y": 380,
-        "wires": [
-            [
-                "64fb1dffb9145f24"
-            ]
-        ]
-    },
-    {
-        "id": "4b6f2391d1d4dfb7",
-        "type": "template",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Picnic",
-        "output": "str",
-        "x": 2070,
-        "y": 300,
-        "wires": [
-            [
-                "64fb1dffb9145f24"
-            ]
-        ]
-    },
-    {
-        "id": "c32738f7b2c8ece5",
-        "type": "link out",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716",
-            "aeee8468f3d1b7ad"
-        ],
-        "x": 2315,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "64fb1dffb9145f24",
         "type": "join",
         "z": "75537afd17de5117",
@@ -123,6 +67,62 @@
         "wires": [
             [
                 "c32738f7b2c8ece5"
+            ]
+        ]
+    },
+    {
+        "id": "c32738f7b2c8ece5",
+        "type": "link out",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 2315,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4b6f2391d1d4dfb7",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Picnic",
+        "output": "str",
+        "x": 2070,
+        "y": 300,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
+            ]
+        ]
+    },
+    {
+        "id": "644d8e4f0164cfb2",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mdi:cart-variant",
+        "output": "str",
+        "x": 2070,
+        "y": 380,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
             ]
         ]
     },
@@ -948,58 +948,6 @@
         "x": 250,
         "y": 260,
         "wires": []
-    },
-    {
-        "id": "01f8127293ba029c",
-        "type": "stoptimer",
-        "z": "75537afd17de5117",
-        "duration": "5",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 520,
-        "y": 680,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "b2eb7cb2cfe33949",
-        "type": "time-range-switch",
-        "z": "75537afd17de5117",
-        "name": "",
-        "lat": "",
-        "lon": "",
-        "startTime": "07:28",
-        "endTime": "goldenHour",
-        "startOffset": 0,
-        "endOffset": 0,
-        "x": 190,
-        "y": 500,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "b65a770bfcdf6c7d",
-        "type": "rbe",
-        "z": "75537afd17de5117",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 610,
-        "y": 560,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "3352acb0665c956a",
