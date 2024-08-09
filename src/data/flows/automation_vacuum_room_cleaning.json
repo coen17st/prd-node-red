@@ -262,7 +262,7 @@
         "type": "function",
         "z": "29a2e1dd05ecbf80",
         "name": "create service call",
-        "func": "msg.payload = {\n    \"domain\": \"vacuum\",\n    \"service\": \"send_command\",\n    \"target\": {\n        \"entity_id\": \"vacuum.roborock_s5\"\n    },\n    \"data\": {\n        \"command\": \"app_segment_clean\",\n        \"params\": [\n            {\n                \"segments\": msg.payload\n            }\n        ]\n    }\n};\nreturn msg;\n",
+        "func": "msg.payload = {\n    \"domain\": \"vacuum\",\n    \"service\": \"send_command\",\n    \"target\": {\n        \"entity_id\": \"vacuum.robot_vacuum\"\n    },\n    \"data\": {\n        \"command\": \"app_segment_clean\",\n        \"params\": [\n            {\n                \"segments\": msg.payload\n            }\n        ]\n    }\n};\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
