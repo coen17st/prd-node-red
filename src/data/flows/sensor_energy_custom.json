@@ -2,7 +2,7 @@
     {
         "id": "46d98b35c2eee05b",
         "type": "tab",
-        "label": "energy_custom_sensors",
+        "label": "sensor_energy_custom",
         "disabled": false,
         "info": "",
         "env": []

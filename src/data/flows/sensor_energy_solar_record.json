@@ -2,7 +2,7 @@
     {
         "id": "99c1372046e45da7",
         "type": "tab",
-        "label": "energy_solar_record",
+        "label": "sensor_energy_solar_record.",
         "disabled": false,
         "info": "",
         "env": []
