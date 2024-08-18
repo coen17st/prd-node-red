@@ -1,0 +1,150 @@
+[
+    {
+        "id": "b30206160f4c3c3b",
+        "type": "tab",
+        "label": "sensor_backyard_entrance_person_detected",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d5c7202c7194e6c3",
+        "type": "comment",
+        "z": "b30206160f4c3c3b",
+        "name": "custom sensor when a person is detected in the backyard entrance",
+        "info": "",
+        "x": 260,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "49b3f6ee3c13616a",
+        "type": "server-state-changed",
+        "z": "b30206160f4c3c3b",
+        "name": "",
+        "server": "4ba92433.2478cc",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.backyard_person_occupancy",
+        "entityIdType": "exact",
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 240,
+        "y": 60,
+        "wires": [
+            [
+                "9150f91efe1abe4c"
+            ],
+            [
+                "9150f91efe1abe4c"
+            ]
+        ]
+    },
+    {
+        "id": "9150f91efe1abe4c",
+        "type": "ha-binary-sensor",
+        "z": "b30206160f4c3c3b",
+        "name": "custom_backyard_person_occupancy",
+        "entityConfig": "b91508ea44734193",
+        "version": 0,
+        "state": "payload",
+        "stateType": "msg",
+        "attributes": [],
+        "inputOverride": "allow",
+        "outputProperties": [],
+        "x": 630,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ba92433.2478cc",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 5,
+        "addon": false,
+        "rejectUnauthorizedCerts": false,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30",
+        "areaSelector": "id",
+        "deviceSelector": "id",
+        "entitySelector": "id",
+        "statusSeparator": "at: ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "h23",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": true
+    },
+    {
+        "id": "b91508ea44734193",
+        "type": "ha-entity-config",
+        "server": "4ba92433.2478cc",
+        "deviceConfig": "",
+        "name": "custom_backyard_person_occupancy",
+        "version": "6",
+        "entityType": "binary_sensor",
+        "haConfig": [
+            {
+                "property": "name",
+                "value": "custom_backyard_person_occupancy"
+            },
+            {
+                "property": "icon",
+                "value": ""
+            },
+            {
+                "property": "entity_picture",
+                "value": ""
+            },
+            {
+                "property": "entity_category",
+                "value": ""
+            },
+            {
+                "property": "device_class",
+                "value": "motion"
+            }
+        ],
+        "resend": false,
+        "debugEnabled": false
+    }
+]
