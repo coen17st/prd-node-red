@@ -2,7 +2,7 @@
     {
         "id": "d5421f8d.f7208",
         "type": "tab",
-        "label": "notification_outdoor_temperature",
+        "label": "notification_open_windows_firstfloor_house_cooling_down",
         "disabled": false,
         "info": ""
     },
@@ -22,8 +22,8 @@
             "eaec84df6f30a9ec",
             "1414f6788bc8c787"
         ],
-        "x": 1494,
-        "y": 59,
+        "x": 1274,
+        "y": 39,
         "w": 452,
         "h": 162
     },
@@ -32,8 +32,8 @@
         "type": "junction",
         "z": "d5421f8d.f7208",
         "g": "f236f0a913f70054",
-        "x": 1520,
-        "y": 140,
+        "x": 1300,
+        "y": 120,
         "wires": [
             [
                 "4b276bf7ef0c3217",
@@ -43,59 +43,25 @@
         ]
     },
     {
-        "id": "0db5f8033b5c9adf",
+        "id": "1414f6788bc8c787",
         "type": "template",
         "z": "d5421f8d.f7208",
         "g": "f236f0a913f70054",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "Open de ramen boven om het in huis af te laten koelen, boven is de gemiddelde temperatuur {{payload}} ℃ Buiten is de temperatuur {{buienradar_temperature}} ℃.",
         "output": "str",
-        "x": 1650,
-        "y": 180,
+        "x": 1440,
+        "y": 120,
         "wires": [
             [
-                "6858101eee61155a"
+                "6858101eee61155a",
+                "d5e96dbb131b9d36"
             ]
         ]
-    },
-    {
-        "id": "4b276bf7ef0c3217",
-        "type": "template",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Ventilatie",
-        "output": "str",
-        "x": 1650,
-        "y": 100,
-        "wires": [
-            [
-                "6858101eee61155a"
-            ]
-        ]
-    },
-    {
-        "id": "ef18c5c2564a7e77",
-        "type": "link out",
-        "z": "d5421f8d.f7208",
-        "g": "f236f0a913f70054",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad"
-        ],
-        "x": 1905,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "6858101eee61155a",
@@ -118,8 +84,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1810,
-        "y": 140,
+        "x": 1590,
+        "y": 120,
         "wires": [
             [
                 "ef18c5c2564a7e77"
@@ -127,23 +93,57 @@
         ]
     },
     {
-        "id": "1414f6788bc8c787",
+        "id": "ef18c5c2564a7e77",
+        "type": "link out",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 1685,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4b276bf7ef0c3217",
         "type": "template",
         "z": "d5421f8d.f7208",
         "g": "f236f0a913f70054",
-        "name": "message",
-        "field": "notify.message",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Open ramen en deuren om het in huis af te laten koelen, binnen is de gemiddelde temperatuur {{payload}} ℃ Buiten is de temperatuur {{buienradar_temperature}} ℃.",
+        "template": "Ventilatie",
         "output": "str",
-        "x": 1660,
-        "y": 140,
+        "x": 1430,
+        "y": 80,
         "wires": [
             [
-                "6858101eee61155a",
-                "d5e96dbb131b9d36"
+                "6858101eee61155a"
+            ]
+        ]
+    },
+    {
+        "id": "0db5f8033b5c9adf",
+        "type": "template",
+        "z": "d5421f8d.f7208",
+        "g": "f236f0a913f70054",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1430,
+        "y": 160,
+        "wires": [
+            [
+                "6858101eee61155a"
             ]
         ]
     },
@@ -156,13 +156,21 @@
         "version": 1,
         "rules": [
             {
+                "condition": "floor_registry",
+                "property": "level",
+                "logic": "is",
+                "value": "1",
+                "valueType": "str"
+            },
+            {
+                "condition": "state_object",
                 "property": "entity_id",
                 "logic": "starts_with",
                 "value": "climate.",
                 "valueType": "str"
             }
         ],
-        "outputType": "array",
+        "outputType": "split",
         "outputEmptyResults": false,
         "outputLocationType": "msg",
         "outputLocation": "payload",
@@ -171,110 +179,7 @@
         "y": 80,
         "wires": [
             [
-                "c2cbbc4e.296d3"
-            ]
-        ]
-    },
-    {
-        "id": "c2cbbc4e.296d3",
-        "type": "split",
-        "z": "d5421f8d.f7208",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 510,
-        "y": 80,
-        "wires": [
-            [
-                "415db966.920518"
-            ]
-        ]
-    },
-    {
-        "id": "415db966.920518",
-        "type": "switch",
-        "z": "d5421f8d.f7208",
-        "name": "",
-        "property": "payload.entity_id",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "basement",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 630,
-        "y": 80,
-        "wires": [
-            [],
-            [
                 "8d34e21d.b818f"
-            ]
-        ]
-    },
-    {
-        "id": "8d34e21d.b818f",
-        "type": "change",
-        "z": "d5421f8d.f7208",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.attributes.current_temperature",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 780,
-        "y": 80,
-        "wires": [
-            [
-                "71d62d7c.0c49f4"
-            ]
-        ]
-    },
-    {
-        "id": "71d62d7c.0c49f4",
-        "type": "join",
-        "z": "d5421f8d.f7208",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "4",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 930,
-        "y": 80,
-        "wires": [
-            [
-                "f553666a.3acb38"
             ]
         ]
     },
@@ -309,7 +214,7 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1360,
+        "x": 1120,
         "y": 80,
         "wires": [
             [
@@ -354,7 +259,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1190,
+        "x": 950,
         "y": 80,
         "wires": [
             [
@@ -366,9 +271,9 @@
         "id": "2bd65702.c33608",
         "type": "comment",
         "z": "d5421f8d.f7208",
-        "name": "outdoor temperature is lower then indoor temperature",
+        "name": "outdoor temperature is lower then indoor temperature on the first floor",
         "info": "",
-        "x": 220,
+        "x": 270,
         "y": 40,
         "wires": []
     },
@@ -382,8 +287,10 @@
         "operation": "avg",
         "constant": "",
         "round": true,
+        "truncate": false,
         "decimals": "1",
-        "x": 1060,
+        "decimals2": "0",
+        "x": 820,
         "y": 80,
         "wires": [
             [
@@ -516,6 +423,61 @@
         "wires": [
             [
                 "41d591f22c238a15"
+            ]
+        ]
+    },
+    {
+        "id": "8d34e21d.b818f",
+        "type": "change",
+        "z": "d5421f8d.f7208",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.attributes.current_temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "71d62d7c.0c49f4"
+            ]
+        ]
+    },
+    {
+        "id": "71d62d7c.0c49f4",
+        "type": "join",
+        "z": "d5421f8d.f7208",
+        "name": "",
+        "mode": "auto",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "f553666a.3acb38"
             ]
         ]
     },
