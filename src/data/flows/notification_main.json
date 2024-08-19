@@ -13,19 +13,22 @@
         "z": "343515a5528e14f0",
         "name": "notify coen",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_coen",
+        "action": "notify.mobile_app_phone_coen",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "notify",
+        "service": "mobile_app_phone_coen",
         "x": 310,
         "y": 140,
         "wires": [
@@ -58,7 +61,8 @@
             "59c627d5f35a1bc2",
             "d43e56b2e0de8b6e",
             "b41a40c1e135e55c",
-            "ac254d4235d71700"
+            "ac254d4235d71700",
+            "4c20628e1deef4b2"
         ],
         "x": 195,
         "y": 140,
@@ -78,7 +82,8 @@
             "ef18c5c2564a7e77",
             "c6bc1abd0ea4d3e7",
             "d43e56b2e0de8b6e",
-            "ac254d4235d71700"
+            "ac254d4235d71700",
+            "4c20628e1deef4b2"
         ],
         "x": 195,
         "y": 200,
@@ -104,19 +109,22 @@
         "z": "343515a5528e14f0",
         "name": "notify anne",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_anne",
+        "action": "notify.mobile_app_phone_anne",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "notify",
+        "service": "mobile_app_phone_anne",
         "x": 310,
         "y": 200,
         "wires": [
@@ -129,19 +137,22 @@
         "z": "343515a5528e14f0",
         "name": "notify in app",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "persistent_notification",
-        "service": "create",
+        "action": "persistent_notification.create",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"notification_id\":\"{{notify.notification_id}}\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "persistent_notification",
+        "service": "create",
         "x": 310,
         "y": 260,
         "wires": [
@@ -180,25 +191,30 @@
         "z": "343515a5528e14f0",
         "name": "text to speech",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "tts",
-        "service": "google_say",
+        "action": "tts.google_say",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "media_player.home_speaker"
         ],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"language\":\"nl\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 640,
+        "domain": "tts",
+        "service": "google_say",
+        "x": 800,
         "y": 320,
         "wires": [
-            []
+            [
+                "5eb39518752706d4"
+            ]
         ]
     },
     {
@@ -207,10 +223,15 @@
         "z": "343515a5528e14f0",
         "name": "wait until media player is not playing",
         "server": "4ba92433.2478cc",
-        "version": 2,
+        "version": 3,
         "outputs": 1,
-        "entityId": "media_player.home_speaker",
-        "entityIdFilterType": "exact",
+        "entities": {
+            "entity": [
+                "media_player.home_speaker"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "property": "state",
         "comparator": "is_not",
         "value": "playing",
@@ -223,7 +244,7 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 390,
+        "x": 550,
         "y": 320,
         "wires": [
             [
@@ -241,7 +262,7 @@
         "y": 320,
         "wires": [
             [
-                "cf256ece81c0faee"
+                "577ae9a09334bd75"
             ]
         ]
     },
@@ -251,15 +272,20 @@
         "z": "343515a5528e14f0",
         "name": "wait until media player is not playing",
         "server": "4ba92433.2478cc",
-        "version": 2,
-        "outputs": 1,
-        "entityId": "media_player.galaxy_tab_a8",
-        "entityIdFilterType": "exact",
+        "version": 3,
+        "outputs": 2,
+        "entities": {
+            "entity": [
+                "media_player.galaxy_tab_a8"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "property": "state",
         "comparator": "is_not",
         "value": "playing",
         "valueType": "str",
-        "timeout": "",
+        "timeout": "30",
         "timeoutType": "num",
         "timeoutUnits": "seconds",
         "checkCurrentState": true,
@@ -267,12 +293,13 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 390,
+        "x": 550,
         "y": 380,
         "wires": [
             [
                 "f11dc3e3682ce836"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -281,25 +308,30 @@
         "z": "343515a5528e14f0",
         "name": "text to speech",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "tts",
-        "service": "google_say",
+        "action": "tts.google_say",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "media_player.galaxy_tab_a8"
         ],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"language\":\"nl\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 640,
+        "domain": "tts",
+        "service": "google_say",
+        "x": 800,
         "y": 380,
         "wires": [
-            []
+            [
+                "566faf848ae88258"
+            ]
         ]
     },
     {
@@ -317,13 +349,14 @@
             "c5f04c8242157305",
             "f5a1c4dd087e0795",
             "fdba7cd037a9da5a",
-            "d43e56b2e0de8b6e"
+            "d43e56b2e0de8b6e",
+            "4c20628e1deef4b2"
         ],
         "x": 195,
         "y": 380,
         "wires": [
             [
-                "d94b50aeaba952d1"
+                "e1fdac1fe178e720"
             ]
         ]
     },
@@ -333,19 +366,22 @@
         "z": "343515a5528e14f0",
         "name": "notify tv",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "notify",
-        "service": "lg_webos_smart_tv",
+        "action": "notify.lg_webos_smart_tv",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "notify",
+        "service": "lg_webos_smart_tv",
         "x": 300,
         "y": 80,
         "wires": [
@@ -374,19 +410,22 @@
         "z": "343515a5528e14f0",
         "name": "notify two actions coen",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_coen",
+        "action": "notify.mobile_app_phone_coen",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"actions\":[{\"action\":\"{{notify.action_1}}\",\"title\":\"{{notify.action_1_title}}\",\"icon\":\"{{notify.icon}}\"},{\"action\":\"{{notify.action_2}}\",\"title\":\"{{notify.action_2_title}}\",\"icon\":\"{{notify.icon}}\"}]}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "notify",
+        "service": "mobile_app_phone_coen",
         "x": 340,
         "y": 440,
         "wires": [
@@ -416,19 +455,22 @@
         "z": "343515a5528e14f0",
         "name": "notify two actions anne",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "notify",
-        "service": "mobile_app_phone_anne",
+        "action": "notify.mobile_app_phone_anne",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [],
+        "labelId": [],
         "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"actions\":[{\"action\":\"{{notify.action_1}}\",\"title\":\"{{notify.action_1_title}}\",\"icon\":\"{{notify.icon}}\"},{\"action\":\"{{notify.action_2}}\",\"title\":\"{{notify.action_2_title}}\",\"icon\":\"{{notify.icon}}\"}]}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "notify",
+        "service": "mobile_app_phone_anne",
         "x": 340,
         "y": 500,
         "wires": [
@@ -449,6 +491,90 @@
         "wires": [
             [
                 "7e56e31c0145c7b4"
+            ]
+        ]
+    },
+    {
+        "id": "e1fdac1fe178e720",
+        "type": "simple-queue",
+        "z": "343515a5528e14f0",
+        "name": "",
+        "firstMessageBypass": true,
+        "bypassInterval": "0",
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "d94b50aeaba952d1"
+            ]
+        ]
+    },
+    {
+        "id": "566faf848ae88258",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "trigger",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 380,
+        "wires": [
+            [
+                "e1fdac1fe178e720"
+            ]
+        ]
+    },
+    {
+        "id": "577ae9a09334bd75",
+        "type": "simple-queue",
+        "z": "343515a5528e14f0",
+        "name": "",
+        "firstMessageBypass": true,
+        "bypassInterval": "0",
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "cf256ece81c0faee"
+            ]
+        ]
+    },
+    {
+        "id": "5eb39518752706d4",
+        "type": "change",
+        "z": "343515a5528e14f0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "trigger",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 320,
+        "wires": [
+            [
+                "577ae9a09334bd75"
             ]
         ]
     },
