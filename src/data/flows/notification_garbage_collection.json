@@ -72,19 +72,19 @@
         ]
     },
     {
-        "id": "ebcb50cdabc72f91",
+        "id": "3a3b8fdb9d6f4ab0",
         "type": "template",
         "z": "72f3a564e626ff9a",
         "g": "3b89d483d3628b14",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "garbage",
+        "template": "",
         "output": "str",
-        "x": 1290,
-        "y": 320,
+        "x": 1270,
+        "y": 240,
         "wires": [
             [
                 "d0d3f913b8c035f3"
@@ -92,22 +92,66 @@
         ]
     },
     {
-        "id": "46d50645e39da463",
+        "id": "dcc306682fd0ffa8",
         "type": "template",
         "z": "72f3a564e626ff9a",
         "g": "3b89d483d3628b14",
-        "name": "message",
-        "field": "notify.message",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{secondary_information}}.\\nStaat de container al aan de weg?",
+        "template": "Afval",
         "output": "str",
-        "x": 1280,
-        "y": 280,
+        "x": 1270,
+        "y": 160,
         "wires": [
             [
                 "d0d3f913b8c035f3"
+            ]
+        ]
+    },
+    {
+        "id": "0af5a06e405527e9",
+        "type": "link out",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "c76d311bb4b6991b",
+            "d1753081ba6b4004"
+        ],
+        "x": 1555,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d0d3f913b8c035f3",
+        "type": "join",
+        "z": "72f3a564e626ff9a",
+        "g": "3b89d483d3628b14",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1470,
+        "y": 200,
+        "wires": [
+            [
+                "0af5a06e405527e9"
             ]
         ]
     },
@@ -161,63 +205,19 @@
         ]
     },
     {
-        "id": "d0d3f913b8c035f3",
-        "type": "join",
-        "z": "72f3a564e626ff9a",
-        "g": "3b89d483d3628b14",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "8",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 1470,
-        "y": 200,
-        "wires": [
-            [
-                "0af5a06e405527e9"
-            ]
-        ]
-    },
-    {
-        "id": "0af5a06e405527e9",
-        "type": "link out",
-        "z": "72f3a564e626ff9a",
-        "g": "3b89d483d3628b14",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "c76d311bb4b6991b",
-            "d1753081ba6b4004"
-        ],
-        "x": 1555,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "dcc306682fd0ffa8",
+        "id": "46d50645e39da463",
         "type": "template",
         "z": "72f3a564e626ff9a",
         "g": "3b89d483d3628b14",
-        "name": "title",
-        "field": "notify.title",
+        "name": "message",
+        "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Afval",
+        "template": "{{secondary_information}}.\\nStaat de container al aan de weg?",
         "output": "str",
-        "x": 1270,
-        "y": 160,
+        "x": 1280,
+        "y": 280,
         "wires": [
             [
                 "d0d3f913b8c035f3"
@@ -225,19 +225,19 @@
         ]
     },
     {
-        "id": "3a3b8fdb9d6f4ab0",
+        "id": "ebcb50cdabc72f91",
         "type": "template",
         "z": "72f3a564e626ff9a",
         "g": "3b89d483d3628b14",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "garbage",
         "output": "str",
-        "x": 1270,
-        "y": 240,
+        "x": 1290,
+        "y": 320,
         "wires": [
             [
                 "d0d3f913b8c035f3"
@@ -253,7 +253,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Morgen {{{data.attributes.date}}} wordt de {{garbage_type}} container opgehaald",
+        "template": "Morgen {{{data.attributes.date}}} wordt de {{garbage_type}}container opgehaald",
         "output": "str",
         "x": 580,
         "y": 60,
@@ -558,21 +558,24 @@
         "z": "72f3a564e626ff9a",
         "name": "button press notification info turn off",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "button",
-        "service": "press",
+        "action": "button.press",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "button.notification_level_info_turn_off"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "button",
+        "service": "press",
         "x": 960,
         "y": 220,
         "wires": [
