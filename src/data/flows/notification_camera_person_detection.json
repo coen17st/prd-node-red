@@ -43,7 +43,7 @@
         "type": "function",
         "z": "e846a5a705a12fe6",
         "name": "create service call",
-        "func": "msg.payload = {\n    \"action\": \"notify.mobile_app_phone_coen\",\n    \"data\": {\n        \"message\": \"Er is een persoon in de achtertuin gedetecteerd\",\n        \"data\": {\n            \"image\": \"https://home-assistant.theautomation.nl/api/frigate/notifications/\" + msg.payload.after.id + \"/thumbnail.jpg?format=android\",\n            \"tag\": msg.payload.after.id,\n            \"when\": msg.payload.after.start_time\n        }\n    }\n};\nreturn msg;\n\n",
+        "func": "msg.payload = {\n    \"action\": \"notify.mobile_app_phone_coen\",\n    \"data\": {\n        \"message\": \"Er is een persoon in de achtertuin gedetecteerd\",\n        \"data\": {\n            \"image\": \"https://home-assistant.theautomation.nl/api/frigate/notifications/\" + msg.payload.after.id + \"/thumbnail.jpg?format=android\",\n            \"tag\": msg.payload.after.id,\n            \"when\": msg.payload.after.start_time,\n            \"clickAction\": \"/dashboard-mobile/camera\",\n            \"channel\": \"Warning\",\n            \"importance\": \"high\"\n        }\n    }\n};\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
