@@ -20,9 +20,10 @@
             "4b6f2391d1d4dfb7",
             "c32738f7b2c8ece5",
             "64fb1dffb9145f24",
-            "5cb88a741e06d0c9"
+            "5cb88a741e06d0c9",
+            "56e8236b1fb323bc"
         ],
-        "x": 1954,
+        "x": 1694,
         "y": 259,
         "w": 402,
         "h": 162
@@ -32,77 +33,13 @@
         "type": "junction",
         "z": "75537afd17de5117",
         "g": "ef69ec82c772cad9",
-        "x": 1980,
+        "x": 1720,
         "y": 340,
         "wires": [
             [
                 "4b6f2391d1d4dfb7",
-                "644d8e4f0164cfb2"
-            ]
-        ]
-    },
-    {
-        "id": "64fb1dffb9145f24",
-        "type": "join",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 2230,
-        "y": 340,
-        "wires": [
-            [
-                "c32738f7b2c8ece5"
-            ]
-        ]
-    },
-    {
-        "id": "c32738f7b2c8ece5",
-        "type": "link out",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "a97f87cfab413716",
-            "aeee8468f3d1b7ad"
-        ],
-        "x": 2315,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "4b6f2391d1d4dfb7",
-        "type": "template",
-        "z": "75537afd17de5117",
-        "g": "ef69ec82c772cad9",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Picnic",
-        "output": "str",
-        "x": 2070,
-        "y": 300,
-        "wires": [
-            [
-                "64fb1dffb9145f24"
+                "644d8e4f0164cfb2",
+                "56e8236b1fb323bc"
             ]
         ]
     },
@@ -118,11 +55,77 @@
         "syntax": "mustache",
         "template": "mdi:cart-variant",
         "output": "str",
-        "x": 2070,
-        "y": 380,
+        "x": 1810,
+        "y": 340,
         "wires": [
             [
                 "64fb1dffb9145f24"
+            ]
+        ]
+    },
+    {
+        "id": "4b6f2391d1d4dfb7",
+        "type": "template",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Picnic",
+        "output": "str",
+        "x": 1810,
+        "y": 300,
+        "wires": [
+            [
+                "64fb1dffb9145f24"
+            ]
+        ]
+    },
+    {
+        "id": "c32738f7b2c8ece5",
+        "type": "link out",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "a97f87cfab413716",
+            "aeee8468f3d1b7ad"
+        ],
+        "x": 2055,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "64fb1dffb9145f24",
+        "type": "join",
+        "z": "75537afd17de5117",
+        "g": "ef69ec82c772cad9",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1970,
+        "y": 340,
+        "wires": [
+            [
+                "c32738f7b2c8ece5"
             ]
         ]
     },
@@ -137,7 +140,7 @@
         "syntax": "mustache",
         "template": "picnic",
         "output": "str",
-        "x": 2030,
+        "x": 1770,
         "y": 140,
         "wires": [
             [
@@ -156,7 +159,7 @@
         "syntax": "mustache",
         "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1740,
+        "x": 1480,
         "y": 100,
         "wires": [
             [
@@ -175,7 +178,7 @@
         "syntax": "mustache",
         "template": "Picnic",
         "output": "str",
-        "x": 2070,
+        "x": 1810,
         "y": 100,
         "wires": [
             [
@@ -194,7 +197,7 @@
         "syntax": "mustache",
         "template": "info",
         "output": "str",
-        "x": 2070,
+        "x": 1810,
         "y": 180,
         "wires": [
             [
@@ -221,7 +224,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2040,
+        "x": 1780,
         "y": 220,
         "wires": [
             [
@@ -465,11 +468,16 @@
         "z": "75537afd17de5117",
         "name": "start datetime next delivery",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.picnic_next_delivery_eta_start",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.picnic_next_delivery_eta_start"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "outputInitially": true,
         "stateType": "str",
         "ifState": "",
@@ -520,7 +528,7 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 2285,
+        "x": 2025,
         "y": 220,
         "wires": []
     },
@@ -871,7 +879,7 @@
         "y": 300,
         "wires": [
             [
-                "3352acb0665c956a"
+                "b3a5d188e65ecafd"
             ]
         ]
     },
@@ -886,7 +894,7 @@
         "syntax": "mustache",
         "template": "Tussen {{payload.start.mytime}} en {{payload.end.mytime}} staat Picnic voor de deur",
         "output": "str",
-        "x": 1780,
+        "x": 1520,
         "y": 140,
         "wires": [
             [
@@ -905,7 +913,7 @@
         "syntax": "mustache",
         "template": "Picnic staat bijna voor de deur. Tussen {{payload.start.mytime}} en {{payload.end.mytime}}.",
         "output": "str",
-        "x": 1740,
+        "x": 1480,
         "y": 300,
         "wires": [
             [
@@ -924,7 +932,7 @@
         "syntax": "mustache",
         "template": "Picnic staat bijna voor de deur. Tussen {{payload.start.mytime}} en {{payload.end.mytime}}.",
         "output": "str",
-        "x": 1780,
+        "x": 1520,
         "y": 340,
         "wires": [
             [
@@ -953,28 +961,22 @@
         "wires": []
     },
     {
-        "id": "3352acb0665c956a",
-        "type": "delay",
+        "id": "56e8236b1fb323bc",
+        "type": "template",
         "z": "75537afd17de5117",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "5",
-        "rateUnits": "minute",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1600,
-        "y": 300,
+        "g": "ef69ec82c772cad9",
+        "name": "tag",
+        "field": "notify.tag",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "picnic",
+        "output": "str",
+        "x": 1810,
+        "y": 380,
         "wires": [
             [
-                "a6ef62b554d3aac7",
-                "b3a5d188e65ecafd"
+                "64fb1dffb9145f24"
             ]
         ]
     },

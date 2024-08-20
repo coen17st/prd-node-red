@@ -22,12 +22,13 @@
             "c6f3f4b2b46ffb4e",
             "976de9be5916cb4b",
             "b36f1d0dfd83653c",
-            "01112a435413374c"
+            "01112a435413374c",
+            "728c75b797b416a5"
         ],
         "x": 1854,
         "y": 39,
         "w": 422,
-        "h": 202
+        "h": 242
     },
     {
         "id": "c6f3f4b2b46ffb4e",
@@ -41,27 +42,92 @@
                 "ddcda02e8d44e679",
                 "40cce72d78ddf2ba",
                 "976de9be5916cb4b",
-                "01112a435413374c"
+                "01112a435413374c",
+                "728c75b797b416a5"
             ]
         ]
     },
     {
-        "id": "40cce72d78ddf2ba",
+        "id": "01112a435413374c",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "icon",
-        "field": "notify.icon",
+        "name": "notification channel",
+        "field": "notify.channel",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "",
+        "template": "bathroom_fan",
         "output": "str",
-        "x": 1990,
-        "y": 120,
+        "x": 2030,
+        "y": 200,
         "wires": [
             [
                 "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "b36f1d0dfd83653c",
+        "type": "link out",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b"
+        ],
+        "x": 2235,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "976de9be5916cb4b",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "notification id",
+        "field": "notify.notification_id",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "bathroom_fan",
+        "output": "str",
+        "x": 2010,
+        "y": 160,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
+        ]
+    },
+    {
+        "id": "017eba9ce6de6486",
+        "type": "join",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "notify",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "6",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2150,
+        "y": 100,
+        "wires": [
+            [
+                "b36f1d0dfd83653c"
             ]
         ]
     },
@@ -86,82 +152,19 @@
         ]
     },
     {
-        "id": "017eba9ce6de6486",
-        "type": "join",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "",
-        "mode": "custom",
-        "build": "merged",
-        "property": "notify",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "5",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 2150,
-        "y": 100,
-        "wires": [
-            [
-                "b36f1d0dfd83653c"
-            ]
-        ]
-    },
-    {
-        "id": "976de9be5916cb4b",
+        "id": "40cce72d78ddf2ba",
         "type": "template",
         "z": "b4963274903ed2a9",
         "g": "70b9d3433e540010",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "icon",
+        "field": "notify.icon",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "bathroom_fan",
+        "template": "",
         "output": "str",
-        "x": 2010,
-        "y": 160,
-        "wires": [
-            [
-                "017eba9ce6de6486"
-            ]
-        ]
-    },
-    {
-        "id": "b36f1d0dfd83653c",
-        "type": "link out",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b"
-        ],
-        "x": 2235,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "01112a435413374c",
-        "type": "template",
-        "z": "b4963274903ed2a9",
-        "g": "70b9d3433e540010",
-        "name": "notification channel",
-        "field": "notify.channel",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "bathroom_fan",
-        "output": "str",
-        "x": 2030,
-        "y": 200,
+        "x": 1990,
+        "y": 120,
         "wires": [
             [
                 "017eba9ce6de6486"
@@ -184,11 +187,16 @@
         "z": "b4963274903ed2a9",
         "name": "bathroom humidity",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.bathroom_sensors_humidity",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.bathroom_sensors_humidity"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "outputInitially": true,
         "stateType": "str",
         "ifState": "",
@@ -301,21 +309,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn on bathroom fan",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
+        "action": "switch.turn_on",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.shelly1pm_bathroom_fan_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "switch",
+        "service": "turn_on",
         "x": 1580,
         "y": 60,
         "wires": [
@@ -450,21 +461,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn off bathroom fan",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
+        "action": "switch.turn_off",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.shelly1pm_bathroom_fan_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "switch",
+        "service": "turn_off",
         "x": 1580,
         "y": 240,
         "wires": [
@@ -596,10 +610,15 @@
         "z": "b4963274903ed2a9",
         "name": "wait until humidity is below 65%",
         "server": "4ba92433.2478cc",
-        "version": 2,
+        "version": 3,
         "outputs": 1,
-        "entityId": "sensor.bathroom_sensors_humidity",
-        "entityIdFilterType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.bathroom_sensors_humidity"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "property": "state",
         "comparator": "lt",
         "value": "65",
@@ -643,11 +662,16 @@
         "z": "b4963274903ed2a9",
         "name": "input select fan position",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "input_select.mechanical_ventilation_bathroom_position",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "input_select.mechanical_ventilation_bathroom_position"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "outputInitially": false,
         "stateType": "str",
         "ifState": "",
@@ -737,21 +761,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn on fan",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "fan",
-        "service": "turn_on",
+        "action": "fan.turn_on",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "fan.shelly1pm_bathroom_fan_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "fan",
+        "service": "turn_on",
         "x": 730,
         "y": 520,
         "wires": [
@@ -764,21 +791,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn off fan autonomous",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_off",
+        "action": "input_boolean.turn_off",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "input_boolean.mechanical_ventilation_bathroom_autonomous"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "input_boolean",
+        "service": "turn_off",
         "x": 490,
         "y": 520,
         "wires": [
@@ -793,21 +823,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn off fan",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "fan",
-        "service": "turn_off",
+        "action": "fan.turn_off",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "fan.shelly1pm_bathroom_fan_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "fan",
+        "service": "turn_off",
         "x": 730,
         "y": 580,
         "wires": [
@@ -820,21 +853,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn off fan autonomous",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_off",
+        "action": "input_boolean.turn_off",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "input_boolean.mechanical_ventilation_bathroom_autonomous"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "input_boolean",
+        "service": "turn_off",
         "x": 490,
         "y": 580,
         "wires": [
@@ -849,21 +885,24 @@
         "z": "b4963274903ed2a9",
         "name": "turn on fan autonomous",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "turn_on",
+        "action": "input_boolean.turn_on",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "input_boolean.mechanical_ventilation_bathroom_autonomous"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "input_boolean",
+        "service": "turn_on",
         "x": 490,
         "y": 640,
         "wires": [
@@ -903,6 +942,26 @@
                 "860a72a08f111ab7"
             ],
             []
+        ]
+    },
+    {
+        "id": "728c75b797b416a5",
+        "type": "template",
+        "z": "b4963274903ed2a9",
+        "g": "70b9d3433e540010",
+        "name": "tag",
+        "field": "notify.tag",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "mechanical_ventilation_bathroom",
+        "output": "str",
+        "x": 1990,
+        "y": 240,
+        "wires": [
+            [
+                "017eba9ce6de6486"
+            ]
         ]
     },
     {

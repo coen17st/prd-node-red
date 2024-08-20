@@ -21,7 +21,7 @@
         "deviceId": [],
         "entityId": [],
         "labelId": [],
-        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\"}}",
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\",\"tag\":\"{{notify.tag}}\",\"clickAction\":\"{{notify.clickAction}}\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -62,7 +62,9 @@
             "d43e56b2e0de8b6e",
             "b41a40c1e135e55c",
             "ac254d4235d71700",
-            "4c20628e1deef4b2"
+            "4c20628e1deef4b2",
+            "e188c5d43cc22d55",
+            "f118397ef51d377e"
         ],
         "x": 195,
         "y": 140,
@@ -83,7 +85,8 @@
             "c6bc1abd0ea4d3e7",
             "d43e56b2e0de8b6e",
             "ac254d4235d71700",
-            "4c20628e1deef4b2"
+            "4c20628e1deef4b2",
+            "e188c5d43cc22d55"
         ],
         "x": 195,
         "y": 200,
@@ -117,7 +120,7 @@
         "deviceId": [],
         "entityId": [],
         "labelId": [],
-        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\"}}",
+        "data": "{\"message\":\"{{notify.message}}\",\"title\":\"{{notify.title}}\",\"data\":{\"vibrationPattern\":\"{{notify.vibrationPattern}}\",\"channel\":\"{{notify.channel}}\",\"tag\":\"{{notify.tag}}\",\"clickAction\":\"{{notify.clickAction}}\"}}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
@@ -175,7 +178,8 @@
             "17c484a9c9a917ac",
             "0b0c89810da47741",
             "3bdaf73ce37b7397",
-            "467b119592a914a3"
+            "467b119592a914a3",
+            "e188c5d43cc22d55"
         ],
         "x": 195,
         "y": 260,
@@ -350,7 +354,8 @@
             "f5a1c4dd087e0795",
             "fdba7cd037a9da5a",
             "d43e56b2e0de8b6e",
-            "4c20628e1deef4b2"
+            "4c20628e1deef4b2",
+            "7528bd2fef1d9090"
         ],
         "x": 195,
         "y": 380,
@@ -394,7 +399,8 @@
         "z": "343515a5528e14f0",
         "name": "notify_tv",
         "links": [
-            "68e61dcfb6db1de4"
+            "68e61dcfb6db1de4",
+            "e188c5d43cc22d55"
         ],
         "x": 195,
         "y": 80,
