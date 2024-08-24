@@ -8,6 +8,29 @@
         "env": []
     },
     {
+        "id": "37ce07449a33a2f1",
+        "type": "group",
+        "z": "1adcdebcdc8e5c39",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "1216fc8eb38d5547",
+            "344cbd55957359b6",
+            "3bb7516008d0f0ca"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 382,
+        "h": 82
+    },
+    {
         "id": "6c70289470244d20",
         "type": "ha-get-entities",
         "z": "1adcdebcdc8e5c39",
@@ -28,7 +51,7 @@
         "outputLocation": "payload",
         "outputResultsCount": 1,
         "x": 430,
-        "y": 60,
+        "y": 180,
         "wires": [
             [
                 "caa9c954adc5c425"
@@ -41,23 +64,26 @@
         "z": "1adcdebcdc8e5c39",
         "name": "",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "input_select",
-        "service": "select_option",
+        "action": "input_select.select_option",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "{{payload.entity_id}}"
         ],
+        "labelId": [],
         "data": "{\"option\":\"{{data.new_state.attributes.friendly_name}}\"}",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "input_select",
+        "service": "select_option",
         "x": 630,
-        "y": 60,
+        "y": 180,
         "wires": [
             []
         ]
@@ -78,11 +104,16 @@
         "z": "1adcdebcdc8e5c39",
         "name": "",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "input_button.climate_graph",
-        "entityIdType": "regex",
+        "entities": {
+            "entity": [],
+            "substring": [],
+            "regex": [
+                "input_button.climate_graph"
+            ]
+        },
         "outputInitially": false,
         "stateType": "str",
         "ifState": "",
@@ -118,12 +149,62 @@
             }
         ],
         "x": 180,
-        "y": 60,
+        "y": 180,
         "wires": [
             [
                 "6c70289470244d20"
             ]
         ]
+    },
+    {
+        "id": "1216fc8eb38d5547",
+        "type": "catch",
+        "z": "1adcdebcdc8e5c39",
+        "g": "37ce07449a33a2f1",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "344cbd55957359b6"
+            ]
+        ]
+    },
+    {
+        "id": "344cbd55957359b6",
+        "type": "template",
+        "z": "1adcdebcdc8e5c39",
+        "g": "37ce07449a33a2f1",
+        "name": "messsage",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}}\nSource:\n    id: {{error.source.id}}\n    type: {{error.source.type}}\n    name: {{error.source.name}}\n    count: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "3bb7516008d0f0ca"
+            ]
+        ]
+    },
+    {
+        "id": "3bb7516008d0f0ca",
+        "type": "link out",
+        "z": "1adcdebcdc8e5c39",
+        "g": "37ce07449a33a2f1",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "82031c40df5c41e6"
+        ],
+        "x": 355,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "4ba92433.2478cc",

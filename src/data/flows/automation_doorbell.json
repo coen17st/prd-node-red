@@ -7,6 +7,29 @@
         "info": ""
     },
     {
+        "id": "e03ae4faf7d59fd6",
+        "type": "group",
+        "z": "3637eeb0.d96232",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "3fe16bce635a440f",
+            "8b928975c2ab5068",
+            "eb0870c7be26407f"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 382,
+        "h": 82
+    },
+    {
         "id": "aa8eb1c4.30d7e",
         "type": "server-state-changed",
         "z": "3637eeb0.d96232",
@@ -57,7 +80,7 @@
             }
         ],
         "x": 120,
-        "y": 220,
+        "y": 320,
         "wires": [
             [
                 "f98986e3.e78848",
@@ -117,7 +140,7 @@
             }
         ],
         "x": 120,
-        "y": 100,
+        "y": 200,
         "wires": [
             [
                 "59bbde6d.37f02"
@@ -157,7 +180,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 340,
-        "y": 100,
+        "y": 200,
         "wires": [
             [
                 "d1c2946f.425ad8"
@@ -190,7 +213,7 @@
         "domain": "switch",
         "service": "turn_on",
         "x": 540,
-        "y": 100,
+        "y": 200,
         "wires": [
             []
         ]
@@ -227,7 +250,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 360,
-        "y": 220,
+        "y": 320,
         "wires": [
             [
                 "c63cd5dd.2969b8"
@@ -260,7 +283,7 @@
         "domain": "media_player",
         "service": "media_pause",
         "x": 570,
-        "y": 220,
+        "y": 320,
         "wires": [
             []
         ]
@@ -297,7 +320,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 350,
-        "y": 280,
+        "y": 380,
         "wires": [
             [
                 "d6c8ef4a.6f6e9"
@@ -330,7 +353,7 @@
         "domain": "light",
         "service": "turn_on",
         "x": 780,
-        "y": 280,
+        "y": 380,
         "wires": [
             [
                 "f39e3558.7e0a48"
@@ -369,7 +392,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 560,
-        "y": 280,
+        "y": 380,
         "wires": [
             [
                 "c3f4b74d.a01278"
@@ -402,7 +425,7 @@
         "domain": "light",
         "service": "turn_off",
         "x": 1180,
-        "y": 280,
+        "y": 380,
         "wires": [
             []
         ]
@@ -417,7 +440,7 @@
         "payloadval": "0",
         "name": "",
         "x": 980,
-        "y": 280,
+        "y": 380,
         "wires": [
             [
                 "4566a0c1.1b69e"
@@ -442,7 +465,7 @@
         "name": "turn on the doorbell chime when persons is not_home",
         "info": "doorbell automation",
         "x": 240,
-        "y": 60,
+        "y": 160,
         "wires": []
     },
     {
@@ -452,7 +475,57 @@
         "name": "actions when doorbell button is pressed",
         "info": "",
         "x": 170,
-        "y": 180,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3fe16bce635a440f",
+        "type": "catch",
+        "z": "3637eeb0.d96232",
+        "g": "e03ae4faf7d59fd6",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "8b928975c2ab5068"
+            ]
+        ]
+    },
+    {
+        "id": "8b928975c2ab5068",
+        "type": "template",
+        "z": "3637eeb0.d96232",
+        "g": "e03ae4faf7d59fd6",
+        "name": "messsage",
+        "field": "message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}}\nSource:\n    id: {{error.source.id}}\n    type: {{error.source.type}}\n    name: {{error.source.name}}\n    count: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "eb0870c7be26407f"
+            ]
+        ]
+    },
+    {
+        "id": "eb0870c7be26407f",
+        "type": "link out",
+        "z": "3637eeb0.d96232",
+        "g": "e03ae4faf7d59fd6",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "82031c40df5c41e6"
+        ],
+        "x": 355,
+        "y": 80,
         "wires": []
     },
     {
