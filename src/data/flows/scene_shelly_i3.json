@@ -95,12 +95,8 @@
                 "78bedeb65fca6d0f"
             ],
             [],
-            [
-                "fd23c1487f8b7a61"
-            ],
-            [
-                "a682fb38.5bddb8"
-            ]
+            [],
+            []
         ]
     },
     {
@@ -206,220 +202,31 @@
         ]
     },
     {
-        "id": "fd23c1487f8b7a61",
-        "type": "api-current-state",
-        "z": "f180ab88.925788",
-        "name": "state spotify playlist",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "Spotify Uit",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_select.spotify_playlist",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 870,
-        "y": 460,
-        "wires": [
-            [
-                "1ce0c78537fc9a18"
-            ],
-            [
-                "368eace4cfa218fd"
-            ]
-        ]
-    },
-    {
-        "id": "1ce0c78537fc9a18",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "select spotify playlist",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_select",
-        "service": "select_option",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_select.spotify_playlist"
-        ],
-        "data": "{\"option\":\"Mijn Muziek\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1140,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "368eace4cfa218fd",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "select spotify playlist",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_select",
-        "service": "select_option",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_select.radio_station"
-        ],
-        "data": "{\"option\":\"Spotify Uit\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1140,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c4aeda1d.85afa8",
         "type": "api-call-service",
         "z": "f180ab88.925788",
         "name": "toggle switch sleepmode",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "input_boolean",
-        "service": "toggle",
+        "action": "input_boolean.toggle",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "input_boolean.sleep_mode"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "input_boolean",
+        "service": "toggle",
         "x": 890,
         "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a682fb38.5bddb8",
-        "type": "api-current-state",
-        "z": "f180ab88.925788",
-        "name": "state radio station ",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "Radio Uit",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "input_select.radio_station",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 870,
-        "y": 520,
-        "wires": [
-            [
-                "c3116dd.2ddc69"
-            ],
-            [
-                "8cf0345.f0a8ec8"
-            ]
-        ]
-    },
-    {
-        "id": "c3116dd.2ddc69",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "select radio station",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_select",
-        "service": "select_option",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_select.radio_station"
-        ],
-        "data": "{\"option\":\"NPO Radio 2\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1130,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8cf0345.f0a8ec8",
-        "type": "api-call-service",
-        "z": "f180ab88.925788",
-        "name": "select radio station",
-        "server": "4ba92433.2478cc",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "input_select",
-        "service": "select_option",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "input_select.radio_station"
-        ],
-        "data": "{\"option\":\"Radio Uit\"}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 1130,
-        "y": 580,
         "wires": [
             []
         ]
@@ -430,21 +237,24 @@
         "z": "f180ab88.925788",
         "name": "toggle light backyard",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "light",
-        "service": "toggle",
+        "action": "light.toggle",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "light.shellydimmer_backyard_string_l"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "light",
+        "service": "toggle",
         "x": 880,
         "y": 80,
         "wires": [
@@ -457,21 +267,24 @@
         "z": "f180ab88.925788",
         "name": "toggle light barn hanging lamp",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "light",
-        "service": "toggle",
+        "action": "light.toggle",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "light.shellydimmer_barn_hanging_lamp"
+            "light.shellydimmer_barn_hanging_lam"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "light",
+        "service": "toggle",
         "x": 910,
         "y": 280,
         "wires": [
@@ -484,21 +297,24 @@
         "z": "f180ab88.925788",
         "name": "toggle light christmas tree",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "light",
-        "service": "toggle",
+        "action": "light.toggle",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "light.christmas_tree"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "light",
+        "service": "toggle",
         "x": 890,
         "y": 140,
         "wires": [
@@ -511,21 +327,24 @@
         "z": "f180ab88.925788",
         "name": "toggle childlock kitchen switch",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "toggle",
+        "action": "switch.toggle",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.childlock_kitchen_switch"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
+        "domain": "switch",
+        "service": "toggle",
         "x": 910,
         "y": 340,
         "wires": [
