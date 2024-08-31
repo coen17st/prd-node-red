@@ -8,6 +8,30 @@
         "env": []
     },
     {
+        "id": "a438a5fafa2b7f02",
+        "type": "group",
+        "z": "343515a5528e14f0",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "42073f55aa389f5d",
+            "f095a3312890d656",
+            "ce9dcc40d72369f4",
+            "8cc9f9d0eb2ee196"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
         "id": "b92773ff0b01fade",
         "type": "api-call-service",
         "z": "343515a5528e14f0",
@@ -30,7 +54,7 @@
         "domain": "notify",
         "service": "mobile_app_phone_coen",
         "x": 310,
-        "y": 140,
+        "y": 340,
         "wires": [
             []
         ]
@@ -67,7 +91,7 @@
             "f118397ef51d377e"
         ],
         "x": 195,
-        "y": 140,
+        "y": 340,
         "wires": [
             [
                 "b92773ff0b01fade"
@@ -89,7 +113,7 @@
             "e188c5d43cc22d55"
         ],
         "x": 195,
-        "y": 200,
+        "y": 400,
         "wires": [
             [
                 "05c72cc515d6ee8d"
@@ -129,7 +153,7 @@
         "domain": "notify",
         "service": "mobile_app_phone_anne",
         "x": 310,
-        "y": 200,
+        "y": 400,
         "wires": [
             []
         ]
@@ -157,7 +181,7 @@
         "domain": "persistent_notification",
         "service": "create",
         "x": 310,
-        "y": 260,
+        "y": 460,
         "wires": [
             []
         ]
@@ -185,10 +209,11 @@
             "6c4b4ca33c32a0f7",
             "6f92ae57f8e67eb2",
             "008e4e3d5eb1c73a",
-            "6031ed8d02da2add"
+            "6031ed8d02da2add",
+            "ce9dcc40d72369f4"
         ],
         "x": 195,
-        "y": 260,
+        "y": 460,
         "wires": [
             [
                 "0d4dd5184c1b0c50"
@@ -220,7 +245,7 @@
         "domain": "tts",
         "service": "google_say",
         "x": 800,
-        "y": 320,
+        "y": 520,
         "wires": [
             [
                 "5eb39518752706d4"
@@ -255,7 +280,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 550,
-        "y": 320,
+        "y": 520,
         "wires": [
             [
                 "cfaf92063b478bdc"
@@ -269,7 +294,7 @@
         "name": "notify_in_tts_google_home_speaker",
         "links": [],
         "x": 195,
-        "y": 320,
+        "y": 520,
         "wires": [
             [
                 "577ae9a09334bd75"
@@ -304,7 +329,7 @@
         "entityLocation": "data",
         "entityLocationType": "none",
         "x": 550,
-        "y": 380,
+        "y": 580,
         "wires": [
             [
                 "f11dc3e3682ce836"
@@ -337,7 +362,7 @@
         "domain": "tts",
         "service": "google_say",
         "x": 800,
-        "y": 380,
+        "y": 580,
         "wires": [
             [
                 "566faf848ae88258"
@@ -364,7 +389,7 @@
             "7528bd2fef1d9090"
         ],
         "x": 195,
-        "y": 380,
+        "y": 580,
         "wires": [
             [
                 "e1fdac1fe178e720"
@@ -394,7 +419,7 @@
         "domain": "notify",
         "service": "lg_webos_smart_tv",
         "x": 300,
-        "y": 80,
+        "y": 280,
         "wires": [
             []
         ]
@@ -409,7 +434,7 @@
             "e188c5d43cc22d55"
         ],
         "x": 195,
-        "y": 80,
+        "y": 280,
         "wires": [
             [
                 "04792e2be9d492bd"
@@ -439,7 +464,7 @@
         "domain": "notify",
         "service": "mobile_app_phone_coen",
         "x": 340,
-        "y": 440,
+        "y": 640,
         "wires": [
             []
         ]
@@ -454,7 +479,7 @@
             "0af5a06e405527e9"
         ],
         "x": 195,
-        "y": 440,
+        "y": 640,
         "wires": [
             [
                 "3675d2d1160c6b61"
@@ -484,7 +509,7 @@
         "domain": "notify",
         "service": "mobile_app_phone_anne",
         "x": 340,
-        "y": 500,
+        "y": 700,
         "wires": [
             []
         ]
@@ -499,7 +524,7 @@
             "0af5a06e405527e9"
         ],
         "x": 195,
-        "y": 500,
+        "y": 700,
         "wires": [
             [
                 "7e56e31c0145c7b4"
@@ -514,7 +539,7 @@
         "firstMessageBypass": true,
         "bypassInterval": "0",
         "x": 310,
-        "y": 380,
+        "y": 580,
         "wires": [
             [
                 "d94b50aeaba952d1"
@@ -541,7 +566,7 @@
         "to": "",
         "reg": false,
         "x": 980,
-        "y": 380,
+        "y": 580,
         "wires": [
             [
                 "e1fdac1fe178e720"
@@ -556,7 +581,7 @@
         "firstMessageBypass": true,
         "bypassInterval": "0",
         "x": 310,
-        "y": 320,
+        "y": 520,
         "wires": [
             [
                 "cf256ece81c0faee"
@@ -583,10 +608,80 @@
         "to": "",
         "reg": false,
         "x": 980,
-        "y": 320,
+        "y": 520,
         "wires": [
             [
                 "577ae9a09334bd75"
+            ]
+        ]
+    },
+    {
+        "id": "42073f55aa389f5d",
+        "type": "catch",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "f095a3312890d656"
+            ]
+        ]
+    },
+    {
+        "id": "f095a3312890d656",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "8cc9f9d0eb2ee196"
+            ]
+        ]
+    },
+    {
+        "id": "ce9dcc40d72369f4",
+        "type": "link out",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8cc9f9d0eb2ee196",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "ce9dcc40d72369f4"
             ]
         ]
     },
