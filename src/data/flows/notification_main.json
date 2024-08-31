@@ -32,38 +32,20 @@
         "h": 82
     },
     {
-        "id": "8cc9f9d0eb2ee196",
-        "type": "template",
+        "id": "42073f55aa389f5d",
+        "type": "catch",
         "z": "343515a5528e14f0",
         "g": "a438a5fafa2b7f02",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Node-RED",
-        "output": "str",
-        "x": 390,
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
         "y": 80,
         "wires": [
             [
-                "ce9dcc40d72369f4"
+                "f095a3312890d656"
             ]
         ]
-    },
-    {
-        "id": "ce9dcc40d72369f4",
-        "type": "link out",
-        "z": "343515a5528e14f0",
-        "g": "a438a5fafa2b7f02",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "a97f87cfab413716"
-        ],
-        "x": 475,
-        "y": 80,
-        "wires": []
     },
     {
         "id": "f095a3312890d656",
@@ -86,18 +68,36 @@
         ]
     },
     {
-        "id": "42073f55aa389f5d",
-        "type": "catch",
+        "id": "ce9dcc40d72369f4",
+        "type": "link out",
         "z": "343515a5528e14f0",
         "g": "a438a5fafa2b7f02",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 100,
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8cc9f9d0eb2ee196",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
         "y": 80,
         "wires": [
             [
-                "f095a3312890d656"
+                "ce9dcc40d72369f4"
             ]
         ]
     },
@@ -283,7 +283,10 @@
             "ce9dcc40d72369f4",
             "31afe4007c8c4380",
             "f9b220def47837e4",
-            "17e4e7721adc09a1"
+            "17e4e7721adc09a1",
+            "1514f8777e4c8211",
+            "ddf56ac7c76174e3",
+            "85efbfe86edb2e91"
         ],
         "x": 195,
         "y": 460,

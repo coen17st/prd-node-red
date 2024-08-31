@@ -8,11 +8,35 @@
         "env": []
     },
     {
+        "id": "03c1d7472447f924",
+        "type": "group",
+        "z": "39f5e6336137f4b2",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "32e0cbcd73142f33",
+            "5c1d97fa3277b1c6",
+            "1514f8777e4c8211",
+            "5fc11e4e29f3d02f"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
         "id": "4539dbe872caf169",
         "type": "junction",
         "z": "39f5e6336137f4b2",
-        "x": 940,
-        "y": 60,
+        "x": 960,
+        "y": 160,
         "wires": [
             [
                 "e7db7dd82d8ece7e"
@@ -24,7 +48,7 @@
         "type": "junction",
         "z": "39f5e6336137f4b2",
         "x": 440,
-        "y": 140,
+        "y": 240,
         "wires": [
             [
                 "a773a1b90b438e7b"
@@ -82,7 +106,7 @@
             }
         ],
         "x": 150,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "b17acb7df0bb2bd2"
@@ -122,7 +146,7 @@
         "repair": false,
         "outputs": 2,
         "x": 350,
-        "y": 100,
+        "y": 200,
         "wires": [
             [
                 "d9540c933a60aec7",
@@ -153,7 +177,7 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "a773a1b90b438e7b",
@@ -184,7 +208,7 @@
         "domain": "webostv",
         "service": "command",
         "x": 520,
-        "y": 100,
+        "y": 200,
         "wires": [
             []
         ]
@@ -207,12 +231,19 @@
         "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
-        "outputProperties": [],
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "turn_off",
+                "valueType": "str"
+            }
+        ],
         "queue": "none",
         "domain": "notify",
         "service": "lg_webos_smart_tv",
-        "x": 880,
-        "y": 140,
+        "x": 900,
+        "y": 240,
         "wires": [
             [
                 "e7db7dd82d8ece7e"
@@ -223,13 +254,13 @@
         "id": "a773a1b90b438e7b",
         "type": "stoptimer",
         "z": "39f5e6336137f4b2",
-        "duration": "5",
+        "duration": "10",
         "units": "Second",
         "payloadtype": "num",
         "payloadval": "0",
         "name": "",
-        "x": 720,
-        "y": 140,
+        "x": 730,
+        "y": 240,
         "wires": [
             [
                 "a9227561e7f66936"
@@ -247,7 +278,7 @@
         "payloadval": "0",
         "name": "",
         "x": 1090,
-        "y": 140,
+        "y": 240,
         "wires": [
             [
                 "19e1804740908598"
@@ -278,9 +309,79 @@
         "domain": "webostv",
         "service": "command",
         "x": 1280,
-        "y": 140,
+        "y": 240,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "32e0cbcd73142f33",
+        "type": "catch",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "5c1d97fa3277b1c6"
+            ]
+        ]
+    },
+    {
+        "id": "5c1d97fa3277b1c6",
+        "type": "template",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "5fc11e4e29f3d02f"
+            ]
+        ]
+    },
+    {
+        "id": "1514f8777e4c8211",
+        "type": "link out",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5fc11e4e29f3d02f",
+        "type": "template",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "1514f8777e4c8211"
+            ]
         ]
     },
     {

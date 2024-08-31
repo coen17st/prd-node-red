@@ -8,6 +8,42 @@
         "env": []
     },
     {
+        "id": "56142a1519568ef8",
+        "type": "group",
+        "z": "2c496b90815e2d15",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "b6bfca82eda04627",
+            "a095e55bdff6b447",
+            "ddf56ac7c76174e3",
+            "5bb7a42d4f9af661"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
+        "id": "1d17d4994d0cc1e1",
+        "type": "junction",
+        "z": "2c496b90815e2d15",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "62bc4f4208a1c07d"
+            ]
+        ]
+    },
+    {
         "id": "89261028e8c833f2",
         "type": "ha-button",
         "z": "2c496b90815e2d15",
@@ -37,57 +73,11 @@
             }
         ],
         "x": 120,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
-                "b0bfbe472efe43f9"
-            ]
-        ]
-    },
-    {
-        "id": "b0bfbe472efe43f9",
-        "type": "api-current-state",
-        "z": "2c496b90815e2d15",
-        "name": "tvscreen sensor is on",
-        "server": "4ba92433.2478cc",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.tvscreen_device",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "override_topic": false,
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "x": 340,
-        "y": 60,
-        "wires": [
-            [
-                "d74a8990e320bdd1"
-            ],
-            [
-                "62bc4f4208a1c07d"
+                "d74a8990e320bdd1",
+                "1d17d4994d0cc1e1"
             ]
         ]
     },
@@ -110,8 +100,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 60,
+        "x": 380,
+        "y": 160,
         "wires": [
             [
                 "bf0edd39a6bab4fd"
@@ -140,8 +130,8 @@
         "queue": "none",
         "domain": "webostv",
         "service": "command",
-        "x": 780,
-        "y": 60,
+        "x": 560,
+        "y": 160,
         "wires": [
             []
         ]
@@ -165,8 +155,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 100,
+        "x": 380,
+        "y": 200,
         "wires": [
             [
                 "bf0edd39a6bab4fd"
@@ -182,6 +172,76 @@
         "x": 150,
         "y": 20,
         "wires": []
+    },
+    {
+        "id": "b6bfca82eda04627",
+        "type": "catch",
+        "z": "2c496b90815e2d15",
+        "g": "56142a1519568ef8",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "a095e55bdff6b447"
+            ]
+        ]
+    },
+    {
+        "id": "a095e55bdff6b447",
+        "type": "template",
+        "z": "2c496b90815e2d15",
+        "g": "56142a1519568ef8",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "5bb7a42d4f9af661"
+            ]
+        ]
+    },
+    {
+        "id": "ddf56ac7c76174e3",
+        "type": "link out",
+        "z": "2c496b90815e2d15",
+        "g": "56142a1519568ef8",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5bb7a42d4f9af661",
+        "type": "template",
+        "z": "2c496b90815e2d15",
+        "g": "56142a1519568ef8",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "ddf56ac7c76174e3"
+            ]
+        ]
     },
     {
         "id": "8cfcbd4314535fdb",

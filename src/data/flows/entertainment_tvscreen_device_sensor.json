@@ -8,6 +8,30 @@
         "env": []
     },
     {
+        "id": "50d4aab3fb8401c4",
+        "type": "group",
+        "z": "b1c954404ea39706",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "cf20999f86ef9f29",
+            "96744f1f4c81f4f5",
+            "85efbfe86edb2e91",
+            "384856183bc9a3dc"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
         "id": "2a258b8e5d5f02c1",
         "type": "change",
         "z": "b1c954404ea39706",
@@ -27,7 +51,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "e03eed5bed2f57e7"
@@ -54,7 +78,7 @@
         "to": "",
         "reg": false,
         "x": 370,
-        "y": 100,
+        "y": 200,
         "wires": [
             [
                 "e03eed5bed2f57e7"
@@ -65,13 +89,19 @@
         "id": "edb38616cd8dda04",
         "type": "server-state-changed",
         "z": "b1c954404ea39706",
+        "d": true,
         "name": "tv device power",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.shellyplug_tv_power",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.shellyplug_tv_power"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "outputInitially": true,
         "stateType": "str",
         "ifState": "",
@@ -107,7 +137,7 @@
             }
         ],
         "x": 100,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "5620508d3ec7e20a"
@@ -137,7 +167,7 @@
         "repair": false,
         "outputs": 2,
         "x": 250,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "2a258b8e5d5f02c1"
@@ -170,9 +200,79 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 520,
-        "y": 60,
+        "y": 160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "cf20999f86ef9f29",
+        "type": "catch",
+        "z": "b1c954404ea39706",
+        "g": "50d4aab3fb8401c4",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "96744f1f4c81f4f5"
+            ]
+        ]
+    },
+    {
+        "id": "96744f1f4c81f4f5",
+        "type": "template",
+        "z": "b1c954404ea39706",
+        "g": "50d4aab3fb8401c4",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "384856183bc9a3dc"
+            ]
+        ]
+    },
+    {
+        "id": "85efbfe86edb2e91",
+        "type": "link out",
+        "z": "b1c954404ea39706",
+        "g": "50d4aab3fb8401c4",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "384856183bc9a3dc",
+        "type": "template",
+        "z": "b1c954404ea39706",
+        "g": "50d4aab3fb8401c4",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "85efbfe86edb2e91"
+            ]
         ]
     },
     {
