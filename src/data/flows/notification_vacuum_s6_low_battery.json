@@ -8,17 +8,46 @@
         "env": []
     },
     {
+        "id": "751efbb5afdedf48",
+        "type": "group",
+        "z": "1a02f7122bccea54",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "70c953492b9eb40c",
+            "505a577898a56012",
+            "17e4e7721adc09a1",
+            "fec97058470f8f5e"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
         "id": "201f66d22f70b0c6",
         "type": "trigger-state",
         "z": "1a02f7122bccea54",
         "name": "",
         "server": "4ba92433.2478cc",
-        "version": 4,
+        "version": 5,
         "inputs": 0,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "vacuum.roborock_s6_pure",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "vacuum.roborock_s6_pure"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "debugEnabled": false,
         "constraints": [
             {
@@ -36,17 +65,28 @@
         "stateType": "str",
         "enableInput": false,
         "x": 170,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
-                "b17eea1ca567cf8f",
-                "5abaa598dd8f6b46"
+                "d5538d8b479eaa4e"
             ],
-            []
+            [
+                "dd4253130fad8a83"
+            ]
         ]
     },
     {
-        "id": "8bc6e753948c3d58",
+        "id": "9dffff38900ffc04",
+        "type": "comment",
+        "z": "1a02f7122bccea54",
+        "name": "Send notification when battery is below 10%",
+        "info": "",
+        "x": 190,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "0d873137caa89aa8",
         "type": "change",
         "z": "1a02f7122bccea54",
         "name": "set flow active to true",
@@ -64,16 +104,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 60,
+        "x": 960,
+        "y": 160,
         "wires": [
             [
-                "8829c6ceb62c309b"
+                "007c5f03d694dd4b"
             ]
         ]
     },
     {
-        "id": "b17eea1ca567cf8f",
+        "id": "605998daf9134e73",
         "type": "switch",
         "z": "1a02f7122bccea54",
         "name": "flow not active",
@@ -89,16 +129,16 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 60,
+        "x": 760,
+        "y": 160,
         "wires": [
             [
-                "8bc6e753948c3d58"
+                "0d873137caa89aa8"
             ]
         ]
     },
     {
-        "id": "d09575b6183b7a6f",
+        "id": "ea5202875ac45b49",
         "type": "change",
         "z": "1a02f7122bccea54",
         "name": "set flow active to false",
@@ -117,13 +157,15 @@
         "to": "",
         "reg": false,
         "x": 640,
-        "y": 100,
+        "y": 220,
         "wires": [
-            []
+            [
+                "64ebe099d2f54d54"
+            ]
         ]
     },
     {
-        "id": "5abaa598dd8f6b46",
+        "id": "dd4253130fad8a83",
         "type": "switch",
         "z": "1a02f7122bccea54",
         "name": "if charging",
@@ -139,26 +181,16 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 430,
-        "y": 100,
+        "x": 450,
+        "y": 220,
         "wires": [
             [
-                "d09575b6183b7a6f"
+                "ea5202875ac45b49"
             ]
         ]
     },
     {
-        "id": "9dffff38900ffc04",
-        "type": "comment",
-        "z": "1a02f7122bccea54",
-        "name": "Send notification when battery is below 10%",
-        "info": "",
-        "x": 190,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "2e88c1891e5e9732",
+        "id": "08f4c431c3afd80a",
         "type": "link out",
         "z": "1a02f7122bccea54",
         "name": "notification",
@@ -166,12 +198,12 @@
         "links": [
             "60e14e33a793f50d"
         ],
-        "x": 1655,
-        "y": 60,
+        "x": 1975,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "792ccaf49b60f39a",
+        "id": "c07d6f94506ce84c",
         "type": "change",
         "z": "1a02f7122bccea54",
         "name": "set icon",
@@ -189,16 +221,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1560,
-        "y": 60,
+        "x": 1880,
+        "y": 160,
         "wires": [
             [
-                "2e88c1891e5e9732"
+                "08f4c431c3afd80a"
             ]
         ]
     },
     {
-        "id": "2a916b1b6ce64ef2",
+        "id": "d6d4102db32b5468",
         "type": "template",
         "z": "1a02f7122bccea54",
         "name": "notification_level",
@@ -208,16 +240,16 @@
         "syntax": "mustache",
         "template": "warning",
         "output": "str",
-        "x": 1390,
-        "y": 60,
+        "x": 1710,
+        "y": 160,
         "wires": [
             [
-                "792ccaf49b60f39a"
+                "c07d6f94506ce84c"
             ]
         ]
     },
     {
-        "id": "5999e01524198e1d",
+        "id": "0b2f559dcc657f30",
         "type": "template",
         "z": "1a02f7122bccea54",
         "name": "topic",
@@ -227,16 +259,16 @@
         "syntax": "mustache",
         "template": "battery",
         "output": "str",
-        "x": 1230,
-        "y": 60,
+        "x": 1550,
+        "y": 160,
         "wires": [
             [
-                "2a916b1b6ce64ef2"
+                "d6d4102db32b5468"
             ]
         ]
     },
     {
-        "id": "adbf11725729eebf",
+        "id": "9d361cd4ac939126",
         "type": "template",
         "z": "1a02f7122bccea54",
         "name": "primary information",
@@ -246,16 +278,16 @@
         "syntax": "mustache",
         "template": "Batterij",
         "output": "str",
-        "x": 1070,
-        "y": 60,
+        "x": 1390,
+        "y": 160,
         "wires": [
             [
-                "5999e01524198e1d"
+                "0b2f559dcc657f30"
             ]
         ]
     },
     {
-        "id": "8829c6ceb62c309b",
+        "id": "007c5f03d694dd4b",
         "type": "template",
         "z": "1a02f7122bccea54",
         "name": "secondary information",
@@ -263,13 +295,157 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Let op, Stofzuiger {{data.event.new_state.attributes.friendly_name}} heeft een batterij niveau van {{data.event.new_state.attributes.battery_level}} controleer de docking station.",
+        "template": "Let op, Stofzuiger {{data.event.new_state.attributes.friendly_name}} heeft een batterij niveau van {{data.event.new_state.attributes.battery_level}}% controleer de docking station.",
         "output": "str",
-        "x": 860,
-        "y": 60,
+        "x": 1180,
+        "y": 160,
         "wires": [
             [
-                "adbf11725729eebf"
+                "9d361cd4ac939126"
+            ]
+        ]
+    },
+    {
+        "id": "d5538d8b479eaa4e",
+        "type": "change",
+        "z": "1a02f7122bccea54",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "low_battery",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "b1fe1aedd419b0b9"
+            ]
+        ]
+    },
+    {
+        "id": "b1fe1aedd419b0b9",
+        "type": "rbe",
+        "z": "1a02f7122bccea54",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 610,
+        "y": 160,
+        "wires": [
+            [
+                "605998daf9134e73"
+            ]
+        ]
+    },
+    {
+        "id": "64ebe099d2f54d54",
+        "type": "change",
+        "z": "1a02f7122bccea54",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "charging",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 220,
+        "wires": [
+            [
+                "d5538d8b479eaa4e"
+            ]
+        ]
+    },
+    {
+        "id": "70c953492b9eb40c",
+        "type": "catch",
+        "z": "1a02f7122bccea54",
+        "g": "751efbb5afdedf48",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "505a577898a56012"
+            ]
+        ]
+    },
+    {
+        "id": "505a577898a56012",
+        "type": "template",
+        "z": "1a02f7122bccea54",
+        "g": "751efbb5afdedf48",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "fec97058470f8f5e"
+            ]
+        ]
+    },
+    {
+        "id": "17e4e7721adc09a1",
+        "type": "link out",
+        "z": "1a02f7122bccea54",
+        "g": "751efbb5afdedf48",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fec97058470f8f5e",
+        "type": "template",
+        "z": "1a02f7122bccea54",
+        "g": "751efbb5afdedf48",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "17e4e7721adc09a1"
             ]
         ]
     },
