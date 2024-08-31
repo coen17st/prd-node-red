@@ -2,7 +2,7 @@
     {
         "id": "72ef82b8.9d086c",
         "type": "tab",
-        "label": "machine_state_thumble_dryer",
+        "label": "sensor_thumble_dryer",
         "disabled": false,
         "info": ""
     },
@@ -24,9 +24,33 @@
             "95286ff3.9f33d"
         ],
         "x": 1244,
-        "y": 79,
+        "y": 139,
         "w": 472,
         "h": 202
+    },
+    {
+        "id": "48945dbb970d3465",
+        "type": "group",
+        "z": "72ef82b8.9d086c",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "95a0ca31cb9f81d2",
+            "d6fdd4c4271165e1",
+            "a88aa9f85b115b03",
+            "2eb8824d45a66c4f"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
     },
     {
         "id": "df3bd9cee59e687a",
@@ -34,7 +58,7 @@
         "z": "72ef82b8.9d086c",
         "g": "677a462e190a4c92",
         "x": 1270,
-        "y": 140,
+        "y": 200,
         "wires": [
             [
                 "70a25e05987238de",
@@ -45,80 +69,24 @@
         ]
     },
     {
-        "id": "95286ff3.9f33d",
+        "id": "7913c8cedd9b8d45",
         "type": "template",
         "z": "72ef82b8.9d086c",
         "g": "677a462e190a4c92",
-        "name": "message",
-        "field": "notify.message",
+        "name": "notification id",
+        "field": "notify.notification_id",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "De droger is klaar.",
+        "template": "tumble_dryer",
         "output": "str",
-        "x": 1390,
-        "y": 240,
+        "x": 1400,
+        "y": 260,
         "wires": [
             [
                 "a91faa17c024af1e"
             ]
         ]
-    },
-    {
-        "id": "f359939883ebec80",
-        "type": "template",
-        "z": "72ef82b8.9d086c",
-        "g": "677a462e190a4c92",
-        "name": "icon",
-        "field": "notify.icon",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "",
-        "output": "str",
-        "x": 1380,
-        "y": 160,
-        "wires": [
-            [
-                "a91faa17c024af1e"
-            ]
-        ]
-    },
-    {
-        "id": "70a25e05987238de",
-        "type": "template",
-        "z": "72ef82b8.9d086c",
-        "g": "677a462e190a4c92",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Droger",
-        "output": "str",
-        "x": 1380,
-        "y": 120,
-        "wires": [
-            [
-                "a91faa17c024af1e"
-            ]
-        ]
-    },
-    {
-        "id": "0993d50e3c03d798",
-        "type": "link out",
-        "z": "72ef82b8.9d086c",
-        "g": "677a462e190a4c92",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "8ed3b0974336e55b",
-            "aeee8468f3d1b7ad",
-            "c4660dc11fb0e5b8"
-        ],
-        "x": 1675,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "a91faa17c024af1e",
@@ -142,7 +110,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 1580,
-        "y": 180,
+        "y": 240,
         "wires": [
             [
                 "0993d50e3c03d798"
@@ -150,19 +118,75 @@
         ]
     },
     {
-        "id": "7913c8cedd9b8d45",
+        "id": "0993d50e3c03d798",
+        "type": "link out",
+        "z": "72ef82b8.9d086c",
+        "g": "677a462e190a4c92",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "8ed3b0974336e55b",
+            "aeee8468f3d1b7ad",
+            "c4660dc11fb0e5b8"
+        ],
+        "x": 1675,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "70a25e05987238de",
         "type": "template",
         "z": "72ef82b8.9d086c",
         "g": "677a462e190a4c92",
-        "name": "notification id",
-        "field": "notify.notification_id",
+        "name": "title",
+        "field": "notify.title",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "tumble_dryer",
+        "template": "Droger",
         "output": "str",
-        "x": 1400,
-        "y": 200,
+        "x": 1380,
+        "y": 180,
+        "wires": [
+            [
+                "a91faa17c024af1e"
+            ]
+        ]
+    },
+    {
+        "id": "f359939883ebec80",
+        "type": "template",
+        "z": "72ef82b8.9d086c",
+        "g": "677a462e190a4c92",
+        "name": "icon",
+        "field": "notify.icon",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "",
+        "output": "str",
+        "x": 1380,
+        "y": 220,
+        "wires": [
+            [
+                "a91faa17c024af1e"
+            ]
+        ]
+    },
+    {
+        "id": "95286ff3.9f33d",
+        "type": "template",
+        "z": "72ef82b8.9d086c",
+        "g": "677a462e190a4c92",
+        "name": "message",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "De droger is klaar.",
+        "output": "str",
+        "x": 1390,
+        "y": 300,
         "wires": [
             [
                 "a91faa17c024af1e"
@@ -192,7 +216,7 @@
         "repair": false,
         "outputs": 2,
         "x": 490,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "78d208e5.9e2828"
@@ -222,7 +246,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "f2f5e3d5cd8dec8d"
@@ -249,7 +273,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 160,
+        "y": 220,
         "wires": [
             [
                 "f2f5e3d5cd8dec8d"
@@ -288,7 +312,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 640,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "4a449402.69359c"
@@ -328,7 +352,7 @@
         "forType": "num",
         "forUnits": "minutes",
         "x": 640,
-        "y": 160,
+        "y": 220,
         "wires": [
             [
                 "401de4c3.c5e84c"
@@ -342,12 +366,17 @@
         "z": "72ef82b8.9d086c",
         "name": "state tumble dryer watt",
         "server": "4ba92433.2478cc",
-        "version": 4,
+        "version": 5,
         "inputs": 1,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.shellyplug_tumble_dryer_power",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.shellyplug_tumble_dryer_power"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "debugEnabled": false,
         "constraints": [],
         "customOutputs": [],
@@ -366,7 +395,7 @@
             }
         ],
         "x": 120,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "bcdcd79d.345708"
@@ -391,8 +420,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1130,
-        "y": 100,
+        "x": 1150,
+        "y": 160,
         "wires": [
             [
                 "df3bd9cee59e687a"
@@ -409,7 +438,7 @@
         "payloadval": "0",
         "name": "",
         "x": 330,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "6bda6302.ca5bcc"
@@ -424,7 +453,7 @@
         "name": "Set thumble dryer binary sensor on or off based on power measurements",
         "info": "Set thumble dryer binary sensor on or off based on power measurements`",
         "x": 280,
-        "y": 40,
+        "y": 20,
         "wires": []
     },
     {
@@ -439,11 +468,81 @@
         "attributes": [],
         "inputOverride": "allow",
         "outputProperties": [],
-        "x": 990,
-        "y": 100,
+        "x": 1010,
+        "y": 160,
         "wires": [
             [
                 "e78c18ee.1eb558"
+            ]
+        ]
+    },
+    {
+        "id": "95a0ca31cb9f81d2",
+        "type": "catch",
+        "z": "72ef82b8.9d086c",
+        "g": "48945dbb970d3465",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "d6fdd4c4271165e1"
+            ]
+        ]
+    },
+    {
+        "id": "d6fdd4c4271165e1",
+        "type": "template",
+        "z": "72ef82b8.9d086c",
+        "g": "48945dbb970d3465",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "2eb8824d45a66c4f"
+            ]
+        ]
+    },
+    {
+        "id": "a88aa9f85b115b03",
+        "type": "link out",
+        "z": "72ef82b8.9d086c",
+        "g": "48945dbb970d3465",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2eb8824d45a66c4f",
+        "type": "template",
+        "z": "72ef82b8.9d086c",
+        "g": "48945dbb970d3465",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "a88aa9f85b115b03"
             ]
         ]
     },
