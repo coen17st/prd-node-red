@@ -2,10 +2,34 @@
     {
         "id": "51ad1e79edd47f04",
         "type": "tab",
-        "label": "automation_scrape_weather_descriptions",
+        "label": "sensor_weather_descriptions",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "954efb6e818259f4",
+        "type": "group",
+        "z": "51ad1e79edd47f04",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "89f81c01fd297b99",
+            "7d9dd51684fea32b",
+            "31afe4007c8c4380",
+            "9d44f246159d8d55"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
     },
     {
         "id": "d475de4d462cdd95",
@@ -24,7 +48,7 @@
         "senderr": false,
         "headers": [],
         "x": 460,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "8c6ea330522a9b56"
@@ -42,7 +66,7 @@
         "ret": "text",
         "as": "single",
         "x": 650,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "e067f2c286459268"
@@ -123,7 +147,7 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 1290,
-        "y": 60,
+        "y": 160,
         "wires": [
             []
         ]
@@ -165,7 +189,7 @@
         "myrawdate": false,
         "mypm": false,
         "x": 250,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "d475de4d462cdd95"
@@ -199,7 +223,7 @@
             }
         ],
         "x": 100,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "7a932d0e4a844f60"
@@ -219,7 +243,7 @@
         "finalize": "",
         "libs": [],
         "x": 820,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "515e9f714ecc6ca1"
@@ -231,7 +255,7 @@
         "type": "function",
         "z": "51ad1e79edd47f04",
         "name": "create short message",
-        "func": "var text = msg.messages[1];\nvar maxLength = 160;\nvar suffix = \"...\";\n\nif (text.length > maxLength) {\n    msg.messages_short = text.substring(0, maxLength - suffix.length) + suffix;\n} else {\n    msg.messages_short = text;\n}\n\nreturn msg;",
+        "func": "var text = msg.messages[1];\nvar maxLength = 157;\nvar suffix = \"...\";\n\nif (text.length > maxLength) {\n    msg.messages_short = text.substring(0, maxLength - suffix.length) + suffix;\n} else {\n    msg.messages_short = text;\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -239,10 +263,80 @@
         "finalize": "",
         "libs": [],
         "x": 1040,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "8c926842f5902705"
+            ]
+        ]
+    },
+    {
+        "id": "89f81c01fd297b99",
+        "type": "catch",
+        "z": "51ad1e79edd47f04",
+        "g": "954efb6e818259f4",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "7d9dd51684fea32b"
+            ]
+        ]
+    },
+    {
+        "id": "7d9dd51684fea32b",
+        "type": "template",
+        "z": "51ad1e79edd47f04",
+        "g": "954efb6e818259f4",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "9d44f246159d8d55"
+            ]
+        ]
+    },
+    {
+        "id": "31afe4007c8c4380",
+        "type": "link out",
+        "z": "51ad1e79edd47f04",
+        "g": "954efb6e818259f4",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9d44f246159d8d55",
+        "type": "template",
+        "z": "51ad1e79edd47f04",
+        "g": "954efb6e818259f4",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "31afe4007c8c4380"
             ]
         ]
     },

@@ -32,6 +32,76 @@
         "h": 82
     },
     {
+        "id": "8cc9f9d0eb2ee196",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "ce9dcc40d72369f4"
+            ]
+        ]
+    },
+    {
+        "id": "ce9dcc40d72369f4",
+        "type": "link out",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f095a3312890d656",
+        "type": "template",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "8cc9f9d0eb2ee196"
+            ]
+        ]
+    },
+    {
+        "id": "42073f55aa389f5d",
+        "type": "catch",
+        "z": "343515a5528e14f0",
+        "g": "a438a5fafa2b7f02",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "f095a3312890d656"
+            ]
+        ]
+    },
+    {
         "id": "b92773ff0b01fade",
         "type": "api-call-service",
         "z": "343515a5528e14f0",
@@ -210,7 +280,8 @@
             "6f92ae57f8e67eb2",
             "008e4e3d5eb1c73a",
             "6031ed8d02da2add",
-            "ce9dcc40d72369f4"
+            "ce9dcc40d72369f4",
+            "31afe4007c8c4380"
         ],
         "x": 195,
         "y": 460,
@@ -612,76 +683,6 @@
         "wires": [
             [
                 "577ae9a09334bd75"
-            ]
-        ]
-    },
-    {
-        "id": "42073f55aa389f5d",
-        "type": "catch",
-        "z": "343515a5528e14f0",
-        "g": "a438a5fafa2b7f02",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 100,
-        "y": 80,
-        "wires": [
-            [
-                "f095a3312890d656"
-            ]
-        ]
-    },
-    {
-        "id": "f095a3312890d656",
-        "type": "template",
-        "z": "343515a5528e14f0",
-        "g": "a438a5fafa2b7f02",
-        "name": "messsage",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
-        "output": "str",
-        "x": 250,
-        "y": 80,
-        "wires": [
-            [
-                "8cc9f9d0eb2ee196"
-            ]
-        ]
-    },
-    {
-        "id": "ce9dcc40d72369f4",
-        "type": "link out",
-        "z": "343515a5528e14f0",
-        "g": "a438a5fafa2b7f02",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "a97f87cfab413716"
-        ],
-        "x": 475,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "8cc9f9d0eb2ee196",
-        "type": "template",
-        "z": "343515a5528e14f0",
-        "g": "a438a5fafa2b7f02",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Node-RED",
-        "output": "str",
-        "x": 390,
-        "y": 80,
-        "wires": [
-            [
-                "ce9dcc40d72369f4"
             ]
         ]
     },
