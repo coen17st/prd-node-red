@@ -8,14 +8,50 @@
         "env": []
     },
     {
+        "id": "27c66ddd50cff09f",
+        "type": "group",
+        "z": "d7c35c04cc0c5b68",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "703a26205c7cc495",
+            "c4db1edb6aab0c6b",
+            "6f92ae57f8e67eb2",
+            "3212dd4ba71a225b"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
         "id": "fd9636d9d6afe3b7",
         "type": "junction",
         "z": "d7c35c04cc0c5b68",
-        "x": 340,
-        "y": 180,
+        "x": 380,
+        "y": 280,
         "wires": [
             [
                 "916f461a6f7da6d3",
+                "c10807da9b28c982"
+            ]
+        ]
+    },
+    {
+        "id": "c10807da9b28c982",
+        "type": "junction",
+        "z": "d7c35c04cc0c5b68",
+        "x": 460,
+        "y": 340,
+        "wires": [
+            [
                 "74e76eceb1f26eaf"
             ]
         ]
@@ -36,11 +72,16 @@
         "z": "d7c35c04cc0c5b68",
         "name": "voltage inverter",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "39f868aa97a1088e",
-        "entityId": "sensor.solaredge_modbus_ac_voltage_ab",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.solaredge_modbus_ac_voltage_ab"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "outputInitially": true,
         "stateType": "str",
         "ifState": "",
@@ -76,7 +117,7 @@
             }
         ],
         "x": 100,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "423bfb3fe34e59d4"
@@ -111,7 +152,7 @@
         "repair": false,
         "outputs": 3,
         "x": 260,
-        "y": 120,
+        "y": 160,
         "wires": [
             [
                 "ed73ef123074e011"
@@ -160,8 +201,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 420,
-        "y": 60,
+        "x": 460,
+        "y": 160,
         "wires": [
             [
                 "59263b75863fd017"
@@ -186,8 +227,8 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 960,
-        "y": 60,
+        "x": 1000,
+        "y": 160,
         "wires": [
             [
                 "7e334b8861b9df2a"
@@ -200,23 +241,26 @@
         "z": "d7c35c04cc0c5b68",
         "name": "turn on heater",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
+        "action": "switch.turn_on",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.shellyplugplus_heather_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 780,
-        "y": 60,
+        "domain": "switch",
+        "service": "turn_on",
+        "x": 820,
+        "y": 160,
         "wires": [
             [
                 "207c2f6e26d0c669"
@@ -229,23 +273,26 @@
         "z": "d7c35c04cc0c5b68",
         "name": "turn off heater",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
+        "action": "switch.turn_off",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.shellyplugplus_heather_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1600,
-        "y": 180,
+        "domain": "switch",
+        "service": "turn_off",
+        "x": 1640,
+        "y": 280,
         "wires": [
             []
         ]
@@ -286,8 +333,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 600,
-        "y": 60,
+        "x": 640,
+        "y": 160,
         "wires": [
             [
                 "e8ce7b12402d8e51"
@@ -331,8 +378,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1400,
-        "y": 180,
+        "x": 1440,
+        "y": 280,
         "wires": [
             [
                 "4ed1d7ce9b4786d9"
@@ -346,10 +393,15 @@
         "z": "d7c35c04cc0c5b68",
         "name": "wait until voltage drop",
         "server": "4ba92433.2478cc",
-        "version": 2,
+        "version": 3,
         "outputs": 2,
-        "entityId": "sensor.solaredge_modbus_ac_voltage_ab",
-        "entityIdFilterType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.solaredge_modbus_ac_voltage_ab"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "property": "state",
         "comparator": "lt",
         "value": "249",
@@ -362,8 +414,8 @@
         "outputProperties": [],
         "entityLocation": "data",
         "entityLocationType": "none",
-        "x": 1160,
-        "y": 60,
+        "x": 1200,
+        "y": 160,
         "wires": [
             [
                 "916f461a6f7da6d3"
@@ -410,8 +462,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 430,
-        "y": 120,
+        "x": 470,
+        "y": 220,
         "wires": [
             [
                 "709e2d4d3b3f037d"
@@ -426,23 +478,26 @@
         "d": true,
         "name": "turn on quooker",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
+        "action": "switch.turn_on",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.shellyplugplus_quooker_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 620,
-        "y": 120,
+        "domain": "switch",
+        "service": "turn_on",
+        "x": 660,
+        "y": 220,
         "wires": [
             []
         ]
@@ -483,8 +538,8 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1210,
-        "y": 240,
+        "x": 1250,
+        "y": 340,
         "wires": [
             [
                 "b01e740bd456520e"
@@ -498,23 +553,26 @@
         "z": "d7c35c04cc0c5b68",
         "name": "turn off quooker",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
+        "action": "switch.turn_off",
+        "floorId": [],
         "areaId": [],
         "deviceId": [],
         "entityId": [
             "switch.shellyplugplus_quooker_switch_0"
         ],
+        "labelId": [],
         "data": "",
         "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 1600,
-        "y": 240,
+        "domain": "switch",
+        "service": "turn_off",
+        "x": 1640,
+        "y": 340,
         "wires": [
             []
         ]
@@ -555,13 +613,83 @@
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
-        "x": 1410,
-        "y": 240,
+        "x": 1450,
+        "y": 340,
         "wires": [
             [
                 "f47c7540f5a691a3"
             ],
             []
+        ]
+    },
+    {
+        "id": "703a26205c7cc495",
+        "type": "catch",
+        "z": "d7c35c04cc0c5b68",
+        "g": "27c66ddd50cff09f",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "c4db1edb6aab0c6b"
+            ]
+        ]
+    },
+    {
+        "id": "c4db1edb6aab0c6b",
+        "type": "template",
+        "z": "d7c35c04cc0c5b68",
+        "g": "27c66ddd50cff09f",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "3212dd4ba71a225b"
+            ]
+        ]
+    },
+    {
+        "id": "6f92ae57f8e67eb2",
+        "type": "link out",
+        "z": "d7c35c04cc0c5b68",
+        "g": "27c66ddd50cff09f",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3212dd4ba71a225b",
+        "type": "template",
+        "z": "d7c35c04cc0c5b68",
+        "g": "27c66ddd50cff09f",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "6f92ae57f8e67eb2"
+            ]
         ]
     },
     {

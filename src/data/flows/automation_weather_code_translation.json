@@ -8,16 +8,45 @@
         "env": []
     },
     {
+        "id": "959cc8d22399a3c9",
+        "type": "group",
+        "z": "39bdcb9ed819fc87",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "259d9bad9d37b072",
+            "ab5ff3a4a505c122",
+            "008e4e3d5eb1c73a",
+            "d4d19ad1bc94c25a"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 502,
+        "h": 82
+    },
+    {
         "id": "3783939d485f6ea8",
         "type": "server-state-changed",
         "z": "39bdcb9ed819fc87",
         "name": "knmi weather code",
         "server": "4ba92433.2478cc",
-        "version": 5,
+        "version": 6,
         "outputs": 1,
         "exposeAsEntityConfig": "",
-        "entityId": "sensor.knmi_weather_code",
-        "entityIdType": "exact",
+        "entities": {
+            "entity": [
+                "sensor.knmi_weather_code"
+            ],
+            "substring": [],
+            "regex": []
+        },
         "outputInitially": true,
         "stateType": "str",
         "ifState": "",
@@ -28,10 +57,10 @@
         "forType": "num",
         "forUnits": "minutes",
         "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
-        "ignoreCurrentStateUnknown": true,
-        "ignoreCurrentStateUnavailable": true,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -47,7 +76,7 @@
             }
         ],
         "x": 110,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "4226161bbc5e814e"
@@ -77,7 +106,7 @@
         "finalize": "",
         "libs": [],
         "x": 330,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "60a83f3d93926307"
@@ -101,7 +130,7 @@
         "senderr": false,
         "headers": [],
         "x": 520,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "e2249f97e8ed5340"
@@ -121,9 +150,79 @@
         "inputOverride": "allow",
         "outputProperties": [],
         "x": 710,
-        "y": 60,
+        "y": 160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "259d9bad9d37b072",
+        "type": "catch",
+        "z": "39bdcb9ed819fc87",
+        "g": "959cc8d22399a3c9",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "ab5ff3a4a505c122"
+            ]
+        ]
+    },
+    {
+        "id": "ab5ff3a4a505c122",
+        "type": "template",
+        "z": "39bdcb9ed819fc87",
+        "g": "959cc8d22399a3c9",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "d4d19ad1bc94c25a"
+            ]
+        ]
+    },
+    {
+        "id": "008e4e3d5eb1c73a",
+        "type": "link out",
+        "z": "39bdcb9ed819fc87",
+        "g": "959cc8d22399a3c9",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d4d19ad1bc94c25a",
+        "type": "template",
+        "z": "39bdcb9ed819fc87",
+        "g": "959cc8d22399a3c9",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "008e4e3d5eb1c73a"
+            ]
         ]
     },
     {

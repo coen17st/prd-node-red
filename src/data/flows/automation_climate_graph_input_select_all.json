@@ -24,12 +24,11 @@
             "1216fc8eb38d5547",
             "344cbd55957359b6",
             "3bb7516008d0f0ca",
-            "9e895cf92217d0d8",
-            "d96e500b8264b91c"
+            "0b536f63e5d6404e"
         ],
         "x": 14,
         "y": 39,
-        "w": 682,
+        "w": 502,
         "h": 82
     },
     {
@@ -42,7 +41,7 @@
         "links": [
             "a97f87cfab413716"
         ],
-        "x": 655,
+        "x": 475,
         "y": 80,
         "wires": []
     },
@@ -56,13 +55,13 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "message: {{error.message}} \\nid: {{error.source.id}} \\nsource type: {{error.source.type}} \\nsource name: {{error.source.name}} \\nsource count: {{error.source.count}}",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
         "output": "str",
         "x": 250,
         "y": 80,
         "wires": [
             [
-                "9e895cf92217d0d8"
+                "0b536f63e5d6404e"
             ]
         ]
     },
@@ -103,7 +102,7 @@
         "outputLocation": "payload",
         "outputResultsCount": 1,
         "x": 430,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "caa9c954adc5c425"
@@ -135,7 +134,7 @@
         "domain": "input_select",
         "service": "select_option",
         "x": 630,
-        "y": 180,
+        "y": 160,
         "wires": [
             []
         ]
@@ -201,7 +200,7 @@
             }
         ],
         "x": 180,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "6c70289470244d20"
@@ -209,7 +208,7 @@
         ]
     },
     {
-        "id": "9e895cf92217d0d8",
+        "id": "0b536f63e5d6404e",
         "type": "template",
         "z": "1adcdebcdc8e5c39",
         "g": "37ce07449a33a2f1",
@@ -221,26 +220,6 @@
         "template": "Node-RED",
         "output": "str",
         "x": 390,
-        "y": 80,
-        "wires": [
-            [
-                "d96e500b8264b91c"
-            ]
-        ]
-    },
-    {
-        "id": "d96e500b8264b91c",
-        "type": "template",
-        "z": "1adcdebcdc8e5c39",
-        "g": "37ce07449a33a2f1",
-        "name": "notification_id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "node-redError",
-        "output": "str",
-        "x": 540,
         "y": 80,
         "wires": [
             [

@@ -7,7 +7,7 @@
         "info": ""
     },
     {
-        "id": "b189508993904947",
+        "id": "6cb0ed1df40f98e6",
         "type": "group",
         "z": "3637eeb0.d96232",
         "style": {
@@ -20,15 +20,14 @@
             "color": "#a4a4a4"
         },
         "nodes": [
-            "ca96ab2b5ee83be0",
-            "1817757d44df9ab3",
-            "d9c305f5d3a90eeb",
-            "4b5032dba0ee7717",
-            "ac9e1209773b9b26"
+            "f0797db4a3658338",
+            "e45eced2a30f126b",
+            "b678056d1b96f637",
+            "a42a1f5ee71e92aa"
         ],
         "x": 14,
         "y": 39,
-        "w": 682,
+        "w": 502,
         "h": 82
     },
     {
@@ -481,10 +480,10 @@
         "wires": []
     },
     {
-        "id": "ca96ab2b5ee83be0",
+        "id": "f0797db4a3658338",
         "type": "catch",
         "z": "3637eeb0.d96232",
-        "g": "b189508993904947",
+        "g": "6cb0ed1df40f98e6",
         "name": "",
         "scope": null,
         "uncaught": false,
@@ -492,49 +491,49 @@
         "y": 80,
         "wires": [
             [
-                "1817757d44df9ab3"
+                "e45eced2a30f126b"
             ]
         ]
     },
     {
-        "id": "1817757d44df9ab3",
+        "id": "e45eced2a30f126b",
         "type": "template",
         "z": "3637eeb0.d96232",
-        "g": "b189508993904947",
+        "g": "6cb0ed1df40f98e6",
         "name": "messsage",
         "field": "notify.message",
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "message: {{error.message}} \\nid: {{error.source.id}} \\nsource type: {{error.source.type}} \\nsource name: {{error.source.name}} \\nsource count: {{error.source.count}}",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
         "output": "str",
         "x": 250,
         "y": 80,
         "wires": [
             [
-                "4b5032dba0ee7717"
+                "a42a1f5ee71e92aa"
             ]
         ]
     },
     {
-        "id": "d9c305f5d3a90eeb",
+        "id": "b678056d1b96f637",
         "type": "link out",
         "z": "3637eeb0.d96232",
-        "g": "b189508993904947",
+        "g": "6cb0ed1df40f98e6",
         "name": "link_out_notify_1",
         "mode": "link",
         "links": [
             "a97f87cfab413716"
         ],
-        "x": 655,
+        "x": 475,
         "y": 80,
         "wires": []
     },
     {
-        "id": "4b5032dba0ee7717",
+        "id": "a42a1f5ee71e92aa",
         "type": "template",
         "z": "3637eeb0.d96232",
-        "g": "b189508993904947",
+        "g": "6cb0ed1df40f98e6",
         "name": "title",
         "field": "notify.title",
         "fieldType": "msg",
@@ -546,27 +545,7 @@
         "y": 80,
         "wires": [
             [
-                "ac9e1209773b9b26"
-            ]
-        ]
-    },
-    {
-        "id": "ac9e1209773b9b26",
-        "type": "template",
-        "z": "3637eeb0.d96232",
-        "g": "b189508993904947",
-        "name": "notification_id",
-        "field": "notify.notification_id",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "node-redError",
-        "output": "str",
-        "x": 540,
-        "y": 80,
-        "wires": [
-            [
-                "d9c305f5d3a90eeb"
+                "b678056d1b96f637"
             ]
         ]
     },
