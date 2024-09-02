@@ -35,11 +35,11 @@
         "id": "4539dbe872caf169",
         "type": "junction",
         "z": "39f5e6336137f4b2",
-        "x": 960,
+        "x": 820,
         "y": 160,
         "wires": [
             [
-                "e7db7dd82d8ece7e"
+                "382a831c1568641b"
             ]
         ]
     },
@@ -51,7 +51,77 @@
         "y": 240,
         "wires": [
             [
-                "a773a1b90b438e7b"
+                "19b08832ac41fe31"
+            ]
+        ]
+    },
+    {
+        "id": "5fc11e4e29f3d02f",
+        "type": "template",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "title",
+        "field": "notify.title",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Node-RED",
+        "output": "str",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "1514f8777e4c8211"
+            ]
+        ]
+    },
+    {
+        "id": "1514f8777e4c8211",
+        "type": "link out",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "link_out_notify_1",
+        "mode": "link",
+        "links": [
+            "a97f87cfab413716"
+        ],
+        "x": 475,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5c1d97fa3277b1c6",
+        "type": "template",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "messsage",
+        "field": "notify.message",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
+        "output": "str",
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "5fc11e4e29f3d02f"
+            ]
+        ]
+    },
+    {
+        "id": "32e0cbcd73142f33",
+        "type": "catch",
+        "z": "39f5e6336137f4b2",
+        "g": "03c1d7472447f924",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "5c1d97fa3277b1c6"
             ]
         ]
     },
@@ -71,18 +141,18 @@
             "substring": [],
             "regex": []
         },
-        "outputInitially": true,
+        "outputInitially": false,
         "stateType": "str",
         "ifState": "",
         "ifStateType": "str",
         "ifStateOperator": "is",
-        "outputOnlyOnStateChange": true,
+        "outputOnlyOnStateChange": false,
         "for": "",
         "forType": "num",
         "forUnits": "minutes",
-        "ignorePrevStateNull": true,
-        "ignorePrevStateUnknown": true,
-        "ignorePrevStateUnavailable": true,
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
         "ignoreCurrentStateUnknown": true,
         "ignoreCurrentStateUnavailable": true,
         "outputProperties": [
@@ -165,9 +235,9 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "reset",
                 "pt": "msg",
-                "to": "stop",
+                "to": "",
                 "tot": "str"
             }
         ],
@@ -180,8 +250,8 @@
         "y": 160,
         "wires": [
             [
-                "a773a1b90b438e7b",
-                "4539dbe872caf169"
+                "4539dbe872caf169",
+                "19b08832ac41fe31"
             ]
         ]
     },
@@ -242,47 +312,9 @@
         "queue": "none",
         "domain": "notify",
         "service": "lg_webos_smart_tv",
-        "x": 900,
-        "y": 240,
+        "x": 960,
+        "y": 300,
         "wires": [
-            [
-                "e7db7dd82d8ece7e"
-            ]
-        ]
-    },
-    {
-        "id": "a773a1b90b438e7b",
-        "type": "stoptimer",
-        "z": "39f5e6336137f4b2",
-        "duration": "10",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 730,
-        "y": 240,
-        "wires": [
-            [
-                "a9227561e7f66936"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e7db7dd82d8ece7e",
-        "type": "stoptimer",
-        "z": "39f5e6336137f4b2",
-        "duration": "10",
-        "units": "Second",
-        "payloadtype": "num",
-        "payloadval": "0",
-        "name": "",
-        "x": 1090,
-        "y": 240,
-        "wires": [
-            [
-                "19e1804740908598"
-            ],
             []
         ]
     },
@@ -308,79 +340,60 @@
         "queue": "none",
         "domain": "webostv",
         "service": "command",
-        "x": 1280,
+        "x": 1140,
         "y": 240,
         "wires": [
             []
         ]
     },
     {
-        "id": "32e0cbcd73142f33",
-        "type": "catch",
+        "id": "19b08832ac41fe31",
+        "type": "delay",
         "z": "39f5e6336137f4b2",
-        "g": "03c1d7472447f924",
         "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 100,
-        "y": 80,
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 240,
         "wires": [
             [
-                "5c1d97fa3277b1c6"
+                "a9227561e7f66936",
+                "382a831c1568641b"
             ]
         ]
     },
     {
-        "id": "5c1d97fa3277b1c6",
-        "type": "template",
+        "id": "382a831c1568641b",
+        "type": "delay",
         "z": "39f5e6336137f4b2",
-        "g": "03c1d7472447f924",
-        "name": "messsage",
-        "field": "notify.message",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "message: {{{error.message}}} \\nSource: id: {{error.source.id}} \\ntype: {{error.source.type}} \\nname: {{error.source.name}} \\ncount: {{error.source.count}}",
-        "output": "str",
-        "x": 250,
-        "y": 80,
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 960,
+        "y": 240,
         "wires": [
             [
-                "5fc11e4e29f3d02f"
-            ]
-        ]
-    },
-    {
-        "id": "1514f8777e4c8211",
-        "type": "link out",
-        "z": "39f5e6336137f4b2",
-        "g": "03c1d7472447f924",
-        "name": "link_out_notify_1",
-        "mode": "link",
-        "links": [
-            "a97f87cfab413716"
-        ],
-        "x": 475,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "5fc11e4e29f3d02f",
-        "type": "template",
-        "z": "39f5e6336137f4b2",
-        "g": "03c1d7472447f924",
-        "name": "title",
-        "field": "notify.title",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Node-RED",
-        "output": "str",
-        "x": 390,
-        "y": 80,
-        "wires": [
-            [
-                "1514f8777e4c8211"
+                "19e1804740908598"
             ]
         ]
     },
