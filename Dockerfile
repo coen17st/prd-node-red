@@ -2,11 +2,10 @@ FROM docker.io/nodered/node-red:4.0
 
 WORKDIR /usr/src/node-red
 
-RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 
-COPY ./src/data/ /data/
+# COPY ./src/data/ /data/
 
-RUN npm install \
+RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production \
     node-red-contrib-calc \
     node-red-contrib-cron-plus \
     node-red-contrib-home-assistant-websocket \
