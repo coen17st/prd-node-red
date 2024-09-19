@@ -5,7 +5,7 @@ module.exports = {
     adminAuth: {
         type: "credentials",
         users: [{
-            username: "admin",
+            username: "coen",
             password: "$2b$08$/vrQad7nTMczn8loufrLMuuQ1pSNEr.yiwu5bGcxoVzMyp4q6Ym5.",
             permissions: "*"
         }]
@@ -34,7 +34,7 @@ module.exports = {
             lib: "monaco",
         }
     },
-    tours: true,
+    tours: false,
     functionExternalModules: true,
     functionGlobalContext: {},
     debugMaxLength: 1000,
