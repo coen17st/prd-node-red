@@ -34,7 +34,7 @@ module.exports = {
             lib: "monaco",
         }
     },
-    tours: false,
+    tours: true,
     functionExternalModules: true,
     functionGlobalContext: {},
     debugMaxLength: 1000,
